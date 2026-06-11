@@ -5,6 +5,11 @@
 import { createFaceLandmarker } from "./face-landmarker.js";
 import { faceBounds } from "./face-landmarker.js";
 
+function sourceReady(sourceEl) {
+  if (typeof sourceEl.readyState === "number") return sourceEl.readyState >= 2;
+  return sourceEl.width > 0 && sourceEl.height > 0;
+}
+
 export async function createSmileWatcher(videoEl, options = {}) {
   const {
     threshold = 0.42,
@@ -52,7 +57,7 @@ export async function createSmileWatcher(videoEl, options = {}) {
   }
 
   function tick() {
-    if (!running || videoEl.readyState < 2) {
+    if (!running || !sourceReady(videoEl)) {
       rafId = requestAnimationFrame(tick);
       return;
     }

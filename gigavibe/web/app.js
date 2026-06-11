@@ -47,6 +47,7 @@ const btnErrorRetry = document.getElementById("btn-error-retry");
 const btnRetry = document.getElementById("btn-retry");
 
 const RESULT_LOOP_SEC = 20;
+const CAMERA_ZOOM = 2;
 
 const KIOSK_W = 1008;
 const KIOSK_H = 672;
@@ -105,7 +106,13 @@ function isPortraitViewport() {
 }
 
 /** Рисует кадр камеры на весь экран (cover) + зеркало + поворот landscape-потока на телефоне. */
-function drawVideoFit(ctx, video, destW, destH, { mirror = true, fill = "#111" } = {}) {
+function drawVideoFit(
+  ctx,
+  video,
+  destW,
+  destH,
+  { mirror = true, fill = "#111", zoom = 1 } = {},
+) {
   const vw = video.videoWidth;
   const vh = video.videoHeight;
   if (!vw || !vh) return;
@@ -122,7 +129,7 @@ function drawVideoFit(ctx, video, destW, destH, { mirror = true, fill = "#111" }
 
   const fitW = rotated ? vh : vw;
   const fitH = rotated ? vw : vh;
-  const scale = Math.max(destW / fitW, destH / fitH);
+  const scale = Math.max(destW / fitW, destH / fitH) * Math.max(1, zoom);
   const dw = fitW * scale;
   const dh = fitH * scale;
   ctx.imageSmoothingEnabled = true;
@@ -144,7 +151,7 @@ function drawPreviewFrame() {
     previewCanvas.height = ch;
   }
 
-  drawVideoFit(previewCanvas.getContext("2d"), preview, cw, ch);
+  drawVideoFit(previewCanvas.getContext("2d"), preview, cw, ch, { zoom: CAMERA_ZOOM });
 }
 
 function startPreviewLoop() {
@@ -485,7 +492,7 @@ async function startPresenceWatch() {
   await presenceWatcher?.close?.();
   presenceWatcher = null;
   try {
-    presenceWatcher = await createFacePresenceWatcher(preview, {
+    presenceWatcher = await createFacePresenceWatcher(previewCanvas, {
       minFaceSize: kioskCfg.kiosk_face_min_size,
       holdFrames: kioskCfg.kiosk_face_hold_frames,
       releaseFrames: kioskCfg.kiosk_face_release_frames,
@@ -548,7 +555,7 @@ async function startSmileCapture() {
   if (!kioskCfg.kiosk_smile_capture) return;
   try {
     await smileWatcher?.close?.();
-    smileWatcher = await createSmileWatcher(preview, {
+    smileWatcher = await createSmileWatcher(previewCanvas, {
       threshold: kioskCfg.kiosk_smile_threshold,
       holdFrames: kioskCfg.kiosk_smile_hold_frames,
       holdMs: kioskCfg.kiosk_smile_hold_ms,
@@ -600,7 +607,7 @@ function captureBlob() {
   const h = videoHeight;
   snapshot.width = w;
   snapshot.height = h;
-  drawVideoFit(snapshot.getContext("2d"), preview, w, h);
+  drawVideoFit(snapshot.getContext("2d"), preview, w, h, { zoom: CAMERA_ZOOM });
   const q = kioskCfg.kiosk_jpeg_quality ?? 0.96;
   return new Promise((resolve) => {
     snapshot.toBlob((blob) => resolve(blob), "image/jpeg", q);

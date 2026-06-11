@@ -262,6 +262,18 @@ body {
   height: 100%;
 }
 
+.camera-rig video,
+.camera-rig canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.camera-rig video {
+  opacity: 0;
+}
+
 .camera-rig--probe video,
 .camera-rig--probe canvas {
   width: 100%;

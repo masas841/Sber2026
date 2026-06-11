@@ -4,6 +4,11 @@
 
 import { createFaceLandmarker, faceBounds } from "./face-landmarker.js";
 
+function sourceReady(sourceEl) {
+  if (typeof sourceEl.readyState === "number") return sourceEl.readyState >= 2;
+  return sourceEl.width > 0 && sourceEl.height > 0;
+}
+
 export async function createFacePresenceWatcher(videoEl, options = {}) {
   const {
     minFaceSize = 0.2,
@@ -45,7 +50,7 @@ export async function createFacePresenceWatcher(videoEl, options = {}) {
 
   function tick() {
     if (!running) return;
-    if (videoEl.readyState < 2) {
+    if (!sourceReady(videoEl)) {
       rafId = requestAnimationFrame(tick);
       return;
     }
