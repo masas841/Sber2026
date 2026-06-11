@@ -58,15 +58,15 @@ body {
 
 .stage {
   position: fixed;
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
   width: var(--stage);
   height: var(--stage);
   overflow: hidden;
   color: var(--ink);
   background: linear-gradient(185.62deg, #00adee 12.18%, #fff 95.52%);
-  transform: translate(-50%, -50%) scale(var(--app-scale));
-  transform-origin: center;
+  transform: scale(var(--app-scale));
+  transform-origin: top left;
   user-select: none;
 }
 

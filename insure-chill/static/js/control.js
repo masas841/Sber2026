@@ -1,6 +1,5 @@
 const CONTROL_WIDTH = 1133;
 const CONTROL_HEIGHT = 744;
-const CONTROL_SCALE = 0.85;
 
 const control = document.querySelector("#control");
 const connection = document.querySelector("#connection");
@@ -35,11 +34,10 @@ function normalizePhase(phase) {
 }
 
 function syncScale() {
-  const scale = Math.min(
+  const scale = Math.max(
     window.innerWidth / CONTROL_WIDTH,
-    window.innerHeight / CONTROL_HEIGHT,
-    1
-  ) * CONTROL_SCALE;
+    window.innerHeight / CONTROL_HEIGHT
+  );
   control.style.setProperty("--control-scale", String(scale));
 }
 
