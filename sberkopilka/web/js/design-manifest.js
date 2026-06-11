@@ -48,12 +48,12 @@
     ghostInflation: MONSTER_BASE + "inflation.png",
     /** Group 2136140169 — FOMO */
     ghostFomo: MONSTER_BASE + "fomo.png",
-    /** 16 1 — акции (25:194) */
-    pelletCoin: "18bf53e8d6a29e158980d8b93828ef9c4a7b3a0e.png",
-    /** ChatGPT 23_57_35 — фонды (25:193) */
+    /** Монетка — основной объект на поле. */
+    pelletCoin: "7cc85e02203da4dade7c18c7254748004b55a994.png",
+    /** Проценты. */
     pelletPercent: "5461a78805872f48f1580cf04501583fba98b239.png",
-    /** image 2090010343 — регулярные пополнения (25:191) */
-    pelletLogo: "2eb7c1b7ba6799289b56f4962cdc1f75363d0932.png",
+    /** Слиток — редкий объект. */
+    pelletLogo: "21d6bfc9e1e9691021c27e978b057a688e8e32d4.png",
     portfolio: "9c7a52cb0aaebeae10b7379074ad3d6c045c76aa.png",
     wallTile: "0f3207ec237fb8b352ca47534b914bc49b5505f4.png",
     wallCorner: "a1aeba078a8e20030c8a55f37f28123e6652d7ef.png",
@@ -184,7 +184,7 @@
         { y: 0.12, lines: ["счёт:"], size: 24, color: "#01d701", bold: true },
         { y: 0.18, lines: ["{score}"], size: 42, color: "#122654", bold: true, dynamic: "score" },
       ],
-      hint: "◀ ▶ — имя   Cross (×) — сохранить",
+      hint: "Cross (×) — далее",
     },
     result_top: {
       scene: "Result",
@@ -213,7 +213,27 @@
         { y: 0.12, lines: ["рекорд"], size: 24, color: "#01d701", bold: true },
         { y: 0.18, lines: ["{score}"], size: 42, color: "#122654", bold: true, dynamic: "score" },
       ],
-      hint: "◀ ▶ — имя   Cross (×) — сохранить",
+      hint: "Cross (×) — далее",
+    },
+    result_stars_0: {
+      scene: "ResultStars",
+      stars: 0,
+      hint: "Cross (×) — в меню",
+    },
+    result_stars_1: {
+      scene: "ResultStars",
+      stars: 1,
+      hint: "Cross (×) — в меню",
+    },
+    result_stars_2: {
+      scene: "ResultStars",
+      stars: 2,
+      hint: "Cross (×) — в меню",
+    },
+    result_stars_3: {
+      scene: "ResultStars",
+      stars: 3,
+      hint: "Cross (×) — в меню",
     },
     leaderboard: {
       scene: "Leaderboard",
@@ -244,7 +264,7 @@
     ghost_fomo: spriteEntry(shared.ghostFomo, GHOST_FIELD_SIZE),
     pellet_coin: spriteEntry(shared.pelletCoin, 28),
     pellet_percent: spriteEntry(shared.pelletPercent, 24),
-    pellet_logo: spriteEntry(shared.pelletLogo, 10),
+    pellet_logo: spriteEntry(shared.pelletLogo, 32),
     portfolio: spriteEntry(shared.portfolio, 38),
     wall_tile: spriteEntry(shared.wallTile, 26),
     wall_corner: spriteEntry(shared.wallCorner, 26),

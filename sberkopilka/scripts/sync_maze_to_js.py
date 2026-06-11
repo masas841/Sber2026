@@ -81,7 +81,7 @@ const FIGMA_DEMO_PELLETS = [
   {pellets_js}
 ];
 
-const PELLET_WEIGHTS = {{ coin: 0.82, percent: 0.11, logo: 0.07 }};
+const PELLET_WEIGHTS = {{ coin: 0.9, percent: 0.07, logo: 0.03 }};
 
 const SCORE_COIN = 10;
 const SCORE_PERCENT = 25;

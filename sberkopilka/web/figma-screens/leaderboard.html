@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -9,8 +9,8 @@
       theme: { extend: {} }
     };
   </script>
-  <link rel="stylesheet" href="/static/css/figma-fonts.css?v=2" />
-  <link rel="stylesheet" href="/static/css/figma-animations.css?v=12" />
+  <link rel="stylesheet" href="/static/css/figma-fonts.css" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=2" />
   <style>
     html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }
     #capture {
@@ -43,7 +43,7 @@
 </head>
 <body>
   <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
-  <script src="/static/js/figma-screen-boot.js?v=3"></script>
+  <script src="/static/js/figma-screen-boot.js"></script>
   <script crossorigin src="/static/vendor/react.production.min.js"></script>
   <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
@@ -76,14 +76,14 @@ function Screen() {
           </div>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:2199" data-name="Границы экрана" />
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-[0.31] rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:2199" data-name="Границы экрана" />
       <div className="absolute h-[883.211px] left-[-69.53px] top-[-114px] w-[727.743px]" data-node-id="25:2200" data-name="BG Decor">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBgDecor} />
       </div>
       <div className="-translate-x-1/2 absolute h-[25.149px] left-[calc(50%-0.14px)] top-[61.34px] w-[258.29px]" data-node-id="25:2204" data-name="_РЎР»РѕР№_1">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-1/2 not-italic text-[#122654] text-[32.393px] text-center top-[127px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:2220">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute kop-font-display leading-[0.75] left-1/2 not-italic text-[#122654] text-[32.393px] text-center top-[127px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:2220">
         Ворвись в топ
       </p>
       <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-0.5px)] top-[calc(50%+37.35px)]" data-node-id="25:2221">
@@ -93,7 +93,7 @@ function Screen() {
         </div>
       </div>
       <div className="absolute contents left-[172.01px] top-[206.07px]" data-node-id="25:2223">
-        <div className="-translate-x-1/2 [word-break:break-word] absolute contents font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%+1.28px)] not-italic text-[22.911px] top-[206.07px] tracking-[-1.6038px] whitespace-nowrap" data-node-id="25:2224">
+        <div className="-translate-x-1/2 [word-break:break-word] absolute contents kop-font-display leading-[0.75] left-[calc(50%+1.28px)] not-italic text-[22.911px] top-[206.07px] tracking-[-1.6038px] whitespace-nowrap" data-node-id="25:2224">
           <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[206.07px]" data-node-id="25:2225">
             <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[206.07px]" data-node-id="25:2226">
               гость 1
@@ -234,6 +234,7 @@ function Screen() {
     </div>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(Screen));

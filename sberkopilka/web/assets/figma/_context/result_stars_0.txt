@@ -1,0 +1,123 @@
+const img2 = "http://localhost:3845/assets/488b182ee2274bda0e42f0406d131ba5de756d0c.png";
+const img3 = "http://localhost:3845/assets/199c5ba01a61e6cc478ed13de37575b68e5c4776.png";
+const imgAfishaFest1 = "http://localhost:3845/assets/1724834e9cd8f19f44532aab58b10b8b423901bb.png";
+const imgBgDecor = "http://localhost:3845/assets/ef20563d31b1b29159550b8fce4618ea743d9ce9.svg";
+const img1 = "http://localhost:3845/assets/dd849ce3e75e01bc98af7d108143446b11e5b96c.svg";
+const imgStar23 = "http://localhost:3845/assets/0d00139e4b4207ad647c1fda193c9be8b48194a2.svg";
+const imgStar24 = "http://localhost:3845/assets/19de2d3a0f94df8b548da373611aff3147adf25d.svg";
+const imgStar20 = "http://localhost:3845/assets/fe265d5fb2cf2a3bd5116ce6ded47220bc7ab7fc.svg";
+const imgStar21 = "http://localhost:3845/assets/61c22506e221233b1f28719d0e16d4a25431533d.svg";
+const imgVector234257109 = "http://localhost:3845/assets/6b5fe7202943af11991786a081c9bb69652cc6af.svg";
+const imgStar25 = "http://localhost:3845/assets/bc44e9feb210f23e1dae18b5219b8df2d3f4925c.svg";
+
+export default function Frame() {
+  return (
+    <div className="bg-gradient-to-b from-[#ecfffe] relative size-full to-[#9effa8]" data-node-id="1:103">
+      <div className="absolute flex h-[875.096px] items-center justify-center left-[-319px] top-[245px] w-[1344.366px]">
+        <div className="-scale-y-100 flex-none rotate-[-171.7deg]">
+          <div className="h-[701.176px] opacity-90 relative w-[1256.35px]" data-node-id="1:104" data-name="Трава 2">
+            <div aria-hidden className="absolute inset-0 pointer-events-none">
+              <img alt="" className="absolute max-w-none object-cover size-full" src={img2} />
+              <img alt="" className="absolute max-w-none object-cover size-full" src={img3} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="1:105" data-name="Границы экрана" />
+      <div className="absolute h-[883.211px] left-[-69.53px] top-[-114px] w-[727.743px]" data-node-id="1:106" data-name="BG Decor">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBgDecor} />
+      </div>
+      <div className="-translate-x-1/2 absolute h-[25.149px] left-[calc(50%-0.14px)] top-[61.34px] w-[258.29px]" data-node-id="1:110" data-name="_РЎР»РѕР№_1">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
+      </div>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[386px] left-[calc(50%-0.5px)] pointer-events-none rounded-[28.433px] top-[calc(50%-42px)] w-[363px]" data-node-id="1:126">
+        <div aria-hidden className="absolute backdrop-blur-[67.292px] bg-[rgba(255,255,255,0.8)] inset-0 rounded-[28.433px]" />
+        <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0px_2.812px_60.598px_0px_rgba(255,255,255,0.25)]" />
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Text:Bold'] leading-[0] left-[calc(50%+0.5px)] not-italic text-[#122654] text-[17px] text-center top-[126px] tracking-[-1.19px] w-[329px]" data-node-id="1:127">
+        <span className="leading-none">
+          Похоже, тебе еще есть чему
+          <br aria-hidden />
+          поучиться о ведении бюджета!
+          <br aria-hidden />
+        </span>
+        <span className="font-['SB_Sans_Text:Medium'] leading-none">
+          Но хорошо, что есть СберИнвестиции,
+          <br aria-hidden />с ними у тебя получится со всем разобраться.
+        </span>
+      </p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Text:Medium'] leading-none left-[calc(50%+0.5px)] not-italic text-[#122654] text-[17px] text-center top-[427px] tracking-[-1.19px] w-[221px]" data-node-id="1:128">
+        К легкому способу
+        <br aria-hidden />
+        инвестировать незаметно
+      </p>
+      <div className="absolute contents left-[257px] top-[245px]" data-node-id="1:129">
+        <div className="absolute bg-white left-[257px] rounded-[15px] size-[159px] top-[245px]" data-node-id="1:130" />
+        <div className="absolute left-[262.05px] size-[148.063px] top-[250.05px]" data-node-id="1:131" data-name="afisha-fest 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgAfishaFest1} />
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[112px] size-[75.642px] top-[203px]">
+        <div className="flex-none rotate-[3.16deg]">
+          <div className="relative size-[71.798px]" data-node-id="1:132">
+            <div className="absolute inset-[10.67%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar23} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[145.03px] size-[62.196px] top-[243.23px]">
+        <div className="flex-none rotate-[61.07deg]">
+          <div className="relative size-[45.768px]" data-node-id="1:133">
+            <div className="absolute inset-[10.67%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar24} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[83px] left-[calc(50%-0.5px)] pointer-events-none rounded-[40px] top-[calc(50%+200.5px)] w-[363px]" data-node-id="1:134">
+        <div aria-hidden className="absolute backdrop-blur-[67.292px] bg-[rgba(255,255,255,0.8)] inset-0 rounded-[40px]" />
+        <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0px_2.812px_60.598px_0px_rgba(255,255,255,0.25)]" />
+      </div>
+      <div className="absolute h-[72px] left-[363px] top-[500px] w-[74px]" data-node-id="1:135">
+        <div className="absolute inset-[1.99%_4.32%_9.09%_4.32%]">
+          <img alt="" className="block max-w-none size-full" src={imgStar20} />
+        </div>
+      </div>
+      <div className="absolute left-[300px] size-[72px] top-[500px]" data-node-id="1:136">
+        <div className="absolute inset-[2.31%_4.08%_9.25%_4.08%]">
+          <img alt="" className="block max-w-none size-full" src={imgStar21} />
+        </div>
+      </div>
+      <div className="absolute h-[72px] left-[234px] top-[500px] w-[74px]" data-node-id="1:137">
+        <div className="absolute inset-[1.99%_4.32%_9.09%_4.32%]">
+          <img alt="" className="block max-w-none size-full" src={imgStar20} />
+        </div>
+      </div>
+      <div className="absolute flex h-[102.638px] items-center justify-center left-[452px] top-[426.78px] w-[83.441px]">
+        <div className="flex-none rotate-[178.25deg]">
+          <div className="h-[100.224px] relative w-[80.412px]" data-node-id="1:138">
+            <div className="absolute inset-[-2.41%_-3.77%_0_-3.77%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234257109} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[467.68px] size-[84.36px] top-[364px]">
+        <div className="flex-none rotate-[-25.52deg]">
+          <div className="relative size-[63.272px]" data-node-id="1:139">
+            <div className="absolute inset-[9.77%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar25} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

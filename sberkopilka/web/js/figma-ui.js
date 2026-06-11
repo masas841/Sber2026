@@ -189,10 +189,14 @@
     return screenId;
   }
 
+  function isLegacyResultScreen(screenId) {
+    return screenId?.startsWith("result_") && !screenId.startsWith("result_stars_");
+  }
+
   function mountIframe(stage, screenId, extraClass) {
     const frame = document.createElement("iframe");
     frame.className = `figma-overlay__frame${extraClass ? ` ${extraClass}` : ""}`;
-    const FIGMA_IFRAME_V = 24;
+    const FIGMA_IFRAME_V = 29;
     frame.src = HTML_BASE + htmlScreenId(screenId) + ".html?v=" + FIGMA_IFRAME_V;
     frame.setAttribute("scrolling", "no");
     frame.setAttribute("title", screenId);
@@ -703,7 +707,7 @@
   }
 
   async function prepareIncomingFrame(incoming, screenId) {
-    const isResult = screenId.startsWith("result_");
+    const isResult = isLegacyResultScreen(screenId);
     if (SCREEN_HIDDEN_NODES[screenId]) {
       injectScreenHiddenStyle(incoming, screenId);
     }
@@ -1351,7 +1355,9 @@
 
   function updateGameMode(msg) {
     if (!gameHudEls?.mode) return;
-    gameHudEls.mode.textContent = msg || "";
+    const text = msg || "";
+    gameHudEls.mode.textContent = text;
+    gameHudEls.mode.classList.toggle("is-pause", /^Пауза\s+\d+/i.test(text));
   }
 
   function createResultNickPicker(chrome, initialName) {

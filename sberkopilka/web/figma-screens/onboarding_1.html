@@ -9,8 +9,8 @@
       theme: { extend: {} }
     };
   </script>
-  <link rel="stylesheet" href="/static/css/figma-fonts.css?v=3" />
-  <link rel="stylesheet" href="/static/css/figma-animations.css?v=12" />
+  <link rel="stylesheet" href="/static/css/figma-fonts.css" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=4" />
   <style>
     html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }
     #capture {
@@ -23,7 +23,7 @@
 </head>
 <body>
   <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
-  <script src="/static/js/figma-screen-boot.js?v=3"></script>
+  <script src="/static/js/figma-screen-boot.js"></script>
   <script crossorigin src="/static/vendor/react.production.min.js"></script>
   <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
@@ -265,10 +265,10 @@ function Screen() {
       </div>
       <div className="-translate-x-1/2 absolute contents left-[calc(50%+6.5px)] top-[61.34px]" data-node-id="25:907" data-name="Лого+текст">
         <div className="-translate-x-1/2 [word-break:break-word] absolute contents left-[calc(50%+6.5px)] not-italic text-[#122654] top-[119px]" data-node-id="25:908">
-          <p className="-translate-x-1/2 absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-1/2 text-[32.393px] top-[119px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:909">
+          <p className="absolute kop-font-display leading-[0.75] left-[calc(50%-175px)] text-[32.393px] top-[119px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:909">
             Собирай капитал
           </p>
-          <p className="-translate-x-1/2 absolute font-['SB_Sans_Text:Medium'] leading-[1.2] left-[calc(50%+6.5px)] lowercase text-[15px] text-center top-[153px] tracking-[-1.05px] w-[337px]" data-node-id="25:910">
+          <p className="-translate-x-1/2 absolute kop-font-text-medium leading-[1.2] left-[calc(50%+6.5px)]  text-[15px] text-center top-[153px] tracking-[-1.05px] w-[337px]" data-node-id="25:910">
             Управляй ИнвестКопилкой на экране, лови монеты, проценты и активы СберИнвестиций.
             <br aria-hidden />
             <br aria-hidden />
@@ -278,10 +278,11 @@ function Screen() {
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={img5} />
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:927" data-name="Границы экрана" />
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-[0.31] rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:927" data-name="Границы экрана" />
     </div>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(Screen));

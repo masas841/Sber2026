@@ -131,7 +131,9 @@ class FigmaFlowScene extends Phaser.Scene {
     this._navigating = false;
 
     if (this.screenId === "start") {
-      this.loadBestScore();
+      this.registry.remove("lastPlayerName");
+      this.registry.remove("lbHighlightPlayer");
+      this.registry.remove("lbPrefetch");
     }
   }
 
@@ -157,12 +159,6 @@ class FigmaFlowScene extends Phaser.Scene {
   update() {
     if (this.joy) {
       this.joy.update();
-      if (this.joy.consumeOptionsPress() && this.screenId === "start") {
-        this.registry.remove("lastPlayerName");
-        this.registry.remove("lbHighlightPlayer");
-        this.scene.start("Leaderboard");
-        return;
-      }
       if (this.joy.consumeConfirmPress()) {
         this.goNext();
         return;
@@ -918,41 +914,19 @@ class GameScene extends Phaser.Scene {
     this.clockTimer = null;
     this.registry.set("lastScore", this.score);
 
-    KopilkaFigmaUi.prefetchScreen("leaderboard");
+    KopilkaFigmaUi.prefetchScreen("result_score");
+    KopilkaFigmaUi.prefetchScreen(classifyStarsResultScreen(this.score));
     await KopilkaFigmaUi.dissolveGameLayer();
     this.scene.start("Result");
   }
 }
 
-const RESULT_LEADERBOARD_SEC = 10;
-const LEADERBOARD_TOP_LIMIT = 8;
-
-function classifyResultScreen(score, entries) {
-  const list = entries || [];
-  if (score <= 0) return "result_score";
-
-  const topScore = list[0]?.score;
-  const eighthScore = list.length >= LEADERBOARD_TOP_LIMIT ? list[LEADERBOARD_TOP_LIMIT - 1].score : null;
-
-  if (topScore == null || score > topScore) return "result_record";
-  if (score === topScore) return "result_record";
-  if (eighthScore == null || score >= eighthScore) return "result_top";
-  return "result_score";
-}
-
-async function fetchLeaderboardEntries(limit) {
-  const ac = new AbortController();
-  const timer = setTimeout(() => ac.abort(), 4000);
-  try {
-    const res = await fetch(`/api/leaderboard?limit=${limit}`, { signal: ac.signal });
-    if (!res.ok) return [];
-    const data = await res.json();
-    return data.entries || [];
-  } catch {
-    return [];
-  } finally {
-    clearTimeout(timer);
-  }
+function classifyStarsResultScreen(score) {
+  const n = Number(score) || 0;
+  if (n < 500) return "result_stars_0";
+  if (n <= 700) return "result_stars_1";
+  if (n <= 1100) return "result_stars_2";
+  return "result_stars_3";
 }
 
 class ResultScene extends Phaser.Scene {
@@ -963,166 +937,62 @@ class ResultScene extends Phaser.Scene {
   async create() {
     const score = this.registry.get("lastScore") || 0;
     const bestBefore = this.registry.get("bestScore") || 0;
-    this.nickIndex = 0;
     this.score = score;
     this._finished = false;
-    this._uiReady = false;
-    this._submitting = false;
     this.screenId = "result_score";
-    this.nickUi = null;
-    this._countdownTimer = null;
+    this.finalScreenId = classifyStarsResultScreen(score);
+    this.phase = "score";
 
     this.joy = linkGamepad(this) || this.registry.get("joystick");
-    this.cursors = this.input.keyboard.createCursorKeys();
     this.keys = this.input.keyboard.addKeys("ENTER,SPACE");
 
     KopilkaFigmaUi.drawGradientBg(this);
     KopilkaFigmaUi.prefetchScreen("result_score");
-    KopilkaFigmaUi.prefetchScreen("result_top");
-    KopilkaFigmaUi.prefetchScreen("result_record");
-    KopilkaFigmaUi.prefetchScreen("leaderboard");
-    this.registry.remove("lbPrefetch");
+    KopilkaFigmaUi.prefetchScreen(this.finalScreenId);
 
-    const entries = await fetchLeaderboardEntries(LEADERBOARD_TOP_LIMIT);
-    if (!this.scene.isActive("Result")) return;
-
-    this.screenId = classifyResultScreen(score, entries);
     const ui = KopilkaFigmaUi.buildStaticScreen(this, this.screenId, { score });
     await ui.framePromise;
     if (!this.scene.isActive("Result")) return;
 
-    this.mountResultNickUi();
-
     this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this._countdownTimer?.remove(false);
-      this._countdownTimer = null;
-      if (this._resultKeyHandler && this.input?.keyboard) {
-        this.input.keyboard.off("keydown", this._resultKeyHandler);
-      }
-      this._resultKeyHandler = null;
-      this.nickUi?.destroy();
-      this.nickUi = null;
+      this._finished = true;
     });
 
     if (score > bestBefore) this.registry.set("bestScore", score);
   }
 
-  startResultCountdownTimer() {
-    this._countdownTimer?.remove(false);
-    this._countdownTimer = this.time.addEvent({
-      delay: 1000,
-      loop: true,
-      callback: () => {
-        if (this._finished) return;
-        this._countdownLeft -= 1;
-        if (this._countdownLeft > 0) {
-          this.nickUi?.setCountdown(this._countdownLeft);
-          return;
-        }
-        this.finishAndGoToLeaderboard();
-      },
-    });
-  }
-
-  mountResultNickUi() {
-    const chrome = document.querySelector("#figma-overlay .figma-overlay__chrome");
-    this.nickUi = KopilkaFigmaUi.createResultNickPicker(chrome, NICKNAMES[this.nickIndex]);
-    this.nickUi?.setHintVisible(false);
-    this._countdownLeft = RESULT_LEADERBOARD_SEC;
-    this.nickUi?.setCountdown(this._countdownLeft);
-    this.startResultCountdownTimer();
-
-    this.bindResultKeyboardIdleReset();
-    this._uiReady = true;
-  }
-
-  resetResultIdleTimer() {
-    if (this._finished || !this._uiReady) return;
-    this._countdownLeft = RESULT_LEADERBOARD_SEC;
-    this.nickUi?.setCountdown(this._countdownLeft);
-    this.startResultCountdownTimer();
-  }
-
-  bindResultKeyboardIdleReset() {
-    if (!this.input?.keyboard || this._resultKeyHandler) return;
-    this._resultKeyHandler = () => this.resetResultIdleTimer();
-    this.input.keyboard.on("keydown", this._resultKeyHandler);
-  }
-
-  shiftNick(delta) {
-    this.nickIndex = (this.nickIndex + delta + NICKNAMES.length) % NICKNAMES.length;
-    this.nickUi?.setName(NICKNAMES[this.nickIndex]);
-    this.resetResultIdleTimer();
-  }
-
-  finishAndGoToLeaderboard() {
+  async showFinalStarsScreen() {
     if (this._finished) return;
     this._finished = true;
-    this._countdownTimer?.remove(false);
-    this._countdownTimer = null;
-    this.nickUi?.setCountdown(0);
-    const name = NICKNAMES[this.nickIndex];
-    this.registry.set("lastPlayerName", name);
-    this.registry.set("lbHighlightPlayer", true);
-    this.registry.set("lbPrefetch", this.submitAndLoadLeaderboard(name, this.score));
-    this.nickUi?.destroy();
-    this.nickUi = null;
-    this.scene.start("Leaderboard");
+    this.phase = "stars";
+    const root = document.getElementById("figma-overlay");
+    await KopilkaFigmaUi.crossfadeTo(root, this.finalScreenId);
+    if (!this.scene.isActive("Result")) return;
+    this.screenId = this.finalScreenId;
+    this._finished = false;
   }
 
   update() {
-    if (this._finished || !this._uiReady) return;
+    if (this._finished) return;
     this.joy?.update();
 
-    if (this.joy?.consumeAnyButtonEdge()) {
-      this.resetResultIdleTimer();
-    }
-
     if (this.joy?.consumeOptionsPress()) {
-      this._finished = true;
-      this._countdownTimer?.remove(false);
-      this._countdownTimer = null;
-      this.nickUi?.destroy();
-      this.nickUi = null;
       this.scene.start("Start");
       return;
     }
-
-    const nav = this.joy?.consumeNameNavEdge();
-    if (nav === "left") this.shiftNick(-1);
-    if (nav === "right") this.shiftNick(1);
-    if (this.cursors && Phaser.Input.Keyboard.JustDown(this.cursors.left)) this.shiftNick(-1);
-    if (this.cursors && Phaser.Input.Keyboard.JustDown(this.cursors.right)) this.shiftNick(1);
 
     const confirm =
       this.joy?.consumeCrossPress() ||
       (this.keys && Phaser.Input.Keyboard.JustDown(this.keys.ENTER)) ||
       (this.keys && Phaser.Input.Keyboard.JustDown(this.keys.SPACE));
-    if (confirm) {
-      this.finishAndGoToLeaderboard();
+    if (!confirm) return;
+
+    if (this.phase === "score") {
+      void this.showFinalStarsScreen();
+      return;
     }
-  }
 
-  submitAndLoadLeaderboard(name, score) {
-    if (this._submitting) {
-      return this.registry.get("lbPrefetch") || Promise.resolve({ entries: [] });
-    }
-    this._submitting = true;
-
-    const ac = new AbortController();
-    const timeoutId = setTimeout(() => ac.abort(), 5000);
-
-    return fetch("/api/leaderboard", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ player_name: name, score }),
-      signal: ac.signal,
-    })
-      .catch(() => {})
-      .then(() => fetch("/api/leaderboard?limit=8", { signal: ac.signal }))
-      .then((res) => (res.ok ? res.json() : { entries: [] }))
-      .catch(() => ({ entries: [] }))
-      .finally(() => clearTimeout(timeoutId));
+    this.scene.start("Start");
   }
 }
 

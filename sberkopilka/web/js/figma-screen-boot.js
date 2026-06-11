@@ -17,6 +17,7 @@
     "kop-onboarding-slide-out",
     "kop-onboarding-slide-in",
     "kop-result-exit",
+    "kop-result-stars-enter",
     "kop-leaderboard-enter",
   ];
 
@@ -29,6 +30,7 @@
     "onboarding-slide-out": ["kop-onboarding-slide-out"],
     "onboarding-slide-in": ["kop-onboarding-slide-in"],
     "result-exit": ["kop-result-exit"],
+    "result-stars-enter": ["kop-result-stars-enter"],
     "leaderboard-enter": ["kop-leaderboard-enter"],
   };
 

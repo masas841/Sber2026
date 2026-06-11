@@ -11,11 +11,12 @@
     "transition-in": 660,
     "start-exit": 560,
     "onboarding-enter": 1000,
-    "onboarding-slide-out": 600,
-    "onboarding-slide-in": 800,
+    "onboarding-slide-out": 960,
+    "onboarding-slide-in": 1000,
     dissolve: 620,
     "result-exit": 620,
     "leaderboard-enter": 660,
+    "result-stars-enter": 1400,
     reset: 0,
   };
 
@@ -64,6 +65,9 @@
     }
     if (fromId?.startsWith("result_") && toId === "leaderboard") {
       return { out: "result-exit", in: "leaderboard-enter", parallel: false };
+    }
+    if (toId?.startsWith("result_stars_")) {
+      return { in: "result-stars-enter" };
     }
     if (toId?.startsWith("result_")) {
       return { in: "result-enter" };

@@ -9,8 +9,8 @@
       theme: { extend: {} }
     };
   </script>
-  <link rel="stylesheet" href="/static/css/figma-fonts.css?v=3" />
-  <link rel="stylesheet" href="/static/css/figma-animations.css?v=12" />
+  <link rel="stylesheet" href="/static/css/figma-fonts.css" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=2" />
   <style>
     html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }
     #capture {
@@ -23,7 +23,7 @@
 </head>
 <body>
   <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
-  <script src="/static/js/figma-screen-boot.js?v=3"></script>
+  <script src="/static/js/figma-screen-boot.js"></script>
   <script crossorigin src="/static/vendor/react.production.min.js"></script>
   <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
@@ -111,13 +111,13 @@ function Screen() {
         <div className="-translate-x-1/2 absolute h-[25.149px] left-[calc(50%-0.14px)] top-[61.34px] w-[258.29px]" data-node-id="25:1384" data-name="Лого">
           <img alt="" className="absolute block inset-0 max-w-none size-full" src={img5} />
         </div>
-        <div className="-translate-x-1/2 [word-break:break-word] absolute contents kop-font-display leading-[0.75] left-[calc(50%+0.23px)] lowercase not-italic text-center top-[111px]" data-node-id="25:1400">
+        <div className="-translate-x-1/2 [word-break:break-word] absolute contents kop-font-display leading-[0.75] left-[calc(50%+0.23px)]  not-italic text-center top-[111px]" data-node-id="25:1400">
           <p className="-translate-x-1/2 absolute left-[calc(50%+0.23px)] text-[#ff64a2] text-[35.513px] top-[111px] tracking-[-2.4859px] w-[392.458px]" data-node-id="25:1401">{`ИнвестКопилка `}</p>
           <p className="-translate-x-1/2 absolute left-[calc(50%-0.63px)] text-[#122654] text-[17.978px] top-[138.27px] tracking-[-1.2585px] w-[198.678px]" data-node-id="25:1402">
             против
           </p>
           <p className="-translate-x-1/2 absolute left-[calc(50%+0.23px)] text-[#122654] text-[35.513px] top-[150.49px] tracking-[-2.4859px] w-[392.458px]" data-node-id="25:1403">
-            монстров-<br aria-hidden />расходов
+            монстров-расходов
           </p>
         </div>
       </div>
@@ -126,13 +126,14 @@ function Screen() {
           <div aria-hidden className="absolute backdrop-blur-[11.126px] bg-[rgba(217,217,217,0.4)] inset-0 rounded-[22.252px] kop-glass-btn" />
           <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0px_2.967px_63.937px_0px_rgba(255,255,255,0.25)]" />
         </div>
-        <p className="-translate-x-1/2 [word-break:break-word] absolute kop-font-display leading-[0.75] left-[calc(50%-0.81px)] lowercase not-italic text-[37.116px] text-center text-white top-[581.56px] tracking-[-2.5981px] whitespace-nowrap" data-node-id="25:1406">
+        <p className="-translate-x-1/2 [word-break:break-word] absolute kop-font-display leading-[0.75] left-[calc(50%-0.81px)]  not-italic text-[37.116px] text-center text-white top-[581.56px] tracking-[-2.5981px] whitespace-nowrap" data-node-id="25:1406">
           играть
         </p>
       </div>
     </div>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(Screen));

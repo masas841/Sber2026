@@ -53,7 +53,7 @@
 
 @keyframes kop-enemy-hover {
   0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-10px) scale(1.03); }
+  50% { transform: translateY(-6px) scale(1.02); }
 }
 
 @keyframes kop-coin-float {
@@ -106,6 +106,11 @@
 }
 
 /* ── Общий фон ── */
+[data-name="Границы экрана"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 [data-name="BG Decor"] {
   animation: kop-bg-breathe 8s ease-in-out infinite;
   transform-origin: 50% 40%;
@@ -126,6 +131,7 @@
 
 [data-name="Копилка"],
 [data-name="3D ИнвестКопилка 2"],
+[data-node-id="25:898"],
 [data-name="Свинья"] {
   animation: kop-bob 3.2s ease-in-out infinite;
   transform-origin: 50% 60%;
@@ -146,6 +152,12 @@
 }
 
 /* ── Онбординг 1: капитал ── */
+[data-node-id="25:909"] {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  text-align: center;
+}
+
 [data-name="Папка"] {
   animation: kop-tilt 5.5s ease-in-out infinite;
   transform-origin: 50% 80%;
@@ -162,8 +174,13 @@
   animation-delay: 0.8s;
 }
 
-[data-name="Монетка"] {
+[data-name="Монетка"]:not([data-node-id="25:905"]) {
   animation: kop-coin-float 3.6s ease-in-out infinite;
+}
+
+[data-node-id="25:905"] {
+  animation: kop-bob 3.2s ease-in-out infinite;
+  transform-origin: 50% 60%;
 }
 
 [data-node-id="25:905"] {
@@ -453,20 +470,35 @@
   to { translate: 120% 0; rotate: 20deg; opacity: 0; }
 }
 
+@keyframes kop-start-star-out {
+  to { translate: -130% -18%; rotate: -24deg; opacity: 0; }
+}
+
+@keyframes kop-start-spiral-out {
+  to { translate: 130% -16%; rotate: 28deg; opacity: 0; }
+}
+
 @keyframes kop-start-btn-out {
   to { translate: 0 28%; opacity: 0; }
 }
 
-.kop-start-exit [data-name="Лого+текст"] > *,
-.kop-start-exit [data-name="Лого+текст"] p,
-.kop-start-exit [data-node-id="25:1384"] {
+.kop-start-exit [data-name="Лого+текст"] p {
   animation: kop-start-logo-out 0.55s ease-in forwards !important;
 }
 
 .kop-start-exit [data-name="Копилка"],
 .kop-start-exit [data-name="3D ИнвестКопилка 2"],
-.kop-start-exit [data-name="Свинья"] {
+.kop-start-exit [data-name="Свинья"],
+.kop-start-exit [data-name="Тень"] {
   animation: kop-start-pig-out 0.55s ease-in forwards !important;
+}
+
+.kop-start-exit [data-node-id="25:1382"] {
+  animation: kop-start-star-out 0.55s ease-in forwards !important;
+}
+
+.kop-start-exit [data-node-id="25:1381"] {
+  animation: kop-start-spiral-out 0.55s ease-in forwards !important;
 }
 
 .kop-start-exit [data-name="Трава1"],
@@ -513,7 +545,6 @@
    бóльшую специфичность (body.kop-... ), чем правило ин-анимации (.kop-...),
    и перебивало саму ин-анимацию — объекты не въезжали, а резко появлялись. */
 
-.kop-onboarding-enter [data-name="Лого+текст"] > *,
 .kop-onboarding-enter [data-name="Лого+текст"] p {
   animation: kop-onb-drop 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
   opacity: 0;
@@ -526,6 +557,8 @@
 }
 
 .kop-onboarding-enter [data-node-id="25:897"],
+.kop-onboarding-enter [data-node-id="25:898"],
+.kop-onboarding-enter [data-node-id="25:905"],
 .kop-onboarding-enter [data-node-id="25:1338"],
 .kop-onboarding-enter [data-name="3D ИнвестКопилка 2"] {
   animation: kop-onb-pig-rise 0.82s cubic-bezier(0.22, 1, 0.36, 1) 0.16s forwards !important;
@@ -535,7 +568,7 @@
 .kop-onboarding-enter [data-name="Папка"],
 .kop-onboarding-enter [data-name="Процент"],
 .kop-onboarding-enter [data-name="Слиток"],
-.kop-onboarding-enter [data-name="Монетка"],
+.kop-onboarding-enter [data-name="Монетка"]:not([data-node-id="25:905"]),
 .kop-onboarding-enter [data-name="Инфляция"],
 .kop-onboarding-enter [data-name="Покупки"],
 .kop-onboarding-enter [data-name="Фомо"],
@@ -575,21 +608,22 @@
   to { translate: 0 0; scale: 1; opacity: 1; }
 }
 
-.kop-onboarding-slide-out [data-name="Лого+текст"] > *,
 .kop-onboarding-slide-out [data-name="Лого+текст"] p {
   animation: kop-text-slide-left 0.52s ease-in forwards !important;
 }
 
 .kop-onboarding-slide-out [data-node-id="25:897"],
+.kop-onboarding-slide-out [data-node-id="25:898"],
+.kop-onboarding-slide-out [data-node-id="25:905"],
 .kop-onboarding-slide-out [data-node-id="25:1338"],
 .kop-onboarding-slide-out [data-name="3D ИнвестКопилка 2"] {
-  animation: kop-sphere-roll-out 0.58s ease-in forwards !important;
+  animation: kop-sphere-roll-out 0.92s ease-in forwards !important;
 }
 
 .kop-onboarding-slide-out [data-name="Папка"],
 .kop-onboarding-slide-out [data-name="Процент"],
 .kop-onboarding-slide-out [data-name="Слиток"],
-.kop-onboarding-slide-out [data-name="Монетка"],
+.kop-onboarding-slide-out [data-name="Монетка"]:not([data-node-id="25:905"]),
 .kop-onboarding-slide-out [data-name="Инфляция"],
 .kop-onboarding-slide-out [data-name="Покупки"],
 .kop-onboarding-slide-out [data-name="Фомо"],
@@ -600,23 +634,24 @@
   animation: kop-onb-deco-out 0.45s ease-in forwards !important;
 }
 
-.kop-onboarding-slide-in [data-name="Лого+текст"] > *,
 .kop-onboarding-slide-in [data-name="Лого+текст"] p {
   animation: kop-text-slide-right-in 0.58s cubic-bezier(0.22, 1, 0.36, 1) 0.06s forwards !important;
   opacity: 0;
 }
 
 .kop-onboarding-slide-in [data-node-id="25:897"],
+.kop-onboarding-slide-in [data-node-id="25:898"],
+.kop-onboarding-slide-in [data-node-id="25:905"],
 .kop-onboarding-slide-in [data-node-id="25:1338"],
 .kop-onboarding-slide-in [data-name="3D ИнвестКопилка 2"] {
-  animation: kop-sphere-roll-in 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  animation: kop-sphere-roll-in 0.96s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
   opacity: 0;
 }
 
 .kop-onboarding-slide-in [data-name="Папка"],
 .kop-onboarding-slide-in [data-name="Процент"],
 .kop-onboarding-slide-in [data-name="Слиток"],
-.kop-onboarding-slide-in [data-name="Монетка"],
+.kop-onboarding-slide-in [data-name="Монетка"]:not([data-node-id="25:905"]),
 .kop-onboarding-slide-in [data-name="Инфляция"],
 .kop-onboarding-slide-in [data-name="Покупки"],
 .kop-onboarding-slide-in [data-name="Фомо"],
@@ -637,10 +672,28 @@
   to { translate: 38% 8%; scale: 0.75; opacity: 0; }
 }
 
+@keyframes kop-result-score-up {
+  to { translate: 0 -42%; scale: 0.86; opacity: 0; }
+}
+
+@keyframes kop-result-confetti-down {
+  to { translate: 0 38%; scale: 0.92; opacity: 0; }
+}
+
 .kop-result-exit [data-name="Копилка"] > *,
 .kop-result-exit [data-name="Свинья"] > *,
 .kop-result-exit [data-name="Трава 1"] {
   animation: kop-result-pig-left 0.6s ease-in forwards !important;
+}
+
+.kop-result-exit [data-node-id="25:1707"],
+.kop-result-exit [data-node-id="25:2020"],
+.kop-result-exit [data-node-id="25:1724"],
+.kop-result-exit [data-node-id="25:1725"],
+.kop-result-exit [data-node-id="25:2017"],
+.kop-result-exit [data-node-id="25:2018"],
+.kop-result-exit [data-node-id="25:2019"] {
+  animation: kop-result-score-up 0.6s ease-in forwards !important;
 }
 
 .kop-result-exit [data-name="Покупки"],
@@ -653,6 +706,69 @@
 .kop-result-exit [data-node-id="25:1673"],
 .kop-result-exit .kop-result-inflation-fix {
   animation: kop-result-monsters-right 0.6s ease-in forwards !important;
+}
+
+.kop-result-exit [data-name="Конфетти"],
+.kop-result-exit [data-node-id="25:2037"] {
+  animation: kop-result-confetti-down 0.6s ease-in forwards !important;
+}
+
+/* ── Финальные экраны результата со звёздами ── */
+@keyframes kop-result-stars-card-in {
+  from { translate: 0 7%; scale: 0.98; opacity: 0; }
+  to { translate: 0 0; scale: 1; opacity: 1; }
+}
+
+@keyframes kop-result-star-ignite {
+  0% { scale: 0.25; rotate: -10deg; opacity: 0; filter: brightness(0.7); }
+  64% { scale: 1.18; rotate: 5deg; opacity: 1; filter: brightness(1.28); }
+  100% { scale: 1; rotate: 0deg; opacity: 1; filter: brightness(1); }
+}
+
+.kop-result-stars-enter [data-node-id="1:126"],
+.kop-result-stars-enter [data-node-id="1:205"],
+.kop-result-stars-enter [data-node-id="1:89"],
+.kop-result-stars-enter [data-node-id="1:242"],
+.kop-result-stars-enter [data-node-id="1:127"],
+.kop-result-stars-enter [data-node-id="1:206"],
+.kop-result-stars-enter [data-node-id="1:90"],
+.kop-result-stars-enter [data-node-id="1:243"],
+.kop-result-stars-enter [data-node-id="1:128"],
+.kop-result-stars-enter [data-node-id="1:207"],
+.kop-result-stars-enter [data-node-id="1:91"],
+.kop-result-stars-enter [data-node-id="1:244"],
+.kop-result-stars-enter [data-node-id="1:129"],
+.kop-result-stars-enter [data-node-id="1:208"],
+.kop-result-stars-enter [data-node-id="1:92"],
+.kop-result-stars-enter [data-node-id="1:245"] {
+  animation: kop-result-stars-card-in 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  opacity: 0;
+}
+
+.kop-result-stars-enter [data-node-id="1:216"],
+.kop-result-stars-enter [data-node-id="1:100"],
+.kop-result-stars-enter [data-node-id="1:99"],
+.kop-result-stars-enter [data-node-id="1:253"],
+.kop-result-stars-enter [data-node-id="1:252"],
+.kop-result-stars-enter [data-node-id="1:251"] {
+  animation: kop-result-star-ignite 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards !important;
+  opacity: 0;
+  transform-origin: 50% 50%;
+}
+
+.kop-result-stars-enter [data-node-id="1:216"],
+.kop-result-stars-enter [data-node-id="1:100"],
+.kop-result-stars-enter [data-node-id="1:253"] {
+  animation-delay: 0.42s !important;
+}
+
+.kop-result-stars-enter [data-node-id="1:99"],
+.kop-result-stars-enter [data-node-id="1:252"] {
+  animation-delay: 0.78s !important;
+}
+
+.kop-result-stars-enter [data-node-id="1:251"] {
+  animation-delay: 1.14s !important;
 }
 
 /* ── Лидерборд (вход) ── */

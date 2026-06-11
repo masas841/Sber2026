@@ -9,6 +9,8 @@
      уменьшаем единым scale (см. --kiosk-scale), чтобы влезть в меньшее окно. */
   --kiosk-px: 672px;
   --kiosk-scale: 1;
+  --kiosk-left: -84px;
+  --kiosk-top: 0px;
 }
 
 * {
@@ -25,42 +27,62 @@ body {
 }
 
 #game-root {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
+  left: var(--kiosk-left);
+  top: var(--kiosk-top);
+  width: var(--kiosk-px);
+  height: var(--kiosk-px);
+  display: block;
+  transform: scale(var(--kiosk-scale));
+  transform-origin: top left;
 }
 
 #game-root canvas {
   display: block;
   width: var(--kiosk-px);
   height: var(--kiosk-px);
-  transform: scale(var(--kiosk-scale));
-  transform-origin: center;
+  transform: none;
+  transform-origin: top left;
   position: relative;
 }
 
 #game-root.game-active {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
+  position: fixed;
+  left: var(--kiosk-left);
+  top: var(--kiosk-top);
+  width: var(--kiosk-px) !important;
+  height: var(--kiosk-px) !important;
   max-width: none;
   max-height: none;
   z-index: 2;
   pointer-events: auto;
   display: block;
+  transform: scale(var(--kiosk-scale));
+  transform-origin: top left;
 }
 
 #game-root.game-active canvas {
-  width: 100% !important;
-  height: 100% !important;
+  width: var(--kiosk-px) !important;
+  height: var(--kiosk-px) !important;
   max-width: none;
   max-height: none;
   display: block;
   background: transparent !important;
   transform: none !important;
+}
+
+.figma-overlay__stage > #game-root.game-active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  transform: none;
+}
+
+.figma-overlay__stage > #game-root.game-active canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .figma-overlay--game {
@@ -79,9 +101,10 @@ body {
 
 #game-hud {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(var(--kiosk-scale));
+  left: var(--kiosk-left);
+  top: var(--kiosk-top);
+  transform: scale(var(--kiosk-scale));
+  transform-origin: top left;
   width: var(--kiosk-px);
   height: var(--kiosk-px);
   overflow: visible;
@@ -127,6 +150,8 @@ body.kopilka-game-active .figma-overlay__hint {
 
 .figma-game-hud-lives-cloud,
 .figma-game-hud-score-cloud {
+  position: relative;
+  z-index: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -135,8 +160,8 @@ body.kopilka-game-active .figma-overlay__hint {
 }
 
 .figma-game-hud-cloud-shape {
-  fill: #c8fff5;
-  fill-opacity: 0.92;
+  fill: #e0fff8;
+  fill-opacity: 0.6;
   stroke: rgba(255, 255, 255, 0.72);
   stroke-width: 2;
   filter: drop-shadow(0 4px 14px rgba(18, 38, 84, 0.16));
@@ -177,7 +202,7 @@ body.kopilka-game-active .figma-overlay__hint {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 4px 18px rgba(255, 80, 120, 0.35));
+  filter: none;
   transform-origin: 50% 55%;
   animation: kop-heart-pulse 2.8s ease-in-out infinite;
 }
@@ -202,6 +227,24 @@ body.kopilka-game-active .figma-overlay__hint {
   to {
     transform: translateX(-50%) scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes kop-score-spiral-idle {
+  0%, 100% {
+    transform: rotate(2.74deg) translateY(0) scale(1);
+  }
+  50% {
+    transform: rotate(-3deg) translateY(-4px) scale(1.03);
+  }
+}
+
+@keyframes kop-score-star-idle {
+  0%, 100% {
+    transform: rotate(24.87deg) translateY(0) scale(1);
+  }
+  50% {
+    transform: rotate(34deg) translateY(-5px) scale(1.06);
   }
 }
 
@@ -285,6 +328,8 @@ body.kopilka-game-active .figma-overlay__hint {
   object-fit: contain;
   pointer-events: none;
   z-index: 2;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
 .figma-game-hud-score-decor--l {
@@ -294,6 +339,7 @@ body.kopilka-game-active .figma-overlay__hint {
   height: auto;
   aspect-ratio: 46 / 57;
   transform: rotate(2.74deg);
+  animation: kop-score-spiral-idle 3.8s ease-in-out infinite;
 }
 
 .figma-game-hud-score-decor--r {
@@ -303,6 +349,7 @@ body.kopilka-game-active .figma-overlay__hint {
   height: auto;
   aspect-ratio: 1;
   transform: rotate(24.87deg);
+  animation: kop-score-star-idle 3.2s ease-in-out 0.35s infinite;
 }
 
 .figma-game-hud--time {
@@ -317,12 +364,33 @@ body.kopilka-game-active .figma-overlay__hint {
 .figma-game-hud--mode {
   font-size: clamp(11px, 2.4vw, 13px);
   color: #122654;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.82);
   padding: 3px 10px;
   border-radius: 8px;
+  box-shadow: none;
   max-width: 90%;
   text-align: center;
   white-space: normal;
+}
+
+.figma-game-hud--mode:empty {
+  display: none;
+}
+
+.figma-game-hud--mode.is-pause {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  min-width: 44%;
+  padding: 16px 28px 18px;
+  border-radius: 24px;
+  background: rgba(217, 250, 255, 0.62);
+  backdrop-filter: blur(12px);
+  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  box-shadow: inset 0 2px 48px rgba(255, 255, 255, 0.34);
 }
 
 .figma-game-hud--score {
@@ -355,9 +423,10 @@ body.kopilka-game-active .figma-overlay__hint {
 
 .figma-overlay {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(var(--kiosk-scale));
+  left: var(--kiosk-left);
+  top: var(--kiosk-top);
+  transform: scale(var(--kiosk-scale));
+  transform-origin: top left;
   width: var(--kiosk-px);
   height: var(--kiosk-px);
   pointer-events: none;
@@ -491,10 +560,23 @@ body.kopilka-game-active .figma-overlay__hint {
   animation: kop-score-exit 0.55s ease-in forwards !important;
 }
 
+.figma-result-nick.figma-text--result-exit,
+.figma-result-nick__status.figma-text--result-exit,
+.figma-result-nick__countdown.figma-text--result-exit {
+  animation: kop-result-nick-exit 0.55s ease-in forwards !important;
+}
+
 @keyframes kop-score-exit {
   to {
     opacity: 0;
     transform: translateX(-50%) translateY(-120%);
+  }
+}
+
+@keyframes kop-result-nick-exit {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(90%);
   }
 }
 
@@ -598,22 +680,25 @@ body.kopilka-game-active .figma-overlay__hint {
 .figma-result-nick {
   position: absolute;
   left: 50%;
-  bottom: 16%;
+  top: 83.5%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(10px, 3.5vw, 24px);
-  padding: 14px 22px;
+  padding: 13px 24px 14px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 6px 24px rgba(18, 38, 84, 0.14);
+  background: rgba(217, 217, 217, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.22),
+    inset 0 3px 64px rgba(255, 255, 255, 0.25);
   z-index: 6;
   pointer-events: none;
 }
 
 .figma-result-nick__arrow {
-  font: 700 22px/1 "Segoe UI", system-ui, sans-serif;
+  font: 700 22px/1 "SB Sans Display", "Segoe UI", system-ui, sans-serif;
   color: #21a038;
   min-width: 1.2em;
   text-align: center;
@@ -622,8 +707,9 @@ body.kopilka-game-active .figma-overlay__hint {
 .figma-result-nick__value {
   margin: 0;
   min-width: 7.5em;
-  font: 700 22px/1.2 "Segoe UI", system-ui, sans-serif;
-  color: #122654;
+  font: 700 24px/1.05 "SB Sans Display", "Segoe UI", system-ui, sans-serif;
+  color: #ffffff;
+  letter-spacing: -0.06em;
   text-align: center;
 }
 
@@ -644,13 +730,17 @@ body.kopilka-game-active .figma-overlay__hint {
 .figma-result-nick__countdown {
   position: absolute;
   left: 50%;
-  bottom: 7%;
+  top: 92.5%;
   transform: translateX(-50%);
   margin: 0;
-  width: 92%;
+  width: auto;
+  min-width: 42%;
+  padding: 6px 14px;
+  border-radius: 999px;
   text-align: center;
-  font: 600 15px/1.3 "Segoe UI", system-ui, sans-serif;
-  color: rgba(18, 38, 84, 0.72);
+  font: 700 14px/1.2 "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+  color: rgba(18, 38, 84, 0.74);
+  background: rgba(236, 255, 254, 0.72);
   z-index: 6;
   pointer-events: none;
 }

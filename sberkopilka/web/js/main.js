@@ -49,7 +49,7 @@ if (window.__kopilkaLoadError) {
       },
       scale: {
         mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH,
+        autoCenter: Phaser.Scale.NO_CENTER,
       },
       scene: [
         BootScene,

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -9,8 +9,8 @@
       theme: { extend: {} }
     };
   </script>
-  <link rel="stylesheet" href="/static/css/figma-fonts.css?v=3" />
-  <link rel="stylesheet" href="/static/css/figma-animations.css?v=12" />
+  <link rel="stylesheet" href="/static/css/figma-fonts.css" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=2" />
   <style>
     html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }
     #capture {
@@ -23,7 +23,7 @@
 </head>
 <body>
   <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
-  <script src="/static/js/figma-screen-boot.js?v=3"></script>
+  <script src="/static/js/figma-screen-boot.js"></script>
   <script crossorigin src="/static/vendor/react.production.min.js"></script>
   <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
@@ -58,7 +58,6 @@ const imgVector1474 = "/static/assets/figma/shared/cdd9f596449eab0c78902c3151a1a
 const imgStar20 = "/static/assets/figma/shared/3b9cdf664523959652466575484ae0f3481bfb23.svg";
 const img4 = "/static/assets/figma/shared/dd849ce3e75e01bc98af7d108143446b11e5b96c.svg";
 const img5 = "/static/assets/figma/shared/abd74f7105dbdc10cf71d6e7bac3d47507e5d213.svg";
-
 
 function Screen() {
   return (
@@ -295,22 +294,23 @@ function Screen() {
           <img alt="" className="block max-w-none size-full" src={imgStar20} />
         </div>
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%-2.59px)] lowercase not-italic text-[#01d701] text-[21.431px] text-center top-[141px] tracking-[-1.5002px] w-[236.84px]" data-node-id="25:2018">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute kop-font-display leading-[0.75] left-[calc(50%-2.59px)]  not-italic text-[#01d701] text-[21.431px] text-center top-[141px] tracking-[-1.5002px] w-[236.84px]" data-node-id="25:2018">
         рекорд
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%-2.59px)] lowercase not-italic text-[#122654] text-[49.299px] text-center top-[162px] tracking-[-3.451px] w-[544.819px]" data-node-id="25:2019">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute kop-font-display leading-[0.75] left-[calc(50%-2.59px)]  not-italic text-[#122654] text-[49.299px] text-center top-[162px] tracking-[-3.451px] w-[544.819px]" data-node-id="25:2019">
         000
       </p>
       <div className="-translate-x-1/2 absolute h-[25.149px] left-[calc(50%-0.14px)] top-[61.34px] w-[258.29px]" data-node-id="25:2020" data-name="_РЎР»РѕР№_1">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={img4} />
       </div>
-      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:2036" data-name="Границы экрана" />
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-[0.31] rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:2036" data-name="Границы экрана" />
       <div className="absolute h-[347.537px] left-[84.84px] top-[24px] w-[479.645px]" data-node-id="25:2037" data-name="Конфетти">
         <img alt="" className="absolute block inset-0 max-w-none size-full" src={img5} />
       </div>
     </div>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(Screen));

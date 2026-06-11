@@ -35,6 +35,10 @@ SCREENS = [
     "error",
     "result_score",
     "result_record",
+    "result_stars_0",
+    "result_stars_1",
+    "result_stars_2",
+    "result_stars_3",
     "leaderboard",
     "game",
     "game-bg",
@@ -66,6 +70,8 @@ FONT_CLASS_MAP = {
     'font-["SB_Sans_Text:Medium"]': "kop-font-text-medium",
     "font-['SB_Sans_Text:Semibold']": "kop-font-text-semibold",
     'font-["SB_Sans_Text:Semibold"]': "kop-font-text-semibold",
+    "font-['SB_Sans_Text:Bold']": "kop-font-text-semibold",
+    'font-["SB_Sans_Text:Bold"]': "kop-font-text-semibold",
 }
 
 
@@ -73,7 +79,14 @@ def normalize_figma_code(code: str) -> str:
     for old, new in FONT_CLASS_MAP.items():
         code = code.replace(old, new)
     code = code.replace("opacity-31", "opacity-[0.31]")
+    # Текст в Figma уже задан нужным регистром; Tailwind lowercase ломает заглавные буквы.
+    code = re.sub(r"\blowercase\b", "", code)
     return code
+
+
+def strip_mcp_notes(code: str) -> str:
+    """Figma MCP may append implementation notes after the JSX block."""
+    return code.split("SUPER CRITICAL:", 1)[0].split("Node ids have been added", 1)[0].rstrip()
 
 
 def wrap_page(component_js: str, title: str) -> str:
@@ -92,7 +105,7 @@ def wrap_page(component_js: str, title: str) -> str:
     }};
   </script>
   <link rel="stylesheet" href="/static/css/figma-fonts.css" />
-  <link rel="stylesheet" href="/static/css/figma-animations.css?v=2" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=3" />
   <style>
     html, body {{ margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }}
     #capture {{
@@ -105,7 +118,7 @@ def wrap_page(component_js: str, title: str) -> str:
 </head>
 <body>
   <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
-  <script src="/static/js/figma-screen-boot.js"></script>
+  <script src="/static/js/figma-screen-boot.js?v=2"></script>
   <script crossorigin src="/static/vendor/react.production.min.js"></script>
   <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
@@ -128,7 +141,7 @@ def main() -> None:
             print(f"skip {name}: no JSX")
             continue
         raw = src.read_text(encoding="utf-8", errors="replace")
-        code = normalize_figma_code(strip_export(fix_assets(raw)))
+        code = normalize_figma_code(strip_export(fix_assets(strip_mcp_notes(raw))))
         html = wrap_page(code, name)
         out = OUT / f"{name}.html"
         out.write_text(html, encoding="utf-8")

@@ -9,8 +9,8 @@
       theme: { extend: {} }
     };
   </script>
-  <link rel="stylesheet" href="/static/css/figma-fonts.css?v=3" />
-  <link rel="stylesheet" href="/static/css/figma-animations.css?v=12" />
+  <link rel="stylesheet" href="/static/css/figma-fonts.css" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=2" />
   <style>
     html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }
     #capture {
@@ -23,7 +23,7 @@
 </head>
 <body>
   <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
-  <script src="/static/js/figma-screen-boot.js?v=3"></script>
+  <script src="/static/js/figma-screen-boot.js"></script>
   <script crossorigin src="/static/vendor/react.production.min.js"></script>
   <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
   <script src="/static/vendor/babel.min.js"></script>
@@ -150,10 +150,10 @@ function Screen() {
         </div>
         <div className="-translate-x-1/2 absolute contents left-1/2 top-[127px]" data-node-id="25:1362">
           <div className="-translate-x-1/2 [word-break:break-word] absolute contents left-1/2 not-italic text-[#122654] text-center top-[127px]" data-node-id="25:1363">
-            <p className="-translate-x-1/2 absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-1/2 text-[32.393px] top-[127px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:1364">
+            <p className="-translate-x-1/2 absolute kop-font-display leading-[0.75] left-1/2 text-[32.393px] top-[127px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:1364">
               Ворвись в топ
             </p>
-            <p className="-translate-x-1/2 absolute font-['SB_Sans_Text:Medium'] leading-[1.2] left-1/2 lowercase text-[15px] top-[160.76px] tracking-[-1.05px] w-[362px] whitespace-pre-wrap" data-node-id="25:1365">
+            <p className="-translate-x-1/2 absolute kop-font-text-medium leading-[1.2] left-1/2  text-[15px] top-[160.76px] tracking-[-1.05px] w-[362px] whitespace-pre-wrap" data-node-id="25:1365">
               {`Продержись 1 минуту, набери максимальный `}
               <br aria-hidden />
               счет и займи первое место в инвест-таблице дня.
@@ -161,10 +161,11 @@ function Screen() {
           </div>
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:1366" data-name="Границы экрана" />
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-[0.31] rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:1366" data-name="Границы экрана" />
     </div>
   );
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(Screen));
