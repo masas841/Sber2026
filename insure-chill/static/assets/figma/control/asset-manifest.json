@@ -1,0 +1,451 @@
+{
+  "screens": {
+    "start": {
+      "nodeId": "8:341",
+      "context": "_context/start.txt",
+      "assets": [
+        "raw/00b04727579141737620deeacb25fa19e92ae1f5.png",
+        "raw/00b2803e9ebef4948ac4a3f43a2cda326b5d6343.svg",
+        "raw/180918f8da7d62fb8a78a79158770294078c06fe.png",
+        "raw/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png",
+        "raw/2da3f8923a053f8811a635148d5f6eb019cc4afe.svg",
+        "raw/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "raw/3d3261d5bc16510258de2a0e4e687de29d9f76f2.svg",
+        "raw/40b73196591e6164b318bfe733af0037bbf17503.png",
+        "raw/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg",
+        "raw/4c0856158c6bc72fb550d2c432c1b751848987a5.svg",
+        "raw/503703075c99a444dc725111aec539fa5ee7c9ca.svg",
+        "raw/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg",
+        "raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg",
+        "raw/6673cbade181dcc33a61dff27988471bff744edc.svg",
+        "raw/66ef35a5d32b6ae24598794ab7562171a475908e.svg",
+        "raw/6718c13ddf7b3dd2d320821ef735c2e160bc416c.svg",
+        "raw/758b324c82f48052d9537c8f4058eacfe56327c7.png",
+        "raw/77e8f46db01b9ca809b5d918c3b7c482b5c0315d.svg",
+        "raw/826b5b9671756c61e3831e522c4fc0bc0358ea5a.svg",
+        "raw/96b00f6abbb9e1924abceaa9311592f24d4e8461.svg",
+        "raw/9a07b655289f0fb2458869251c3290e843937a2e.png",
+        "raw/9f7d921244f8a87720fb41610a93ffa0de6d9559.png",
+        "raw/b4ff201ce61600322d6e7a36d32817f6fc9b81ac.svg",
+        "raw/c292fdd83b98d20cb547090b8f9de688e6f81a81.svg",
+        "raw/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg",
+        "raw/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg",
+        "raw/e6a41f52c1e7801e6db7dbe03837f2a4eedf0ca6.svg",
+        "raw/f6128198a813be92610df498e15742dd9f0f28ff.svg",
+        "raw/f75f19146b3ba0ea023643998afcdecf40f41193.svg",
+        "raw/f96a78c7459464dd516ccc98cfa25810fbca026a.svg",
+        "raw/fadb063a4a1ccd1451a926ccf3dd9ce6533f398c.svg",
+        "raw/fc4141073ed66e51a649f6740fbe462d6b32f07b.svg"
+      ],
+      "failedAssets": [
+        {
+          "url": "http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png",
+          "error": "<HTTPError 500: 'Internal Server Error'>",
+          "screen": "start"
+        }
+      ]
+    },
+    "game": {
+      "nodeId": "8:164",
+      "context": "_context/game.txt",
+      "assets": [
+        "raw/00b04727579141737620deeacb25fa19e92ae1f5.png",
+        "raw/15ad97e218886afc1e4a1b57a085e74c80345146.svg",
+        "raw/180918f8da7d62fb8a78a79158770294078c06fe.png",
+        "raw/1b06b60199daa6844c7e6ccb990877d12f275058.svg",
+        "raw/205fe64e35cead6ed9d9800cdf9d7094b60aa2dc.svg",
+        "raw/40b73196591e6164b318bfe733af0037bbf17503.png",
+        "raw/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg",
+        "raw/4c0856158c6bc72fb550d2c432c1b751848987a5.svg",
+        "raw/503703075c99a444dc725111aec539fa5ee7c9ca.svg",
+        "raw/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg",
+        "raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg",
+        "raw/74346d28e627b8d65b51c03a19becf42a38e08e2.svg",
+        "raw/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg",
+        "raw/7b14360a994d599902eb81b23613e97fc2d44b8b.svg",
+        "raw/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg",
+        "raw/b748448e26c1434b84554afd38fadc5df9bdccd7.svg",
+        "raw/c7c4fcb5ff38869ca35da29f0306e5e722d206ea.svg",
+        "raw/c8a2a7ccf363a7456714b58ddfd7d65b76c03980.svg",
+        "raw/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg",
+        "raw/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg",
+        "raw/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg",
+        "raw/e6a41f52c1e7801e6db7dbe03837f2a4eedf0ca6.svg",
+        "raw/e70745f3b1b77cd8d4560ba5b5b5abfb037f00f4.svg",
+        "raw/f75f19146b3ba0ea023643998afcdecf40f41193.svg"
+      ],
+      "failedAssets": [
+        {
+          "url": "http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png",
+          "error": "<HTTPError 500: 'Internal Server Error'>",
+          "screen": "game"
+        }
+      ]
+    },
+    "result": {
+      "nodeId": "8:232",
+      "context": "_context/result.txt",
+      "assets": [
+        "raw/00b04727579141737620deeacb25fa19e92ae1f5.png",
+        "raw/00b2803e9ebef4948ac4a3f43a2cda326b5d6343.svg",
+        "raw/0126340ecb1c5d11f3b6f848f5662f878f82a6d5.svg",
+        "raw/10d4938d8931cabe5ffe50c8e2e6c0ec70203e17.svg",
+        "raw/136c62ec0b78726f0cd2e447023a081e19d82cb0.svg",
+        "raw/15ad97e218886afc1e4a1b57a085e74c80345146.svg",
+        "raw/180918f8da7d62fb8a78a79158770294078c06fe.png",
+        "raw/205fe64e35cead6ed9d9800cdf9d7094b60aa2dc.svg",
+        "raw/21f77010dd0e8bcfcc1b20b2d2190255518bc2f8.svg",
+        "raw/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png",
+        "raw/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "raw/39738ebab60f27354163b2b3077e99a270f653d1.svg",
+        "raw/3a679517e21ec98de158acfd9644eef881368f93.svg",
+        "raw/3a89e5526e440703b0c1e5e36b052cfa195c23be.svg",
+        "raw/40b73196591e6164b318bfe733af0037bbf17503.png",
+        "raw/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg",
+        "raw/4f873fe0741a3d385020fb0b742b3c0824a7f292.png",
+        "raw/50dd6d488abd268621b18460892b1285006a37a8.png",
+        "raw/5611a6b49908a17463c6c6b46f8a6404f63d357a.svg",
+        "raw/57dc28e138203a848aecbd237c363f781468c478.png",
+        "raw/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg",
+        "raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg",
+        "raw/66ef35a5d32b6ae24598794ab7562171a475908e.svg",
+        "raw/6dd218afa867579faaa4bb9a1b8764a1e91fbe9d.svg",
+        "raw/705feef70c51a6a563c0f51554517b1d92bfbbb7.svg",
+        "raw/754e360ed74a192b6836094e57adba67efd84e9c.svg",
+        "raw/85c7e59d1d7817946c484bfad3d17a631c87cd2c.svg",
+        "raw/8c145900e8f6d40628c0efa3a0726e1a099bae7f.svg",
+        "raw/917e1200ee445ccd2ac9a76fce5277201f44d95c.svg",
+        "raw/96fad22d125f90beb31f61282dbedff719ceb1dd.svg",
+        "raw/9e948560d667a1c99baab6b60281ace616e8cb6c.svg",
+        "raw/9f7d921244f8a87720fb41610a93ffa0de6d9559.png",
+        "raw/a7252c9bdd8683c2ca6949136f8d237e1ac96372.svg",
+        "raw/c6918a959f6617d89b782bfa99f4ff17314dcdb7.svg",
+        "raw/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg",
+        "raw/cb53fc9c20b6e2484fea096d87d3cabc4a1a97ac.svg",
+        "raw/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg",
+        "raw/dc3cb622f1e47b456839d5b24ff0448b31ef17b5.png",
+        "raw/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg",
+        "raw/e9e336aa4b959b2ee16a832f33f9db79ca5d5ec3.svg",
+        "raw/eb995aaf749f4fa70bfc30b2570b2b09f36de922.svg",
+        "raw/f042c6d5788591ce9c23f82f5d15f0c948179f14.svg",
+        "raw/f6128198a813be92610df498e15742dd9f0f28ff.svg",
+        "raw/f75f19146b3ba0ea023643998afcdecf40f41193.svg",
+        "raw/f8bdcbf65236835dcff5c84d001f71f941f7cdf4.svg"
+      ],
+      "failedAssets": [
+        {
+          "url": "http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png",
+          "error": "<HTTPError 500: 'Internal Server Error'>",
+          "screen": "result"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "raw/00b04727579141737620deeacb25fa19e92ae1f5.png": {
+      "bytes": 9281296,
+      "source": "http://localhost:3845/assets/00b04727579141737620deeacb25fa19e92ae1f5.png"
+    },
+    "raw/00b2803e9ebef4948ac4a3f43a2cda326b5d6343.svg": {
+      "bytes": 3961,
+      "source": "http://localhost:3845/assets/00b2803e9ebef4948ac4a3f43a2cda326b5d6343.svg"
+    },
+    "raw/180918f8da7d62fb8a78a79158770294078c06fe.png": {
+      "bytes": 398633,
+      "source": "http://localhost:3845/assets/180918f8da7d62fb8a78a79158770294078c06fe.png"
+    },
+    "raw/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png": {
+      "bytes": 1699986,
+      "source": "http://localhost:3845/assets/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png"
+    },
+    "raw/2da3f8923a053f8811a635148d5f6eb019cc4afe.svg": {
+      "bytes": 8525,
+      "source": "http://localhost:3845/assets/2da3f8923a053f8811a635148d5f6eb019cc4afe.svg"
+    },
+    "raw/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png": {
+      "bytes": 805115,
+      "source": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png"
+    },
+    "raw/3d3261d5bc16510258de2a0e4e687de29d9f76f2.svg": {
+      "bytes": 437,
+      "source": "http://localhost:3845/assets/3d3261d5bc16510258de2a0e4e687de29d9f76f2.svg"
+    },
+    "raw/40b73196591e6164b318bfe733af0037bbf17503.png": {
+      "bytes": 3445718,
+      "source": "http://localhost:3845/assets/40b73196591e6164b318bfe733af0037bbf17503.png"
+    },
+    "raw/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg": {
+      "bytes": 708,
+      "source": "http://localhost:3845/assets/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg"
+    },
+    "raw/4c0856158c6bc72fb550d2c432c1b751848987a5.svg": {
+      "bytes": 703,
+      "source": "http://localhost:3845/assets/4c0856158c6bc72fb550d2c432c1b751848987a5.svg"
+    },
+    "raw/503703075c99a444dc725111aec539fa5ee7c9ca.svg": {
+      "bytes": 725,
+      "source": "http://localhost:3845/assets/503703075c99a444dc725111aec539fa5ee7c9ca.svg"
+    },
+    "raw/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg": {
+      "bytes": 259,
+      "source": "http://localhost:3845/assets/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg"
+    },
+    "raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg": {
+      "bytes": 2691,
+      "source": "http://localhost:3845/assets/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg"
+    },
+    "raw/6673cbade181dcc33a61dff27988471bff744edc.svg": {
+      "bytes": 768,
+      "source": "http://localhost:3845/assets/6673cbade181dcc33a61dff27988471bff744edc.svg"
+    },
+    "raw/66ef35a5d32b6ae24598794ab7562171a475908e.svg": {
+      "bytes": 2033,
+      "source": "http://localhost:3845/assets/66ef35a5d32b6ae24598794ab7562171a475908e.svg"
+    },
+    "raw/6718c13ddf7b3dd2d320821ef735c2e160bc416c.svg": {
+      "bytes": 820,
+      "source": "http://localhost:3845/assets/6718c13ddf7b3dd2d320821ef735c2e160bc416c.svg"
+    },
+    "raw/758b324c82f48052d9537c8f4058eacfe56327c7.png": {
+      "bytes": 2792903,
+      "source": "http://localhost:3845/assets/758b324c82f48052d9537c8f4058eacfe56327c7.png"
+    },
+    "raw/77e8f46db01b9ca809b5d918c3b7c482b5c0315d.svg": {
+      "bytes": 727,
+      "source": "http://localhost:3845/assets/77e8f46db01b9ca809b5d918c3b7c482b5c0315d.svg"
+    },
+    "raw/826b5b9671756c61e3831e522c4fc0bc0358ea5a.svg": {
+      "bytes": 465,
+      "source": "http://localhost:3845/assets/826b5b9671756c61e3831e522c4fc0bc0358ea5a.svg"
+    },
+    "raw/96b00f6abbb9e1924abceaa9311592f24d4e8461.svg": {
+      "bytes": 1731,
+      "source": "http://localhost:3845/assets/96b00f6abbb9e1924abceaa9311592f24d4e8461.svg"
+    },
+    "raw/9a07b655289f0fb2458869251c3290e843937a2e.png": {
+      "bytes": 4910304,
+      "source": "http://localhost:3845/assets/9a07b655289f0fb2458869251c3290e843937a2e.png"
+    },
+    "raw/9f7d921244f8a87720fb41610a93ffa0de6d9559.png": {
+      "bytes": 2738781,
+      "source": "http://localhost:3845/assets/9f7d921244f8a87720fb41610a93ffa0de6d9559.png"
+    },
+    "raw/b4ff201ce61600322d6e7a36d32817f6fc9b81ac.svg": {
+      "bytes": 742,
+      "source": "http://localhost:3845/assets/b4ff201ce61600322d6e7a36d32817f6fc9b81ac.svg"
+    },
+    "raw/c292fdd83b98d20cb547090b8f9de688e6f81a81.svg": {
+      "bytes": 797,
+      "source": "http://localhost:3845/assets/c292fdd83b98d20cb547090b8f9de688e6f81a81.svg"
+    },
+    "raw/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg": {
+      "bytes": 2691,
+      "source": "http://localhost:3845/assets/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg"
+    },
+    "raw/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg": {
+      "bytes": 705,
+      "source": "http://localhost:3845/assets/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg"
+    },
+    "raw/e6a41f52c1e7801e6db7dbe03837f2a4eedf0ca6.svg": {
+      "bytes": 711,
+      "source": "http://localhost:3845/assets/e6a41f52c1e7801e6db7dbe03837f2a4eedf0ca6.svg"
+    },
+    "raw/f6128198a813be92610df498e15742dd9f0f28ff.svg": {
+      "bytes": 808,
+      "source": "http://localhost:3845/assets/f6128198a813be92610df498e15742dd9f0f28ff.svg"
+    },
+    "raw/f75f19146b3ba0ea023643998afcdecf40f41193.svg": {
+      "bytes": 719,
+      "source": "http://localhost:3845/assets/f75f19146b3ba0ea023643998afcdecf40f41193.svg"
+    },
+    "raw/f96a78c7459464dd516ccc98cfa25810fbca026a.svg": {
+      "bytes": 473,
+      "source": "http://localhost:3845/assets/f96a78c7459464dd516ccc98cfa25810fbca026a.svg"
+    },
+    "raw/fadb063a4a1ccd1451a926ccf3dd9ce6533f398c.svg": {
+      "bytes": 770,
+      "source": "http://localhost:3845/assets/fadb063a4a1ccd1451a926ccf3dd9ce6533f398c.svg"
+    },
+    "raw/fc4141073ed66e51a649f6740fbe462d6b32f07b.svg": {
+      "bytes": 737,
+      "source": "http://localhost:3845/assets/fc4141073ed66e51a649f6740fbe462d6b32f07b.svg"
+    },
+    "raw/15ad97e218886afc1e4a1b57a085e74c80345146.svg": {
+      "bytes": 753,
+      "source": "http://localhost:3845/assets/15ad97e218886afc1e4a1b57a085e74c80345146.svg"
+    },
+    "raw/1b06b60199daa6844c7e6ccb990877d12f275058.svg": {
+      "bytes": 719,
+      "source": "http://localhost:3845/assets/1b06b60199daa6844c7e6ccb990877d12f275058.svg"
+    },
+    "raw/205fe64e35cead6ed9d9800cdf9d7094b60aa2dc.svg": {
+      "bytes": 751,
+      "source": "http://localhost:3845/assets/205fe64e35cead6ed9d9800cdf9d7094b60aa2dc.svg"
+    },
+    "raw/74346d28e627b8d65b51c03a19becf42a38e08e2.svg": {
+      "bytes": 708,
+      "source": "http://localhost:3845/assets/74346d28e627b8d65b51c03a19becf42a38e08e2.svg"
+    },
+    "raw/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg": {
+      "bytes": 816,
+      "source": "http://localhost:3845/assets/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg"
+    },
+    "raw/7b14360a994d599902eb81b23613e97fc2d44b8b.svg": {
+      "bytes": 8482,
+      "source": "http://localhost:3845/assets/7b14360a994d599902eb81b23613e97fc2d44b8b.svg"
+    },
+    "raw/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg": {
+      "bytes": 2336,
+      "source": "http://localhost:3845/assets/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg"
+    },
+    "raw/b748448e26c1434b84554afd38fadc5df9bdccd7.svg": {
+      "bytes": 766,
+      "source": "http://localhost:3845/assets/b748448e26c1434b84554afd38fadc5df9bdccd7.svg"
+    },
+    "raw/c7c4fcb5ff38869ca35da29f0306e5e722d206ea.svg": {
+      "bytes": 808,
+      "source": "http://localhost:3845/assets/c7c4fcb5ff38869ca35da29f0306e5e722d206ea.svg"
+    },
+    "raw/c8a2a7ccf363a7456714b58ddfd7d65b76c03980.svg": {
+      "bytes": 719,
+      "source": "http://localhost:3845/assets/c8a2a7ccf363a7456714b58ddfd7d65b76c03980.svg"
+    },
+    "raw/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg": {
+      "bytes": 699,
+      "source": "http://localhost:3845/assets/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg"
+    },
+    "raw/e70745f3b1b77cd8d4560ba5b5b5abfb037f00f4.svg": {
+      "bytes": 808,
+      "source": "http://localhost:3845/assets/e70745f3b1b77cd8d4560ba5b5b5abfb037f00f4.svg"
+    },
+    "raw/0126340ecb1c5d11f3b6f848f5662f878f82a6d5.svg": {
+      "bytes": 436,
+      "source": "http://localhost:3845/assets/0126340ecb1c5d11f3b6f848f5662f878f82a6d5.svg"
+    },
+    "raw/10d4938d8931cabe5ffe50c8e2e6c0ec70203e17.svg": {
+      "bytes": 722,
+      "source": "http://localhost:3845/assets/10d4938d8931cabe5ffe50c8e2e6c0ec70203e17.svg"
+    },
+    "raw/136c62ec0b78726f0cd2e447023a081e19d82cb0.svg": {
+      "bytes": 735,
+      "source": "http://localhost:3845/assets/136c62ec0b78726f0cd2e447023a081e19d82cb0.svg"
+    },
+    "raw/21f77010dd0e8bcfcc1b20b2d2190255518bc2f8.svg": {
+      "bytes": 766,
+      "source": "http://localhost:3845/assets/21f77010dd0e8bcfcc1b20b2d2190255518bc2f8.svg"
+    },
+    "raw/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png": {
+      "bytes": 2765529,
+      "source": "http://localhost:3845/assets/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png"
+    },
+    "raw/39738ebab60f27354163b2b3077e99a270f653d1.svg": {
+      "bytes": 719,
+      "source": "http://localhost:3845/assets/39738ebab60f27354163b2b3077e99a270f653d1.svg"
+    },
+    "raw/3a679517e21ec98de158acfd9644eef881368f93.svg": {
+      "bytes": 748,
+      "source": "http://localhost:3845/assets/3a679517e21ec98de158acfd9644eef881368f93.svg"
+    },
+    "raw/3a89e5526e440703b0c1e5e36b052cfa195c23be.svg": {
+      "bytes": 748,
+      "source": "http://localhost:3845/assets/3a89e5526e440703b0c1e5e36b052cfa195c23be.svg"
+    },
+    "raw/4f873fe0741a3d385020fb0b742b3c0824a7f292.png": {
+      "bytes": 4099041,
+      "source": "http://localhost:3845/assets/4f873fe0741a3d385020fb0b742b3c0824a7f292.png"
+    },
+    "raw/50dd6d488abd268621b18460892b1285006a37a8.png": {
+      "bytes": 3507348,
+      "source": "http://localhost:3845/assets/50dd6d488abd268621b18460892b1285006a37a8.png"
+    },
+    "raw/5611a6b49908a17463c6c6b46f8a6404f63d357a.svg": {
+      "bytes": 666,
+      "source": "http://localhost:3845/assets/5611a6b49908a17463c6c6b46f8a6404f63d357a.svg"
+    },
+    "raw/57dc28e138203a848aecbd237c363f781468c478.png": {
+      "bytes": 376969,
+      "source": "http://localhost:3845/assets/57dc28e138203a848aecbd237c363f781468c478.png"
+    },
+    "raw/6dd218afa867579faaa4bb9a1b8764a1e91fbe9d.svg": {
+      "bytes": 438,
+      "source": "http://localhost:3845/assets/6dd218afa867579faaa4bb9a1b8764a1e91fbe9d.svg"
+    },
+    "raw/705feef70c51a6a563c0f51554517b1d92bfbbb7.svg": {
+      "bytes": 741,
+      "source": "http://localhost:3845/assets/705feef70c51a6a563c0f51554517b1d92bfbbb7.svg"
+    },
+    "raw/754e360ed74a192b6836094e57adba67efd84e9c.svg": {
+      "bytes": 748,
+      "source": "http://localhost:3845/assets/754e360ed74a192b6836094e57adba67efd84e9c.svg"
+    },
+    "raw/85c7e59d1d7817946c484bfad3d17a631c87cd2c.svg": {
+      "bytes": 747,
+      "source": "http://localhost:3845/assets/85c7e59d1d7817946c484bfad3d17a631c87cd2c.svg"
+    },
+    "raw/8c145900e8f6d40628c0efa3a0726e1a099bae7f.svg": {
+      "bytes": 938,
+      "source": "http://localhost:3845/assets/8c145900e8f6d40628c0efa3a0726e1a099bae7f.svg"
+    },
+    "raw/917e1200ee445ccd2ac9a76fce5277201f44d95c.svg": {
+      "bytes": 746,
+      "source": "http://localhost:3845/assets/917e1200ee445ccd2ac9a76fce5277201f44d95c.svg"
+    },
+    "raw/96fad22d125f90beb31f61282dbedff719ceb1dd.svg": {
+      "bytes": 747,
+      "source": "http://localhost:3845/assets/96fad22d125f90beb31f61282dbedff719ceb1dd.svg"
+    },
+    "raw/9e948560d667a1c99baab6b60281ace616e8cb6c.svg": {
+      "bytes": 817,
+      "source": "http://localhost:3845/assets/9e948560d667a1c99baab6b60281ace616e8cb6c.svg"
+    },
+    "raw/a7252c9bdd8683c2ca6949136f8d237e1ac96372.svg": {
+      "bytes": 815,
+      "source": "http://localhost:3845/assets/a7252c9bdd8683c2ca6949136f8d237e1ac96372.svg"
+    },
+    "raw/c6918a959f6617d89b782bfa99f4ff17314dcdb7.svg": {
+      "bytes": 788,
+      "source": "http://localhost:3845/assets/c6918a959f6617d89b782bfa99f4ff17314dcdb7.svg"
+    },
+    "raw/cb53fc9c20b6e2484fea096d87d3cabc4a1a97ac.svg": {
+      "bytes": 719,
+      "source": "http://localhost:3845/assets/cb53fc9c20b6e2484fea096d87d3cabc4a1a97ac.svg"
+    },
+    "raw/dc3cb622f1e47b456839d5b24ff0448b31ef17b5.png": {
+      "bytes": 643641,
+      "source": "http://localhost:3845/assets/dc3cb622f1e47b456839d5b24ff0448b31ef17b5.png"
+    },
+    "raw/e9e336aa4b959b2ee16a832f33f9db79ca5d5ec3.svg": {
+      "bytes": 1744,
+      "source": "http://localhost:3845/assets/e9e336aa4b959b2ee16a832f33f9db79ca5d5ec3.svg"
+    },
+    "raw/eb995aaf749f4fa70bfc30b2570b2b09f36de922.svg": {
+      "bytes": 717,
+      "source": "http://localhost:3845/assets/eb995aaf749f4fa70bfc30b2570b2b09f36de922.svg"
+    },
+    "raw/f042c6d5788591ce9c23f82f5d15f0c948179f14.svg": {
+      "bytes": 746,
+      "source": "http://localhost:3845/assets/f042c6d5788591ce9c23f82f5d15f0c948179f14.svg"
+    },
+    "raw/f8bdcbf65236835dcff5c84d001f71f941f7cdf4.svg": {
+      "bytes": 8525,
+      "source": "http://localhost:3845/assets/f8bdcbf65236835dcff5c84d001f71f941f7cdf4.svg"
+    }
+  },
+  "failedAssets": [
+    {
+      "url": "http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png",
+      "error": "<HTTPError 500: 'Internal Server Error'>",
+      "screen": "start"
+    },
+    {
+      "url": "http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png",
+      "error": "<HTTPError 500: 'Internal Server Error'>",
+      "screen": "game"
+    },
+    {
+      "url": "http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png",
+      "error": "<HTTPError 500: 'Internal Server Error'>",
+      "screen": "result"
+    }
+  ]
+}

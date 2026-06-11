@@ -3,6 +3,7 @@ const CONTROL_HEIGHT = 744;
 
 const control = document.querySelector("#control");
 const connection = document.querySelector("#connection");
+const screens = Array.from(document.querySelectorAll(".control-screen"));
 const scoreEl = document.querySelector("#score");
 const timerEl = document.querySelector("#timer");
 const startButton = document.querySelector("#startButton");
@@ -45,6 +46,11 @@ function updateUi() {
   const phase = normalizePhase(state.phase);
 
   control.dataset.phase = phase;
+  screens.forEach((screen) => {
+    const isActive = screen.dataset.screen === phase;
+    screen.hidden = !isActive;
+    screen.setAttribute("aria-hidden", String(!isActive));
+  });
   scoreEl.textContent = formatScore(state.score);
   timerEl.textContent = formatTimer(state.remaining);
   startButton.disabled = phase === "playing";
