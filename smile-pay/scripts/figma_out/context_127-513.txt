@@ -1,0 +1,141 @@
+const imgMasterGradient = "http://localhost:3845/assets/147d773b63d7483a77fb0f5b167106c909903f78.svg";
+const imgEllipse2 = "http://localhost:3845/assets/4e5de585146fe42d8407b8401a4fe76407cdf60f.svg";
+const imgEllipse3 = "http://localhost:3845/assets/894adb50eb968634da11449664f94d28bf41c1ba.svg";
+const imgEllipse4 = "http://localhost:3845/assets/a8a1cfef9bd1a4db1f61e55c7ee4b4287abba49f.svg";
+const imgEllipse5 = "http://localhost:3845/assets/a9f3e0fd8a6647b42dcb4b38fb9628664881a089.svg";
+const imgEllipse6 = "http://localhost:3845/assets/8b7e29d495e91a33e2cd4fba2fe0dd9c6bd89a19.svg";
+const imgEllipse7 = "http://localhost:3845/assets/5eda54798367b836cab972411d2620734395321b.svg";
+const imgEllipse8 = "http://localhost:3845/assets/96764f00e602b34f1e102cae0826755da80f36d5.svg";
+const imgEllipse9 = "http://localhost:3845/assets/3ab30bc167ed50f894fd1e49f8e5d12a415d2375.svg";
+const imgEllipse10 = "http://localhost:3845/assets/2c62ae93acbccea8c30f5ef73be8ff7bcc56351c.svg";
+const imgEllipse11 = "http://localhost:3845/assets/959ab9c9dfbcd618f6238d0351eb4e7d3453ff37.svg";
+const imgEllipse12 = "http://localhost:3845/assets/ee1f88597798e69a107725948c5ec4fe0c563e10.svg";
+const imgSubtract = "http://localhost:3845/assets/c388cb261360cd5fc2e73e5069b345b29795a959.svg";
+const imgGroup2131329261 = "http://localhost:3845/assets/ba4b69a60c2d4cb6eaa9dbb4e734cee8262f18b0.svg";
+const imgGroup2131329259 = "http://localhost:3845/assets/893d3e89d211c299b85f34d6a2234b81d5e3949e.svg";
+const imgVector234257125Stroke = "http://localhost:3845/assets/fea6653d2712c2624c7100d16192548d253288a0.svg";
+const imgStar57 = "http://localhost:3845/assets/16bdbf70aa6093560c34ce612bb3e5c08e74cd10.svg";
+const imgStar58 = "http://localhost:3845/assets/d4884dad482bec4cb57e0b597e2481d349323f9c.svg";
+
+export default function Frame() {
+  return (
+    <div className="bg-black overflow-clip relative rounded-[10000px] size-full" data-node-id="127:513">
+      <div className="absolute h-[678.609px] left-[-201px] top-[-72px] w-[1205.656px]" data-node-id="127:514" data-name="MasterGradientWhite">
+        <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="MasterGradient">
+          <div className="absolute bg-[#21a038] inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25429" style={{ maskImage: `url("${imgMasterGradient}")` }} />
+          <div className="absolute inset-[-82.19%_-1.38%_-65.69%_-38.05%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[398.938px_570.395px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25430" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+            <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25448;1635:25430;1422:17259" style={{ maskImage: `url("${imgEllipse2}")` }}>
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse3} />
+            </div>
+          </div>
+          <div className="absolute inset-[-82.19%_-24.36%_-65.69%_-15.07%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[158.034px_570.395px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25431" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+            <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25448;1635:25431;1422:17259" style={{ maskImage: `url("${imgEllipse2}")` }}>
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse4} />
+            </div>
+          </div>
+          <div className="absolute inset-[-119.77%_-3.22%_-28.1%_-36.21%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[379.666px_831.212px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25432" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+            <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25448;1635:25432;1422:17259" style={{ maskImage: `url("${imgEllipse2}")` }}>
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse5} />
+            </div>
+          </div>
+          <div className="absolute inset-[-119.77%_-50.18%_-28.1%_10.75%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-112.743px_831.212px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25433" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+            <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25448;1635:25433;1422:17259" style={{ maskImage: `url("${imgEllipse2}")` }}>
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse6} />
+            </div>
+          </div>
+          <div className="absolute inset-[-81.05%_-47.7%_10.13%_52.3%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-548.299px_562.458px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25434" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+            <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25448;1635:25434;1422:17259" style={{ maskImage: `url("${imgEllipse7}")` }}>
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse8} />
+            </div>
+          </div>
+          <div className="absolute inset-[-17.81%_38.97%_-124.02%_-69.76%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[731.387px_123.605px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25448;1635:25435" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+            <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25448;1635:25435;1422:17259" style={{ maskImage: `url("${imgEllipse9}")` }}>
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse10} />
+            </div>
+          </div>
+        </div>
+        <div className="absolute inset-[-108.19%_-10.33%_18.71%_-29.12%] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[305.305px_750.832px] mask-size-[1048.418px_694px]" data-node-id="I127:514;1635:25470" style={{ maskImage: `url("${imgMasterGradient}")` }} data-name="RadialGradient">
+          <div className="absolute inset-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-size-[512px_512px]" data-node-id="I127:514;1635:25470;1422:17259" style={{ maskImage: `url("${imgEllipse11}")` }}>
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse12} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[688.542px] left-[-152px] top-[-92.69px] w-[807px]" data-node-id="127:515" data-name="Subtract">
+        <div className="absolute inset-[-11.53%_-9.84%]">
+          <img alt="" className="block max-w-none size-full" src={imgSubtract} />
+        </div>
+      </div>
+      <div className="absolute flex h-[199.542px] items-center justify-center left-[13.34px] top-[153.88px] w-[477.314px]">
+        <div className="flex-none rotate-[-5.82deg]">
+          <div className="bg-[#21a038] h-[153.299px] relative rounded-[73.5px] w-[464.17px]" data-node-id="127:557" />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute flex h-[248.916px] items-center justify-center left-[calc(50%+2.65px)] top-[178px] w-[403.298px]">
+        <div className="flex-none rotate-[-5.82deg]">
+          <p className="[word-break:break-word] font-['SB_Sans_Text:Semibold'] h-[211.078px] leading-[0.98] not-italic relative text-[39.316px] text-center text-white w-[383.872px]" data-node-id="127:545">
+            Такой улыбкой можно оплатить…
+          </p>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute flex h-[164.517px] items-center justify-center left-[calc(50%+7.28px)] top-[270px] w-[266.553px]">
+        <div className="flex-none rotate-[-5.82deg]">
+          <p className="[word-break:break-word] font-['SB_Sans_Text:Semibold'] h-[139.509px] leading-[0.98] not-italic relative text-[25.985px] text-center text-white w-[253.714px]" data-node-id="127:556">
+            (узнай что)
+          </p>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[320px] size-[202.638px] top-[232px]">
+        <div className="flex-none rotate-[-20.8deg]">
+          <div className="relative size-[157.092px]" data-node-id="127:547">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2131329261} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[-65.72px] size-[300.001px] top-[-41.72px]">
+        <div className="flex-none rotate-[27.55deg]">
+          <div className="relative size-[222.369px]" data-node-id="127:551">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2131329259} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[158.532px] items-center justify-center left-[-10px] top-[276px] w-[188.595px]">
+        <div className="flex-none rotate-[-10.05deg]">
+          <div className="h-[131.189px] relative w-[168.292px]" data-node-id="127:559" data-name="Vector 234257125 (Stroke)">
+            <div className="absolute inset-[-2.39%_-1.86%_-2.38%_-1.86%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234257125Stroke} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[87.865px] items-center justify-center left-[310px] top-[113px] w-[87.868px]">
+        <div className="flex-none rotate-[13.05deg]">
+          <div className="h-[73.219px] relative w-[73.221px]" data-node-id="127:558">
+            <div className="absolute inset-[1.96%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar57} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[268.34px] size-[53.564px] top-[95.34px]">
+        <div className="flex-none rotate-[-9.97deg]">
+          <div className="h-[46.254px] relative w-[46.255px]" data-node-id="127:561">
+            <div className="absolute inset-[9.86%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar58} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Мастер/Зелёный: #21A038, Мастер-градиент/Весенний: #A3CD39, Мастер/Травяной: #00D900, Мастер/Белый: #FFFFFF.
+Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.
+IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

@@ -1,0 +1,192 @@
+const img2 = "http://localhost:3845/assets/488b182ee2274bda0e42f0406d131ba5de756d0c.png";
+const img3 = "http://localhost:3845/assets/199c5ba01a61e6cc478ed13de37575b68e5c4776.png";
+const img = "http://localhost:3845/assets/fda304959692ab205391cde62c578889f6a6e95d.svg";
+const imgBgDecor = "http://localhost:3845/assets/ef20563d31b1b29159550b8fce4618ea743d9ce9.svg";
+const img1 = "http://localhost:3845/assets/dd849ce3e75e01bc98af7d108143446b11e5b96c.svg";
+const imgVector234257652 = "http://localhost:3845/assets/0d885cbde5db980d3e7c8dfa1fb1c0f1c172178a.svg";
+const imgVector234257658 = "http://localhost:3845/assets/2d20fbb8b0e2cf66d4a07a7e5e2695093061b288.svg";
+const imgStar23 = "http://localhost:3845/assets/14d508d23bb4365c97221d0a145220104fb0f8a8.svg";
+const imgStar24 = "http://localhost:3845/assets/9772f331273ce7a5ed96917c3de770841213be8a.svg";
+const imgVector234257109 = "http://localhost:3845/assets/75cf5a8a720b023a40e28916656ea4b38bbcfcff.svg";
+const imgStar25 = "http://localhost:3845/assets/b0596a97512df734f1d8f319da7e6390017d3d73.svg";
+
+export default function Frame() {
+  return (
+    <div className="bg-gradient-to-b from-[#ecfffe] relative size-full to-[#9effa8]" data-node-id="25:2181">
+      <div className="absolute h-[347.537px] left-[80px] top-[16px] w-[482.442px]" data-node-id="25:2182" data-name="Конфетти">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+      </div>
+      <div className="absolute flex h-[875.096px] items-center justify-center left-[-319px] top-[245px] w-[1344.366px]">
+        <div className="-scale-y-100 flex-none rotate-[-171.7deg]">
+          <div className="h-[701.176px] opacity-90 relative w-[1256.35px]" data-node-id="25:2198" data-name="Трава 2">
+            <div aria-hidden className="absolute inset-0 pointer-events-none">
+              <img alt="" className="absolute max-w-none object-cover size-full" src={img2} />
+              <img alt="" className="absolute max-w-none object-cover size-full" src={img3} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:2199" data-name="Границы экрана" />
+      <div className="absolute h-[883.211px] left-[-69.53px] top-[-114px] w-[727.743px]" data-node-id="25:2200" data-name="BG Decor">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBgDecor} />
+      </div>
+      <div className="-translate-x-1/2 absolute h-[25.149px] left-[calc(50%-0.14px)] top-[61.34px] w-[258.29px]" data-node-id="25:2204" data-name="_РЎР»РѕР№_1">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={img1} />
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-1/2 not-italic text-[#122654] text-[32.393px] text-center top-[127px] tracking-[-2.2675px] whitespace-nowrap" data-node-id="25:2220">
+        Ворвись в топ
+      </p>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-[calc(50%-0.5px)] top-[calc(50%+37.35px)]" data-node-id="25:2221">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[404.702px] left-[calc(50%-0.5px)] pointer-events-none rounded-[28.433px] top-[calc(50%+37.35px)] w-[363px]" data-node-id="25:2222">
+          <div aria-hidden className="absolute backdrop-blur-[67.292px] bg-[rgba(255,255,255,0.8)] inset-0 rounded-[28.433px]" />
+          <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0px_2.812px_60.598px_0px_rgba(255,255,255,0.25)]" />
+        </div>
+      </div>
+      <div className="absolute contents left-[172.01px] top-[206.07px]" data-node-id="25:2223">
+        <div className="-translate-x-1/2 [word-break:break-word] absolute contents font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%+1.28px)] not-italic text-[22.911px] top-[206.07px] tracking-[-1.6038px] whitespace-nowrap" data-node-id="25:2224">
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[206.07px]" data-node-id="25:2225">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[206.07px]" data-node-id="25:2226">
+              гость 1
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[206.07px]" data-node-id="25:2227">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] text-[#122654] top-[297px]" data-node-id="25:2228">
+            <p className="absolute left-[calc(50%-150.96px)] top-[297px]" data-node-id="25:2229">
+              текущий гость
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-center top-[297px]" data-node-id="25:2230">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[342.55px]" data-node-id="25:2231">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[342.55px]" data-node-id="25:2232">
+              гость 3
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[342.55px]" data-node-id="25:2233">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[388.04px]" data-node-id="25:2234">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[388.04px]" data-node-id="25:2235">
+              гость 4
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[388.04px]" data-node-id="25:2236">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[433.54px]" data-node-id="25:2237">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[433.54px]" data-node-id="25:2238">
+              гость 5
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[433.54px]" data-node-id="25:2239">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[479.03px]" data-node-id="25:2240">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[479.03px]" data-node-id="25:2241">
+              гость 6
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[479.03px]" data-node-id="25:2242">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[524.52px]" data-node-id="25:2243">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[524.52px]" data-node-id="25:2244">
+              гость 7
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[524.52px]" data-node-id="25:2245">
+              000
+            </p>
+          </div>
+          <div className="-translate-x-1/2 absolute contents left-[calc(50%+1.28px)] top-[251.56px]" data-node-id="25:2246">
+            <p className="absolute left-[calc(50%-150.96px)] text-[#01d701] top-[251.56px]" data-node-id="25:2247">
+              длинные им...
+            </p>
+            <p className="-translate-x-1/2 absolute left-[calc(50%+124.02px)] text-[#122654] text-center top-[251.56px]" data-node-id="25:2248">
+              000
+            </p>
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[240.66px] w-[326.984px]" data-node-id="25:2249">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257652} />
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[331.65px] w-[326.984px]" data-node-id="25:2250">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257652} />
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[377.14px] w-[326.984px]" data-node-id="25:2251">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257652} />
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[422.64px] w-[326.984px]" data-node-id="25:2252">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257652} />
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[513.63px] w-[326.984px]" data-node-id="25:2253">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257658} />
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[468.13px] w-[326.984px]" data-node-id="25:2254">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257652} />
+          </div>
+        </div>
+        <div className="absolute h-0 left-[172.01px] top-[286.16px] w-[326.984px]" data-node-id="25:2255">
+          <div className="absolute inset-[-0.95px_-0.29%]">
+            <img alt="" className="block max-w-none size-full" src={imgVector234257652} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[467.29px] size-[78.531px] top-[132.08px]">
+        <div className="flex-none rotate-[-20.78deg]">
+          <div className="relative size-[60.89px]" data-node-id="25:2256">
+            <div className="absolute inset-[12.58%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar23} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[507.13px] size-[54.376px] top-[162.56px]">
+        <div className="flex-none rotate-[37.14deg]">
+          <div className="relative size-[38.815px]" data-node-id="25:2257">
+            <div className="absolute inset-[12.58%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar24} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[94.741px] items-center justify-center left-[208.3px] top-[542.74px] w-[111.304px]">
+        <div className="flex-none rotate-[-98.76deg]">
+          <div className="h-[100.224px] relative w-[80.412px]" data-node-id="25:2258">
+            <div className="absolute inset-[-2.41%_-3.77%_0_-3.77%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234257109} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[168px] size-[78.531px] top-[542px]">
+        <div className="flex-none rotate-[-20.78deg]">
+          <div className="relative size-[60.89px]" data-node-id="25:2259">
+            <div className="absolute inset-[12.58%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar25} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

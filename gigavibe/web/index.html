@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#21a038" />
+  <title>ГИГАвайб — фестивальный киоск</title>
+  <link rel="stylesheet" href="/static/css/figma-fonts.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="shell" data-screen="start">
+    <video
+      id="idle-bg-video"
+      class="kiosk-bg-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/assets/fon.mp4" type="video/mp4" />
+    </video>
+    <div class="kiosk-bg-fallback" aria-hidden="true"></div>
+
+    <div id="capture-overlay-back" class="capture-overlay-layer capture-overlay-back hidden" aria-hidden="true"></div>
+    <div id="capture-overlay-front" class="capture-overlay-layer capture-overlay-front hidden" aria-hidden="true"></div>
+
+    <img
+      id="kiosk-brand-logo"
+      class="kiosk-brand-logo"
+      src="/static/assets/figma/giga-full.svg"
+      alt="ГИГАчат"
+      width="185"
+      height="103"
+      decoding="async"
+    />
+
+    <section id="screen-start" class="kiosk-screen kiosk-start" aria-label="Привлечение внимания">
+      <p class="start-tagline">Улыбнитесь — получите портрет и QR для скачивания</p>
+      <p id="start-hint" class="start-hint" aria-live="polite"></p>
+    </section>
+
+    <div id="camera-probe-slot" class="camera-probe-slot" aria-hidden="true">
+      <div id="camera-rig" class="camera-rig camera-rig--probe">
+        <video id="preview" autoplay playsinline muted></video>
+        <canvas id="preview-canvas" aria-hidden="true"></canvas>
+        <canvas id="snapshot" hidden></canvas>
+        <div id="smile-ring" class="smile-ring hidden" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <section id="screen-capture" class="kiosk-screen kiosk-capture hidden" aria-label="Съёмка">
+      <div class="capture-stage">
+        <div id="capture-frame-slot" class="frame capture-frame"></div>
+        <p id="capture-hint" class="capture-tagline">Улыбайтесь!</p>
+      </div>
+      <p id="smile-status" class="smile-status visually-hidden" aria-live="polite"></p>
+    </section>
+
+    <section id="screen-processing" class="kiosk-screen kiosk-panel hidden">
+      <div class="processing-hero">
+        <div class="processing-status processing-status--previous" aria-hidden="true">
+          <p id="status-prev" class="status-main"></p>
+        </div>
+        <div class="processing-status processing-status--current">
+          <p id="status-text" class="status-main" aria-live="polite">Загружаем момент</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-result" class="kiosk-screen kiosk-result hidden" aria-label="Результат">
+      <div class="result-bg-fallback" aria-hidden="true"></div>
+      <div id="result-overlay-back" class="result-overlay-layer result-overlay-back hidden" aria-hidden="true"></div>
+      <div id="result-overlay-front" class="result-overlay-layer result-overlay-front hidden" aria-hidden="true"></div>
+      <div class="result-portrait-wrap">
+        <div id="result-portrait" class="result-portrait">
+          <img id="result-image" alt="Ваш портрет" />
+        </div>
+      </div>
+      <div class="result-qr-card">
+        <img id="qr" alt="QR для скачивания портрета" />
+      </div>
+      <div class="result-cta-banner">
+        <p id="cta-title" class="result-cta-text">
+          Скачивай готовый вайб<br />и забирай настоящее фото!
+        </p>
+        <p id="cta-lead" class="visually-hidden">Наведите камеру на QR — картинка откроется в браузере</p>
+      </div>
+      <p id="result-countdown" class="result-countdown">
+        Следующий гость через <span id="countdown-sec">20</span> с
+      </p>
+      <span id="result-badge" class="visually-hidden">Ваш портрет</span>
+      <button id="btn-retry" type="button" class="visually-hidden">Следующий гость</button>
+    </section>
+
+    <section id="screen-error" class="kiosk-screen kiosk-panel hidden">
+      <p class="error-title">Упс!</p>
+      <p id="error-text"></p>
+      <button id="btn-error-retry" type="button" class="btn-primary">Попробовать снова</button>
+    </section>
+  </main>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+:root {
+  --ink: #122654;
+  --blue: #00adee;
+  --green: #0bd421;
+  --pink: #ff64a2;
+  --panel: rgba(255, 255, 255, 0.86);
+  --font: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "SB Sans Text";
+  src: url("/static/fonts/SBSansText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Text";
+  src: url("/static/fonts/SBSansText-Semibold.woff2") format("woff2");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font);
+  color: var(--ink);
+  background: linear-gradient(160deg, #00adee 0%, #bff3ff 62%, #fff 100%);
+}
+
+.control {
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.panel {
+  width: min(720px, 100%);
+  padding: 28px;
+  border-radius: 36px;
+  background: var(--panel);
+  box-shadow: 0 22px 70px rgba(18, 38, 84, 0.2);
+  backdrop-filter: blur(16px);
+}
+
+.connection {
+  width: max-content;
+  margin: 0 0 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(18, 38, 84, 0.1);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.connection.is-online {
+  color: #fff;
+  background: var(--green);
+}
+
+.connection.is-offline {
+  color: #fff;
+  background: var(--pink);
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: clamp(34px, 7vw, 58px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  text-transform: lowercase;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.stats div {
+  min-height: 94px;
+  padding: 14px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.72;
+  text-transform: lowercase;
+}
+
+.stats strong {
+  display: block;
+  margin-top: 4px;
+  font-size: clamp(24px, 5vw, 42px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-transform: lowercase;
+}
+
+.button {
+  width: 100%;
+  min-height: 104px;
+  border: 0;
+  border-radius: 34px;
+  color: #fff;
+  font: 900 clamp(34px, 8vw, 74px) / 1 var(--font);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 16px 0 rgba(18, 38, 84, 0.18);
+  touch-action: manipulation;
+}
+
+.button:active:not(:disabled) {
+  translate: 0 8px;
+  box-shadow: 0 8px 0 rgba(18, 38, 84, 0.18);
+}
+
+.button:disabled {
+  opacity: 0.36;
+  filter: grayscale(0.35);
+}
+
+.button + .button {
+  margin-top: 16px;
+}
+
+.button--start {
+  background: linear-gradient(135deg, #57ff43, #00adee);
+}
+
+.button--insure {
+  min-height: 158px;
+  background: linear-gradient(135deg, #ff64a2, #57ff43);
+}
+
+.button--reset {
+  min-height: 72px;
+  background: rgba(18, 38, 84, 0.55);
+  font-size: clamp(22px, 4vw, 34px);
+}
+
+.hint {
+  margin: 22px 0 0;
+  font-size: 20px;
+  line-height: 1.25;
+  opacity: 0.75;
+}
+
+@media (orientation: landscape) and (max-height: 620px) {
+  .control {
+    align-items: start;
+    padding: 12px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .button {
+    min-height: 76px;
+  }
+
+  .button--insure {
+    min-height: 108px;
+  }
+}

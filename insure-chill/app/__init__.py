@@ -1,0 +1,1 @@
+"""Insure Chill activation app."""

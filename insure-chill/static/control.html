@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пульт: Застрахуй свой чилл</title>
+  <link rel="stylesheet" href="/static/css/control.css" />
+</head>
+<body>
+  <main class="control">
+    <section class="panel">
+      <p id="connection" class="connection">подключение...</p>
+      <h1>Застрахуй свой чилл</h1>
+      <div class="stats">
+        <div>
+          <span>статус</span>
+          <strong id="phase">заставка</strong>
+        </div>
+        <div>
+          <span>счёт</span>
+          <strong id="score">000</strong>
+        </div>
+        <div>
+          <span>таймер</span>
+          <strong id="timer">59 c</strong>
+        </div>
+      </div>
+      <button id="startButton" class="button button--start" type="button">Старт</button>
+      <button id="insureButton" class="button button--insure" type="button" disabled>Страхуй</button>
+      <button id="resetButton" class="button button--reset" type="button">Сброс</button>
+      <p id="hint" class="hint">На заставке нажмите «Старт». Во время игры нажимайте «Страхуй», когда белое кольцо находится над угрозой.</p>
+    </section>
+  </main>
+
+  <script type="module" src="/static/js/control.js"></script>
+</body>
+</html>

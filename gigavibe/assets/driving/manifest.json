@@ -1,0 +1,49 @@
+{
+  "default": ["assets/driving/IMG_9240.MP4"],
+  "videos": {
+    "female": {
+      "child": {
+        "slim": ["assets/driving/female_child_slim_01.MP4", "assets/driving/female_child_slim_02.MP4"],
+        "medium": ["assets/driving/female_child_medium.MP4"],
+        "full": ["assets/driving/female_child_full.MP4"],
+        "default": ["assets/driving/IMG_9240.MP4"]
+      },
+      "adult": {
+        "slim": ["assets/driving/female_adult_slim.MP4"],
+        "medium": [
+          "assets/driving/female_adult_medium_01.MP4",
+          "assets/driving/female_adult_medium_02.MP4",
+          "assets/driving/IMG_9240.MP4"
+        ],
+        "full": ["assets/driving/female_adult_full.MP4"],
+        "default": ["assets/driving/IMG_9240.MP4"]
+      },
+      "senior": {
+        "slim": ["assets/driving/female_senior_slim.MP4"],
+        "medium": ["assets/driving/female_senior_medium.MP4"],
+        "full": ["assets/driving/female_senior_full.MP4"],
+        "default": ["assets/driving/IMG_9240.MP4"]
+      }
+    },
+    "male": {
+      "child": {
+        "slim": ["assets/driving/male_child_slim.MP4"],
+        "medium": ["assets/driving/male_child_medium.MP4"],
+        "full": ["assets/driving/male_child_full.MP4"],
+        "default": ["assets/driving/IMG_9240.MP4"]
+      },
+      "adult": {
+        "slim": ["assets/driving/male_adult_slim.MP4"],
+        "medium": ["assets/driving/male_adult_medium.MP4", "assets/driving/IMG_9240.MP4"],
+        "full": ["assets/driving/male_adult_full.MP4"],
+        "default": ["assets/driving/IMG_9240.MP4"]
+      },
+      "senior": {
+        "slim": ["assets/driving/male_senior_slim.MP4"],
+        "medium": ["assets/driving/male_senior_medium.MP4"],
+        "full": ["assets/driving/male_senior_full.MP4"],
+        "default": ["assets/driving/IMG_9240.MP4"]
+      }
+    }
+  }
+}

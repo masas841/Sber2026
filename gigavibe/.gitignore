@@ -1,0 +1,17 @@
+.env
+.env.ssl
+.venv/
+.venv-liveportrait/
+vendor/LivePortrait/
+tools/ffmpeg/*.exe
+__pycache__/
+*.pyc
+data/jobs/
+data/outputs/*.mp4
+data/outputs/*_qr.png
+models/
+models/insightface/
+models/inswapper_128.onnx
+_pdf_pages/
+*.log
+.aigo123/

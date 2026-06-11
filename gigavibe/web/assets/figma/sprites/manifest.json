@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "composite_1_10",
+    "url": "http://localhost:3845/assets/0b278d09e2e3eb662aafa9f30942d9194b0cfc2b.png",
+    "bytes": 5892774,
+    "path": "web\\assets\\figma\\sprites\\raw\\composite_1_10.png"
+  },
+  {
+    "slug": "composite_2_3",
+    "url": "http://localhost:3845/assets/757708fa0b9ab7470e1502b4db90b267c9616919.png",
+    "bytes": 2338548,
+    "path": "web\\assets\\figma\\sprites\\raw\\composite_2_3.png"
+  },
+  {
+    "slug": "composite_3_4",
+    "url": "http://localhost:3845/assets/36e984d052c3cbfd13a79fe262ca0efae93b068d.png",
+    "bytes": 9409526,
+    "path": "web\\assets\\figma\\sprites\\raw\\composite_3_4.png"
+  },
+  {
+    "slug": "image_2090010215",
+    "url": "http://localhost:3845/assets/804cd16c42aaefa25b9f2df67d66dde62e9d9b32.png",
+    "bytes": 1585006,
+    "path": "web\\assets\\figma\\sprites\\raw\\image_2090010215.png"
+  },
+  {
+    "slug": "image_2090010220",
+    "url": "http://localhost:3845/assets/e5339aa193a85be6b230bc1aed083df8163f61bf.png",
+    "bytes": 2164294,
+    "path": "web\\assets\\figma\\sprites\\raw\\image_2090010220.png"
+  },
+  {
+    "slug": "image_2090010221",
+    "url": "http://localhost:3845/assets/da1cac2c9f0208e33aa7688c9297b6212227fc7e.png",
+    "bytes": 1725353,
+    "path": "web\\assets\\figma\\sprites\\raw\\image_2090010221.png"
+  },
+  {
+    "slug": "image_2090010222",
+    "url": "http://localhost:3845/assets/2a03782c931f365f10c473917e12b8faecb4e12f.png",
+    "bytes": 1676820,
+    "path": "web\\assets\\figma\\sprites\\raw\\image_2090010222.png"
+  },
+  {
+    "slug": "image_2090010223",
+    "url": "http://localhost:3845/assets/ffa83be4bef3226b5245455168bb1b3c8a17c333.png",
+    "bytes": 2112487,
+    "path": "web\\assets\\figma\\sprites\\raw\\image_2090010223.png"
+  },
+  {
+    "slug": "image_2090010224",
+    "url": "http://localhost:3845/assets/6463013781385020eac402a5f6a582a91d6e17a6.png",
+    "bytes": 1757396,
+    "path": "web\\assets\\figma\\sprites\\raw\\image_2090010224.png"
+  },
+  {
+    "slug": "sheet_2090010258",
+    "url": "http://localhost:3845/assets/efe5b86cff8e5e4d10b69d419447e61234cd6c8d.png",
+    "bytes": 1809184,
+    "path": "web\\assets\\figma\\sprites\\raw\\sheet_2090010258.png"
+  }
+]

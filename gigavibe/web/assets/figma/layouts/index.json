@@ -1,0 +1,56 @@
+{
+  "canvas": { "width": 1008, "height": 672 },
+  "screens": [
+    {
+      "id": "9:167",
+      "name": "Frame 2147223866",
+      "state": "start",
+      "copy": "Улыбнитесь получите портрет и QR для скачивания",
+      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
+    },
+    {
+      "id": "32:2",
+      "name": "Frame 2147223874",
+      "state": "capture",
+      "copy": "Улыбайтесь!",
+      "camera": { "x": 215, "y": 143, "w": 579, "h": 387 },
+      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
+    },
+    {
+      "id": "64:68",
+      "name": "Frame 2147223876",
+      "state": "processing_ai",
+      "copy": "Включаем ИИ-магию",
+      "logo": { "component": "giga-full", "x": 40, "y": 40, "w": 185, "h": 103 }
+    },
+    {
+      "id": "32:38",
+      "name": "Frame 2147223875",
+      "state": "processing_upload",
+      "copy": "Загружаем момент...",
+      "statusBanner": { "x": 181, "y": 269, "w": 647, "h": 123 },
+      "logo": { "component": "giga-full", "x": 40, "y": 40, "w": 185, "h": 103 }
+    },
+    {
+      "id": "64:107",
+      "name": "Frame 2147223877",
+      "state": "processing_combined",
+      "banners": [
+        { "copy": "Загружаем момент...", "y": 182 },
+        { "copy": "Включаем ИИ-магию...", "y": 269 }
+      ]
+    },
+    {
+      "id": "64:170",
+      "name": "Frame 2147223878",
+      "state": "result",
+      "copy": "Скачивай готовый вайб и забирай настоящее фото!",
+      "card": { "x": 161, "y": 40, "w": 704, "h": 567, "radius": 35 },
+      "portrait": { "x": 180, "y": 57, "w": 352, "h": 529, "radius": 24 },
+      "qrCard": { "x": 551, "y": 178, "w": 286, "h": 286 },
+      "qrImage": { "x": 573, "y": 200, "w": 244, "h": 245 },
+      "ctaBanner": { "x": 551, "y": 489, "w": 283, "h": 58, "fontSize": 18.415 },
+      "logo": { "component": "giga-full", "x": 551, "y": 68, "w": 143, "h": 81 }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smile Pay — Figma vs Browser</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #1a1a1a; color: #eee; font-family: system-ui, sans-serif; }
+    h1 { font-size: 1.25rem; margin: 0 0 8px; }
+    p { color: #aaa; margin: 0 0 24px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; align-items: start; }
+    .col h2 { font-size: 0.95rem; margin: 0 0 8px; font-weight: 600; }
+    img { width: 100%; max-width: 504px; border-radius: 8px; background: #000; display: block; }
+    .ok { color: #7dcea0; font-size: 0.85rem; margin-top: 8px; }
+    .warn { color: #f5c542; font-size: 0.85rem; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Сверка Figma ↔ приложение</h1>
+  <p>Слева Figma isolated · справа браузер #shell · обновлено после мягкого края камеры</p>
+
+  <div class="row">
+    <div class="col"><h2>idle — Figma</h2><img src="shot_127-513.png" alt="" /></div>
+    <div class="col"><h2>idle — браузер</h2><img src="browser_idle.png" alt="" /><p class="ok">Pill, декор, градиент master — совпадает.</p></div>
+  </div>
+  <div class="row">
+    <div class="col"><h2>face — Figma</h2><img src="shot_127-567.png" alt="" /></div>
+    <div class="col"><h2>face — браузер</h2><img src="browser_face.png" alt="" /><p class="ok">Мягкий край окна камеры (mask + blur кольца). Text-path и стикеры на месте.</p></div>
+  </div>
+  <div class="row">
+    <div class="col"><h2>line — Figma</h2><img src="shot_25-2498.png" alt="" /></div>
+    <div class="col"><h2>line — браузер</h2><img src="browser_line.png" alt="" /><p class="ok">Оба лайна, декор face+line, кольцо с градиентом.</p></div>
+  </div>
+  <div class="row">
+    <div class="col"><h2>stickers — Figma</h2><img src="shot_127-597.png" alt="" /></div>
+    <div class="col"><h2>stickers — браузер</h2><img src="browser_stickers.png" alt="" /><p class="warn">Текст частично перекрыт стикерами (как в макете).</p></div>
+  </div>
+  <div class="row">
+    <div class="col"><h2>qr — Figma</h2><img src="shot_127-713.png" alt="" /></div>
+    <div class="col"><h2>qr — браузер</h2><img src="browser_qr.png" alt="" /><p class="ok">QR-карточка, caption, декор, бирюзовый отлив.</p></div>
+  </div>
+</body>
+</html>

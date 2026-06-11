@@ -1,0 +1,10 @@
+<rounded-rectangle id="11:378" name="image 2090010258" x="-9041" y="15623" width="1831" height="1089" />
+<rounded-rectangle id="64:242" name="3 4" x="-7142" y="15623" width="1062" height="1062" />
+<rounded-rectangle id="64:244" name="1 10" x="-6053" y="15798" width="739" height="740" />
+<rounded-rectangle id="64:245" name="2 3" x="-5304" y="15798" width="739" height="740" />
+<rounded-rectangle id="9:212" name="image 2090010223" x="-9041" y="16712" width="1536" height="1024" />
+<rounded-rectangle id="9:206" name="image 2090010221" x="-7505" y="16712" width="1536" height="1024" />
+<rounded-rectangle id="7:150" name="image 2090010215" x="-5971" y="16712" width="1536" height="1024" />
+<rounded-rectangle id="9:215" name="image 2090010224" x="-9041" y="17736" width="1536" height="1024" />
+<rounded-rectangle id="9:209" name="image 2090010222" x="-7505" y="17736" width="1536" height="1024" />
+<rounded-rectangle id="9:203" name="image 2090010220" x="-5969" y="17736" width="1536" height="1024" />IMPORTANT: The user has selected multiple nodes, so you have received a sparse metadata response. You MUST call get_design_context on the nodes or their sublayers individually based on their IDs to implement the design.

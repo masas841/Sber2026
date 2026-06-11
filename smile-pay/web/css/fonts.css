@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "SB Sans Text";
+  src: url("/static/fonts/SBSansText-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+.smile-stage,
+.smile-stage *,
+.smile-status {
+  font-family: "SB Sans Text", "SB Sans Text Semibold", "SB Sans Display", "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
+}

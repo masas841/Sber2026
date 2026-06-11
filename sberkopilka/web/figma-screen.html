@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Figma screen export</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 672px; height: 672px; overflow: hidden; background: #111; }
+    #stage {
+      position: relative;
+      width: 672px;
+      height: 672px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%);
+    }
+    #stage img { position: absolute; display: block; object-fit: fill; }
+    #stage p {
+      position: absolute;
+      margin: 0;
+      white-space: pre-line;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      line-height: 1.15;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="stage"></div>
+  <script>
+    const BASE = "/static/assets/figma/shared/";
+    const params = new URLSearchParams(location.search);
+    const screenId = params.get("id") || "start";
+
+    function pct(v) {
+      return (v / 672) * 100 + "%";
+    }
+
+    function placeImg(stage, layer) {
+      const img = document.createElement("img");
+      img.src = BASE + layer.file;
+      img.alt = "";
+      img.style.left = pct(layer.x);
+      img.style.top = pct(layer.y);
+      img.style.width = pct(layer.w);
+      img.style.height = pct(layer.h);
+      const ox = layer.ox ?? 0;
+      const oy = layer.oy ?? 0;
+      const rot = layer.rot ? ` rotate(${layer.rot}deg)` : "";
+      img.style.transform = `translate(-${ox * 100}%, -${oy * 100}%)${rot}`;
+      img.style.transformOrigin = `${ox * 100}% ${oy * 100}%`;
+      stage.appendChild(img);
+    }
+
+    function placeText(stage, t) {
+      const p = document.createElement("p");
+      p.textContent = t.text;
+      p.style.left = pct(t.x);
+      p.style.top = pct(t.y);
+      p.style.color = t.color || "#122654";
+      p.style.fontSize = (t.size || 16) + "px";
+      p.style.fontWeight = t.bold ? "700" : "500";
+      const ox = t.ox ?? 0.5;
+      p.style.transform = `translateX(-${ox * 100}%)`;
+      if (t.width) p.style.width = pct(t.width);
+      stage.appendChild(p);
+    }
+
+    fetch("/static/assets/figma/layouts/" + screenId + ".json")
+      .then((r) => r.json())
+      .then((layout) => {
+        const stage = document.getElementById("stage");
+        if (layout.bgDecor) {
+          placeImg(stage, { file: layout.bgDecor, x: -48, y: -134, w: 727, h: 882, ox: 0, oy: 0 });
+        }
+        (layout.layers || []).forEach((l) => placeImg(stage, l));
+        (layout.texts || []).forEach((t) => placeText(stage, t));
+      })
+      .catch((e) => {
+        document.body.innerHTML = "<pre>layout error: " + e + "</pre>";
+      });
+  </script>
+</body>
+</html>

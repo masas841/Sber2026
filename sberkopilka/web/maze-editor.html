@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Редактор лабиринта — ИнвестКопилка</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --border: #2d3a4f;
+      --text: #e8eef7;
+      --muted: #8fa3bf;
+      --accent: #21a038;
+      --wall: #c0392b;
+      --path: rgba(94, 207, 255, 0.35);
+      --path-border: rgba(94, 207, 255, 0.7);
+      --unreach: rgba(255, 79, 163, 0.45);
+      --player: #a6ff00;
+      --ghost: #ff6b6b;
+      --portfolio: #ff4fa3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    header a { color: var(--accent); text-decoration: none; font-size: 14px; }
+    .layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 220px 1fr 300px;
+      min-height: 0;
+    }
+    .panel {
+      background: var(--panel);
+      border-right: 1px solid var(--border);
+      padding: 16px;
+      overflow-y: auto;
+    }
+    .panel-right { border-right: none; border-left: 1px solid var(--border); }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .tools { display: flex; flex-direction: column; gap: 6px; }
+    .tool {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      background: #243044;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: left;
+    }
+    .tool:hover { background: #2a3850; }
+    .tool.active { border-color: var(--accent); background: #1e3d28; }
+    .tool-swatch {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .sw-wall { background: var(--wall); }
+    .sw-path { background: var(--path); border-color: var(--path-border); }
+    .sw-player { background: var(--player); }
+    .sw-ghost { background: var(--ghost); }
+    .sw-portfolio { background: var(--portfolio); }
+    .hint { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 16px; }
+    .hint kbd {
+      background: #243044;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+    .stage-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: auto;
+      background: #0a0e12;
+    }
+    .stage {
+      position: relative;
+      width: 672px;
+      height: 672px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    }
+    .stage-bg {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      width: 672px;
+      height: 672px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stage-bg.hidden { opacity: 0; }
+    .grid-layer {
+      position: absolute;
+      z-index: 1;
+      cursor: crosshair;
+      display: grid;
+    }
+    .cell {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.05s;
+    }
+    .cell.wall { background: rgba(192, 57, 43, 0.55); }
+    .cell.path { background: var(--path); border-color: var(--path-border); }
+    .cell.unreach { background: var(--unreach); }
+    .cell.player::after,
+    .cell.ghost::after,
+    .cell.portfolio::after {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      margin: 4px auto;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+    .cell.player::after { background: var(--player); }
+    .cell.ghost::after { background: var(--ghost); }
+    .cell.portfolio::after { background: var(--portfolio); border-radius: 3px; }
+    .cell.locked { cursor: not-allowed; opacity: 0.7; }
+    .stats {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+    .stats strong { color: var(--text); }
+    .ok { color: #a6ff00; }
+    .warn { color: #ffb347; }
+    .err { color: #ff6b6b; }
+    label.row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .geom-form { margin-bottom: 16px; }
+    .geom-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .geom-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .geom-field input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #0f1419;
+      color: var(--text);
+      font-size: 13px;
+      font-family: Consolas, monospace;
+    }
+    .geom-field input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .geom-meta {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 8px 0 10px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      background: #0f1419;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 10px;
+      font-family: Consolas, monospace;
+      font-size: 11px;
+      resize: vertical;
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+    }
+    button:hover { filter: brightness(1.1); }
+    button.secondary { background: #243044; color: var(--text); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e3d28;
+      color: #a6ff00;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; }
+    @media (max-width: 1100px) {
+      .layout { grid-template-columns: 1fr; }
+      .panel-left, .panel-right { border: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Редактор лабиринта</h1>
+    <span id="headerMeta" style="color:var(--muted);font-size:14px"></span>
+    <a href="/">← Игра</a>
+  </header>
+
+  <div class="layout">
+    <aside class="panel panel-left">
+      <h2>Инструмент</h2>
+      <div class="tools" id="tools"></div>
+      <p class="hint">
+        Клик или протяните мышью по клеткам.<br>
+        <kbd>1</kbd> стена · <kbd>2</kbd> коридор · <kbd>3</kbd> копилка<br>
+        <kbd>4</kbd> призрак · <kbd>5</kbd> портфель · <kbd>Z</kbd> отмена
+      </p>
+      <label class="row" style="margin-top:20px">
+        <input type="checkbox" id="showBg" checked /> Фон game-bg
+      </label>
+      <label class="row">
+        <input type="checkbox" id="showUnreach" checked /> Подсветить изолированные коридоры
+      </label>
+      <div class="btn-row">
+        <button type="button" class="secondary" id="btnBorder">Заполнить рамку</button>
+        <button type="button" class="secondary" id="btnClear">Очистить поле</button>
+      </div>
+    </aside>
+
+    <main class="stage-wrap">
+      <div class="stage" id="stage">
+        <iframe class="stage-bg" id="bgFrame" src="/static/figma-screens/game-bg.html" title="Фон"></iframe>
+        <div class="grid-layer" id="grid"></div>
+      </div>
+    </main>
+
+    <aside class="panel panel-right">
+      <h2>Геометрия сетки</h2>
+      <div class="geom-form">
+        <div class="geom-row">
+          <label class="geom-field">Origin X (px)
+            <input type="number" id="inpOx" step="0.01" min="0" max="672" />
+          </label>
+          <label class="geom-field">Origin Y (px)
+            <input type="number" id="inpOy" step="0.01" min="0" max="672" />
+          </label>
+        </div>
+        <div class="geom-row">
+          <label class="geom-field">Ширина поля (px)
+            <input type="number" id="inpFw" step="1" min="50" max="672" />
+          </label>
+          <label class="geom-field">Высота поля (px)
+            <input type="number" id="inpFh" step="1" min="50" max="672" />
+          </label>
+        </div>
+        <div class="geom-row">
+          <label class="geom-field">Столбцов
+            <input type="number" id="inpCols" step="1" min="4" max="40" />
+          </label>
+          <label class="geom-field">Строк
+            <input type="number" id="inpRows" step="1" min="4" max="40" />
+          </label>
+        </div>
+        <p class="geom-meta" id="geomMeta"></p>
+        <div class="btn-row" style="margin-top:0">
+          <button type="button" id="btnApplyGeom">Применить</button>
+          <button type="button" class="secondary" id="btnResetGeom">Сброс</button>
+        </div>
+      </div>
+      <h2>Статус</h2>
+      <div class="stats" id="stats"></div>
+      <h2>Экспорт</h2>
+      <textarea id="exportBox" readonly placeholder="Нажмите «Обновить экспорт»"></textarea>
+      <div class="btn-row">
+        <button type="button" id="btnExport">Обновить экспорт</button>
+        <button type="button" class="secondary" id="btnCopy">Копировать JSON</button>
+        <button type="button" id="btnSave">Сохранить в проект</button>
+      </div>
+      <h2 style="margin-top:20px">Импорт</h2>
+      <textarea id="importBox" placeholder='Вставьте JSON или ASCII (строки # и .)'></textarea>
+      <div class="btn-row">
+        <button type="button" class="secondary" id="btnImport">Загрузить</button>
+        <button type="button" class="secondary" id="btnLoadFile">Из файла проекта</button>
+      </div>
+      <p class="hint" style="margin-top:12px">
+        После «Сохранить в проект» игра подхватывает лабиринт автоматически — обновите Ctrl+F5.
+      </p>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const GEOM_DEFAULTS = {
+      cols: 16,
+      rows: 17,
+      fieldW: 473,
+      fieldH: 492,
+      ox: 107.52,
+      oy: 74.39,
+    };
+
+    let gridCols = GEOM_DEFAULTS.cols;
+    let gridRows = GEOM_DEFAULTS.rows;
+    let fieldW = GEOM_DEFAULTS.fieldW;
+    let fieldH = GEOM_DEFAULTS.fieldH;
+    let fieldOx = GEOM_DEFAULTS.ox;
+    let fieldOy = GEOM_DEFAULTS.oy;
+
+    function tileW() { return fieldW / gridCols; }
+    function tileH() { return fieldH / gridRows; }
+    function tileAvg() { return (tileW() + tileH()) / 2; }
+
+    const TOOLS = [
+      { id: "wall", label: "Стена", key: "1", swatch: "sw-wall" },
+      { id: "path", label: "Коридор", key: "2", swatch: "sw-path" },
+      { id: "player", label: "Копилка (старт)", key: "3", swatch: "sw-player" },
+      { id: "ghost", label: "Призрак", key: "4", swatch: "sw-ghost" },
+      { id: "portfolio", label: "Портфель", key: "5", swatch: "sw-portfolio" },
+    ];
+
+    let tool = "path";
+    let cells = [];
+    let ghosts = [];
+    let player = null;
+    let portfolio = null;
+    let painting = false;
+    let history = [];
+
+    function key(x, y) { return `${x},${y}`; }
+    function isBorder(x, y) {
+      return x === 0 || y === 0 || x === gridCols - 1 || y === gridRows - 1;
+    }
+    function cellCenter(x, y) {
+      return { wx: fieldOx + x * tileW() + tileW() / 2, wy: fieldOy + y * tileH() + tileH() / 2 };
+    }
+
+    function readGeomInputs() {
+      return {
+        ox: parseFloat(document.getElementById("inpOx").value),
+        oy: parseFloat(document.getElementById("inpOy").value),
+        fieldW: parseFloat(document.getElementById("inpFw").value),
+        fieldH: parseFloat(document.getElementById("inpFh").value),
+        cols: parseInt(document.getElementById("inpCols").value, 10),
+        rows: parseInt(document.getElementById("inpRows").value, 10),
+      };
+    }
+
+    function fillGeomInputs() {
+      document.getElementById("inpOx").value = fieldOx;
+      document.getElementById("inpOy").value = fieldOy;
+      document.getElementById("inpFw").value = fieldW;
+      document.getElementById("inpFh").value = fieldH;
+      document.getElementById("inpCols").value = gridCols;
+      document.getElementById("inpRows").value = gridRows;
+      updateGeomMeta();
+      updateHeaderMeta();
+    }
+
+    function updateGeomMeta() {
+      const tw = tileW();
+      const th = tileH();
+      document.getElementById("geomMeta").textContent =
+        `Клетка: ${tw.toFixed(2)} × ${th.toFixed(2)} px · средний шаг ${tileAvg().toFixed(2)} px`;
+    }
+
+    function updateHeaderMeta() {
+      document.getElementById("headerMeta").textContent =
+        `${gridCols}×${gridRows} · поле ${fieldW}×${fieldH} px · origin (${fieldOx}, ${fieldOy})`;
+    }
+
+    function applyGridLayout() {
+      const grid = document.getElementById("grid");
+      grid.style.left = `${fieldOx}px`;
+      grid.style.top = `${fieldOy}px`;
+      grid.style.width = `${fieldW}px`;
+      grid.style.height = `${fieldH}px`;
+      grid.style.gridTemplateColumns = `repeat(${gridCols}, calc(${fieldW}px / ${gridCols}))`;
+      grid.style.gridTemplateRows = `repeat(${gridRows}, calc(${fieldH}px / ${gridRows}))`;
+    }
+
+    function resizeCells(newCols, newRows, rowsAscii) {
+      const oldCells = cells;
+      const oldCols = gridCols;
+      const oldRows = gridRows;
+      gridCols = newCols;
+      gridRows = newRows;
+      cells = [];
+      for (let y = 0; y < newRows; y++) {
+        for (let x = 0; x < newCols; x++) {
+          const ch = rowsAscii?.[y]?.[x];
+          const old = oldCells.find((c) => c.x === x && c.y === y);
+          let kind = "path";
+          if (ch === "#" || isBorder(x, y)) kind = "wall";
+          else if (ch === ".") kind = "path";
+          else if (old && x < oldCols && y < oldRows) kind = old.kind;
+          else if (isBorder(x, y)) kind = "wall";
+          cells.push({ x, y, kind });
+        }
+      }
+      if (player && (player.x >= newCols || player.y >= newRows)) player = null;
+      ghosts = ghosts.filter((g) => g.x < newCols && g.y < newRows);
+      if (portfolio && (portfolio.x >= newCols || portfolio.y >= newRows)) portfolio = null;
+    }
+
+    function applyGeometry(geom, { keepCells = true, rowsAscii = null } = {}) {
+      const next = {
+        ox: Number.isFinite(geom.ox) ? geom.ox : fieldOx,
+        oy: Number.isFinite(geom.oy) ? geom.oy : fieldOy,
+        fieldW: Number.isFinite(geom.fieldW) ? geom.fieldW : fieldW,
+        fieldH: Number.isFinite(geom.fieldH) ? geom.fieldH : fieldH,
+        cols: Number.isFinite(geom.cols) ? geom.cols : gridCols,
+        rows: Number.isFinite(geom.rows) ? geom.rows : gridRows,
+      };
+      if (next.cols < 4 || next.cols > 40 || next.rows < 4 || next.rows > 40) {
+        toast("Сетка: от 4 до 40 строк/столбцов");
+        return false;
+      }
+      if (next.fieldW < 50 || next.fieldH < 50) {
+        toast("Размер поля: минимум 50 px");
+        return false;
+      }
+      const sizeChanged = next.cols !== gridCols || next.rows !== gridRows;
+      fieldOx = next.ox;
+      fieldOy = next.oy;
+      fieldW = next.fieldW;
+      fieldH = next.fieldH;
+      if (sizeChanged) {
+        resizeCells(next.cols, next.rows, rowsAscii);
+      } else {
+        gridCols = next.cols;
+        gridRows = next.rows;
+      }
+      applyGridLayout();
+      fillGeomInputs();
+      if (keepCells && !sizeChanged) {
+        render();
+        updateStats();
+      } else {
+        render();
+        updateStats();
+      }
+      try {
+        localStorage.setItem("kopilka-maze-geom", JSON.stringify({
+          fieldOrigin: [fieldOx, fieldOy],
+          fieldSize: [fieldW, fieldH],
+          cols: gridCols,
+          rows: gridRows,
+        }));
+      } catch { /* ignore */ }
+      return true;
+    }
+
+    function geometryFromData(data) {
+      const g = {};
+      if (data.fieldOrigin) {
+        g.ox = data.fieldOrigin[0];
+        g.oy = data.fieldOrigin[1];
+      }
+      if (data.fieldSize) {
+        g.fieldW = data.fieldSize[0];
+        g.fieldH = data.fieldSize[1];
+      }
+      if (data.cols) g.cols = data.cols;
+      if (data.rows) g.rows = data.rows;
+      return g;
+    }
+
+    function initCells(rows) {
+      resizeCells(gridCols, gridRows, null);
+      ghosts = [];
+      player = null;
+      portfolio = null;
+      for (let y = 0; y < gridRows; y++) {
+        for (let x = 0; x < gridCols; x++) {
+          const c = getCell(x, y);
+          const ch = rows?.[y]?.[x] ?? (isBorder(x, y) ? "#" : ".");
+          c.kind = ch === "#" || isBorder(x, y) ? "wall" : "path";
+        }
+      }
+    }
+
+    function getCell(x, y) {
+      return cells.find((c) => c.x === x && c.y === y);
+    }
+
+    function floodReachable() {
+      if (!player) return new Set();
+      const walls = new Set(cells.filter((c) => c.kind === "wall").map((c) => key(c.x, c.y)));
+      const seen = new Set();
+      const q = [[player.x, player.y]];
+      seen.add(key(player.x, player.y));
+      while (q.length) {
+        const [x, y] = q.shift();
+        for (const [dx, dy] of [[1,0],[-1,0],[0,1],[0,-1]]) {
+          const nx = x + dx, ny = y + dy;
+          const k = key(nx, ny);
+          if (nx < 0 || ny < 0 || nx >= gridCols || ny >= gridRows) continue;
+          if (walls.has(k) || seen.has(k)) continue;
+          seen.add(k);
+          q.push([nx, ny]);
+        }
+      }
+      return seen;
+    }
+
+    function pushHistory() {
+      history.push(JSON.stringify({ cells, ghosts, player, portfolio }));
+      if (history.length > 40) history.shift();
+    }
+
+    function undo() {
+      if (!history.length) return;
+      const snap = JSON.parse(history.pop());
+      cells = snap.cells;
+      ghosts = snap.ghosts;
+      player = snap.player;
+      portfolio = snap.portfolio;
+      render();
+      updateStats();
+    }
+
+    function applyTool(x, y) {
+      if (isBorder(x, y)) return;
+      const c = getCell(x, y);
+      if (!c) return;
+
+      if (tool === "wall") {
+        if (player?.x === x && player?.y === y) player = null;
+        ghosts = ghosts.filter((g) => !(g.x === x && g.y === y));
+        if (portfolio?.x === x && portfolio?.y === y) portfolio = null;
+        c.kind = "wall";
+      } else if (tool === "path") {
+        if (player?.x === x && player?.y === y) player = null;
+        ghosts = ghosts.filter((g) => !(g.x === x && g.y === y));
+        if (portfolio?.x === x && portfolio?.y === y) portfolio = null;
+        c.kind = "path";
+      } else if (tool === "player") {
+        c.kind = "path";
+        player = { x, y };
+      } else if (tool === "ghost") {
+        const GHOST_IDS = ["fomo", "inflation", "impulse"];
+        if (ghosts.length >= 3) ghosts.shift();
+        c.kind = "path";
+        ghosts = ghosts.filter((g) => !(g.x === x && g.y === y));
+        ghosts.push({ x, y, id: GHOST_IDS[ghosts.length] || GHOST_IDS[0] });
+      } else if (tool === "portfolio") {
+        c.kind = "path";
+        portfolio = { x, y };
+      }
+    }
+
+    function render() {
+      const reach = document.getElementById("showUnreach").checked ? floodReachable() : null;
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+      for (let y = 0; y < gridRows; y++) {
+        for (let x = 0; x < gridCols; x++) {
+          const c = getCell(x, y);
+          const el = document.createElement("div");
+          el.className = "cell";
+          el.dataset.x = x;
+          el.dataset.y = y;
+          let kind = c.kind;
+          if (player?.x === x && player?.y === y) kind = "player";
+          else if (ghosts.some((g) => g.x === x && g.y === y)) kind = "ghost";
+          else if (portfolio?.x === x && portfolio?.y === y) kind = "portfolio";
+          else if (kind === "path" && reach && !reach.has(key(x, y))) kind = "unreach";
+          el.classList.add(kind);
+          if (isBorder(x, y)) el.classList.add("locked");
+          grid.appendChild(el);
+        }
+      }
+    }
+
+    function updateStats() {
+      const reach = floodReachable();
+      const walk = cells.filter((c) => c.kind !== "wall").length;
+      const el = document.getElementById("stats");
+      const okPlayer = player ? `<span class="ok">да</span>` : `<span class="err">нет</span>`;
+      const okReach = player && reach.size > 0 ? `<span class="ok">${reach.size}</span>` : `<span class="err">0</span>`;
+      el.innerHTML = `
+        <strong>Коридоров:</strong> ${walk}<br>
+        <strong>Достижимо от копилки:</strong> ${okReach}<br>
+        <strong>Копилка:</strong> ${okPlayer}${player ? ` (${player.x}, ${player.y})` : ""}<br>
+        <strong>Призраки:</strong> ${ghosts.length}/3<br>
+        <strong>Портфель:</strong> ${portfolio ? `(${portfolio.x}, ${portfolio.y})` : "—"}
+      `;
+    }
+
+    function buildExport() {
+      const rows = [];
+      for (let y = 0; y < gridRows; y++) {
+        let row = "";
+        for (let x = 0; x < gridCols; x++) {
+          const c = getCell(x, y);
+          row += c.kind === "wall" || isBorder(x, y) ? "#" : ".";
+        }
+        rows.push(row);
+      }
+      const reach = floodReachable();
+      const reachable = [...reach].map((k) => k.split(",").map(Number));
+
+      const pg = player || { x: 1, y: 1 };
+      const pc = cellCenter(pg.x, pg.y);
+      const playerStart = {
+        x: pg.x, y: pg.y,
+        wx: Math.round(pc.wx * 100) / 100,
+        wy: Math.round(pc.wy * 100) / 100,
+      };
+
+      const GHOST_IDS = ["fomo", "inflation", "impulse"];
+      const ghostSpawns = ghosts.map((g, i) => {
+        const c = cellCenter(g.x, g.y);
+        return {
+          id: g.id || GHOST_IDS[i] || GHOST_IDS[0],
+          x: g.x, y: g.y,
+          wx: Math.round(c.wx * 100) / 100,
+          wy: Math.round(c.wy * 100) / 100,
+        };
+      });
+
+      const portfolioTile = portfolio ? (() => {
+        const c = cellCenter(portfolio.x, portfolio.y);
+        return {
+          x: portfolio.x, y: portfolio.y,
+          wx: Math.round(c.wx * 100) / 100,
+          wy: Math.round(c.wy * 100) / 100,
+        };
+      })() : null;
+
+      return {
+        fieldOrigin: [fieldOx, fieldOy],
+        fieldSize: [fieldW, fieldH],
+        tileW: tileW(),
+        tileH: tileH(),
+        tile: tileAvg(),
+        cols: gridCols,
+        rows: gridRows,
+        source: "maze-editor",
+        rows_ascii: rows,
+        playerStart,
+        ghostSpawns,
+        portfolioTile,
+        reachableCount: reach.size,
+        reachable: reachable.sort((a, b) => a[1] - b[1] || a[0] - b[0]),
+      };
+    }
+
+    function toast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 2200);
+    }
+
+    function setupTools() {
+      const box = document.getElementById("tools");
+      TOOLS.forEach((t) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "tool" + (t.id === tool ? " active" : "");
+        btn.innerHTML = `<span class="tool-swatch ${t.swatch}"></span>${t.label}`;
+        btn.addEventListener("click", () => {
+          tool = t.id;
+          document.querySelectorAll(".tool").forEach((el) => el.classList.remove("active"));
+          btn.classList.add("active");
+        });
+        box.appendChild(btn);
+      });
+    }
+
+    function bindGrid() {
+      const grid = document.getElementById("grid");
+      const paint = (e) => {
+        const el = e.target.closest(".cell");
+        if (!el || el.classList.contains("locked")) return;
+        applyTool(+el.dataset.x, +el.dataset.y);
+        render();
+        updateStats();
+      };
+      grid.addEventListener("mousedown", (e) => {
+        pushHistory();
+        painting = true;
+        paint(e);
+      });
+      grid.addEventListener("mousemove", (e) => {
+        if (painting) paint(e);
+      });
+      window.addEventListener("mouseup", () => { painting = false; });
+    }
+
+    document.getElementById("showBg").addEventListener("change", (e) => {
+      document.getElementById("bgFrame").classList.toggle("hidden", !e.target.checked);
+    });
+    document.getElementById("showUnreach").addEventListener("change", () => render());
+
+    document.getElementById("btnBorder").addEventListener("click", () => {
+      pushHistory();
+      for (let y = 0; y < gridRows; y++) {
+        for (let x = 0; x < gridCols; x++) {
+          if (isBorder(x, y)) getCell(x, y).kind = "wall";
+        }
+      }
+      render();
+      updateStats();
+    });
+
+    document.getElementById("btnClear").addEventListener("click", () => {
+      pushHistory();
+      initCells(Array(gridRows).fill(".".repeat(gridCols)));
+      for (let y = 0; y < gridRows; y++) {
+        for (let x = 0; x < gridCols; x++) {
+          if (isBorder(x, y)) getCell(x, y).kind = "wall";
+        }
+      }
+      render();
+      updateStats();
+    });
+
+    document.getElementById("btnExport").addEventListener("click", () => {
+      const data = buildExport();
+      document.getElementById("exportBox").value = JSON.stringify(data, null, 2);
+      toast("Экспорт обновлён");
+    });
+
+    document.getElementById("btnCopy").addEventListener("click", async () => {
+      const box = document.getElementById("exportBox");
+      if (!box.value) document.getElementById("btnExport").click();
+      await navigator.clipboard.writeText(box.value);
+      toast("JSON скопирован");
+    });
+
+    document.getElementById("btnSave").addEventListener("click", async () => {
+      const data = buildExport();
+      if (!player) {
+        toast("Укажите копилку (старт)");
+        return;
+      }
+      try {
+        const res = await fetch("/api/maze-layout", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        document.getElementById("exportBox").value = JSON.stringify(data, null, 2);
+        toast("Сохранено — maze.js обновлён, обновите игру Ctrl+F5");
+      } catch (err) {
+        toast("Ошибка: " + err.message);
+      }
+    });
+
+    document.getElementById("btnApplyGeom").addEventListener("click", () => {
+      pushHistory();
+      const g = readGeomInputs();
+      if (!applyGeometry(g, { keepCells: true })) return;
+      toast("Геометрия применена");
+    });
+
+    document.getElementById("btnResetGeom").addEventListener("click", () => {
+      pushHistory();
+      applyGeometry({
+        ox: GEOM_DEFAULTS.ox,
+        oy: GEOM_DEFAULTS.oy,
+        fieldW: GEOM_DEFAULTS.fieldW,
+        fieldH: GEOM_DEFAULTS.fieldH,
+        cols: GEOM_DEFAULTS.cols,
+        rows: GEOM_DEFAULTS.rows,
+      }, { keepCells: false });
+      initCells(null);
+      for (let y = 0; y < gridRows; y++) {
+        for (let x = 0; x < gridCols; x++) {
+          if (isBorder(x, y)) getCell(x, y).kind = "wall";
+        }
+      }
+      render();
+      updateStats();
+      toast("Сброшено к значениям Figma");
+    });
+
+    document.getElementById("btnImport").addEventListener("click", () => {
+      const raw = document.getElementById("importBox").value.trim();
+      if (!raw) return;
+      pushHistory();
+      try {
+        if (raw.startsWith("{")) {
+          const data = JSON.parse(raw);
+          applyGeometry(geometryFromData(data), { keepCells: false, rowsAscii: data.rows_ascii });
+          initCells(data.rows_ascii);
+          if (data.playerStart) player = { x: data.playerStart.x, y: data.playerStart.y };
+          ghosts = (data.ghostSpawns || []).map((g, i) => ({
+          x: g.x,
+          y: g.y,
+          id: g.id || ["fomo", "inflation", "impulse"][i],
+        }));
+          portfolio = data.portfolioTile ? { x: data.portfolioTile.x, y: data.portfolioTile.y } : null;
+        } else {
+          const lines = raw.split(/\r?\n/).filter((l) => /^[#.]+$/i.test(l.trim()));
+          if (lines.length && lines[0].length !== gridCols) {
+            applyGeometry({ cols: lines[0].length, rows: lines.length }, { keepCells: false });
+          }
+          initCells(lines.map((l) => l.trim()));
+        }
+        render();
+        updateStats();
+        toast("Импортировано");
+      } catch (e) {
+        toast("Ошибка импорта");
+      }
+    });
+
+    document.getElementById("btnLoadFile").addEventListener("click", async () => {
+      try {
+        const res = await fetch("/static/js/maze-layout.generated.json?v=" + Date.now());
+        if (!res.ok) throw new Error("404");
+        const data = await res.json();
+        document.getElementById("importBox").value = JSON.stringify(data, null, 2);
+        document.getElementById("btnImport").click();
+        toast("Загружено из проекта");
+      } catch {
+        toast("Файл maze-layout.generated.json не найден");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.target.matches("textarea")) return;
+      const map = { "1": "wall", "2": "path", "3": "player", "4": "ghost", "5": "portfolio" };
+      if (map[e.key]) {
+        tool = map[e.key];
+        document.querySelectorAll(".tool").forEach((el, i) => {
+          el.classList.toggle("active", TOOLS[i].id === tool);
+        });
+      }
+      if (e.key === "z" && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        undo();
+      }
+    });
+
+    function loadSavedGeometry() {
+      try {
+        const raw = localStorage.getItem("kopilka-maze-geom");
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        return geometryFromData(data);
+      } catch {
+        return null;
+      }
+    }
+
+    async function boot() {
+      setupTools();
+      bindGrid();
+      fillGeomInputs();
+      applyGridLayout();
+      try {
+        const res = await fetch("/static/js/maze-layout.generated.json?v=" + Date.now());
+        if (res.ok) {
+          const data = await res.json();
+          applyGeometry(geometryFromData(data), { keepCells: false, rowsAscii: data.rows_ascii });
+          initCells(data.rows_ascii);
+          if (data.playerStart) player = { x: data.playerStart.x, y: data.playerStart.y };
+          ghosts = (data.ghostSpawns || []).map((g, i) => ({
+          x: g.x,
+          y: g.y,
+          id: g.id || ["fomo", "inflation", "impulse"][i],
+        }));
+          portfolio = data.portfolioTile ? { x: data.portfolioTile.x, y: data.portfolioTile.y } : null;
+        } else {
+          const saved = loadSavedGeometry();
+          if (saved) applyGeometry(saved, { keepCells: false });
+          initCells(null);
+        }
+      } catch {
+        const saved = loadSavedGeometry();
+        if (saved) applyGeometry(saved, { keepCells: false });
+        initCells(null);
+      }
+      render();
+      updateStats();
+      document.getElementById("btnExport").click();
+    }
+
+    boot();
+  </script>
+</body>
+</html>

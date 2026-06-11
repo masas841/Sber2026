@@ -1,0 +1,15 @@
+# GIGAvibe kiosk (nanobanana + профиль гостя). Тяжёлые ML-стеки (torch, diffusers, GFPGAN) не нужны.
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.12
+pillow>=11.0.0
+numpy>=1.24.4,<2
+opencv-python-headless>=4.10.0
+qrcode[pil]>=8.0
+pydantic-settings>=2.6.0
+psutil>=6.0.0
+httpx>=0.27.0
+google-genai>=1.0.0
+cryptography>=42.0.0
+
+# insightface + onnxruntime-gpu ставятся в install.ps1 (как в run.ps1)

@@ -1,0 +1,5 @@
+<boolean-operation id="127:569" name="Subtract" x="-152" y="-92.6884765625" width="807" height="688.5419921875">
+  <rounded-rectangle id="127:570" name="Rectangle 1" x="-152" y="-92.68807792663574" width="807" height="688.541259765625" />
+  <ellipse id="127:571" name="Ellipse 28798" x="43.948883056640625" y="43.960479736328125" width="414.60552978515625" height="414.60552978515625" />
+</boolean-operation>
+IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

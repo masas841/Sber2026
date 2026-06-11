@@ -1,0 +1,15 @@
+{
+  "name": "smile-pay",
+  "version": "1.0.0",
+  "description": "Отдельный интерактив **«Улыбка»** — оплата улыбкой. Сцена **504×504**, зелёный фон Figma; камера всегда активна, но видна только через радиальную маску.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}

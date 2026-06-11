@@ -1,0 +1,79 @@
+=== GIGAvibe LivePortrait install ===
+[skip] Репозиторий уже есть: I:\Cursor\Sber2026\gigavibe\vendor\LivePortrait
+[2/5] Используем основной venv: I:\Cursor\Sber2026\gigavibe\.venv
+[3/5] зависимости LivePortrait
+  (torch уже в gigavibe .venv)
+  lmdb>=2.2 (бинарный wheel для Windows)
+  $ I:\Cursor\Sber2026\gigavibe\.venv\Scripts\python.exe -m pip install lmdb>=2.2
+    Requirement already satisfied: lmdb>=2.2 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (2.2.0)
+  pip install -r _liveportrait_requirements_win.txt (18 пакетов)
+  $ I:\Cursor\Sber2026\gigavibe\.venv\Scripts\python.exe -m pip install -r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt
+    Requirement already satisfied: python-multipart>=0.0.9 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.0.29)
+    Requirement already satisfied: ruff>=0.2.2 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.15.14)
+    Requirement already satisfied: semantic-version~=2.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (2.10.0)
+    Requirement already satisfied: tomlkit==0.12.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.12.0)
+    Requirement already satisfied: typer<1.0,>=0.12 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.24.2)
+    Requirement already satisfied: uvicorn>=0.14.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.48.0)
+    Requirement already satisfied: coloredlogs in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from onnxruntime-gpu==1.18.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 17)) (15.0.1)
+    Requirement already satisfied: flatbuffers in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from onnxruntime-gpu==1.18.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 17)) (25.12.19)
+    Requirement already satisfied: sympy in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from onnxruntime-gpu==1.18.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 17)) (1.13.1)
+    Requirement already satisfied: filelock in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (3.29.0)
+    Requirement already satisfied: regex!=2019.12.17 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (2026.5.9)
+    Requirement already satisfied: requests in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (2.34.2)
+    Requirement already satisfied: tokenizers<0.19,>=0.14 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (0.15.2)
+    Requirement already satisfied: safetensors>=0.4.1 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (0.8.0rc0)
+    Requirement already satisfied: fsspec in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio-client==1.4.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (2026.4.0)
+    Requirement already satisfied: websockets<13.0,>=10.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from gradio-client==1.4.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (12.0)
+    Requirement already satisfied: numkong>=7.4.5 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from albucore>=0.0.11->albumentations==1.4.10->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 10)) (7.7.0)
+    Requirement already satisfied: stringzilla>=3.10.4 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from albucore>=0.0.11->albumentations==1.4.10->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 10)) (4.6.1)
+    Requirement already satisfied: idna>=2.8 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from anyio<5.0,>=3.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (3.16)
+    Requirement already satisfied: starlette>=0.46.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from fastapi<1.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (1.1.0)
+    Requirement already satisfied: typing-inspection>=0.4.2 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from fastapi<1.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.4.2)
+    Requirement already satisfied: annotated-doc>=0.0.2 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from fastapi<1.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.0.4)
+    Requirement already satisfied: certifi in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from httpx>=0.24.1->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (2026.5.20)
+    Requirement already satisfied: httpcore==1.* in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from httpx>=0.24.1->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (1.0.9)
+    Requirement already satisfied: h11>=0.16 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from httpcore==1.*->httpx>=0.24.1->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (0.16.0)
+    Requirement already satisfied: mdurl~=0.1 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from markdown-it-py>=2.2.0->rich==13.7.1->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 6)) (0.1.2)
+    Requirement already satisfied: pytz>=2020.1 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from pandas<3.0,>=1.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (2026.2)
+    Requirement already satisfied: tzdata>=2022.7 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from pandas<3.0,>=1.0->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (2026.2)
+    Requirement already satisfied: annotated-types>=0.6.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from pydantic>=2.7.0->albumentations==1.4.10->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 10)) (0.7.0)
+    Requirement already satisfied: pydantic-core==2.46.4 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from pydantic>=2.7.0->albumentations==1.4.10->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 10)) (2.46.4)
+    Requirement already satisfied: six>=1.5 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from python-dateutil>=2.7->matplotlib==3.9.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 11)) (1.17.0)
+    Requirement already satisfied: joblib>=1.3.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from scikit-learn>=1.3.2->albumentations==1.4.10->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 10)) (1.5.3)
+    Requirement already satisfied: threadpoolctl>=3.2.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from scikit-learn>=1.3.2->albumentations==1.4.10->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 10)) (3.6.0)
+    Requirement already satisfied: click>=8.2.1 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from typer<1.0,>=0.12->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (8.4.1)
+    Requirement already satisfied: shellingham>=1.3.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from typer<1.0,>=0.12->gradio==5.1.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 14)) (1.5.4)
+    Requirement already satisfied: humanfriendly>=9.1 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from coloredlogs->onnxruntime-gpu==1.18.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 17)) (10.0)
+    Requirement already satisfied: charset_normalizer<4,>=2 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from requests->transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (3.4.7)
+    Requirement already satisfied: urllib3<3,>=1.26 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from requests->transformers==4.38.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 18)) (2.7.0)
+    Requirement already satisfied: mpmath<1.4,>=1.1.0 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from sympy->onnxruntime-gpu==1.18.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 17)) (1.3.0)
+    Requirement already satisfied: pyreadline3 in i:\cursor\sber2026\gigavibe\.venv\lib\site-packages (from humanfriendly>=9.1->coloredlogs->onnxruntime-gpu==1.18.0->-r I:\Cursor\Sber2026\gigavibe\data\_liveportrait_requirements_win.txt (line 17)) (3.5.6)
+[4/5] snapshot_download KlingTeam/LivePortrait
+  $ I:\Cursor\Sber2026\gigavibe\.venv\Scripts\python.exe -c from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id="KlingTeam/LivePortrait",
+    local_dir='I:\\Cursor\\Sber2026\\gigavibe\\vendor\\LivePortrait\\pretrained_weights',
+    ignore_patterns=["*.git*", "README.md", "docs/**"],
+)
+print("weights_ok")
+    weights_ok
+[5/5] Копирую driving .mp4 -> assets/driving/
+  + d0.mp4
+  + d10.mp4
+  + d11.mp4
+  + d12.mp4
+  + d13.mp4
+  + d14.mp4
+  + d18.mp4
+  + d19.mp4
+  + d20.mp4
+  + d3.mp4
+  + d6.mp4
+  + d9.mp4
+
+Готово.
+  .env: GENERATOR_MODE=liveportrait
+  PRELOAD_MODEL_ON_STARTUP=false  (рекомендуется)
+  LIVEPORTRAIT_USE_MAIN_VENV=true
+  Запуск: run.ps1
+  Тест: .venv\Scripts\python.exe scripts\test_liveportrait.py

@@ -1,0 +1,54 @@
+{
+  "count": 10,
+  "size": [
+    720,
+    1280
+  ],
+  "model": "gemini-3.1-flash-image-preview",
+  "aspect_ratio": "9:16",
+  "image_size": "1K",
+  "total_sec": 124.45,
+  "files": [
+    {
+      "file": "fon_01.jpg",
+      "sec": 14.35
+    },
+    {
+      "file": "fon_02.jpg",
+      "sec": 14.56
+    },
+    {
+      "file": "fon_03.jpg",
+      "sec": 15.64
+    },
+    {
+      "file": "fon_04.jpg",
+      "sec": 11.71
+    },
+    {
+      "file": "fon_05.jpg",
+      "sec": 11.32
+    },
+    {
+      "file": "fon_06.jpg",
+      "sec": 7.93
+    },
+    {
+      "file": "fon_07.jpg",
+      "sec": 15.4
+    },
+    {
+      "file": "fon_08.jpg",
+      "sec": 9.72
+    },
+    {
+      "file": "fon_09.jpg",
+      "sec": 13.03
+    },
+    {
+      "file": "fon_10.jpg",
+      "sec": 10.79
+    }
+  ],
+  "prompt": "Create a premium surreal 3D editorial environment scene with no people.\n\nA vibrant abstract environment made of large glossy organic 3D shapes, inflatable forms, rounded blobs, soft tubular rings, bubble clusters, oversized flower-like balloon elements and reflective chrome spheres.\n\nColor palette:\npastel aqua blue\nmint turquoise\nsoft cyan\nneon-lime green\nfresh light green\n\nMaterials:\nglossy smooth plastic\ntranslucent gel\ninflated vinyl\nsoft-touch rubber\nfuzzy grass-like surfaces\npolished chrome metal spheres\n\nComposition:\nCreate a completely new composition every time.\nDo not repeat previous layouts.\nUse asymmetrical placement of shapes.\nMix foreground, midground and background elements.\nLarge hero shapes frame open negative space in the center for a future portrait.\n\nLighting:\nhigh-end advertising photography,\nsoft studio lighting,\nbright pastel reflections,\nsubtle rim light,\nclean highlights,\nluxury beauty campaign quality.\n\nStyle references:\nmodern CGI,\npremium 3D illustration,\nplayful futuristic design,\nApple-style cleanliness,\nBehance award-winning visual direction,\nsurreal editorial set design.\n\nDepth:\nstrong foreground objects,\nlayered composition,\nshallow depth of field,\nrealistic shadows and contact lighting.\n\nQuality:\nultra detailed,\nphotoreal CGI,\n4K,\ncommercial campaign quality.\n\nVertical 9:16 portrait. No people, no faces, no human figures, no silhouettes, no body parts. Do not add text, logos, subtitles, or watermarks. Single cohesive image."
+}

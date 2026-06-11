@@ -1,0 +1,60 @@
+const imgSubtract = "http://localhost:3845/assets/11dd16f526c15efc14a97e0ae7b5b415cec920cb.svg";
+const imgStar57 = "http://localhost:3845/assets/5678f5f8a28d0e2477bd725e5bd6790932274e7f.svg";
+const imgStar59 = "http://localhost:3845/assets/f48f6c60494137b9e749a0619e3816c6e158615a.svg";
+const imgGroup2131329261 = "http://localhost:3845/assets/83a91c557351a965081d8712ce63faae98442e41.svg";
+const imgGroup2131329259 = "http://localhost:3845/assets/7bbe7a4e2659e3689fac3abae3ed1a0095616cdf.svg";
+
+export default function Frame() {
+  return (
+    <div className="bg-black relative size-full" data-node-id="25:2498">
+      <div className="absolute h-[688.542px] left-[-152px] top-[-92.69px] w-[807px]" data-node-id="117:357" data-name="Subtract">
+        <div className="absolute inset-[-11.53%_-9.84%]">
+          <img alt="" className="block max-w-none size-full" src={imgSubtract} />
+        </div>
+      </div>
+      <div className="absolute flex h-[77.469px] items-center justify-center left-[400.5px] top-[212px] w-[77.471px]">
+        <div className="flex-none rotate-[22.83deg]">
+          <div className="h-[59.154px] relative w-[59.155px]" data-node-id="127:562">
+            <div className="absolute inset-[2.42%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar57} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[12px] size-[49.947px] top-[151px]">
+        <div className="flex-none rotate-[-25.93deg]">
+          <div className="h-[37.369px] relative w-[37.37px]" data-node-id="127:565">
+            <div className="absolute inset-[12.21%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar59} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[418.5px] size-[117.616px] top-[258px]">
+        <div className="flex-none rotate-[-20.8deg]">
+          <div className="relative size-[91.18px]" data-node-id="127:577">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2131329261} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[-66.03px] size-[185.683px] top-[195.47px]">
+        <div className="flex-none rotate-[27.55deg]">
+          <div className="relative size-[137.633px]" data-node-id="127:581">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2131329259} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Мастер/Белый: #FFFFFF.
+Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.
+IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

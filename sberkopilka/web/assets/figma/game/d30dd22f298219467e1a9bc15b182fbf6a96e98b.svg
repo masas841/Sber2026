@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 5.86778 5.86778" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Star 21" filter="url(#filter0_f_43_157)">
+<path d="M2.31478 0.661103C2.52745 0.0863771 3.34033 0.0863784 3.553 0.661104L3.89431 1.58346C3.96117 1.76415 4.10363 1.90662 4.28432 1.97348L5.20668 2.31478C5.78141 2.52745 5.78141 3.34033 5.20668 3.553L4.28432 3.8943C4.10363 3.96117 3.96117 4.10363 3.8943 4.28432L3.553 5.20668C3.34033 5.78141 2.52745 5.78141 2.31478 5.20668L1.97348 4.28432C1.90662 4.10363 1.76415 3.96117 1.58346 3.8943L0.661103 3.553C0.0863772 3.34033 0.0863784 2.52745 0.661104 2.31478L1.58346 1.97348C1.76415 1.90662 1.90662 1.76415 1.97348 1.58346L2.31478 0.661103Z" fill="var(--fill-0, white)"/>
+</g>
+<defs>
+<filter id="filter0_f_43_157" x="-4.47035e-08" y="-4.47035e-08" width="5.86778" height="5.86778" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="0.11503" result="effect1_foregroundBlur_43_157"/>
+</filter>
+</defs>
+</svg>

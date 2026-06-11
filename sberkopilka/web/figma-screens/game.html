@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>game</title>
+  <script src="/static/vendor/tailwindcdn.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {} }
+    };
+  </script>
+  <link rel="stylesheet" href="/static/css/figma-fonts.css?v=2" />
+  <link rel="stylesheet" href="/static/css/figma-animations.css?v=12" />
+  <style>
+    html, body { margin: 0; padding: 0; background: linear-gradient(180deg, #ecfffe 0%, #9effa8 100%); }
+    #capture {
+      width: 672px;
+      height: 672px;
+      overflow: hidden;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="capture"><div id="root" class="w-[672px] h-[672px]"></div></div>
+  <script src="/static/js/figma-screen-boot.js?v=3"></script>
+  <script crossorigin src="/static/vendor/react.production.min.js"></script>
+  <script crossorigin src="/static/vendor/react-dom.production.min.js"></script>
+  <script src="/static/vendor/babel.min.js"></script>
+  <script type="text/babel" data-presets="react">
+const img1 = "/static/assets/figma/shared/d0fdcdea6f470b21913662cbbe66c00de9890160.png";
+const img22 = "/static/assets/figma/shared/7326c12827ced98e71e173542da09e8370c6df13.png";
+const img1020 = "/static/assets/figma/shared/0f3207ec237fb8b352ca47534b914bc49b5505f4.png";
+const img5619343 = "/static/assets/figma/shared/a1aeba078a8e20030c8a55f37f28123e6652d7ef.png";
+const img793938 = "/static/assets/figma/shared/ebf4ec67ce67d26629841cb2df68811acbfa8928.png";
+const img14189 = "/static/assets/figma/shared/103ef629c06cb1c410efe21aa5948e9f3dcc7b83.png";
+const img1819 = "/static/assets/figma/shared/6efb1b5ba282d7b4bbc5f93a8dbe9bfa74283474.png";
+const imgImage2090010239 = "/static/assets/figma/shared/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png";
+const imgChatGptImage720261853051 = "/static/assets/figma/shared/aa1388805711ad232ced85bc3af05b4dfc2781a6.png";
+const imgImage103 = "/static/assets/figma/shared/87eccea116ae76e662b837feec4e83cf5f95e45c.png";
+const imgImage2090010243 = "/static/assets/figma/shared/ecfb971636fafb1d3d324a0e161c02ca67c0f588.png";
+const imgImage2090010338 = "/static/assets/figma/shared/2eb7c1b7ba6799289b56f4962cdc1f75363d0932.png";
+const imgChatGptImage720262357351 = "/static/assets/figma/shared/5461a78805872f48f1580cf04501583fba98b239.png";
+const img161 = "/static/assets/figma/shared/18bf53e8d6a29e158980d8b93828ef9c4a7b3a0e.png";
+const img2 = "/static/assets/figma/shared/9c7a52cb0aaebeae10b7379074ad3d6c045c76aa.png";
+const imgBgDecor = "/static/assets/figma/shared/bd338f5b9b0f56d0bb2cc179fb704abde6cb4956.svg";
+const imgGroup2136140167 = "/static/assets/figma/shared/3a438d68f2ba7c8c9e89444c4c2ab663223ad259.svg";
+const imgGroup2136140165 = "/static/assets/figma/shared/642f0f05fcf47321284cf29a0940a19c2b9524bf.svg";
+const imgImage102 = "/static/assets/figma/shared/7e4d0a937c095af71b9cd90bccc4e1722b5e5a33.svg";
+const imgGroup2136140162 = "/static/assets/figma/shared/ae87f619cfbea4ededd3ca117ecf0ef29ede698e.svg";
+const imgStar20 = "/static/assets/figma/shared/909228957421506a7ad5a248c8a5f61cc7a6ae3b.svg";
+const imgVector234257108 = "/static/assets/figma/shared/ba47078de54d7143dc1bde2652234fe9ba7aa8c5.svg";
+const imgStar19 = "/static/assets/figma/shared/54085f72c9f34ea2479243b6fbd1a3260f02d2b2.svg";
+const img = "/static/assets/figma/shared/ff9809c9d0df86c5a06687dc402742720c2b2da7.svg";
+const imgEllipse29085 = "/static/assets/figma/shared/94cc6ba2bafbf7ba95db01cca2077bcdb548c211.svg";
+const imgStar21 = "/static/assets/figma/shared/58a8b5d04f4e46d3ec1d9da07604f02b12936779.svg";
+const imgStar22 = "/static/assets/figma/shared/d30dd22f298219467e1a9bc15b182fbf6a96e98b.svg";
+
+function Screen() {
+  return (
+    <div className="bg-gradient-to-b from-[#ecfffe] relative size-full to-[#9effa8]" data-node-id="25:6" data-name="Game">
+      <div className="absolute h-[882.209px] left-[-48.99px] top-[-134px] w-[727.743px]" data-node-id="25:7" data-name="BG Decor">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBgDecor} />
+      </div>
+      <div className="absolute contents left-[-27px] top-[-17px]" data-node-id="25:11" data-name="Поле">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 mix-blend-multiply opacity-50 size-[722px] top-[calc(50%+11px)]" data-node-id="25:12" data-name="Тень 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1} />
+        </div>
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 mix-blend-multiply opacity-45 size-[722px] top-[calc(50%+8px)]" data-node-id="25:13" data-name="Тень2 2">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img22} />
+        </div>
+        <div className="absolute contents left-[107.52px] top-[74.39px]" data-node-id="25:14" data-name="Поле">
+          <div className="absolute h-[96.758px] left-[452.64px] top-[386.76px] w-[38.515px]" data-node-id="25:15" data-name="10 20">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+            </div>
+          </div>
+          <div className="absolute flex h-[38.515px] items-center justify-center left-[393.46px] top-[443.12px] w-[96.758px]">
+            <div className="-rotate-90 -scale-y-100 flex-none">
+              <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:16" data-name="10 22">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[38.515px] items-center justify-center left-[381px] top-[443.12px] w-[96.758px]">
+            <div className="-rotate-90 -scale-y-100 flex-none">
+              <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:17" data-name="10 23">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute left-[448.88px] size-[44.152px] top-[383px]" data-node-id="25:18" data-name="5 619343">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+          </div>
+          <div className="absolute flex items-center justify-center left-[389.61px] size-[44.152px] top-[440.15px]">
+            <div className="-rotate-90 flex-none">
+              <div className="relative size-[44.152px]" data-node-id="25:19" data-name="5 619346">
+                <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute contents left-[107.52px] top-[74.39px]" data-node-id="25:20">
+            <div className="absolute contents left-[107.52px] top-[74.39px]" data-node-id="25:21">
+              <div className="absolute contents left-[107.52px] top-[74.39px]" data-node-id="25:22">
+                <div className="absolute contents left-[107.52px] top-[237.85px]" data-node-id="25:23">
+                  <div className="absolute flex items-center justify-center left-[121.61px] size-[65.238px] top-[474.58px]">
+                    <div className="-scale-y-100 flex-none">
+                      <div className="relative size-[65.238px]" data-node-id="25:24" data-name="7 93938">
+                        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex items-center justify-center left-[212.73px] size-[65.238px] top-[532.82px]">
+                    <div className="-scale-y-100 flex-none">
+                      <div className="relative size-[65.238px]" data-node-id="25:25" data-name="7 93939">
+                        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex h-[183.182px] items-center justify-center left-[107.52px] top-[358.09px] w-[103.333px]">
+                    <div className="-scale-y-100 flex-none">
+                      <div className="h-[183.182px] relative w-[103.333px]" data-node-id="25:26" data-name="10 12">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex items-center justify-center left-[107.52px] size-[103.579px] top-[332.73px]">
+                    <div className="-scale-y-100 flex-none">
+                      <div className="relative size-[103.579px]" data-node-id="25:27" data-name="10 13">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex h-[74.212px] items-center justify-center left-[237.15px] top-[539.39px] w-[103.333px]">
+                    <div className="-rotate-90 -scale-y-100 flex-none">
+                      <div className="h-[103.333px] relative w-[74.212px]" data-node-id="25:28" data-name="10 17">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[139.57%]" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex h-[72.333px] items-center justify-center left-[285.06px] top-[541.27px] w-[103.333px]">
+                    <div className="-rotate-90 -scale-y-100 flex-none">
+                      <div className="h-[103.333px] relative w-[72.333px]" data-node-id="25:29" data-name="10 18">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[143.2%]" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex h-[104px] items-center justify-center left-[326px] top-[510px] w-[106px]">
+                    <div className="-rotate-90 -scale-y-100 flex-none">
+                      <div className="h-[106px] relative w-[104px]" data-node-id="25:30" data-name="10 19">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute h-[112.59%] left-[0.38%] max-w-none top-[-13.02%] w-[99.6%]" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex items-center justify-center left-[107.52px] size-[103.579px] top-[283.88px]">
+                    <div className="-scale-y-100 flex-none">
+                      <div className="relative size-[103.579px]" data-node-id="25:31" data-name="10 14">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex h-[103.333px] items-center justify-center left-[152.61px] top-[451.09px] w-[75.152px]">
+                    <div className="-rotate-90 -scale-y-100 flex-none">
+                      <div className="h-[75.152px] relative w-[103.333px]" data-node-id="25:32" data-name="10 16">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute flex items-center justify-center left-[107.52px] size-[103.579px] top-[237.85px]">
+                    <div className="-scale-y-100 flex-none">
+                      <div className="relative size-[103.579px]" data-node-id="25:33" data-name="10 15">
+                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                          <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute contents left-[107.52px] top-[74.39px]" data-node-id="25:34">
+                  <div className="absolute contents left-[107.52px] top-[74.39px]" data-node-id="25:35">
+                    <div className="absolute left-[121.61px] size-[65.238px] top-[148.61px]" data-node-id="25:36" data-name="7 93938">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                    </div>
+                    <div className="absolute left-[212.73px] size-[65.238px] top-[89.42px]" data-node-id="25:37" data-name="7 93939">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                    </div>
+                    <div className="absolute left-[107.52px] size-[103.579px] top-[171.15px]" data-node-id="25:38" data-name="10 12">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                      </div>
+                    </div>
+                    <div className="absolute left-[107.52px] size-[103.579px] top-[220.94px]" data-node-id="25:39" data-name="10 13">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[74.212px] items-center justify-center left-[237.15px] top-[74.39px] w-[103.333px]">
+                      <div className="flex-none rotate-90">
+                        <div className="h-[103.333px] relative w-[74.212px]" data-node-id="25:40" data-name="10 17">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[139.57%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[72.333px] items-center justify-center left-[285.06px] top-[74.39px] w-[103.333px]">
+                      <div className="flex-none rotate-90">
+                        <div className="h-[103.333px] relative w-[72.333px]" data-node-id="25:41" data-name="10 18">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[143.2%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[55px] items-center justify-center left-[319px] top-[89px] w-[97px]">
+                      <div className="flex-none rotate-90">
+                        <div className="h-[97px] relative w-[55px]" data-node-id="25:42" data-name="10 19">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[163.62%] left-[-26.56%] max-w-none top-[-64.24%] w-[188.33%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute left-[107.52px] size-[103.579px] top-[269.79px]" data-node-id="25:43" data-name="10 14">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[103px] items-center justify-center left-[142px] top-[134px] w-[117px]">
+                      <div className="flex-none rotate-90">
+                        <div className="h-[117px] relative w-[103px]" data-node-id="25:44" data-name="10 16">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[86.38%] left-[-0.41%] max-w-none top-[14.07%] w-[100.32%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute left-[107.52px] size-[103.579px] top-[315.82px]" data-node-id="25:45" data-name="10 15">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                      </div>
+                    </div>
+                    <div className="absolute contents h-[103px] left-[241px] top-[481px] w-[192px]" data-node-id="25:46">
+                      <div className="absolute flex h-[103px] items-center justify-center left-[241px] top-[481px] w-[192px]">
+                        <div className="flex-none rotate-90">
+                          <div className="h-[192px] relative w-[103px]" data-node-id="25:47" data-name="10 20">
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="absolute flex items-center justify-center left-[358px] size-[44.152px] top-[495.54px]">
+                        <div className="flex-none rotate-90">
+                          <div className="relative size-[44.152px]" data-node-id="25:48" data-name="5 619343">
+                            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="absolute flex items-center justify-center left-[270px] size-[44.152px] top-[495.54px]">
+                        <div className="-scale-y-100 flex-none rotate-90">
+                          <div className="relative size-[44.152px]" data-node-id="25:49" data-name="5 619344">
+                            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute contents h-[103px] left-[241px] top-[135px] w-[192px]" data-node-id="25:50">
+                      <div className="absolute flex h-[103px] items-center justify-center left-[241px] top-[135px] w-[192px]">
+                        <div className="flex-none rotate-90">
+                          <div className="h-[192px] relative w-[103px]" data-node-id="25:51" data-name="10 20">
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="absolute flex items-center justify-center left-[358px] size-[44.152px] top-[149.54px]">
+                        <div className="flex-none rotate-90">
+                          <div className="relative size-[44.152px]" data-node-id="25:52" data-name="5 619343">
+                            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="absolute flex items-center justify-center left-[270px] size-[44.152px] top-[149.54px]">
+                        <div className="-scale-y-100 flex-none rotate-90">
+                          <div className="relative size-[44.152px]" data-node-id="25:53" data-name="5 619344">
+                            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute contents left-[255.94px] top-[74.39px]" data-node-id="25:54">
+                    <div className="absolute flex items-center justify-center left-[487.25px] size-[65.238px] top-[148.61px]">
+                      <div className="-scale-y-100 flex-none rotate-180">
+                        <div className="relative size-[65.238px]" data-node-id="25:55" data-name="7 93938">
+                          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[50px] items-center justify-center left-[381px] top-[89px] w-[80px]">
+                      <div className="-scale-y-100 flex-none rotate-180">
+                        <div className="h-[50px] relative w-[80px]" data-node-id="25:56" data-name="7 93939">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[130.48%] left-[-0.3%] max-w-none top-[0.85%] w-[81.55%]" src={img793938} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex items-center justify-center left-[463px] size-[103.579px] top-[171.15px]">
+                      <div className="-scale-y-100 flex-none rotate-180">
+                        <div className="relative size-[103.579px]" data-node-id="25:57" data-name="10 12">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex items-center justify-center left-[463px] size-[103.579px] top-[220.94px]">
+                      <div className="-scale-y-100 flex-none rotate-180">
+                        <div className="relative size-[103.579px]" data-node-id="25:58" data-name="10 13">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[72.333px] items-center justify-center left-[255.94px] top-[74.39px] w-[103.333px]">
+                      <div className="-scale-y-100 flex-none rotate-90">
+                        <div className="h-[103.333px] relative w-[72.333px]" data-node-id="25:59" data-name="10 18">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[143.2%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[103px] items-center justify-center left-[434px] top-[134px] w-[92px]">
+                      <div className="-scale-y-100 flex-none rotate-90">
+                        <div className="h-[92px] relative w-[103px]" data-node-id="25:60" data-name="10 16">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute contents left-[184px] top-[238px]" data-node-id="25:61">
+                    <div className="absolute flex items-center justify-center left-[487.91px] size-[65.238px] top-[471.76px]">
+                      <div className="flex-none rotate-180">
+                        <div className="relative size-[65.238px]" data-node-id="25:62" data-name="7 93938">
+                          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex items-center justify-center left-[397px] size-[65.238px] top-[532.82px]">
+                      <div className="flex-none rotate-180">
+                        <div className="relative size-[65.238px]" data-node-id="25:63" data-name="7 93939">
+                          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img793938} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[177.546px] items-center justify-center left-[499.88px] top-[359.03px] w-[66.697px]">
+                      <div className="flex-none rotate-180">
+                        <div className="h-[177.546px] relative w-[66.697px]" data-node-id="25:64" data-name="10 12">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[155.3%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex items-center justify-center left-[463px] size-[103.579px] top-[332.73px]">
+                      <div className="flex-none rotate-180">
+                        <div className="relative size-[103.579px]" data-node-id="25:65" data-name="10 13">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[72.333px] items-center justify-center left-[255.94px] top-[541.27px] w-[103.333px]">
+                      <div className="-rotate-90 flex-none">
+                        <div className="h-[103.333px] relative w-[72.333px]" data-node-id="25:66" data-name="10 18">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[100.24%] left-0 max-w-none top-[-0.24%] w-[143.2%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute h-[62px] left-[197px] top-[514px] w-[72px]" data-node-id="25:67" data-name="10 19">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[167.06%] left-0 max-w-none top-[-66.53%] w-[143.86%]" src={img1020} />
+                      </div>
+                    </div>
+                    <div className="absolute h-[62px] left-[402px] top-[514px] w-[72px]" data-node-id="25:68" data-name="10 20">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[167.06%] left-0 max-w-none top-[-66.53%] w-[143.86%]" src={img1020} />
+                      </div>
+                    </div>
+                    <div className="absolute flex items-center justify-center left-[463px] size-[103.579px] top-[283.88px]">
+                      <div className="flex-none rotate-180">
+                        <div className="relative size-[103.579px]" data-node-id="25:69" data-name="10 14">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[103.333px] items-center justify-center left-[447px] top-[450.15px] w-[75.152px]">
+                      <div className="-rotate-90 flex-none">
+                        <div className="h-[75.152px] relative w-[103.333px]" data-node-id="25:70" data-name="10 16">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute left-0 max-w-none size-full top-0" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[53px] items-center justify-center left-[422px] top-[502px] w-[69px]">
+                      <div className="-rotate-90 -scale-y-100 flex-none">
+                        <div className="h-[69px] relative w-[53px]" data-node-id="25:71" data-name="14 189">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[53px] items-center justify-center left-[184px] top-[502px] w-[69px]">
+                      <div className="-rotate-90 flex-none">
+                        <div className="h-[69px] relative w-[53px]" data-node-id="25:72" data-name="14 190">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[103px] items-center justify-center left-[505px] top-[238px] w-[62px]">
+                      <div className="flex-none rotate-180">
+                        <div className="h-[103px] relative w-[62px]" data-node-id="25:73" data-name="10 15">
+                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                            <img alt="" className="absolute h-[100.56%] left-[0.68%] max-w-none top-[-0.42%] w-[167.06%]" src={img1020} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute contents left-[181.73px] top-[207px]" data-node-id="25:74">
+                <div className="absolute flex h-[96.758px] items-center justify-center left-[183.61px] top-[207.79px] w-[38.515px]">
+                  <div className="flex-none rotate-180">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:75" data-name="10 20">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[184.55px] top-[209.67px] w-[96.758px]">
+                  <div className="-scale-y-100 flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:76" data-name="10 22">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[197px] top-[209.67px] w-[96.758px]">
+                  <div className="-scale-y-100 flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:77" data-name="10 23">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[181.73px] size-[44.152px] top-[264.15px]">
+                  <div className="flex-none rotate-180">
+                    <div className="relative size-[44.152px]" data-node-id="25:78" data-name="5 619343">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[241px] size-[44.152px] top-[207px]">
+                  <div className="flex-none rotate-90">
+                    <div className="relative size-[44.152px]" data-node-id="25:79" data-name="5 619346">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[69.515px] items-center justify-center left-[187.36px] top-[209.67px] w-[53.546px]">
+                  <div className="flex-none rotate-180">
+                    <div className="h-[69.515px] relative w-[53.546px]" data-node-id="25:80" data-name="14 188">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute contents left-[181.72px] top-[383px]" data-node-id="25:81">
+                <div className="absolute flex h-[96.758px] items-center justify-center left-[183.6px] top-[386.76px] w-[38.515px]">
+                  <div className="-scale-y-100 flex-none rotate-180">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:82" data-name="10 20">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[184.54px] top-[443.12px] w-[96.758px]">
+                  <div className="-rotate-90 flex-none">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:83" data-name="10 22">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[197px] top-[443.12px] w-[96.758px]">
+                  <div className="-rotate-90 flex-none">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:84" data-name="10 23">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[181.72px] size-[44.152px] top-[383px]">
+                  <div className="-scale-y-100 flex-none rotate-180">
+                    <div className="relative size-[44.152px]" data-node-id="25:85" data-name="5 619343">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[241px] size-[44.152px] top-[440.15px]">
+                  <div className="-rotate-90 -scale-y-100 flex-none">
+                    <div className="relative size-[44.152px]" data-node-id="25:86" data-name="5 619346">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[69.515px] items-center justify-center left-[187.36px] top-[412.12px] w-[53.546px]">
+                  <div className="-scale-y-100 flex-none rotate-180">
+                    <div className="h-[69.515px] relative w-[53.546px]" data-node-id="25:87" data-name="14 188">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute contents left-[196px] top-[121px]" data-node-id="25:88">
+                <div className="absolute flex h-[96.758px] items-center justify-center left-[452.64px] top-[207.79px] w-[38.515px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:89" data-name="10 20">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[393.46px] top-[209.67px] w-[96.758px]">
+                  <div className="flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:90" data-name="10 22">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[381px] top-[209.67px] w-[96.758px]">
+                  <div className="flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:91" data-name="10 23">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[448.88px] size-[44.152px] top-[264.15px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="relative size-[44.152px]" data-node-id="25:92" data-name="5 619343">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[389.61px] size-[44.152px] top-[207px]">
+                  <div className="-scale-y-100 flex-none rotate-90">
+                    <div className="relative size-[44.152px]" data-node-id="25:93" data-name="5 619346">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[69.515px] items-center justify-center left-[433.85px] top-[209.67px] w-[53.546px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="h-[69.515px] relative w-[53.546px]" data-node-id="25:94" data-name="14 188">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[69.515px] items-center justify-center left-[424px] top-[121px] w-[53.546px]">
+                  <div className="-scale-y-100 flex-none rotate-180">
+                    <div className="h-[69.515px] relative w-[53.546px]" data-node-id="25:95" data-name="14 189">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute h-[69.515px] left-[196px] top-[121px] w-[53.546px]" data-node-id="25:96" data-name="14 190">
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute contents left-[322px] top-[265px]" data-node-id="25:97">
+                <div className="absolute flex h-[96.758px] items-center justify-center left-[393.64px] top-[265.79px] w-[38.515px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:98" data-name="10 20">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[334.45px] top-[267.67px] w-[96.758px]">
+                  <div className="flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:99" data-name="10 22">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[322px] top-[267.67px] w-[96.758px]">
+                  <div className="flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:100" data-name="10 23">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[389.88px] size-[44.152px] top-[322.15px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="relative size-[44.152px]" data-node-id="25:101" data-name="5 619343">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[330.61px] size-[44.152px] top-[265px]">
+                  <div className="-scale-y-100 flex-none rotate-90">
+                    <div className="relative size-[44.152px]" data-node-id="25:102" data-name="5 619346">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[69.515px] items-center justify-center left-[374.85px] top-[267.67px] w-[53.546px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="h-[69.515px] relative w-[53.546px]" data-node-id="25:103" data-name="14 188">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute contents h-[99.577px] left-[241px] top-[324.46px] w-[101.305px]" data-node-id="25:104">
+                <div className="absolute flex h-[38.515px] items-center justify-center left-[241.79px] top-[383.64px] w-[96.758px]">
+                  <div className="flex-none rotate-90">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:105" data-name="10 20">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[96.758px] items-center justify-center left-[243.67px] top-[324.46px] w-[38.515px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="h-[96.758px] relative w-[38.515px]" data-node-id="25:106" data-name="10 22">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[133.98%] left-[-51.28%] max-w-none top-[-20.39%] w-[282.05%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex h-[73px] items-center justify-center left-[244px] top-[336px] w-[38px]">
+                  <div className="-scale-y-100 flex-none">
+                    <div className="h-[73px] relative w-[38px]" data-node-id="25:107" data-name="10 23">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[177.58%] left-[-52.85%] max-w-none top-[-26.69%] w-[285.88%]" src={img1020} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute flex items-center justify-center left-[298.15px] size-[44.152px] top-[379.88px]">
+                  <div className="flex-none rotate-90">
+                    <div className="relative size-[44.152px]" data-node-id="25:108" data-name="5 619343">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute h-[41px] left-[241px] top-[328px] w-[44px]" data-node-id="25:109" data-name="5 619346">
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute h-[107.69%] left-0 max-w-none top-[-7.32%] w-[100.34%]" src={img5619343} />
+                  </div>
+                </div>
+                <div className="absolute flex h-[53.546px] items-center justify-center left-[243.67px] top-[364.85px] w-[69.515px]">
+                  <div className="flex-none rotate-90">
+                    <div className="h-[69.515px] relative w-[53.546px]" data-node-id="25:110" data-name="14 188">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute contents h-[49.149px] left-[182px] top-[319px] w-[44.152px]" data-node-id="25:111">
+                <div className="absolute flex items-center justify-center left-[182px] size-[44.152px] top-[319px]">
+                  <div className="flex-none rotate-180">
+                    <div className="relative size-[44.152px]" data-node-id="25:112" data-name="5 619347">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-[182px] size-[44.152px] top-[324px]" data-node-id="25:113" data-name="5 619348">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                </div>
+              </div>
+              <div className="absolute contents h-[49.149px] left-[447px] top-[319px] w-[44.152px]" data-node-id="25:114">
+                <div className="absolute flex items-center justify-center left-[447px] size-[44.152px] top-[319px]">
+                  <div className="flex-none rotate-180">
+                    <div className="relative size-[44.152px]" data-node-id="25:115" data-name="5 619347">
+                      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-[447px] size-[44.152px] top-[324px]" data-node-id="25:116" data-name="5 619348">
+                  <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                </div>
+              </div>
+            </div>
+            <div className="absolute contents left-[302px] top-[440.15px]" data-node-id="25:117">
+              <div className="absolute flex h-[39px] items-center justify-center left-[310px] top-[443px] w-[55px]">
+                <div className="flex-none rotate-90">
+                  <div className="h-[55px] relative w-[39px]" data-node-id="25:118" data-name="10 24">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <img alt="" className="absolute h-[235.7%] left-[-50.64%] max-w-none top-[-68.15%] w-[278.55%]" src={img1020} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[302px] size-[44.152px] top-[440.15px]">
+                <div className="-rotate-90 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:119" data-name="5 619347">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[329px] size-[44.152px] top-[440.15px]">
+                <div className="-rotate-90 -scale-y-100 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:120" data-name="5 619348">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute contents left-[302px] top-[208px]" data-node-id="25:121">
+              <div className="absolute flex h-[39px] items-center justify-center left-[310px] top-[210.85px] w-[55px]">
+                <div className="flex-none rotate-90">
+                  <div className="h-[55px] relative w-[39px]" data-node-id="25:122" data-name="10 24">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <img alt="" className="absolute h-[235.7%] left-[-50.64%] max-w-none top-[-68.15%] w-[278.55%]" src={img1020} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[302px] size-[44.152px] top-[208px]">
+                <div className="-rotate-90 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:123" data-name="5 619347">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[329px] size-[44.152px] top-[208px]">
+                <div className="-rotate-90 -scale-y-100 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:124" data-name="5 619348">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute contents left-[242px] top-[265px]" data-node-id="25:125">
+              <div className="absolute flex h-[39px] items-center justify-center left-[250.15px] top-[267.85px] w-[55px]">
+                <div className="flex-none rotate-90">
+                  <div className="h-[55px] relative w-[39px]" data-node-id="25:126" data-name="10 24">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <img alt="" className="absolute h-[235.7%] left-[-50.64%] max-w-none top-[-68.15%] w-[278.55%]" src={img1020} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[242px] size-[44.152px] top-[265px]">
+                <div className="-rotate-90 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:127" data-name="5 619347">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[269.15px] size-[44.152px] top-[265px]">
+                <div className="-rotate-90 -scale-y-100 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:128" data-name="5 619348">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute contents left-[360px] top-[380px]" data-node-id="25:129">
+              <div className="absolute flex h-[39px] items-center justify-center left-[368.15px] top-[382.85px] w-[55px]">
+                <div className="flex-none rotate-90">
+                  <div className="h-[55px] relative w-[39px]" data-node-id="25:130" data-name="10 24">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <img alt="" className="absolute h-[235.7%] left-[-50.64%] max-w-none top-[-68.15%] w-[278.55%]" src={img1020} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[360px] size-[44.152px] top-[380px]">
+                <div className="-rotate-90 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:131" data-name="5 619347">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[387.15px] size-[44.152px] top-[380px]">
+                <div className="-rotate-90 -scale-y-100 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:132" data-name="5 619348">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute contents left-[301px] top-[322px]" data-node-id="25:133">
+              <div className="absolute flex h-[39px] items-center justify-center left-[309.15px] top-[324.84px] w-[55px]">
+                <div className="flex-none rotate-90">
+                  <div className="h-[55px] relative w-[39px]" data-node-id="25:134" data-name="10 24">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <img alt="" className="absolute h-[235.7%] left-[-50.64%] max-w-none top-[-68.15%] w-[278.55%]" src={img1020} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[301px] size-[44.152px] top-[322px]">
+                <div className="-rotate-90 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:135" data-name="5 619347">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+              <div className="absolute flex items-center justify-center left-[328.15px] size-[44.152px] top-[322px]">
+                <div className="-rotate-90 -scale-y-100 flex-none">
+                  <div className="relative size-[44.152px]" data-node-id="25:136" data-name="5 619348">
+                    <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img5619343} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute h-[69.515px] left-[433.85px] top-[412.12px] w-[53.546px]" data-node-id="25:137" data-name="14 188">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-[155.41%] left-[-22.81%] max-w-none top-[-27.03%] w-[202.27%]" src={img14189} />
+            </div>
+          </div>
+        </div>
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute left-[calc(50%-2px)] mix-blend-multiply opacity-45 size-[722px] top-[calc(50%+8px)]" data-node-id="25:138" data-name="Тень2 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img22} />
+        </div>
+      </div>
+      <div className="absolute contents left-[215px] top-[178px]" data-node-id="25:139" data-name="Герои">
+        <div className="absolute contents left-[244.36px] top-[178px]" data-node-id="25:140">
+          <div className="absolute h-[34.125px] left-[244.36px] top-[178px] w-[37.268px]" data-node-id="25:141" data-name="18 19">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-[225.21%] left-[-30.22%] max-w-none top-[-50.95%] w-[154.66%]" src={img1819} />
+            </div>
+          </div>
+          <div className="absolute flex h-[9.439px] items-center justify-center left-[254px] top-[189px] w-[9.452px]">
+            <div className="flex-none rotate-[26.3deg]">
+              <div className="h-[7.038px] relative rounded-[8.293px] w-[7.065px]" data-node-id="25:142" data-name="image 2090010239">
+                <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[8.293px] size-full" src={imgImage2090010239} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[7.792px] items-center justify-center left-[261.09px] top-[192.11px] w-[7.815px]">
+            <div className="flex-none rotate-[-6.5deg]">
+              <div className="h-[7.038px] relative rounded-[8.293px] w-[7.065px]" data-node-id="25:143" data-name="image 2090010240">
+                <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[8.293px] size-full" src={imgImage2090010239} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[8.063px] items-center justify-center left-[257.84px] top-[186.94px] w-[11.491px]">
+            <div className="flex-none rotate-[20.95deg]">
+              <div className="h-[4.597px] relative w-[10.545px]" data-node-id="25:144">
+                <div className="absolute inset-[-13.59%_-13.75%_-31.63%_-13.75%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup2136140167} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute contents left-[215px] top-[409px]" data-node-id="25:150">
+          <div className="absolute left-[215px] size-[40.576px] top-[409px]" data-node-id="25:151" data-name="ChatGPT Image 7 июн. 2026 г., 18_53_05 1">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgChatGptImage720261853051} />
+          </div>
+          <div className="absolute flex h-[8.998px] items-center justify-center left-[234.14px] top-[432.62px] w-[8.995px]">
+            <div className="flex-none rotate-[-49.14deg]">
+              <div className="h-[6.366px] relative rounded-[7.674px] shadow-[0.171px_0.512px_1.024px_0px_rgba(0,0,0,0.25)] w-[6.391px]" data-node-id="25:152" data-name="image 2090010234">
+                <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[7.674px] size-full" src={imgImage2090010239} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[8.998px] items-center justify-center left-[239.45px] top-[431.24px] w-[8.995px]">
+            <div className="flex-none rotate-[-49.14deg]">
+              <div className="h-[6.366px] relative rounded-[7.674px] shadow-[0.171px_0.512px_1.024px_0px_rgba(0,0,0,0.25)] w-[6.391px]" data-node-id="25:153" data-name="image 2090010235">
+                <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[7.674px] size-full" src={imgImage2090010239} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[7.556px] items-center justify-center left-[234.67px] top-[429.57px] w-[10.405px]">
+            <div className="-rotate-23 flex-none">
+              <div className="h-[4.159px] relative w-[9.539px]" data-node-id="25:154">
+                <div className="absolute inset-[-14.09%_-14.07%_-32.35%_-14.07%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup2136140165} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute contents left-[389px] top-[178px]" data-node-id="25:160">
+          <div className="absolute contents inset-[26.58%_35.71%_67.98%_57.89%]" data-node-id="25:161" style={{ containerType: "size" }} data-name="Mask group">
+            <div className="absolute flex inset-[25.07%_36.28%_68.15%_56.9%] items-center justify-center" style={{ containerType: "size" }}>
+              <div className="-scale-x-100 flex-none h-[hypot(27.7994cqw,71.7655cqh)] rotate-[-21.27deg] w-[hypot(-72.2006cqw,28.2345cqh)]">
+                <div className="mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[10.023px_10.72px] mask-size-[36.57px_32.185px] relative size-full" data-node-id="25:163" style={{ maskImage: `url("${imgImage102}")` }} data-name="image 102">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" height="35.085" src={imgImage103} width="35.465" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[8.707px] items-center justify-center left-[409.99px] top-[184px] w-[8.733px]">
+            <div className="flex-none rotate-[-7.23deg]">
+              <div className="h-[7.785px] relative rounded-[10.063px] w-[7.815px]" data-node-id="25:164" data-name="image 2090009888">
+                <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[10.063px] size-full" src={imgImage2090010239} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[11.003px] items-center justify-center left-[415.6px] top-[180.04px] w-[11px]">
+            <div className="flex-none rotate-[-49.14deg]">
+              <div className="h-[7.785px] relative rounded-[10.063px] w-[7.815px]" data-node-id="25:165" data-name="image 2090010232">
+                <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[10.063px] size-full" src={imgImage2090010239} />
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[9.236px] items-center justify-center left-[409.75px] top-[178px] w-[12.723px]">
+            <div className="-rotate-23 flex-none">
+              <div className="h-[5.082px] relative w-[11.665px]" data-node-id="25:166">
+                <div className="absolute inset-[-16.26%_-15.09%_-34.72%_-15.09%]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup2136140162} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex h-[28px] items-center justify-center left-[424px] top-[360.16px] w-[29px]">
+          <div className="flex-none rotate-90">
+            <div className="h-[29px] relative rounded-[1000px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] w-[28px]" data-node-id="25:172" data-name="image 2090010243">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[1000px]">
+                <img alt="" className="absolute h-[144.64%] left-[-23.76%] max-w-none top-[-17.76%] w-[147.53%]" src={imgImage2090010243} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute contents left-[132px] top-[568px]" data-node-id="25:173" data-name="Счет">
+        <div className="-translate-x-1/2 absolute left-1/2 size-[200px] top-[568px]" data-node-id="25:174">
+          <div className="absolute inset-[2.05%_2.36%_3.28%_2.36%]">
+            <img alt="" className="block max-w-none size-full" src={imgStar20} />
+          </div>
+        </div>
+        <div className="-translate-x-1/2 [word-break:break-word] absolute contents font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%-0.41px)] lowercase not-italic text-center top-[596px]" data-node-id="25:175">
+          <p className="-translate-x-1/2 absolute left-[calc(50%-0.59px)] text-[#01d701] text-[23.058px] top-[596px] tracking-[-1.6141px] w-[254.821px]" data-node-id="25:176">
+            счёт:
+          </p>
+          <p className="-translate-x-1/2 absolute left-[calc(50%-0.41px)] text-[#122654] text-[36.845px] top-[617.95px] tracking-[-2.5791px] w-[407.181px]" data-node-id="25:177">
+            000
+          </p>
+        </div>
+        <div className="absolute flex h-[59.384px] items-center justify-center left-[234px] top-[587px] w-[48.621px]">
+          <div className="flex-none rotate-[2.74deg]">
+            <div className="h-[57.253px] relative w-[45.935px]" data-node-id="25:178">
+              <div className="absolute inset-[-3.48%_-5.44%_0_-5.45%]">
+                <img alt="" className="block max-w-none size-full" src={imgVector234257108} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex items-center justify-center left-[382px] size-[45.268px] top-[586px]">
+          <div className="flex-none rotate-[24.87deg]">
+            <div className="relative size-[34.091px]" data-node-id="25:179">
+              <div className="absolute inset-[8.8%]">
+                <img alt="" className="block max-w-none size-full" src={imgStar19} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute left-[236px] size-[200px] top-[-72px]" data-node-id="25:180" data-name="Жизни">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={img} />
+      </div>
+      <div className="absolute contents left-[279px] top-[391px]" data-node-id="25:186" data-name="Штуки на поле">
+        <div className="absolute left-[435px] rounded-[107px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[10px] top-[425px]" data-node-id="25:187" data-name="image 2090010338">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[107px] size-full" src={imgImage2090010338} />
+        </div>
+        <div className="absolute left-[406px] rounded-[107px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[10px] top-[425px]" data-node-id="25:188" data-name="image 2090010340">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[107px] size-full" src={imgImage2090010338} />
+        </div>
+        <div className="absolute left-[378px] rounded-[107px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[10px] top-[425px]" data-node-id="25:189" data-name="image 2090010341">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[107px] size-full" src={imgImage2090010338} />
+        </div>
+        <div className="absolute left-[346px] rounded-[107px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[10px] top-[425px]" data-node-id="25:190" data-name="image 2090010342">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[107px] size-full" src={imgImage2090010338} />
+        </div>
+        <div className="absolute left-[317px] rounded-[107px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[10px] top-[425px]" data-node-id="25:191" data-name="image 2090010343">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[107px] size-full" src={imgImage2090010338} />
+        </div>
+        <div className="absolute left-[435px] rounded-[107px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[10px] top-[397px]" data-node-id="25:192" data-name="image 2090010339">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[107px] size-full" src={imgImage2090010338} />
+        </div>
+        <div className="absolute h-[26px] left-[279px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] top-[419px] w-[24px]" data-node-id="25:193" data-name="ChatGPT Image 7 июн. 2026 г., 23_57_35 1">
+          <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={imgChatGptImage720262357351} />
+        </div>
+        <div className="absolute left-[337px] shadow-[2px_0px_4px_0px_rgba(18,38,84,0.4)] size-[28px] top-[391px]" data-node-id="25:194" data-name="16 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img161} />
+        </div>
+      </div>
+      <div className="absolute contents left-[158.14px] top-[353.14px]" data-node-id="25:195" data-name="Портфель">
+        <div className="absolute left-[163.72px] size-[30.138px] top-[360.33px]" data-node-id="25:196">
+          <div className="absolute inset-[-32.2%]">
+            <img alt="" className="block max-w-none size-full" src={imgEllipse29085} />
+          </div>
+        </div>
+        <div className="absolute flex items-center justify-center left-[158.14px] size-[41.854px] top-[353.14px]">
+          <div className="flex-none rotate-[-0.13deg]">
+            <div className="relative size-[41.759px]" data-node-id="25:197" data-name="Папка">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img2} />
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex items-center justify-center left-[182.33px] size-[15.107px] top-[372.79px]">
+          <div className="flex-none rotate-[-4.18deg]">
+            <div className="relative size-[14.116px]" data-node-id="25:198">
+              <div className="absolute inset-[7.17%]">
+                <img alt="" className="block max-w-none size-full" src={imgStar21} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex items-center justify-center left-[161.87px] size-[9.491px] top-[358.48px]">
+          <div className="flex-none rotate-[13.25deg]">
+            <div className="relative size-[7.892px]" data-node-id="25:199">
+              <div className="absolute inset-[12.82%]">
+                <img alt="" className="block max-w-none size-full" src={imgStar22} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute border border-black border-solid h-[672px] left-[calc(50%+0.48px)] opacity-31 rounded-[521.523px] top-0 w-[470.966px]" data-node-id="25:200" data-name="Границы экрана" />
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(Screen));
+  </script>
+</body>
+</html>

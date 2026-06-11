@@ -1,0 +1,35 @@
+---
+description: После правок UI киоска GIGAvibe — проверка в Chrome
+globs: gigavibe/web/**/*
+alwaysApply: false
+---
+
+# Проверка UI в Chrome
+
+После изменений `gigavibe/web/` (HTML, CSS, JS) **обязательно** проверяй в Chrome, не только по коду.
+
+## Быстрая проверка экрана результата
+
+1. Сервер киоска запущен (`python -m app.main` в `gigavibe/`).
+2. Скриншот через headless Chrome:
+
+```powershell
+cd gigavibe
+$env:USE_HTTPS='false'; $env:PORT='8777'   # или ваш порт/HTTPS
+.\scripts\verify_result_chrome.ps1
+```
+
+Скриншот: `gigavibe/scripts/_verify_result.png`
+
+3. Превью в браузере: `https://127.0.0.1:8765/?preview=result`  
+   (для HTTPS с самоподписанным сертификатом — «Дополнительно → перейти»).
+
+## Что смотреть
+
+- Портрет: лицо в кадре, не обрезана макушка.
+- QR справа в матовой панели, CTA по центру снизу.
+- На боевом киоске нет отладочных таймингов (только при `kiosk_test_mode`).
+
+## MCP browser
+
+Встроенный browser MCP не обходит самоподписанный HTTPS на `8765` — используй headless Chrome с `--ignore-certificate-errors` или HTTP на dev-порту.

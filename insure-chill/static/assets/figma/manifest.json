@@ -1,0 +1,332 @@
+﻿[
+    {
+        "name":  "grass-1.png",
+        "role":  "background",
+        "source":  "http://localhost:3845/assets/1563697d12155680b73c4d623f05f35318b669a6.png",
+        "bytes":  749747
+    },
+    {
+        "name":  "grass-2-a.png",
+        "role":  "background",
+        "source":  "http://localhost:3845/assets/488b182ee2274bda0e42f0406d131ba5de756d0c.png",
+        "bytes":  511909
+    },
+    {
+        "name":  "grass-2-b.png",
+        "role":  "background",
+        "source":  "http://localhost:3845/assets/199c5ba01a61e6cc478ed13de37575b68e5c4776.png",
+        "bytes":  531457
+    },
+    {
+        "name":  "threat-fist.png",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png",
+        "bytes":  1699986
+    },
+    {
+        "name":  "threat-nail-phone.png",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png",
+        "bytes":  2765529
+    },
+    {
+        "name":  "threat-water-drop.png",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/9f7d921244f8a87720fb41610a93ffa0de6d9559.png",
+        "bytes":  2738781
+    },
+    {
+        "name":  "threat-parts.png",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "bytes":  805115
+    },
+    {
+        "name":  "threat-soap-phone.png",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/50dd6d488abd268621b18460892b1285006a37a8.png",
+        "bytes":  3507348
+    },
+    {
+        "name":  "threat-cat-paw.png",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/758b324c82f48052d9537c8f4058eacfe56327c7.png",
+        "bytes":  2792903
+    },
+    {
+        "name":  "blob-top-left.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/12cec09e6c586bb572d84436f6d0695dbd8c6d1c.svg",
+        "bytes":  2700
+    },
+    {
+        "name":  "blob-top-right.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/8ab12f0277593a970439e0803c032bd4488c67a4.svg",
+        "bytes":  2681
+    },
+    {
+        "name":  "blob-left.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/b667af21d982a01fe7b4e5f39cc82d3848807de7.svg",
+        "bytes":  2689
+    },
+    {
+        "name":  "blob-small.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/080a94aec2e2a62b3a353d62f167e146bb4933ce.svg",
+        "bytes":  2691
+    },
+    {
+        "name":  "stage-ellipse.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/7fd94110479f9644b663d6bde60a3f15ebd66714.svg",
+        "bytes":  735
+    },
+    {
+        "name":  "title-star-start.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/931825d60dc345fd5f0aff519d1f8eadc067ebc9.svg",
+        "bytes":  3955
+    },
+    {
+        "name":  "title-star-game.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/f071fa1e382de14cf86f4298b2b32ee96e6c38bc.svg",
+        "bytes":  3974
+    },
+    {
+        "name":  "title-star-final.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/6e4c2ab84b30023c3434d1c8b453ed200f83a52c.svg",
+        "bytes":  3982
+    },
+    {
+        "name":  "score-star-start.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/a9bade00bf0c766528db9181e133e1c59fd8ddc9.svg",
+        "bytes":  3669
+    },
+    {
+        "name":  "score-star-small.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/d45d1cafaa111f93cd34ec790d0c9bb887125210.svg",
+        "bytes":  776
+    },
+    {
+        "name":  "score-star-final.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/4dc97da6ae84b4852e9832b50f96c797e11d1999.svg",
+        "bytes":  780
+    },
+    {
+        "name":  "timer-circle.svg",
+        "role":  "ui",
+        "source":  "http://localhost:3845/assets/98c21670ad7b77dabf7bf3a3afd29f508c91d438.svg",
+        "bytes":  259
+    },
+    {
+        "name":  "scribble-start.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/d9dda420edabe32fae808cfb1bfc057131ccfc3a.svg",
+        "bytes":  529
+    },
+    {
+        "name":  "scribble-final.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/9c118ff95c5f8128f2f5f1ebe6a393459cb44be5.svg",
+        "bytes":  533
+    },
+    {
+        "name":  "logo-sberinsurance-start.svg",
+        "role":  "brand",
+        "source":  "http://localhost:3845/assets/8d4a2d8e1f32b24070a64a555095fc33ac9c3ea5.svg",
+        "bytes":  8502
+    },
+    {
+        "name":  "logo-sberinsurance-game.svg",
+        "role":  "brand",
+        "source":  "http://localhost:3845/assets/25e49fc23e3cc83c96710dfd67616cf3ad88f8a9.svg",
+        "bytes":  8570
+    },
+    {
+        "name":  "mask-fist-label.svg",
+        "role":  "mask",
+        "source":  "http://localhost:3845/assets/1ae6cdf18e9c535fe0f243f61826e6f4fd4d174d.svg",
+        "bytes":  470
+    },
+    {
+        "name":  "mask-nail-phone.svg",
+        "role":  "mask",
+        "source":  "http://localhost:3845/assets/4963e15d33f05059c321754d7f025f0e4817dd7c.svg",
+        "bytes":  673
+    },
+    {
+        "name":  "mask-water-drop.svg",
+        "role":  "mask",
+        "source":  "http://localhost:3845/assets/c8b595d6e77852adca3f52ccd5bca68d12ef31a8.svg",
+        "bytes":  437
+    },
+    {
+        "name":  "mask-water-label.svg",
+        "role":  "mask",
+        "source":  "http://localhost:3845/assets/d06d4accc308cb7ebcabfc528df2d0bd25cdb9d5.svg",
+        "bytes":  474
+    },
+    {
+        "name":  "nail-parts-start.svg",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/fbc898111c94ff99ef8676c919450a09070a31c3.svg",
+        "bytes":  1748
+    },
+    {
+        "name":  "nail-parts-game.svg",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/1d6c0007f5f785403836d29eb5cf16db946f689e.svg",
+        "bytes":  1743
+    },
+    {
+        "name":  "small-decor-start.svg",
+        "role":  "decor",
+        "source":  "http://localhost:3845/assets/24927cf0c6936edd49d0873684f71c4290139ec3.svg",
+        "bytes":  1090
+    },
+    {
+        "name":  "soap-phone-parts.svg",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/933dfb8e71deca266d95868b52669e5cf43ffa8e.svg",
+        "bytes":  939
+    },
+    {
+        "name":  "soap-phone-vector.svg",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/267fdc9b92564ae3e0a5c7ec75ce590fa4434083.svg",
+        "bytes":  767
+    },
+    {
+        "name":  "water-drop-mask-game.svg",
+        "role":  "mask",
+        "source":  "http://localhost:3845/assets/ff5ba7de925bdbe7531a83ff054eccda6cafabba.svg",
+        "bytes":  439
+    },
+    {
+        "name":  "water-drop-secondary-mask.svg",
+        "role":  "mask",
+        "source":  "http://localhost:3845/assets/b35f581dcea1bf2f5a963a868096b3c709d1fd62.svg",
+        "bytes":  664
+    },
+    {
+        "name":  "water-drop-eyes-start.svg",
+        "role":  "threat",
+        "source":  "http://localhost:3845/assets/8e60a1ba5aa948f9818a88e8b3db5b64ec7bc3fa.svg",
+        "bytes":  1736
+    },
+    {
+        "name":  "ground-shadow-mask.png",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/57dc28e138203a848aecbd237c363f781468c478.png",
+        "bytes":  376969
+    },
+    {
+        "name":  "ground-shadow.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/10d4938d8931cabe5ffe50c8e2e6c0ec70203e17.svg",
+        "bytes":  722
+    },
+    {
+        "name":  "shadow-small-a.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/0edb4ce890e26f723ba9b449d17de6fda14892ed.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "shadow-small-b.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/d225e9dcef1277bc21ab574f0ecb2e2974d4cd8f.svg",
+        "bytes":  766
+    },
+    {
+        "name":  "shadow-small-c.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/002d5e052d7fcd25b9f18e22994019a9ff27b7ab.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "shadow-wide-a.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/0efb4bda73fed2f9c847ffc1bd9922e7e4013d37.svg",
+        "bytes":  766
+    },
+    {
+        "name":  "shadow-wide-b.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/959b43834e7ea4e0ea4e0dc7f562547c1ff7356e.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "shadow-wide-c.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/c4423ef102a37a8724eb0b81783f99612fafe697.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "shadow-phone-a.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/c55d0ff1c4ae9f358e2a6b776155699ec4b324cb.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "shadow-phone-b.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/a31e6ec6726d97ca4a1cb402e737e91f9b571ca3.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "shadow-phone-c.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/b6aadf8df2562a8b06f103b3d29b64058dc031de.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "final-shadow-a.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/47729c5f9ae6627161c6c11c6caf562c8f66194a.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "final-shadow-b.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/b452ae8e9004e0fe6770b14d9d1ffea0b18dafad.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "final-shadow-c.svg",
+        "role":  "shadow",
+        "source":  "http://localhost:3845/assets/4efaf7c202fcab1fcd5b24b29a136afd2ccd01b2.svg",
+        "bytes":  768
+    },
+    {
+        "name":  "rating-stars-0.svg",
+        "role":  "ui",
+        "source":  "http://localhost:3845/assets/184a2e059452c1427dc9c93d0be6a47a19fa659d.svg",
+        "bytes":  3124
+    },
+    {
+        "name":  "rating-stars-1.svg",
+        "role":  "ui",
+        "source":  "http://localhost:3845/assets/4cc1fe84e228bca6149fc92179f1844886a07abd.svg",
+        "bytes":  3110
+    },
+    {
+        "name":  "rating-stars-2.svg",
+        "role":  "ui",
+        "source":  "http://localhost:3845/assets/46b820384d2096ee7f011aae1ce2f10839a1d3cb.svg",
+        "bytes":  3096
+    },
+    {
+        "name":  "rating-stars-3.svg",
+        "role":  "ui",
+        "source":  "http://localhost:3845/assets/fad501604c39be24e0a115f68455e6c563d59541.svg",
+        "bytes":  3112
+    }
+]

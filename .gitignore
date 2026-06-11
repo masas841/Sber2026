@@ -1,0 +1,52 @@
+# Secrets and local env
+.env
+.env.*
+!.env.example
+!.env.*.example
+remote/farm-nanobanana.env
+docs/CONTEXT-сервер-выгрузка-фото-Greathearted-Inna.md
+
+# Python
+.venv/
+.venv-*/
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Node
+node_modules/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+Desktop.ini
+
+# ML / runtime data
+gigavibe/models/
+gigavibe/data/jobs/
+gigavibe/data/outputs/
+gigavibe/.venv-liveportrait/
+gigavibe/vendor/LivePortrait/
+gigavibe/vendor/pulid/
+gigavibe/backups/
+gigavibe/certs/
+gigavibe/tools/ffmpeg/*.exe
+gigavibe/runtime/
+gigavibe/dist/
+gigavibe/tools/win-acme/
+gigavibe/gfpgan/
+gigavibe/tools/lego/
+
+# Other projects' local runtimes
+**/.venv/
+sberkopilka/.venv/
+smile-pay/.venv/
+
+# Large local artifacts
+frames/
+_pdf_pages/
+*.log
+.aigo123/

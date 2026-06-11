@@ -1,0 +1,450 @@
+/* Figma «Гига5» 138:194 — фиксированный холст 393×852 px, масштаб целиком */
+
+:root {
+  --figma-w: 393;
+  --figma-h: 852;
+  --photo-ink: #122654;
+  --photo-mint: #88dec8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: var(--photo-mint);
+}
+
+.photo-page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--photo-mint);
+}
+
+.photo-canvas {
+  position: relative;
+  width: 393px;
+  height: 852px;
+  flex-shrink: 0;
+  transform: scale(min(calc(100vw / 393), calc(100dvh / 852)));
+  transform-origin: center center;
+  overflow: hidden;
+  background: var(--photo-mint);
+}
+
+.photo-bg-wrap,
+.photo-bg {
+  position: absolute;
+  left: -487px;
+  top: 0;
+  width: 1516px;
+  height: 852px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.photo-bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
+.deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.deco__box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deco__spin {
+  flex: none;
+}
+
+.deco img {
+  display: block;
+  max-width: none;
+}
+
+.deco__inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.deco__inner--round {
+  border-radius: 306.539px;
+}
+
+.deco__inner--round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.deco__crop img {
+  position: absolute;
+  max-width: none;
+}
+
+.deco__crop--leaf img {
+  width: 358.88%;
+  height: 291.74%;
+  left: -15.65%;
+  top: 0;
+}
+
+.deco__crop--2-right img {
+  width: 200%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.deco__crop--2-left img {
+  width: 200%;
+  height: 100%;
+  left: -106.23%;
+  top: -2.27%;
+}
+
+.deco__crop--4 img {
+  width: 225.85%;
+  height: 213.36%;
+  left: -62.93%;
+  top: -25.58%;
+}
+
+.deco__crop--flower img {
+  width: 1052.05%;
+  height: 696.6%;
+  left: -743.84%;
+  top: -533.33%;
+}
+
+/* z1 — 3 3 */
+.deco--3-3 {
+  z-index: 1;
+  left: 13px;
+  top: -153px;
+  width: 564.647px;
+  height: 495.806px;
+}
+
+.deco--3-3 .deco__spin {
+  transform: rotate(-161.16deg);
+}
+
+.deco--3-3 .deco__inner--round {
+  width: 472.922px;
+  height: 362.516px;
+}
+
+/* z2 — blobs */
+.deco--blob-a,
+.deco--blob-b {
+  z-index: 2;
+  width: 153px;
+  height: 153px;
+  position: absolute;
+}
+
+.deco--blob-a {
+  left: 296px;
+  top: 96px;
+}
+
+.deco--blob-b {
+  left: 308px;
+  top: 112px;
+}
+
+.deco--blob-a img,
+.deco--blob-b img {
+  position: absolute;
+  inset: -28.24%;
+  width: 100%;
+  height: 100%;
+}
+
+/* z3 — portrait */
+.photo-frame {
+  position: absolute;
+  left: calc(50% + 0.5px);
+  top: calc(50% - 16.5px);
+  transform: translate(-50%, -50%);
+  width: 314px;
+  height: 473px;
+  margin: 0;
+  border-radius: 24.089px;
+  overflow: hidden;
+  background: #bababa;
+  z-index: 3;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+/* z4 — leaves */
+.deco--leaf-bottom {
+  z-index: 4;
+  left: -98px;
+  top: 467px;
+  width: 296.017px;
+  height: 299.197px;
+}
+
+.deco--leaf-bottom .deco__spin {
+  transform: rotate(48.09deg);
+}
+
+.deco--leaf-bottom .deco__inner {
+  width: 231.578px;
+  height: 189.916px;
+}
+
+.deco--leaf-top {
+  z-index: 4;
+  left: 185px;
+  top: -11px;
+  width: 296.017px;
+  height: 299.197px;
+}
+
+.deco--leaf-top .deco__spin {
+  transform: rotate(131.91deg) scaleY(-1);
+}
+
+.deco--leaf-top .deco__inner {
+  width: 231.578px;
+  height: 189.916px;
+}
+
+/* z5 — 2 1 */
+.deco--2-right {
+  z-index: 5;
+  left: 162px;
+  top: 455px;
+  width: 328.478px;
+  height: 510.807px;
+}
+
+.deco--2-right .deco__spin {
+  transform: rotate(-11.91deg);
+}
+
+.deco--2-right .deco__inner {
+  width: 236.125px;
+  height: 472.251px;
+}
+
+/* z6 — glows */
+.deco--glow-1,
+.deco--glow-2,
+.deco--glow-3 {
+  z-index: 6;
+}
+
+.deco--glow-1 {
+  left: -163.03px;
+  top: -4.94px;
+  width: 422.519px;
+  height: 151.649px;
+}
+
+.deco--glow-1 .deco__spin {
+  transform: rotate(88.43deg);
+  width: 140.208px;
+  height: 418.829px;
+  position: relative;
+}
+
+.deco--glow-1 .deco__spin img {
+  position: absolute;
+  inset: -20.08% -59.98%;
+  width: 100%;
+  height: 100%;
+}
+
+.deco--glow-2 {
+  left: -83.59px;
+  top: 9.49px;
+  width: 294.264px;
+  height: 148.128px;
+}
+
+.deco--glow-2 .deco__spin {
+  transform: rotate(88.43deg);
+  width: 140.208px;
+  height: 290.526px;
+  position: relative;
+}
+
+.deco--glow-2 .deco__spin img {
+  position: absolute;
+  inset: -28.95% -59.98%;
+  width: 100%;
+  height: 100%;
+}
+
+.deco--glow-3 {
+  left: -41.93px;
+  top: 27.06px;
+  width: 275.812px;
+  height: 120.05px;
+}
+
+.deco--glow-3 .deco__spin {
+  transform: rotate(88.43deg);
+  width: 112.605px;
+  height: 272.825px;
+  position: relative;
+}
+
+.deco--glow-3 .deco__spin img {
+  position: absolute;
+  inset: -30.83% -74.69%;
+  width: 100%;
+  height: 100%;
+}
+
+/* z7 — 2 2 */
+.deco--2-left {
+  z-index: 7;
+  left: -73px;
+  top: 544px;
+  width: 288.223px;
+  height: 496.008px;
+}
+
+.deco--2-left .deco__spin {
+  transform: rotate(-6.52deg);
+}
+
+.deco--2-left .deco__inner {
+  width: 236.125px;
+  height: 472.251px;
+}
+
+/* z8 logo */
+.photo-logo {
+  position: absolute;
+  left: 40px;
+  top: 47.06px;
+  width: 129px;
+  height: 72.424px;
+  object-fit: contain;
+  z-index: 8;
+  user-select: none;
+}
+
+/* z9 download */
+.photo-download {
+  position: absolute;
+  left: calc(50% + 1.5px);
+  top: calc(50% + 283.5px);
+  transform: translate(-50%, -50%);
+  width: 194px;
+  height: 59px;
+  border-radius: 29.657px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(7.161px);
+  -webkit-backdrop-filter: blur(7.161px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21.109px;
+  font-weight: 600;
+  line-height: 0.98;
+  color: var(--photo-ink);
+  text-decoration: none;
+  z-index: 9;
+  border: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+
+.photo-download:active {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+/* z10 flower right */
+.deco--flower-right {
+  z-index: 10;
+  left: 326px;
+  top: 190px;
+  width: 94px;
+  height: 95px;
+  border-radius: 52.397px;
+  overflow: hidden;
+}
+
+.deco--flower-right .deco__inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* z11 flower left */
+.deco--flower-left {
+  z-index: 11;
+  left: -41.05px;
+  top: 384.81px;
+  width: 116.092px;
+  height: 115.385px;
+}
+
+.deco--flower-left .deco__spin {
+  transform: rotate(105deg);
+}
+
+.deco--flower-left .deco__inner {
+  width: 94px;
+  height: 95px;
+  border-radius: 52.397px;
+  overflow: hidden;
+}
+
+/* z12 — 4 1 */
+.deco--4 {
+  z-index: 12;
+  left: -163px;
+  top: 95px;
+  width: 307.111px;
+  height: 319.133px;
+}
+
+.deco--4 .deco__spin {
+  transform: rotate(-169.02deg) scaleY(-1);
+}
+
+.deco--4 .deco__inner {
+  width: 259.55px;
+  height: 274.743px;
+}

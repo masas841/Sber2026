@@ -1,0 +1,33 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+python-multipart>=0.0.12
+pillow>=11.0.0
+numpy>=1.24.4,<2
+opencv-python-headless>=4.10.0
+imageio>=2.36.0
+imageio-ffmpeg>=0.5.1
+qrcode[pil]>=8.0
+pydantic-settings>=2.6.0
+psutil>=6.0.0
+
+# Локальная нейросеть (Stable Video Diffusion)
+torch>=2.5.0
+torchvision>=0.20.0
+diffusers>=0.32.0
+transformers>=4.46.0
+accelerate>=1.1.0
+safetensors>=0.4.0
+huggingface-hub>=0.26.0
+google-genai>=1.0.0
+tiktoken>=0.8.0
+sentencepiece>=0.2.0
+protobuf>=4.0.0
+gguf>=0.10.0
+
+# ref_video (insightface + onnxruntime-gpu): ставятся в run.ps1 после базовых deps
+# insightface в requirements не кладём — pip тянет onnxruntime (CPU) и ломает CUDA
+
+# Восстановление лица после swap (GFPGAN)
+gfpgan>=1.3.8
+basicsr>=1.4.2
+facexlib>=0.3.0

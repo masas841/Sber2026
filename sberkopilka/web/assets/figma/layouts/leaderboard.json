@@ -1,0 +1,85 @@
+{
+  "id": "leaderboard",
+  "size": [
+    672,
+    672
+  ],
+  "bgDecor": "ef20563d31b1b29159550b8fce4618ea743d9ce9.svg",
+  "layers": [
+    {
+      "file": "fda304959692ab205391cde62c578889f6a6e95d.svg",
+      "x": 80,
+      "y": 16,
+      "w": 482,
+      "h": 348,
+      "rot": 0,
+      "ox": 0,
+      "oy": 0
+    },
+    {
+      "file": "ef20563d31b1b29159550b8fce4618ea743d9ce9.svg",
+      "x": -70,
+      "y": -114,
+      "w": 728,
+      "h": 883,
+      "rot": 0,
+      "ox": 0,
+      "oy": 0
+    },
+    {
+      "file": "488b182ee2274bda0e42f0406d131ba5de756d0c.png",
+      "x": 309.0,
+      "y": 595.5,
+      "w": 1256,
+      "h": 701,
+      "rot": -171.7,
+      "ox": 0.5,
+      "oy": 0.5
+    },
+    {
+      "file": "199c5ba01a61e6cc478ed13de37575b68e5c4776.png",
+      "x": 309.0,
+      "y": 595.5,
+      "w": 1256,
+      "h": 701,
+      "rot": -171.7,
+      "ox": 0.5,
+      "oy": 0.5
+    },
+    {
+      "file": "dd849ce3e75e01bc98af7d108143446b11e5b96c.svg",
+      "x": 336,
+      "y": 61,
+      "w": 258,
+      "h": 25,
+      "rot": 0,
+      "ox": 0.5,
+      "oy": 0
+    }
+  ],
+  "texts": [
+    {
+      "text": "Ворвись в топ",
+      "x": 336,
+      "y": 127,
+      "size": 32.4,
+      "color": "#122654",
+      "ox": 0.5,
+      "bold": true
+    }
+  ],
+  "leaderboard": {
+    "panelX": 154,
+    "panelY": 206,
+    "panelW": 364,
+    "panelH": 405,
+    "rowH": 45.5,
+    "nameX": 185,
+    "scoreX": 460,
+    "firstY": 206,
+    "nameColor": "#01d701",
+    "scoreColor": "#122654",
+    "size": 22.9,
+    "currentColor": "#122654"
+  }
+}

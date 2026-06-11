@@ -1,0 +1,6446 @@
+{
+  "source_pdf": "I:/Cursor/Sber2026/docs/design/ИнвестКопилка.pdf",
+  "screen_target": [
+    504,
+    672
+  ],
+  "page_size": [
+    14902.0,
+    5082.0
+  ],
+  "assets": [
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00016-229x229.png",
+      "w": 229,
+      "h": 229,
+      "alpha": true,
+      "xref": 16,
+      "smask": 14,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00008-1254x1254.png",
+      "w": 1254,
+      "h": 1254,
+      "alpha": true,
+      "xref": 8,
+      "smask": 3,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00012-127x127.png",
+      "w": 127,
+      "h": 127,
+      "alpha": true,
+      "xref": 12,
+      "smask": 10,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00070-670x662.png",
+      "w": 670,
+      "h": 662,
+      "alpha": true,
+      "xref": 70,
+      "smask": 68,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02346-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2346,
+      "smask": 2344,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00654-101x90.png",
+      "w": 101,
+      "h": 90,
+      "alpha": true,
+      "xref": 654,
+      "smask": 652,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01336-96x84.png",
+      "w": 96,
+      "h": 84,
+      "alpha": true,
+      "xref": 1336,
+      "smask": 1334,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01476-1536x1024.png",
+      "w": 1536,
+      "h": 1024,
+      "alpha": true,
+      "xref": 1476,
+      "smask": 1474,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00158-3000x4000.png",
+      "w": 3000,
+      "h": 4000,
+      "alpha": true,
+      "xref": 158,
+      "smask": 156,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01550-76x66.png",
+      "w": 76,
+      "h": 66,
+      "alpha": true,
+      "xref": 1550,
+      "smask": 1548,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02338-337x342.png",
+      "w": 337,
+      "h": 342,
+      "alpha": true,
+      "xref": 2338,
+      "smask": 2336,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02342-200x147.png",
+      "w": 200,
+      "h": 147,
+      "alpha": true,
+      "xref": 2342,
+      "smask": 2340,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02350-135x135.png",
+      "w": 135,
+      "h": 135,
+      "alpha": true,
+      "xref": 2350,
+      "smask": 2348,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00866-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 866,
+      "smask": 864,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02504-79x70.png",
+      "w": 79,
+      "h": 70,
+      "alpha": true,
+      "xref": 2504,
+      "smask": 2502,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01812-1254x1254.png",
+      "w": 1254,
+      "h": 1254,
+      "alpha": true,
+      "xref": 1812,
+      "smask": 1810,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02500-156x114.png",
+      "w": 156,
+      "h": 114,
+      "alpha": true,
+      "xref": 2500,
+      "smask": 2498,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00218-1024x1024.png",
+      "w": 1024,
+      "h": 1024,
+      "alpha": true,
+      "xref": 218,
+      "smask": 216,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02722-185x131.png",
+      "w": 185,
+      "h": 131,
+      "alpha": true,
+      "xref": 2722,
+      "smask": 2720,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02726-93x81.png",
+      "w": 93,
+      "h": 81,
+      "alpha": true,
+      "xref": 2726,
+      "smask": 2724,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00186-1254x1254.png",
+      "w": 1254,
+      "h": 1254,
+      "alpha": true,
+      "xref": 186,
+      "smask": 184,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02730-135x135.png",
+      "w": 135,
+      "h": 135,
+      "alpha": true,
+      "xref": 2730,
+      "smask": 2728,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02734-89x76.png",
+      "w": 89,
+      "h": 76,
+      "alpha": true,
+      "xref": 2734,
+      "smask": 2732,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00468-2000x2000.png",
+      "w": 2000,
+      "h": 2000,
+      "alpha": true,
+      "xref": 468,
+      "smask": 466,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00038-4096x2286.png",
+      "w": 4096,
+      "h": 2286,
+      "alpha": true,
+      "xref": 38,
+      "smask": 36,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00264-1024x1024.png",
+      "w": 1024,
+      "h": 1024,
+      "alpha": true,
+      "xref": 264,
+      "smask": 262,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00042-4096x2286.png",
+      "w": 4096,
+      "h": 2286,
+      "alpha": true,
+      "xref": 42,
+      "smask": 40,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00462-1522x1522.png",
+      "w": 1522,
+      "h": 1522,
+      "alpha": true,
+      "xref": 462,
+      "smask": 460,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00474-546x148.png",
+      "w": 546,
+      "h": 148,
+      "alpha": true,
+      "xref": 474,
+      "smask": 472,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00480-506x195.png",
+      "w": 506,
+      "h": 195,
+      "alpha": true,
+      "xref": 480,
+      "smask": 478,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00486-506x233.png",
+      "w": 506,
+      "h": 233,
+      "alpha": true,
+      "xref": 486,
+      "smask": 484,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00494-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 494,
+      "smask": 492,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00502-506x315.png",
+      "w": 506,
+      "h": 315,
+      "alpha": true,
+      "xref": 502,
+      "smask": 500,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00306-98x70.png",
+      "w": 98,
+      "h": 70,
+      "alpha": true,
+      "xref": 306,
+      "smask": 304,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00362-75x75.png",
+      "w": 75,
+      "h": 75,
+      "alpha": true,
+      "xref": 362,
+      "smask": 360,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00332-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 332,
+      "smask": 330,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00338-78x60.png",
+      "w": 78,
+      "h": 60,
+      "alpha": true,
+      "xref": 338,
+      "smask": 336,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00342-49x54.png",
+      "w": 49,
+      "h": 54,
+      "alpha": true,
+      "xref": 342,
+      "smask": 340,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00352-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 352,
+      "smask": 350,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00358-53x47.png",
+      "w": 53,
+      "h": 47,
+      "alpha": true,
+      "xref": 358,
+      "smask": 356,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00372-74x74.png",
+      "w": 74,
+      "h": 74,
+      "alpha": true,
+      "xref": 372,
+      "smask": 370,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00376-94x76.png",
+      "w": 94,
+      "h": 76,
+      "alpha": true,
+      "xref": 376,
+      "smask": 374,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00420-2000x2000.png",
+      "w": 2000,
+      "h": 2000,
+      "alpha": true,
+      "xref": 420,
+      "smask": 418,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00268-1536x1024.png",
+      "w": 1536,
+      "h": 1024,
+      "alpha": true,
+      "xref": 268,
+      "smask": 266,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00300-97x69.png",
+      "w": 97,
+      "h": 69,
+      "alpha": true,
+      "xref": 300,
+      "smask": 298,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00122-853x846.png",
+      "w": 853,
+      "h": 846,
+      "alpha": true,
+      "xref": 122,
+      "smask": 120,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00312-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 312,
+      "smask": 310,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00320-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 320,
+      "smask": 318,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00346-41x36.png",
+      "w": 41,
+      "h": 36,
+      "alpha": true,
+      "xref": 346,
+      "smask": 344,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00366-37x41.png",
+      "w": 37,
+      "h": 41,
+      "alpha": true,
+      "xref": 366,
+      "smask": 364,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00380-148x73.png",
+      "w": 148,
+      "h": 73,
+      "alpha": true,
+      "xref": 380,
+      "smask": 378,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00384-94x33.png",
+      "w": 94,
+      "h": 33,
+      "alpha": true,
+      "xref": 384,
+      "smask": 382,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00388-235x88.png",
+      "w": 235,
+      "h": 88,
+      "alpha": true,
+      "xref": 388,
+      "smask": 386,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00394-118x250.png",
+      "w": 118,
+      "h": 250,
+      "alpha": true,
+      "xref": 394,
+      "smask": 392,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00400-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 400,
+      "smask": 398,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00406-152x79.png",
+      "w": 152,
+      "h": 79,
+      "alpha": true,
+      "xref": 406,
+      "smask": 404,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00410-97x38.png",
+      "w": 97,
+      "h": 38,
+      "alpha": true,
+      "xref": 410,
+      "smask": 408,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00414-243x101.png",
+      "w": 243,
+      "h": 101,
+      "alpha": true,
+      "xref": 414,
+      "smask": 412,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00424-701x195.png",
+      "w": 701,
+      "h": 195,
+      "alpha": true,
+      "xref": 424,
+      "smask": 422,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00430-701x253.png",
+      "w": 701,
+      "h": 253,
+      "alpha": true,
+      "xref": 430,
+      "smask": 428,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00436-701x205.png",
+      "w": 701,
+      "h": 205,
+      "alpha": true,
+      "xref": 436,
+      "smask": 434,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00020-861x861.png",
+      "w": 861,
+      "h": 861,
+      "alpha": true,
+      "xref": 20,
+      "smask": 18,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00028-2420x2420.png",
+      "w": 2420,
+      "h": 2420,
+      "alpha": true,
+      "xref": 28,
+      "smask": 26,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00118-98x70.png",
+      "w": 98,
+      "h": 70,
+      "alpha": true,
+      "xref": 118,
+      "smask": 116,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00182-75x75.png",
+      "w": 75,
+      "h": 75,
+      "alpha": true,
+      "xref": 182,
+      "smask": 180,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00148-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 148,
+      "smask": 146,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00154-78x60.png",
+      "w": 78,
+      "h": 60,
+      "alpha": true,
+      "xref": 154,
+      "smask": 152,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00162-49x54.png",
+      "w": 49,
+      "h": 54,
+      "alpha": true,
+      "xref": 162,
+      "smask": 160,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00172-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 172,
+      "smask": 170,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00178-53x47.png",
+      "w": 53,
+      "h": 47,
+      "alpha": true,
+      "xref": 178,
+      "smask": 176,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00196-74x74.png",
+      "w": 74,
+      "h": 74,
+      "alpha": true,
+      "xref": 196,
+      "smask": 194,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00200-94x76.png",
+      "w": 94,
+      "h": 76,
+      "alpha": true,
+      "xref": 200,
+      "smask": 198,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00248-2000x2000.png",
+      "w": 2000,
+      "h": 2000,
+      "alpha": true,
+      "xref": 248,
+      "smask": 246,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00112-97x69.png",
+      "w": 97,
+      "h": 69,
+      "alpha": true,
+      "xref": 112,
+      "smask": 110,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00128-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 128,
+      "smask": 126,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00136-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 136,
+      "smask": 134,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00166-41x36.png",
+      "w": 41,
+      "h": 36,
+      "alpha": true,
+      "xref": 166,
+      "smask": 164,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00190-37x41.png",
+      "w": 37,
+      "h": 41,
+      "alpha": true,
+      "xref": 190,
+      "smask": 188,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00204-148x73.png",
+      "w": 148,
+      "h": 73,
+      "alpha": true,
+      "xref": 204,
+      "smask": 202,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00208-94x33.png",
+      "w": 94,
+      "h": 33,
+      "alpha": true,
+      "xref": 208,
+      "smask": 206,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00212-235x88.png",
+      "w": 235,
+      "h": 88,
+      "alpha": true,
+      "xref": 212,
+      "smask": 210,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00222-118x250.png",
+      "w": 118,
+      "h": 250,
+      "alpha": true,
+      "xref": 222,
+      "smask": 220,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00228-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 228,
+      "smask": 226,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00234-152x79.png",
+      "w": 152,
+      "h": 79,
+      "alpha": true,
+      "xref": 234,
+      "smask": 232,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00238-97x38.png",
+      "w": 97,
+      "h": 38,
+      "alpha": true,
+      "xref": 238,
+      "smask": 236,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00242-243x101.png",
+      "w": 243,
+      "h": 101,
+      "alpha": true,
+      "xref": 242,
+      "smask": 240,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00252-701x195.png",
+      "w": 701,
+      "h": 195,
+      "alpha": true,
+      "xref": 252,
+      "smask": 250,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00258-701x253.png",
+      "w": 701,
+      "h": 253,
+      "alpha": true,
+      "xref": 258,
+      "smask": 256,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00272-701x205.png",
+      "w": 701,
+      "h": 205,
+      "alpha": true,
+      "xref": 272,
+      "smask": 270,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00544-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 544,
+      "smask": 542,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00538-598x253.png",
+      "w": 598,
+      "h": 253,
+      "alpha": true,
+      "xref": 538,
+      "smask": 536,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00550-439x282.png",
+      "w": 439,
+      "h": 282,
+      "alpha": true,
+      "xref": 550,
+      "smask": 548,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00562-598x195.png",
+      "w": 598,
+      "h": 195,
+      "alpha": true,
+      "xref": 562,
+      "smask": 560,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00556-440x292.png",
+      "w": 440,
+      "h": 292,
+      "alpha": true,
+      "xref": 556,
+      "smask": 554,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00568-598x205.png",
+      "w": 598,
+      "h": 205,
+      "alpha": true,
+      "xref": 568,
+      "smask": 566,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00576-447x339.png",
+      "w": 447,
+      "h": 339,
+      "alpha": true,
+      "xref": 576,
+      "smask": 574,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00074-2420x2420.png",
+      "w": 2420,
+      "h": 2420,
+      "alpha": true,
+      "xref": 74,
+      "smask": 72,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00588-359x252.png",
+      "w": 359,
+      "h": 252,
+      "alpha": true,
+      "xref": 588,
+      "smask": 586,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00592-303x209.png",
+      "w": 303,
+      "h": 209,
+      "alpha": true,
+      "xref": 592,
+      "smask": 590,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00596-291x169.png",
+      "w": 291,
+      "h": 169,
+      "alpha": true,
+      "xref": 596,
+      "smask": 594,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00600-141x114.png",
+      "w": 141,
+      "h": 114,
+      "alpha": true,
+      "xref": 600,
+      "smask": 598,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00604-134x106.png",
+      "w": 134,
+      "h": 106,
+      "alpha": true,
+      "xref": 604,
+      "smask": 602,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00616-240x238.png",
+      "w": 240,
+      "h": 238,
+      "alpha": true,
+      "xref": 616,
+      "smask": 614,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00620-230x234.png",
+      "w": 230,
+      "h": 234,
+      "alpha": true,
+      "xref": 620,
+      "smask": 618,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00636-310x177.png",
+      "w": 310,
+      "h": 177,
+      "alpha": true,
+      "xref": 636,
+      "smask": 634,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00642-362x213.png",
+      "w": 362,
+      "h": 213,
+      "alpha": true,
+      "xref": 642,
+      "smask": 640,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00608-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 608,
+      "smask": 606,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00624-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 624,
+      "smask": 622,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00630-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 630,
+      "smask": 628,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00862-1536x1024.png",
+      "w": 1536,
+      "h": 1024,
+      "alpha": true,
+      "xref": 862,
+      "smask": 860,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00858-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 858,
+      "smask": 856,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01020-387x200.png",
+      "w": 387,
+      "h": 200,
+      "alpha": true,
+      "xref": 1020,
+      "smask": 1018,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01026-389x240.png",
+      "w": 389,
+      "h": 240,
+      "alpha": true,
+      "xref": 1026,
+      "smask": 1024,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01096-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 1096,
+      "smask": 1094,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01014-387x192.png",
+      "w": 387,
+      "h": 192,
+      "alpha": true,
+      "xref": 1014,
+      "smask": 1012,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01042-574x313.png",
+      "w": 574,
+      "h": 313,
+      "alpha": true,
+      "xref": 1042,
+      "smask": 1040,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01054-576x326.png",
+      "w": 576,
+      "h": 326,
+      "alpha": true,
+      "xref": 1054,
+      "smask": 1052,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01048-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 1048,
+      "smask": 1046,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01066-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 1066,
+      "smask": 1064,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01060-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 1060,
+      "smask": 1058,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01072-589x389.png",
+      "w": 589,
+      "h": 389,
+      "alpha": true,
+      "xref": 1072,
+      "smask": 1070,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01078-417x194.png",
+      "w": 417,
+      "h": 194,
+      "alpha": true,
+      "xref": 1078,
+      "smask": 1076,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01084-417x203.png",
+      "w": 417,
+      "h": 203,
+      "alpha": true,
+      "xref": 1084,
+      "smask": 1082,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01090-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 1090,
+      "smask": 1088,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01102-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 1102,
+      "smask": 1100,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01108-418x247.png",
+      "w": 418,
+      "h": 247,
+      "alpha": true,
+      "xref": 1108,
+      "smask": 1106,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00940-546x148.png",
+      "w": 546,
+      "h": 148,
+      "alpha": true,
+      "xref": 940,
+      "smask": 938,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00946-1522x1522.png",
+      "w": 1522,
+      "h": 1522,
+      "alpha": true,
+      "xref": 946,
+      "smask": 944,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00952-506x195.png",
+      "w": 506,
+      "h": 195,
+      "alpha": true,
+      "xref": 952,
+      "smask": 950,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00958-506x233.png",
+      "w": 506,
+      "h": 233,
+      "alpha": true,
+      "xref": 958,
+      "smask": 956,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00966-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 966,
+      "smask": 964,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00978-506x315.png",
+      "w": 506,
+      "h": 315,
+      "alpha": true,
+      "xref": 978,
+      "smask": 976,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00660-359x252.png",
+      "w": 359,
+      "h": 252,
+      "alpha": true,
+      "xref": 660,
+      "smask": 658,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00664-303x209.png",
+      "w": 303,
+      "h": 209,
+      "alpha": true,
+      "xref": 664,
+      "smask": 662,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00668-291x169.png",
+      "w": 291,
+      "h": 169,
+      "alpha": true,
+      "xref": 668,
+      "smask": 666,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00674-141x114.png",
+      "w": 141,
+      "h": 114,
+      "alpha": true,
+      "xref": 674,
+      "smask": 672,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00678-134x106.png",
+      "w": 134,
+      "h": 106,
+      "alpha": true,
+      "xref": 678,
+      "smask": 676,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00690-240x238.png",
+      "w": 240,
+      "h": 238,
+      "alpha": true,
+      "xref": 690,
+      "smask": 688,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00694-230x234.png",
+      "w": 230,
+      "h": 234,
+      "alpha": true,
+      "xref": 694,
+      "smask": 692,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00710-310x177.png",
+      "w": 310,
+      "h": 177,
+      "alpha": true,
+      "xref": 710,
+      "smask": 708,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00716-362x213.png",
+      "w": 362,
+      "h": 213,
+      "alpha": true,
+      "xref": 716,
+      "smask": 714,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00682-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 682,
+      "smask": 680,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00698-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 698,
+      "smask": 696,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00704-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 704,
+      "smask": 702,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00728-1522x1522.png",
+      "w": 1522,
+      "h": 1522,
+      "alpha": true,
+      "xref": 728,
+      "smask": 726,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00736-546x148.png",
+      "w": 546,
+      "h": 148,
+      "alpha": true,
+      "xref": 736,
+      "smask": 734,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00742-506x195.png",
+      "w": 506,
+      "h": 195,
+      "alpha": true,
+      "xref": 742,
+      "smask": 740,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00748-506x233.png",
+      "w": 506,
+      "h": 233,
+      "alpha": true,
+      "xref": 748,
+      "smask": 746,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00756-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 756,
+      "smask": 754,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00764-506x315.png",
+      "w": 506,
+      "h": 315,
+      "alpha": true,
+      "xref": 764,
+      "smask": 762,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00798-205x355.png",
+      "w": 205,
+      "h": 355,
+      "alpha": true,
+      "xref": 798,
+      "smask": 796,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00802-165x297.png",
+      "w": 165,
+      "h": 297,
+      "alpha": true,
+      "xref": 802,
+      "smask": 800,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00806-207x293.png",
+      "w": 207,
+      "h": 293,
+      "alpha": true,
+      "xref": 806,
+      "smask": 804,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00810-131x150.png",
+      "w": 131,
+      "h": 150,
+      "alpha": true,
+      "xref": 810,
+      "smask": 808,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00814-220x215.png",
+      "w": 220,
+      "h": 215,
+      "alpha": true,
+      "xref": 814,
+      "smask": 812,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00818-122x142.png",
+      "w": 122,
+      "h": 142,
+      "alpha": true,
+      "xref": 818,
+      "smask": 816,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00834-260x363.png",
+      "w": 260,
+      "h": 363,
+      "alpha": true,
+      "xref": 834,
+      "smask": 832,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00838-222x314.png",
+      "w": 222,
+      "h": 314,
+      "alpha": true,
+      "xref": 838,
+      "smask": 836,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00842-227x231.png",
+      "w": 227,
+      "h": 231,
+      "alpha": true,
+      "xref": 842,
+      "smask": 840,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00828-421x573.png",
+      "w": 421,
+      "h": 573,
+      "alpha": true,
+      "xref": 828,
+      "smask": 826,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00822-410x568.png",
+      "w": 410,
+      "h": 568,
+      "alpha": true,
+      "xref": 822,
+      "smask": 820,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00848-480x601.png",
+      "w": 480,
+      "h": 601,
+      "alpha": true,
+      "xref": 848,
+      "smask": 846,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00870-436x561.png",
+      "w": 436,
+      "h": 561,
+      "alpha": true,
+      "xref": 870,
+      "smask": 868,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00876-503x598.png",
+      "w": 503,
+      "h": 598,
+      "alpha": true,
+      "xref": 876,
+      "smask": 874,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00882-556x474.png",
+      "w": 556,
+      "h": 474,
+      "alpha": true,
+      "xref": 882,
+      "smask": 880,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00888-548x464.png",
+      "w": 548,
+      "h": 464,
+      "alpha": true,
+      "xref": 888,
+      "smask": 886,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00894-447x567.png",
+      "w": 447,
+      "h": 567,
+      "alpha": true,
+      "xref": 894,
+      "smask": 892,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00900-503x598.png",
+      "w": 503,
+      "h": 598,
+      "alpha": true,
+      "xref": 900,
+      "smask": 898,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00906-436x561.png",
+      "w": 436,
+      "h": 561,
+      "alpha": true,
+      "xref": 906,
+      "smask": 904,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00914-447x567.png",
+      "w": 447,
+      "h": 567,
+      "alpha": true,
+      "xref": 914,
+      "smask": 912,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00920-592x527.png",
+      "w": 592,
+      "h": 527,
+      "alpha": true,
+      "xref": 920,
+      "smask": 918,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-00926-421x420.png",
+      "w": 421,
+      "h": 420,
+      "alpha": true,
+      "xref": 926,
+      "smask": 924,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01130-98x70.png",
+      "w": 98,
+      "h": 70,
+      "alpha": true,
+      "xref": 1130,
+      "smask": 1128,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01184-75x75.png",
+      "w": 75,
+      "h": 75,
+      "alpha": true,
+      "xref": 1184,
+      "smask": 1182,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01156-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 1156,
+      "smask": 1154,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01160-78x60.png",
+      "w": 78,
+      "h": 60,
+      "alpha": true,
+      "xref": 1160,
+      "smask": 1158,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01164-49x54.png",
+      "w": 49,
+      "h": 54,
+      "alpha": true,
+      "xref": 1164,
+      "smask": 1162,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01174-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 1174,
+      "smask": 1172,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01180-53x47.png",
+      "w": 53,
+      "h": 47,
+      "alpha": true,
+      "xref": 1180,
+      "smask": 1178,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01194-74x74.png",
+      "w": 74,
+      "h": 74,
+      "alpha": true,
+      "xref": 1194,
+      "smask": 1192,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01198-94x76.png",
+      "w": 94,
+      "h": 76,
+      "alpha": true,
+      "xref": 1198,
+      "smask": 1196,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01124-97x69.png",
+      "w": 97,
+      "h": 69,
+      "alpha": true,
+      "xref": 1124,
+      "smask": 1122,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01136-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 1136,
+      "smask": 1134,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01144-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 1144,
+      "smask": 1142,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01168-41x36.png",
+      "w": 41,
+      "h": 36,
+      "alpha": true,
+      "xref": 1168,
+      "smask": 1166,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01188-37x41.png",
+      "w": 37,
+      "h": 41,
+      "alpha": true,
+      "xref": 1188,
+      "smask": 1186,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01202-148x73.png",
+      "w": 148,
+      "h": 73,
+      "alpha": true,
+      "xref": 1202,
+      "smask": 1200,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01206-94x33.png",
+      "w": 94,
+      "h": 33,
+      "alpha": true,
+      "xref": 1206,
+      "smask": 1204,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01210-235x88.png",
+      "w": 235,
+      "h": 88,
+      "alpha": true,
+      "xref": 1210,
+      "smask": 1208,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01218-701x253.png",
+      "w": 701,
+      "h": 253,
+      "alpha": true,
+      "xref": 1218,
+      "smask": 1216,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01224-152x79.png",
+      "w": 152,
+      "h": 79,
+      "alpha": true,
+      "xref": 1224,
+      "smask": 1222,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01228-97x38.png",
+      "w": 97,
+      "h": 38,
+      "alpha": true,
+      "xref": 1228,
+      "smask": 1226,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01232-243x101.png",
+      "w": 243,
+      "h": 101,
+      "alpha": true,
+      "xref": 1232,
+      "smask": 1230,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01238-118x250.png",
+      "w": 118,
+      "h": 250,
+      "alpha": true,
+      "xref": 1238,
+      "smask": 1236,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01244-701x195.png",
+      "w": 701,
+      "h": 195,
+      "alpha": true,
+      "xref": 1244,
+      "smask": 1242,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01250-701x205.png",
+      "w": 701,
+      "h": 205,
+      "alpha": true,
+      "xref": 1250,
+      "smask": 1248,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01256-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 1256,
+      "smask": 1254,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01282-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 1282,
+      "smask": 1280,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01298-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 1298,
+      "smask": 1296,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01310-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 1310,
+      "smask": 1308,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01304-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 1304,
+      "smask": 1302,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01318-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 1318,
+      "smask": 1316,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01324-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 1324,
+      "smask": 1322,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01414-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 1414,
+      "smask": 1412,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01374-387x200.png",
+      "w": 387,
+      "h": 200,
+      "alpha": true,
+      "xref": 1374,
+      "smask": 1372,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01368-387x192.png",
+      "w": 387,
+      "h": 192,
+      "alpha": true,
+      "xref": 1368,
+      "smask": 1366,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01450-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 1450,
+      "smask": 1448,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01380-389x240.png",
+      "w": 389,
+      "h": 240,
+      "alpha": true,
+      "xref": 1380,
+      "smask": 1378,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01396-574x313.png",
+      "w": 574,
+      "h": 313,
+      "alpha": true,
+      "xref": 1396,
+      "smask": 1394,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01408-576x326.png",
+      "w": 576,
+      "h": 326,
+      "alpha": true,
+      "xref": 1408,
+      "smask": 1406,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01402-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 1402,
+      "smask": 1400,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01420-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 1420,
+      "smask": 1418,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01426-589x389.png",
+      "w": 589,
+      "h": 389,
+      "alpha": true,
+      "xref": 1426,
+      "smask": 1424,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01432-417x194.png",
+      "w": 417,
+      "h": 194,
+      "alpha": true,
+      "xref": 1432,
+      "smask": 1430,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01438-417x203.png",
+      "w": 417,
+      "h": 203,
+      "alpha": true,
+      "xref": 1438,
+      "smask": 1436,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01444-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 1444,
+      "smask": 1442,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01456-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 1456,
+      "smask": 1454,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01462-418x247.png",
+      "w": 418,
+      "h": 247,
+      "alpha": true,
+      "xref": 1462,
+      "smask": 1460,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01350-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 1350,
+      "smask": 1348,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01342-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 1342,
+      "smask": 1340,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01480-2420x2420.png",
+      "w": 2420,
+      "h": 2420,
+      "alpha": true,
+      "xref": 1480,
+      "smask": 1478,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02132-679x679.png",
+      "w": 679,
+      "h": 679,
+      "alpha": true,
+      "xref": 2132,
+      "smask": 2130,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01516-2420x2420.png",
+      "w": 2420,
+      "h": 2420,
+      "alpha": true,
+      "xref": 1516,
+      "smask": 1514,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01560-1522x1522.png",
+      "w": 1522,
+      "h": 1522,
+      "alpha": true,
+      "xref": 1560,
+      "smask": 1558,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01566-506x195.png",
+      "w": 506,
+      "h": 195,
+      "alpha": true,
+      "xref": 1566,
+      "smask": 1564,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01554-546x148.png",
+      "w": 546,
+      "h": 148,
+      "alpha": true,
+      "xref": 1554,
+      "smask": 1552,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01572-506x233.png",
+      "w": 506,
+      "h": 233,
+      "alpha": true,
+      "xref": 1572,
+      "smask": 1570,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01580-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 1580,
+      "smask": 1578,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01588-506x315.png",
+      "w": 506,
+      "h": 315,
+      "alpha": true,
+      "xref": 1588,
+      "smask": 1586,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01628-98x70.png",
+      "w": 98,
+      "h": 70,
+      "alpha": true,
+      "xref": 1628,
+      "smask": 1626,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01634-3840x3840.png",
+      "w": 3840,
+      "h": 3840,
+      "alpha": true,
+      "xref": 1634,
+      "smask": 1632,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01688-75x75.png",
+      "w": 75,
+      "h": 75,
+      "alpha": true,
+      "xref": 1688,
+      "smask": 1686,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01658-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 1658,
+      "smask": 1656,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01664-78x60.png",
+      "w": 78,
+      "h": 60,
+      "alpha": true,
+      "xref": 1664,
+      "smask": 1662,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01668-49x54.png",
+      "w": 49,
+      "h": 54,
+      "alpha": true,
+      "xref": 1668,
+      "smask": 1666,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01678-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 1678,
+      "smask": 1676,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01684-53x47.png",
+      "w": 53,
+      "h": 47,
+      "alpha": true,
+      "xref": 1684,
+      "smask": 1682,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01698-74x74.png",
+      "w": 74,
+      "h": 74,
+      "alpha": true,
+      "xref": 1698,
+      "smask": 1696,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01702-94x76.png",
+      "w": 94,
+      "h": 76,
+      "alpha": true,
+      "xref": 1702,
+      "smask": 1700,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01746-2000x2000.png",
+      "w": 2000,
+      "h": 2000,
+      "alpha": true,
+      "xref": 1746,
+      "smask": 1744,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01622-97x69.png",
+      "w": 97,
+      "h": 69,
+      "alpha": true,
+      "xref": 1622,
+      "smask": 1620,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01638-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 1638,
+      "smask": 1636,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01646-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 1646,
+      "smask": 1644,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01672-41x36.png",
+      "w": 41,
+      "h": 36,
+      "alpha": true,
+      "xref": 1672,
+      "smask": 1670,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01692-37x41.png",
+      "w": 37,
+      "h": 41,
+      "alpha": true,
+      "xref": 1692,
+      "smask": 1690,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01706-148x73.png",
+      "w": 148,
+      "h": 73,
+      "alpha": true,
+      "xref": 1706,
+      "smask": 1704,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01710-94x33.png",
+      "w": 94,
+      "h": 33,
+      "alpha": true,
+      "xref": 1710,
+      "smask": 1708,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01714-235x88.png",
+      "w": 235,
+      "h": 88,
+      "alpha": true,
+      "xref": 1714,
+      "smask": 1712,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01720-118x250.png",
+      "w": 118,
+      "h": 250,
+      "alpha": true,
+      "xref": 1720,
+      "smask": 1718,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01726-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 1726,
+      "smask": 1724,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01732-152x79.png",
+      "w": 152,
+      "h": 79,
+      "alpha": true,
+      "xref": 1732,
+      "smask": 1730,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01736-97x38.png",
+      "w": 97,
+      "h": 38,
+      "alpha": true,
+      "xref": 1736,
+      "smask": 1734,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01740-243x101.png",
+      "w": 243,
+      "h": 101,
+      "alpha": true,
+      "xref": 1740,
+      "smask": 1738,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01750-701x195.png",
+      "w": 701,
+      "h": 195,
+      "alpha": true,
+      "xref": 1750,
+      "smask": 1748,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01756-701x253.png",
+      "w": 701,
+      "h": 253,
+      "alpha": true,
+      "xref": 1756,
+      "smask": 1754,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01762-701x205.png",
+      "w": 701,
+      "h": 205,
+      "alpha": true,
+      "xref": 1762,
+      "smask": 1760,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01808-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 1808,
+      "smask": 1806,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01804-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 1804,
+      "smask": 1802,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01816-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 1816,
+      "smask": 1814,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01820-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 1820,
+      "smask": 1818,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01850-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 1850,
+      "smask": 1848,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01842-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 1842,
+      "smask": 1840,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01846-1536x1024.png",
+      "w": 1536,
+      "h": 1024,
+      "alpha": true,
+      "xref": 1846,
+      "smask": 1844,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02024-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2024,
+      "smask": 2022,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02050-74x72.png",
+      "w": 74,
+      "h": 72,
+      "alpha": true,
+      "xref": 2050,
+      "smask": 2048,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02094-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2094,
+      "smask": 2092,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02098-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2098,
+      "smask": 2096,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02102-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2102,
+      "smask": 2100,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02106-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2106,
+      "smask": 2104,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01798-72x72.png",
+      "w": 72,
+      "h": 72,
+      "alpha": true,
+      "xref": 1798,
+      "smask": 1796,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01824-1400x1400.png",
+      "w": 1400,
+      "h": 1400,
+      "alpha": true,
+      "xref": 1824,
+      "smask": 1822,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01830-64x68.png",
+      "w": 64,
+      "h": 68,
+      "alpha": true,
+      "xref": 1830,
+      "smask": 1828,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01836-1400x1400.png",
+      "w": 1400,
+      "h": 1400,
+      "alpha": true,
+      "xref": 1836,
+      "smask": 1834,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01862-98x70.png",
+      "w": 98,
+      "h": 70,
+      "alpha": true,
+      "xref": 1862,
+      "smask": 1860,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01918-75x75.png",
+      "w": 75,
+      "h": 75,
+      "alpha": true,
+      "xref": 1918,
+      "smask": 1916,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01888-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 1888,
+      "smask": 1886,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01894-78x60.png",
+      "w": 78,
+      "h": 60,
+      "alpha": true,
+      "xref": 1894,
+      "smask": 1892,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01898-49x54.png",
+      "w": 49,
+      "h": 54,
+      "alpha": true,
+      "xref": 1898,
+      "smask": 1896,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01908-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 1908,
+      "smask": 1906,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01914-53x47.png",
+      "w": 53,
+      "h": 47,
+      "alpha": true,
+      "xref": 1914,
+      "smask": 1912,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01928-74x74.png",
+      "w": 74,
+      "h": 74,
+      "alpha": true,
+      "xref": 1928,
+      "smask": 1926,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01932-94x76.png",
+      "w": 94,
+      "h": 76,
+      "alpha": true,
+      "xref": 1932,
+      "smask": 1930,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01856-97x69.png",
+      "w": 97,
+      "h": 69,
+      "alpha": true,
+      "xref": 1856,
+      "smask": 1854,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01868-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 1868,
+      "smask": 1866,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01876-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 1876,
+      "smask": 1874,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01902-41x36.png",
+      "w": 41,
+      "h": 36,
+      "alpha": true,
+      "xref": 1902,
+      "smask": 1900,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01922-37x41.png",
+      "w": 37,
+      "h": 41,
+      "alpha": true,
+      "xref": 1922,
+      "smask": 1920,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01936-148x73.png",
+      "w": 148,
+      "h": 73,
+      "alpha": true,
+      "xref": 1936,
+      "smask": 1934,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01940-94x33.png",
+      "w": 94,
+      "h": 33,
+      "alpha": true,
+      "xref": 1940,
+      "smask": 1938,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01944-235x88.png",
+      "w": 235,
+      "h": 88,
+      "alpha": true,
+      "xref": 1944,
+      "smask": 1942,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01950-118x250.png",
+      "w": 118,
+      "h": 250,
+      "alpha": true,
+      "xref": 1950,
+      "smask": 1948,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01956-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 1956,
+      "smask": 1954,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01962-152x79.png",
+      "w": 152,
+      "h": 79,
+      "alpha": true,
+      "xref": 1962,
+      "smask": 1960,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01966-97x38.png",
+      "w": 97,
+      "h": 38,
+      "alpha": true,
+      "xref": 1966,
+      "smask": 1964,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01970-243x101.png",
+      "w": 243,
+      "h": 101,
+      "alpha": true,
+      "xref": 1970,
+      "smask": 1968,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01976-701x195.png",
+      "w": 701,
+      "h": 195,
+      "alpha": true,
+      "xref": 1976,
+      "smask": 1974,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01982-701x253.png",
+      "w": 701,
+      "h": 253,
+      "alpha": true,
+      "xref": 1982,
+      "smask": 1980,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-01988-701x205.png",
+      "w": 701,
+      "h": 205,
+      "alpha": true,
+      "xref": 1988,
+      "smask": 1986,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02018-99x99.png",
+      "w": 99,
+      "h": 99,
+      "alpha": true,
+      "xref": 2018,
+      "smask": 2016,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02028-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2028,
+      "smask": 2026,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02082-3000x3000.png",
+      "w": 3000,
+      "h": 3000,
+      "alpha": true,
+      "xref": 2082,
+      "smask": 2080,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02138-608x637.png",
+      "w": 608,
+      "h": 637,
+      "alpha": true,
+      "xref": 2138,
+      "smask": 2136,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02152-98x70.png",
+      "w": 98,
+      "h": 70,
+      "alpha": true,
+      "xref": 2152,
+      "smask": 2150,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02208-75x75.png",
+      "w": 75,
+      "h": 75,
+      "alpha": true,
+      "xref": 2208,
+      "smask": 2206,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02178-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 2178,
+      "smask": 2176,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02184-78x60.png",
+      "w": 78,
+      "h": 60,
+      "alpha": true,
+      "xref": 2184,
+      "smask": 2182,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02188-49x54.png",
+      "w": 49,
+      "h": 54,
+      "alpha": true,
+      "xref": 2188,
+      "smask": 2186,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02198-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 2198,
+      "smask": 2196,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02204-53x47.png",
+      "w": 53,
+      "h": 47,
+      "alpha": true,
+      "xref": 2204,
+      "smask": 2202,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02218-74x74.png",
+      "w": 74,
+      "h": 74,
+      "alpha": true,
+      "xref": 2218,
+      "smask": 2216,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02222-94x76.png",
+      "w": 94,
+      "h": 76,
+      "alpha": true,
+      "xref": 2222,
+      "smask": 2220,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02146-97x69.png",
+      "w": 97,
+      "h": 69,
+      "alpha": true,
+      "xref": 2146,
+      "smask": 2144,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02158-147x69.png",
+      "w": 147,
+      "h": 69,
+      "alpha": true,
+      "xref": 2158,
+      "smask": 2156,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02166-235x81.png",
+      "w": 235,
+      "h": 81,
+      "alpha": true,
+      "xref": 2166,
+      "smask": 2164,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02192-41x36.png",
+      "w": 41,
+      "h": 36,
+      "alpha": true,
+      "xref": 2192,
+      "smask": 2190,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02212-37x41.png",
+      "w": 37,
+      "h": 41,
+      "alpha": true,
+      "xref": 2212,
+      "smask": 2210,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02226-148x73.png",
+      "w": 148,
+      "h": 73,
+      "alpha": true,
+      "xref": 2226,
+      "smask": 2224,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02230-94x33.png",
+      "w": 94,
+      "h": 33,
+      "alpha": true,
+      "xref": 2230,
+      "smask": 2228,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02234-235x88.png",
+      "w": 235,
+      "h": 88,
+      "alpha": true,
+      "xref": 2234,
+      "smask": 2232,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02240-118x250.png",
+      "w": 118,
+      "h": 250,
+      "alpha": true,
+      "xref": 2240,
+      "smask": 2238,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02246-1479x1281.png",
+      "w": 1479,
+      "h": 1281,
+      "alpha": true,
+      "xref": 2246,
+      "smask": 2244,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02252-152x79.png",
+      "w": 152,
+      "h": 79,
+      "alpha": true,
+      "xref": 2252,
+      "smask": 2250,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02256-97x38.png",
+      "w": 97,
+      "h": 38,
+      "alpha": true,
+      "xref": 2256,
+      "smask": 2254,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02260-243x101.png",
+      "w": 243,
+      "h": 101,
+      "alpha": true,
+      "xref": 2260,
+      "smask": 2258,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02266-701x195.png",
+      "w": 701,
+      "h": 195,
+      "alpha": true,
+      "xref": 2266,
+      "smask": 2264,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02272-701x253.png",
+      "w": 701,
+      "h": 253,
+      "alpha": true,
+      "xref": 2272,
+      "smask": 2270,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02278-701x205.png",
+      "w": 701,
+      "h": 205,
+      "alpha": true,
+      "xref": 2278,
+      "smask": 2276,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02304-2420x2420.png",
+      "w": 2420,
+      "h": 2420,
+      "alpha": true,
+      "xref": 2304,
+      "smask": 2302,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02374-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2374,
+      "smask": 2372,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02370-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2370,
+      "smask": 2368,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02378-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2378,
+      "smask": 2376,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02382-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2382,
+      "smask": 2380,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02404-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2404,
+      "smask": 2402,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02414-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2414,
+      "smask": 2412,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02436-74x72.png",
+      "w": 74,
+      "h": 72,
+      "alpha": true,
+      "xref": 2436,
+      "smask": 2434,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02364-72x72.png",
+      "w": 72,
+      "h": 72,
+      "alpha": true,
+      "xref": 2364,
+      "smask": 2362,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02386-1400x1400.png",
+      "w": 1400,
+      "h": 1400,
+      "alpha": true,
+      "xref": 2386,
+      "smask": 2384,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02392-64x68.png",
+      "w": 64,
+      "h": 68,
+      "alpha": true,
+      "xref": 2392,
+      "smask": 2390,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02398-1400x1400.png",
+      "w": 1400,
+      "h": 1400,
+      "alpha": true,
+      "xref": 2398,
+      "smask": 2396,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02408-99x99.png",
+      "w": 99,
+      "h": 99,
+      "alpha": true,
+      "xref": 2408,
+      "smask": 2406,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02516-359x252.png",
+      "w": 359,
+      "h": 252,
+      "alpha": true,
+      "xref": 2516,
+      "smask": 2514,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02520-303x209.png",
+      "w": 303,
+      "h": 209,
+      "alpha": true,
+      "xref": 2520,
+      "smask": 2518,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02524-291x169.png",
+      "w": 291,
+      "h": 169,
+      "alpha": true,
+      "xref": 2524,
+      "smask": 2522,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02528-141x114.png",
+      "w": 141,
+      "h": 114,
+      "alpha": true,
+      "xref": 2528,
+      "smask": 2526,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02532-230x234.png",
+      "w": 230,
+      "h": 234,
+      "alpha": true,
+      "xref": 2532,
+      "smask": 2530,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02536-134x106.png",
+      "w": 134,
+      "h": 106,
+      "alpha": true,
+      "xref": 2536,
+      "smask": 2534,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02552-362x213.png",
+      "w": 362,
+      "h": 213,
+      "alpha": true,
+      "xref": 2552,
+      "smask": 2550,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02556-310x177.png",
+      "w": 310,
+      "h": 177,
+      "alpha": true,
+      "xref": 2556,
+      "smask": 2554,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02560-240x238.png",
+      "w": 240,
+      "h": 238,
+      "alpha": true,
+      "xref": 2560,
+      "smask": 2558,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02546-578x350.png",
+      "w": 578,
+      "h": 350,
+      "alpha": true,
+      "xref": 2546,
+      "smask": 2544,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02540-575x337.png",
+      "w": 575,
+      "h": 337,
+      "alpha": true,
+      "xref": 2540,
+      "smask": 2538,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02566-594x412.png",
+      "w": 594,
+      "h": 412,
+      "alpha": true,
+      "xref": 2566,
+      "smask": 2564,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02588-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2588,
+      "smask": 2586,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02592-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2592,
+      "smask": 2590,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02596-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2596,
+      "smask": 2594,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02600-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2600,
+      "smask": 2598,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02622-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2622,
+      "smask": 2620,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02632-36x36.png",
+      "w": 36,
+      "h": 36,
+      "alpha": true,
+      "xref": 2632,
+      "smask": 2630,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02654-74x72.png",
+      "w": 74,
+      "h": 72,
+      "alpha": true,
+      "xref": 2654,
+      "smask": 2652,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02582-72x72.png",
+      "w": 72,
+      "h": 72,
+      "alpha": true,
+      "xref": 2582,
+      "smask": 2580,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02604-1400x1400.png",
+      "w": 1400,
+      "h": 1400,
+      "alpha": true,
+      "xref": 2604,
+      "smask": 2602,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02610-64x68.png",
+      "w": 64,
+      "h": 68,
+      "alpha": true,
+      "xref": 2610,
+      "smask": 2608,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02616-1400x1400.png",
+      "w": 1400,
+      "h": 1400,
+      "alpha": true,
+      "xref": 2616,
+      "smask": 2614,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/embedded/emb-02626-99x99.png",
+      "w": 99,
+      "h": 99,
+      "alpha": true,
+      "xref": 2626,
+      "smask": 2624,
+      "page": 1,
+      "kind": "embedded"
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-01-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-02-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-03-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-04-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-05-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-06-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-07-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-08-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-09-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-10-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-11-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-12-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-13-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-14-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        5448.4111328125,
+        2514.06201171875,
+        6213.97412109375,
+        3534.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-15-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-16-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-17-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-18-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-19-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-20-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-21-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-22-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-23-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-24-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-25-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-26-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-27-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-28-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        6220.4111328125,
+        3937.06201171875,
+        6985.97412109375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-29-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-30-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-31-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-32-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-33-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-34-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-35-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-36-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-37-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-38-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-39-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/screens/screen-40-765x1020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "xref": 158,
+      "kind": "screen-crop",
+      "pdf_rect": [
+        7127.4150390625,
+        3937.06201171875,
+        7892.97802734375,
+        4957.8125
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c0-001.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c1-002.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c2-003.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c3-004.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c4-005.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c5-006.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c6-007.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c7-008.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c8-009.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c9-010.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c10-011.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c11-012.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c12-013.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c13-014.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c14-015.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c15-016.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c16-017.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c17-018.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c18-019.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c19-020.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c20-021.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c21-022.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c22-023.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c23-024.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c24-025.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c25-026.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c26-027.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c27-028.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r0c28-029.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        0,
+        28
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c0-030.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c1-031.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c2-032.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c3-033.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c4-034.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c5-035.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c6-036.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c7-037.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c8-038.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c9-039.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c10-040.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c11-041.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c12-042.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c13-043.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c14-044.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c15-045.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c16-046.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c17-047.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c18-048.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c19-049.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c20-050.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c21-051.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c22-052.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c23-053.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c24-054.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c25-055.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c26-056.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c27-057.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r1c28-058.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        1,
+        28
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c0-059.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c1-060.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c2-061.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c3-062.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c4-063.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c5-064.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c6-065.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c7-066.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c8-067.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c9-068.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c10-069.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c11-070.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c12-071.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c13-072.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c14-073.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c15-074.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c16-075.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c17-076.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c18-077.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c19-078.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c20-079.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c21-080.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c22-081.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c23-082.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c24-083.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c25-084.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c26-085.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c27-086.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r2c28-087.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        2,
+        28
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c0-088.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c1-089.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c2-090.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c3-091.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c4-092.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c5-093.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c6-094.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c7-095.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c8-096.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c9-097.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c10-098.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c11-099.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c12-100.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c13-101.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c14-102.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c15-103.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c16-104.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c17-105.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c18-106.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c19-107.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c20-108.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c21-109.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c22-110.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c23-111.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c24-112.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c25-113.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c26-114.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c27-115.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r3c28-116.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        3,
+        28
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c0-117.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c1-118.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c2-119.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c3-120.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c4-121.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c5-122.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c6-123.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c7-124.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c8-125.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c9-126.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c10-127.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c11-128.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c12-129.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c13-130.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c14-131.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c15-132.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c16-133.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c17-134.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c18-135.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c19-136.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c20-137.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c21-138.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c22-139.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c23-140.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c24-141.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c25-142.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c26-143.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c27-144.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r4c28-145.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        4,
+        28
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c0-146.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c1-147.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c2-148.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c3-149.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c4-150.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c5-151.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c6-152.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c7-153.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c8-154.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c9-155.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c10-156.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c11-157.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c12-158.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c13-159.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c14-160.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c15-161.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c16-162.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c17-163.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c18-164.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c19-165.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c20-166.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c21-167.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c22-168.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c23-169.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c24-170.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c25-171.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c26-172.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c27-173.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r5c28-174.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        5,
+        28
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c0-175.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        0
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c1-176.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        1
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c2-177.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        2
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c3-178.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        3
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c4-179.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        4
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c5-180.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        5
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c6-181.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        6
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c7-182.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        7
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c8-183.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        8
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c9-184.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        9
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c10-185.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        10
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c11-186.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        11
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c12-187.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        12
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c13-188.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        13
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c14-189.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        14
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c15-190.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        15
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c16-191.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        16
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c17-192.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        17
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c18-193.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        18
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c19-194.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        19
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c20-195.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        20
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c21-196.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        21
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c22-197.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        22
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c23-198.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        23
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c24-199.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        24
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c25-200.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        25
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c26-201.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        26
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c27-202.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        27
+      ]
+    },
+    {
+      "path": "I:/Cursor/Sber2026/sberkopilka/web/assets/design/slices/slice-r6c28-203.png",
+      "w": 504,
+      "h": 672,
+      "alpha": true,
+      "kind": "grid-slice",
+      "grid": [
+        6,
+        28
+      ]
+    }
+  ]
+}

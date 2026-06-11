@@ -1,0 +1,653 @@
+@property --cam-reveal-r {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+:root {
+  --stage-size: 504px;
+  --green: #21a038;
+  --text: #fff;
+  /* --cam-* задаются из cam-geometry.js; холст всегда 504×504 */
+  --cam-cx: 252px;
+  --cam-cy: 252px;
+  --cam-rx: 202.87px;
+  --cam-ry: 202.87px;
+  --cam-hole-x: calc(var(--cam-cx) - var(--cam-rx));
+  --cam-hole-y: calc(var(--cam-cy) - var(--cam-ry));
+  --cam-hole-w: calc(var(--cam-rx) * 2);
+  --cam-hole-h: calc(var(--cam-ry) * 2);
+  --cam-feather: 38px;
+  --cam-soft: 19%;
+  --cam-reveal-r: 0px;
+  --field-green: linear-gradient(158deg, #a6d83c 0%, #8ec63f 45%, #5cb233 100%);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-dissolve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111;
+}
+
+body {
+  font-family: "SB Sans Text", "SB Sans Text Semibold", "SB Sans Display", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Киоск: фиксированный квадрат 504×504, левый верхний угол окна */
+.shell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--stage-size);
+  height: var(--stage-size);
+  border-radius: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  --cam-reveal-r: 0px;
+  transition: --cam-reveal-r 0.85s var(--ease-out);
+}
+
+.camera-slot,
+.stage-root {
+  position: absolute;
+  inset: 0;
+}
+
+.camera-slot {
+  z-index: 0;
+  background: transparent;
+}
+
+.shell--cam-open {
+  --cam-reveal-r: var(--cam-rx);
+}
+
+.camera-slot {
+  background: #000;
+}
+
+.camera-slot__view {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  visibility: hidden;
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    #000 0,
+    #000 max(0px, calc(var(--cam-rx) - var(--cam-feather))),
+    transparent var(--cam-rx)
+  );
+  mask-image: radial-gradient(
+    circle at 50% 50%,
+    #000 0,
+    #000 max(0px, calc(var(--cam-rx) - var(--cam-feather))),
+    transparent var(--cam-rx)
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.shell--cam-open .camera-slot__view {
+  visibility: visible;
+}
+
+.camera-slot__placeholder,
+.camera-slot video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.camera-slot__placeholder {
+  background: transparent;
+  z-index: 0;
+}
+
+.camera-slot video {
+  object-fit: cover;
+  object-position: center center;
+  transform: scaleX(-1);
+  z-index: 1;
+  background: #000;
+}
+
+.stage-root {
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- Сцена (круг 504) --- */
+
+.smile-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--stage-size);
+  height: var(--stage-size);
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+}
+
+.smile-stage__field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: var(--field-green);
+  transition: opacity 0.55s ease, -webkit-mask 0.85s var(--ease-out), mask 0.85s var(--ease-out);
+}
+
+.smile-stage[data-stage="face"] .smile-stage__field,
+.smile-stage[data-stage="line"] .smile-stage__field,
+.smile-stage[data-stage="stickers"] .smile-stage__field {
+  opacity: 1;
+}
+
+.smile-stage--cam-open .smile-stage__field,
+.smile-stage[data-stage="line"] .smile-stage__field,
+.smile-stage[data-stage="face"] .smile-stage__field {
+  opacity: 0;
+}
+
+.smile-stage__master {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  background: linear-gradient(158deg, #cde85c 0%, #9dd234 30%, #6bbf30 70%, #4aad2a 100%);
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__master {
+  background: linear-gradient(158deg, #c8e55a 0%, #8fd438 32%, #5cc44e 68%, #34a85a 100%);
+}
+
+.shell--master-visible .smile-stage__master,
+.smile-stage[data-stage="idle"] .smile-stage__master,
+.smile-stage[data-stage="qr"] .smile-stage__master {
+  opacity: 1;
+}
+
+.smile-stage[data-stage="face"] .smile-stage__master,
+.smile-stage[data-stage="line"] .smile-stage__master,
+.smile-stage[data-stage="stickers"] .smile-stage__master {
+  opacity: 0;
+}
+
+.smile-stage__master-img {
+  display: none;
+}
+
+.smile-stage__subtract-wrap {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  overflow: visible;
+}
+
+.shell--cam-open .smile-stage__subtract-wrap {
+  opacity: 1;
+}
+
+.smile-stage__subtract {
+  position: absolute;
+  left: -9.84%;
+  top: -11.53%;
+  display: block;
+  width: 119.68%;
+  height: 123.06%;
+  max-width: none;
+}
+
+.smile-stage__decor-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.smile-stage[data-stage="idle"] .smile-stage__decor-layer {
+  z-index: 5;
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__decor-layer {
+  z-index: auto;
+}
+
+.smile-stage__decor {
+  position: absolute;
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: center center;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.smile-stage__decor img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Декор по стадиям */
+
+.smile-stage[data-stage="idle"] .smile-stage__decor[data-decor-stages~="idle"],
+.smile-stage[data-stage="face"] .smile-stage__decor[data-decor-stages~="face"],
+.smile-stage[data-stage="line"] .smile-stage__decor[data-decor-stages~="line"],
+.smile-stage[data-stage="stickers"] .smile-stage__decor[data-decor-stages~="stickers"],
+.smile-stage[data-stage="qr"] .smile-stage__decor[data-decor-stages~="qr"] {
+  opacity: 1;
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__decor[data-decor-stages~="qr"] {
+  z-index: 5;
+  animation: qr-decor-breathe 4.4s ease-in-out infinite;
+  animation-delay: calc(var(--decor-i, 0) * -170ms);
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__decor--spring-qr[data-decor-stages~="qr"],
+.smile-stage[data-stage="qr"] .smile-stage__decor--star-qr-blue[data-decor-stages~="qr"],
+.smile-stage[data-stage="qr"] .smile-stage__decor--star-qr-pink[data-decor-stages~="qr"] {
+  z-index: 7;
+}
+
+.smile-stage[data-stage="face"] .smile-stage__decor[data-hold-decor="true"] {
+  opacity: 0;
+  z-index: 3;
+  transform: rotate(var(--rot, 0deg)) scale(0.58);
+  transition: opacity 0.28s ease, transform 0.34s var(--ease-out);
+}
+
+.smile-stage[data-stage="face"] .smile-stage__decor[data-hold-decor="true"].smile-stage__decor--hold-visible {
+  opacity: 1;
+  animation: hold-sticker-pop 0.38s var(--ease-out) both;
+}
+
+@keyframes hold-sticker-pop {
+  from {
+    opacity: 0;
+    transform: rotate(var(--rot, 0deg)) scale(0.58);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--rot, 0deg)) scale(1);
+  }
+}
+
+@keyframes qr-decor-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0) rotate(calc(var(--rot, 0deg) + 1.25deg)) scale(1.035);
+  }
+}
+
+.smile-stage[data-stage="idle"] .smile-stage__decor[data-decor-stages~="idle"],
+.smile-stage[data-stage="face"] .smile-stage__decor[data-decor-stages~="face"],
+.smile-stage[data-stage="line"] .smile-stage__decor[data-decor-stages~="line"] {
+  animation: decor-breathe 3.2s ease-in-out infinite;
+  animation-delay: calc(var(--decor-i, 0) * 0.34s);
+}
+
+@keyframes decor-breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0) rotate(calc(var(--rot, 0deg) + 2deg)) scale(1.085);
+  }
+}
+
+.smile-stage--stickers-in .smile-stage__decor[data-decor-stages~="stickers"] {
+  animation: sticker-pop 0.65s var(--ease-out) both;
+  animation-delay: calc(var(--decor-i, 0) * 40ms);
+}
+
+.smile-stage--stickers-curtain .smile-stage__decor[data-decor-stages~="stickers"] {
+  opacity: 1;
+  z-index: 8;
+}
+
+.smile-stage--stickers-out .smile-stage__decor[data-decor-stages~="stickers"] {
+  animation: sticker-pop-out 0.62s var(--ease-dissolve) both;
+  animation-delay: calc(var(--decor-out-i, 0) * 42ms);
+}
+
+@keyframes sticker-pop {
+  from {
+    opacity: 0;
+    transform: rotate(var(--rot, 0deg)) scale(0.55);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--rot, 0deg)) scale(1);
+  }
+}
+
+@keyframes sticker-pop-out {
+  from {
+    opacity: 1;
+    transform: rotate(var(--rot, 0deg)) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(var(--rot, 0deg)) scale(0.55);
+  }
+}
+
+/* Текст */
+
+.smile-stage__copy {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.smile-stage__pill-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.smile-stage__pill-block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: center center;
+  transition: opacity 0.45s ease;
+  z-index: 1;
+}
+
+.smile-stage__pill-block::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 464.17px;
+  height: 153.299px;
+  transform: translate(-50%, -50%);
+  background: var(--green);
+  border-radius: 73.5px;
+  z-index: 0;
+}
+
+.smile-stage[data-stage="idle"] .smile-stage__pill-block,
+.smile-stage[data-stage="idle"] .smile-stage__pill-main,
+.smile-stage[data-stage="idle"] .smile-stage__pill-cta {
+  opacity: 1;
+}
+
+.smile-stage__pill-text {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.smile-stage__pill-main,
+.smile-stage__pill-cta {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  color: var(--text);
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: center center;
+  word-break: break-word;
+}
+
+.smile-stage__pill-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smile-stage__text-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.55s ease;
+}
+
+.smile-stage__path-text {
+  fill: #fff;
+  letter-spacing: -0.02em;
+  dominant-baseline: central;
+}
+
+.smile-stage__path-text--bottom {
+  opacity: 0.55;
+  transition: opacity 0.85s var(--ease-out), font-size 0.45s ease;
+}
+
+.smile-stage[data-stage="line"] .smile-stage__path-text--bottom,
+.smile-stage[data-stage="stickers"] .smile-stage__path-text--bottom {
+  opacity: 1;
+}
+
+.smile-stage[data-stage="face"] .smile-stage__path-text--bottom {
+  opacity: 0;
+}
+
+.smile-stage[data-stage="face"].smile-stage--smile-hold-active .smile-stage__path-text--bottom {
+  opacity: 1;
+}
+
+.smile-stage[data-stage="face"] .smile-stage__text-svg,
+.smile-stage[data-stage="line"] .smile-stage__text-svg,
+.smile-stage[data-stage="stickers"] .smile-stage__text-svg {
+  opacity: 1;
+}
+
+.smile-stage[data-stage="face"] .smile-stage__pill-block,
+.smile-stage[data-stage="line"] .smile-stage__pill-block,
+.smile-stage[data-stage="stickers"] .smile-stage__pill-block,
+.smile-stage[data-stage="qr"] .smile-stage__pill-block,
+.smile-stage[data-stage="face"] .smile-stage__pill-main,
+.smile-stage[data-stage="line"] .smile-stage__pill-main,
+.smile-stage[data-stage="stickers"] .smile-stage__pill-main,
+.smile-stage[data-stage="qr"] .smile-stage__pill-main,
+.smile-stage[data-stage="face"] .smile-stage__pill-cta,
+.smile-stage[data-stage="line"] .smile-stage__pill-cta,
+.smile-stage[data-stage="stickers"] .smile-stage__pill-cta,
+.smile-stage[data-stage="qr"] .smile-stage__pill-cta {
+  opacity: 0;
+}
+
+.smile-stage[data-stage="stickers"] .smile-stage__copy {
+  z-index: 2;
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__copy {
+  opacity: 0;
+  transition: opacity 0.55s ease;
+}
+
+.smile-stage--dissolve .smile-stage__decor[data-decor-stages~="idle"],
+.smile-stage--dissolve .smile-stage__decor[data-decor-stages~="face"],
+.smile-stage--dissolve .smile-stage__decor[data-decor-stages~="line"],
+.smile-stage--dissolve:not(.smile-stage--stickers-curtain) .smile-stage__decor[data-decor-stages~="stickers"] {
+  opacity: 0 !important;
+  transition: opacity 0.9s var(--ease-dissolve);
+}
+
+.smile-stage--dissolve .smile-stage__subtract-wrap {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-dissolve);
+}
+
+.smile-stage--dissolve .smile-stage__field {
+  opacity: 0;
+  transition: opacity 0.9s var(--ease-dissolve);
+}
+
+/* QR — Frame 6 */
+
+.smile-stage__qr-slot {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__qr-slot {
+  animation: qr-dissolve-in 1s var(--ease-dissolve) forwards;
+}
+
+.smile-stage__qr-frame {
+  position: absolute;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+.smile-stage__qr-image {
+  position: absolute;
+  display: grid;
+  place-items: center;
+}
+
+.smile-stage__qr-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.smile-stage__qr-caption {
+  position: absolute;
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+  pointer-events: none;
+}
+
+.smile-stage__debug-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.smile-stage__debug-box {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.07);
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: center center;
+  mix-blend-mode: screen;
+}
+
+.smile-stage__debug-box::before {
+  content: attr(data-debug-label);
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 9px;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-100%);
+}
+
+.smile-stage__debug-box--master {
+  border-color: #00e5ff;
+}
+
+.smile-stage__debug-box--subtract {
+  border-color: #ffea00;
+}
+
+.smile-stage__debug-box--camera {
+  border-color: #ff3d00;
+  border-radius: 50%;
+}
+
+.smile-stage__debug-box--pill {
+  border-color: #ff66c4;
+  border-radius: 73.5px;
+}
+
+.smile-stage__debug-box--qr {
+  border-color: #7cff00;
+  border-radius: 25px;
+}
+
+.smile-stage__debug-box--decor {
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.smile-stage[data-stage="idle"] .smile-stage__debug-box[data-debug-stages]:not([data-debug-stages~="idle"]),
+.smile-stage[data-stage="face"] .smile-stage__debug-box[data-debug-stages]:not([data-debug-stages~="face"]),
+.smile-stage[data-stage="line"] .smile-stage__debug-box[data-debug-stages]:not([data-debug-stages~="line"]),
+.smile-stage[data-stage="stickers"] .smile-stage__debug-box[data-debug-stages]:not([data-debug-stages~="stickers"]),
+.smile-stage[data-stage="qr"] .smile-stage__debug-box[data-debug-stages]:not([data-debug-stages~="qr"]) {
+  display: none;
+}
+
+@keyframes qr-dissolve-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.smile-status {
+  position: absolute;
+  left: 50%;
+  bottom: -2.25rem;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

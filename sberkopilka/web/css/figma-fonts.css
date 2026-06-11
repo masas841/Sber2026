@@ -1,0 +1,86 @@
+/* SB Sans — фирменные шрифты Сбера для экранов Figma */
+
+@font-face {
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Text";
+  src: url("/static/fonts/SBSansText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Text";
+  src: url("/static/fonts/SBSansText-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Заголовки — SB Sans Display Extended Semibold.
+   !important обязателен: Tailwind CDN превращает arbitrary-класс
+   font-['SB_Sans_Display_BETA2:Extended_Semibold'] в несуществующее
+   семейство 'SB Sans Display BETA2:Extended Semibold' и инжектит свой
+   <style> ПОСЛЕ этого файла, перебивая шрифт. !important возвращает наш. */
+.kop-font-display,
+.font-\[\'SB_Sans_Display_BETA2\:Extended_Semibold\'\] {
+  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  font-stretch: expanded;
+  font-variation-settings: "wdth" 125;
+}
+
+/* Текст — SB Sans Text */
+.kop-font-text-medium,
+.font-\[\'SB_Sans_Text\:Medium\'\] {
+  font-family: "SB Sans Text", "Segoe UI", system-ui, sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.kop-font-text-semibold,
+.font-\[\'SB_Sans_Text\:Semibold\'\] {
+  font-family: "SB Sans Text", "Segoe UI", system-ui, sans-serif !important;
+  font-weight: 600 !important;
+}
+
+#root p,
+#root div {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Стеклянная кнопка «играть» */
+.kop-glass-btn {
+  -webkit-backdrop-filter: blur(11.126px);
+  backdrop-filter: blur(11.126px);
+}
+
+[data-name="Кнопка"] [data-node-id="25:1405"] {
+  isolation: isolate;
+}
+
+/* extended-title-emulation */
+/* SB Sans Display Extended Semibold отсутствует — есть только обычный
+   Semibold. Заголовки онбордингов в Figma набраны Extended (шире ~1.46x).
+   Эмулируем ширину горизонтальным масштабом, сохраняя центрирование. */
+[data-node-id="25:909"],
+[data-node-id="25:1221"],
+[data-node-id="25:1364"],
+[data-node-id="25:1401"],
+[data-node-id="25:1402"],
+[data-node-id="25:1403"],
+[data-node-id="25:1406"],
+[data-node-id="25:1705"],
+[data-node-id="25:1706"],
+[data-node-id="25:2018"],
+[data-node-id="25:2019"] {
+  transform-origin: center !important;
+  transform: translateX(-50%) scaleX(1.46) !important;
+}

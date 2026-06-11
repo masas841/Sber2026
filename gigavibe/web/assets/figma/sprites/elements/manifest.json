@@ -1,0 +1,869 @@
+{
+  "canvas_kiosk": {
+    "width": 1008,
+    "height": 672
+  },
+  "camera_frame": {
+    "x": 215,
+    "y": 143,
+    "width": 579,
+    "height": 387
+  },
+  "note": "Позиции оверлеев на экране камеры — из Frame 2147223874; видео-фон подключим позже.",
+  "capture_overlays_figma": [
+    {"name": "2 2", "node": "47:122", "x": 24, "y": 181, "w": 506, "h": 719, "z": 1},
+    {"name": "2 1", "node": "47:117", "x": 604, "y": 232, "w": 440, "h": 684, "z": 1},
+    {"name": "4 1", "node": "64:4", "x": 336, "y": 324, "w": 485, "h": 499, "z": 2},
+    {"name": "3 2", "node": "47:121", "x": -142, "y": -136, "w": 500, "h": 846, "z": 0},
+    {"name": "3 1", "node": "47:120", "x": 481, "y": 167, "w": 882, "h": 644, "z": 0},
+    {"name": "1 9", "node": "47:118", "x": 748, "y": 81, "w": 419, "h": 774, "z": 0}
+  ],
+  "sprite_groups": {
+    "composites_on_black": ["composite_3_4", "composite_1_10", "composite_2_3"],
+    "mint_ribbons_sheet": "sheet_2090010258",
+    "jelly_variant_sheets": [
+      "image_2090010215",
+      "image_2090010220",
+      "image_2090010221",
+      "image_2090010222",
+      "image_2090010223",
+      "image_2090010224"
+    ]
+  },
+  "sprites": [
+    {
+      "file": "web/assets/figma/sprites/elements/composite_1_10_part01.png",
+      "source": "composite_1_10",
+      "part": 1,
+      "size": [
+        1461,
+        2055
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_1_10_part02.png",
+      "source": "composite_1_10",
+      "part": 2,
+      "size": [
+        1059,
+        1282
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_1_10_part03.png",
+      "source": "composite_1_10",
+      "part": 3,
+      "size": [
+        1184,
+        1080
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_2_3_part01.png",
+      "source": "composite_2_3",
+      "part": 1,
+      "size": [
+        1289,
+        2045
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_2_3_part02.png",
+      "source": "composite_2_3",
+      "part": 2,
+      "size": [
+        1287,
+        1990
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_3_4_part01.png",
+      "source": "composite_3_4",
+      "part": 1,
+      "size": [
+        862,
+        1715
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_3_4_part02.png",
+      "source": "composite_3_4",
+      "part": 2,
+      "size": [
+        1144,
+        890
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_3_4_part03.png",
+      "source": "composite_3_4",
+      "part": 3,
+      "size": [
+        1207,
+        769
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_3_4_part04.png",
+      "source": "composite_3_4",
+      "part": 4,
+      "size": [
+        913,
+        879
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/composite_3_4_part05.png",
+      "source": "composite_3_4",
+      "part": 5,
+      "size": [
+        884,
+        819
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r1c1.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        376,
+        316
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r1c2.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        366,
+        296
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r1c3.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        394,
+        313
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r2c1.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        401,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r2c2.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        417,
+        307
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r2c3.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        380,
+        335
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r3c1.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "size": [
+        367,
+        305
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r3c2.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "size": [
+        377,
+        293
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010215_r3c3.png",
+      "source": "image_2090010215",
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "size": [
+        314,
+        284
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r1c1.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        440,
+        310
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r1c2.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        481,
+        310
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r1c3.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        428,
+        313
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r2c1.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        438,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r2c2.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        495,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r2c3.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        463,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r3c1.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "size": [
+        376,
+        311
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r3c2.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "size": [
+        446,
+        289
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010220_r3c3.png",
+      "source": "image_2090010220",
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "size": [
+        388,
+        315
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r1c1.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        356,
+        308
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r1c2.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        376,
+        310
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r1c3.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        390,
+        299
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r2c1.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        404,
+        317
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r2c2.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        373,
+        305
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r2c3.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        354,
+        333
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r3c1.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "size": [
+        347,
+        279
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r3c2.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "size": [
+        364,
+        283
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010221_r3c3.png",
+      "source": "image_2090010221",
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "size": [
+        364,
+        278
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r1c1.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        415,
+        294
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r1c2.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        509,
+        275
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r1c3.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        423,
+        289
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r2c1.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        408,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r2c2.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        497,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r2c3.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        408,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r3c1.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "size": [
+        451,
+        290
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r3c2.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "size": [
+        512,
+        304
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010222_r3c3.png",
+      "source": "image_2090010222",
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "size": [
+        412,
+        298
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r1c1.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        360,
+        320
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r1c2.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        414,
+        296
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r1c3.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        382,
+        312
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r2c1.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        448,
+        339
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r2c2.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        400,
+        333
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r2c3.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        433,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r3c1.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "size": [
+        411,
+        221
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r3c2.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "size": [
+        464,
+        315
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010223_r3c3.png",
+      "source": "image_2090010223",
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "size": [
+        407,
+        290
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r1c1.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        476,
+        282
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r1c2.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        512,
+        246
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r1c3.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        475,
+        305
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r2c1.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        432,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r2c2.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        512,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r2c3.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        462,
+        341
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r3c1.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 3,
+        "col": 1
+      },
+      "size": [
+        455,
+        285
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r3c2.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 3,
+        "col": 2
+      },
+      "size": [
+        512,
+        283
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/image_2090010224_r3c3.png",
+      "source": "image_2090010224",
+      "grid": {
+        "row": 3,
+        "col": 3
+      },
+      "size": [
+        464,
+        285
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r1c1.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 1,
+        "col": 1
+      },
+      "size": [
+        300,
+        376
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r1c2.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 1,
+        "col": 2
+      },
+      "size": [
+        309,
+        379
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r1c3.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 1,
+        "col": 3
+      },
+      "size": [
+        300,
+        424
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r1c4.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 1,
+        "col": 4
+      },
+      "size": [
+        335,
+        360
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r2c1.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 2,
+        "col": 1
+      },
+      "size": [
+        235,
+        394
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r2c2.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 2,
+        "col": 2
+      },
+      "size": [
+        352,
+        372
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r2c3.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 2,
+        "col": 3
+      },
+      "size": [
+        307,
+        370
+      ]
+    },
+    {
+      "file": "web/assets/figma/sprites/elements/sheet_2090010258_r2c4.png",
+      "source": "sheet_2090010258",
+      "grid": {
+        "row": 2,
+        "col": 4
+      },
+      "size": [
+        294,
+        396
+      ]
+    }
+  ]
+}

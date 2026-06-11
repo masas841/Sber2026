@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=672, initial-scale=1" />
+  <title>Застрахуй свой чилл</title>
+  <link rel="stylesheet" href="/static/css/game.css" />
+</head>
+<body>
+  <main id="stage" class="stage" data-phase="idle">
+    <section id="idleLayer" class="scene-layer scene-layer--active idle-scene" aria-label="Заставка">
+      <img class="blob blob--a" src="/static/assets/figma/blob-top-left.svg" alt="" />
+      <img class="blob blob--b" src="/static/assets/figma/blob-top-right.svg" alt="" />
+      <img class="blob blob--c" src="/static/assets/figma/blob-left.svg" alt="" />
+      <img class="grass grass--left" src="/static/assets/figma/grass-2-a.png" alt="" />
+      <img class="grass grass--main" src="/static/assets/figma/grass-1.png" alt="" />
+      <img class="logo logo--idle" src="/static/assets/figma/logo-sberinsurance-game.svg" alt="СберСтрахование" />
+      <div class="title-cloud title-cloud--idle">
+        <img src="/static/assets/figma/title-star-game.svg" alt="" />
+        <span>застрахуй<br />свой чилл</span>
+      </div>
+
+      <div class="idle-threat idle-threat--fist breathe breathe--slow">
+        <img src="/static/assets/figma/threat-fist.png" alt="" />
+        <span class="pill pill--green pill--vertical">прилетает</span>
+      </div>
+      <div class="idle-threat idle-threat--nail breathe">
+        <img src="/img/molotok.png" alt="" />
+      </div>
+      <div class="idle-threat idle-threat--drop breathe breathe--slow">
+        <img src="/img/drop.png" alt="" />
+      </div>
+
+      <div class="insured-stamp insured-stamp--idle breathe">застраховано</div>
+    </section>
+
+    <section id="gameLayer" class="scene-layer game-scene" aria-label="Игра">
+      <img class="blob blob--top" src="/static/assets/figma/stage-ellipse.svg" alt="" />
+      <img class="logo logo--game" src="/static/assets/figma/logo-sberinsurance-start.svg" alt="СберСтрахование" />
+      <div class="title-cloud title-cloud--game">
+        <img src="/static/assets/figma/title-star-start.svg" alt="" />
+        <span>застрахуй<br />свой чилл</span>
+      </div>
+
+      <div class="score-game">
+        <img src="/static/assets/figma/score-star-start.svg" alt="" />
+        <img class="score-sticker score-sticker--scribble" src="/static/assets/figma/scribble-start.svg" alt="" />
+        <img class="score-sticker score-sticker--star" src="/static/assets/figma/score-star-small.svg" alt="" />
+        <span>счёт:</span>
+        <strong id="scoreValue">000</strong>
+      </div>
+      <div class="timer-game">
+        <span>таймер</span>
+        <strong id="timerValue">59 c</strong>
+      </div>
+
+      <div id="threatLayer" class="threat-layer"></div>
+      <img id="protector" class="protector protector--game" src="/static/assets/figma/small-decor-start.svg" alt="" />
+      <div id="hitFlash" class="hit-flash">застраховано</div>
+      <div id="debugLayer" class="debug-layer" aria-hidden="true"></div>
+    </section>
+
+    <section id="resultLayer" class="scene-layer result-scene" aria-label="Результат">
+      <img class="blob blob--a result-anim-item" src="/static/assets/figma/blob-top-left.svg" alt="" />
+      <img class="blob blob--b result-anim-item" src="/static/assets/figma/blob-top-right.svg" alt="" />
+      <img class="blob blob--c result-anim-item" src="/static/assets/figma/blob-left.svg" alt="" />
+      <img class="blob blob--d result-anim-item" src="/static/assets/figma/blob-small.svg" alt="" />
+      <img class="grass grass--left result-grass-left result-anim-item" src="/static/assets/figma/grass-2-a.png" alt="" />
+      <img class="grass grass--main result-grass-main result-anim-item" src="/static/assets/figma/grass-1.png" alt="" />
+      <img class="result-ground-shadow result-anim-item" src="/static/assets/figma/stage-ellipse.svg" alt="" />
+
+      <div id="resultIntro" class="result-phase result-phase--intro">
+        <img class="result-intro-star result-anim-item" src="/static/assets/figma/title-star-game.svg" alt="" />
+        <img class="result-intro-star-deco result-anim-item" src="/static/assets/figma/score-star-final.svg" alt="" />
+        <img class="result-intro-scribble result-anim-item" src="/static/assets/figma/scribble-final.svg" alt="" />
+        <div class="result-intro-score result-anim-item">
+          <span>ваш счёт:</span>
+          <strong id="resultIntroScore">000</strong>
+        </div>
+        <img class="result-intro-threat result-intro-threat--soap result-anim-item breathe" src="/img/soap.png" alt="" />
+        <img class="result-intro-threat result-intro-threat--drop result-anim-item breathe breathe--slow" src="/img/drop2.png" alt="" />
+        <img class="result-intro-threat result-intro-threat--hammer result-anim-item breathe" src="/img/hummer.png" alt="" />
+        <div class="insured-stamp insured-stamp--result insured-stamp--result-intro result-anim-item"><span>застраховано</span></div>
+      </div>
+
+      <div id="resultFinal" class="result-phase result-phase--final" hidden>
+        <img class="result-final-star result-anim-item" src="/static/assets/figma/title-star-final.svg" alt="" />
+        <img class="result-final-star-deco result-anim-item" src="/static/assets/figma/score-star-final.svg" alt="" />
+        <div class="result-final-score result-anim-item">
+          <span>ваш счёт:</span>
+          <strong id="resultFinalScore">000</strong>
+        </div>
+        <div class="result-final-copy result-anim-item">
+          <h1 id="resultTitle">неплохой результат!</h1>
+          <p id="resultText">Ты смог защититься от многих неприятностей, для всего остального есть СберСтрахование.</p>
+        </div>
+        <div id="resultRating" class="result-rating result-anim-item" aria-hidden="true">
+          <span class="result-rating__star" data-star="0"><img src="/static/assets/figma/rating-star-single.svg" alt="" /></span>
+          <span class="result-rating__star" data-star="1"><img src="/static/assets/figma/rating-star-single.svg" alt="" /></span>
+          <span class="result-rating__star" data-star="2"><img src="/static/assets/figma/rating-star-single.svg" alt="" /></span>
+        </div>
+        <img class="scribble-final result-anim-item" src="/static/assets/figma/scribble-final.svg" alt="" />
+        <div class="insured-stamp insured-stamp--result insured-stamp--result-final result-anim-item"><span>застраховано</span></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/static/js/game.js"></script>
+</body>
+</html>

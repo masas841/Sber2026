@@ -1,0 +1,51 @@
+{
+  "canvas": { "width": 504, "height": 504, "shape": "circle" },
+  "figmaSection": "128:109",
+  "updated": "2026-06-09",
+  "scale515to504": 0.978641,
+  "stages": [
+    { "id": "idle", "figma": "127:513", "frameSize": 504, "note": "MasterGradient + pill @ 200.916 + intro decor" },
+    { "id": "face", "figma": "127:567", "frameSize": 515, "note": "Subtract + cam ellipse + text-path + 3 stars" },
+    { "id": "line", "figma": "25:2498", "frameSize": 515, "holdMs": 10000, "note": "Full lines + shifted stickers" },
+    { "id": "stickers", "figma": "127:597", "frameSize": 515, "durationMs": 2400, "note": "Обновлённые позиции кластеров (сессия 3)" },
+    { "id": "qr", "figma": "127:713", "frameSize": 504, "durationMs": 5000, "note": "Карточка 258×321 + caption + новый декор" }
+  ],
+  "copy": {
+    "teaser": "Такой улыбкой можно оплатить…",
+    "cta": "(узнай что)",
+    "lineTop": "Такой улыбкой можно оплатить…",
+    "lineBottom": "самый сочный бургер на фудкорте",
+    "lineBottomShort": "самый…",
+    "qrCaption": "Подключить оплату улыбкой"
+  },
+  "masterGradient": { "left": -201, "top": -72, "width": 1205.656, "height": 678.609 },
+  "subtract": {
+    "left": -152,
+    "top": -92.69,
+    "width": 807,
+    "height": 688.542,
+    "imgInsetPercent": { "top": -11.53, "right": -9.84, "bottom": -11.53, "left": -9.84 }
+  },
+  "cameraHole": { "left": 43.948883, "top": 43.96048, "width": 414.60553, "height": 414.60553, "frame": 515 },
+  "pill": {
+    "left": 13.343,
+    "top": 200.916,
+    "width": 477.314,
+    "height": 199.542,
+    "innerWidth": 464.17,
+    "innerHeight": 153.299,
+    "rotate": -5.82,
+    "radius": 73.5,
+    "textMain": { "left": 53, "top": 216.926, "width": 403.298, "fontSize": 39.316 },
+    "textCta": { "left": 126, "top": 295.728, "width": 266.553, "fontSize": 25.985 }
+  },
+  "qrCard": { "left": 123, "top": 92, "width": 258, "height": 321, "radius": 25 },
+  "qrImage": { "left": 129, "top": 97, "width": 245, "height": 245, "asset": "qr-code.png", "figmaNode": "137:115" },
+  "qrCaption": { "left": 149.714, "top": 342, "width": 204.286, "fontSize": 20.923 },
+  "knownIssues": [
+    "master-gradient.svg export is flat green — CSS fallback used",
+    "text-path derived from CAM_HOLE ellipse geometry (text-paths.js)",
+    "Figma Desktop asset server may return 500 for some SVG — keep local copies"
+  ],
+  "sourceOfTruth": "web/js/figma-layout.js"
+}
