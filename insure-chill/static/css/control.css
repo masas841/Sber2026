@@ -1,10 +1,27 @@
 :root {
+  --control-width: 1133px;
+  --control-height: 744px;
   --ink: #122654;
-  --blue: #00adee;
   --green: #0bd421;
   --pink: #ff64a2;
-  --panel: rgba(255, 255, 255, 0.86);
-  --font: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+  --font-display: "SB Sans Display BETA2", "SB Sans Display", "Arial Black", system-ui, sans-serif;
+  --font-text: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "SB Sans Display BETA2";
+  src: url("/static/fonts/SBSansDisplay-Semibold.woff2") format("woff2");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Semibold.woff2") format("woff2");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -30,158 +47,177 @@
 html,
 body {
   margin: 0;
-  min-height: 100%;
-  font-family: var(--font);
+  width: 100%;
+  min-width: var(--control-width);
+  height: 100%;
+  min-height: var(--control-height);
+  overflow: hidden;
   color: var(--ink);
-  background: linear-gradient(160deg, #00adee 0%, #bff3ff 62%, #fff 100%);
+  background: #071528;
+  font-family: var(--font-text);
+}
+
+button {
+  font: inherit;
 }
 
 .control {
-  min-height: 100vh;
-  padding: 24px;
-  display: grid;
-  place-items: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: var(--control-width);
+  height: var(--control-height);
+  overflow: hidden;
+  background: #00adee;
+  transform: translate(-50%, -50%) scale(var(--control-scale, 1));
+  transform-origin: center;
+  user-select: none;
 }
 
-.panel {
-  width: min(720px, 100%);
-  padding: 28px;
-  border-radius: 36px;
-  background: var(--panel);
-  box-shadow: 0 22px 70px rgba(18, 38, 84, 0.2);
-  backdrop-filter: blur(16px);
+.control-screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.control[data-phase="idle"] .control-screen--start,
+.control[data-phase="playing"] .control-screen--game,
+.control[data-phase="result"] .control-screen--result {
+  display: block;
+}
+
+.screen-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .connection {
-  width: max-content;
-  margin: 0 0 14px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(18, 38, 84, 0.1);
-  font-size: 18px;
-  font-weight: 800;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
 }
 
-.connection.is-online {
-  color: #fff;
-  background: var(--green);
-}
-
-.connection.is-offline {
-  color: #fff;
-  background: var(--pink);
-}
-
-h1 {
-  margin: 0 0 24px;
-  font-size: clamp(34px, 7vw, 58px);
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-  text-transform: lowercase;
+.connection::before {
+  content: none;
 }
 
 .stats {
+  position: absolute;
+  left: 225px;
+  top: 247px;
+  z-index: 12;
+  width: 682px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 22px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 27px;
 }
 
-.stats div {
-  min-height: 94px;
-  padding: 14px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
+.stat-card {
+  height: 126px;
   display: grid;
   align-content: center;
-  text-align: center;
-}
-
-.stats span {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
-  opacity: 0.72;
+  justify-items: center;
+  border-radius: 35px;
+  background: #fff;
   text-transform: lowercase;
 }
 
-.stats strong {
-  display: block;
-  margin-top: 4px;
-  font-size: clamp(24px, 5vw, 42px);
+.stat-card span {
+  font-size: 18px;
+  font-weight: 900;
   line-height: 1;
-  letter-spacing: -0.05em;
-  text-transform: lowercase;
 }
 
-.button {
-  width: 100%;
-  min-height: 104px;
+.stat-card strong {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.control-button {
+  position: absolute;
+  z-index: 18;
   border: 0;
-  border-radius: 34px;
-  color: #fff;
-  font: 900 clamp(34px, 8vw, 74px) / 1 var(--font);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  box-shadow: 0 16px 0 rgba(18, 38, 84, 0.18);
+  color: transparent;
+  background: transparent;
   touch-action: manipulation;
 }
 
-.button:active:not(:disabled) {
-  translate: 0 8px;
-  box-shadow: 0 8px 0 rgba(18, 38, 84, 0.18);
+.control-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.65);
+  transition: opacity 120ms ease;
 }
 
-.button:disabled {
-  opacity: 0.36;
-  filter: grayscale(0.35);
+.control-button:active:not(:disabled)::after {
+  opacity: 1;
 }
 
-.button + .button {
-  margin-top: 16px;
+.control-button:disabled {
+  pointer-events: none;
 }
 
-.button--start {
-  background: linear-gradient(135deg, #57ff43, #00adee);
+.control-button--start {
+  left: 226px;
+  top: 591px;
+  width: 682px;
+  height: 129px;
+  border-radius: 38px;
 }
 
-.button--insure {
-  min-height: 158px;
-  background: linear-gradient(135deg, #ff64a2, #57ff43);
+.control-button--insure {
+  left: 226px;
+  top: 409px;
+  width: 682px;
+  height: 160px;
+  border-radius: 38px;
 }
 
-.button--reset {
-  min-height: 72px;
-  background: rgba(18, 38, 84, 0.55);
-  font-size: clamp(22px, 4vw, 34px);
+.service-reset {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  z-index: 45;
+  width: 112px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  color: rgba(18, 38, 84, 0.68);
+  background: rgba(255, 255, 255, 0.52);
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: lowercase;
 }
 
-.hint {
-  margin: 22px 0 0;
-  font-size: 20px;
-  line-height: 1.25;
-  opacity: 0.75;
+.control[data-phase="playing"] .service-reset {
+  opacity: 0;
+  pointer-events: none;
 }
 
-@media (orientation: landscape) and (max-height: 620px) {
-  .control {
-    align-items: start;
-    padding: 12px;
-  }
-
-  .panel {
-    padding: 18px;
-  }
-
-  .stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .button {
-    min-height: 76px;
-  }
-
-  .button--insure {
-    min-height: 108px;
+@media (max-width: 1132px), (max-height: 743px) {
+  html,
+  body {
+    min-width: 0;
+    min-height: 0;
   }
 }

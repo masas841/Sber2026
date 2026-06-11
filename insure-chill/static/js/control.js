@@ -1,49 +1,60 @@
+const CONTROL_WIDTH = 1133;
+const CONTROL_HEIGHT = 744;
+
+const control = document.querySelector("#control");
 const connection = document.querySelector("#connection");
-const phaseEl = document.querySelector("#phase");
 const scoreEl = document.querySelector("#score");
 const timerEl = document.querySelector("#timer");
 const startButton = document.querySelector("#startButton");
 const insureButton = document.querySelector("#insureButton");
 const resetButton = document.querySelector("#resetButton");
-const hint = document.querySelector("#hint");
 
-const PHASE_LABELS = {
-  idle: "заставка",
-  playing: "игра",
-  result: "финал",
-};
-
-let socket = null;
-let state = {
+const state = {
   phase: "idle",
   score: 0,
   remaining: 59,
 };
 
+let socket = null;
+
 function formatScore(score) {
   return String(score ?? 0).padStart(3, "0");
 }
 
-function updateUi() {
-  phaseEl.textContent = PHASE_LABELS[state.phase] ?? state.phase;
-  scoreEl.textContent = formatScore(state.score);
-  timerEl.textContent = `${Math.ceil(state.remaining ?? 0)} c`;
-  startButton.disabled = state.phase === "playing";
-  insureButton.disabled = state.phase !== "playing";
+function formatTimer(remaining) {
+  return `${Math.ceil(remaining ?? 0)} c`;
+}
 
-  if (state.phase === "idle") {
-    hint.textContent = "На заставке нажмите «Старт».";
-  } else if (state.phase === "playing") {
-    hint.textContent = "Жмите «Страхуй», когда белое кольцо находится над угрозой.";
-  } else {
-    hint.textContent = "Раунд завершён. Можно сбросить заставку или начать заново.";
+function normalizePhase(phase) {
+  if (phase === "playing" || phase === "result") {
+    return phase;
   }
+  return "idle";
+}
+
+function syncScale() {
+  const scale = Math.min(
+    window.innerWidth / CONTROL_WIDTH,
+    window.innerHeight / CONTROL_HEIGHT,
+    1
+  );
+  control.style.setProperty("--control-scale", String(scale));
+}
+
+function updateUi() {
+  const phase = normalizePhase(state.phase);
+
+  control.dataset.phase = phase;
+  scoreEl.textContent = formatScore(state.score);
+  timerEl.textContent = formatTimer(state.remaining);
+  startButton.disabled = phase === "playing";
+  insureButton.disabled = phase !== "playing";
 }
 
 function setConnection(online) {
   connection.classList.toggle("is-online", online);
   connection.classList.toggle("is-offline", !online);
-  connection.textContent = online ? "подключено" : "нет связи";
+  connection.textContent = online ? "Подключено" : "Нет связи";
 }
 
 function connectControl() {
@@ -57,19 +68,19 @@ function connectControl() {
   socket.addEventListener("message", (event) => {
     const message = JSON.parse(event.data);
     if (message.type === "hello") {
-      state = { ...state, ...message.state };
+      Object.assign(state, message.state);
       updateUi();
       return;
     }
 
     if (message.type === "state") {
-      state = { ...state, ...message.payload };
+      Object.assign(state, message.payload);
       updateUi();
       return;
     }
 
     if (message.type === "event") {
-      state = { ...state, ...message.payload };
+      Object.assign(state, message.payload);
       updateUi();
       if (message.payload?.kind === "hit") {
         navigator.vibrate?.(45);
@@ -97,7 +108,9 @@ insureButton.addEventListener("pointerdown", (event) => {
   send("insure");
 });
 resetButton.addEventListener("click", () => send("reset"));
+window.addEventListener("resize", syncScale);
 
+syncScale();
 setConnection(false);
 updateUi();
 connectControl();

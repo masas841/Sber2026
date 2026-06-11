@@ -7,29 +7,34 @@
   <link rel="stylesheet" href="/static/css/control.css" />
 </head>
 <body>
-  <main class="control">
-    <section class="panel">
-      <p id="connection" class="connection">подключение...</p>
-      <h1>Застрахуй свой чилл</h1>
-      <div class="stats">
-        <div>
-          <span>статус</span>
-          <strong id="phase">заставка</strong>
-        </div>
-        <div>
-          <span>счёт</span>
+  <main id="control" class="control" data-phase="idle">
+    <p id="connection" class="connection">подключение...</p>
+
+    <section class="control-screen control-screen--start" data-screen="idle" aria-label="Старт">
+      <img class="screen-art" src="/static/assets/figma/control/start.png" alt="" />
+      <button id="startButton" class="control-button control-button--start" type="button">старт</button>
+    </section>
+
+    <section class="control-screen control-screen--game" data-screen="playing" aria-label="Игра">
+      <img class="screen-art" src="/static/assets/figma/control/game.png" alt="" />
+      <div class="stats" aria-live="polite">
+        <div class="stat-card">
+          <span>ваш счёт:</span>
           <strong id="score">000</strong>
         </div>
-        <div>
-          <span>таймер</span>
+        <div class="stat-card">
+          <span>таймер:</span>
           <strong id="timer">59 c</strong>
         </div>
       </div>
-      <button id="startButton" class="button button--start" type="button">Старт</button>
-      <button id="insureButton" class="button button--insure" type="button" disabled>Страхуй</button>
-      <button id="resetButton" class="button button--reset" type="button">Сброс</button>
-      <p id="hint" class="hint">На заставке нажмите «Старт». Во время игры нажимайте «Страхуй», когда белое кольцо находится над угрозой.</p>
+      <button id="insureButton" class="control-button control-button--insure" type="button" disabled>застраховать</button>
     </section>
+
+    <section class="control-screen control-screen--result" data-screen="result" aria-label="После игры">
+      <img class="screen-art" src="/static/assets/figma/control/result.png" alt="" />
+    </section>
+
+    <button id="resetButton" class="service-reset" type="button">сброс</button>
   </main>
 
   <script type="module" src="/static/js/control.js"></script>
