@@ -20,7 +20,7 @@
   --cam-feather: 38px;
   --cam-soft: 19%;
   --cam-reveal-r: 0px;
-  --camera-zoom: 3;
+  --camera-zoom: 2;
   --field-green: linear-gradient(158deg, #a6d83c 0%, #8ec63f 45%, #5cb233 100%);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-dissolve: cubic-bezier(0.4, 0, 0.2, 1);
