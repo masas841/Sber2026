@@ -4,6 +4,8 @@
 
 import { SIZE, S, CAM_HOLE, mapBox } from "./figma-layout.js";
 
+const CAM_WINDOW_OFFSET_Y = -10;
+
 /** Центр кольца в координатах Figma frame 515 (для text-path) */
 export const RING_CENTER_515 = {
   x: 257.5,
@@ -14,7 +16,7 @@ export const RING_CENTER_515 = {
 export function getCamHoleCanvas504() {
   const figmaHole = mapBox(CAM_HOLE);
   const cx = SIZE / 2;
-  const cy = SIZE / 2;
+  const cy = SIZE / 2 + CAM_WINDOW_OFFSET_Y;
   const rx = figmaHole.width / 2;
   const ry = figmaHole.height / 2;
   /** feGaussianBlur stdDeviation из mask-subtract.svg */
