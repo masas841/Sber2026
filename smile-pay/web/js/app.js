@@ -3,10 +3,10 @@ import {
   STAGES,
   STAGE_ALIASES,
   resolveStage,
-} from "./smile-stage.js?v=20260611-smile-pay";
+} from "./smile-stage.js?v=20260611-detection-zoom";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js";
-import { createFacePresenceWatcher } from "./face-presence.js";
+import { createSmileWatcher } from "./smile-capture.js?v=20260611-detection-zoom";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260611-detection-zoom";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");

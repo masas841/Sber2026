@@ -11,6 +11,14 @@ const MODEL_LOCAL = "/static/models/face_landmarker.task";
 let modelUrlPromise = null;
 let tasksVisionPromise = null;
 let visionPromise = null;
+let detectionCanvas = null;
+let detectionCtx = null;
+
+function cameraZoomFor(videoEl) {
+  const cssZoom = getComputedStyle(videoEl).getPropertyValue("--camera-zoom");
+  const zoom = Number.parseFloat(cssZoom);
+  return Number.isFinite(zoom) && zoom > 0 ? zoom : 1;
+}
 
 async function resolveModelUrl() {
   try {
@@ -48,6 +56,38 @@ export async function createFaceLandmarker() {
       baseOptions: { ...baseOpts.baseOptions, delegate: "CPU" },
     });
   }
+}
+
+export function getDetectionFrame(videoEl) {
+  const width = videoEl.videoWidth || videoEl.clientWidth;
+  const height = videoEl.videoHeight || videoEl.clientHeight;
+  if (!width || !height) return videoEl;
+
+  detectionCanvas ||= document.createElement("canvas");
+  detectionCtx ||= detectionCanvas.getContext("2d", { alpha: false });
+  if (!detectionCtx) return videoEl;
+
+  if (detectionCanvas.width !== width) detectionCanvas.width = width;
+  if (detectionCanvas.height !== height) detectionCanvas.height = height;
+
+  const zoom = cameraZoomFor(videoEl);
+  const sourceWidth = width / zoom;
+  const sourceHeight = height / zoom;
+  const sourceX = (width - sourceWidth) / 2;
+  const sourceY = (height - sourceHeight) / 2;
+
+  detectionCtx.drawImage(
+    videoEl,
+    sourceX,
+    sourceY,
+    sourceWidth,
+    sourceHeight,
+    0,
+    0,
+    width,
+    height,
+  );
+  return detectionCanvas;
 }
 
 export function faceBounds(landmarks) {
