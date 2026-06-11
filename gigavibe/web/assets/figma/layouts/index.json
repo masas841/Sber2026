@@ -21,7 +21,7 @@
       "name": "Frame 2147223876",
       "state": "processing_ai",
       "copy": "Включаем ИИ-магию",
-      "logo": { "component": "giga-full", "x": 40, "y": 40, "w": 185, "h": 103 }
+      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
     },
     {
       "id": "32:38",
@@ -29,7 +29,7 @@
       "state": "processing_upload",
       "copy": "Загружаем момент...",
       "statusBanner": { "x": 181, "y": 269, "w": 647, "h": 123 },
-      "logo": { "component": "giga-full", "x": 40, "y": 40, "w": 185, "h": 103 }
+      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
     },
     {
       "id": "64:107",

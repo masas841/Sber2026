@@ -3,16 +3,31 @@
 .env.*
 !.env.example
 !.env.*.example
+!**/.env.example
+!**/.env.kiosk.example
+
+# Remote deploy configs (often contain API keys)
+remote/farm*.env
+remote/*.env
 remote/farm-nanobanana.env
 docs/CONTEXT-сервер-выгрузка-фото-Greathearted-Inna.md
+
+# Scripts with hardcoded tokens
+remote/download_instantid.cmd
+remote/download_ltx_with_token.cmd
 
 # Python
 .venv/
 .venv-*/
+.venv-liveportrait/
 __pycache__/
 *.pyc
 *.pyo
 .Python
+*.egg-info/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
 
 # Node
 node_modules/
@@ -21,24 +36,33 @@ node_modules/
 .idea/
 .vscode/
 *.swp
+*.swo
 Thumbs.db
 Desktop.ini
+.DS_Store
 
 # ML / runtime data
 gigavibe/models/
 gigavibe/data/jobs/
+gigavibe/data/uploads/
 gigavibe/data/outputs/
 gigavibe/.venv-liveportrait/
+gigavibe/vendor/
 gigavibe/vendor/LivePortrait/
 gigavibe/vendor/pulid/
 gigavibe/backups/
 gigavibe/certs/
+**/certs/*.pem
+**/certs/*key*
 gigavibe/tools/ffmpeg/*.exe
 gigavibe/runtime/
 gigavibe/dist/
+gigavibe/install/wheels/
+gigavibe/tools/lego/
 gigavibe/tools/win-acme/
 gigavibe/gfpgan/
 gigavibe/tools/lego/
+gigavibe/.aigo123/
 
 # Other projects' local runtimes
 **/.venv/
@@ -50,3 +74,9 @@ frames/
 _pdf_pages/
 *.log
 .aigo123/
+
+# Large ML binaries for fresh clones
+*.onnx
+*.pth
+*.safetensors
+*.whl

@@ -17,6 +17,8 @@ const captureFrameSlot = document.getElementById("capture-frame-slot");
 const idleBgVideo = document.getElementById("idle-bg-video");
 const startHint = document.getElementById("start-hint");
 
+const shell = document.querySelector(".shell");
+
 const screens = {
   start: document.getElementById("screen-start"),
   capture: document.getElementById("screen-capture"),
@@ -92,6 +94,7 @@ let presenceWatcher = null;
 let captureLocked = false;
 let onCaptureScreen = false;
 const screenHideTimers = new Map();
+let screenRevealToken = 0;
 let previewRaf = null;
 let previewVideoFrame = null;
 
@@ -279,8 +282,9 @@ function applyOutputKindUi() {
 
 function show(name) {
   const target = screens[name];
-  const shell = document.querySelector(".shell");
-  if (shell) shell.dataset.screen = name;
+  screenRevealToken += 1;
+  const revealToken = screenRevealToken;
+  shell?.setAttribute("data-screen", name);
 
   Object.values(screens).forEach((el) => {
     if (!el) return;
@@ -292,7 +296,10 @@ function show(name) {
 
     if (el === target) {
       el.classList.remove("hidden", "is-hiding");
-      requestAnimationFrame(() => el.classList.add("is-visible"));
+      requestAnimationFrame(() => {
+        if (revealToken !== screenRevealToken) return;
+        el.classList.add("is-visible");
+      });
       return;
     }
 
