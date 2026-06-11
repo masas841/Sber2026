@@ -121,12 +121,63 @@ body {
   transition: left 0.45s ease, top 0.45s ease, width 0.45s ease, height 0.45s ease;
 }
 
-.shell[data-screen="start"] .kiosk-brand-logo,
-.shell[data-screen="capture"] .kiosk-brand-logo {
-  left: 20px;
-  top: 20px;
-  width: 185px;
-  height: 103px;
+.kiosk-logo-backplate {
+  position: absolute;
+  left: 92px;
+  top: -81px;
+  z-index: 7;
+  width: 777px;
+  height: 248px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.kiosk-logo-backplate::before,
+.kiosk-logo-backplate::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.kiosk-logo-backplate::before {
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 28% 55%, rgba(255, 255, 255, 0.54) 0 18%, rgba(255, 255, 255, 0.18) 36%, transparent 68%),
+    radial-gradient(ellipse at 51% 53%, rgba(123, 239, 217, 0.42) 0 24%, rgba(123, 239, 217, 0.14) 44%, transparent 72%),
+    radial-gradient(ellipse at 70% 62%, rgba(166, 255, 0, 0.36) 0 17%, rgba(166, 255, 0, 0.12) 34%, transparent 64%);
+  filter: blur(8px);
+}
+
+.kiosk-logo-backplate::after {
+  left: 300px;
+  top: 56px;
+  width: 324px;
+  height: 130px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.62) 0 36%, rgba(255, 255, 255, 0.24) 57%, transparent 78%);
+  backdrop-filter: blur(12px);
+  filter: blur(2px);
+}
+
+.shell[data-screen="capture"] .kiosk-logo-backplate,
+.shell[data-screen="processing"] .kiosk-logo-backplate {
+  opacity: 1;
+}
+
+.shell[data-screen="capture"] .kiosk-brand-logo,
+.shell[data-screen="processing"] .kiosk-brand-logo {
+  left: 436px;
+  top: 41px;
+  width: 135.497px;
+  height: 75.623px;
+  z-index: 8;
+}
+
+.shell[data-screen="start"] .kiosk-brand-logo {
+  left: 252px;
+  top: 168px;
+  width: 505px;
+  height: 282px;
   z-index: 8;
 }
 
@@ -140,16 +191,25 @@ body {
 
 .start-tagline {
   position: absolute;
-  left: 90px;
-  right: 90px;
-  bottom: 52px;
+  left: 257px;
+  top: 521px;
+  width: 491px;
+  height: 101px;
   margin: 0;
   z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50.502px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12.194px);
+  color: #122654;
   text-align: center;
-  font-size: 43.774px;
+  font-size: 35.946px;
   font-weight: 600;
   line-height: 0.98;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  text-shadow: none;
+  white-space: nowrap;
 }
 
 .start-hint {

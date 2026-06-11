@@ -5,8 +5,9 @@
       "id": "9:167",
       "name": "Frame 2147223866",
       "state": "start",
-      "copy": "Улыбнитесь получите портрет и QR для скачивания",
-      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
+      "copy": "Поймай свой вайб",
+      "logo": { "component": "giga-full", "x": 252, "y": 168, "w": 505, "h": 282 },
+      "ctaPill": { "x": 257, "y": 521, "w": 491, "h": 101, "radius": 50.502, "fontSize": 35.946 }
     },
     {
       "id": "32:2",
@@ -14,14 +15,16 @@
       "state": "capture",
       "copy": "Улыбайтесь!",
       "camera": { "x": 215, "y": 143, "w": 579, "h": 387 },
-      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
+      "logo": { "component": "giga-full", "x": 436, "y": 41, "w": 135.497, "h": 75.623 },
+      "logoBackplate": { "x": 92, "y": -81, "w": 777.03, "h": 248.213 }
     },
     {
       "id": "64:68",
       "name": "Frame 2147223876",
       "state": "processing_ai",
       "copy": "Включаем ИИ-магию",
-      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
+      "logo": { "component": "giga-full", "x": 436, "y": 41, "w": 135.497, "h": 75.623 },
+      "logoBackplate": { "x": 92, "y": -81, "w": 777.03, "h": 248.213 }
     },
     {
       "id": "32:38",
@@ -29,7 +32,8 @@
       "state": "processing_upload",
       "copy": "Загружаем момент...",
       "statusBanner": { "x": 181, "y": 269, "w": 647, "h": 123 },
-      "logo": { "component": "giga-full", "x": 20, "y": 20, "w": 185, "h": 103 }
+      "logo": { "component": "giga-full", "x": 436, "y": 41, "w": 135.497, "h": 75.623 },
+      "logoBackplate": { "x": 92, "y": -81, "w": 777.03, "h": 248.213 }
     },
     {
       "id": "64:107",
