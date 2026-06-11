@@ -48,7 +48,7 @@ if (window.__kopilkaLoadError) {
         gamepad: true,
       },
       scale: {
-        mode: Phaser.Scale.FIT,
+        mode: Phaser.Scale.NONE,
         autoCenter: Phaser.Scale.NO_CENTER,
       },
       scene: [

@@ -1069,12 +1069,12 @@
     const gameRoot = document.getElementById(GAME_ROOT_ID);
     if (!game?.scale || !gameRoot) return;
     const parent = stageEl || gameRoot.parentElement || gameRoot;
-    const w = parent.clientWidth || window.innerWidth;
-    const h = parent.clientHeight || window.innerHeight;
+    const w = parent.clientWidth || DESIGN;
+    const h = parent.clientHeight || DESIGN;
     if (w < 2 || h < 2) return;
     try {
       if (typeof game.scale.setParentSize === "function") {
-        game.scale.setParentSize(w, h);
+        game.scale.setParentSize(Math.max(DESIGN, w), Math.max(DESIGN, h));
       }
       game.scale.refresh();
     } catch {
@@ -1082,20 +1082,14 @@
     }
   }
 
-  // Сцена рендерится в фиксированном «разрешении киоска» (DESIGN×DESIGN) и
-  // центрируется. Окно НЕ увеличивает сцену: при окне меньше дизайна — единый
-  // scale вниз (<=1), при окне больше — остаёмся 1:1 (леттербокс по краям).
+  // Сцена рендерится строго 1:1 в фиксированном «разрешении киоска»
+  // (DESIGN×DESIGN) и не уменьшается при ресайзе окна браузера.
   function applyKioskScale() {
-    const scale = Math.min(
-      1,
-      window.innerWidth / DESIGN,
-      window.innerHeight / DESIGN,
-    );
-    document.documentElement.style.setProperty("--kiosk-scale", String(scale));
+    document.documentElement.style.setProperty("--kiosk-scale", "1");
   }
 
-  // Единый обработчик ресайза окна: пересчитать kiosk-scale, обновить размер
-  // родителя Phaser (FIT) и при необходимости font-size динамических надписей.
+  // Единый обработчик ресайза окна: сохраняем фиксированный scale, обновляем
+  // родителя Phaser и при необходимости font-size динамических надписей.
   let _viewportResizeRaf = 0;
   function handleViewportResize() {
     if (_viewportResizeRaf) return;
