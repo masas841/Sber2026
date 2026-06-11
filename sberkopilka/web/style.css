@@ -4,10 +4,10 @@
   --sky: #5ecfff;
   --accent: #ff4fa3;
   --ink: #0f1f17;
-  /* Разрешение киоска: сцена всегда рендерится 1:1 в фиксированном размере
-     672×672 и не масштабируется при изменении окна браузера. */
+  /* Разрешение киоска: сцена рендерится в 672×672 и отображается
+     фиксированным scale относительно центра окна приложения. */
   --kiosk-px: 672px;
-  --kiosk-scale: 1;
+  --kiosk-scale: 0.85;
   --kiosk-left: -84px;
   --kiosk-top: 0px;
 }
@@ -33,7 +33,7 @@ body {
   height: var(--kiosk-px);
   display: block;
   transform: scale(var(--kiosk-scale));
-  transform-origin: top left;
+  transform-origin: center center;
 }
 
 #game-root canvas {
@@ -57,7 +57,7 @@ body {
   pointer-events: auto;
   display: block;
   transform: scale(var(--kiosk-scale));
-  transform-origin: top left;
+  transform-origin: center center;
 }
 
 #game-root.game-active canvas {
@@ -103,7 +103,7 @@ body {
   left: var(--kiosk-left);
   top: var(--kiosk-top);
   transform: scale(var(--kiosk-scale));
-  transform-origin: top left;
+  transform-origin: center center;
   width: var(--kiosk-px);
   height: var(--kiosk-px);
   overflow: visible;
@@ -425,7 +425,7 @@ body.kopilka-game-active .figma-overlay__hint {
   left: var(--kiosk-left);
   top: var(--kiosk-top);
   transform: scale(var(--kiosk-scale));
-  transform-origin: top left;
+  transform-origin: center center;
   width: var(--kiosk-px);
   height: var(--kiosk-px);
   pointer-events: none;

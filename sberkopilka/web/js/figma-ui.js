@@ -1082,10 +1082,10 @@
     }
   }
 
-  // Сцена рендерится строго 1:1 в фиксированном «разрешении киоска»
-  // (DESIGN×DESIGN) и не уменьшается при ресайзе окна браузера.
+  // Сцена рендерится в фиксированном «разрешении киоска» (DESIGN×DESIGN)
+  // и отображается постоянным scale, не зависящим от размера браузера.
   function applyKioskScale() {
-    document.documentElement.style.setProperty("--kiosk-scale", "1");
+    document.documentElement.style.setProperty("--kiosk-scale", "0.85");
   }
 
   // Единый обработчик ресайза окна: сохраняем фиксированный scale, обновляем
