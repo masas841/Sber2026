@@ -5,6 +5,7 @@
   --green: #01d701;
   --soft-blue: #72aedf;
   --stage: 672px;
+  --app-scale: 0.85;
   --font-display: "SB Sans Display BETA2", "SB Sans Display", "Arial Black", system-ui, sans-serif;
   --font-text: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
 }
@@ -57,13 +58,15 @@ body {
 
 .stage {
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
   width: var(--stage);
   height: var(--stage);
   overflow: hidden;
   color: var(--ink);
   background: linear-gradient(185.62deg, #00adee 12.18%, #fff 95.52%);
+  transform: translate(-50%, -50%) scale(var(--app-scale));
+  transform-origin: center;
   user-select: none;
 }
 

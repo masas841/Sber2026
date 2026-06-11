@@ -1,5 +1,6 @@
 const CONTROL_WIDTH = 1133;
 const CONTROL_HEIGHT = 744;
+const CONTROL_SCALE = 0.85;
 
 const control = document.querySelector("#control");
 const connection = document.querySelector("#connection");
@@ -38,7 +39,7 @@ function syncScale() {
     window.innerWidth / CONTROL_WIDTH,
     window.innerHeight / CONTROL_HEIGHT,
     1
-  );
+  ) * CONTROL_SCALE;
   control.style.setProperty("--control-scale", String(scale));
 }
 
