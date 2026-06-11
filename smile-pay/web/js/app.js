@@ -3,7 +3,7 @@ import {
   STAGES,
   STAGE_ALIASES,
   resolveStage,
-} from "./smile-stage.js";
+} from "./smile-stage.js?v=20260611-smile-pay";
 import { loadCopyLines } from "./copy-lines.js";
 import { createSmileWatcher } from "./smile-capture.js";
 import { createFacePresenceWatcher } from "./face-presence.js";

@@ -23,6 +23,7 @@ import {
 import { applyCamVars, getCamHoleCanvas504 } from "./cam-geometry.js";
 
 const ASSET_BASE = "/static/assets/figma";
+const ASSET_VERSION = "20260611-smile-pay";
 
 export const STAGES = ["idle", "face", "line", "stickers", "qr"];
 
@@ -51,6 +52,10 @@ export { DEFAULT_COPY as COPY };
 
 function px(value) {
   return `${value}px`;
+}
+
+function assetUrl(src) {
+  return `${ASSET_BASE}/${src}?v=${ASSET_VERSION}`;
 }
 
 function placeBox(el, box, rotate = 0) {
@@ -84,7 +89,7 @@ function decorNode(item, index) {
   placeBox(wrap, box, item.rotate ?? 0);
 
   const img = document.createElement("img");
-  img.src = `${ASSET_BASE}/${item.src}`;
+  img.src = assetUrl(item.src);
   img.alt = "";
   img.draggable = false;
   wrap.appendChild(img);
@@ -225,7 +230,7 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
   subtractWrap.style.setProperty("--subtract-mask-cy", px(camHole.cy - subtractBox.top));
   const subtractImg = document.createElement("img");
   subtractImg.className = "smile-stage__subtract";
-  subtractImg.src = `${ASSET_BASE}/mask-subtract.svg`;
+  subtractImg.src = assetUrl("mask-subtract.svg");
   subtractImg.alt = "";
   subtractImg.draggable = false;
   subtractWrap.appendChild(subtractImg);
@@ -259,7 +264,7 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
   qrImageSlot.style.width = px(imgBox.width);
   qrImageSlot.style.height = px(imgBox.height);
   const qrImg = document.createElement("img");
-  qrImg.src = `${ASSET_BASE}/${QR_CODE_ASSET}`;
+  qrImg.src = assetUrl(QR_CODE_ASSET);
   qrImg.alt = copy.qrCaption;
   qrImg.draggable = false;
   qrImageSlot.appendChild(qrImg);
