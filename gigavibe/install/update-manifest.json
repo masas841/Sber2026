@@ -997,8 +997,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "e2f004fcbd6f813968a8e1ed917b69a3dde0550024cfa0b665b72e62df16fcd1",
-      "size": 26908
+      "sha256": "39ce7c3e3450da84ef09b09659647d551b22aeaa53b5654b305b97b7534f7a3f",
+      "size": 27526
     },
     {
       "path": "web/assets/figma/_context/ctx_composite_1_10.txt",

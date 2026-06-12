@@ -50,6 +50,7 @@ const RESULT_LOOP_SEC = 20;
 const CAMERA_ZOOM = 2;
 const DETECTION_FRAME_W = 640;
 const DETECTION_FRAME_H = 480;
+const DETECTION_READY_TIMEOUT_MS = 900;
 
 const KIOSK_W = 1008;
 const KIOSK_H = 672;
@@ -209,6 +210,20 @@ function stopPreviewLoop() {
   }
   detectionCanvas.width = 0;
   detectionCanvas.height = 0;
+}
+
+function detectionSourceReady() {
+  return detectionCanvas.width > 0 && detectionCanvas.height > 0;
+}
+
+async function resolveDetectionSource(timeoutMs = DETECTION_READY_TIMEOUT_MS) {
+  const start = performance.now();
+  while (performance.now() - start < timeoutMs) {
+    drawPreviewFrame();
+    if (detectionSourceReady()) return detectionCanvas;
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+  }
+  return preview;
 }
 
 function layoutCapturePreview() {
@@ -513,7 +528,8 @@ async function startPresenceWatch() {
   await presenceWatcher?.close?.();
   presenceWatcher = null;
   try {
-    presenceWatcher = await createFacePresenceWatcher(detectionCanvas, {
+    const detectionSource = await resolveDetectionSource();
+    presenceWatcher = await createFacePresenceWatcher(detectionSource, {
       minFaceSize: kioskCfg.kiosk_face_min_size,
       holdFrames: kioskCfg.kiosk_face_hold_frames,
       releaseFrames: kioskCfg.kiosk_face_release_frames,
@@ -577,7 +593,8 @@ async function startSmileCapture() {
   if (!kioskCfg.kiosk_smile_capture) return;
   try {
     await smileWatcher?.close?.();
-    smileWatcher = await createSmileWatcher(detectionCanvas, {
+    const detectionSource = await resolveDetectionSource();
+    smileWatcher = await createSmileWatcher(detectionSource, {
       threshold: kioskCfg.kiosk_smile_threshold,
       holdFrames: kioskCfg.kiosk_smile_hold_frames,
       holdMs: kioskCfg.kiosk_smile_hold_ms,
