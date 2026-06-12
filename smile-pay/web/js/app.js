@@ -48,6 +48,7 @@ let smileWatcher = null;
 /** @type {"idle"|"face"|"animating"} */
 let phase = "idle";
 let busy = false;
+let lastBottomLineIndex = -1;
 
 function setStatus(text) {
   if (!statusEl) return;
@@ -164,6 +165,7 @@ async function onFaceReady() {
   if (busy || phase !== "idle") return;
   phase = "face";
   await stopPresenceWatcher();
+  pickBottomLineForAttempt();
   stage.revealCamera();
   setStatus("Улыбнитесь!");
   try {
@@ -172,6 +174,22 @@ async function onFaceReady() {
     console.warn(err);
     setStatus("Детект улыбки недоступен");
   }
+}
+
+function pickBottomLineForAttempt() {
+  const lines = stage.getCopy().bottomLines ?? [];
+  if (lines.length <= 1) {
+    stage.setBottomLineIndex(0);
+    lastBottomLineIndex = 0;
+    return;
+  }
+
+  let nextIndex = Math.floor(Math.random() * lines.length);
+  if (nextIndex === lastBottomLineIndex) {
+    nextIndex = (nextIndex + 1) % lines.length;
+  }
+  lastBottomLineIndex = nextIndex;
+  stage.setBottomLineIndex(nextIndex);
 }
 
 async function onFaceLost() {
