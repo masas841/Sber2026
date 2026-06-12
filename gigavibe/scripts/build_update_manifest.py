@@ -47,6 +47,26 @@ EXCLUDE_NAMES = {
     "update-manifest.json",
     "update-manifest.local.json",
 }
+TEXT_SUFFIXES = {
+    ".bat",
+    ".cmd",
+    ".css",
+    ".html",
+    ".js",
+    ".json",
+    ".md",
+    ".ps1",
+    ".py",
+    ".svg",
+    ".txt",
+    ".xml",
+    ".yml",
+    ".yaml",
+}
+TEXT_NAMES = {
+    ".env.example",
+    ".gitignore",
+}
 
 
 def should_skip(path: Path) -> bool:
@@ -67,12 +87,15 @@ def should_skip(path: Path) -> bool:
     return False
 
 
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+def manifest_bytes(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() in TEXT_SUFFIXES or path.name in TEXT_NAMES:
+        data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return data
+
+
+def sha256(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
 
 
 def main() -> int:
@@ -81,11 +104,12 @@ def main() -> int:
         if not path.is_file() or should_skip(path):
             continue
         rel = path.relative_to(ROOT).as_posix()
+        data = manifest_bytes(path)
         files.append(
             {
                 "path": rel,
-                "sha256": sha256(path),
-                "size": path.stat().st_size,
+                "sha256": sha256(data),
+                "size": len(data),
             }
         )
 
