@@ -1,7 +1,7 @@
 const CONTROL_WIDTH = 1133;
 const CONTROL_HEIGHT = 744;
 const DEFAULT_GAME_DURATION = 59;
-const RESULT_COUNTDOWN_SECONDS = 15;
+const RESULT_COUNTDOWN_SECONDS = 22;
 const INITIAL_COUNTER_FLASH_GUARD_MS = 700;
 
 const control = document.querySelector("#control");
