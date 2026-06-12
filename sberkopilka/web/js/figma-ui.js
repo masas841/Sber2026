@@ -212,14 +212,12 @@
     "start",
     "onboarding_1",
     "onboarding_2",
-    "onboarding_3",
     "game-bg",
   ]);
   const PRELOAD_ORDER = [
     "start",
     "onboarding_1",
     "onboarding_2",
-    "onboarding_3",
     "game-bg",
   ];
   const isCachedScreen = (id) => CACHE_SCREENS.has(id);

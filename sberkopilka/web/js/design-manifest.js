@@ -123,7 +123,7 @@
     },
     onboarding_2: {
       scene: "Onboarding2",
-      next: "Onboarding3",
+      next: "Game",
       bgDecor: shared.bgDecorOnb1,
       layers: [
         { key: "grassB", file: shared.grassB, x: 336, y: 530, w: 480, h: 260, origin: 0.5 },

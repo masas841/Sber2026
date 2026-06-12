@@ -123,7 +123,7 @@ class BootScene extends Phaser.Scene {
   }
 }
 
-const ONBOARDING_SLIDES = ["onboarding_1", "onboarding_2", "onboarding_3"];
+const ONBOARDING_SLIDES = ["onboarding_1", "onboarding_2"];
 const ONBOARDING_AUTO_MS = 5000;
 
 class FigmaFlowScene extends Phaser.Scene {
