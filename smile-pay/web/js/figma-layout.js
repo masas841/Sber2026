@@ -13,7 +13,7 @@ export const COPY = {
   lineTop: "Такой улыбкой можно оплатить…",
   lineBottom: "самый сочный бургер на фудкорте",
   lineBottomShort: "самый…",
-  qrCaption: "Узнай больше про биометрию",
+  qrCaption: "Подключить оплату улыбкой",
 };
 
 export const MASTER_GRADIENT = {
@@ -125,24 +125,33 @@ const FACE_DECOR = [
 
 /** Стикеры, которые появляются во время удержания улыбки и печати нижнего лайна */
 const SMILE_HOLD_DECOR = [
-  { id: "hold-flower-green", src: "hold-flower-green.svg", left: 1, top: 150, width: 82, height: 82, rotate: 16, stages: ["face"], frame: 504, holdIndex: 0 },
-  { id: "hold-smile-blue", src: "hold-smile-blue.svg", left: 24, top: 189, width: 68, height: 68, rotate: -10, stages: ["face"], frame: 504, holdIndex: 1 },
-  { id: "hold-smile-pink", src: "hold-smile-pink.svg", left: 0, top: 282, width: 82, height: 82, rotate: -12, stages: ["face"], frame: 504, holdIndex: 2 },
-  { id: "hold-smile-green", src: "hold-smile-green.svg", left: 57, top: 333, width: 78, height: 78, rotate: 13, stages: ["face"], frame: 504, holdIndex: 3 },
-  { id: "hold-flower-lime", src: "hold-flower-lime.svg", left: 340, top: 302, width: 82, height: 82, rotate: -14, stages: ["face"], frame: 504, holdIndex: 4 },
-  { id: "hold-smile-blue-2", src: "hold-smile-blue.svg", left: 374, top: 150, width: 68, height: 68, rotate: 11, stages: ["face"], frame: 504, holdIndex: 5 },
-  { id: "hold-flower-green-2", src: "hold-flower-green.svg", left: 398, top: 252, width: 82, height: 82, rotate: -9, stages: ["face"], frame: 504, holdIndex: 6 },
-  { id: "hold-smile-pink-2", src: "hold-smile-pink.svg", left: 404, top: 192, width: 82, height: 82, rotate: 8, stages: ["face"], frame: 504, holdIndex: 7 },
-  { id: "hold-flower-lime-2", src: "hold-flower-lime.svg", left: 112, top: 357, width: 82, height: 82, rotate: 18, stages: ["face"], frame: 504, holdIndex: 8 },
-  { id: "hold-smile-green-2", src: "hold-smile-green.svg", left: 31, top: 238, width: 78, height: 78, rotate: -16, stages: ["face"], frame: 504, holdIndex: 9 },
+  { id: "hold-bg-sber", src: "hold-bg-sber.svg", left: -12.975, top: 149.025, width: 137.633, height: 137.633, rotate: 27.55, stages: ["face"], frame: 515, holdIndex: 0 },
+  { id: "hold-bg-star-left", src: "hold-bg-star-left.svg", left: 15.612, top: 224.612, width: 66.306, height: 66.306, rotate: -20.8, stages: ["face"], frame: 515, holdIndex: 1 },
+  { id: "hold-bg-smile-left", src: "hold-bg-smile-left.svg", left: 50.218, top: 349.218, width: 91.18, height: 91.18, rotate: -20.8, stages: ["face"], frame: 515, holdIndex: 2 },
+  { id: "hold-bg-wave-left", src: "hold-bg-wave-left.svg", left: -1.1, top: 289.106, width: 116.213, height: 116.213, rotate: 57.55, stages: ["face"], frame: 515, holdIndex: 3 },
+  { id: "hold-bg-wave-right-top", src: "hold-bg-wave-right-top.svg", left: 405.9, top: 205.028, width: 82.437, height: 82.437, rotate: 57.55, stages: ["face"], frame: 515, holdIndex: 4 },
+  { id: "hold-bg-smile-right", src: "hold-bg-smile-right.svg", left: 426.218, top: 231.218, width: 91.18, height: 91.18, rotate: -20.8, stages: ["face"], frame: 515, holdIndex: 5 },
+  { id: "hold-bg-star-pink-right", src: "hold-bg-star-pink-right.svg", left: 384.953, top: 281.952, width: 37.37, height: 37.37, rotate: -9.97, stages: ["face"], frame: 515, holdIndex: 6 },
+  { id: "hold-bg-wave-right-low", src: "hold-bg-wave-right-low.svg", left: 377.2, top: 317.166, width: 100.754, height: 100.754, rotate: 57.55, stages: ["face"], frame: 515, holdIndex: 7 },
+  { id: "hold-bg-star-pink-small", src: "hold-bg-star-pink-small.svg", left: 115.54, top: 318.54, width: 31.194, height: 31.194, rotate: 10.31, stages: ["face"], frame: 515, holdIndex: 8 },
+  { id: "hold-bg-star-blue-small", src: "hold-bg-star-blue-small.svg", left: 126.258, top: 368.255, width: 45.182, height: 45.181, rotate: -9.83, stages: ["face"], frame: 515, holdIndex: 9 },
 ];
 
 /** Frame 1 — line (get_design_context 25:2498) */
 const LINE_DECOR = [
-  { id: "star-mid-r", src: "star-mid.svg", left: 400.5, top: 212, width: 77.471, height: 77.469, rotate: 22.83, stages: ["line"], frame: 515 },
-  { id: "star-tiny-l", src: "star-tiny.svg", left: 12, top: 151, width: 49.947, height: 49.947, rotate: -25.93, stages: ["line"], frame: 515 },
-  { id: "smile-sm", src: "sticker-smile.svg", left: 418.5, top: 258, width: 117.616, height: 117.616, rotate: -20.8, stages: ["line"], frame: 515 },
-  { id: "sber-sm", src: "sticker-sber.svg", left: -66.03, top: 195.47, width: 185.683, height: 185.683, rotate: 27.55, stages: ["line"], frame: 515 },
+  { id: "line-bg-sber", src: "hold-bg-sber.svg", left: -12.975, top: 149.025, width: 137.633, height: 137.633, rotate: 27.55, stages: ["line"], frame: 515 },
+  { id: "line-bg-star-left", src: "hold-bg-star-left.svg", left: 15.612, top: 224.612, width: 66.306, height: 66.306, rotate: -20.8, stages: ["line"], frame: 515 },
+  { id: "line-bg-smile-left", src: "hold-bg-smile-left.svg", left: 50.218, top: 349.218, width: 91.18, height: 91.18, rotate: -20.8, stages: ["line"], frame: 515 },
+  { id: "line-bg-wave-left", src: "hold-bg-wave-left.svg", left: -1.1, top: 289.106, width: 116.213, height: 116.213, rotate: 57.55, stages: ["line"], frame: 515 },
+  { id: "line-bg-wave-right-top", src: "hold-bg-wave-right-top.svg", left: 405.9, top: 205.028, width: 82.437, height: 82.437, rotate: 57.55, stages: ["line"], frame: 515 },
+  { id: "line-bg-smile-right", src: "hold-bg-smile-right.svg", left: 426.218, top: 231.218, width: 91.18, height: 91.18, rotate: -20.8, stages: ["line"], frame: 515 },
+  { id: "line-bg-star-pink-right", src: "hold-bg-star-pink-right.svg", left: 384.953, top: 281.952, width: 37.37, height: 37.37, rotate: -9.97, stages: ["line"], frame: 515 },
+  { id: "line-bg-wave-right-low", src: "hold-bg-wave-right-low.svg", left: 377.2, top: 317.166, width: 100.754, height: 100.754, rotate: 57.55, stages: ["line"], frame: 515 },
+  { id: "line-bg-star-pink-small", src: "hold-bg-star-pink-small.svg", left: 115.54, top: 318.54, width: 31.194, height: 31.194, rotate: 10.31, stages: ["line"], frame: 515 },
+  { id: "line-bg-star-blue-small", src: "hold-bg-star-blue-small.svg", left: 126.258, top: 368.255, width: 45.182, height: 45.181, rotate: -9.83, stages: ["line"], frame: 515 },
+  { id: "star-mid-r", src: "star-mid.svg", left: 429.34, top: 164.02, width: 77.471, height: 77.469, rotate: 22.83, stages: ["line"], frame: 515 },
+  { id: "star-sm-r", src: "star-small.svg", left: 434, top: 137, width: 43.275, height: 43.274, rotate: -9.97, stages: ["line"], frame: 515 },
+  { id: "star-tiny-l", src: "star-tiny.svg", left: 18, top: 152, width: 49.947, height: 49.947, rotate: -25.93, stages: ["line"], frame: 515 },
 ];
 
 /** Frame 5 — stickers */
@@ -166,12 +175,12 @@ const STICKERS_DECOR = [
 
 /** Frame 6 — qr decor (selected Figma frame 127:713) */
 const QR_DECOR = [
-  { id: "cluster-tr", src: "qr-cluster.svg", left: 406.365112, top: 220, width: 224.714509, height: 224.714509, stages: ["qr"], frame: 504 },
-  { id: "cluster-tl", src: "qr-cluster.svg", left: 144.365097, top: 84, width: 224.714509, height: 224.714509, stages: ["qr"], frame: 504 },
-  { id: "smile-qr", src: "sticker-smile-qr.svg", left: 23, top: 109.922012, width: 126.855921, height: 126.855921, stages: ["qr"], frame: 504 },
-  { id: "spring-qr", src: "spring-scribble-qr.svg", left: 278.180064, top: 383.054575, width: 164.448, height: 128.192, rotate: -63.73, stages: ["qr"], frame: 504 },
-  { id: "star-qr-blue", src: "star-qr-blue.svg", left: 391.90976, top: 316, width: 62.749671, height: 62.747933, stages: ["qr"], frame: 504 },
-  { id: "star-qr-pink", src: "star-qr-pink.svg", left: 89, top: 78.429565, width: 68.528644, height: 68.52852, stages: ["qr"], frame: 504 },
+  { id: "cluster-tr", src: "qr-cluster-tr.svg", left: 309, top: 253, width: 164, height: 164, stages: ["qr"], frame: 504 },
+  { id: "cluster-tl", src: "qr-cluster-tl.svg", left: 64, top: 152, width: 124, height: 124, stages: ["qr"], frame: 504 },
+  { id: "smile-qr", src: "sticker-smile-qr.svg", left: 43.4, top: 84.7, width: 95.1, height: 95.1, rotate: -8, stages: ["qr"], frame: 504 },
+  { id: "spring-qr", src: "spring-scribble-qr.svg", left: 285.2, top: 358.3, width: 138.1, height: 107.7, rotate: -63.73, stages: ["qr"], frame: 504 },
+  { id: "star-qr-blue", src: "star-qr-blue.svg", left: 383.2, top: 325.1, width: 50.2, height: 50.2, stages: ["qr"], frame: 504 },
+  { id: "star-qr-pink", src: "star-qr-pink.svg", left: 97.5, top: 72.3, width: 51.4, height: 51.4, stages: ["qr"], frame: 504 },
 ];
 
 export const ALL_DECOR = [

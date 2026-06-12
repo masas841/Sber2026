@@ -29,6 +29,16 @@ $assets = @{
   "sticker-sber-lg.svg"    = "23f78884df05d58b744eddf6c0b251c781c6a712.svg"
   "qr-cluster-tr.svg"      = "22f23c2f5a2ee7cec4ca8ac6a86a99a58d5618b7.svg"
   "qr-cluster-tl.svg"      = "22f23c2f5a2ee7cec4ca8ac6a86a99a58d5618b7.svg"
+  "hold-bg-sber.svg"       = "dc385b7935f62a7a5571a36404e357e743711b97.svg"
+  "hold-bg-smile-left.svg" = "cc3dcc4936c834ee082e8fdb6d69d10a3bd6fd21.svg"
+  "hold-bg-star-left.svg"  = "2e86a0ba3e9347e51329f69ce7325bfa216d4344.svg"
+  "hold-bg-wave-right-low.svg" = "d7ffc1cef9a59e7908f3b98a05e483b472b42497.svg"
+  "hold-bg-wave-left.svg"  = "ea14904cd0dc37b59e5f5fcf2eca3eff227f1149.svg"
+  "hold-bg-wave-right-top.svg" = "2acee622c2059ce2998b0ba79464dafabc8af90e.svg"
+  "hold-bg-smile-right.svg" = "fe6a100121d6d6c95342c4ae5b3819351a569eb1.svg"
+  "hold-bg-star-blue-small.svg" = "64bba17c88a5c69d9fd6f9527c9320dde86b1a7c.svg"
+  "hold-bg-star-pink-small.svg" = "316790140f448b058a2f5df2ffbdc2dd6fbc02d2.svg"
+  "hold-bg-star-pink-right.svg" = "acc9e5acdb8969a23b3d2213786b85a687b891d4.svg"
 }
 
 # QR-код (node 137:115): SVG из MCP — только белый фон; полный код — PNG:

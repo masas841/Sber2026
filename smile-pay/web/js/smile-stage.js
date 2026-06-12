@@ -19,11 +19,11 @@ import {
   TEXT_PATH_META,
   TEXT,
   mapBox,
-} from "./figma-layout.js";
+} from "./figma-layout.js?v=20260612-qr-decor-anim";
 import { applyCamVars, getCamHoleCanvas504 } from "./cam-geometry.js";
 
 const ASSET_BASE = "/static/assets/figma";
-const ASSET_VERSION = "20260611-smile-pay";
+const ASSET_VERSION = "20260612-qr-decor-anim";
 
 export const STAGES = ["idle", "face", "line", "stickers", "qr"];
 
@@ -116,6 +116,16 @@ function buildTextPaths(copy) {
     </text>
   `;
   return svg;
+}
+
+function bottomFontSize(text, short = false) {
+  if (short) return TEXT.pathBottomShortSize;
+
+  const len = Array.from(text ?? "").length;
+  if (len >= 54) return 18.5;
+  if (len >= 46) return 20;
+  if (len >= 38) return 22;
+  return TEXT.pathBottomSize;
 }
 
 function buildPillCopy(copy) {
@@ -342,13 +352,11 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
     const node = bottomLine();
     if (!node) return;
     const short = stage === "face";
-    node.textContent = currentBottomText(stage);
+    const text = currentBottomText(stage);
+    node.textContent = text;
     const textEl = node.closest(".smile-stage__path-text--bottom");
     if (textEl) {
-      textEl.setAttribute(
-        "font-size",
-        String(short ? TEXT.pathBottomShortSize : TEXT.pathBottomSize),
-      );
+      textEl.setAttribute("font-size", String(bottomFontSize(text, short)));
     }
   }
 
@@ -398,7 +406,7 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
     const count = Math.min(chars.length, Math.ceil(chars.length * clamped));
     const textEl = node.closest(".smile-stage__path-text--bottom");
     if (textEl) {
-      textEl.setAttribute("font-size", String(TEXT.pathBottomSize));
+      textEl.setAttribute("font-size", String(bottomFontSize(text)));
     }
 
     node.textContent = chars.slice(0, count).join("");

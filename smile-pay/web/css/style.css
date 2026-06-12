@@ -263,10 +263,14 @@ body {
   animation-delay: calc(var(--decor-i, 0) * -170ms);
 }
 
+.smile-stage[data-stage="qr"] .smile-stage__decor--smile-qr[data-decor-stages~="qr"],
 .smile-stage[data-stage="qr"] .smile-stage__decor--spring-qr[data-decor-stages~="qr"],
-.smile-stage[data-stage="qr"] .smile-stage__decor--star-qr-blue[data-decor-stages~="qr"],
-.smile-stage[data-stage="qr"] .smile-stage__decor--star-qr-pink[data-decor-stages~="qr"] {
+.smile-stage[data-stage="qr"] .smile-stage__decor--star-qr-blue[data-decor-stages~="qr"] {
   z-index: 7;
+}
+
+.smile-stage[data-stage="qr"] .smile-stage__decor--star-qr-pink[data-decor-stages~="qr"] {
+  z-index: 8;
 }
 
 .smile-stage[data-stage="face"] .smile-stage__decor[data-hold-decor="true"] {
@@ -279,6 +283,15 @@ body {
 .smile-stage[data-stage="face"] .smile-stage__decor[data-hold-decor="true"].smile-stage__decor--hold-visible {
   opacity: 1;
   animation: hold-sticker-pop 0.38s var(--ease-out) both;
+}
+
+.smile-stage[data-stage="face"] .smile-stage__decor--star-mid-r,
+.smile-stage[data-stage="face"] .smile-stage__decor--star-sm-r,
+.smile-stage[data-stage="face"] .smile-stage__decor--star-tiny-l,
+.smile-stage[data-stage="line"] .smile-stage__decor--star-mid-r,
+.smile-stage[data-stage="line"] .smile-stage__decor--star-sm-r,
+.smile-stage[data-stage="line"] .smile-stage__decor--star-tiny-l {
+  z-index: 8;
 }
 
 @keyframes hold-sticker-pop {
@@ -307,6 +320,10 @@ body {
 .smile-stage[data-stage="line"] .smile-stage__decor[data-decor-stages~="line"] {
   animation: decor-breathe 3.2s ease-in-out infinite;
   animation-delay: calc(var(--decor-i, 0) * 0.34s);
+}
+
+.smile-stage[data-stage="line"] .smile-stage__decor[data-decor-stages~="line"] {
+  animation: none;
 }
 
 @keyframes decor-breathe {
