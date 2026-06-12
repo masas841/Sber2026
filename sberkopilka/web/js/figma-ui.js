@@ -196,7 +196,7 @@
   function mountIframe(stage, screenId, extraClass) {
     const frame = document.createElement("iframe");
     frame.className = `figma-overlay__frame${extraClass ? ` ${extraClass}` : ""}`;
-    const FIGMA_IFRAME_V = 29;
+    const FIGMA_IFRAME_V = 32;
     frame.src = HTML_BASE + htmlScreenId(screenId) + ".html?v=" + FIGMA_IFRAME_V;
     frame.setAttribute("scrolling", "no");
     frame.setAttribute("title", screenId);
@@ -1217,6 +1217,10 @@
     return makeHudCloudImg("figma-game-hud-score-cloud", "hudScoreCloud");
   }
 
+  function makeTimerCloudEl() {
+    return makeHudCloudImg("figma-game-hud-timer-cloud", "hudTimerCloud");
+  }
+
   function ensureGameHudChrome() {
     const design = D();
     const root = ensureGameHudRoot();
@@ -1225,7 +1229,7 @@
 
     const livesBlock = document.createElement("div");
     livesBlock.className = "figma-game-hud-lives-block";
-    livesBlock.style.left = pct(336);
+    livesBlock.style.left = pct(291);
     livesBlock.style.top = pct(-72);
     livesBlock.style.width = pct(200);
 
@@ -1235,10 +1239,21 @@
 
     livesBlock.append(makeLivesCloudEl(), heartsRow);
 
+    const timeBlock = document.createElement("div");
+    timeBlock.className = "figma-game-hud-timer-block";
+    timeBlock.style.left = pct(388);
+    timeBlock.style.top = pct(31);
+    timeBlock.style.width = pct(63);
+    timeBlock.style.height = pct(62);
+
+    const timeLabel = document.createElement("p");
+    timeLabel.className = "figma-game-hud-timer-label";
+    timeLabel.textContent = "таймер:";
+
     const time = document.createElement("p");
     time.className = "figma-game-hud figma-game-hud--time";
-    time.style.right = pct(12);
-    time.style.top = pct(12);
+
+    timeBlock.append(makeTimerCloudEl(), timeLabel, time);
 
     const mode = document.createElement("p");
     mode.className = "figma-game-hud figma-game-hud--mode";
@@ -1272,8 +1287,8 @@
 
     scoreBlock.append(makeScoreCloudEl(), scoreDecorL, scoreDecorR, scoreLabel, score);
 
-    root.append(livesBlock, time, mode, scoreBlock);
-    gameHudEls = { livesBlock, heartsRow, time, mode, scoreEl: score };
+    root.append(livesBlock, timeBlock, mode, scoreBlock);
+    gameHudEls = { livesBlock, heartsRow, timeBlock, time, mode, scoreEl: score };
     return gameHudEls;
   }
 

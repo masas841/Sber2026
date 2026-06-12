@@ -141,14 +141,16 @@ body.kopilka-game-active .figma-overlay__hint {
 }
 
 .figma-game-hud-lives-cloud-wrap,
-.figma-game-hud-score-cloud-wrap {
+.figma-game-hud-score-cloud-wrap,
+.figma-game-hud-timer-cloud-wrap {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
 .figma-game-hud-lives-cloud,
-.figma-game-hud-score-cloud {
+.figma-game-hud-score-cloud,
+.figma-game-hud-timer-cloud {
   position: relative;
   z-index: 0;
   display: block;
@@ -291,6 +293,12 @@ body.kopilka-game-active .figma-overlay__hint {
   overflow: visible;
 }
 
+.figma-game-hud-timer-block {
+  position: absolute;
+  pointer-events: none;
+  overflow: visible;
+}
+
 .figma-game-hud-score-label {
   position: absolute;
   left: 50%;
@@ -351,13 +359,36 @@ body.kopilka-game-active .figma-overlay__hint {
   animation: kop-score-star-idle 3.2s ease-in-out 0.35s infinite;
 }
 
-.figma-game-hud--time {
+.figma-game-hud-timer-label {
   position: absolute;
-  font-size: clamp(11px, 2.4vw, 14px);
+  left: 50%;
+  top: 28%;
+  transform: translateX(-50%);
+  width: 178%;
+  margin: 0;
+  z-index: 2;
+  font-family: "SB Sans Display", "Segoe UI", sans-serif;
+  font-size: clamp(8px, 1.5vmin, 10px);
+  font-weight: 700;
   color: #122654;
-  background: rgba(255, 255, 255, 0.82);
-  padding: 3px 8px;
-  border-radius: 8px;
+  letter-spacing: -0.07em;
+  line-height: 0.85;
+  text-align: center;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+.figma-game-hud--time {
+  left: 50%;
+  top: 42.5%;
+  transform: translateX(-50%);
+  width: 327%;
+  font-size: clamp(15px, 2.8vmin, 19px);
+  color: #122654;
+  letter-spacing: -0.07em;
+  line-height: 0.85;
+  text-align: center;
+  text-transform: lowercase;
 }
 
 .figma-game-hud--mode {
@@ -737,7 +768,7 @@ body.kopilka-game-active .figma-overlay__hint {
   padding: 6px 14px;
   border-radius: 999px;
   text-align: center;
-  font: 700 14px/1.2 "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+  font: 700 14px/1.2 "SB Sans Display", "Segoe UI", system-ui, sans-serif;
   color: rgba(18, 38, 84, 0.74);
   background: rgba(236, 255, 254, 0.72);
   z-index: 6;

@@ -33,6 +33,11 @@
     return sp?.key;
   }
 
+  function ghostScareTexKey(ghostId) {
+    const sp = designSprites()?.[`ghost_${ghostId}_scare`];
+    return sp?.key;
+  }
+
   function hasTex(scene, key) {
     return key && scene.textures.exists(key);
   }
@@ -305,6 +310,7 @@
     c.setDepth(15);
     c.setData("ghostId", ghostId);
     c.setData("body", body);
+    c.setData("ghostSize", size);
     return c;
   }
 
@@ -333,7 +339,16 @@
   function setGhostFrightened(sprite, frightened) {
     const body = sprite?.getData?.("body") || sprite?.list?.[0];
     if (!body) return;
-    body.setTint(frightened ? BRAND.frightened : 0xffffff);
+    const ghostId = sprite?.getData?.("ghostId");
+    const key = frightened ? ghostScareTexKey(ghostId) : ghostTexKey(ghostId);
+    if (hasTex(body.scene, key)) {
+      body.setTexture(key);
+      const size = sprite?.getData?.("ghostSize") || displaySize("ghost", ghostId, true);
+      body.setDisplaySize(size, size);
+      body.clearTint?.();
+      return;
+    }
+    body.clearTint?.();
   }
 
   function wallTextureKey(scene) {

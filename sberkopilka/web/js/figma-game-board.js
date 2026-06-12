@@ -142,7 +142,7 @@
 
     const timeText = scene.add
       .text(d.sx(620), d.sy(18), `${timeLeft} с`, {
-        fontFamily: '"SB Sans Text", "Segoe UI", sans-serif',
+        fontFamily: '"SB Sans Display", "Segoe UI", sans-serif',
         fontSize: `${d.sx(14)}px`,
         color: "#122654",
         fontStyle: "600",

@@ -1,25 +1,55 @@
-/* SB Sans — фирменные шрифты Сбера для экранов Figma */
+/* SB Sans Display 0.2.0 — локальная копия CDN-шрифтов Сбера */
 
 @font-face {
   font-family: "SB Sans Display";
-  src: url("/static/fonts/SBSansDisplay-Semibold.woff2") format("woff2");
-  font-weight: 600;
+  src: url("/static/fonts/SBSansDisplay-Thin.woff2") format("woff2"),
+    url("/static/fonts/SBSansDisplay-Thin.woff") format("woff");
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SB Sans Text";
-  src: url("/static/fonts/SBSansText-Medium.woff2") format("woff2");
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Light.woff2") format("woff2"),
+    url("/static/fonts/SBSansDisplay-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Regular.woff2") format("woff2"),
+    url("/static/fonts/SBSansDisplay-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Medium.woff2") format("woff2"),
+    url("/static/fonts/SBSansDisplay-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SB Sans Text";
-  src: url("/static/fonts/SBSansText-Semibold.woff2") format("woff2");
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Semibold.woff2") format("woff2"),
+    url("/static/fonts/SBSansDisplay-Semibold.woff") format("woff");
   font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SB Sans Display";
+  src: url("/static/fonts/SBSansDisplay-Bold.woff2") format("woff2"),
+    url("/static/fonts/SBSansDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -37,16 +67,16 @@
   font-variation-settings: "wdth" 125;
 }
 
-/* Текст — SB Sans Text */
+/* Figma-совместимые классы теперь тоже используют SB Sans Display */
 .kop-font-text-medium,
 .font-\[\'SB_Sans_Text\:Medium\'\] {
-  font-family: "SB Sans Text", "Segoe UI", system-ui, sans-serif !important;
+  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif !important;
   font-weight: 500 !important;
 }
 
 .kop-font-text-semibold,
 .font-\[\'SB_Sans_Text\:Semibold\'\] {
-  font-family: "SB Sans Text", "Segoe UI", system-ui, sans-serif !important;
+  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif !important;
   font-weight: 600 !important;
 }
 

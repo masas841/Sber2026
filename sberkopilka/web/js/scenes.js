@@ -724,6 +724,19 @@ class GameScene extends Phaser.Scene {
     if (!choices.length) return new Phaser.Math.Vector2(0, 0);
 
     const { grid } = this.tileCenterAt(g.sprite.x, g.sprite.y);
+    if (this.time.now < g.frightenedUntil) {
+      const ranked = [...choices].sort((a, b) => {
+        const da =
+          Math.abs(grid.x + a.x - this.playerGrid.x) + Math.abs(grid.y + a.y - this.playerGrid.y);
+        const db =
+          Math.abs(grid.x + b.x - this.playerGrid.x) + Math.abs(grid.y + b.y - this.playerGrid.y);
+        return db - da;
+      });
+      return Math.random() < 0.18
+        ? choices[Phaser.Math.Between(0, choices.length - 1)]
+        : ranked[0];
+    }
+
     let pick = choices[Phaser.Math.Between(0, choices.length - 1)];
     const dist =
       Math.abs(this.playerGrid.x - grid.x) + Math.abs(this.playerGrid.y - grid.y);

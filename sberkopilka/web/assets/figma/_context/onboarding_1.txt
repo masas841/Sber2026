@@ -239,7 +239,7 @@ export default function Onboarding() {
             Собирай капитал
           </p>
           <p className="-translate-x-1/2 absolute font-['SB_Sans_Text:Medium'] leading-[1.2] left-[calc(50%+6.5px)] lowercase text-[15px] text-center top-[153px] tracking-[-1.05px] w-[337px]" data-node-id="25:910">
-            Управляй ИнвестКопилкой на экране, лови монеты, проценты и активы СберИнвестиций.
+            Управляй ИнвестКопилкой на экране, лови монеты, проценты и активы Сбер Инвестиций.
             <br aria-hidden />
             <br aria-hidden />
           </p>

@@ -44,10 +44,13 @@
     playerField: "player-field-masked.png",
     /** assets/Monster — 80×80, Group 2136140168 импульсивные покупки */
     ghostImpulse: MONSTER_BASE + "impulse.png",
+    ghostImpulseScare: MONSTER_BASE + "impulse_scare.png",
     /** Group 2136140187 — инфляция */
     ghostInflation: MONSTER_BASE + "inflation.png",
+    ghostInflationScare: MONSTER_BASE + "inflation_scare.png",
     /** Group 2136140169 — FOMO */
     ghostFomo: MONSTER_BASE + "fomo.png",
+    ghostFomoScare: MONSTER_BASE + "fomo_scare.png",
     /** Монетка — основной объект на поле. */
     pelletCoin: "7cc85e02203da4dade7c18c7254748004b55a994.png",
     /** Проценты. */
@@ -61,6 +64,7 @@
     hudScoreCloud: "909228957421506a7ad5a248c8a5f61cc7a6ae3b.svg",
     hudResultScoreCloud: "3b9cdf664523959652466575484ae0f3481bfb23.svg",
     hudLivesCloud: "ff9809c9d0df86c5a06687dc402742720c2b2da7.svg",
+    hudTimerCloud: "0747bba018661685d182a59d88588b54a787e0e0.svg",
     hudScoreDecorL: "ba47078de54d7143dc1bde2652234fe9ba7aa8c5.svg",
     hudScoreDecorR: "54085f72c9f34ea2479243b6fbd1a3260f02d2b2.svg",
     /** Экраны результата — три лица копилки (assets/img) */
@@ -109,7 +113,7 @@
           y: 0.22,
           lines: [
             "Управляй ИнвестКопилкой на экране,",
-            "лови монеты, проценты и активы СберИнвестиций.",
+            "лови монеты, проценты и активы Сбер Инвестиций.",
           ],
           size: 16,
           color: "#122654",
@@ -144,7 +148,7 @@
       bgDecor: shared.bgDecorOnb1,
       layers: [
         { key: "grassB", file: shared.grassB, x: 336, y: 530, w: 480, h: 260, origin: 0.5 },
-        { key: "trophy", file: "ad29bb4cc2685b5f9f095888a406efdf1b230267.png", x: 336, y: 400, w: 200, h: 200, origin: 0.5 },
+        { key: "trophy", file: "c3d49cf3171c3aa91410dfb3aafb8526d3960654.png", x: 340, y: 392, w: 149, h: 168, origin: 0.5 },
         { key: "piggy", file: shared.piggy, x: 220, y: 450, w: 120, h: 120, origin: 0.5 },
       ],
       texts: [
@@ -260,8 +264,11 @@
   const gameSprites = {
     player: { ...spriteEntry(shared.playerField, 28), maskW: 28, maskH: 29, figmaRotate: 90 },
     ghost_impulse: spriteEntry(shared.ghostImpulse, GHOST_FIELD_SIZE),
+    ghost_impulse_scare: spriteEntry(shared.ghostImpulseScare, GHOST_FIELD_SIZE),
     ghost_inflation: spriteEntry(shared.ghostInflation, GHOST_FIELD_SIZE),
+    ghost_inflation_scare: spriteEntry(shared.ghostInflationScare, GHOST_FIELD_SIZE),
     ghost_fomo: spriteEntry(shared.ghostFomo, GHOST_FIELD_SIZE),
+    ghost_fomo_scare: spriteEntry(shared.ghostFomoScare, GHOST_FIELD_SIZE),
     pellet_coin: spriteEntry(shared.pelletCoin, 28),
     pellet_percent: spriteEntry(shared.pelletPercent, 24),
     pellet_logo: spriteEntry(shared.pelletLogo, 32),
@@ -274,6 +281,7 @@
   const hud = {
     scoreCloud: { file: shared.hudScoreCloud, key: textureKey(shared.hudScoreCloud), w: 200, h: 200, x: 336, y: 600 },
     livesCloud: { file: shared.hudLivesCloud, key: textureKey(shared.hudLivesCloud), w: 200, h: 200, x: 336, y: 28 },
+    timerCloud: { file: shared.hudTimerCloud, key: textureKey(shared.hudTimerCloud), w: 63, h: 62, x: 388, y: 31 },
     scoreDecorL: { file: shared.hudScoreDecorL, key: textureKey(shared.hudScoreDecorL), w: 46, h: 57, x: 234, y: 610 },
     scoreDecorR: { file: shared.hudScoreDecorR, key: textureKey(shared.hudScoreDecorR), w: 34, h: 34, x: 400, y: 608 },
   };

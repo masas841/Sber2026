@@ -41,7 +41,7 @@ export default function Frame() {
           <br aria-hidden />
         </span>
         <span className="font-['SB_Sans_Text:Medium'] leading-none">
-          Со СберИнвестициями ты сможешь получать больше выгоды и сделать
+          Со Сбер Инвестициями ты сможешь получать больше выгоды и сделать
           <br aria-hidden />
           так, чтобы твои накопления
           <br aria-hidden />
@@ -49,9 +49,11 @@ export default function Frame() {
         </span>
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Text:Medium'] leading-none left-[calc(50%+0.5px)] not-italic text-[#122654] text-[17px] text-center top-[427px] tracking-[-1.19px] w-[221px]" data-node-id="1:207">
-        К легкому способу
+        Переходи к легкому
         <br aria-hidden />
-        инвестировать незаметно
+        способу инвестировать
+        <br aria-hidden />
+        незаметно
       </p>
       <div className="absolute contents left-[257px] top-[245px]" data-node-id="1:208">
         <div className="absolute bg-white left-[257px] rounded-[15px] size-[159px] top-[245px]" data-node-id="1:209" />
