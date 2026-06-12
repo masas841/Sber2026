@@ -646,7 +646,7 @@ function captureBlob() {
   const h = videoHeight;
   snapshot.width = w;
   snapshot.height = h;
-  drawVideoFit(snapshot.getContext("2d"), preview, w, h, { zoom: CAMERA_ZOOM });
+  drawVideoFit(snapshot.getContext("2d"), preview, w, h, { zoom: 1 });
   const q = kioskCfg.kiosk_jpeg_quality ?? 0.96;
   return new Promise((resolve) => {
     snapshot.toBlob((blob) => resolve(blob), "image/jpeg", q);
