@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from app.guest_profile import GuestProfile
 
 logger = logging.getLogger(__name__)
+ROOT = Path(__file__).resolve().parent.parent
 
 
 @dataclass
@@ -66,17 +67,78 @@ def _default_printer_name() -> str | None:
     return name or None
 
 
-def _photo_print_path(output_path: Path) -> Path:
-    width_px = max(1, round(settings.print_width_mm / 25.4 * settings.print_dpi))
-    height_px = max(1, round(settings.print_height_mm / 25.4 * settings.print_dpi))
+def _resolve_print_frame_path() -> Path | None:
+    frame_path = settings.print_frame_path
+    if frame_path is None:
+        return None
+    path = Path(frame_path)
+    if not path.is_absolute():
+        path = ROOT / path
+    return path if path.exists() else None
 
-    with Image.open(output_path) as image:
-        prepared = ImageOps.fit(
+
+def _black_slot_bbox(frame: Image.Image) -> tuple[int, int, int, int] | None:
+    rgb = frame.convert("RGB")
+    width, height = rgb.size
+    pixels = rgb.load()
+    min_x = width
+    min_y = height
+    max_x = -1
+    max_y = -1
+    for y in range(height):
+        for x in range(width):
+            r, g, b = pixels[x, y]
+            if r < 12 and g < 12 and b < 12:
+                min_x = min(min_x, x)
+                min_y = min(min_y, y)
+                max_x = max(max_x, x)
+                max_y = max(max_y, y)
+    if max_x < min_x or max_y < min_y:
+        return None
+    return min_x, min_y, max_x + 1, max_y + 1
+
+
+def _compose_print_frame(image: Image.Image, width_px: int, height_px: int) -> Image.Image:
+    frame_path = _resolve_print_frame_path()
+    if frame_path is None:
+        return ImageOps.fit(
             image.convert("RGB"),
             (width_px, height_px),
             method=Image.Resampling.LANCZOS,
             centering=(0.5, 0.5),
         )
+
+    with Image.open(frame_path) as frame_image:
+        frame = frame_image.convert("RGB")
+    slot = _black_slot_bbox(frame)
+    if slot is None:
+        logger.warning("print: frame has no black photo slot: %s", frame_path)
+        return ImageOps.fit(
+            image.convert("RGB"),
+            (width_px, height_px),
+            method=Image.Resampling.LANCZOS,
+            centering=(0.5, 0.5),
+        )
+
+    x1, y1, x2, y2 = slot
+    photo = ImageOps.fit(
+        image.convert("RGB"),
+        (x2 - x1, y2 - y1),
+        method=Image.Resampling.LANCZOS,
+        centering=(0.5, 0.5),
+    )
+    frame.paste(photo, (x1, y1))
+    if frame.size != (width_px, height_px):
+        frame = frame.resize((width_px, height_px), Image.Resampling.LANCZOS)
+    return frame
+
+
+def _photo_print_path(output_path: Path) -> Path:
+    width_px = max(1, round(settings.print_width_mm / 25.4 * settings.print_dpi))
+    height_px = max(1, round(settings.print_height_mm / 25.4 * settings.print_dpi))
+
+    with Image.open(output_path) as image:
+        prepared = _compose_print_frame(image, width_px, height_px)
         tmp = tempfile.NamedTemporaryFile(
             prefix="gigavibe-print-",
             suffix=".jpg",

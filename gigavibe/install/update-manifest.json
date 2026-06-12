@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "c69d5a300a16c0fe225795a987ba0c3c0ca6acb7545662e26d073f07a7ae386b",
-      "size": 4654
+      "sha256": "b01a057abe1e89c345ef815c6e1978573e4e97b0eaa76c1e6fb90c166cb47263",
+      "size": 4715
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "2731ac2c626ec632e93ceaba630e518690f5a350f498bddbef9a872a5bb9f177",
-      "size": 20597
+      "sha256": "8985c8fc3822fca8c032e3dc1527e9afb1f6fd2be3d889b416bc9ed9761a9a37",
+      "size": 20683
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -177,8 +177,8 @@
     },
     {
       "path": "app/output_dispatch.py",
-      "sha256": "ccd286463259fc995ac522693bd892566f0d536c137825dd2533820fd3c335d4",
-      "size": 12697
+      "sha256": "322d98878d7c9f23f58e398218d352e8313b651b165f460817afab59f9cde794",
+      "size": 14643
     },
     {
       "path": "app/pipeline.py",
@@ -482,8 +482,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "317032b9a0ac3e8497799544a7df7b50ef17da3563e47c8b01a94326443c2545",
-      "size": 1652
+      "sha256": "38bf83a301e5d697d8d35dd5d8044075c9dfaa4d7230dc66fe8d8f3ed99b8e52",
+      "size": 1711
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -1519,6 +1519,11 @@
       "path": "web/assets/figma/sprites/raw/sheet_2090010258.png",
       "sha256": "9670d0983376036b2155228887bcd678bcb2b6d977df1fff83b4310b631442c2",
       "size": 1809184
+    },
+    {
+      "path": "web/assets/print/gigavibe-frame-10x15.png",
+      "sha256": "3ffb8582e8dbf26b5372227f8ee0b1e75b412d589cbdd831ae61f5ff334ceec5",
+      "size": 75950
     },
     {
       "path": "web/assets/video/.gitkeep",

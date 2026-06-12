@@ -332,6 +332,7 @@ class Settings(BaseSettings):
     print_scale: float = 1.0
     print_offset_x_mm: float = 0.0
     print_offset_y_mm: float = 0.0
+    print_frame_path: Path | None = Path("web/assets/print/gigavibe-frame-10x15.png")
     # Не останавливать job при сбое upload/print (киоск продолжит показ QR)
     output_dispatch_fail_open: bool = True
 
