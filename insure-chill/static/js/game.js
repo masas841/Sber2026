@@ -1,8 +1,9 @@
 ﻿const STAGE = 672;
 const DEFAULT_DURATION = 59;
 const THREAT_ASSET = "/static/assets/figma/threats/";
-const THREAT_ASSET_VERSION = "figma-export-2";
+const THREAT_ASSET_VERSION = "figma-export-3";
 const THREAT_FALL_SPEED_MULTIPLIER = 3;
+const HIT_FLASH_VISIBLE_MS = 520;
 
 const THREAT_LAYOUTS = [
   {
@@ -265,6 +266,20 @@ const THREAT_LAYOUTS = [
   },
 ];
 
+const BADGE_ASSET_URLS = new Map(
+  [...new Set(THREAT_LAYOUTS.map((layout) => layout.badgeKey ?? "badge-home"))].map((badgeKey) => [
+    badgeKey,
+    `${THREAT_ASSET}raw/exported/${badgeKey}.svg?v=${THREAT_ASSET_VERSION}`,
+  ])
+);
+const preloadedBadgeImages = new Map(
+  [...BADGE_ASSET_URLS].map(([badgeKey, src]) => {
+    const image = new Image();
+    image.src = src;
+    return [badgeKey, image];
+  })
+);
+
 const RESULT_INTRO_HOLD_MS = 6000;
 const RESULT_TRANSITION_MS = 480;
 const RESULT_FINAL_HOLD_MS = 15000;
@@ -330,6 +345,9 @@ const isDebug = query.get("debug") === "1";
 if (isDebug) {
   stage.classList.add("is-debug");
 }
+
+let hitFlashToken = 0;
+let hitFlashTimerId = 0;
 
 const game = {
   phase: "idle",
@@ -741,13 +759,50 @@ function pulseProtector() {
 function showHitFlash(threat) {
   const box = hitBoxForThreat(threat);
   const badgeKey = threat.badgeKey ?? "badge-home";
+  const badgeSrc = BADGE_ASSET_URLS.get(badgeKey) ?? BADGE_ASSET_URLS.get("badge-home");
+  const badgeImage = preloadedBadgeImages.get(badgeKey) ?? preloadedBadgeImages.get("badge-home");
+  const token = ++hitFlashToken;
+
+  window.clearTimeout(hitFlashTimerId);
+  hitFlash.classList.add("is-resetting");
+  hitFlash.classList.remove("is-visible");
+  void hitFlash.offsetWidth;
   hitFlash.setAttribute("aria-label", threat.badgeText);
   hitFlash.dataset.badge = badgeKey;
-  hitFlashBadge.src = `${THREAT_ASSET}raw/exported/${badgeKey}.svg?v=${THREAT_ASSET_VERSION}`;
   hitFlash.style.left = `${box.x + box.w / 2}px`;
   hitFlash.style.top = `${box.y + box.h / 2}px`;
-  hitFlash.classList.add("is-visible");
-  window.setTimeout(() => hitFlash.classList.remove("is-visible"), 520);
+
+  const reveal = () => {
+    if (token !== hitFlashToken) {
+      return;
+    }
+    hitFlashBadge.src = badgeSrc;
+    requestAnimationFrame(() => {
+      if (token !== hitFlashToken) {
+        return;
+      }
+      hitFlash.classList.remove("is-resetting");
+      hitFlash.classList.add("is-visible");
+      hitFlashTimerId = window.setTimeout(() => {
+        if (token === hitFlashToken) {
+          hitFlash.classList.remove("is-visible");
+        }
+      }, HIT_FLASH_VISIBLE_MS);
+    });
+  };
+
+  if (!badgeImage || (badgeImage.complete && badgeImage.naturalWidth > 0)) {
+    reveal();
+    return;
+  }
+
+  if (typeof badgeImage.decode === "function") {
+    badgeImage.decode().then(reveal).catch(reveal);
+    return;
+  }
+
+  badgeImage.addEventListener("load", reveal, { once: true });
+  badgeImage.addEventListener("error", reveal, { once: true });
 }
 
 function renderDebug() {
