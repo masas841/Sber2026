@@ -10,6 +10,7 @@ from fastapi.staticfiles import StaticFiles
 from app.config import settings
 from app.pipeline import JobStatus, PORTRAIT_MODES, create_job_from_upload, get_job, process_job
 from app.qr_util import build_download_url, qr_output_path, save_job_qr
+from app.upload_queue import start_upload_queue_worker
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB_DIR = ROOT / "web"
@@ -25,6 +26,7 @@ if ASSETS_DIR.exists():
 
 @app.on_event("startup")
 def startup() -> None:
+    start_upload_queue_worker()
     mode = settings.generator_mode.lower()
     if mode in {"ref_video", "refvideo", "faceswap"}:
         from app.generators.ref_video import RefVideoGenerator
@@ -197,10 +199,6 @@ def startup() -> None:
 
     if mode in {"svd", "auto"} and SvdGenerator.is_available():
         warmup_svd()
-
-    from app.upload_queue import start_upload_queue_worker
-
-    start_upload_queue_worker()
 
 
 def _static_cache_token() -> str:

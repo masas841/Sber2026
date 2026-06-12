@@ -162,8 +162,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "98dae5171e87b5f31e449e3bf825732c167723a52143b2f50ec71647fd365589",
-      "size": 22828
+      "sha256": "7afa30e19ee3db5809433887a517c736a8bc99c77947914f1bd5272c01a808aa",
+      "size": 22822
     },
     {
       "path": "app/nanobanana_client.py",
