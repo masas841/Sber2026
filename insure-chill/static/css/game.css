@@ -377,7 +377,7 @@ body {
 }
 
 .logo--game {
-  left: 324px;
+  left: 339px;
   top: 34px;
   width: 175px;
   height: 16px;
@@ -909,68 +909,24 @@ body {
   z-index: 25;
   left: 50%;
   top: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 360px;
-  min-height: 112px;
-  padding: 36px 34px 22px;
-  border-radius: 80px;
-  color: #fff;
-  background: #26c142;
-  box-shadow: 0 22px 18px rgba(18, 38, 84, 0.18);
+  width: 382px;
   opacity: 0;
-  transform: translate(-50%, -50%) rotate(-7deg) scale(0.75);
+  transform: translate(-50%, -50%) scale(0.75);
   transition: opacity 160ms ease, transform 160ms ease;
   pointer-events: none;
 }
 
-.hit-flash__logo,
-.hit-flash__star {
-  position: absolute;
+.hit-flash__badge {
   display: block;
+  width: 100%;
+  height: auto;
   pointer-events: none;
-}
-
-.hit-flash__logo {
-  top: 18px;
-  left: 50%;
-  width: 198px;
-  height: 18px;
-  transform: translateX(-50%);
-}
-
-.hit-flash__text {
-  display: block;
-  max-width: 310px;
-  font-family: var(--font-text);
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 0.9;
-  text-align: center;
-  text-transform: lowercase;
-}
-
-.hit-flash__star {
-  width: 70px;
-  height: 70px;
-}
-
-.hit-flash__star--top {
-  right: -30px;
-  top: -38px;
-  transform: rotate(36deg);
-}
-
-.hit-flash__star--bottom {
-  left: -28px;
-  bottom: -34px;
-  transform: rotate(-27deg);
+  user-select: none;
 }
 
 .hit-flash.is-visible {
   opacity: 1;
-  transform: translate(-50%, -50%) rotate(-7deg) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .debug-layer {

@@ -1,18 +1,20 @@
-const STAGE = 672;
+﻿const STAGE = 672;
 const DEFAULT_DURATION = 59;
 const THREAT_ASSET = "/static/assets/figma/threats/";
+const THREAT_ASSET_VERSION = "figma-export-2";
 
 const THREAT_LAYOUTS = [
   {
     id: "flood",
     figma: "Group 2136141821",
     className: "threat--flood",
-    src: "raw/flood-01.png",
+    src: "raw/exported/flood.png",
     labels: [
       ["соседский", "pill--pink"],
       ["потоп", "pill--pink"],
     ],
     badgeText: "защита квартиры и дома",
+    badgeKey: "badge-home",
     w: 225,
     h: 230,
     startX: 28,
@@ -26,12 +28,13 @@ const THREAT_LAYOUTS = [
     id: "fluffy-acrobat",
     figma: "Group 2136141820",
     className: "threat--fluffy-acrobat",
-    src: "raw/fluffy-acrobat-01.png",
+    src: "raw/exported/fluffy-acrobat.svg",
     labels: [
       ["пушистый", "pill--blue"],
       ["акробат", "pill--blue"],
     ],
     badgeText: "защита животных",
+    badgeKey: "badge-animals",
     w: 214,
     h: 225,
     startX: 404,
@@ -45,13 +48,14 @@ const THREAT_LAYOUTS = [
     id: "toe-menace",
     figma: "Group 2136141822",
     className: "threat--toe-menace",
-    src: "raw/toe-menace-01.png",
+    src: "raw/exported/toe-menace.svg",
     labels: [
       ["гроза", "pill--pink"],
       ["всех", "pill--pink"],
       ["мизинцев", "pill--pink"],
     ],
     badgeText: "защита от травм",
+    badgeKey: "badge-injury",
     w: 205,
     h: 244,
     startX: 232,
@@ -65,12 +69,13 @@ const THREAT_LAYOUTS = [
     id: "fraud",
     figma: "Group 2136141823",
     className: "threat--fraud",
-    src: "raw/fraud-01.png",
+    src: "raw/exported/fraud.svg",
     labels: [
       ["атака", "pill--green"],
       ["мошенника", "pill--green"],
     ],
     badgeText: "защита денег",
+    badgeKey: "badge-money",
     w: 228,
     h: 228,
     startX: 430,
@@ -84,12 +89,13 @@ const THREAT_LAYOUTS = [
     id: "soap-phone",
     figma: "Group 2136141824",
     className: "threat--soap-phone",
-    src: "raw/soap-phone-01.png",
+    src: "raw/exported/soap-phone.png",
     labels: [
       ["телефон", "pill--pink"],
       ["как мыло", "pill--pink"],
     ],
     badgeText: "защита экрана",
+    badgeKey: "badge-screen",
     w: 230,
     h: 190,
     startX: 76,
@@ -103,12 +109,13 @@ const THREAT_LAYOUTS = [
     id: "ghost-plane",
     figma: "Group 2136141827",
     className: "threat--ghost-plane",
-    src: "raw/ghost-plane-01.png",
+    src: "raw/exported/ghost-plane.svg",
     labels: [
       ["призрак", "pill--blue"],
       ["самолёт", "pill--blue"],
     ],
-    badgeText: "полис страхование путешественников",
+    badgeText: "полис «страхование путешественников»",
+    badgeKey: "badge-travel",
     w: 220,
     h: 220,
     startX: 334,
@@ -122,12 +129,13 @@ const THREAT_LAYOUTS = [
     id: "brick-gadget",
     figma: "Group 2136141826",
     className: "threat--brick-gadget",
-    src: "raw/brick-gadget-01.png",
+    src: "raw/exported/brick-gadget.svg",
     labels: [
       ["окирпичивание", "pill--pink"],
       ["гаджета", "pill--pink"],
     ],
     badgeText: "защита экрана",
+    badgeKey: "badge-screen-alt",
     w: 206,
     h: 213,
     startX: 136,
@@ -141,12 +149,13 @@ const THREAT_LAYOUTS = [
     id: "dog-vacuum",
     figma: "Group 2136141828",
     className: "threat--dog-vacuum",
-    src: "raw/dog-vacuum-01.png",
+    src: "raw/exported/dog-vacuum.png",
     labels: [
       ["собака", "pill--blue"],
       ["пылесос", "pill--blue"],
     ],
-    badgeText: "полис питомец под защитой",
+    badgeText: "полис «питомец под защитой»",
+    badgeKey: "badge-pet-policy",
     w: 215,
     h: 228,
     startX: 428,
@@ -160,9 +169,10 @@ const THREAT_LAYOUTS = [
     id: "micro-hater",
     figma: "Group 2136141825",
     className: "threat--micro-hater",
-    src: "raw/micro-hater-01.png",
+    src: "raw/exported/micro-hater.png",
     labels: [["микро-хейтер", "pill--pink"]],
     badgeText: "защита от клеща",
+    badgeKey: "badge-tick",
     w: 190,
     h: 251,
     startX: 30,
@@ -176,12 +186,13 @@ const THREAT_LAYOUTS = [
     id: "slam-salto",
     figma: "Group 2136141829",
     className: "threat--slam-salto",
-    src: "raw/slam-salto-01.png",
+    src: "raw/exported/slam-salto.png",
     labels: [
       ["слэмовое", "pill--green"],
       ["сальто", "pill--green"],
     ],
     badgeText: "защита от травм",
+    badgeKey: "badge-injury-alt",
     w: 235,
     h: 204,
     startX: 240,
@@ -195,12 +206,13 @@ const THREAT_LAYOUTS = [
     id: "lost-sneaker",
     figma: "Group 2136141830",
     className: "threat--lost-sneaker",
-    src: "raw/lost-sneaker-03.png",
+    src: "raw/exported/lost-sneaker.svg",
     labels: [
       ["кроссовок", "pill--blue"],
       ["потеряшка", "pill--blue"],
     ],
     badgeText: "защита багажа",
+    badgeKey: "badge-baggage",
     w: 248,
     h: 188,
     startX: 398,
@@ -214,12 +226,13 @@ const THREAT_LAYOUTS = [
     id: "bumper-kiss",
     figma: "Group 2136141831",
     className: "threat--bumper-kiss",
-    src: "raw/bumper-kiss-01.png",
+    src: "raw/exported/bumper-kiss.png",
     labels: [
       ["бамперный", "pill--green"],
       ["поцелуй", "pill--green"],
     ],
     badgeText: "полис ОСАГО",
+    badgeKey: "badge-osago",
     w: 250,
     h: 167,
     startX: 78,
@@ -233,12 +246,13 @@ const THREAT_LAYOUTS = [
     id: "pigeon-picasso",
     figma: "Group 2136141833",
     className: "threat--pigeon-picasso",
-    src: "raw/pigeon-picasso-03.png",
+    src: "raw/exported/pigeon-picasso.png",
     labels: [
       ["голубь-", "pill--blue"],
       ["пикассо", "pill--blue"],
     ],
     badgeText: "полис КАСКО",
+    badgeKey: "badge-kasko",
     w: 190,
     h: 250,
     startX: 286,
@@ -301,7 +315,7 @@ const protectorEl = document.querySelector("#protector");
 const scoreValue = document.querySelector("#scoreValue");
 const timerValue = document.querySelector("#timerValue");
 const hitFlash = document.querySelector("#hitFlash");
-const hitFlashText = document.querySelector("#hitFlashText");
+const hitFlashBadge = document.querySelector("#hitFlashBadge");
 const resultIntro = document.querySelector("#resultIntro");
 const resultFinal = document.querySelector("#resultFinal");
 const resultIntroScore = document.querySelector("#resultIntroScore");
@@ -353,16 +367,9 @@ function createThreat(layout) {
   element.dataset.figma = layout.figma;
 
   const image = document.createElement("img");
-  image.src = `${THREAT_ASSET}${layout.src}`;
+  image.src = `${THREAT_ASSET}${layout.src}?v=${THREAT_ASSET_VERSION}`;
   image.alt = "";
   element.append(image);
-
-  for (const [text, classes] of layout.labels ?? []) {
-    const pill = document.createElement("span");
-    pill.className = `pill ${classes}`;
-    pill.textContent = text;
-    element.append(pill);
-  }
 
   threatLayer.append(element);
   return {
@@ -732,8 +739,10 @@ function pulseProtector() {
 
 function showHitFlash(threat) {
   const box = hitBoxForThreat(threat);
-  hitFlashText.textContent = threat.badgeText;
+  const badgeKey = threat.badgeKey ?? "badge-home";
   hitFlash.setAttribute("aria-label", threat.badgeText);
+  hitFlash.dataset.badge = badgeKey;
+  hitFlashBadge.src = `${THREAT_ASSET}raw/exported/${badgeKey}.svg?v=${THREAT_ASSET_VERSION}`;
   hitFlash.style.left = `${box.x + box.w / 2}px`;
   hitFlash.style.top = `${box.y + box.h / 2}px`;
   hitFlash.classList.add("is-visible");
@@ -805,3 +814,6 @@ setupThreats();
 setIdle();
 connectScreen();
 requestAnimationFrame(tick);
+
+
+
