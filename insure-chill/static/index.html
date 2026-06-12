@@ -4,34 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=672, initial-scale=1" />
   <title>Застрахуй свой чилл</title>
-  <link rel="stylesheet" href="/static/css/game.css?v=stamp-up50" />
+  <link rel="stylesheet" href="/static/css/game.css?v=main-new-assets" />
 </head>
 <body>
   <main id="stage" class="stage" data-phase="idle">
-    <section id="idleLayer" class="scene-layer scene-layer--active idle-scene" aria-label="Заставка">
-      <img class="blob blob--a" src="/static/assets/figma/blob-top-left.svg" alt="" />
-      <img class="blob blob--b" src="/static/assets/figma/blob-top-right.svg" alt="" />
-      <img class="blob blob--c" src="/static/assets/figma/blob-left.svg" alt="" />
-      <img class="grass grass--left" src="/static/assets/figma/grass-2-a.png" alt="" />
-      <img class="grass grass--main" src="/static/assets/figma/grass-1.png" alt="" />
-      <img class="logo logo--idle" src="/static/assets/figma/logo-sberinsurance-game.svg" alt="СберСтрахование" />
-      <div class="title-cloud title-cloud--idle">
-        <img src="/static/assets/figma/title-star-game.svg" alt="" />
-        <span>защити<br />свой вайб</span>
+    <section id="idleLayer" class="scene-layer scene-layer--active idle-scene main-scene" aria-label="Заставка">
+      <img class="main-scene__asset main-scene__asset--back" src="/img/New/back.png" alt="" />
+      <img class="main-scene__asset main-scene__asset--fist main-scene__asset--breathe" src="/img/New/fist.png" alt="" />
+      <img class="main-scene__asset main-scene__asset--hummer main-scene__asset--breathe" src="/img/New/hummer.png" alt="" />
+      <img class="main-scene__asset main-scene__asset--logo" src="/img/New/logo.png" alt="Сбер Страхование. Защити свой вайб." />
+      <img class="main-scene__asset main-scene__asset--drop main-scene__asset--breathe main-scene__asset--breathe-slow" src="/img/New/drop.png" alt="" />
+      <div class="main-scene__insure main-scene__asset--breathe" aria-hidden="true">
+        <span class="main-scene__insure-blur"></span>
+        <img class="main-scene__asset main-scene__asset--insure" src="/img/New/insure.png" alt="" />
       </div>
-
-      <div class="idle-threat idle-threat--fist breathe breathe--slow">
-        <img src="/static/assets/figma/threat-fist.png" alt="" />
-        <span class="pill pill--green pill--vertical">прилетает</span>
-      </div>
-      <div class="idle-threat idle-threat--nail breathe">
-        <img src="/img/molotok.png" alt="" />
-      </div>
-      <div class="idle-threat idle-threat--drop breathe breathe--slow">
-        <img src="/img/drop.png" alt="" />
-      </div>
-
-      <div class="insured-stamp insured-stamp--idle breathe">застраховано</div>
     </section>
 
     <section id="gameLayer" class="scene-layer game-scene" aria-label="Игра">
