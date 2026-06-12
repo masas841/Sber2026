@@ -378,7 +378,7 @@ body {
 
 .logo--game {
   left: 339px;
-  top: 34px;
+  top: 44px;
   width: 175px;
   height: 16px;
   z-index: 30;
@@ -432,7 +432,7 @@ body {
 
 .title-cloud--game {
   left: 288px;
-  top: -106px;
+  top: -96px;
   width: 247px;
   height: 247px;
   z-index: 28;
