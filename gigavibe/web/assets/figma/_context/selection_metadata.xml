@@ -1,10 +1,20 @@
-<rounded-rectangle id="11:378" name="image 2090010258" x="-9041" y="15623" width="1831" height="1089" />
-<rounded-rectangle id="64:242" name="3 4" x="-7142" y="15623" width="1062" height="1062" />
-<rounded-rectangle id="64:244" name="1 10" x="-6053" y="15798" width="739" height="740" />
-<rounded-rectangle id="64:245" name="2 3" x="-5304" y="15798" width="739" height="740" />
-<rounded-rectangle id="9:212" name="image 2090010223" x="-9041" y="16712" width="1536" height="1024" />
-<rounded-rectangle id="9:206" name="image 2090010221" x="-7505" y="16712" width="1536" height="1024" />
-<rounded-rectangle id="7:150" name="image 2090010215" x="-5971" y="16712" width="1536" height="1024" />
-<rounded-rectangle id="9:215" name="image 2090010224" x="-9041" y="17736" width="1536" height="1024" />
-<rounded-rectangle id="9:209" name="image 2090010222" x="-7505" y="17736" width="1536" height="1024" />
-<rounded-rectangle id="9:203" name="image 2090010220" x="-5969" y="17736" width="1536" height="1024" />IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.
+<frame id="5:121" name="Гига5" x="3216" y="-124" width="393" height="852">
+  <rounded-rectangle id="5:122" name="generation_he7Dy_1 1" x="-487" y="0" width="1516" height="852" />
+  <rounded-rectangle id="5:123" name="3 3" x="460.5885314941406" y="342.80596923828125" width="564.6469522996631" height="495.80598282514984" />
+  <ellipse id="5:124" name="Ellipse 28864" x="296" y="96" width="153" height="153" />
+  <ellipse id="5:125" name="Ellipse 28865" x="308" y="112" width="153" height="153" />
+  <rounded-rectangle id="5:126" name="Rectangle 2085657177" x="354" y="646" width="314.00007186854873" height="472.99999693317636" />
+  <rounded-rectangle id="5:127" name="image 2090010262" x="43.343505859375" y="467" width="296.0169255647761" height="299.1971629633699" />
+  <rounded-rectangle id="5:128" name="image 2090010263" x="339.6733703613281" y="-11" width="296.0169255647761" height="299.1971629633699" />
+  <rounded-rectangle id="5:129" name="2 1" x="162" y="503.716796875" width="328.4782586784877" height="510.8068793644088" />
+  <ellipse id="5:130" name="Ellipse 28856" x="380.6715087890625" y="-11" width="422.5191833446679" height="151.64881172379398" />
+  <ellipse id="5:131" name="Ellipse 28857" x="315.6715087890625" y="3.435546875" width="294.26376643534604" height="148.1278138349967" />
+  <ellipse id="5:132" name="Ellipse 28858" x="307.6715087890625" y="21.005859375" width="275.8124376462124" height="120.04964740264563" />
+  <rounded-rectangle id="5:133" name="2 2" x="-73" y="570.8121948242188" width="288.22253173120316" height="496.0084454310231" />
+  <frame id="5:134" name="giga-full" x="132" y="47.05499267578125" width="129" height="72.4245376586914" />
+  <rounded-rectangle id="5:138" name="Rectangle 2085657176" x="101" y="680" width="194" height="59" />
+  <text id="5:139" name="Скачать" x="153.5223388671875" y="699.29296875" width="89" height="21" />
+  <rounded-rectangle id="5:140" name="image 2090010214" x="326" y="190" width="94" height="95" />
+  <rounded-rectangle id="5:141" name="image 2090010264" x="75.04597473144531" y="409.3953857421875" width="116.09194231033325" height="115.38483554124832" />
+  <rounded-rectangle id="5:142" name="4 1" x="144.11058044433594" y="144.4158477783203" width="307.11057698247896" height="319.13320539854976" />
+</frame>IMPORTANT: After you call this tool, you MUST call get_design_context if trying to implement the design, since this tool only returns metadata. If you do not call get_design_context, the agent will not be able to implement the design.

@@ -28,7 +28,7 @@ body {
 }
 
 body {
-  font-family: "SB Sans Text", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "SB Sans Display", "Segoe UI", system-ui, -apple-system, sans-serif;
   color: var(--ink);
   background: #0a1a12;
   display: flex;

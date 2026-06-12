@@ -30,6 +30,21 @@ if ($Offline) {
     }
 }
 
+if (Test-Path "$Root\scripts\build_update_manifest.py") {
+    $manifestPy = $null
+    if (Test-Path "$Root\runtime\python\python.exe") {
+        $manifestPy = "$Root\runtime\python\python.exe"
+    } else {
+        $cmd = Get-Command python -ErrorAction SilentlyContinue
+        if ($cmd) { $manifestPy = $cmd.Source }
+    }
+    if (-not $manifestPy) {
+        throw "Python was not found for update manifest generation"
+    }
+    & $manifestPy "$Root\scripts\build_update_manifest.py"
+    if ($LASTEXITCODE -ne 0) { throw "update manifest generation failed" }
+}
+
 $distDir = Join-Path $Root "dist"
 New-Item -ItemType Directory -Force -Path $distDir | Out-Null
 
@@ -70,6 +85,15 @@ foreach ($item in $items) {
     } else {
         Copy-Item $item.FullName $dest -Force
     }
+}
+
+$idleVideo = Join-Path $Root "assets\fon.mp4"
+if (Test-Path $idleVideo) {
+    $idleVideoDest = Join-Path $staging "assets\fon.mp4"
+    New-Item -ItemType Directory -Force -Path (Split-Path $idleVideoDest -Parent) | Out-Null
+    Copy-Item $idleVideo $idleVideoDest -Force
+} else {
+    Write-Host "WARN: assets\fon.mp4 is missing; kiosk background video will be unavailable" -ForegroundColor Yellow
 }
 
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }

@@ -72,6 +72,8 @@ smile-pay/.venv/
 # Large local artifacts
 frames/
 _pdf_pages/
+site-packages.zip
+gigavibe/site-packages.zip
 *.log
 .aigo123/
 

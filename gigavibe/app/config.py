@@ -287,7 +287,7 @@ class Settings(BaseSettings):
     kiosk_smile_hold_ms: int = 650
     kiosk_smile_detect_stride: int = 6
     kiosk_smile_cooldown_ms: int = 8000
-    kiosk_face_min_size: float = 0.2
+    kiosk_face_min_size: float = 0.12
     kiosk_face_hold_frames: int = 12
     kiosk_face_release_frames: int = 20
     kiosk_face_hold_ms: int = 700

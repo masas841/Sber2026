@@ -1,7 +1,10 @@
 param(
     [string]$RepoArchiveUrl = "",
+    [string]$ManifestUrl = "",
+    [string]$RawBaseUrl = "",
     [string]$Subdir = "gigavibe",
     [switch]$DryRun,
+    [switch]$FullArchive,
     [switch]$KeepTemp
 )
 
@@ -61,7 +64,36 @@ function Invoke-RobocopySafe {
     }
 }
 
+function ConvertTo-UrlPath {
+    param([string]$Path)
+    return ($Path -split "/" | ForEach-Object { [uri]::EscapeDataString($_) }) -join "/"
+}
+
+function Get-FileSha256 {
+    param([string]$Path)
+    if (-not (Test-Path $Path)) { return "" }
+    return (Get-FileHash -Algorithm SHA256 -Path $Path).Hash.ToLowerInvariant()
+}
+
+function Read-JsonFile {
+    param([string]$Path)
+    if (-not (Test-Path $Path)) { return $null }
+    return Get-Content -Path $Path -Raw -Encoding UTF8 | ConvertFrom-Json
+}
+
 $envPath = Join-Path $Root ".env"
+if (-not $ManifestUrl) {
+    $ManifestUrl = Read-DotEnvValue -Path $envPath -Name "UPDATE_MANIFEST_URL"
+}
+if (-not $ManifestUrl) {
+    $ManifestUrl = "https://raw.githubusercontent.com/masas841/Sber2026/main/gigavibe/install/update-manifest.json"
+}
+if (-not $RawBaseUrl) {
+    $RawBaseUrl = Read-DotEnvValue -Path $envPath -Name "UPDATE_RAW_BASE_URL"
+}
+if (-not $RawBaseUrl) {
+    $RawBaseUrl = "https://raw.githubusercontent.com/masas841/Sber2026/main/gigavibe"
+}
 if (-not $RepoArchiveUrl) {
     $RepoArchiveUrl = Read-DotEnvValue -Path $envPath -Name "UPDATE_REPO_ARCHIVE_URL"
 }
@@ -76,8 +108,10 @@ $stamp = Get-Date -Format "yyyyMMdd-HHmmss"
 $tempRoot = Join-Path $env:TEMP "gigavibe-update-$stamp"
 $zipPath = Join-Path $tempRoot "repo.zip"
 $extractPath = Join-Path $tempRoot "repo"
+$remoteManifestPath = Join-Path $tempRoot "update-manifest.json"
+$localManifestPath = Join-Path $Root "install\update-manifest.json"
 
-Write-Host "[GIGAvibe] Update source: $RepoArchiveUrl" -ForegroundColor Cyan
+Write-Host "[GIGAvibe] Manifest source: $ManifestUrl" -ForegroundColor Cyan
 Write-Host "[GIGAvibe] Install root: $Root"
 
 try {
@@ -91,6 +125,98 @@ try {
         $headers["Authorization"] = "Bearer $githubToken"
         Write-Host "[GIGAvibe] GitHub token configured." -ForegroundColor DarkGray
     }
+
+    if (-not $FullArchive) {
+        $manifestArgs = @{
+            Uri = $ManifestUrl
+            OutFile = $remoteManifestPath
+            UseBasicParsing = $true
+            Headers = $headers
+        }
+        try {
+            Invoke-WebRequest @manifestArgs
+        } catch {
+            $statusCode = $_.Exception.Response.StatusCode.value__
+            if ($statusCode -eq 404 -and -not $githubToken) {
+                Write-Host "[GIGAvibe] GitHub manifest is not available anonymously." -ForegroundColor Yellow
+                Write-Host "[GIGAvibe] If the repo is private, set UPDATE_GITHUB_TOKEN in .env." -ForegroundColor Yellow
+            }
+            throw
+        }
+
+        $remoteManifest = Read-JsonFile -Path $remoteManifestPath
+        $localManifest = Read-JsonFile -Path $localManifestPath
+        $remoteFiles = @($remoteManifest.files)
+        $localFiles = if ($localManifest) { @($localManifest.files) } else { @() }
+        $remoteByPath = @{}
+        foreach ($file in $remoteFiles) { $remoteByPath[$file.path] = $file }
+        $localByPath = @{}
+        foreach ($file in $localFiles) { $localByPath[$file.path] = $file }
+
+        $changed = @()
+        foreach ($file in $remoteFiles) {
+            $targetPath = Join-Path $Root ($file.path -replace "/", "\")
+            $localHash = Get-FileSha256 -Path $targetPath
+            if ($localHash -ne ([string]$file.sha256).ToLowerInvariant()) {
+                $changed += $file
+            }
+        }
+
+        $removed = @()
+        if ($localFiles.Count -gt 0) {
+            foreach ($file in $localFiles) {
+                if (-not $remoteByPath.ContainsKey($file.path)) {
+                    $removed += $file
+                }
+            }
+        }
+
+        Write-Host "[GIGAvibe] Changed files: $($changed.Count); removed files: $($removed.Count)"
+        if ($DryRun) {
+            $changed | Select-Object -First 30 | ForEach-Object { Write-Host "  update $($_.path)" }
+            $removed | Select-Object -First 30 | ForEach-Object { Write-Host "  remove $($_.path)" }
+            Write-Host "[GIGAvibe] Dry run: no files were changed." -ForegroundColor Yellow
+            return
+        }
+
+        foreach ($file in $changed) {
+            $rel = [string]$file.path
+            $targetPath = Join-Path $Root ($rel -replace "/", "\")
+            New-Item -ItemType Directory -Force -Path (Split-Path $targetPath -Parent) | Out-Null
+            $fileUrl = ($RawBaseUrl.TrimEnd("/") + "/" + (ConvertTo-UrlPath -Path $rel))
+            $tmpFile = Join-Path $tempRoot ("file-" + [guid]::NewGuid().ToString("N"))
+            Invoke-WebRequest -Uri $fileUrl -OutFile $tmpFile -UseBasicParsing -Headers $headers
+            $downloadHash = Get-FileSha256 -Path $tmpFile
+            if ($downloadHash -ne ([string]$file.sha256).ToLowerInvariant()) {
+                throw "sha256 mismatch for $rel"
+            }
+            Move-Item -Path $tmpFile -Destination $targetPath -Force
+            Write-Host "[GIGAvibe] Updated $rel"
+        }
+
+        foreach ($file in $removed) {
+            $rel = [string]$file.path
+            $targetPath = Join-Path $Root ($rel -replace "/", "\")
+            if (Test-Path $targetPath) {
+                Remove-Item $targetPath -Force
+                Write-Host "[GIGAvibe] Removed $rel"
+            }
+        }
+
+        Copy-Item $remoteManifestPath $localManifestPath -Force
+        $marker = Join-Path $Root "install\last-update.txt"
+        @(
+            "UpdatedAt=$((Get-Date).ToString("s"))",
+            "Source=$ManifestUrl",
+            "Changed=$($changed.Count)",
+            "Removed=$($removed.Count)"
+        ) | Set-Content -Path $marker -Encoding UTF8
+        Write-Host "[GIGAvibe] Update complete." -ForegroundColor Green
+        return
+    }
+
+    Write-Host "[GIGAvibe] Full archive fallback enabled." -ForegroundColor Yellow
+    Write-Host "[GIGAvibe] Update source: $RepoArchiveUrl" -ForegroundColor Cyan
     $requestArgs = @{
         Uri = $RepoArchiveUrl
         OutFile = $zipPath

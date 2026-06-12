@@ -65,8 +65,16 @@ cd C:\gigavibe
 
 Или двойной клик: `install\update-gigavibe.cmd`
 
-Он скачивает свежий архив `main` из GitHub и обновляет только папку `gigavibe`.
-Локальные `.env`, `.venv`, `runtime`, модели, сертификаты, `dist` и сгенерированные данные не перезаписываются.
+По умолчанию он скачивает `install/update-manifest.json`, сравнивает sha256 локальных файлов
+и докачивает только новые или измененные файлы через GitHub raw. Локальные `.env`, `.venv`,
+`runtime`, модели, сертификаты, `dist` и сгенерированные данные не входят в manifest и не
+перезаписываются.
+
+Если нужно принудительно вернуться к старому режиму полного архива:
+
+```powershell
+.\install\update-from-github.ps1 -FullArchive
+```
 
 Разово обновить перед запуском:
 
@@ -78,6 +86,8 @@ cd C:\gigavibe
 
 ```env
 AUTO_UPDATE_FROM_GITHUB=true
+UPDATE_MANIFEST_URL=https://raw.githubusercontent.com/masas841/Sber2026/main/gigavibe/install/update-manifest.json
+UPDATE_RAW_BASE_URL=https://raw.githubusercontent.com/masas841/Sber2026/main/gigavibe
 ```
 
 Если репозиторий приватный, добавьте в `.env` GitHub token с read-only доступом к Contents:

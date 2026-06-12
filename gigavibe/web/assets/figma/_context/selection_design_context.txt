@@ -1,10 +1,145 @@
-<rounded-rectangle id="11:378" name="image 2090010258" x="-9041" y="15623" width="1831" height="1089" />
-<rounded-rectangle id="64:242" name="3 4" x="-7142" y="15623" width="1062" height="1062" />
-<rounded-rectangle id="64:244" name="1 10" x="-6053" y="15798" width="739" height="740" />
-<rounded-rectangle id="64:245" name="2 3" x="-5304" y="15798" width="739" height="740" />
-<rounded-rectangle id="9:212" name="image 2090010223" x="-9041" y="16712" width="1536" height="1024" />
-<rounded-rectangle id="9:206" name="image 2090010221" x="-7505" y="16712" width="1536" height="1024" />
-<rounded-rectangle id="7:150" name="image 2090010215" x="-5971" y="16712" width="1536" height="1024" />
-<rounded-rectangle id="9:215" name="image 2090010224" x="-9041" y="17736" width="1536" height="1024" />
-<rounded-rectangle id="9:209" name="image 2090010222" x="-7505" y="17736" width="1536" height="1024" />
-<rounded-rectangle id="9:203" name="image 2090010220" x="-5969" y="17736" width="1536" height="1024" />IMPORTANT: The user has selected multiple nodes, so you have received a sparse metadata response. You MUST call get_design_context on the nodes or their sublayers individually based on their IDs to implement the design.
+const imgGenerationHe7Dy11 = "http://localhost:3845/assets/9c03bdf0a15ed24d2b9590089c3aba95b33c04fb.png";
+const img33 = "http://localhost:3845/assets/c7a4f71a7128ec5fd2ba7378b6db6378a5dce318.png";
+const imgImage2090010262 = "http://localhost:3845/assets/6acfd49bf21b76d402aa025507845b973f51eff4.png";
+const img21 = "http://localhost:3845/assets/757708fa0b9ab7470e1502b4db90b267c9616919.png";
+const imgImage2090010214 = "http://localhost:3845/assets/12e43c742fcd3f9652f442f2d9d21465edb23ecd.png";
+const img41 = "http://localhost:3845/assets/207c75fcd13674e07e6be35020f2608d881f6dab.png";
+const imgEllipse28864 = "http://localhost:3845/assets/eb5ad096fa59d1fccd5796c7c469693afecb7169.svg";
+const imgEllipse28865 = "http://localhost:3845/assets/de26049cd0420f1d1114fb474fd1728b9f3195bb.svg";
+const imgEllipse28856 = "http://localhost:3845/assets/4df9d9a42f11c6c505e32b4bfaa38f2e8446238e.svg";
+const imgEllipse28857 = "http://localhost:3845/assets/215e4dcc3d22faa91cd90e7946a7e0037a0f9dbd.svg";
+const imgEllipse28858 = "http://localhost:3845/assets/85a1b931040075ff86bd2bf86e3c6e589b6911ca.svg";
+const imgGroup2131330182 = "http://localhost:3845/assets/d061809b41b902b81c851a0fa3e893babd0bbd92.svg";
+
+export default function Component() {
+  return (
+    <div className="bg-[#88dec8] relative size-full" data-node-id="5:121" data-name="Гига5">
+      <div className="absolute blur-[2px] h-[852px] left-[-487px] top-0 w-[1516px]" data-node-id="5:122" data-name="generation_he7Dy_1 1">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgGenerationHe7Dy11} />
+      </div>
+      <div className="absolute flex h-[495.806px] items-center justify-center left-[13px] top-[-153px] w-[564.647px]">
+        <div className="flex-none rotate-[-161.16deg]">
+          <div className="h-[362.516px] relative rounded-[306.539px] w-[472.922px]" data-node-id="5:123" data-name="3 3">
+            <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[306.539px] size-full" src={img33} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute left-[296px] size-[153px] top-[96px]" data-node-id="5:124">
+        <div className="absolute inset-[-28.24%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse28864} />
+        </div>
+      </div>
+      <div className="absolute left-[308px] size-[153px] top-[112px]" data-node-id="5:125">
+        <div className="absolute inset-[-28.24%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse28865} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[473px] items-center justify-center left-[calc(50%+0.5px)] top-[calc(50%-16.5px)] w-[314px]">
+        <div className="flex-none rotate-180">
+          <div className="bg-[#bababa] h-[473px] relative rounded-[24.089px] w-[314px]" data-node-id="5:126" />
+        </div>
+      </div>
+      <div className="absolute flex h-[299.197px] items-center justify-center left-[-98px] top-[467px] w-[296.017px]">
+        <div className="flex-none rotate-[48.09deg]">
+          <div className="h-[189.916px] relative w-[231.578px]" data-node-id="5:127" data-name="image 2090010262">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-[291.74%] left-[-15.65%] max-w-none top-0 w-[358.88%]" src={imgImage2090010262} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[299.197px] items-center justify-center left-[185px] top-[-11px] w-[296.017px]">
+        <div className="-scale-y-100 flex-none rotate-[131.91deg]">
+          <div className="h-[189.916px] relative w-[231.578px]" data-node-id="5:128" data-name="image 2090010263">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-[291.74%] left-[-15.65%] max-w-none top-0 w-[358.88%]" src={imgImage2090010262} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[510.807px] items-center justify-center left-[162px] top-[455px] w-[328.478px]">
+        <div className="flex-none rotate-[-11.91deg]">
+          <div className="h-[472.251px] relative w-[236.125px]" data-node-id="5:129" data-name="2 1">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-full left-0 max-w-none top-0 w-[200%]" src={img21} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[151.649px] items-center justify-center left-[-38px] top-[-11px] w-[422.519px]">
+        <div className="flex-none rotate-[88.43deg]">
+          <div className="h-[418.829px] relative w-[140.208px]" data-node-id="5:130">
+            <div className="absolute inset-[-20.08%_-59.98%]">
+              <img alt="" className="block max-w-none size-full" src={imgEllipse28856} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[148.128px] items-center justify-center left-[25.26px] top-[3.44px] w-[294.264px]">
+        <div className="flex-none rotate-[88.43deg]">
+          <div className="h-[290.526px] relative w-[140.208px]" data-node-id="5:131">
+            <div className="absolute inset-[-28.95%_-59.98%]">
+              <img alt="" className="block max-w-none size-full" src={imgEllipse28857} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[120.05px] items-center justify-center left-[34.95px] top-[21.01px] w-[275.812px]">
+        <div className="flex-none rotate-[88.43deg]">
+          <div className="h-[272.825px] relative w-[112.605px]" data-node-id="5:132">
+            <div className="absolute inset-[-30.83%_-74.69%]">
+              <img alt="" className="block max-w-none size-full" src={imgEllipse28858} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[496.008px] items-center justify-center left-[-73px] top-[544px] w-[288.223px]">
+        <div className="flex-none rotate-[-6.52deg]">
+          <div className="h-[472.251px] relative w-[236.125px]" data-node-id="5:133" data-name="2 2">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-full left-[-106.23%] max-w-none top-[-2.27%] w-[200%]" src={img21} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute contents left-1/2 top-[47.05px]" data-node-id="5:134" data-name="giga-full">
+        <div className="absolute h-[72.425px] left-[132px] top-[47.05px] w-[129px]" data-node-id="5:135">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup2131330182} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute backdrop-blur-[7.161px] bg-[rgba(255,255,255,0.6)] h-[59px] left-[calc(50%+1.5px)] rounded-[29.657px] top-[calc(50%+283.5px)] w-[194px]" data-node-id="5:138" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Text:Semibold'] leading-[0.98] left-[calc(50%+1.52px)] not-italic text-[#122654] text-[21.109px] text-center top-[699.29px] whitespace-nowrap" data-node-id="5:139">
+        Скачать
+      </p>
+      <div className="absolute h-[95px] left-[326px] rounded-[52.397px] top-[190px] w-[94px]" data-node-id="5:140" data-name="image 2090010214">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[52.397px]">
+          <img alt="" className="absolute h-[696.6%] left-[-743.84%] max-w-none top-[-533.33%] w-[1052.05%]" src={imgImage2090010214} />
+        </div>
+      </div>
+      <div className="absolute flex h-[115.385px] items-center justify-center left-[-41.05px] top-[384.81px] w-[116.092px]">
+        <div className="flex-none rotate-105">
+          <div className="h-[95px] relative rounded-[52.397px] w-[94px]" data-node-id="5:141" data-name="image 2090010264">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[52.397px]">
+              <img alt="" className="absolute h-[696.6%] left-[-743.84%] max-w-none top-[-533.33%] w-[1052.05%]" src={imgImage2090010214} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[319.133px] items-center justify-center left-[-163px] top-[95px] w-[307.111px]">
+        <div className="-scale-y-100 flex-none rotate-[-169.02deg]">
+          <div className="h-[274.743px] relative w-[259.55px]" data-node-id="5:142" data-name="4 1">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <img alt="" className="absolute h-[213.36%] left-[-62.93%] max-w-none top-[-25.58%] w-[225.85%]" src={img41} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

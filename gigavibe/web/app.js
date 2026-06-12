@@ -48,6 +48,8 @@ const btnRetry = document.getElementById("btn-retry");
 
 const RESULT_LOOP_SEC = 20;
 const CAMERA_ZOOM = 2;
+const DETECTION_FRAME_W = 640;
+const DETECTION_FRAME_H = 480;
 
 const KIOSK_W = 1008;
 const KIOSK_H = 672;
@@ -73,7 +75,7 @@ let kioskCfg = {
   kiosk_smile_hold_ms: 650,
   kiosk_smile_detect_stride: 6,
   kiosk_smile_cooldown_ms: 8000,
-  kiosk_face_min_size: 0.2,
+  kiosk_face_min_size: 0.12,
   kiosk_face_hold_frames: 12,
   kiosk_face_release_frames: 20,
   kiosk_face_hold_ms: 700,
@@ -98,6 +100,9 @@ const screenHideTimers = new Map();
 let screenRevealToken = 0;
 let previewRaf = null;
 let previewVideoFrame = null;
+const detectionCanvas = document.createElement("canvas");
+detectionCanvas.width = 0;
+detectionCanvas.height = 0;
 
 function isPortraitViewport() {
   const h = window.visualViewport?.height ?? window.innerHeight;
@@ -139,19 +144,33 @@ function drawVideoFit(
 }
 
 function drawPreviewFrame() {
-  if (!previewCanvas) return;
   if (!preview.videoWidth || !preview.videoHeight || preview.readyState < 2) return;
 
+  if (
+    detectionCanvas.width !== DETECTION_FRAME_W ||
+    detectionCanvas.height !== DETECTION_FRAME_H
+  ) {
+    detectionCanvas.width = DETECTION_FRAME_W;
+    detectionCanvas.height = DETECTION_FRAME_H;
+  }
+  drawVideoFit(
+    detectionCanvas.getContext("2d"),
+    preview,
+    DETECTION_FRAME_W,
+    DETECTION_FRAME_H,
+    { zoom: CAMERA_ZOOM },
+  );
+
+  if (!previewCanvas) return;
   const cw = previewCanvas.clientWidth;
   const ch = previewCanvas.clientHeight;
-  if (cw < 1 || ch < 1) return;
-
-  if (previewCanvas.width !== cw || previewCanvas.height !== ch) {
-    previewCanvas.width = cw;
-    previewCanvas.height = ch;
+  if (cw >= 1 && ch >= 1) {
+    if (previewCanvas.width !== cw || previewCanvas.height !== ch) {
+      previewCanvas.width = cw;
+      previewCanvas.height = ch;
+    }
+    drawVideoFit(previewCanvas.getContext("2d"), preview, cw, ch, { zoom: CAMERA_ZOOM });
   }
-
-  drawVideoFit(previewCanvas.getContext("2d"), preview, cw, ch, { zoom: CAMERA_ZOOM });
 }
 
 function startPreviewLoop() {
@@ -188,6 +207,8 @@ function stopPreviewLoop() {
     const ctx = previewCanvas.getContext("2d");
     ctx?.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
   }
+  detectionCanvas.width = 0;
+  detectionCanvas.height = 0;
 }
 
 function layoutCapturePreview() {
@@ -492,7 +513,7 @@ async function startPresenceWatch() {
   await presenceWatcher?.close?.();
   presenceWatcher = null;
   try {
-    presenceWatcher = await createFacePresenceWatcher(previewCanvas, {
+    presenceWatcher = await createFacePresenceWatcher(detectionCanvas, {
       minFaceSize: kioskCfg.kiosk_face_min_size,
       holdFrames: kioskCfg.kiosk_face_hold_frames,
       releaseFrames: kioskCfg.kiosk_face_release_frames,
@@ -543,6 +564,7 @@ async function returnToIdle() {
   stopPreviewLoop();
   mountCameraProbe();
   show("start");
+  startPreviewLoop();
 
   if (stream) {
     await startPresenceWatch();
@@ -555,7 +577,7 @@ async function startSmileCapture() {
   if (!kioskCfg.kiosk_smile_capture) return;
   try {
     await smileWatcher?.close?.();
-    smileWatcher = await createSmileWatcher(previewCanvas, {
+    smileWatcher = await createSmileWatcher(detectionCanvas, {
       threshold: kioskCfg.kiosk_smile_threshold,
       holdFrames: kioskCfg.kiosk_smile_hold_frames,
       holdMs: kioskCfg.kiosk_smile_hold_ms,
