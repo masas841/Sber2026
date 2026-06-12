@@ -102,7 +102,12 @@ param(
     [Parameter(Mandatory = $true)][string]$ImagePath,
     [Parameter(Mandatory = $true)][string]$PrinterName,
     [Parameter(Mandatory = $true)][int]$PaperWidth,
-    [Parameter(Mandatory = $true)][int]$PaperHeight
+    [Parameter(Mandatory = $true)][int]$PaperHeight,
+    [Parameter(Mandatory = $true)][double]$PaperWidthMm,
+    [Parameter(Mandatory = $true)][double]$PaperHeightMm,
+    [Parameter(Mandatory = $true)][double]$Scale,
+    [Parameter(Mandatory = $true)][double]$OffsetXmm,
+    [Parameter(Mandatory = $true)][double]$OffsetYmm
 )
 $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.Drawing
@@ -113,15 +118,41 @@ $doc.DocumentName = "GIGAvibe 10x15 photo"
 $doc.OriginAtMargins = $false
 $doc.DefaultPageSettings.Landscape = $false
 $doc.DefaultPageSettings.Margins = New-Object System.Drawing.Printing.Margins(0, 0, 0, 0)
-$doc.DefaultPageSettings.PaperSize = New-Object System.Drawing.Printing.PaperSize("10x15 borderless", $PaperWidth, $PaperHeight)
+
+$bestPaper = $null
+$bestScore = [int]::MaxValue
+foreach ($paper in $doc.PrinterSettings.PaperSizes) {
+    $portraitScore = [Math]::Abs($paper.Width - $PaperWidth) + [Math]::Abs($paper.Height - $PaperHeight)
+    if ($portraitScore -lt $bestScore) {
+        $bestScore = $portraitScore
+        $bestPaper = $paper
+    }
+}
+if ($bestPaper -and $bestScore -le 30) {
+    $doc.DefaultPageSettings.PaperSize = $bestPaper
+} else {
+    $doc.DefaultPageSettings.PaperSize = New-Object System.Drawing.Printing.PaperSize("10x15 borderless", $PaperWidth, $PaperHeight)
+}
 
 $image = [System.Drawing.Image]::FromFile($ImagePath)
 $handler = [System.Drawing.Printing.PrintPageEventHandler]{
     param($sender, $event)
-    $event.Graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
-    $event.Graphics.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
-    $event.Graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
-    $event.Graphics.DrawImage($image, $event.PageBounds)
+    $g = $event.Graphics
+    $g.PageUnit = [System.Drawing.GraphicsUnit]::Millimeter
+    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+    $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+
+    $hardXmm = $event.PageSettings.HardMarginX * 0.254
+    $hardYmm = $event.PageSettings.HardMarginY * 0.254
+    $g.TranslateTransform([single](-$hardXmm), [single](-$hardYmm))
+
+    $drawW = $PaperWidthMm * $Scale
+    $drawH = $PaperHeightMm * $Scale
+    $x = (($PaperWidthMm - $drawW) / 2.0) + $OffsetXmm
+    $y = (($PaperHeightMm - $drawH) / 2.0) + $OffsetYmm
+    $dest = New-Object System.Drawing.RectangleF([single]$x, [single]$y, [single]$drawW, [single]$drawH)
+    $g.DrawImage($image, $dest)
     $event.HasMorePages = $false
 }
 $doc.add_PrintPage($handler)
@@ -160,6 +191,16 @@ try {
                 str(paper_width),
                 "-PaperHeight",
                 str(paper_height),
+                "-PaperWidthMm",
+                str(settings.print_width_mm),
+                "-PaperHeightMm",
+                str(settings.print_height_mm),
+                "-Scale",
+                str(settings.print_scale),
+                "-OffsetXmm",
+                str(settings.print_offset_x_mm),
+                "-OffsetYmm",
+                str(settings.print_offset_y_mm),
             ],
             capture_output=True,
             timeout=settings.print_timeout_sec,

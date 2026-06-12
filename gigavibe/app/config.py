@@ -329,6 +329,9 @@ class Settings(BaseSettings):
     print_width_mm: float = 100.0
     print_height_mm: float = 150.0
     print_dpi: int = 300
+    print_scale: float = 1.0
+    print_offset_x_mm: float = 0.0
+    print_offset_y_mm: float = 0.0
     # Не останавливать job при сбое upload/print (киоск продолжит показ QR)
     output_dispatch_fail_open: bool = True
 
