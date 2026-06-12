@@ -27,6 +27,7 @@ EXCLUDE_DIRS = {
 EXCLUDE_PARTS = {
     ("assets", "driving"),
     ("assets", "video"),
+    ("data",),
     ("data", "jobs"),
     ("data", "outputs"),
     ("data", "uploads"),

@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "4cb5f4b89cbdf4ac2cca5f0bbd1cb0fc1136c19e7efa48bd803d1a56524b9e0e",
-      "size": 4512
+      "sha256": "f6ab8f859be84ab67adcb0f9890fc7a94e7510f31548c685d27e0407a47a9cc1",
+      "size": 4533
     },
     {
       "path": "app/__init__.py",
@@ -471,91 +471,6 @@
       "size": 18838
     },
     {
-      "path": "data/_liveportrait_requirements_win.txt",
-      "sha256": "af17df8c673b08eb685a807481e94c8a46d579e3c260d6bfedc814711c13486a",
-      "size": 315
-    },
-    {
-      "path": "data/ab_refvideo_inline_residual_f2_farm.jpg",
-      "sha256": "a3346cf0c2c20c942125b9682d3c4c47a509f6f42cd06a54636434898ebe6ab1",
-      "size": 30272
-    },
-    {
-      "path": "data/ab_refvideo_no_restore_f2_farm.jpg",
-      "sha256": "e4b6c4379bcbcce02cd085de6387048e15fe8139fbd7529353e8e131da688dd9",
-      "size": 28052
-    },
-    {
-      "path": "data/ab_refvideo_restore_sheet_farm.jpg",
-      "sha256": "1844085ad2baea8cfb0ca9b39aaec9a23d7f8d57b4b83c4f86d5050784010c66",
-      "size": 69330
-    },
-    {
-      "path": "data/d82b2cd44e90.mp4_snapshot_00.01.030.jpg",
-      "sha256": "5d7f073570ba794d7c30c29a8f6bdfafa1e12dad37c37fd15dec5d1e9fb2e240",
-      "size": 333286
-    },
-    {
-      "path": "data/download-festival-toon.log",
-      "sha256": "34891f49136e25fa97271b3ad43af159c087f70cfbe9a0248cbeb203cedee77f",
-      "size": 8008
-    },
-    {
-      "path": "data/download-portrait-models.log",
-      "sha256": "e28388c4e46325bef33f53408496ef4b07fa044ff2b249e8f7cb073930b81625",
-      "size": 3460
-    },
-    {
-      "path": "data/festival_gen_log.txt",
-      "sha256": "ff11a61d5042ebe71b67d5feec67c5ce0143ec0f9806d5020795d3c26b7d3718",
-      "size": 7474
-    },
-    {
-      "path": "data/keyframe_brand_farm.png",
-      "sha256": "7524454f6a8fdce8aca3fab22755a990b2b46097ccd515b03e1da85cbe0f443e",
-      "size": 1301330
-    },
-    {
-      "path": "data/keyframe_brand_short_farm.png",
-      "sha256": "12be0064ae7dc7ef8712d1d36ca00ffb396ed953c19898298a0a101b12731aee",
-      "size": 1295373
-    },
-    {
-      "path": "data/keyframe_test_farm.png",
-      "sha256": "2f01af0421bd54b5eab72d82806ca5364d2c0da86acf8cce8acbc61ce03838a0",
-      "size": 1456281
-    },
-    {
-      "path": "data/liveportrait_download_log.txt",
-      "sha256": "7ee6962e4dcc76fb320e280ae8759a5585647b328daff26b8e692340444d2b24",
-      "size": 10910
-    },
-    {
-      "path": "data/test_face.jpg",
-      "sha256": "2d4ce9daa49b521d0eca8c0b6bb1b07478c30c6cd2677276ff8e77c9330ad985",
-      "size": 26178
-    },
-    {
-      "path": "data/test_face.png",
-      "sha256": "3aa9da4251e4fe93262818df770451f4ae21d3f2d10855ad194c49d5b11e4654",
-      "size": 66878
-    },
-    {
-      "path": "data/test_festival_portrait.log",
-      "sha256": "22117f993dce8629e35fae92e40c07071cfa3c7a1b866aad98aff100062e18a2",
-      "size": 25678
-    },
-    {
-      "path": "data/test_from_driving.jpg",
-      "sha256": "c3ffdaf803de990b7ecc84438ab00f54f8be329d68e28bf98bff74bc4b19b699",
-      "size": 172711
-    },
-    {
-      "path": "data/test_photo.jpg",
-      "sha256": "a55e70c70b187ba05b162d63e1ee4a5cbe06958ab93e08538b4bdf1746a173ff",
-      "size": 18842
-    },
-    {
       "path": "download_liveportrait.bat",
       "sha256": "b95310c5a18b50b0e1dbf4c59f83c106e7b4b57992be83ae395693a2c1fdf494",
       "size": 1060
@@ -567,8 +482,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "60fa51144f59e224191a8203e53af8e3b1021c9d15e25497627bf16353c6679e",
-      "size": 1570
+      "sha256": "3c35928714d0fd2edf55e26d831654c3ff458fc0db13c1427584de411b7e46a1",
+      "size": 1592
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -602,8 +517,8 @@
     },
     {
       "path": "install/update-from-github.ps1",
-      "sha256": "ed5dac4f9946cfb78c31ab81b4547b4b3c3131624e962862236d4234093777e6",
-      "size": 9798
+      "sha256": "cf40b418980b67e94bf12e0b18bd413c0c2a32b5a4c9bfdc912762ccbb9f1dad",
+      "size": 11854
     },
     {
       "path": "install/update-gigavibe.cmd",
@@ -762,8 +677,8 @@
     },
     {
       "path": "scripts/build_update_manifest.py",
-      "sha256": "402d6e1c152717dc755ab4221e2a6e4396da20848d255736bd8c4dd3b32d93f7",
-      "size": 2778
+      "sha256": "ec17082af9b2d9fe6762f5b34f608751a459f3e802c1054f2ced6607843c2191",
+      "size": 2793
     },
     {
       "path": "scripts/check_onnx_cuda.py",

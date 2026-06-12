@@ -81,6 +81,58 @@ function Read-JsonFile {
     return Get-Content -Path $Path -Raw -Encoding UTF8 | ConvertFrom-Json
 }
 
+function Resolve-GitHubCommitSha {
+    param(
+        [string]$Ref,
+        [hashtable]$Headers
+    )
+    $apiUrl = "https://api.github.com/repos/masas841/Sber2026/commits/$([uri]::EscapeDataString($Ref))"
+    try {
+        $response = Invoke-RestMethod -Uri $apiUrl -UseBasicParsing -Headers $Headers
+        if ($response.sha) { return [string]$response.sha }
+    } catch {
+        Write-Host "[GIGAvibe] WARN: could not resolve GitHub ref '$Ref'; using raw URL as configured." -ForegroundColor Yellow
+    }
+    return ""
+}
+
+function Use-GitHubRawRef {
+    param(
+        [string]$Url,
+        [string]$Ref,
+        [string]$Sha
+    )
+    if (-not $Sha) { return $Url }
+    $needle = "/masas841/Sber2026/$Ref/"
+    $replacement = "/masas841/Sber2026/$Sha/"
+    return $Url.Replace($needle, $replacement)
+}
+
+function Test-ProtectedUpdatePath {
+    param([string]$Path)
+    $normalized = $Path.Replace("\", "/").TrimStart("/")
+    if ($normalized -eq ".env") { return $true }
+    $protectedPrefixes = @(
+        ".venv/",
+        ".venv-liveportrait/",
+        ".aigo123/",
+        "backups/",
+        "certs/",
+        "data/",
+        "dist/",
+        "gfpgan/",
+        "install/wheels/",
+        "models/",
+        "runtime/",
+        "tools/",
+        "vendor/"
+    )
+    foreach ($prefix in $protectedPrefixes) {
+        if ($normalized.StartsWith($prefix)) { return $true }
+    }
+    return $false
+}
+
 $envPath = Join-Path $Root ".env"
 if (-not $ManifestUrl) {
     $ManifestUrl = Read-DotEnvValue -Path $envPath -Name "UPDATE_MANIFEST_URL"
@@ -127,6 +179,14 @@ try {
     }
 
     if (-not $FullArchive) {
+        $rawRef = Read-DotEnvValue -Path $envPath -Name "UPDATE_REPO_REF"
+        if (-not $rawRef) { $rawRef = "main" }
+        $rawSha = Resolve-GitHubCommitSha -Ref $rawRef -Headers $headers
+        if ($rawSha) {
+            $ManifestUrl = Use-GitHubRawRef -Url $ManifestUrl -Ref $rawRef -Sha $rawSha
+            $RawBaseUrl = Use-GitHubRawRef -Url $RawBaseUrl -Ref $rawRef -Sha $rawSha
+            Write-Host "[GIGAvibe] GitHub ref $rawRef -> $rawSha" -ForegroundColor DarkGray
+        }
         $manifestArgs = @{
             Uri = $ManifestUrl
             OutFile = $remoteManifestPath
@@ -196,6 +256,10 @@ try {
 
         foreach ($file in $removed) {
             $rel = [string]$file.path
+            if (Test-ProtectedUpdatePath -Path $rel) {
+                Write-Host "[GIGAvibe] Preserved local $rel"
+                continue
+            }
             $targetPath = Join-Path $Root ($rel -replace "/", "\")
             if (Test-Path $targetPath) {
                 Remove-Item $targetPath -Force
