@@ -1,4 +1,4 @@
-# Скачать GFPGANv1.4.pth для REF_VIDEO_FACE_RESTORE
+# Download GFPGANv1.4.pth for REF_VIDEO_FACE_RESTORE.
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot\..
 

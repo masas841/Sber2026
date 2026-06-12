@@ -1,4 +1,4 @@
-# SB Sans woff2 для офлайн-киоска → web/fonts/
+# SB Sans woff2 for offline kiosk into web/fonts.
 $ErrorActionPreference = "Stop"
 $fontsDir = Join-Path $PSScriptRoot "..\web\fonts"
 New-Item -ItemType Directory -Force -Path $fontsDir | Out-Null

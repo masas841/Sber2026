@@ -1,4 +1,4 @@
-# Собрать zip-пакет киоска (портрет only) в dist/
+# Build kiosk zip package (portrait only) into dist/.
 param(
     [switch]$IncludePython,
     [switch]$Offline,
@@ -45,11 +45,16 @@ $excludeDirs = @(
     "vendor", "models", "tools", "data\outputs", "data\uploads",
     "assets\driving", "assets\video", "__pycache__"
 )
-$excludeFiles = @("*.pth", "*.onnx", "*.mp4", "*.MP4", "*.safetensors", ".env")
+$excludeFiles = @("*.pth", "*.onnx", "*.mp4", "*.MP4", "*.safetensors", ".env", "site-packages.zip")
 
 $items = Get-ChildItem -Path $Root -Force | Where-Object {
     $name = $_.Name
     if ($excludeDirs -contains $name) { return $false }
+    if (-not $_.PSIsContainer) {
+        foreach ($pattern in $excludeFiles) {
+            if ($name -like $pattern) { return $false }
+        }
+    }
     if ($name -match '^\.' -and $name -ne '.env.example') { return $false }
     return $true
 }
@@ -74,9 +79,9 @@ Remove-Item $staging -Recurse -Force
 $mb = [math]::Round((Get-Item $zipPath).Length / 1MB, 1)
 Write-Host "OK: $zipPath ($mb MB)" -ForegroundColor Green
 if ($Offline) {
-    Write-Host "На целевой машине: распаковать → .\install\install.ps1 -Offline → .env → .\run-kiosk.ps1"
+    Write-Host "On target machine: unzip -> .\install\install.ps1 -Offline -> .env -> .\run-kiosk.ps1"
 } elseif ($IncludePython) {
-    Write-Host "На целевой машине: распаковать → .\install\install.ps1 → .env → .\run-kiosk.ps1 (Python уже внутри)"
+    Write-Host "On target machine: unzip -> .\install\install.ps1 -> .env -> .\run-kiosk.ps1 (Python is bundled)"
 } else {
-    Write-Host "На целевой машине: распаковать → .\install\install.ps1 → .env → .\run-kiosk.ps1"
+    Write-Host "On target machine: unzip -> .\install\install.ps1 -> .env -> .\run-kiosk.ps1"
 }

@@ -1,4 +1,4 @@
-# InstantID pipeline (без git clone) — raw с GitHub
+# InstantID pipeline without git clone - raw files from GitHub.
 $ErrorActionPreference = "Stop"
 $root = Split-Path $PSScriptRoot -Parent
 $dest = Join-Path $root "vendor\instantid"

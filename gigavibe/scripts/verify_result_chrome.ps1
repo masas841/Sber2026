@@ -1,4 +1,4 @@
-# Скриншот экрана результата через headless Chrome (самоподписанный HTTPS).
+# Capture result screen screenshot with headless Chrome and self-signed HTTPS.
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent
 $Out = Join-Path $PSScriptRoot "_verify_result.png"
@@ -8,14 +8,14 @@ $ChromeFlags = @("--headless=new", "--disable-gpu", "--window-size=1008,672", "-
 if ($Scheme -eq "https") {
     $ChromeFlags += "--ignore-certificate-errors"
 }
-$Url = "$Scheme://127.0.0.1:$Port/?preview=result"
+$Url = "${Scheme}://127.0.0.1:${Port}/?preview=result"
 
 $chrome = Join-Path ${env:ProgramFiles} "Google\Chrome\Application\chrome.exe"
 if (-not (Test-Path $chrome)) {
     $chrome = Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe"
 }
 if (-not (Test-Path $chrome)) {
-    Write-Error "Google Chrome не найден"
+    Write-Error "Google Chrome was not found"
 }
 
 if (Test-Path $Out) { Remove-Item $Out -Force }
@@ -23,7 +23,7 @@ if (Test-Path $Out) { Remove-Item $Out -Force }
 & $chrome @ChromeFlags --screenshot=$Out $Url
 
 if (-not (Test-Path $Out)) {
-    Write-Error "Скриншот не создан. Сервер на $Url запущен?"
+    Write-Error "Screenshot was not created. Is the server running at $Url?"
 }
 
 $bytes = (Get-Item $Out).Length

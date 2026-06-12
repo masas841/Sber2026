@@ -55,7 +55,7 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 if (-not (Test-Path "models\gfpgan\GFPGANv1.4.pth")) {
-    Write-Host "[GIGAvibe] GFPGAN model missing — run scripts\download_gfpgan.ps1 for face restore"
+    Write-Host "[GIGAvibe] GFPGAN model missing - run scripts\download_gfpgan.ps1 for face restore"
 }
 
 if (-not (Test-Path ".env")) {

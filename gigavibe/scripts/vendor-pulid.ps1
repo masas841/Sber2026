@@ -1,4 +1,4 @@
-# vendor/pulid — git clone https://github.com/ToTheBeginning/PuLID
+# vendor/pulid - git clone https://github.com/ToTheBeginning/PuLID
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $dest = Join-Path $root "vendor\pulid"

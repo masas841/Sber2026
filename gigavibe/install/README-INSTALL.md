@@ -55,6 +55,43 @@ cd C:\gigavibe
 
 Киоск: `http://127.0.0.1:8765` · health: `/api/health`
 
+## Обновление из GitHub
+
+Для распакованных zip-установок без `.git` есть updater:
+
+```powershell
+.\install\update-from-github.ps1
+```
+
+Или двойной клик: `install\update-gigavibe.cmd`
+
+Он скачивает свежий архив `main` из GitHub и обновляет только папку `gigavibe`.
+Локальные `.env`, `.venv`, `runtime`, модели, сертификаты, `dist` и сгенерированные данные не перезаписываются.
+
+Разово обновить перед запуском:
+
+```powershell
+.\run-kiosk.ps1 -UpdateFromGitHub
+```
+
+Чтобы обновляться при каждом запуске, укажите в `.env`:
+
+```env
+AUTO_UPDATE_FROM_GITHUB=true
+```
+
+Если репозиторий приватный, добавьте в `.env` GitHub token с read-only доступом к Contents:
+
+```env
+UPDATE_GITHUB_TOKEN=github_pat_...
+```
+
+Если нужно пропустить автообновление для одного запуска:
+
+```powershell
+.\run-kiosk.ps1 -SkipUpdate
+```
+
 ## HTTPS (опционально)
 
 См. `scripts\issue_letsencrypt.ps1` и `USE_HTTPS` в `.env`.

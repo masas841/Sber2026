@@ -1,12 +1,12 @@
-# Выпуск Let's Encrypt для GIGAvibe (DNS-01 через Beget).
-# Домен должен указывать на ваш публичный IP (A-запись).
+# Issue Let's Encrypt certificates for GIGAvibe (DNS-01 via Beget).
+# The domain must point to your public IP address with an A record.
 #
-# Подготовка:
-#   1. В панели Beget → «API» → включить API, задать пароль API.
-#   2. Создать файл .env.ssl рядом с .env (см. .env.ssl.example).
-#   3. Запуск от обычного пользователя (порт 80 не нужен).
+# Preparation:
+#   1. In the Beget panel, enable API access and set the API password.
+#   2. Create .env.ssl next to .env (see .env.ssl.example).
+#   3. Run as a regular user. Port 80 is not required.
 #
-# Использование:
+# Usage:
 #   .\scripts\issue_letsencrypt.ps1
 #   .\scripts\issue_letsencrypt.ps1 -Domain slash.omelchak.com -Email admin@omelchak.com
 
@@ -44,10 +44,10 @@ function Ensure-Lego {
     New-Item -ItemType Directory -Force -Path (Join-Path $ToolsDir "lego") | Out-Null
     $zip = Join-Path $env:TEMP "lego_windows_amd64.zip"
     $url = "https://github.com/go-acme/lego/releases/download/v4.23.1/lego_v4.23.1_windows_amd64.zip"
-    Write-Host "[ssl] Скачиваю lego..." -ForegroundColor Cyan
+    Write-Host "[ssl] Downloading lego ..." -ForegroundColor Cyan
     Invoke-WebRequest -Uri $url -OutFile $zip
     Expand-Archive -Path $zip -DestinationPath (Join-Path $ToolsDir "lego") -Force
-    if (-not (Test-Path $legoExe)) { throw "lego.exe не найден после распаковки" }
+    if (-not (Test-Path $legoExe)) { throw "lego.exe was not found after extraction" }
     return $legoExe
 }
 
@@ -62,9 +62,9 @@ if ($dotenv["SSL_DOMAIN"]) { $Domain = $dotenv["SSL_DOMAIN"] }
 
 if (-not $begetUser -or -not $begetPass) {
     throw @"
-Не заданы BEGET_USERNAME / BEGET_PASSWORD.
-Создайте файл $envFile по образцу .env.ssl.example
-(пароль API — в панели Beget → Настройки → Доступ по API).
+BEGET_USERNAME / BEGET_PASSWORD are not set.
+Create $envFile from .env.ssl.example.
+The API password is in the Beget panel API access settings.
 "@
 }
 
@@ -77,18 +77,18 @@ New-Item -ItemType Directory -Force -Path $acmeDir | Out-Null
 $env:BEGET_USERNAME = $begetUser
 $env:BEGET_PASSWORD = $begetPass
 
-Write-Host "[ssl] Домен: $Domain" -ForegroundColor Cyan
+Write-Host "[ssl] Domain: $Domain" -ForegroundColor Cyan
 Write-Host "[ssl] Email: $Email" -ForegroundColor Cyan
-Write-Host "[ssl] DNS-провайдер: Beget (DNS-01)..." -ForegroundColor Cyan
+Write-Host "[ssl] DNS provider: Beget (DNS-01) ..." -ForegroundColor Cyan
 
 & $legoExe --email $Email --dns beget -d $Domain --path $acmeDir --accept-tos run
-if ($LASTEXITCODE -ne 0) { throw "lego завершился с кодом $LASTEXITCODE" }
+if ($LASTEXITCODE -ne 0) { throw "lego exited with code $LASTEXITCODE" }
 
 $certSrc = Join-Path $acmeDir "certificates\$Domain.crt"
 $keySrc = Join-Path $acmeDir "certificates\$Domain.key"
 $issuerSrc = Join-Path $acmeDir "certificates\$Domain.issuer.crt"
 if (-not (Test-Path $certSrc) -or -not (Test-Path $keySrc)) {
-    throw "Сертификаты не найдены в $acmeDir\certificates"
+    throw "Certificates were not found in $acmeDir\certificates"
 }
 
 $certDst = Join-Path $certsDir "cert.pem"
@@ -110,11 +110,11 @@ if (Test-Path $issuerSrc) {
 }
 Copy-Item $keySrc $keyDst -Force
 
-Write-Host "[ssl] Готово:" -ForegroundColor Green
+Write-Host "[ssl] Done:" -ForegroundColor Green
 Write-Host "  $certDst"
 Write-Host "  $keyDst"
 
-# Обновить .env: PUBLIC_BASE_URL и пути к сертификатам
+# Update .env: PUBLIC_BASE_URL and certificate paths.
 $mainEnv = Join-Path $ProjectRoot ".env"
 if (Test-Path $mainEnv) {
     $lines = Get-Content $mainEnv
@@ -129,8 +129,8 @@ if (Test-Path $mainEnv) {
     }
     if (-not $updated) { $newLines += "PUBLIC_BASE_URL=$publicUrl" }
     Set-Content -Path $mainEnv -Value $newLines -Encoding UTF8
-    Write-Host "[ssl] .env обновлён: PUBLIC_BASE_URL=$publicUrl" -ForegroundColor Green
+    Write-Host "[ssl] .env updated: PUBLIC_BASE_URL=$publicUrl" -ForegroundColor Green
 }
 
-Write-Host "[ssl] Перезапустите сервер: python -m app.main" -ForegroundColor Yellow
-Write-Host "[ssl] Проброс на роутере: TCP 8765 -> этот ПК (для доступа с телефона по домену)." -ForegroundColor Yellow
+Write-Host "[ssl] Restart the server: python -m app.main" -ForegroundColor Yellow
+Write-Host "[ssl] Router forwarding: TCP 8765 -> this PC for phone access by domain." -ForegroundColor Yellow

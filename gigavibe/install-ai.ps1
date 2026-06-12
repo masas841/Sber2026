@@ -8,7 +8,7 @@ if (-not (Test-Path ".venv")) {
 & .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-# CUDA 12.4 wheels для RTX 3060 Ti
+# CUDA 12.4 wheels for RTX 3060 Ti.
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
 
 Write-Host "Done. Run: .\run.ps1"

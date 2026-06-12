@@ -1,4 +1,4 @@
-# Portable Python в runtime\python (embeddable + pip + virtualenv)
+# Portable Python in runtime\python (embeddable + pip + virtualenv).
 param(
     [string]$Version = "3.12.8",
     [switch]$Force
@@ -11,7 +11,7 @@ $Marker = Join-Path $Target "python.exe"
 
 if ((Test-Path $Marker) -and -not $Force) {
     $v = & $Marker -c "import sys; print(sys.version.split()[0])"
-    Write-Host "Python уже есть: $Marker ($v)" -ForegroundColor Green
+    Write-Host "Python already exists: $Marker ($v)" -ForegroundColor Green
     return
 }
 
@@ -37,7 +37,7 @@ $parts = $Version.Split(".")
 $majMin = "$($parts[0])$($parts[1])"
 $pthFile = Join-Path $Target "python$majMin._pth"
 if (-not (Test-Path $pthFile)) {
-    throw "Не найден $pthFile"
+    throw "File not found: $pthFile"
 }
 
 @(
@@ -55,11 +55,11 @@ if (-not (Test-Path $getPip)) {
     Invoke-WebRequest -Uri "https://bootstrap.pypa.io/get-pip.py" -OutFile $getPip -UseBasicParsing
 }
 
-Write-Host "Installing pip…"
+Write-Host "Installing pip ..."
 & $Marker $getPip --no-warn-script-location -q
 if ($LASTEXITCODE -ne 0) { throw "get-pip failed" }
 
-Write-Host "Installing virtualenv…"
+Write-Host "Installing virtualenv ..."
 & $Marker -m pip install virtualenv -q
 if ($LASTEXITCODE -ne 0) { throw "virtualenv install failed" }
 

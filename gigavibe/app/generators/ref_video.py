@@ -97,7 +97,11 @@ def _ensure_buffalo_l() -> None:
     from insightface.app import FaceAnalysis
 
     INSIGHTFACE_ROOT.mkdir(parents=True, exist_ok=True)
-    app = FaceAnalysis(name="buffalo_l", root=str(INSIGHTFACE_ROOT))
+    app = FaceAnalysis(
+        name="buffalo_l",
+        root=str(INSIGHTFACE_ROOT),
+        providers=["CPUExecutionProvider"],
+    )
     app.prepare(ctx_id=-1, det_size=(640, 640))
 
 

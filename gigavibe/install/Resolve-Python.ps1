@@ -15,9 +15,9 @@ function Get-GigaPython {
     }
 
     throw @"
-Python не найден.
-  Вариант 1: соберите пакет с -IncludePython (внутри будет runtime\python)
-  Вариант 2: установите Python 3.10+ с python.org (Add to PATH)
+Python was not found.
+  Option 1: build the package with -IncludePython (bundles runtime\python)
+  Option 2: install Python 3.10+ from python.org (Add to PATH)
 "@
 }
 

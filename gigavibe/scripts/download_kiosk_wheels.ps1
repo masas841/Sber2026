@@ -1,4 +1,4 @@
-# Кэш pip-колёс для офлайн-установки киоска (запускать на машине с интернетом)
+# Cache pip wheels for offline kiosk installation. Run on a machine with internet access.
 param(
     [string]$WheelsDir = ""
 )
@@ -28,13 +28,15 @@ $pkgs = @(
     "onnxruntime-gpu==1.19.2",
     "coloredlogs", "flatbuffers", "packaging", "protobuf",
     "insightface>=0.7.3",
-    "onnx", "tqdm", "easydict", "prettytable",
+    "opencv-python", "onnx", "tqdm", "easydict", "prettytable",
     "scikit-image", "scikit-learn", "matplotlib"
 )
 
-Write-Host "Downloading wheels to $WheelsDir …"
+Write-Host "Downloading wheels to $WheelsDir ..."
 python -m pip download -c constraints.txt -d $WheelsDir @pkgs
 if ($LASTEXITCODE -ne 0) { throw "pip download failed" }
+python -m pip download -d $WheelsDir --index-url https://download.pytorch.org/whl/cu121 "torch==2.4.1+cu121"
+if ($LASTEXITCODE -ne 0) { throw "torch wheel download failed" }
 
 $count = (Get-ChildItem $WheelsDir -Filter "*.whl").Count
 $mb = [math]::Round((Get-ChildItem $WheelsDir | Measure-Object Length -Sum).Sum / 1MB, 1)

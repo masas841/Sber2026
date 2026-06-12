@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot\..
 
-$outDir = Join-Path $PSScriptRoot "..\web\models"  # /static/models/ — mount web → /static
+$outDir = Join-Path $PSScriptRoot "..\web\models"  # /static/models/ mount web to /static
 $outFile = Join-Path $outDir "face_landmarker.task"
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
