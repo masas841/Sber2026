@@ -3,7 +3,7 @@ import {
   STAGES,
   STAGE_ALIASES,
   resolveStage,
-} from "./smile-stage.js?v=20260612-qr-decor-anim";
+} from "./smile-stage.js?v=20260612-qr-sticker-fill-2";
 import { loadCopyLines } from "./copy-lines.js";
 import { createSmileWatcher } from "./smile-capture.js?v=20260611-detection-zoom";
 import { createFacePresenceWatcher } from "./face-presence.js?v=20260611-detection-zoom";

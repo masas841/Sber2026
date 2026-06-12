@@ -337,8 +337,9 @@ body {
 }
 
 .smile-stage--stickers-in .smile-stage__decor[data-decor-stages~="stickers"] {
+  z-index: 8;
   animation: sticker-pop 0.65s var(--ease-out) both;
-  animation-delay: calc(var(--decor-i, 0) * 40ms);
+  animation-delay: calc(var(--sticker-i, 0) * 40ms);
 }
 
 .smile-stage--stickers-curtain .smile-stage__decor[data-decor-stages~="stickers"] {
@@ -347,6 +348,7 @@ body {
 }
 
 .smile-stage--stickers-out .smile-stage__decor[data-decor-stages~="stickers"] {
+  z-index: 8;
   animation: sticker-pop-out 0.62s var(--ease-dissolve) both;
   animation-delay: calc(var(--decor-out-i, 0) * 42ms);
 }
@@ -365,11 +367,13 @@ body {
 @keyframes sticker-pop-out {
   from {
     opacity: 1;
-    transform: rotate(var(--rot, 0deg)) scale(1);
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg)) scale(1);
   }
   to {
     opacity: 0;
-    transform: rotate(var(--rot, 0deg)) scale(0.55);
+    transform: translate3d(var(--fly-x, 0), var(--fly-y, 0), 0)
+      rotate(calc(var(--rot, 0deg) + var(--fly-rot, 0deg)))
+      scale(0.72);
   }
 }
 
@@ -514,7 +518,8 @@ body {
 .smile-stage--dissolve .smile-stage__decor[data-decor-stages~="idle"],
 .smile-stage--dissolve .smile-stage__decor[data-decor-stages~="face"],
 .smile-stage--dissolve .smile-stage__decor[data-decor-stages~="line"],
-.smile-stage--dissolve:not(.smile-stage--stickers-curtain) .smile-stage__decor[data-decor-stages~="stickers"] {
+.smile-stage--dissolve:not(.smile-stage--stickers-curtain):not(.smile-stage--stickers-in):not(.smile-stage--stickers-out)
+  .smile-stage__decor[data-decor-stages~="stickers"] {
   opacity: 0 !important;
   transition: opacity 0.9s var(--ease-dissolve);
 }

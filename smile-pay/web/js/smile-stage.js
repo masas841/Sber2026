@@ -19,11 +19,11 @@ import {
   TEXT_PATH_META,
   TEXT,
   mapBox,
-} from "./figma-layout.js?v=20260612-qr-decor-anim";
+} from "./figma-layout.js?v=20260612-qr-sticker-fill-2";
 import { applyCamVars, getCamHoleCanvas504 } from "./cam-geometry.js";
 
 const ASSET_BASE = "/static/assets/figma";
-const ASSET_VERSION = "20260612-qr-decor-anim";
+const ASSET_VERSION = "20260612-qr-sticker-fill-2";
 
 export const STAGES = ["idle", "face", "line", "stickers", "qr"];
 
@@ -44,8 +44,8 @@ const LINE_TYPEWRITER = {
   duration: 1150,
 };
 
-const STICKERS_IN_MS = 1000;
-const STICKERS_OUT_MS = 1000;
+const STICKERS_IN_MS = 1250;
+const STICKERS_OUT_MS = 1200;
 const STICKER_DECOR = ALL_DECOR.filter((item) => item.stages.includes("stickers"));
 
 export { DEFAULT_COPY as COPY };
@@ -84,7 +84,14 @@ function decorNode(item, index) {
   }
   const stickerIndex = STICKER_DECOR.indexOf(item);
   if (stickerIndex >= 0) {
+    wrap.style.setProperty("--sticker-i", String(stickerIndex));
     wrap.style.setProperty("--decor-out-i", String(STICKER_DECOR.length - stickerIndex - 1));
+    const dx = box.left + box.width / 2 - SIZE / 2;
+    const dy = box.top + box.height / 2 - SIZE / 2;
+    const len = Math.hypot(dx, dy) || 1;
+    wrap.style.setProperty("--fly-x", px((dx / len) * 220));
+    wrap.style.setProperty("--fly-y", px((dy / len) * 220));
+    wrap.style.setProperty("--fly-rot", `${stickerIndex % 2 ? -18 : 18}deg`);
   }
   placeBox(wrap, box, item.rotate ?? 0);
 
@@ -486,20 +493,25 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
     if (root.dataset.stage !== "face") updateBottomLine(root.dataset.stage);
   }
 
-  function setStage(stage) {
+  function setStage(stage, { preserveStickerCurtain = false } = {}) {
     if (!STAGES.includes(stage)) return;
     clearTimer();
     clearTypewriter();
     clearHoldTextTimer();
-    root.classList.remove(
+    const resetClasses = [
       "smile-stage--cam-open",
       "smile-stage--line-expanded",
-      "smile-stage--stickers-in",
-      "smile-stage--stickers-out",
-      "smile-stage--stickers-curtain",
       "smile-stage--dissolve",
       "smile-stage--smile-hold-active",
-    );
+    ];
+    if (!preserveStickerCurtain) {
+      resetClasses.push(
+        "smile-stage--stickers-in",
+        "smile-stage--stickers-out",
+        "smile-stage--stickers-curtain",
+      );
+    }
+    root.classList.remove(...resetClasses);
     updateSmileHoldDecor(0);
     root.dataset.stage = stage;
     syncShell(stage);
@@ -546,11 +558,11 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
         timer = setTimeout(() => {
           root.classList.remove("smile-stage--stickers-curtain", "smile-stage--stickers-out");
           timer = setTimeout(() => {
-            root.classList.add("smile-stage--stickers-curtain");
-            requestAnimationFrame(() => root.classList.add("smile-stage--stickers-in"));
+            root.classList.remove("smile-stage--stickers-curtain", "smile-stage--stickers-in", "smile-stage--stickers-out");
+            void root.offsetWidth;
+            root.classList.add("smile-stage--stickers-in");
             timer = setTimeout(() => {
-              setStage("idle");
-              root.classList.add("smile-stage--stickers-curtain", "smile-stage--stickers-in");
+              setStage("idle", { preserveStickerCurtain: true });
               requestAnimationFrame(() => root.classList.add("smile-stage--stickers-out"));
               timer = setTimeout(() => {
                 root.classList.remove("smile-stage--stickers-curtain", "smile-stage--stickers-in", "smile-stage--stickers-out");
