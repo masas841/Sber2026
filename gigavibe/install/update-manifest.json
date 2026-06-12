@@ -482,8 +482,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "3c35928714d0fd2edf55e26d831654c3ff458fc0db13c1427584de411b7e46a1",
-      "size": 1592
+      "sha256": "f15a36a3d46cd8e1833e46e68aa04321d2997709fd1ce06dc56fc08dc6c03f74",
+      "size": 1543
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -677,8 +677,8 @@
     },
     {
       "path": "scripts/build_update_manifest.py",
-      "sha256": "ec17082af9b2d9fe6762f5b34f608751a459f3e802c1054f2ced6607843c2191",
-      "size": 2793
+      "sha256": "ad0b5564315105817a15f8bdb701fe0fd3a62a20acba9e046204f8dba9ad2f8a",
+      "size": 2809
     },
     {
       "path": "scripts/check_onnx_cuda.py",

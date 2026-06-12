@@ -52,6 +52,7 @@ TEXT_SUFFIXES = {
     ".bat",
     ".cmd",
     ".css",
+    ".example",
     ".html",
     ".js",
     ".json",
