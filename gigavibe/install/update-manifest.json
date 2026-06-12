@@ -1361,6 +1361,16 @@
       "size": 3353
     },
     {
+      "path": "web/assets/figma/ui/logo-ellipse-28862.svg",
+      "sha256": "0584430ef7058e8236f25e68550608bf8bb6ee1c1bc3d2b16df0c0e4a820bbe8",
+      "size": 1195
+    },
+    {
+      "path": "web/assets/figma/ui/logo-ellipse-28863.svg",
+      "sha256": "7ced869e734db8259b695dcd479bab29d1f62fc751d87a32401e9620a1842bd1",
+      "size": 1197
+    },
+    {
       "path": "web/assets/print/gigavibe-frame-10x15.png",
       "sha256": "3ffb8582e8dbf26b5372227f8ee0b1e75b412d589cbdd831ae61f5ff334ceec5",
       "size": 75950
@@ -1457,8 +1467,8 @@
     },
     {
       "path": "web/index.html",
-      "sha256": "da25d379e3e26598f49f31663c6ee284bdc51b33f8803b75a7fafb6213af0d65",
-      "size": 4641
+      "sha256": "b7288018393c9bbc1b9d512f29a54618b18bd82439ceb85e40fe52a57cb4170a",
+      "size": 4706
     },
     {
       "path": "web/overlay-sprites.js",
@@ -1472,8 +1482,8 @@
     },
     {
       "path": "web/style.css",
-      "sha256": "4c4cbc13b49bc61433064b06260029cd7da73b9cfa526dbc4e5dd4cd10af6389",
-      "size": 12124
+      "sha256": "f884ffc5ae4e592e578db299ffd8a29191820e08c9d519e9e80321c38b0ac20b",
+      "size": 12950
     }
   ],
   "root": "gigavibe",

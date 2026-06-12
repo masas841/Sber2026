@@ -121,6 +121,45 @@ body {
   transition: left 0.45s ease, top 0.45s ease, width 0.45s ease, height 0.45s ease;
 }
 
+.kiosk-start-logo-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.kiosk-start-logo-glow::before,
+.kiosk-start-logo-glow::after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.kiosk-start-logo-glow::before {
+  left: 207.27px;
+  top: 104.95px;
+  width: 609.262px;
+  height: 371.383px;
+  background-image: url("/static/assets/figma/ui/logo-ellipse-28862.svg");
+}
+
+.kiosk-start-logo-glow::after {
+  left: 172px;
+  top: 123px;
+  width: 625.066px;
+  height: 381.017px;
+  background-image: url("/static/assets/figma/ui/logo-ellipse-28863.svg");
+}
+
+.shell[data-screen="start"] .kiosk-start-logo-glow {
+  opacity: 1;
+}
+
 .kiosk-logo-backplate {
   position: absolute;
   left: 178px;
@@ -594,10 +633,10 @@ button:disabled {
   width: 704px;
   height: 567px;
   z-index: 1;
-  display: none;
+  display: block;
   border-radius: 35px;
-  background: transparent;
-  backdrop-filter: none;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(17px);
 }
 
 .result-portrait-wrap {
