@@ -6,7 +6,6 @@
   --soft-blue: #72aedf;
   --stage: 672px;
   --app-scale: 0.8;
-  --app-offset-y: -15px;
   --font-display: "SB Sans Display BETA2", "SB Sans Display", "Arial Black", system-ui, sans-serif;
   --font-text: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
 }
@@ -186,7 +185,7 @@ body {
   inset: 0;
   display: none;
   overflow: hidden;
-  transform: translateY(var(--app-offset-y)) scale(var(--app-scale));
+  transform: scale(var(--app-scale));
   transform-origin: center;
 }
 
@@ -1287,7 +1286,7 @@ body {
 .insured-stamp--idle {
   left: 222px;
   right: auto;
-  top: 512px;
+  top: 462px;
   z-index: 16;
   width: 340px;
   padding: 17px 24px 23px;
