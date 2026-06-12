@@ -2,6 +2,7 @@
 const DEFAULT_DURATION = 59;
 const THREAT_ASSET = "/static/assets/figma/threats/";
 const THREAT_ASSET_VERSION = "figma-export-2";
+const THREAT_FALL_SPEED_MULTIPLIER = 3;
 
 const THREAT_LAYOUTS = [
   {
@@ -610,7 +611,7 @@ function updateThreat(threat, now, dt) {
     return;
   }
 
-  threat.y += threat.speed * dt;
+  threat.y += threat.speed * THREAT_FALL_SPEED_MULTIPLIER * dt;
   const sway = Math.sin(now / 1000 * threat.freq + threat.seed) * threat.sway;
   const rotate = threat.rotate + Math.sin(now / 900 + threat.seed) * 8;
   const x = Math.max(-40, Math.min(STAGE - threat.w + 40, threat.x + sway));
