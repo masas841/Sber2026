@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "f6ab8f859be84ab67adcb0f9890fc7a94e7510f31548c685d27e0407a47a9cc1",
-      "size": 4533
+      "sha256": "abbbfb53d71d86110e6b7ac598be7e3144935fd691d70feee7191be267e03ee7",
+      "size": 4592
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "57a7f4804e356c62fa3803c91af6297606931690ac6c6a3f9e9f4d696d3fc641",
-      "size": 20404
+      "sha256": "800bfaccccf0a220a2a8a98b18d557629fbe350f3d0122f420693038a89bdaf6",
+      "size": 20498
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -177,8 +177,8 @@
     },
     {
       "path": "app/output_dispatch.py",
-      "sha256": "f3edfa3a20866e3059fecf854df1ac62ff0c201331908646fe14c5bead4ef285",
-      "size": 7468
+      "sha256": "ad54c06f6d403f3762487f1ce0ed0f96328b4a52de9a047018085dc8f64b6b8e",
+      "size": 11118
     },
     {
       "path": "app/pipeline.py",
@@ -482,8 +482,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "f15a36a3d46cd8e1833e46e68aa04321d2997709fd1ce06dc56fc08dc6c03f74",
-      "size": 1543
+      "sha256": "a4c25d70baa84a8082b8f36244df7bc58a0b233608f2663dae121d11474bed2b",
+      "size": 1596
     },
     {
       "path": "install/Install-Deps.ps1",

@@ -326,6 +326,9 @@ class Settings(BaseSettings):
     print_only_images: bool = True
     print_after_upload: bool = True
     print_timeout_sec: float = 120.0
+    print_width_mm: float = 100.0
+    print_height_mm: float = 150.0
+    print_dpi: int = 300
     # Не останавливать job при сбое upload/print (киоск продолжит показ QR)
     output_dispatch_fail_open: bool = True
 

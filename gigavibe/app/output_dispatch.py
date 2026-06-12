@@ -6,10 +6,13 @@ import logging
 import mimetypes
 import subprocess
 import sys
+import tempfile
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING
+
+from PIL import Image, ImageOps
 
 from app.config import settings
 from app.qr_util import build_download_url
@@ -63,6 +66,114 @@ def _default_printer_name() -> str | None:
     return name or None
 
 
+def _photo_print_path(output_path: Path) -> Path:
+    width_px = max(1, round(settings.print_width_mm / 25.4 * settings.print_dpi))
+    height_px = max(1, round(settings.print_height_mm / 25.4 * settings.print_dpi))
+
+    with Image.open(output_path) as image:
+        prepared = ImageOps.fit(
+            image.convert("RGB"),
+            (width_px, height_px),
+            method=Image.Resampling.LANCZOS,
+            centering=(0.5, 0.5),
+        )
+        tmp = tempfile.NamedTemporaryFile(
+            prefix="gigavibe-print-",
+            suffix=".jpg",
+            delete=False,
+        )
+        tmp_path = Path(tmp.name)
+        tmp.close()
+        prepared.save(
+            tmp_path,
+            "JPEG",
+            quality=95,
+            subsampling=0,
+            dpi=(settings.print_dpi, settings.print_dpi),
+        )
+        return tmp_path
+
+
+def _print_image_gdi(output_path: Path, printer: str) -> None:
+    paper_width = max(1, round(settings.print_width_mm / 25.4 * 100))
+    paper_height = max(1, round(settings.print_height_mm / 25.4 * 100))
+    script = r"""
+param(
+    [Parameter(Mandatory = $true)][string]$ImagePath,
+    [Parameter(Mandatory = $true)][string]$PrinterName,
+    [Parameter(Mandatory = $true)][int]$PaperWidth,
+    [Parameter(Mandatory = $true)][int]$PaperHeight
+)
+$ErrorActionPreference = "Stop"
+Add-Type -AssemblyName System.Drawing
+
+$doc = New-Object System.Drawing.Printing.PrintDocument
+$doc.PrinterSettings.PrinterName = $PrinterName
+$doc.DocumentName = "GIGAvibe 10x15 photo"
+$doc.OriginAtMargins = $false
+$doc.DefaultPageSettings.Landscape = $false
+$doc.DefaultPageSettings.Margins = New-Object System.Drawing.Printing.Margins(0, 0, 0, 0)
+$doc.DefaultPageSettings.PaperSize = New-Object System.Drawing.Printing.PaperSize("10x15 borderless", $PaperWidth, $PaperHeight)
+
+$image = [System.Drawing.Image]::FromFile($ImagePath)
+$handler = [System.Drawing.Printing.PrintPageEventHandler]{
+    param($sender, $event)
+    $event.Graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $event.Graphics.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+    $event.Graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+    $event.Graphics.DrawImage($image, $event.PageBounds)
+    $event.HasMorePages = $false
+}
+$doc.add_PrintPage($handler)
+try {
+    $doc.Print()
+} finally {
+    $doc.remove_PrintPage($handler)
+    $image.Dispose()
+    $doc.Dispose()
+}
+"""
+    script_file = tempfile.NamedTemporaryFile(
+        mode="w",
+        encoding="utf-8",
+        prefix="gigavibe-print-",
+        suffix=".ps1",
+        delete=False,
+    )
+    script_path = Path(script_file.name)
+    try:
+        script_file.write(script)
+        script_file.close()
+        proc = subprocess.run(
+            [
+                "powershell",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                str(script_path),
+                "-ImagePath",
+                str(output_path),
+                "-PrinterName",
+                printer,
+                "-PaperWidth",
+                str(paper_width),
+                "-PaperHeight",
+                str(paper_height),
+            ],
+            capture_output=True,
+            timeout=settings.print_timeout_sec,
+            check=False,
+        )
+    finally:
+        script_file.close()
+        script_path.unlink(missing_ok=True)
+
+    if proc.returncode != 0:
+        err = (proc.stderr or proc.stdout or b"").decode("utf-8", errors="replace").strip()
+        raise RuntimeError(err or f"PrintDocument exit {proc.returncode}")
+
+
 def print_image(output_path: Path, printer_name: str | None = None) -> None:
     if sys.platform != "win32":
         raise RuntimeError("Печать поддерживается только на Windows")
@@ -81,16 +192,19 @@ def print_image(output_path: Path, printer_name: str | None = None) -> None:
     if not printer:
         raise RuntimeError("Принтер по умолчанию не найден")
 
-    proc = subprocess.run(
-        ["mspaint.exe", "/pt", str(path), printer],
-        capture_output=True,
-        timeout=settings.print_timeout_sec,
-        check=False,
+    print_path = _photo_print_path(path)
+    try:
+        _print_image_gdi(print_path, printer)
+    finally:
+        print_path.unlink(missing_ok=True)
+    logger.info(
+        "print: file=%s printer=%s paper=%.1fx%.1fmm dpi=%s",
+        path.name,
+        printer,
+        settings.print_width_mm,
+        settings.print_height_mm,
+        settings.print_dpi,
     )
-    if proc.returncode != 0:
-        err = (proc.stderr or proc.stdout or b"").decode("utf-8", errors="replace").strip()
-        raise RuntimeError(err or f"mspaint exit {proc.returncode}")
-    logger.info("print: file=%s printer=%s", path.name, printer)
 
 
 def should_print_file(path: Path) -> bool:
