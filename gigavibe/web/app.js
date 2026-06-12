@@ -360,7 +360,7 @@ function show(name) {
     screenHideTimers.set(el, hideTimer);
   });
   onCaptureScreen = name === "capture";
-  setCaptureOverlaysVisible(name === "capture");
+  setCaptureOverlaysVisible(name === "start" || name === "capture");
   setResultOverlaysVisible(name === "result");
   if (name === "result") relayoutResultOverlays();
   playIdleVideo();

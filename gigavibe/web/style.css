@@ -123,44 +123,33 @@ body {
 
 .kiosk-logo-backplate {
   position: absolute;
-  left: 92px;
-  top: -81px;
+  left: 178px;
+  top: 406px;
   z-index: 7;
-  width: 777px;
-  height: 248px;
+  width: 698px;
+  height: 407px;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.45s ease;
+  background: url("/static/assets/figma/ui/logo-backplate.svg") center / 100% 100% no-repeat;
+  transition: opacity 0.45s ease, left 0.45s ease, top 0.45s ease, width 0.45s ease, height 0.45s ease;
 }
 
-.kiosk-logo-backplate::before,
-.kiosk-logo-backplate::after {
-  position: absolute;
-  content: "";
-  pointer-events: none;
-}
-
-.kiosk-logo-backplate::before {
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 28% 55%, rgba(255, 255, 255, 0.54) 0 18%, rgba(255, 255, 255, 0.18) 36%, transparent 68%),
-    radial-gradient(ellipse at 51% 53%, rgba(123, 239, 217, 0.42) 0 24%, rgba(123, 239, 217, 0.14) 44%, transparent 72%),
-    radial-gradient(ellipse at 70% 62%, rgba(166, 255, 0, 0.36) 0 17%, rgba(166, 255, 0, 0.12) 34%, transparent 64%);
-  filter: blur(8px);
-}
-
-.kiosk-logo-backplate::after {
-  left: 300px;
-  top: 56px;
-  width: 324px;
-  height: 130px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.62) 0 36%, rgba(255, 255, 255, 0.24) 57%, transparent 78%);
-  backdrop-filter: blur(12px);
-  filter: blur(2px);
+.shell[data-screen="start"] .kiosk-logo-backplate {
+  left: 178px;
+  top: 406px;
+  width: 698px;
+  height: 407px;
+  z-index: 1;
+  opacity: 1;
 }
 
 .shell[data-screen="capture"] .kiosk-logo-backplate,
 .shell[data-screen="processing"] .kiosk-logo-backplate {
+  left: 269px;
+  top: -84px;
+  width: 470px;
+  height: 274px;
+  z-index: 7;
   opacity: 1;
 }
 
@@ -322,14 +311,35 @@ body {
   z-index: 4;
 }
 
-.capture-overlay-layer .overlay-sprite {
+.capture-overlay-layer .overlay-flower-wrap,
+.result-overlay-layer .overlay-flower-wrap {
   position: absolute;
-  object-fit: contain;
-  transform-origin: center center;
-  will-change: transform;
-  animation: overlay-float var(--dur, 5s) ease-in-out infinite alternate;
-  animation-delay: var(--delay, 0s);
-  filter: drop-shadow(0 8px 20px rgba(15, 31, 23, 0.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.capture-overlay-layer .overlay-flower-transform,
+.result-overlay-layer .overlay-flower-transform {
+  position: relative;
+  flex: none;
+}
+
+.capture-overlay-layer .overlay-flower-crop,
+.result-overlay-layer .overlay-flower-crop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.capture-overlay-layer .overlay-flower,
+.result-overlay-layer .overlay-flower {
+  position: absolute;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes overlay-float {
@@ -577,16 +587,6 @@ button:disabled {
   z-index: 4;
 }
 
-.result-overlay-layer .overlay-sprite {
-  position: absolute;
-  object-fit: contain;
-  transform-origin: center center;
-  will-change: transform;
-  animation: overlay-float var(--dur, 5s) ease-in-out infinite alternate;
-  animation-delay: var(--delay, 0s);
-  filter: drop-shadow(0 8px 20px rgba(15, 31, 23, 0.12));
-}
-
 .kiosk-result .result-bg-fallback {
   position: absolute;
   left: 161px;
@@ -594,10 +594,10 @@ button:disabled {
   width: 704px;
   height: 567px;
   z-index: 1;
-  display: block;
+  display: none;
   border-radius: 35px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(17px);
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .result-portrait-wrap {

@@ -33,6 +33,7 @@ EXCLUDE_PARTS = {
     ("data", "uploads"),
     ("install", "redist"),
     ("install", "wheels"),
+    ("web", "assets", "figma", "_context"),
 }
 EXCLUDE_SUFFIXES = {
     ".onnx",

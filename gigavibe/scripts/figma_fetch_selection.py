@@ -19,9 +19,28 @@ def read_sse(resp) -> dict | None:
         if not chunk:
             break
         buf += chunk.decode("utf-8", "replace")
-    for line in buf.splitlines():
+    event_lines: list[str] = []
+    for line in buf.replace("\r\n", "\n").replace("\r", "\n").split("\n"):
         if line.startswith("data: "):
-            return json.loads(line[6:])
+            event_lines.append(line[6:])
+        elif line == "" and event_lines:
+            payload = "\n".join(event_lines).replace("\u2028", "\\n").replace("\u2029", "\\n")
+            try:
+                return json.loads(payload)
+            except json.JSONDecodeError:
+                OUT.mkdir(parents=True, exist_ok=True)
+                (OUT / "selection_mcp_raw.sse").write_text(buf, encoding="utf-8")
+                (OUT / "selection_mcp_payload.txt").write_text(payload, encoding="utf-8")
+                raise
+    if event_lines:
+        payload = "\n".join(event_lines).replace("\u2028", "\\n").replace("\u2029", "\\n")
+        try:
+            return json.loads(payload)
+        except json.JSONDecodeError:
+            OUT.mkdir(parents=True, exist_ok=True)
+            (OUT / "selection_mcp_raw.sse").write_text(buf, encoding="utf-8")
+            (OUT / "selection_mcp_payload.txt").write_text(payload, encoding="utf-8")
+            raise
     return None
 
 
@@ -126,6 +145,32 @@ def main() -> int:
             print(f"asset URLs: {len(set(urls))}")
     except Exception as e:
         print(f"design_context skipped: {e}", file=sys.stderr)
+
+    for node_id, label in [
+        ("14:12", "reference_giga0"),
+        ("14:37", "logo"),
+        ("14:41", "logo_backplate"),
+        ("14:47", "tagline_pill"),
+        ("14:49", "front_flower_left"),
+        ("14:50", "front_flower_right"),
+    ]:
+        try:
+            ctx = call_tool(
+                sid,
+                h,
+                "get_design_context",
+                {
+                    "nodeId": node_id,
+                    "clientLanguages": "html,css,javascript",
+                    "clientFrameworks": "vanilla",
+                },
+                100 + len(label),
+            )
+            ctx_text = text_from_result(ctx)
+            (OUT / f"selection_{label}_design_context.txt").write_text(ctx_text, encoding="utf-8")
+            print(f"{label}: {len(ctx_text)} chars")
+        except Exception as e:
+            print(f"{label} skipped: {e}", file=sys.stderr)
 
     return 0
 
