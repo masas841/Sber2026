@@ -1,0 +1,251 @@
+const img2 = "http://localhost:3845/assets/180918f8da7d62fb8a78a79158770294078c06fe.png";
+const img11 = "http://localhost:3845/assets/00b04727579141737620deeacb25fa19e92ae1f5.png";
+const imgEllipse29134 = "http://localhost:3845/assets/40b73196591e6164b318bfe733af0037bbf17503.png";
+const imgUnion = "http://localhost:3845/assets/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg";
+const imgUnion1 = "http://localhost:3845/assets/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg";
+const imgEllipse29144 = "http://localhost:3845/assets/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg";
+const imgEllipse29132 = "http://localhost:3845/assets/f75f19146b3ba0ea023643998afcdecf40f41193.svg";
+const imgEllipse29133 = "http://localhost:3845/assets/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg";
+const imgEllipse29135 = "http://localhost:3845/assets/205fe64e35cead6ed9d9800cdf9d7094b60aa2dc.svg";
+const imgEllipse29136 = "http://localhost:3845/assets/15ad97e218886afc1e4a1b57a085e74c80345146.svg";
+const imgEllipse29137 = "http://localhost:3845/assets/c8a2a7ccf363a7456714b58ddfd7d65b76c03980.svg";
+const imgEllipse29140 = "http://localhost:3845/assets/503703075c99a444dc725111aec539fa5ee7c9ca.svg";
+const imgEllipse29141 = "http://localhost:3845/assets/4c0856158c6bc72fb550d2c432c1b751848987a5.svg";
+const imgEllipse29138 = "http://localhost:3845/assets/74346d28e627b8d65b51c03a19becf42a38e08e2.svg";
+const imgEllipse29139 = "http://localhost:3845/assets/1b06b60199daa6844c7e6ccb990877d12f275058.svg";
+const imgEllipse29142 = "http://localhost:3845/assets/e6a41f52c1e7801e6db7dbe03837f2a4eedf0ca6.svg";
+const imgEllipse29143 = "http://localhost:3845/assets/b748448e26c1434b84554afd38fadc5df9bdccd7.svg";
+const imgEllipse29145 = "http://localhost:3845/assets/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg";
+const imgEllipse29146 = "http://localhost:3845/assets/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg";
+const imgStar19 = "http://localhost:3845/assets/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg";
+const imgVector234257108Stroke = "http://localhost:3845/assets/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg";
+const imgSberinsuranceH = "http://localhost:3845/assets/7b14360a994d599902eb81b23613e97fc2d44b8b.svg";
+const imgStar20 = "http://localhost:3845/assets/c7c4fcb5ff38869ca35da29f0306e5e722d206ea.svg";
+const imgStar21 = "http://localhost:3845/assets/e70745f3b1b77cd8d4560ba5b5b5abfb037f00f4.svg";
+
+export default function IPadMini() {
+  return (
+    <div className="relative size-full" data-node-id="4:191" style={{ backgroundImage: "linear-gradient(184.484deg, rgb(0, 173, 238) 11.392%, rgb(255, 255, 255) 39.871%)" }} data-name="iPad mini 8.3 - 1">
+      <div className="absolute flex h-[423.681px] items-center justify-center left-[19px] top-[-201px] w-[423.691px]">
+        <div className="flex-none rotate-[92.61deg]">
+          <div className="h-[405.629px] relative w-[405.619px]" data-node-id="4:192" data-name="Union">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUnion} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[423.681px] items-center justify-center left-[832px] top-[55px] w-[423.691px]">
+        <div className="flex-none rotate-[92.61deg]">
+          <div className="h-[405.629px] relative w-[405.619px]" data-node-id="4:193" data-name="Union">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUnion} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[246.951px] items-center justify-center left-[529px] top-[125px] w-[246.957px]">
+        <div className="flex-none rotate-[92.61deg]">
+          <div className="h-[236.43px] relative w-[236.424px]" data-node-id="4:194" data-name="Union">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgUnion1} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[1956.636px] items-center justify-center left-[-233px] top-[-399px] w-[1870.732px]">
+        <div className="flex-none rotate-[54.36deg]">
+          <div className="blur-[10.1px] h-[1184.686px] relative w-[1558.189px]" data-node-id="4:195" data-name="Трава 2">
+            <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={img2} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[128px] left-[865px] top-[434px] w-[296px]" data-node-id="4:196">
+        <div className="absolute inset-[-80.78%_-34.93%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse29144} />
+        </div>
+      </div>
+      <div className="absolute flex h-[1956.636px] items-center justify-center left-[-628px] top-[-92px] w-[1870.732px]">
+        <div className="flex-none rotate-[54.36deg]">
+          <div className="blur-[10.1px] h-[1184.686px] relative w-[1558.189px]" data-node-id="4:197" data-name="Трава 3">
+            <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={img2} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[728px] left-[280px] top-[356px] w-[704px]" data-node-id="4:198">
+        <div className="absolute inset-[-41.95%_-43.38%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse29132} />
+        </div>
+      </div>
+      <div className="absolute h-[728px] left-[-9px] top-[316px] w-[730px]" data-node-id="4:199">
+        <div className="absolute inset-[-41.95%_-41.84%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse29133} />
+        </div>
+      </div>
+      <div className="absolute contents left-[-259px] top-[213px]" data-node-id="4:200">
+        <div className="absolute left-[-259px] size-[934px] top-[213px]" data-node-id="4:201" data-name="шар1 1">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img11} />
+        </div>
+        <div className="absolute contents left-[-259px] top-[213px]" data-node-id="4:202" data-name="Mask group">
+          <div className="absolute h-[649px] left-[206px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-465px_-197px] mask-size-[934px_934px] mix-blend-soft-light top-[410px] w-[496px]" data-node-id="4:204" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+            <div className="absolute inset-[-18.69%_-24.46%]">
+              <img alt="" className="block max-w-none size-full" src={imgEllipse29135} />
+            </div>
+          </div>
+          <div className="absolute flex h-[700.409px] items-center justify-center left-[339.1px] mix-blend-soft-light top-[384.3px] w-[442.798px]">
+            <div className="flex-none rotate-[15.15deg]">
+              <div className="h-[649px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-598.101px_-171.296px] mask-size-[934px_934px] relative w-[283px]" data-node-id="4:205" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+                <div className="absolute inset-[-18.69%_-42.86%]">
+                  <img alt="" className="block max-w-none size-full" src={imgEllipse29136} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute h-[545px] left-[479px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-738px_-285px] mask-size-[934px_934px] top-[498px] w-[213px]" data-node-id="4:206" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+            <div className="absolute inset-[-22.26%_-56.95%]">
+              <img alt="" className="block max-w-none size-full" src={imgEllipse29137} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute contents left-[550px] top-[372px]" data-node-id="4:207">
+        <div className="absolute left-[550px] size-[934px] top-[372px]" data-node-id="4:208" data-name="шар1 2">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img11} />
+        </div>
+        <div className="absolute contents left-[550px] top-[372px]" data-node-id="4:209" data-name="Mask group">
+          <div className="absolute contents left-[419px] top-[435px]" data-node-id="4:211">
+            <div className="absolute left-[492px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[58px_-184px] mask-size-[934px_934px] opacity-56 size-[478px] top-[556px]" data-node-id="4:212" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+              <div className="absolute inset-[-54.14%]">
+                <img alt="" className="block max-w-none size-full" src={imgEllipse29140} />
+              </div>
+            </div>
+            <div className="absolute flex h-[541.386px] items-center justify-center left-[419px] top-[467px] w-[472.495px]">
+              <div className="flex-none rotate-[32.27deg]">
+                <div className="h-[478px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[130.999px_-95px] mask-size-[934px_934px] opacity-56 relative w-[257px]" data-node-id="4:213" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+                  <div className="absolute inset-[-54.14%_-100.7%]">
+                    <img alt="" className="block max-w-none size-full" src={imgEllipse29141} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute flex h-[109.414px] items-center justify-center left-[698.4px] top-[550.87px] w-[289.137px]">
+              <div className="flex-none rotate-[-9.84deg]">
+                <div className="h-[62px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-148.401px_-178.874px] mask-size-[934px_934px] opacity-56 relative w-[282.699px]" data-node-id="4:214" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+                  <div className="absolute inset-[-128.87%_-28.26%]">
+                    <img alt="" className="block max-w-none size-full" src={imgEllipse29138} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute flex h-[97.395px] items-center justify-center left-[628px] top-[558px] w-[287.052px]">
+              <div className="flex-none rotate-[-9.84deg]">
+                <div className="h-[49.802px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-78px_-186px] mask-size-[934px_934px] opacity-56 relative w-[282.699px]" data-node-id="4:215" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+                  <div className="absolute inset-[-160.44%_-28.26%]">
+                    <img alt="" className="block max-w-none size-full" src={imgEllipse29139} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute flex h-[463.528px] items-center justify-center left-[489px] top-[435px] w-[349.175px]">
+              <div className="flex-none rotate-[32.27deg]">
+                <div className="h-[478px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[61px_-63px] mask-size-[934px_934px] opacity-56 relative w-[111.159px]" data-node-id="4:216" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+                  <div className="absolute inset-[-54.14%_-232.82%]">
+                    <img alt="" className="block max-w-none size-full" src={imgEllipse29142} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute flex h-[62.081px] items-center justify-center left-[764px] mix-blend-multiply top-[571px] w-[164.055px]">
+            <div className="flex-none rotate-[-9.84deg]">
+              <div className="h-[35.178px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-214px_-199px] mask-size-[934px_934px] relative w-[160.402px]" data-node-id="4:217" style={{ maskImage: `url("${imgEllipse29134}")` }}>
+                <div className="absolute inset-[-62.25%_-13.65%]">
+                  <img alt="" className="block max-w-none size-full" src={imgEllipse29143} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute contents left-[28px] top-[28px]" data-node-id="4:218">
+        <div className="-translate-x-1/2 absolute bg-white h-[53px] left-[calc(50%-413.5px)] rounded-[44px] top-[28px] w-[250px]" data-node-id="4:219" />
+        <p className="[word-break:break-word] absolute font-['SB_Sans_Text:Medium'] leading-[0.85] left-[calc(50%-483.5px)] not-italic text-[#122654] text-[29.631px] top-[41px] tracking-[-2.0742px] whitespace-nowrap" data-node-id="4:220">
+          Подключено
+        </p>
+        <div className="absolute left-[41px] size-[24px] top-[42px]" data-node-id="4:221">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse29145} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute h-[350px] left-[calc(50%+0.5px)] top-[633px] w-[1428px]" data-node-id="4:222">
+        <div className="absolute inset-[-94%_-23.04%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse29146} />
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute backdrop-blur-[16.6px] bg-[rgba(224,255,248,0.6)] h-[498px] left-[calc(50%+0.5px)] rounded-[44px] top-[100px] w-[730px]" data-node-id="4:223" />
+      <div className="absolute contents left-[226px] top-[409.24px]" data-node-id="4:224">
+        <div className="absolute bg-[#01d701] h-[159.38px] left-[226px] rounded-[33px] top-[409.24px] w-[682px]" data-node-id="4:225" />
+        <div className="-translate-x-1/2 -translate-y-1/2 [word-break:break-word] absolute flex flex-col font-['SB_Sans_Display_BETA2:Extended_Semibold'] justify-center leading-[0] left-[566.06px] not-italic text-[60.282px] text-center text-white top-[483.57px] whitespace-nowrap" data-node-id="4:226">
+          <p className="leading-[1.1]">застраховать</p>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[135.45px] size-[133.623px] top-[526.45px]">
+        <div className="flex-none rotate-[-8.5deg]">
+          <div className="relative size-[117.543px]" data-node-id="4:227">
+            <div className="absolute inset-[5.25%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar19} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[162.635px] items-center justify-center left-[821.68px] top-[42.03px] w-[186.187px]">
+        <div className="flex-none rotate-[-95.33deg]">
+          <div className="h-[173.267px] relative w-[147.179px]" data-node-id="4:228" data-name="Vector 234257108 (Stroke)">
+            <div className="absolute inset-[-5.66%_-4.76%_-4.04%_-4.76%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234257108Stroke} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="-translate-x-1/2 absolute contents left-[calc(50%-0.5px)] top-[247px]" data-node-id="4:229">
+        <div className="absolute bg-white h-[125.236px] left-[225px] opacity-50 rounded-[16.445px] top-[247px] w-[327.404px]" data-node-id="4:230" />
+        <div className="absolute bg-white h-[125.236px] left-[579.6px] opacity-50 rounded-[16.445px] top-[247px] w-[327.404px]" data-node-id="4:231" />
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%-175.94px)] lowercase not-italic text-[#122654] text-[43.625px] text-center top-[300.14px] tracking-[-3.0537px] w-[191.439px]" data-node-id="4:232">
+          000
+        </p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.75] left-[calc(50%+190.62px)] lowercase not-italic text-[#122654] text-[43.625px] text-center top-[300.14px] tracking-[-3.0537px] w-[191.439px]" data-node-id="4:233">
+          59 с
+        </p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.85] left-[calc(50%-175.62px)] lowercase not-italic text-[#122654] text-[18.742px] text-center top-[280.52px] tracking-[-1.3119px] w-[190.351px]" data-node-id="4:234">
+          ваш счёт:
+        </p>
+        <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.85] left-[calc(50%+190.94px)] lowercase not-italic text-[#122654] text-[18.742px] text-center top-[280.52px] tracking-[-1.3119px] w-[159.895px]" data-node-id="4:235">
+          таймер:
+        </p>
+      </div>
+      <div className="absolute inset-[18.15%_37.78%_78.39%_37.78%]" data-node-id="4:236" data-name="sberinsurance H">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSberinsuranceH} />
+      </div>
+      <div className="absolute flex items-center justify-center left-[789px] size-[75.676px] top-[55px]">
+        <div className="flex-none rotate-[-8.5deg]">
+          <div className="relative size-[66.569px]" data-node-id="4:256">
+            <div className="absolute inset-[0.69%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar20} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-[102.51px] size-[76.652px] top-[497.51px]">
+        <div className="flex-none rotate-[9.51deg]">
+          <div className="relative size-[66.569px]" data-node-id="4:257">
+            <div className="absolute inset-[0.69%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar21} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Display_BETA2:Extended_Semibold'] leading-[0.85] left-[calc(50%+5.5px)] lowercase not-italic text-[#122654] text-[44.902px] text-center top-[167px] tracking-[-3.1431px] w-[670px]" data-node-id="4:258">
+        защити свой вайб
+      </p>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 214.746 70.7244" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 2136140162">
+<path id="Vector 1473" d="M16.5893 20.5958L198.157 54.1351" stroke="var(--stroke-0, #13AFED)" stroke-width="33.1727" stroke-linecap="round"/>
+<g id="Vector 1472" filter="url(#filter0_f_3_11)">
+<path d="M19.862 12.9311L201.429 46.4704" stroke="var(--stroke-0, white)" stroke-opacity="0.5" stroke-width="8.34215" stroke-linecap="round"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_3_11" x="6.93096" y="0" width="207.43" height="59.4015" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="4.37963" result="effect1_foregroundBlur_3_11"/>
+</filter>
+</defs>
+</svg>

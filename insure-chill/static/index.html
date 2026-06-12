@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=672, initial-scale=1" />
   <title>Застрахуй свой чилл</title>
-  <link rel="stylesheet" href="/static/css/game.css?v=center-scale" />
+  <link rel="stylesheet" href="/static/css/game.css?v=scale-80" />
 </head>
 <body>
   <main id="stage" class="stage" data-phase="idle">
@@ -17,7 +17,7 @@
       <img class="logo logo--idle" src="/static/assets/figma/logo-sberinsurance-game.svg" alt="СберСтрахование" />
       <div class="title-cloud title-cloud--idle">
         <img src="/static/assets/figma/title-star-game.svg" alt="" />
-        <span>застрахуй<br />свой чилл</span>
+        <span>защити<br />свой вайб</span>
       </div>
 
       <div class="idle-threat idle-threat--fist breathe breathe--slow">
@@ -51,12 +51,17 @@
       </div>
       <div class="timer-game">
         <span>таймер</span>
-        <strong id="timerValue">59 c</strong>
+        <strong id="timerValue">59 с</strong>
       </div>
 
       <div id="threatLayer" class="threat-layer"></div>
       <img id="protector" class="protector protector--game" src="/static/assets/figma/small-decor-start.svg" alt="" />
-      <div id="hitFlash" class="hit-flash">застраховано</div>
+      <div id="hitFlash" class="hit-flash" aria-live="polite">
+        <img class="hit-flash__logo" src="/static/assets/figma/threats/raw/badge-home-01.svg" alt="" />
+        <span id="hitFlashText" class="hit-flash__text">защита квартиры и дома</span>
+        <img class="hit-flash__star hit-flash__star--top" src="/static/assets/figma/threats/raw/badge-home-02.svg" alt="" />
+        <img class="hit-flash__star hit-flash__star--bottom" src="/static/assets/figma/threats/raw/badge-home-03.svg" alt="" />
+      </div>
       <div id="debugLayer" class="debug-layer" aria-hidden="true"></div>
     </section>
 
@@ -105,6 +110,6 @@
     </section>
   </main>
 
-  <script type="module" src="/static/js/game.js?v=center-scale"></script>
+  <script type="module" src="/static/js/game.js?v=alpha-threat-assets"></script>
 </body>
 </html>

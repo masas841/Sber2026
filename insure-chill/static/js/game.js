@@ -1,104 +1,252 @@
 const STAGE = 672;
 const DEFAULT_DURATION = 59;
-const ASSET = "/static/assets/figma/";
+const THREAT_ASSET = "/static/assets/figma/threats/";
 
 const THREAT_LAYOUTS = [
   {
-    id: "nail-phone",
-    figma: "Group 2136141720",
-    className: "threat--nail",
-    src: "threat-nail-phone.png",
+    id: "flood",
+    figma: "Group 2136141821",
+    className: "threat--flood",
+    src: "raw/flood-01.png",
     labels: [
-      ["забивают", "pill--pink"],
-      ["телефон", "pill--pink"],
-      ["гвоздь", "pill--pink"],
+      ["соседский", "pill--pink"],
+      ["потоп", "pill--pink"],
     ],
-    w: 255,
-    h: 282,
+    badgeText: "защита квартиры и дома",
+    w: 225,
+    h: 230,
     startX: 28,
-    startY: -350,
-    speed: 92,
-    sway: 26,
+    startY: -300,
+    speed: 82,
+    sway: 30,
     freq: 1.15,
-    rotate: 25,
-    hit: { x: 45, y: 38, w: 168, h: 210 },
+    rotate: -8,
   },
   {
-    id: "water-drop",
-    figma: "Group 2136141721",
-    className: "threat--drop",
-    src: "threat-water-drop.png",
+    id: "fluffy-acrobat",
+    figma: "Group 2136141820",
+    className: "threat--fluffy-acrobat",
+    src: "raw/fluffy-acrobat-01.png",
     labels: [
-      ["капли", "pill--pink"],
-      ["воды", "pill--pink"],
+      ["пушистый", "pill--blue"],
+      ["акробат", "pill--blue"],
     ],
-    w: 260,
-    h: 255,
-    startX: 350,
-    startY: -540,
-    speed: 78,
-    sway: 34,
-    freq: 0.95,
-    rotate: 22,
-    hit: { x: 48, y: 40, w: 160, h: 174 },
+    badgeText: "защита животных",
+    w: 214,
+    h: 225,
+    startX: 404,
+    startY: -650,
+    speed: 88,
+    sway: 40,
+    freq: 1.18,
+    rotate: -12,
   },
   {
-    id: "cat-paw",
-    figma: "Group 2136141724",
-    className: "threat--paw",
-    src: "threat-cat-paw.png",
+    id: "toe-menace",
+    figma: "Group 2136141822",
+    className: "threat--toe-menace",
+    src: "raw/toe-menace-01.png",
     labels: [
-      ["кошачья лапа", "pill--blue"],
-      ["толкает", "pill--blue"],
-      ["телефон", "pill--blue"],
+      ["гроза", "pill--pink"],
+      ["всех", "pill--pink"],
+      ["мизинцев", "pill--pink"],
     ],
-    w: 215,
-    h: 215,
-    startX: 405,
-    startY: -770,
-    speed: 84,
-    sway: 42,
-    freq: 1.25,
-    rotate: -20,
-    hit: { x: 38, y: 50, w: 138, h: 132 },
+    badgeText: "защита от травм",
+    w: 205,
+    h: 244,
+    startX: 232,
+    startY: -1000,
+    speed: 94,
+    sway: 24,
+    freq: 1.08,
+    rotate: 8,
   },
   {
-    id: "fist",
-    figma: "Group 2136141737",
-    className: "threat--fist",
-    src: "threat-fist.png",
+    id: "fraud",
+    figma: "Group 2136141823",
+    className: "threat--fraud",
+    src: "raw/fraud-01.png",
     labels: [
-      ["прилетает", "pill--green pill--vertical"],
-      ["кулак", "pill--green"],
+      ["атака", "pill--green"],
+      ["мошенника", "pill--green"],
     ],
-    w: 235,
-    h: 235,
-    startX: 428,
-    startY: -980,
-    speed: 104,
-    sway: 28,
-    freq: 1.05,
-    rotate: -35,
-    hit: { x: 55, y: 48, w: 135, h: 142 },
+    badgeText: "защита денег",
+    w: 228,
+    h: 228,
+    startX: 430,
+    startY: -1350,
+    speed: 86,
+    sway: 36,
+    freq: 0.98,
+    rotate: 10,
   },
   {
     id: "soap-phone",
-    figma: "Group 2136141745",
-    className: "threat--soap",
-    src: "threat-soap-phone.png",
+    figma: "Group 2136141824",
+    className: "threat--soap-phone",
+    src: "raw/soap-phone-01.png",
     labels: [
-      ["телефон как мыло", "pill--pink"],
-      ["выскользнул", "pill--pink"],
+      ["телефон", "pill--pink"],
+      ["как мыло", "pill--pink"],
     ],
-    w: 245,
-    h: 205,
-    startX: 80,
-    startY: -1210,
-    speed: 88,
+    badgeText: "защита экрана",
+    w: 230,
+    h: 190,
+    startX: 76,
+    startY: -1700,
+    speed: 92,
     sway: 38,
-    freq: 1.35,
-    rotate: -26,
-    hit: { x: 28, y: 34, w: 178, h: 120 },
+    freq: 1.32,
+    rotate: -16,
+  },
+  {
+    id: "ghost-plane",
+    figma: "Group 2136141827",
+    className: "threat--ghost-plane",
+    src: "raw/ghost-plane-01.png",
+    labels: [
+      ["призрак", "pill--blue"],
+      ["самолёт", "pill--blue"],
+    ],
+    badgeText: "полис страхование путешественников",
+    w: 220,
+    h: 220,
+    startX: 334,
+    startY: -2050,
+    speed: 80,
+    sway: 44,
+    freq: 1.24,
+    rotate: -6,
+  },
+  {
+    id: "brick-gadget",
+    figma: "Group 2136141826",
+    className: "threat--brick-gadget",
+    src: "raw/brick-gadget-01.png",
+    labels: [
+      ["окирпичивание", "pill--pink"],
+      ["гаджета", "pill--pink"],
+    ],
+    badgeText: "защита экрана",
+    w: 206,
+    h: 213,
+    startX: 136,
+    startY: -2400,
+    speed: 100,
+    sway: 30,
+    freq: 1.05,
+    rotate: 8,
+  },
+  {
+    id: "dog-vacuum",
+    figma: "Group 2136141828",
+    className: "threat--dog-vacuum",
+    src: "raw/dog-vacuum-01.png",
+    labels: [
+      ["собака", "pill--blue"],
+      ["пылесос", "pill--blue"],
+    ],
+    badgeText: "полис питомец под защитой",
+    w: 215,
+    h: 228,
+    startX: 428,
+    startY: -2750,
+    speed: 90,
+    sway: 42,
+    freq: 0.9,
+    rotate: -10,
+  },
+  {
+    id: "micro-hater",
+    figma: "Group 2136141825",
+    className: "threat--micro-hater",
+    src: "raw/micro-hater-01.png",
+    labels: [["микро-хейтер", "pill--pink"]],
+    badgeText: "защита от клеща",
+    w: 190,
+    h: 251,
+    startX: 30,
+    startY: -3100,
+    speed: 96,
+    sway: 28,
+    freq: 1.18,
+    rotate: 4,
+  },
+  {
+    id: "slam-salto",
+    figma: "Group 2136141829",
+    className: "threat--slam-salto",
+    src: "raw/slam-salto-01.png",
+    labels: [
+      ["слэмовое", "pill--green"],
+      ["сальто", "pill--green"],
+    ],
+    badgeText: "защита от травм",
+    w: 235,
+    h: 204,
+    startX: 240,
+    startY: -3450,
+    speed: 108,
+    sway: 34,
+    freq: 1.0,
+    rotate: -8,
+  },
+  {
+    id: "lost-sneaker",
+    figma: "Group 2136141830",
+    className: "threat--lost-sneaker",
+    src: "raw/lost-sneaker-03.png",
+    labels: [
+      ["кроссовок", "pill--blue"],
+      ["потеряшка", "pill--blue"],
+    ],
+    badgeText: "защита багажа",
+    w: 248,
+    h: 188,
+    startX: 398,
+    startY: -3800,
+    speed: 84,
+    sway: 46,
+    freq: 1.28,
+    rotate: 11,
+  },
+  {
+    id: "bumper-kiss",
+    figma: "Group 2136141831",
+    className: "threat--bumper-kiss",
+    src: "raw/bumper-kiss-01.png",
+    labels: [
+      ["бамперный", "pill--green"],
+      ["поцелуй", "pill--green"],
+    ],
+    badgeText: "полис ОСАГО",
+    w: 250,
+    h: 167,
+    startX: 78,
+    startY: -4150,
+    speed: 102,
+    sway: 30,
+    freq: 1.08,
+    rotate: -5,
+  },
+  {
+    id: "pigeon-picasso",
+    figma: "Group 2136141833",
+    className: "threat--pigeon-picasso",
+    src: "raw/pigeon-picasso-03.png",
+    labels: [
+      ["голубь-", "pill--blue"],
+      ["пикассо", "pill--blue"],
+    ],
+    badgeText: "полис КАСКО",
+    w: 190,
+    h: 250,
+    startX: 286,
+    startY: -4500,
+    speed: 98,
+    sway: 38,
+    freq: 1.16,
+    rotate: 7,
   },
 ];
 
@@ -153,6 +301,7 @@ const protectorEl = document.querySelector("#protector");
 const scoreValue = document.querySelector("#scoreValue");
 const timerValue = document.querySelector("#timerValue");
 const hitFlash = document.querySelector("#hitFlash");
+const hitFlashText = document.querySelector("#hitFlashText");
 const resultIntro = document.querySelector("#resultIntro");
 const resultFinal = document.querySelector("#resultFinal");
 const resultIntroScore = document.querySelector("#resultIntroScore");
@@ -204,11 +353,11 @@ function createThreat(layout) {
   element.dataset.figma = layout.figma;
 
   const image = document.createElement("img");
-  image.src = `${ASSET}${layout.src}`;
+  image.src = `${THREAT_ASSET}${layout.src}`;
   image.alt = "";
   element.append(image);
 
-  for (const [text, classes] of layout.labels) {
+  for (const [text, classes] of layout.labels ?? []) {
     const pill = document.createElement("span");
     pill.className = `pill ${classes}`;
     pill.textContent = text;
@@ -437,7 +586,7 @@ function renderResult() {
 
 function updateHud() {
   scoreValue.textContent = formatScore(game.score);
-  timerValue.textContent = `${Math.ceil(game.remaining)} c`;
+  timerValue.textContent = `${Math.ceil(game.remaining)} с`;
 }
 
 function updateThreat(threat, now, dt) {
@@ -446,7 +595,7 @@ function updateThreat(threat, now, dt) {
       threat.active = true;
       threat.killed = false;
       threat.el.classList.remove("is-killed");
-      threat.y = -threat.h - Math.random() * 260;
+      threat.y = -threat.h - 700 - Math.random() * 1400;
       threat.x = threat.startX + (Math.random() - 0.5) * 120;
       threat.seed = Math.random() * Math.PI * 2;
     }
@@ -463,7 +612,7 @@ function updateThreat(threat, now, dt) {
   threat.currentX = x;
 
   if (threat.y > STAGE + 80) {
-    threat.y = -threat.h - Math.random() * 320;
+    threat.y = -threat.h - 700 - Math.random() * 1800;
     threat.x = threat.startX + (Math.random() - 0.5) * 160;
   }
 }
@@ -492,11 +641,17 @@ function updateProtector(now, dt) {
 }
 
 function hitBoxForThreat(threat) {
+  const hit = threat.hit ?? {
+    x: threat.w * 0.22,
+    y: threat.h * 0.22,
+    w: threat.w * 0.56,
+    h: threat.h * 0.56,
+  };
   return {
-    x: (threat.currentX ?? threat.x) + threat.hit.x,
-    y: threat.y + threat.hit.y,
-    w: threat.hit.w,
-    h: threat.hit.h,
+    x: (threat.currentX ?? threat.x) + hit.x,
+    y: threat.y + hit.y,
+    w: hit.w,
+    h: hit.h,
   };
 }
 
@@ -577,6 +732,8 @@ function pulseProtector() {
 
 function showHitFlash(threat) {
   const box = hitBoxForThreat(threat);
+  hitFlashText.textContent = threat.badgeText;
+  hitFlash.setAttribute("aria-label", threat.badgeText);
   hitFlash.style.left = `${box.x + box.w / 2}px`;
   hitFlash.style.top = `${box.y + box.h / 2}px`;
   hitFlash.classList.add("is-visible");

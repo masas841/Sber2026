@@ -1,0 +1,41 @@
+const imgSberinsuranceH = "http://localhost:3845/assets/336fa7bb963378d14581111db562340e52bf7ea6.svg";
+const imgStar19 = "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg";
+const imgStar20 = "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg";
+
+export default function Group() {
+  return (
+    <div className="contents relative size-full" data-node-id="1:222">
+      <div className="absolute backdrop-blur-[4.627px] bg-[#26c142] h-[150px] left-0 rounded-[76.273px] top-0 w-[555px]" data-node-id="1:223" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['SB_Sans_Text:Bold'] leading-[0.82] left-[209.87px] lowercase not-italic text-[40.235px] text-center text-white top-0 w-[419.747px]" data-node-id="1:224">
+        Защита от травм
+      </p>
+      <div className="-translate-x-1/2 absolute bottom-0 left-0 top-0 w-[349.79px]" data-node-id="1:225" data-name="sberinsurance H">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSberinsuranceH} />
+      </div>
+      <div className="absolute flex items-center justify-center left-0 size-[140.841px] top-0">
+        <div className="flex-none rotate-[36.21deg]">
+          <div className="relative size-[100.773px]" data-node-id="1:245">
+            <div className="absolute inset-[8.8%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar19} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex items-center justify-center left-0 size-[135.226px] top-0">
+        <div className="flex-none rotate-[-26.6deg]">
+          <div className="relative size-[100.773px]" data-node-id="1:246">
+            <div className="absolute inset-[8.8%]">
+              <img alt="" className="block max-w-none size-full" src={imgStar20} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

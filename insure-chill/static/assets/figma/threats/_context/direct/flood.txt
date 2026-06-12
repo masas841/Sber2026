@@ -1,0 +1,86 @@
+const imgChatGptImage1020261103433 = "http://localhost:3845/assets/9f7d921244f8a87720fb41610a93ffa0de6d9559.png";
+const imgImage2090010239 = "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png";
+const imgGroup2136141820 = "http://localhost:3845/assets/2639222c8ed24ea8e5158d6a6b0ed748c8059743.svg";
+const imgChatGptImage1020261103432 = "http://localhost:3845/assets/8810eddcba5f834880f40894bc4a011d7bc2a433.svg";
+const imgMaskGroup = "http://localhost:3845/assets/1c339e8997f53761bdf26f827d9c03fcff50b485.svg";
+const imgGroup2136140167 = "http://localhost:3845/assets/4c7d993be13bde7896209b361ed67ad0aa04bdff.svg";
+const imgVector234258259 = "http://localhost:3845/assets/18111cbf955ad6115f16142c482ae497a53bbae0.svg";
+
+export default function Group() {
+  return (
+    <div className="contents relative size-full" data-node-id="1:16">
+      <div className="absolute h-[251.588px] left-0 top-0 w-[252.893px]" data-node-id="1:17">
+        <div className="absolute inset-[0_-1.41%_0_-3.48%]">
+          <img alt="" className="block max-w-none size-full" src={imgGroup2136141820} />
+        </div>
+      </div>
+      <div className="absolute contents h-[639.52px] left-0 top-0 w-[598.184px]" data-node-id="1:20" data-name="Mask group">
+        <div className="absolute flex h-[650.969px] items-center justify-center left-0 top-0 w-[494.011px]">
+          <div className="flex-none rotate-[20.02deg]">
+            <div className="h-[578px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[26.195px_130.839px] mask-size-[403.597px_510.828px] relative rounded-[159.395px] w-[315.141px]" data-node-id="1:22" style={{ maskImage: `url("${imgChatGptImage1020261103432}")` }} data-name="ChatGPT Image 10 июн. 2026 г., 11_03_43 2">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[159.395px]">
+                <img alt="" className="absolute h-full left-[-87.77%] max-w-none top-0 w-[275.12%]" src={imgChatGptImage1020261103433} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[332.915px] items-center justify-center left-0 top-0 w-[332.21px]">
+        <div className="flex-none rotate-[-42.64deg]">
+          <div className="h-[241.413px] relative w-[229.3px]" data-node-id="1:23" data-name="Mask group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMaskGroup} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[245.531px] items-center justify-center left-0 top-0 w-[252.842px]">
+        <div className="-scale-y-100 flex-none rotate-[-164.24deg]">
+          <div className="h-[196.642px] relative rounded-[65px] w-[207.225px]" data-node-id="1:25" data-name="ChatGPT Image 10 июн. 2026 г., 11_03_43 2">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[65px]">
+              <img alt="" className="absolute h-[199.59%] left-0 max-w-none top-0 w-[284.09%]" src={imgChatGptImage1020261103433} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute contents left-0 top-0" data-node-id="1:26">
+        <div className="absolute flex h-[128.904px] items-center justify-center left-0 top-0 w-[129.143px]">
+          <div className="-scale-y-100 flex-none rotate-[160.44deg]">
+            <div className="h-[100.831px] relative rounded-[102.05px] w-[101.219px]" data-node-id="1:27" data-name="image 2090010239">
+              <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[102.05px] size-full" src={imgImage2090010239} />
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex h-[155.513px] items-center justify-center left-0 top-0 w-[155.503px]">
+          <div className="-scale-y-100 flex-none rotate-[-134.45deg]">
+            <div className="h-[109.755px] relative rounded-[102.05px] w-[110.177px]" data-node-id="1:28" data-name="image 2090010240">
+              <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none rounded-[102.05px] size-full" src={imgImage2090010239} />
+            </div>
+          </div>
+        </div>
+        <div className="absolute flex h-[142.648px] items-center justify-center left-0 top-0 w-[176.716px]">
+          <div className="-scale-y-100 flex-none rotate-[159.05deg]">
+            <div className="h-[94.09px] relative w-[153.201px]" data-node-id="1:29">
+              <div className="absolute inset-[-11.92%_-9.74%_-19.05%_-11.65%]">
+                <img alt="" className="block max-w-none size-full" src={imgGroup2136140167} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[183.671px] items-center justify-center left-0 top-0 w-[172.375px]">
+        <div className="flex-none rotate-[57.48deg]">
+          <div className="h-[110.432px] relative w-[147.425px]" data-node-id="1:35">
+            <div className="absolute inset-[-34.99%_-26.21%_-34.98%_-26.2%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234258259} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

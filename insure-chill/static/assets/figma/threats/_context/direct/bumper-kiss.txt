@@ -1,0 +1,51 @@
+const imgImage2090010250 = "http://localhost:3845/assets/ca953d3d2dc1678bc15c5c7ebd4c8eaf0775373a.png";
+const imgImage2090010252 = "http://localhost:3845/assets/07626c3d57ba6501a36b1afa206595190ecb8299.png";
+
+export default function Group() {
+  return (
+    <div className="contents relative size-full" data-node-id="1:463">
+      <div className="absolute contents left-0 top-0" data-node-id="1:464">
+        <div className="absolute h-[490px] left-0 top-0 w-[734px]" data-node-id="1:465" data-name="image 2090010250">
+          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2090010250} />
+        </div>
+        <div className="absolute flex h-[125.124px] items-center justify-center left-0 top-0 w-[280.019px]">
+          <div className="flex-none rotate-[-12.11deg]">
+            <div className="bg-[#0291eb] h-[69.725px] relative rounded-[229.731px] w-[271.432px]" data-node-id="1:466" />
+          </div>
+        </div>
+        <div className="absolute flex h-[130.946px] items-center justify-center left-0 top-0 w-[309.018px]">
+          <div className="flex-none rotate-[12.03deg]">
+            <div className="bg-[#0291eb] h-[69.725px] relative rounded-[229.731px] w-[301.098px]" data-node-id="1:467" />
+          </div>
+        </div>
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[81.837px] items-center justify-center left-[95.06px] top-[40.92px] w-[190.114px]">
+          <div className="flex-none rotate-[-12.11deg]">
+            <div className="[word-break:break-word] flex flex-col font-['SB_Sans_Text:Bold'] justify-center leading-[0] not-italic relative text-[40px] text-center text-white whitespace-nowrap" data-node-id="1:468">
+              <p className="leading-[1.1]">поцелуй</p>
+            </div>
+          </div>
+        </div>
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute flex h-[95.971px] items-center justify-center left-[128.8px] top-[47.99px] w-[257.592px]">
+          <div className="flex-none rotate-[12.03deg]">
+            <div className="[word-break:break-word] flex flex-col font-['SB_Sans_Text:Bold'] justify-center leading-[0] not-italic relative text-[40px] text-center text-white whitespace-nowrap" data-node-id="1:469">
+              <p className="leading-[1.1]">бамперный</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[319.024px] items-center justify-center left-0 top-0 w-[403.276px]">
+        <div className="flex-none rotate-[14.75deg]">
+          <div className="h-[236.504px] relative w-[354.756px]" data-node-id="1:470" data-name="image 2090010252">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2090010252} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.

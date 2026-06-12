@@ -1,0 +1,763 @@
+[
+  {
+    "id": "flood",
+    "nodeId": "1:16",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/9f7d921244f8a87720fb41610a93ffa0de6d9559.png",
+        "file": "flood-01.png",
+        "bytes": 2738781,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "file": "flood-02.png",
+        "bytes": 805115,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 255,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/2639222c8ed24ea8e5158d6a6b0ed748c8059743.svg",
+        "file": "flood-03.svg",
+        "bytes": 7703
+      },
+      {
+        "url": "http://localhost:3845/assets/8810eddcba5f834880f40894bc4a011d7bc2a433.svg",
+        "file": "flood-04.svg",
+        "bytes": 414
+      },
+      {
+        "url": "http://localhost:3845/assets/1c339e8997f53761bdf26f827d9c03fcff50b485.svg",
+        "file": "flood-05.svg",
+        "bytes": 658
+      },
+      {
+        "url": "http://localhost:3845/assets/4c7d993be13bde7896209b361ed67ad0aa04bdff.svg",
+        "file": "flood-06.svg",
+        "bytes": 1747
+      },
+      {
+        "url": "http://localhost:3845/assets/18111cbf955ad6115f16142c482ae497a53bbae0.svg",
+        "file": "flood-07.svg",
+        "bytes": 366
+      }
+    ]
+  },
+  {
+    "id": "fluffy-acrobat",
+    "nodeId": "1:9",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/758b324c82f48052d9537c8f4058eacfe56327c7.png",
+        "file": "fluffy-acrobat-01.png",
+        "bytes": 2792903,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/11b5a6bc94befb5da634d963af85d6cb2841cbfc.svg",
+        "file": "fluffy-acrobat-02.svg",
+        "bytes": 5540
+      },
+      {
+        "url": "http://localhost:3845/assets/18111cbf955ad6115f16142c482ae497a53bbae0.svg",
+        "file": "fluffy-acrobat-03.svg",
+        "bytes": 366
+      }
+    ]
+  },
+  {
+    "id": "toe-menace",
+    "nodeId": "1:37",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png",
+        "file": "toe-menace-01.png",
+        "bytes": 2765529,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/e49c1b0f42a2783a69ad6c67bd6991645bb7f66b.svg",
+        "file": "toe-menace-02.svg",
+        "bytes": 672
+      }
+    ]
+  },
+  {
+    "id": "fraud",
+    "nodeId": "1:48",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png",
+        "file": "fraud-01.png",
+        "bytes": 1699986,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/34053f9ff7ff3b2640b13f11fea05c3332fcba88.svg",
+        "file": "fraud-02.svg",
+        "bytes": 470
+      }
+    ]
+  },
+  {
+    "id": "soap-phone",
+    "nodeId": "1:58",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/50dd6d488abd268621b18460892b1285006a37a8.png",
+        "file": "soap-phone-01.png",
+        "bytes": 3507348,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "file": "soap-phone-02.png",
+        "bytes": 805115,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 255,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/9c1f9010b5c9560f43484b882ce9ff3ca2c04b4e.svg",
+        "file": "soap-phone-03.svg",
+        "bytes": 946
+      },
+      {
+        "url": "http://localhost:3845/assets/ceecbfe91bc0caf6bb295f45bed25e5cc30c0a7c.svg",
+        "file": "soap-phone-04.svg",
+        "bytes": 763
+      }
+    ]
+  },
+  {
+    "id": "ghost-plane",
+    "nodeId": "1:417",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/676832ff37ae9a32579913ae49e44a4a3340240a.png",
+        "file": "ghost-plane-01.png",
+        "bytes": 651529,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/d132d8d17d781206b27b744f2640de71569f2546.svg",
+        "file": "ghost-plane-02.svg",
+        "bytes": 361
+      },
+      {
+        "url": "http://localhost:3845/assets/cae6ef872869176a6e4364bb81bd87b996a16953.svg",
+        "file": "ghost-plane-03.svg",
+        "bytes": 360
+      }
+    ]
+  },
+  {
+    "id": "brick-gadget",
+    "nodeId": "1:410",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/96055084c35cdc0742b50ff0234255b5c7655fe9.png",
+        "file": "brick-gadget-01.png",
+        "bytes": 2503103,
+        "width": 1024,
+        "height": 1536,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/43e270752d82853adc5470252a23f83ef13ebac3.svg",
+        "file": "brick-gadget-02.svg",
+        "bytes": 355
+      },
+      {
+        "url": "http://localhost:3845/assets/fbdd40b1633e8bc95d8928ed36987e4179d4633a.svg",
+        "file": "brick-gadget-03.svg",
+        "bytes": 355
+      },
+      {
+        "url": "http://localhost:3845/assets/288f5db52dcf215f9903a6c87d1fb7a8c3056200.svg",
+        "file": "brick-gadget-04.svg",
+        "bytes": 355
+      }
+    ]
+  },
+  {
+    "id": "dog-vacuum",
+    "nodeId": "1:423",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/fe5244ca8453d790750767c06945dc2a0e62d36e.png",
+        "file": "dog-vacuum-01.png",
+        "bytes": 1861613,
+        "width": 1335,
+        "height": 1148,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "file": "dog-vacuum-02.png",
+        "bytes": 805115,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 255,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/fe98799f22589588110eb81167aead02493dda81.png",
+        "file": "dog-vacuum-03.png",
+        "bytes": 433941,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 255,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/c04a652c981d708d16790a03b9f5a2abeacadec0.png",
+        "file": "dog-vacuum-04.png",
+        "bytes": 595143,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/ec295f97cf54fff83980c000d2a4c0f535936134.svg",
+        "file": "dog-vacuum-05.svg",
+        "bytes": 348
+      },
+      {
+        "url": "http://localhost:3845/assets/0592a3308cb7ec323c28b914edb2f55be62e1044.svg",
+        "file": "dog-vacuum-06.svg",
+        "bytes": 907
+      },
+      {
+        "url": "http://localhost:3845/assets/43f0d2635c8eb174f20ad9b6db289acd15b4f4c3.svg",
+        "file": "dog-vacuum-07.svg",
+        "bytes": 299
+      },
+      {
+        "url": "http://localhost:3845/assets/725b32083fea297455cea25de99627fe79b9d134.svg",
+        "file": "dog-vacuum-08.svg",
+        "bytes": 1894
+      },
+      {
+        "url": "http://localhost:3845/assets/70a0c8d918bae3f26721be15869286a545aaa592.svg",
+        "file": "dog-vacuum-09.svg",
+        "bytes": 364
+      },
+      {
+        "url": "http://localhost:3845/assets/e2a02a943522e984e35e3701feeab21ab594bec8.svg",
+        "file": "dog-vacuum-10.svg",
+        "bytes": 595
+      }
+    ]
+  },
+  {
+    "id": "micro-hater",
+    "nodeId": "1:398",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/e037275c15985ab4e82b5a476f133676e91bb2e3.png",
+        "file": "micro-hater-01.png",
+        "bytes": 757246,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "file": "micro-hater-02.png",
+        "bytes": 805115,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 255,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/67577a808cc32f6fe7a216452856031cf3832e88.svg",
+        "file": "micro-hater-03.svg",
+        "bytes": 2231
+      },
+      {
+        "url": "http://localhost:3845/assets/5533ad89050447404b0c34137ece2b8bfc486b9b.svg",
+        "file": "micro-hater-04.svg",
+        "bytes": 364
+      }
+    ]
+  },
+  {
+    "id": "slam-salto",
+    "nodeId": "1:445",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/17d754ae4a209fddd311bdba0c9ddd085bb4a319.png",
+        "file": "slam-salto-01.png",
+        "bytes": 544553,
+        "width": 1024,
+        "height": 683,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/ece71bb88e22fb32508ce08655a5b3c4cbe15acc.png",
+        "file": "slam-salto-02.png",
+        "bytes": 546046,
+        "width": 1024,
+        "height": 683,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/201af12e73f5bd811f3b572be3d9aae894dd5c70.svg",
+        "file": "slam-salto-03.svg",
+        "bytes": 356
+      },
+      {
+        "url": "http://localhost:3845/assets/49e0cb47df34950b9e2a64b88e641c77a3a0ecc0.svg",
+        "file": "slam-salto-04.svg",
+        "bytes": 350
+      }
+    ]
+  },
+  {
+    "id": "lost-sneaker",
+    "nodeId": "1:452",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/c04a652c981d708d16790a03b9f5a2abeacadec0.png",
+        "file": "lost-sneaker-01.png",
+        "bytes": 595143,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/56cf28fe824e9c2c01f39331ce393a61e6ec6143.png",
+        "file": "lost-sneaker-02.png",
+        "bytes": 164159,
+        "width": 569,
+        "height": 569,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/276c015e559d2208d614c7325cd1cf7594c6343e.png",
+        "file": "lost-sneaker-03.png",
+        "bytes": 1415283,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/623276bc65b587e3aa9d9f82694f45188f35d9de.svg",
+        "file": "lost-sneaker-04.svg",
+        "bytes": 365
+      }
+    ]
+  },
+  {
+    "id": "bumper-kiss",
+    "nodeId": "1:463",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/ca953d3d2dc1678bc15c5c7ebd4c8eaf0775373a.png",
+        "file": "bumper-kiss-01.png",
+        "bytes": 1699918,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/07626c3d57ba6501a36b1afa206595190ecb8299.png",
+        "file": "bumper-kiss-02.png",
+        "bytes": 606459,
+        "width": 1024,
+        "height": 683,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    ]
+  },
+  {
+    "id": "pigeon-picasso",
+    "nodeId": "1:471",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/b4c219fd59c1450192d3c42794476dad1c409cb7.png",
+        "file": "pigeon-picasso-01.png",
+        "bytes": 626666,
+        "width": 1024,
+        "height": 683,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+        "file": "pigeon-picasso-02.png",
+        "bytes": 805115,
+        "width": 1024,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 255,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/82587f095f53980163b001eefbedb36e952dc3e0.png",
+        "file": "pigeon-picasso-03.png",
+        "bytes": 1847102,
+        "width": 1536,
+        "height": 1024,
+        "colorType": 6,
+        "alphaMin": 0,
+        "alphaMax": 255
+      },
+      {
+        "url": "http://localhost:3845/assets/77574124535e43aedfa773978631238917534901.svg",
+        "file": "pigeon-picasso-04.svg",
+        "bytes": 359
+      },
+      {
+        "url": "http://localhost:3845/assets/9bd8890440337105d2db68adf609bb3b6328ba85.svg",
+        "file": "pigeon-picasso-05.svg",
+        "bytes": 943
+      },
+      {
+        "url": "http://localhost:3845/assets/d5e1447d5a5d26cb2c6315afad9484f12e2ec820.svg",
+        "file": "pigeon-picasso-06.svg",
+        "bytes": 349
+      },
+      {
+        "url": "http://localhost:3845/assets/e1a1762c680031f919feecf9a4c338a3a7b82fb7.svg",
+        "file": "pigeon-picasso-07.svg",
+        "bytes": 734
+      },
+      {
+        "url": "http://localhost:3845/assets/7064ee4e042eb0248f5d5ee5451121cc6584b460.svg",
+        "file": "pigeon-picasso-08.svg",
+        "bytes": 734
+      }
+    ]
+  },
+  {
+    "id": "badge-home",
+    "nodeId": "1:72",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/d0196409f4e1034d67dbeb811616dd5b920b0e96.svg",
+        "file": "badge-home-01.svg",
+        "bytes": 8488
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-home-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-home-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-animals",
+    "nodeId": "1:347",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/40ae8e166af6f9c3e259906d7cfbb3149128fbaa.svg",
+        "file": "badge-animals-01.svg",
+        "bytes": 8458
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-animals-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1931e3e415f82e52bcae88d0964c09b17c75e55b.svg",
+        "file": "badge-animals-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-injury",
+    "nodeId": "1:147",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/336fa7bb963378d14581111db562340e52bf7ea6.svg",
+        "file": "badge-injury-01.svg",
+        "bytes": 8458
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-injury-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-injury-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-money",
+    "nodeId": "1:372",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/c2103b6dcb4c32957be36ee8cb3400eab8e59382.svg",
+        "file": "badge-money-01.svg",
+        "bytes": 8502
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-money-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1931e3e415f82e52bcae88d0964c09b17c75e55b.svg",
+        "file": "badge-money-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-screen",
+    "nodeId": "1:297",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/336fa7bb963378d14581111db562340e52bf7ea6.svg",
+        "file": "badge-screen-01.svg",
+        "bytes": 8458
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-screen-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-screen-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-travel",
+    "nodeId": "1:122",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/c2103b6dcb4c32957be36ee8cb3400eab8e59382.svg",
+        "file": "badge-travel-01.svg",
+        "bytes": 8502
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-travel-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-travel-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-screen-alt",
+    "nodeId": "1:322",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/c2103b6dcb4c32957be36ee8cb3400eab8e59382.svg",
+        "file": "badge-screen-alt-01.svg",
+        "bytes": 8502
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-screen-alt-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-screen-alt-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-pet-policy",
+    "nodeId": "1:97",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/1b35074b4bd2c8d3f89032986c2ac551f641cef5.svg",
+        "file": "badge-pet-policy-01.svg",
+        "bytes": 8488
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-pet-policy-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-pet-policy-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-tick",
+    "nodeId": "1:172",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/d0196409f4e1034d67dbeb811616dd5b920b0e96.svg",
+        "file": "badge-tick-01.svg",
+        "bytes": 8488
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-tick-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-tick-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-injury-alt",
+    "nodeId": "1:222",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/336fa7bb963378d14581111db562340e52bf7ea6.svg",
+        "file": "badge-injury-alt-01.svg",
+        "bytes": 8458
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-injury-alt-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-injury-alt-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-baggage",
+    "nodeId": "1:197",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/d0196409f4e1034d67dbeb811616dd5b920b0e96.svg",
+        "file": "badge-baggage-01.svg",
+        "bytes": 8488
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-baggage-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-baggage-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-osago",
+    "nodeId": "1:247",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/40ae8e166af6f9c3e259906d7cfbb3149128fbaa.svg",
+        "file": "badge-osago-01.svg",
+        "bytes": 8458
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-osago-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-osago-03.svg",
+        "bytes": 768
+      }
+    ]
+  },
+  {
+    "id": "badge-kasko",
+    "nodeId": "1:272",
+    "assets": [
+      {
+        "url": "http://localhost:3845/assets/c2103b6dcb4c32957be36ee8cb3400eab8e59382.svg",
+        "file": "badge-kasko-01.svg",
+        "bytes": 8502
+      },
+      {
+        "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+        "file": "badge-kasko-02.svg",
+        "bytes": 768
+      },
+      {
+        "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+        "file": "badge-kasko-03.svg",
+        "bytes": 768
+      }
+    ]
+  }
+]

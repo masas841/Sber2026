@@ -1,0 +1,41 @@
+const imgImage2090010241 = "http://localhost:3845/assets/676832ff37ae9a32579913ae49e44a4a3340240a.png";
+const imgVector234258255 = "http://localhost:3845/assets/d132d8d17d781206b27b744f2640de71569f2546.svg";
+const imgVector234258256 = "http://localhost:3845/assets/cae6ef872869176a6e4364bb81bd87b996a16953.svg";
+
+export default function Group() {
+  return (
+    <div className="contents relative size-full" data-node-id="1:417">
+      <div className="absolute flex items-center justify-center left-0 size-[763px] top-0">
+        <div className="flex-none rotate-[-19.25deg]">
+          <div className="relative size-[599.023px]" data-node-id="1:418" data-name="image 2090010241">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2090010241} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[161.148px] items-center justify-center left-0 top-0 w-[139.433px]">
+        <div className="-scale-y-100 flex-none rotate-[-75.05deg]">
+          <div className="h-[107.438px] relative w-[138.113px]" data-node-id="1:419">
+            <div className="absolute inset-[-29.79%_-23.17%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234258255} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[151.017px] items-center justify-center left-0 top-0 w-[162px]">
+        <div className="-scale-y-100 flex-none rotate-[-22.13deg]">
+          <div className="h-[110.124px] relative w-[130.092px]" data-node-id="1:420">
+            <div className="absolute inset-[-29.07%_-24.6%_-29.06%_-24.6%]">
+              <img alt="" className="block max-w-none size-full" src={imgVector234258256} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.Image assets are stored on a localhost server. Clients can use these images directly in code as a way to view the image assets the same way they would other remote servers. Images and SVGs will be stored as constants, e.g. const image = 'http://localhost:3845/assets/10c13ac1a228a365cb98a0064b1d5afbc84887b2.png' These constants will be used in the code as the source for the image, e.g. <img src={image} /> This is true for both images and SVGs, so you can use the same approach for both types of assets.IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.
