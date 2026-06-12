@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "b01a057abe1e89c345ef815c6e1978573e4e97b0eaa76c1e6fb90c166cb47263",
-      "size": 4715
+      "sha256": "a4c02c19082817e3dfc0bb9b848d13e5cbdd2777440c18eb305bf30972f75075",
+      "size": 4764
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "8985c8fc3822fca8c032e3dc1527e9afb1f6fd2be3d889b416bc9ed9761a9a37",
-      "size": 20683
+      "sha256": "9176b0b0a38a951dbd71bd9c7b3d8ea5801504e539c875913a5d327b76f5fd6f",
+      "size": 20754
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -162,8 +162,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "7afa30e19ee3db5809433887a517c736a8bc99c77947914f1bd5272c01a808aa",
-      "size": 22822
+      "sha256": "845d93522657db6d947cc92934efb79076d57ca74e0fea12db14569bf3a8dff1",
+      "size": 22942
     },
     {
       "path": "app/nanobanana_client.py",
@@ -482,8 +482,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "38bf83a301e5d697d8d35dd5d8044075c9dfaa4d7230dc66fe8d8f3ed99b8e52",
-      "size": 1711
+      "sha256": "1be22dbb460496c6a7ef82a670ae1ad3b7a22a4c460dc443e93f64071a4eeaa3",
+      "size": 1760
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -532,8 +532,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "088927b2526a812973d7466fc7edcf2258618f810c75259adcf083b509713d10",
-      "size": 10489
+      "sha256": "9692b6ef5539bdce65fadf20cbab9d40d2897189375e4dbf979fcb7487c2ad3c",
+      "size": 10538
     },
     {
       "path": "requirements-kiosk.txt",
@@ -912,8 +912,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "2bbcb6e7798314b2f0c70ceaedaab7ff24fa0f50a3309667e4fc1da4cf006d15",
-      "size": 26663
+      "sha256": "e1d4df7115b7ed146af79427d7db893ef6857c8b59e8464fa241694a58079edc",
+      "size": 27526
     },
     {
       "path": "web/assets/figma/giga-full.svg",

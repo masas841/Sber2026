@@ -281,6 +281,8 @@ class Settings(BaseSettings):
 
     # Киоск: автокамера, снимок по улыбке (пороги для фронта)
     kiosk_auto_camera: bool = True
+    kiosk_camera_width: int = 1920
+    kiosk_camera_height: int = 1080
     kiosk_smile_capture: bool = True
     kiosk_smile_threshold: float = 0.42
     kiosk_smile_hold_frames: int = 12

@@ -28,6 +28,8 @@ API GigaChat **не используется**.
 Актуальные параметры камеры и детекта в `.env`:
 
 ```env
+KIOSK_CAMERA_WIDTH=1920
+KIOSK_CAMERA_HEIGHT=1080
 KIOSK_FACE_DETECT_STRIDE=25
 KIOSK_FACE_HOLD_MS=700
 KIOSK_FACE_RELEASE_MS=1600

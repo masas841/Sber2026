@@ -69,6 +69,8 @@ const PROCESSING_LINES = ["Загружаем момент", "Включаем �
 let kioskCfg = {
   output_kind: "image",
   kiosk_auto_camera: true,
+  kiosk_camera_width: 1920,
+  kiosk_camera_height: 1080,
   kiosk_smile_capture: true,
   kiosk_jpeg_quality: 0.96,
   kiosk_smile_threshold: 0.42,
@@ -507,6 +509,18 @@ function cameraErrorMessage(err) {
   return "Нет доступа к камере. Проверьте HTTPS и разрешения браузера.";
 }
 
+function cameraVideoConstraints({ withResolution = true } = {}) {
+  const constraints = { facingMode: "user" };
+  const width = Number(kioskCfg.kiosk_camera_width) || 0;
+  const height = Number(kioskCfg.kiosk_camera_height) || 0;
+  if (withResolution && width > 0 && height > 0) {
+    constraints.width = { ideal: width };
+    constraints.height = { ideal: height };
+    constraints.aspectRatio = { ideal: width / height };
+  }
+  return constraints;
+}
+
 async function startCamera() {
   if (!window.isSecureContext) {
     throw new DOMException("insecure context", "SecurityError");
@@ -514,10 +528,19 @@ async function startCamera() {
   if (!navigator.mediaDevices?.getUserMedia) {
     throw new DOMException("no getUserMedia", "NotSupportedError");
   }
-  stream = await navigator.mediaDevices.getUserMedia({
-    video: { facingMode: "user" },
-    audio: false,
-  });
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: cameraVideoConstraints(),
+      audio: false,
+    });
+  } catch (err) {
+    if (!kioskCfg.kiosk_camera_width || !kioskCfg.kiosk_camera_height) throw err;
+    console.warn("camera resolution request failed, retrying without size", err);
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: cameraVideoConstraints({ withResolution: false }),
+      audio: false,
+    });
+  }
   preview.srcObject = stream;
   await preview.play().catch(() => {});
   layoutCapturePreview();

@@ -402,6 +402,8 @@ def kiosk_config() -> dict:
         "video_fps": settings.video_fps,
         "video_duration_sec": settings.video_duration_sec,
         "kiosk_auto_camera": settings.kiosk_auto_camera,
+        "kiosk_camera_width": settings.kiosk_camera_width,
+        "kiosk_camera_height": settings.kiosk_camera_height,
         "kiosk_smile_capture": settings.kiosk_smile_capture,
         "kiosk_smile_threshold": settings.kiosk_smile_threshold,
         "kiosk_smile_hold_frames": settings.kiosk_smile_hold_frames,
