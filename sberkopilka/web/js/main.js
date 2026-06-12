@@ -68,7 +68,7 @@ if (window.__kopilkaLoadError) {
       const joy = window.kopilkaJoystick;
       if (!joy || !game.input?.gamepad) return;
       const linkPad = (pad) => {
-        if (pad && pad.index === 0) joy.setPhaserPad(pad);
+        if (pad) joy.setPhaserPad(pad);
       };
       game.input.gamepad.on("connected", (pad) => linkPad(pad));
       if (game.input.gamepad.pad1) linkPad(game.input.gamepad.pad1);

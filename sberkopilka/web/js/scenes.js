@@ -65,10 +65,22 @@ const GHOST_SPAWN_IDS = ["fomo", "inflation", "impulse"];
 
 const NICKNAMES = ["Гость", "Инвестор", "Копилка", "Пилот", "Сбер"];
 
+function phaserPadActive(pad) {
+  if (!pad) return false;
+  const moved = pad.axes?.some((axis) => Math.abs(axis?.getValue?.() || 0) > 0.2);
+  const pressed = pad.buttons?.some((button) => button?.pressed || (button?.value ?? 0) > 0.15);
+  return !!(moved || pressed);
+}
+
+function activePhaserPad(manager) {
+  const pads = manager?.gamepads || [];
+  return pads.find(phaserPadActive) || manager?.pad1 || pads.find(Boolean) || null;
+}
+
 function linkGamepad(scene) {
   const joy = scene.registry?.get("joystick");
   if (!joy || !scene.input?.gamepad) return joy;
-  const pad = scene.input.gamepad.pad1;
+  const pad = activePhaserPad(scene.input.gamepad);
   if (pad) joy.setPhaserPad(pad);
   return joy;
 }
@@ -384,7 +396,10 @@ class GameScene extends Phaser.Scene {
 
     this.cursors = this.input.keyboard.createCursorKeys();
     this.joy = this.registry.get("joystick") || window.kopilkaJoystick;
-    if (this.joy && this.input.gamepad?.pad1) this.joy.setPhaserPad(this.input.gamepad.pad1);
+    if (this.joy && this.input.gamepad) {
+      const pad = activePhaserPad(this.input.gamepad);
+      if (pad) this.joy.setPhaserPad(pad);
+    }
 
     this.input.keyboard.enabled = true;
     if (this.input.keyboard) this.input.keyboard.clearCaptures();

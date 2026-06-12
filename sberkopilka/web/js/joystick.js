@@ -20,6 +20,9 @@ class JoystickInput {
     this.activated = false;
     this.padLabel = "";
     this.padIndex = -1;
+    this._activePadIndex = null;
+    this._currentPadKey = "";
+    this._selectorButtons = new Map();
     this._phaserPad = null;
   }
 
@@ -40,13 +43,13 @@ class JoystickInput {
   }
 
   static findActivePad() {
+    let movedPad = null;
     for (const pad of JoystickInput._pads()) {
       if (!pad?.connected) continue;
-      const moved = pad.axes.some((v) => Math.abs(v) > 0.2);
-      const pressed = JoystickInput._anyButton(pad);
-      if (moved || pressed) return pad;
+      if (JoystickInput._anyButton(pad)) return pad;
+      if (!movedPad && JoystickInput._moved(pad)) movedPad = pad;
     }
-    return null;
+    return movedPad;
   }
 
   static findAnyPad() {
@@ -56,8 +59,14 @@ class JoystickInput {
     return null;
   }
 
+  static padByIndex(index) {
+    if (!Number.isFinite(index)) return null;
+    const pad = JoystickInput._pads()[index];
+    return pad?.connected ? pad : null;
+  }
+
   static _anyButton(pad) {
-    return pad.buttons.some((b) => b?.pressed || (b?.value ?? 0) > 0.15);
+    return pad.buttons.some((b) => b?.pressed || (b?.value ?? 0) > 0.5);
   }
 
   static _btn(pad, i) {
@@ -65,11 +74,16 @@ class JoystickInput {
     return !!(b?.pressed || (b?.value ?? 0) > 0.5);
   }
 
+  static _moved(pad, threshold = 0.5) {
+    return pad.axes.some((v) => Math.abs(v || 0) > threshold);
+  }
+
   _padFromPhaser() {
     const p = this._phaserPad;
     if (!p) return null;
     return {
       id: p.id,
+      index: p.index,
       connected: true,
       axes: p.axes.map((a) => a.getValue()),
       buttons: p.buttons.map((b) => ({ pressed: b.pressed, value: b.value })),
@@ -77,9 +91,75 @@ class JoystickInput {
   }
 
   _getPad() {
+    const selected = this._selectNativePad(false);
+    if (selected) return selected;
+
     const ph = this._padFromPhaser();
     if (ph) return ph;
-    return JoystickInput.findActivePad() || JoystickInput.findAnyPad();
+    return JoystickInput.findAnyPad();
+  }
+
+  _selectNativePad(allowIdleFallback = false) {
+    const pads = Array.from(JoystickInput._pads()).filter((pad) => pad?.connected);
+    if (!pads.length) {
+      this._selectorButtons.clear();
+      return null;
+    }
+
+    const locked = JoystickInput.padByIndex(this._activePadIndex);
+    const edge = this._buttonEdgePad(pads);
+    if (edge) {
+      this._activePadIndex = edge.index;
+      return edge;
+    }
+
+    // Если устройство уже выбрано, удерживаем его. Шум от второго геймпада
+    // не должен перебивать управление после первого нажатия.
+    if (locked) return locked;
+
+    const moved = pads.find((pad) => JoystickInput._moved(pad, Math.max(0.55, this.deadzone)));
+    if (moved) {
+      this._activePadIndex = moved.index;
+      return moved;
+    }
+
+    return allowIdleFallback ? pads[0] : null;
+  }
+
+  _padKey(pad) {
+    if (!pad) return "";
+    if (Number.isFinite(pad.index)) return `idx:${pad.index}`;
+    return `id:${pad.id || "Gamepad"}`;
+  }
+
+  _resetEdges() {
+    this._prevCross = false;
+    this._prevOptions = false;
+    this._prevNav = "";
+    this._prevButtons.length = 0;
+  }
+
+  _buttonState(pad) {
+    return (pad.buttons || []).map((_, i) => JoystickInput._btn(pad, i));
+  }
+
+  _buttonEdgePad(pads) {
+    let edgePad = null;
+    const alive = new Set();
+    for (const pad of pads) {
+      const key = this._padKey(pad);
+      alive.add(key);
+      const current = this._buttonState(pad);
+      const prev = this._selectorButtons.get(key);
+      if (!edgePad && prev && current.some((pressed, i) => pressed && !prev[i])) {
+        edgePad = pad;
+      }
+      this._selectorButtons.set(key, current);
+    }
+    for (const key of this._selectorButtons.keys()) {
+      if (!alive.has(key)) this._selectorButtons.delete(key);
+    }
+    return edgePad;
   }
 
   _readDirection(pad) {
@@ -129,12 +209,18 @@ class JoystickInput {
     this.direction = null;
 
     const pad = this._getPad();
-    const active = JoystickInput.findActivePad();
+    const active = JoystickInput.padByIndex(this._activePadIndex);
     const anyNative = JoystickInput.findAnyPad();
 
     if (pad) {
+      const key = this._padKey(pad);
+      if (key !== this._currentPadKey) {
+        this._currentPadKey = key;
+        this._resetEdges();
+      }
       this.connected = true;
       this.padLabel = pad.id || "Gamepad";
+      this.padIndex = Number.isFinite(pad.index) ? pad.index : -1;
       this.activated = !!(active || JoystickInput._anyButton(pad));
 
       this.direction = this._readDirection(pad);
@@ -168,11 +254,11 @@ class JoystickInput {
       this.connected = false;
       this.activated = false;
       this.padLabel = "";
+      this.padIndex = -1;
+      this._activePadIndex = null;
+      this._currentPadKey = "";
     }
-    this._prevCross = false;
-    this._prevOptions = false;
-    this._prevNav = "";
-    this._prevButtons.length = 0;
+    this._resetEdges();
   }
 
   consumeNameNavEdge() {
@@ -213,20 +299,25 @@ class JoystickInput {
   }
 
   refreshHud() {
-    const active = JoystickInput.findActivePad();
+    const active = this._selectNativePad(false);
     const any = JoystickInput.findAnyPad();
     if (active) {
       this.connected = true;
       this.activated = true;
       this.padLabel = active.id || "Gamepad";
+      this.padIndex = active.index;
+      this._activePadIndex = active.index;
     } else if (any) {
       this.connected = true;
       this.activated = false;
       this.padLabel = any.id || "Gamepad";
+      this.padIndex = any.index;
     } else if (!this._phaserPad) {
       this.connected = false;
       this.activated = false;
       this.padLabel = "";
+      this.padIndex = -1;
+      this._activePadIndex = null;
     }
     updatePadStatus(this);
   }
@@ -244,14 +335,16 @@ function updatePadStatus(joy) {
 
   if (joy.activated) {
     const short = (joy.padLabel || "Gamepad").replace(/\s+/g, " ").slice(0, 42);
-    el.textContent = `Джойстик: ${short} — Cross = действие`;
+    const index = joy.padIndex >= 0 ? ` #${joy.padIndex + 1}` : "";
+    el.textContent = `Джойстик${index}: ${short} — Cross = действие`;
     el.className = "pad-status ok";
     return;
   }
 
   if (joy.connected) {
     const short = (joy.padLabel || "Gamepad").replace(/\s+/g, " ").slice(0, 36);
-    el.textContent = `${short} — нажмите любую кнопку`;
+    const index = joy.padIndex >= 0 ? ` #${joy.padIndex + 1}` : "";
+    el.textContent = `Джойстик${index}: ${short} — нажмите любую кнопку`;
     el.className = "pad-status warn";
     return;
   }
