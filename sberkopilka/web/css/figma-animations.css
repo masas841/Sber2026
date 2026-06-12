@@ -489,7 +489,10 @@
 .kop-start-exit [data-name="Копилка"],
 .kop-start-exit [data-name="3D ИнвестКопилка 2"],
 .kop-start-exit [data-name="Свинья"],
-.kop-start-exit [data-name="Тень"] {
+.kop-start-exit [data-name="Тень"],
+.kop-start-exit [data-node-id="25:1376"],
+.kop-start-exit [data-node-id="25:1377"],
+.kop-start-exit [data-node-id="25:1378"] {
   animation: kop-start-pig-out 0.55s ease-in forwards !important;
 }
 

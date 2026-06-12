@@ -196,7 +196,7 @@
   function mountIframe(stage, screenId, extraClass) {
     const frame = document.createElement("iframe");
     frame.className = `figma-overlay__frame${extraClass ? ` ${extraClass}` : ""}`;
-    const FIGMA_IFRAME_V = 32;
+    const FIGMA_IFRAME_V = 33;
     frame.src = HTML_BASE + htmlScreenId(screenId) + ".html?v=" + FIGMA_IFRAME_V;
     frame.setAttribute("scrolling", "no");
     frame.setAttribute("title", screenId);
