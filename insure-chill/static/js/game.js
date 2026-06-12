@@ -3,7 +3,7 @@ const DEFAULT_DURATION = 59;
 const THREAT_ASSET = "/static/assets/figma/threats/";
 const THREAT_ASSET_VERSION = "figma-export-3";
 const THREAT_FALL_SPEED_MULTIPLIER = 3;
-const HIT_FLASH_VISIBLE_MS = 520;
+const HIT_FLASH_VISIBLE_MS = 1000;
 
 const THREAT_LAYOUTS = [
   {
@@ -317,7 +317,7 @@ const RESULT_VARIANTS = [
     maxScore: Infinity,
     starCount: 3,
     title: "максимальная защита!",
-    text: "Ты поймал все угрозы и стал настоящим супергероем фестиваля — Сбер одобряет! А на случай неожиданностей есть СберСтрахование.",
+    text: "Ты поймал все угрозы и стал настоящим супергероем фестиваля — Сбер одобряет! А\u00A0на случай неожиданностей есть СберСтрахование.",
   },
 ];
 

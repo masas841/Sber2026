@@ -1162,7 +1162,6 @@ body {
   width: 373px;
   z-index: 7;
   text-align: center;
-  text-transform: lowercase;
   color: var(--ink);
 }
 
