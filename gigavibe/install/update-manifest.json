@@ -912,8 +912,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "e1d4df7115b7ed146af79427d7db893ef6857c8b59e8464fa241694a58079edc",
-      "size": 27526
+      "sha256": "8c9f06a2fe68fb1dcf6391303e8954e0205bc740a5ea2fe2f0171480b9869045",
+      "size": 27600
     },
     {
       "path": "web/assets/figma/giga-full.svg",

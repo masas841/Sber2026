@@ -48,6 +48,7 @@ const btnRetry = document.getElementById("btn-retry");
 
 const RESULT_LOOP_SEC = 20;
 const CAMERA_ZOOM = 2;
+const CAMERA_ROTATION_RAD = Math.PI;
 const DETECTION_FRAME_W = 640;
 const DETECTION_FRAME_H = 480;
 const DETECTION_READY_TIMEOUT_MS = 900;
@@ -113,7 +114,7 @@ function isPortraitViewport() {
   return h > w;
 }
 
-/** Рисует кадр камеры на весь экран (cover) + зеркало + поворот landscape-потока на телефоне. */
+/** Рисует кадр камеры на весь экран (cover) + зеркало + поворот для установленной камеры. */
 function drawVideoFit(
   ctx,
   video,
@@ -132,6 +133,7 @@ function drawVideoFit(
 
   ctx.save();
   ctx.translate(destW / 2, destH / 2);
+  ctx.rotate(CAMERA_ROTATION_RAD);
   if (mirror) ctx.scale(-1, 1);
   if (rotated) ctx.rotate(Math.PI / 2);
 
