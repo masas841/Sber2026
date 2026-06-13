@@ -31,6 +31,7 @@ const preview = document.getElementById("preview");
 const previewCanvas = document.getElementById("preview-canvas");
 const snapshot = document.getElementById("snapshot");
 const captureHint = document.getElementById("capture-hint");
+const captureCountdown = document.getElementById("capture-countdown");
 const smileStatus = document.getElementById("smile-status");
 const smileRing = document.getElementById("smile-ring");
 const statusPrev = document.getElementById("status-prev");
@@ -48,6 +49,7 @@ const btnRetry = document.getElementById("btn-retry");
 
 const RESULT_LOOP_SEC = 20;
 const PROCESSING_TIMEOUT_MS = 40000;
+const CAPTURE_COUNTDOWN_SEC = 4;
 const CAMERA_ZOOM = 2;
 const CAMERA_ROTATION_RAD = Math.PI;
 const CAPTURE_SNAPSHOT_SCALE = 2;
@@ -98,6 +100,8 @@ let funnyTimer = null;
 let activeLines = [];
 let resultTimer = null;
 let countdownTimer = null;
+let captureCountdownTimer = null;
+let captureCountdownToken = 0;
 let smileWatcher = null;
 let presenceWatcher = null;
 let captureLocked = false;
@@ -561,6 +565,7 @@ async function enterCapture() {
 
 async function returnToIdle() {
   captureLocked = false;
+  clearCaptureCountdown();
   stopFunnyRotation();
   stopResultPlayback();
   await smileWatcher?.close?.();
@@ -609,17 +614,66 @@ async function startSmileCapture() {
   }
 }
 
+function clearCaptureCountdown() {
+  captureCountdownToken += 1;
+  if (captureCountdownTimer != null) {
+    window.clearTimeout(captureCountdownTimer);
+    captureCountdownTimer = null;
+  }
+  captureCountdown?.classList.add("hidden");
+  captureCountdown?.classList.remove("is-ticking");
+  if (captureCountdown) captureCountdown.textContent = "";
+}
+
+function showCaptureCountdownValue(value) {
+  if (!captureCountdown) return;
+  captureCountdown.textContent = String(value);
+  captureCountdown.classList.remove("hidden", "is-ticking");
+  void captureCountdown.offsetWidth;
+  captureCountdown.classList.add("is-ticking");
+}
+
+function runCaptureCountdown(seconds = CAPTURE_COUNTDOWN_SEC) {
+  clearCaptureCountdown();
+  const token = captureCountdownToken;
+  return new Promise((resolve) => {
+    let left = seconds;
+    showCaptureCountdownValue(left);
+
+    const tick = () => {
+      if (token !== captureCountdownToken) {
+        resolve(false);
+        return;
+      }
+      left -= 1;
+      if (left <= 0) {
+        clearCaptureCountdown();
+        resolve(true);
+        return;
+      }
+      showCaptureCountdownValue(left);
+      captureCountdownTimer = window.setTimeout(tick, 1000);
+    };
+
+    captureCountdownTimer = window.setTimeout(tick, 1000);
+  });
+}
+
 async function triggerCapture() {
   if (captureLocked) return;
   captureLocked = true;
   smileWatcher?.stop();
-  smileStatus.textContent = "Снимаем!";
+  smileStatus.textContent = "Улыбка поймана!";
+  if (captureHint) captureHint.textContent = "Смотрим в камеру!";
 
   const runId = ++processingRunId;
   const controller = new AbortController();
   let timeoutId = null;
   let processingTimedOut = false;
   try {
+    const countdownComplete = await runCaptureCountdown();
+    if (!countdownComplete) return;
+    smileStatus.textContent = "Снимаем!";
     const blob = await captureBlob();
     stopCamera();
     const timeout = new Promise((_, reject) => {
@@ -641,6 +695,7 @@ async function triggerCapture() {
       await returnToIdle();
       return;
     }
+    clearCaptureCountdown();
     if (err?.name === "AbortError") return;
     errorText.textContent = err.message;
     show("error");

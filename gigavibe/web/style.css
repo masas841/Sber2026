@@ -481,6 +481,61 @@ body {
   transition: background 0.12s ease;
 }
 
+.capture-countdown {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 4;
+  width: 154px;
+  height: 154px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #122654;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 4px 18px rgba(255, 255, 255, 0.85);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0 48%, rgba(255, 255, 255, 0.44) 49% 66%, transparent 67%),
+    conic-gradient(from -90deg, #a6ff00, #5ecfff, #ff4fa3, #a6ff00);
+  box-shadow:
+    0 18px 54px rgba(18, 38, 84, 0.28),
+    inset 0 0 0 7px rgba(255, 255, 255, 0.58);
+  pointer-events: none;
+}
+
+.capture-countdown::before {
+  position: absolute;
+  inset: -16px;
+  content: "";
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.58), rgba(166, 255, 0, 0.22) 46%, transparent 70%);
+  filter: blur(8px);
+}
+
+.capture-countdown.is-ticking {
+  animation: capture-countdown-pop 0.82s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes capture-countdown-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.62) rotate(-4deg);
+  }
+  34% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+
 .actions {
   display: grid;
   gap: 10px;

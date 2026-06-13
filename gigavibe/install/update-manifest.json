@@ -912,8 +912,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "4fd4e836622f11dc2bee4ded1572c60b9d0b8c2df05d5420d3780daf1ee39cf4",
-      "size": 28048
+      "sha256": "3899008e83d80c1c70a98231fbe991c652283acdb222ffc039bc613284b3e645",
+      "size": 29775
     },
     {
       "path": "web/assets/figma/giga-full.svg",
@@ -1467,8 +1467,8 @@
     },
     {
       "path": "web/index.html",
-      "sha256": "b7288018393c9bbc1b9d512f29a54618b18bd82439ceb85e40fe52a57cb4170a",
-      "size": 4706
+      "sha256": "f39a121117ae484a8e58aa42c92289d831ff9719d91a59550fb117f3e561f62c",
+      "size": 4832
     },
     {
       "path": "web/overlay-sprites.js",
@@ -1482,8 +1482,8 @@
     },
     {
       "path": "web/style.css",
-      "sha256": "8aea9c478fb5ac856e2e6d94ab26b0a3932780f30cee17d6379bace3633d0907",
-      "size": 13058
+      "sha256": "f1abfb34069fbd77da64829c3c326087a735c917306ac560276588cd85ea0167",
+      "size": 14433
     }
   ],
   "root": "gigavibe",
