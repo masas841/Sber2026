@@ -34,9 +34,9 @@ export const STAGE_ALIASES = {
 };
 
 export const STAGE_TIMING = {
-  line: 10000,
+  line: 15000,
   stickers: 2400,
-  qr: 20000,
+  qr: 10000,
 };
 
 const LINE_TYPEWRITER = {
