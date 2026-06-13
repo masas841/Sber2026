@@ -48,7 +48,8 @@ const btnErrorRetry = document.getElementById("btn-error-retry");
 const btnRetry = document.getElementById("btn-retry");
 
 const RESULT_LOOP_SEC = 20;
-const PROCESSING_TIMEOUT_MS = 40000;
+// guest_profile + AITunnel (25s + 1 retry) + upload/print
+const PROCESSING_TIMEOUT_MS = 60000;
 const CAPTURE_COUNTDOWN_SEC = 4;
 const CAMERA_ZOOM = 2;
 const CAMERA_ROTATION_RAD = Math.PI;

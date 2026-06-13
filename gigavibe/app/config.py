@@ -235,6 +235,8 @@ class Settings(BaseSettings):
     gemini_api_base_url: str = ""
     aitunnel_api_key: str | None = None
     aitunnel_api_base_url: str = "https://api.aitunnel.ru/v1"
+    aitunnel_read_timeout_sec: float = 25.0
+    aitunnel_max_attempts: int = 2
     quatarly_api_key: str | None = None
     quatarly_api_base_url: str = "https://api.quatarly.cloud/v1"
     nanobanana_model: str = "gemini-3.1-flash-image-preview"

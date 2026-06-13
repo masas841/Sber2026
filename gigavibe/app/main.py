@@ -27,6 +27,27 @@ if ASSETS_DIR.exists():
     app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
 
 
+class _SuppressAsyncioConnectionResetFilter(logging.Filter):
+    """Windows: браузер обрывает HTTP — asyncio шумит WinError 10054 в ERROR."""
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        if record.name != "asyncio":
+            return True
+        if record.exc_info:
+            exc_type, exc_value, _ = record.exc_info
+            if exc_type is ConnectionResetError:
+                return False
+            winerror = getattr(exc_value, "winerror", None)
+            if winerror == 10054:
+                return False
+        text = record.getMessage()
+        return not (
+            "_call_connection_lost" in text
+            or "ConnectionResetError" in text
+            or "10054" in text
+        )
+
+
 def _configure_file_logging() -> None:
     log_path = ROOT / "server.log"
     root_logger = logging.getLogger()
@@ -42,6 +63,9 @@ def _configure_file_logging() -> None:
     root_logger.addHandler(handler)
     if root_logger.level > logging.INFO:
         root_logger.setLevel(logging.INFO)
+    asyncio_logger = logging.getLogger("asyncio")
+    if not any(isinstance(f, _SuppressAsyncioConnectionResetFilter) for f in asyncio_logger.filters):
+        asyncio_logger.addFilter(_SuppressAsyncioConnectionResetFilter())
     logger.info("file logging enabled: %s", log_path)
 
 

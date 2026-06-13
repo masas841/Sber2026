@@ -12,6 +12,8 @@ from pathlib import Path
 import httpx
 from PIL import Image
 
+from app.config import settings
+
 logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://api.aitunnel.ru/v1"
@@ -97,13 +99,22 @@ def generate_festival_portrait(
         "output_compression": "92",
     }
 
-    timeout = httpx.Timeout(300.0, connect=30.0, read=300.0, write=120.0)
+    read_timeout = max(5.0, float(settings.aitunnel_read_timeout_sec))
+    max_attempts = max(1, int(settings.aitunnel_max_attempts))
+    timeout = httpx.Timeout(connect=30.0, read=read_timeout, write=120.0, pool=30.0)
     last_exc: BaseException | None = None
     job_label = _job_label(source_image)
-    for attempt in range(1, 4):
+    for attempt in range(1, max_attempts + 1):
         t_attempt = time.perf_counter()
         try:
-            logger.info("aitunnel job=%s attempt=%s POST %s", job_label, attempt, url)
+            logger.info(
+                "aitunnel job=%s attempt=%s/%s POST %s read_timeout=%.0fs",
+                job_label,
+                attempt,
+                max_attempts,
+                url,
+                read_timeout,
+            )
             with httpx.Client(timeout=timeout, http2=False) as client:
                 resp = client.post(url, headers=headers, files=files, data=data)
             elapsed = time.perf_counter() - t_attempt
@@ -126,14 +137,14 @@ def generate_festival_portrait(
             last_exc = exc
             elapsed = time.perf_counter() - t_attempt
             logger.warning(
-                "aitunnel job=%s attempt=%s HTTP error after %.1fs: %s",
+                "aitunnel job=%s attempt=%s/%s HTTP error after %.1fs: %s",
                 job_label,
                 attempt,
+                max_attempts,
                 elapsed,
                 repr(exc),
             )
-            if attempt < 3:
-                time.sleep(attempt * 2)
+            if attempt < max_attempts:
                 continue
             raise RuntimeError(f"AITunnel API: {exc}") from exc
     else:
@@ -185,9 +196,11 @@ def generate_scene_image(
         "output_compression": "92",
     }
 
-    timeout = httpx.Timeout(300.0, connect=30.0, read=300.0, write=120.0)
+    read_timeout = max(5.0, float(settings.aitunnel_read_timeout_sec))
+    max_attempts = max(1, int(settings.aitunnel_max_attempts))
+    timeout = httpx.Timeout(connect=30.0, read=read_timeout, write=120.0, pool=30.0)
     last_exc: BaseException | None = None
-    for attempt in range(1, 4):
+    for attempt in range(1, max_attempts + 1):
         try:
             with httpx.Client(timeout=timeout, http2=False) as client:
                 resp = client.post(url, headers=headers, json=body)
@@ -199,8 +212,7 @@ def generate_scene_image(
             raise
         except httpx.HTTPError as exc:
             last_exc = exc
-            if attempt < 3:
-                time.sleep(attempt * 2)
+            if attempt < max_attempts:
                 continue
             raise RuntimeError(f"AITunnel API: {exc}") from exc
     else:

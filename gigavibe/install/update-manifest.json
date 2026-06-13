@@ -12,8 +12,8 @@
     },
     {
       "path": "app/aitunnel_image_client.py",
-      "sha256": "c1adc766b63b6297154170fbbe860c6fb37551de3f1384b68434665b1a533d36",
-      "size": 7306
+      "sha256": "dbd9bc533ca80c57995b5e8a501cce91237f5b9e5cebd35154ab9bb2a3ffe84f",
+      "size": 7795
     },
     {
       "path": "app/compositor.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "babf56700d1362a27db41ee12ab74e28c5092454838cb3345da35e09ae1c00d0",
-      "size": 21723
+      "sha256": "e1119ddeb7849d7b7dce0b0765113a3dd0cae1e3ee19cc03f770d7b5e76e49aa",
+      "size": 21802
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -167,8 +167,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "e9585b5c5f882edbbfcbeacbc48478a2091c05b7ec78b24300ab1a9c69f06ef7",
-      "size": 24576
+      "sha256": "ea7ffbe0659fa95743fbfa10e88fbf6f442b6e16117b6ae01fb2424cc894c44f",
+      "size": 25557
     },
     {
       "path": "app/nanobanana_client.py",
@@ -922,8 +922,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "1865d94d986aac445705e1a0c8f0bec3b91d799c2a74d2ac6624f3cd8755b3e9",
-      "size": 30851
+      "sha256": "c297f7cce3f5af6c17499a88a8bee7a82aad8d7057b98b710792f104f3c658fc",
+      "size": 30910
     },
     {
       "path": "web/assets/figma/giga-full.svg",
