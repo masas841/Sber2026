@@ -15,7 +15,7 @@ const debug = params.has("debug");
 const live = !params.has("nostage") && !stageParam && !demo;
 
 const PRESENCE = {
-  minFaceSize: 0.10,
+  minFaceSize: 0.05,
   holdMs: 450,
   releaseMs: 1400,
   detectStride: 6,
@@ -27,7 +27,7 @@ const SMILE_HOLD = {
 };
 
 const SMILE = {
-  threshold: 0.42,
+  threshold: 0.21,
   holdMs: SMILE_HOLD.requiredMs,
   minFaceSize: 0.14,
   releaseMs: 1500,
