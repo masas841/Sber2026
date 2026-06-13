@@ -120,7 +120,7 @@ body {
 .camera-slot video {
   object-fit: cover;
   object-position: center center;
-  transform: scaleX(-1) scale(var(--camera-zoom));
+  transform: rotate(180deg) scale(var(--camera-zoom));
   transform-origin: center center;
   z-index: 1;
   background: #000;

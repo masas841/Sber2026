@@ -5,8 +5,8 @@ import {
   resolveStage,
 } from "./smile-stage.js?v=20260612-qr-sticker-fill-2";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js?v=20260611-detection-zoom";
-import { createFacePresenceWatcher } from "./face-presence.js?v=20260611-detection-zoom";
+import { createSmileWatcher } from "./smile-capture.js?v=20260613-detection-rotate";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-detection-rotate";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
