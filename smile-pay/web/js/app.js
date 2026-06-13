@@ -3,10 +3,10 @@ import {
   STAGES,
   STAGE_ALIASES,
   resolveStage,
-} from "./smile-stage.js?v=20260612-qr-sticker-fill-2";
+} from "./smile-stage.js?v=20260613-app-up";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js?v=20260613-detection-confidence";
-import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-detection-confidence";
+import { createSmileWatcher } from "./smile-capture.js?v=20260613-fast-acquire";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-fast-acquire";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
@@ -16,7 +16,7 @@ const live = !params.has("nostage") && !stageParam && !demo;
 
 const PRESENCE = {
   minFaceSize: 0.025,
-  holdMs: 450,
+  holdMs: 180,
   releaseMs: 1400,
   detectStride: 6,
 };

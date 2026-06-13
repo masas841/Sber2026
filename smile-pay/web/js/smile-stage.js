@@ -20,7 +20,7 @@ import {
   TEXT,
   mapBox,
 } from "./figma-layout.js?v=20260612-qr-sticker-fill-2";
-import { applyCamVars, getCamHoleCanvas504 } from "./cam-geometry.js";
+import { applyCamVars, getCamHoleCanvas504 } from "./cam-geometry.js?v=20260613-app-up";
 
 const ASSET_BASE = "/static/assets/figma";
 const ASSET_VERSION = "20260612-qr-sticker-fill-2";

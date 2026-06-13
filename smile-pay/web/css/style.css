@@ -49,7 +49,7 @@ body {
 /* Киоск: фиксированный квадрат 504×504, левый верхний угол окна */
 .shell {
   position: fixed;
-  top: 0;
+  top: -25px;
   left: 0;
   width: var(--stage-size);
   height: var(--stage-size);
@@ -120,7 +120,7 @@ body {
 .camera-slot video {
   object-fit: cover;
   object-position: center center;
-  transform: rotate(180deg) scale(var(--camera-zoom));
+  transform: rotate(180deg) scaleX(-1) scale(var(--camera-zoom));
   transform-origin: center center;
   z-index: 1;
   background: #000;

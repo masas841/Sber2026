@@ -42,9 +42,9 @@ export async function createFaceLandmarker() {
     baseOptions: { modelAssetPath: modelUrl },
     runningMode: "VIDEO",
     numFaces: 1,
-    minFaceDetectionConfidence: 0.15,
-    minFacePresenceConfidence: 0.15,
-    minTrackingConfidence: 0.15,
+    minFaceDetectionConfidence: 0.05,
+    minFacePresenceConfidence: 0.05,
+    minTrackingConfidence: 0.05,
     outputFaceBlendshapes: true,
   };
 

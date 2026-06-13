@@ -2,7 +2,7 @@
  * Снимок по улыбке (MediaPipe Face Landmarker, blendshapes).
  */
 
-import { createFaceLandmarker, faceBounds, getDetectionFrame } from "./face-landmarker.js?v=20260613-detection-confidence";
+import { createFaceLandmarker, faceBounds, getDetectionFrame } from "./face-landmarker.js?v=20260613-fast-acquire";
 
 export async function createSmileWatcher(videoEl, options = {}) {
   const {
