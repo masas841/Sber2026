@@ -305,8 +305,11 @@ class Settings(BaseSettings):
     # Детекция нескольких лиц в групповом селфи (InsightFace det_10g)
     guest_face_det_size: int = 960
     guest_face_det_thresh: float = 0.25
-    # Второе лицо считаем только если его bbox ≥ доля от крупнейшего (отсекает шум)
-    guest_face_min_relative_size: float = 0.12
+    # Второе лицо считаем гостем стенда только если оно достаточно крупное и центральное.
+    # Это отсекает прохожих за пределами стенда, которые случайно попали в кадр.
+    guest_face_min_relative_size: float = 0.35
+    guest_face_center_width: float = 0.72
+    guest_face_center_height: float = 0.86
 
     # Отправка готового файла на внешний сервер (multipart POST)
     output_upload_enabled: bool = False

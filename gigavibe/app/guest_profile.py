@@ -140,23 +140,46 @@ def _face_bbox_area(face) -> float:
     return max(x2 - x1, 1.0) * max(y2 - y1, 1.0)
 
 
-def _filter_group_faces(faces: list) -> list:
-    """Оставляем лица, достаточно крупные для группового селфи (не шум детектора)."""
+def _face_center_in_zone(face, frame_w: int, frame_h: int) -> bool:
+    """Фоновые прохожие обычно мелкие и/или у края кадра, вне зоны стенда."""
+    from app.config import settings
+
+    x1, y1, x2, y2 = face.bbox.astype(float)
+    cx = ((x1 + x2) / 2) / max(frame_w, 1)
+    cy = ((y1 + y2) / 2) / max(frame_h, 1)
+    center_w = max(0.0, min(1.0, float(settings.guest_face_center_width)))
+    center_h = max(0.0, min(1.0, float(settings.guest_face_center_height)))
+    x_min = (1.0 - center_w) / 2
+    y_min = (1.0 - center_h) / 2
+    return x_min <= cx <= 1.0 - x_min and y_min <= cy <= 1.0 - y_min
+
+
+def _filter_group_faces(faces: list, img: np.ndarray) -> list:
+    """Оставляем только крупных центральных гостей, а не фоновых прохожих."""
     from app.config import settings
 
     if len(faces) <= 1:
         return faces
 
+    h, w = img.shape[:2]
     areas = [_face_bbox_area(f) for f in faces]
     max_area = max(areas)
     min_ratio = float(settings.guest_face_min_relative_size)
-    kept = [f for f, area in zip(faces, areas) if area >= max_area * min_ratio]
+    kept = [
+        f
+        for f, area in zip(faces, areas)
+        if area >= max_area * min_ratio and _face_center_in_zone(f, w, h)
+    ]
+    if not kept:
+        kept = [max(faces, key=_face_bbox_area)]
     kept.sort(key=_face_bbox_area, reverse=True)
     if len(kept) < len(faces):
         logger.info(
-            "guest_profile: отфильтровано %d мелких лиц (min %.0f%% от крупнейшего)",
+            "guest_profile: отфильтровано %d фоновых лиц (min %.0f%% от крупнейшего, central %.0fx%.0f%%)",
             len(faces) - len(kept),
             min_ratio * 100,
+            float(settings.guest_face_center_width) * 100,
+            float(settings.guest_face_center_height) * 100,
         )
     return kept
 
@@ -168,7 +191,7 @@ def analyze_guest_image(image_path: Path) -> GuestProfile:
         raise RuntimeError(f"Не удалось прочитать фото: {image_path}")
 
     faces = face_app.get(img)
-    faces = _filter_group_faces(faces)
+    faces = _filter_group_faces(faces, img)
     if not faces:
         raise RuntimeError("На фото не найдено лицо")
 

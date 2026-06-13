@@ -197,6 +197,14 @@ def build_festival_toon_prompt(profile: "GuestProfile | None") -> tuple[str, str
     return base, FESTIVAL_TOON_NEGATIVE
 
 
+NANOBANANA_BYSTANDER_RULE = (
+    "Only treat the large, close, central foreground face(s) as the intended guest(s). "
+    "Ignore small, distant, edge-of-frame, background, passerby, crowd or bystander faces "
+    "from the reference photo. Do not preserve background people as subjects. "
+    "The final image must contain only the intended foreground guest(s), no extra people."
+)
+
+
 def _nanobanana_group_size(n: int) -> str:
     if n == 2:
         return "two people"
@@ -213,8 +221,9 @@ def _nanobanana_subject(profile: "GuestProfile | None") -> str:
     if profile.is_group():
         who = _nanobanana_group_size(profile.face_count)
         return (
-            f"{who} from the reference photo — keep every visible person, "
-            "each with the same recognizable face, hairstyle and likeness"
+            f"{who} intended foreground central guests from the reference photo — "
+            "ignore small background bystanders; keep each intended guest with the same "
+            "recognizable face, hairstyle and likeness"
         )
     age = _age_phrase(profile)
     if profile.gender == "male":
@@ -252,9 +261,10 @@ def _nanobanana_surreal_subjects(profile: "GuestProfile | None", is_group: bool)
         n = profile.face_count if profile else 2
         return {
             "keep": (
-                f"every visible person from the reference photo ({_nanobanana_group_size(n)}) — "
-                "each person's identity, facial features, skin texture, hairstyle, expression, "
-                "clothing and proportions"
+                f"the intended foreground central guests from the reference photo "
+                f"({_nanobanana_group_size(n)}) — only the large, close, central people at the stand; "
+                "each intended guest's identity, facial features, skin texture, hairstyle, "
+                "expression, clothing and proportions"
             ),
             "place": "the group",
             "interact": "each person",
@@ -270,16 +280,17 @@ def _nanobanana_surreal_subjects(profile: "GuestProfile | None", is_group: bool)
                 "strong integration between every person and the environment"
             ),
             "composition_extra": (
-                "Camera pulled back — show everyone visible in the reference together in one cohesive frame.\n"
-                "Do not drop anyone from the selfie, do not merge two people into one face, "
-                "do not add extra people.\n"
+                "Camera pulled back — show only the intended foreground guests together in one cohesive frame.\n"
+                "Ignore any small, distant, edge-of-frame or background passerby faces from the reference.\n"
+                "Do not drop any intended foreground guest, do not merge two intended guests into one face, "
+                "do not add extra people or preserve bystanders.\n"
                 "Pose: friendly group selfie — warm genuine smiles, relaxed confident expressions, "
                 "looking at the camera.\n"
             ),
             "identity_rule": (
-                "Identity rule: every person from the reference must appear in the output, "
-                "each recognizable — do not change ethnicity, age, gender, or face shape of anyone; "
-                "do not merge faces, do not drop anyone, do not add extra people."
+                "Identity rule: every intended foreground guest from the reference must appear in the output, "
+                "each recognizable — do not change ethnicity, age, gender, or face shape of intended guests; "
+                "do not merge faces, do not drop intended guests, do not add extra people or bystanders."
             ),
         }
     if profile is None:
@@ -304,7 +315,8 @@ def _nanobanana_surreal_subjects(profile: "GuestProfile | None", is_group: bool)
             "composition_extra": "",
             "identity_rule": (
                 "Identity rule: the output must look like the same guest from the reference — "
-                "do not change ethnicity, age, gender, or face shape."
+                "do not change ethnicity, age, gender, or face shape. "
+                "Ignore background bystanders and do not add extra people."
             ),
         }
     age = _age_phrase(profile)
@@ -337,7 +349,8 @@ def _nanobanana_surreal_subjects(profile: "GuestProfile | None", is_group: bool)
         "composition_extra": "",
         "identity_rule": (
             "Identity rule: the output must look like the same guest from the reference — "
-            "do not change ethnicity, age, gender, or face shape."
+            "do not change ethnicity, age, gender, or face shape. "
+            "Ignore background bystanders and do not add extra people."
         ),
     }
 
@@ -406,6 +419,7 @@ def _build_nanobanana_surreal_prompt(profile: "GuestProfile | None") -> str:
         "seamless integration between photo and CGI environment.\n\n"
         "Vertical 9:16 portrait. "
         f"{subj['identity_rule']} "
+        f"{NANOBANANA_BYSTANDER_RULE} "
         "Do not add text, logos, subtitles, or watermarks. Single cohesive image."
     )
 
@@ -487,13 +501,13 @@ def build_nanobanana_prompt(profile: "GuestProfile | None") -> str:
     if style == "caricature":
         if is_group:
             style_line = (
-                "a bold grotesque festival caricature sharzh of the same recognizable people from the reference — "
+                "a bold grotesque festival caricature sharzh of the same recognizable intended foreground guests from the reference — "
                 "strong editorial exaggeration on each face: enlarged distinctive features "
                 "(nose, chin, jaw, forehead, ears, cheekbones) amplified from the reference, "
                 "wide comic grins, squinting sparkling eyes, stretched proportions, punchy humorous distortion; "
                 "hand-drawn ink outlines with gouache/watercolor festival poster rendering; "
-                "each person instantly recognizable yet comically distorted; preserve ethnicity, age, gender "
-                "and core likeness of everyone; do not merge faces, do not drop anyone; "
+                "each intended guest instantly recognizable yet comically distorted; preserve ethnicity, age, gender "
+                "and core likeness of intended foreground guests; do not merge faces, do not drop intended guests; "
                 "playful party sharzh, not horror, not hateful, not disgusting gore"
             )
         else:
@@ -538,14 +552,14 @@ def build_nanobanana_prompt(profile: "GuestProfile | None") -> str:
 
     if is_group:
         pose = (
-            "Pose: friendly group selfie — everyone visible in the reference stands together, "
+            "Pose: friendly group selfie — only the intended foreground guests stand together, "
             "warm genuine smiles, relaxed confident expressions, looking at the camera."
         )
         identity = (
-            "Identity rule: every person from the reference must appear in the output, "
+            "Identity rule: every intended foreground guest from the reference must appear in the output, "
             "each recognizable and only slightly more photogenic — "
-            "do not change ethnicity, age, gender, or face shape of anyone; "
-            "do not fuse two people into one face."
+            "do not change ethnicity, age, gender, or face shape of intended guests; "
+            "do not fuse two people into one face; do not preserve background bystanders."
         )
     else:
         pose = "Pose: warm genuine smile, relaxed confident expression, looking at the camera."
@@ -562,6 +576,7 @@ def build_nanobanana_prompt(profile: "GuestProfile | None") -> str:
         f"Scene: {scene} "
         f"{scene_tail}\n\n"
         f"{identity}\n"
+        f"{NANOBANANA_BYSTANDER_RULE}\n"
         "Do not add text, logos, subtitles, or watermarks. Single cohesive image."
     )
 
