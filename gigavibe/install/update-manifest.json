@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "a4c02c19082817e3dfc0bb9b848d13e5cbdd2777440c18eb305bf30972f75075",
-      "size": 4764
+      "sha256": "91ed22d49ce1316597d92f40b604786c220e592b3ed66b1f6e323e4e9919bf85",
+      "size": 4989
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "9176b0b0a38a951dbd71bd9c7b3d8ea5801504e539c875913a5d327b76f5fd6f",
-      "size": 20754
+      "sha256": "eb2380fcb21ada0d0fff5fe4e1ef7a259186cfa1c450db48f40e9cb29b12d04f",
+      "size": 20999
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -152,8 +152,8 @@
     },
     {
       "path": "app/guest_profile.py",
-      "sha256": "82c9afe69c124b1ff7d415ccd39f1ec686cb246984eeb5febdb5abd308296eb3",
-      "size": 6492
+      "sha256": "7b933e6caf9baec534fc128a9fa1bd5ff15c069596fcb047cf37782ea9cd1d55",
+      "size": 7454
     },
     {
       "path": "app/ltx_quality.py",
@@ -187,8 +187,8 @@
     },
     {
       "path": "app/prompts.py",
-      "sha256": "9eabc32b95d2937b5191b36e0a3a9fb9a540117db37b504b50cfe8a404470532",
-      "size": 28688
+      "sha256": "a62b7c67d83e25c9d2fd6b96f6246d615ab3bd6b24501c7a2cc5a4a19ba7df5c",
+      "size": 29807
     },
     {
       "path": "app/qr_util.py",
@@ -482,8 +482,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "1be22dbb460496c6a7ef82a670ae1ad3b7a22a4c460dc443e93f64071a4eeaa3",
-      "size": 1760
+      "sha256": "2ee5feee74cd08c1f89ae8a721c7a37e56cc7c2965ec91a1e99bded390e1b251",
+      "size": 1853
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -532,8 +532,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "9692b6ef5539bdce65fadf20cbab9d40d2897189375e4dbf979fcb7487c2ad3c",
-      "size": 10538
+      "sha256": "d3023aca16ba83f33293c0e14d6bb6e325814481364fb4aaae32b6872f249b08",
+      "size": 10864
     },
     {
       "path": "requirements-kiosk.txt",
@@ -912,8 +912,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "a3d48fa9528618306b916813e3067de928b5330230b0a8cdafd2139b0114f77d",
-      "size": 27840
+      "sha256": "4fd4e836622f11dc2bee4ded1572c60b9d0b8c2df05d5420d3780daf1ee39cf4",
+      "size": 28048
     },
     {
       "path": "web/assets/figma/giga-full.svg",
