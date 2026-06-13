@@ -15,7 +15,7 @@ const debug = params.has("debug");
 const live = !params.has("nostage") && !stageParam && !demo;
 
 const PRESENCE = {
-  minFaceSize: 0.05,
+  minFaceSize: 0.025,
   holdMs: 450,
   releaseMs: 1400,
   detectStride: 6,
