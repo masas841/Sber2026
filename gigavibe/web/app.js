@@ -47,6 +47,7 @@ const btnErrorRetry = document.getElementById("btn-error-retry");
 const btnRetry = document.getElementById("btn-retry");
 
 const RESULT_LOOP_SEC = 20;
+const PROCESSING_TIMEOUT_MS = 40000;
 const CAMERA_ZOOM = 2;
 const CAMERA_ROTATION_RAD = Math.PI;
 const CAPTURE_SNAPSHOT_SCALE = 2;
@@ -101,6 +102,7 @@ let smileWatcher = null;
 let presenceWatcher = null;
 let captureLocked = false;
 let onCaptureScreen = false;
+let processingRunId = 0;
 const screenHideTimers = new Map();
 let screenRevealToken = 0;
 const detectionCanvas = document.createElement("canvas");
@@ -613,13 +615,35 @@ async function triggerCapture() {
   smileWatcher?.stop();
   smileStatus.textContent = "Снимаем!";
 
+  const runId = ++processingRunId;
+  const controller = new AbortController();
+  let timeoutId = null;
   try {
     const blob = await captureBlob();
     stopCamera();
-    await submitPhoto(blob);
+    const timeout = new Promise((_, reject) => {
+      timeoutId = window.setTimeout(() => {
+        controller.abort();
+        const err = new Error("processing timeout");
+        err.name = "ProcessingTimeoutError";
+        reject(err);
+      }, PROCESSING_TIMEOUT_MS);
+    });
+    await Promise.race([
+      submitPhoto(blob, { signal: controller.signal, runId }),
+      timeout,
+    ]);
   } catch (err) {
+    if (err?.name === "ProcessingTimeoutError") {
+      processingRunId += 1;
+      await returnToIdle();
+      return;
+    }
+    if (err?.name === "AbortError") return;
     errorText.textContent = err.message;
     show("error");
+  } finally {
+    if (timeoutId != null) window.clearTimeout(timeoutId);
   }
 }
 
@@ -712,14 +736,14 @@ async function startResultPlayback(data) {
   resultTimer = setTimeout(() => reset(), RESULT_LOOP_SEC * 1000);
 }
 
-async function submitPhoto(blob) {
+async function submitPhoto(blob, { signal, runId } = {}) {
   show("processing");
   startFunnyRotation();
 
   const form = new FormData();
   form.append("photo", blob, "selfie.jpg");
 
-  const createRes = await fetch("/api/jobs", { method: "POST", body: form });
+  const createRes = await fetch("/api/jobs", { method: "POST", body: form, signal });
   if (!createRes.ok) {
     const errBody = await createRes.text().catch(() => "");
     throw new Error(errBody || "Не удалось отправить фото");
@@ -728,7 +752,8 @@ async function submitPhoto(blob) {
 
   for (let i = 0; i < 300; i++) {
     await new Promise((r) => setTimeout(r, 1000));
-    const statusRes = await fetch(`/api/jobs/${jobId}`);
+    if (signal?.aborted) throw new DOMException("aborted", "AbortError");
+    const statusRes = await fetch(`/api/jobs/${jobId}`, { signal });
     if (!statusRes.ok) {
       const errBody = await statusRes.text().catch(() => "");
       throw new Error(
@@ -740,6 +765,7 @@ async function submitPhoto(blob) {
     const data = await statusRes.json();
 
     if (data.status === "done") {
+      if (runId != null && runId !== processingRunId) return;
       stopFunnyRotation();
       startResultPlayback(data);
       return;
