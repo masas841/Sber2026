@@ -236,6 +236,16 @@ class FestivalNanobananaGenerator(VideoGenerator):
             prompt = settings.nanobanana_prompt
 
         backend = self.backend()
+        job_label = source_image.parent.name or source_image.stem
+        logger.info(
+            "nanobanana job=%s backend=%s model=%s aspect=%s image_size=%s prompt_len=%s",
+            job_label,
+            backend,
+            settings.nanobanana_model,
+            settings.nanobanana_aspect_ratio,
+            settings.nanobanana_image_size,
+            len(prompt),
+        )
         t0 = time.perf_counter()
         if backend == "proxy":
             still, timings = self._generate_proxy(source_image, prompt, width, height)

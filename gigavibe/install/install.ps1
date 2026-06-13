@@ -14,6 +14,7 @@ Write-Host "Root: $Root"
 . (Join-Path $PSScriptRoot "Resolve-Python.ps1")
 . (Join-Path $PSScriptRoot "Install-Deps.ps1")
 . (Join-Path $PSScriptRoot "Install-VCRedist.ps1")
+. (Join-Path $PSScriptRoot "Update-EnvDefaults.ps1")
 
 $basePy = Get-GigaPython -Root $Root
 $ver = & $basePy -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')"
@@ -72,6 +73,7 @@ if (-not (Test-Path ".env")) {
     Copy-Item $PSScriptRoot\.env.kiosk.example .env
     Write-Host "Created .env - set PUBLIC_BASE_URL and AITUNNEL_API_KEY" -ForegroundColor Yellow
 }
+Update-GigaEnvDefaults -Root $Root
 
 New-Item -ItemType Directory -Force -Path "$Root\data\outputs" | Out-Null
 New-Item -ItemType Directory -Force -Path "$Root\data\uploads" | Out-Null

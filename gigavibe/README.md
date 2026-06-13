@@ -22,6 +22,7 @@ API GigaChat **не используется**.
 - Один раз скачайте модель улыбки (офлайн на площадке): `.\scripts\download_smile_model.ps1` → `web/models/face_landmarker.task`. WASM по-прежнему с jsDelivr (нужен интернет при первом открытии киоска).
 - Загрузка фото с диска отключена.
 - Фото/результат отправляются на внешний сервер, если включено `OUTPUT_UPLOAD_ENABLED=true` и задан `OUTPUT_UPLOAD_URL=https://sberfest2026.ru/api/receive`.
+- Логи киоска можно отправлять туда же для диагностики: `LOG_UPLOAD_ENABLED=true`, `LOG_UPLOAD_URL=https://sberfest2026.ru`, `LOG_UPLOAD_KIOSK_ID=farm-kiosk-1`. Сервер хранит их в `data/kiosk_logs/`, список доступен через `GET /api/kiosk-logs`, последний лог — через `GET /api/kiosk-logs/<kiosk>/latest?source=srv_out.log`.
 - По селфи: **пол**, **возраст** (ребёнок / взрослый / пожилой — InsightFace `genderage`) и **комплекция** (slim / medium / full).
 - Референс-ролик из `assets/driving/manifest.json`: **пол × возраст × комплекция** (до 18 вариантов на пол + fallback).
 

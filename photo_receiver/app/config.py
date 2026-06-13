@@ -13,9 +13,11 @@ class Settings(BaseSettings):
     chunk_size: int = 262144
     upload_api_key: str | None = None
     max_upload_bytes: int = 20 * 1024 * 1024
+    max_log_upload_bytes: int = 2 * 1024 * 1024
 
 
 settings = Settings()
 settings.data_dir.mkdir(parents=True, exist_ok=True)
 (settings.data_dir / "uploads").mkdir(parents=True, exist_ok=True)
 (settings.data_dir / "parts").mkdir(parents=True, exist_ok=True)
+(settings.data_dir / "kiosk_logs").mkdir(parents=True, exist_ok=True)

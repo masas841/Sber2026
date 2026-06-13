@@ -113,6 +113,51 @@ const detectionCanvas = document.createElement("canvas");
 detectionCanvas.width = 0;
 detectionCanvas.height = 0;
 
+function serializeError(err) {
+  if (!err) {
+    return { name: "Error", message: "Unknown client error", stack: "" };
+  }
+  if (err instanceof Error || err?.message || err?.name) {
+    return {
+      name: err.name || "Error",
+      message: err.message || String(err),
+      stack: err.stack || "",
+    };
+  }
+  return { name: "Error", message: String(err), stack: "" };
+}
+
+async function logClientError(context, err, extra = {}) {
+  const details = serializeError(err);
+  console.error(`[kiosk] ${context}`, err);
+  try {
+    await fetch("/api/client-log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        context,
+        ...details,
+        screen: shell?.dataset?.screen || "",
+        path: location.pathname,
+        ...extra,
+      }),
+      keepalive: true,
+    });
+  } catch {
+    /* best-effort logging only */
+  }
+}
+
+async function failToIdle(context, err, extra = {}) {
+  await logClientError(context, err, extra);
+  try {
+    await returnToIdle();
+  } catch (resetErr) {
+    await logClientError(`${context}:reset`, resetErr);
+    show("start");
+  }
+}
+
 function isPortraitViewport() {
   const h = window.visualViewport?.height ?? window.innerHeight;
   const w = window.visualViewport?.width ?? window.innerWidth;
@@ -538,11 +583,9 @@ async function startPresenceWatch() {
     });
     presenceWatcher.start();
   } catch (err) {
-    if (startHint) {
-      startHint.textContent =
-        "Распознавание лица недоступно. Запустите scripts\\download_smile_model.ps1";
-    }
-    console.warn(err);
+    await logClientError("presence_watch_start", err);
+    if (startHint) startHint.textContent = "";
+    show("start");
   }
 }
 
@@ -608,9 +651,7 @@ async function startSmileCapture() {
     });
     smileWatcher.start();
   } catch (err) {
-    smileStatus.textContent =
-      "Улыбка недоступна. Запустите scripts\\download_smile_model.ps1. " +
-      err.message;
+    await failToIdle("smile_watch_start", err);
   }
 }
 
@@ -692,13 +733,13 @@ async function triggerCapture() {
   } catch (err) {
     if (err?.name === "ProcessingTimeoutError" || (err?.name === "AbortError" && processingTimedOut)) {
       processingRunId += 1;
+      await logClientError("processing_timeout", err);
       await returnToIdle();
       return;
     }
     clearCaptureCountdown();
     if (err?.name === "AbortError") return;
-    errorText.textContent = err.message;
-    show("error");
+    await failToIdle("capture_submit", err);
   } finally {
     if (timeoutId != null) window.clearTimeout(timeoutId);
   }
@@ -847,8 +888,9 @@ async function bootIdle() {
     mountCameraProbe();
     await startPresenceWatch();
   } catch (err) {
-    errorText.textContent = cameraErrorMessage(err);
-    show("error");
+    await logClientError("boot_idle", err, { public_message: cameraErrorMessage(err) });
+    if (startHint) startHint.textContent = "";
+    show("start");
   }
 }
 

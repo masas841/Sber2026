@@ -22,7 +22,7 @@ fi
 sed -i "s|^PUBLIC_BASE_URL=.*|PUBLIC_BASE_URL=$PUBLIC_URL|" .env
 sed -i "s|^PORT=.*|PORT=$PORT|" .env
 
-mkdir -p data/uploads data/parts
+mkdir -p data/uploads data/parts data/kiosk_logs
 
 cat >/etc/systemd/system/photo-receiver.service <<EOF
 [Unit]

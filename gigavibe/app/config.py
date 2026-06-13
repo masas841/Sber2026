@@ -322,6 +322,20 @@ class Settings(BaseSettings):
     output_upload_max_retries: int = 5
     output_upload_retry_delay_sec: float = 3.0
 
+    # Диагностика: периодически отправлять хвост логов киоска на photo_receiver.
+    log_upload_enabled: bool = False
+    # Если пусто — используется OUTPUT_UPLOAD_URL.
+    log_upload_url: str | None = None
+    # Если пусто — используется OUTPUT_UPLOAD_API_KEY.
+    log_upload_api_key: str | None = None
+    log_upload_auth: str = "bearer"
+    log_upload_kiosk_id: str = ""
+    log_upload_interval_sec: float = 60.0
+    log_upload_timeout_sec: float = 30.0
+    log_upload_max_bytes: int = 512 * 1024
+    log_upload_initial_tail_bytes: int = 256 * 1024
+    log_upload_paths: str = "data/srv_out.log;data/srv_err.log;server.log"
+
     # QR ведёт на внешний сервер фото (если пусто — PUBLIC_BASE_URL / auto)
     qr_public_base_url: str = ""
 

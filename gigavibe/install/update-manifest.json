@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "91ed22d49ce1316597d92f40b604786c220e592b3ed66b1f6e323e4e9919bf85",
-      "size": 4989
+      "sha256": "ecc28d75c1dbeb366ce4460cb7c8c69b606e3a11761fc80b99f6e999dd527ae2",
+      "size": 5572
     },
     {
       "path": "app/__init__.py",
@@ -12,8 +12,8 @@
     },
     {
       "path": "app/aitunnel_image_client.py",
-      "sha256": "effda1ebe665f8fee8977c32310a85a2c7e550023fd53c066d310cdfa66dfd72",
-      "size": 5926
+      "sha256": "c1adc766b63b6297154170fbbe860c6fb37551de3f1384b68434665b1a533d36",
+      "size": 7306
     },
     {
       "path": "app/compositor.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "eb2380fcb21ada0d0fff5fe4e1ef7a259186cfa1c450db48f40e9cb29b12d04f",
-      "size": 20999
+      "sha256": "adc01fb7b99e6d574814c47fe3e8191eb176316fca6173ba59cae57551c97e2e",
+      "size": 21724
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -97,8 +97,8 @@
     },
     {
       "path": "app/generators/festival_nanobanana.py",
-      "sha256": "e9e26f76c15b124d81eb6adebe846caaca802a2649227ef1dc93b70f94a0bc76",
-      "size": 10054
+      "sha256": "67260620a3367efc12c8ffca3b100c9f5b9c9982a4676d1397a5b6947b5db44a",
+      "size": 10440
     },
     {
       "path": "app/generators/festival_portrait.py",
@@ -156,14 +156,19 @@
       "size": 7454
     },
     {
+      "path": "app/log_uploader.py",
+      "sha256": "c8fdb47d5f5ed199a630b782fede9a6473c095e4e7e112ed5cab8a6b49c09d6f",
+      "size": 5716
+    },
+    {
       "path": "app/ltx_quality.py",
       "sha256": "0927811ff14f68bde4de281264bcb03424eaebe6e226e939f33e7ace87bce641",
       "size": 2868
     },
     {
       "path": "app/main.py",
-      "sha256": "845d93522657db6d947cc92934efb79076d57ca74e0fea12db14569bf3a8dff1",
-      "size": 22942
+      "sha256": "d62903f1e25393f30b893a6da355a9922c3dbf8207e57435b0ef4ac9d3fd0c3f",
+      "size": 23701
     },
     {
       "path": "app/nanobanana_client.py",
@@ -182,8 +187,8 @@
     },
     {
       "path": "app/pipeline.py",
-      "sha256": "1f86f80a3b68b212a07d8eeda4521280466f4913f026d0dc9be69000c98c6689",
-      "size": 15175
+      "sha256": "186446a4c3089a58f342b5f3b8f0165053cbafb7cdc7f364ec17973232c07de0",
+      "size": 15458
     },
     {
       "path": "app/prompts.py",
@@ -197,8 +202,8 @@
     },
     {
       "path": "app/quatarly_image_client.py",
-      "sha256": "bdc90983949a2660c892eee726bdc5f05f18944dedb24247ff3662058dca8f4b",
-      "size": 5437
+      "sha256": "3761431dc02089e2d9ac7ab82270478e5e3e9c058a8699a4622e52e5053f1913",
+      "size": 6463
     },
     {
       "path": "app/selfie_compress.py",
@@ -482,8 +487,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "2ee5feee74cd08c1f89ae8a721c7a37e56cc7c2965ec91a1e99bded390e1b251",
-      "size": 1853
+      "sha256": "3dea9ea5c2ccaecd65624a809165c2a1485f6237109d24d4a767835d11b56674",
+      "size": 2046
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -497,13 +502,13 @@
     },
     {
       "path": "install/install.ps1",
-      "sha256": "e7dd87433c45d35318e52b022086b3c8303a4901eacd4293cc776db633281d2d",
-      "size": 3123
+      "sha256": "19aae791c530dd00328c3183d7c436f379d0ac28a1909e9575ed447d56ff7fa9",
+      "size": 3211
     },
     {
       "path": "install/README-INSTALL.md",
-      "sha256": "c89835ea6a4840c5b301580a8740ee64a4491941c9aec61e8236fe9c37b809b4",
-      "size": 3578
+      "sha256": "ae6c0321d19f12ec0c56fcc26c025278185919f4e394ffbbab35f8a9191f98b0",
+      "size": 3936
     },
     {
       "path": "install/Resolve-Python.ps1",
@@ -516,9 +521,14 @@
       "size": 102
     },
     {
+      "path": "install/Update-EnvDefaults.ps1",
+      "sha256": "db8d1fe9f7880ee16a3450cab0d9c9797d5f222690aeaa0ae85a549149bd038b",
+      "size": 2894
+    },
+    {
       "path": "install/update-from-github.ps1",
-      "sha256": "cf40b418980b67e94bf12e0b18bd413c0c2a32b5a4c9bfdc912762ccbb9f1dad",
-      "size": 11854
+      "sha256": "3a57f40627beedb94cc2e858d843f9e28018d939f74aa2232e49e13f78d63295",
+      "size": 14398
     },
     {
       "path": "install/update-gigavibe.cmd",
@@ -532,8 +542,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "d3023aca16ba83f33293c0e14d6bb6e325814481364fb4aaae32b6872f249b08",
-      "size": 10864
+      "sha256": "c15a3bf12db2c57f3483dde28ece20529468b84bffc4d5d95018e3b876c79676",
+      "size": 11286
     },
     {
       "path": "requirements-kiosk.txt",
@@ -547,8 +557,8 @@
     },
     {
       "path": "run-kiosk.ps1",
-      "sha256": "a7a168cbafc88a64d000872d70674a8bb64b7a81f307534e5e11dbad276be421",
-      "size": 3078
+      "sha256": "4872359ef11fb627e5bee0babaf0e0149768e2ea51b2f35e691c13103e256d08",
+      "size": 3249
     },
     {
       "path": "run.ps1",
@@ -912,8 +922,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "3899008e83d80c1c70a98231fbe991c652283acdb222ffc039bc613284b3e645",
-      "size": 29775
+      "sha256": "1865d94d986aac445705e1a0c8f0bec3b91d799c2a74d2ac6624f3cd8755b3e9",
+      "size": 30851
     },
     {
       "path": "web/assets/figma/giga-full.svg",

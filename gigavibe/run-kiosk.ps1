@@ -79,6 +79,12 @@ if (-not (Test-Path ".env")) {
     Write-Host "Created .env - set PUBLIC_BASE_URL and AITUNNEL_API_KEY" -ForegroundColor Yellow
 }
 
+$envDefaults = Join-Path $PSScriptRoot "install\Update-EnvDefaults.ps1"
+if (Test-Path $envDefaults) {
+    . $envDefaults
+    Update-GigaEnvDefaults -Root $PSScriptRoot
+}
+
 $torchLib = & python -c "import os, torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))" 2>$null
 if ($LASTEXITCODE -eq 0 -and $torchLib -and (Test-Path $torchLib)) {
     $env:PATH = "$torchLib;$env:PATH"

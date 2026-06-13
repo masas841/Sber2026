@@ -1,13 +1,15 @@
 import base64
+import logging
 from pathlib import Path
 
 import app.cuda_bootstrap  # noqa: F401 — cuDNN PATH до onnxruntime
 
-from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
+from fastapi import BackgroundTasks, Body, FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
+from app.log_uploader import start_log_upload_worker
 from app.pipeline import JobStatus, PORTRAIT_MODES, create_job_from_upload, get_job, process_job
 from app.qr_util import build_download_url, qr_output_path, save_job_qr
 from app.upload_queue import start_upload_queue_worker
@@ -15,6 +17,7 @@ from app.upload_queue import start_upload_queue_worker
 ROOT = Path(__file__).resolve().parent.parent
 WEB_DIR = ROOT / "web"
 ASSETS_DIR = ROOT / "assets"
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="GIGAvibe Kiosk", version="0.2.0")
 
@@ -27,6 +30,7 @@ if ASSETS_DIR.exists():
 @app.on_event("startup")
 def startup() -> None:
     start_upload_queue_worker()
+    start_log_upload_worker()
     mode = settings.generator_mode.lower()
     if mode in {"ref_video", "refvideo", "faceswap"}:
         from app.generators.ref_video import RefVideoGenerator
@@ -242,6 +246,22 @@ async def create_job(
     job_id = create_job_from_upload(data, photo.filename or "photo.jpg")
     background_tasks.add_task(process_job, job_id)
     return {"job_id": job_id}
+
+
+@app.post("/api/client-log")
+async def client_log(payload: dict = Body(...)) -> dict:
+    context = str(payload.get("context") or "client")[:120]
+    message = str(payload.get("message") or "")[:1000]
+    name = str(payload.get("name") or "")[:120]
+    stack = str(payload.get("stack") or "")[:3000]
+    logger.warning(
+        "client error context=%s name=%s message=%s stack=%s",
+        context,
+        name,
+        message,
+        stack,
+    )
+    return {"ok": True}
 
 
 def _qr_data_url(job_id: str) -> str | None:
@@ -513,6 +533,8 @@ def health() -> dict:
         "video_height": settings.video_height,
         "output_upload_enabled": settings.output_upload_enabled,
         "output_upload_url": settings.output_upload_url,
+        "log_upload_enabled": settings.log_upload_enabled,
+        "log_upload_url": settings.log_upload_url or settings.output_upload_url,
         "qr_public_base_url": settings.qr_public_base_url or None,
         "print_enabled": settings.print_enabled,
         "print_printer_name": settings.print_printer_name,

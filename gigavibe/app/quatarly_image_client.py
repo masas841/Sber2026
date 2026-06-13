@@ -61,9 +61,20 @@ def _post_json(url: str, *, api_key: str, body: dict, timeout_sec: float = 300.0
     timeout = httpx.Timeout(timeout_sec, connect=30.0, read=timeout_sec, write=120.0)
     last_exc: BaseException | None = None
     for attempt in range(1, 4):
+        t_attempt = time.perf_counter()
         try:
+            logger.info("quatarly POST attempt=%s url=%s", attempt, url)
             with httpx.Client(timeout=timeout, http2=False) as client:
                 resp = client.post(url, json=body, headers=headers)
+            elapsed = time.perf_counter() - t_attempt
+            logger.info(
+                "quatarly POST attempt=%s response status=%s time=%.1fs bytes=%s content-type=%s",
+                attempt,
+                resp.status_code,
+                elapsed,
+                len(resp.content),
+                resp.headers.get("content-type", ""),
+            )
             if resp.status_code >= 400:
                 raise RuntimeError(f"Quatarly API HTTP {resp.status_code}: {resp.text[:800]}")
             return resp.json()
@@ -71,9 +82,16 @@ def _post_json(url: str, *, api_key: str, body: dict, timeout_sec: float = 300.0
             raise
         except httpx.HTTPError as exc:
             last_exc = exc
+            elapsed = time.perf_counter() - t_attempt
             if attempt < 3:
                 delay = attempt * 2
-                logger.warning("quatarly POST attempt %s failed: %s; retry in %ss", attempt, exc, delay)
+                logger.warning(
+                    "quatarly POST attempt %s failed after %.1fs: %s; retry in %ss",
+                    attempt,
+                    elapsed,
+                    exc,
+                    delay,
+                )
                 time.sleep(delay)
                 continue
             _raise_api_error(exc)
@@ -90,8 +108,15 @@ def _extract_image(message: dict) -> Image.Image:
             return Image.open(io.BytesIO(base64.b64decode(b64))).convert("RGB")
         if url.startswith("http"):
             with httpx.Client(timeout=120.0, http2=False) as client:
+                logger.info("quatarly downloading result image: %s", url[:120])
                 resp = client.get(url, headers={"User-Agent": DEFAULT_USER_AGENT})
                 resp.raise_for_status()
+                logger.info(
+                    "quatarly result image downloaded: status=%s bytes=%s content-type=%s",
+                    resp.status_code,
+                    len(resp.content),
+                    resp.headers.get("content-type", ""),
+                )
                 return Image.open(io.BytesIO(resp.content)).convert("RGB")
 
     content = message.get("content")

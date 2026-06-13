@@ -214,6 +214,11 @@ def _process_job_impl(job_id: str) -> None:
             iid = float(ref_stages.get("instantid_s") or 0)
             if iid > 0:
                 timings["portrait"] = iid
+            for key, value in ref_stages.items():
+                if key in {"instantid_s", "total_s"}:
+                    continue
+                if isinstance(value, (int, float)):
+                    timings[key] = float(value)
             job.stage_timings = dict(timings)
         elif ref_stages:
             rs = float(ref_stages.get("restore_s") or 0)
@@ -392,6 +397,7 @@ def _process_job_impl(job_id: str) -> None:
             ),
         )
     except Exception as exc:
+        logger.exception("job %s failed", job_id)
         job.status = JobStatus.ERROR
         job.message = str(exc)
     finally:
