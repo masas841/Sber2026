@@ -5,8 +5,8 @@ import {
   resolveStage,
 } from "./smile-stage.js?v=20260612-qr-sticker-fill-2";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js?v=20260613-detection-rotate";
-import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-detection-rotate";
+import { createSmileWatcher } from "./smile-capture.js?v=20260613-detection-confidence";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-detection-confidence";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
@@ -29,7 +29,7 @@ const SMILE_HOLD = {
 const SMILE = {
   threshold: 0.21,
   holdMs: SMILE_HOLD.requiredMs,
-  minFaceSize: 0.14,
+  minFaceSize: 0.07,
   releaseMs: 1500,
   detectStride: 4,
 };
