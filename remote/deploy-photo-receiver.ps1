@@ -4,7 +4,7 @@ param(
     [string]$Farm = "user@192.168.1.243",
     [string]$RemoteDir = "/opt/photo-receiver",
     [int]$Port = 8767,
-    [string]$PublicUrl = "http://45.67.59.125:8767"
+    [string]$PublicUrl = "https://sberfest2026.ru"
 )
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent

@@ -20,7 +20,7 @@ body {
 }
 
 body {
-  font-family: "SB Sans Text", "Segoe UI", system-ui, sans-serif;
+  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background: var(--photo-mint);

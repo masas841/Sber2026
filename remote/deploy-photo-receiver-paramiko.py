@@ -64,7 +64,7 @@ def main() -> int:
     parser.add_argument("--user", default="root")
     parser.add_argument("--password", default=os.environ.get("INNA_SSH_PASSWORD", ""))
     parser.add_argument("--port", type=int, default=8767)
-    parser.add_argument("--public-url", default="http://45.67.59.125:8767")
+    parser.add_argument("--public-url", default="https://sberfest2026.ru")
     args = parser.parse_args()
     if not args.password:
         print("Укажите --password или INNA_SSH_PASSWORD", file=sys.stderr)

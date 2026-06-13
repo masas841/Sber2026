@@ -4,7 +4,7 @@ set -eu
 
 APP_DIR="${1:-/opt/photo-receiver}"
 PORT="${PORT:-8767}"
-PUBLIC_URL="${PUBLIC_URL:-http://45.67.59.125:8767}"
+PUBLIC_URL="${PUBLIC_URL:-https://sberfest2026.ru}"
 
 echo "=== photo_receiver install -> $APP_DIR ==="
 

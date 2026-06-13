@@ -618,15 +618,17 @@ async function triggerCapture() {
   const runId = ++processingRunId;
   const controller = new AbortController();
   let timeoutId = null;
+  let processingTimedOut = false;
   try {
     const blob = await captureBlob();
     stopCamera();
     const timeout = new Promise((_, reject) => {
       timeoutId = window.setTimeout(() => {
-        controller.abort();
+        processingTimedOut = true;
         const err = new Error("processing timeout");
         err.name = "ProcessingTimeoutError";
         reject(err);
+        controller.abort();
       }, PROCESSING_TIMEOUT_MS);
     });
     await Promise.race([
@@ -634,7 +636,7 @@ async function triggerCapture() {
       timeout,
     ]);
   } catch (err) {
-    if (err?.name === "ProcessingTimeoutError") {
+    if (err?.name === "ProcessingTimeoutError" || (err?.name === "AbortError" && processingTimedOut)) {
       processingRunId += 1;
       await returnToIdle();
       return;
@@ -713,7 +715,7 @@ function showResultMedia(data) {
   });
 }
 
-async function startResultPlayback(data) {
+async function startResultPlayback(data, runId = null) {
   stopResultPlayback();
   setCaptureOverlaysVisible(false);
 
@@ -725,6 +727,7 @@ async function startResultPlayback(data) {
   qrImg.alt = "QR для скачивания портрета";
 
   await showResultMedia(data);
+  if (runId != null && runId !== processingRunId) return;
 
   let left = RESULT_LOOP_SEC;
   countdownSec.textContent = String(left);
@@ -767,7 +770,7 @@ async function submitPhoto(blob, { signal, runId } = {}) {
     if (data.status === "done") {
       if (runId != null && runId !== processingRunId) return;
       stopFunnyRotation();
-      startResultPlayback(data);
+      await startResultPlayback(data, runId);
       return;
     }
     if (data.status === "error") {
