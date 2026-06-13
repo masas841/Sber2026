@@ -15,8 +15,10 @@ let detectionCanvas = null;
 let detectionCtx = null;
 
 function cameraZoomFor(videoEl) {
-  const cssZoom = getComputedStyle(videoEl).getPropertyValue("--camera-zoom");
-  const zoom = Number.parseFloat(cssZoom);
+  const style = getComputedStyle(videoEl);
+  const detectionZoom = Number.parseFloat(style.getPropertyValue("--detection-zoom"));
+  const cameraZoom = Number.parseFloat(style.getPropertyValue("--camera-zoom"));
+  const zoom = Number.isFinite(detectionZoom) && detectionZoom > 0 ? detectionZoom : cameraZoom;
   return Number.isFinite(zoom) && zoom > 0 ? zoom : 1;
 }
 

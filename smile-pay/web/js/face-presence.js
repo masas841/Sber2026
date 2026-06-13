@@ -2,7 +2,7 @@
  * Ожидание гостя: лицо достаточно крупное → открываем «окно» камеры.
  */
 
-import { createFaceLandmarker, faceBounds, getDetectionFrame } from "./face-landmarker.js?v=20260613-fast-acquire";
+import { createFaceLandmarker, faceBounds, getDetectionFrame } from "./face-landmarker.js?v=20260613-detection-zoom-3";
 
 export async function createFacePresenceWatcher(videoEl, options = {}) {
   const {

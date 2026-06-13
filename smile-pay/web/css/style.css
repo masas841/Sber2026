@@ -21,6 +21,7 @@
   --cam-soft: 19%;
   --cam-reveal-r: 0px;
   --camera-zoom: 2;
+  --detection-zoom: 3;
   --field-green: linear-gradient(158deg, #a6d83c 0%, #8ec63f 45%, #5cb233 100%);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-dissolve: cubic-bezier(0.4, 0, 0.2, 1);
@@ -49,7 +50,7 @@ body {
 /* Киоск: фиксированный квадрат 504×504, левый верхний угол окна */
 .shell {
   position: fixed;
-  top: -25px;
+  top: -15px;
   left: 0;
   width: var(--stage-size);
   height: var(--stage-size);

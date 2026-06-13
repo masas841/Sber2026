@@ -5,8 +5,8 @@ import {
   resolveStage,
 } from "./smile-stage.js?v=20260613-app-up";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js?v=20260613-fast-acquire";
-import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-fast-acquire";
+import { createSmileWatcher } from "./smile-capture.js?v=20260613-detection-zoom-3";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-detection-zoom-3";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
