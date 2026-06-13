@@ -521,6 +521,11 @@
       "size": 102
     },
     {
+      "path": "install/update-and-run-kiosk.cmd",
+      "sha256": "60b56b7dbb38a0e3ab7c5224a79274481a003dc96e3ecaaa115df35018534bad",
+      "size": 69
+    },
+    {
       "path": "install/Update-EnvDefaults.ps1",
       "sha256": "0e30f74c0c6e2adae393aed913d75c86166a27268c2bad7cd7c5b3c8c1c0fb45",
       "size": 3447
@@ -924,6 +929,11 @@
       "path": "scripts/verify_result_chrome.ps1",
       "sha256": "7a21320b5c3d71922b73318f1b3d5ec89efb55a8e7714fec83fbc16de4ce15e5",
       "size": 1140
+    },
+    {
+      "path": "update-and-run-kiosk.cmd",
+      "sha256": "589b2b3073964abd216389c39a123b769e1a2badb37073a8ab6fec1b980d82c3",
+      "size": 464
     },
     {
       "path": "web/app.js",
