@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "ecc28d75c1dbeb366ce4460cb7c8c69b606e3a11761fc80b99f6e999dd527ae2",
-      "size": 5572
+      "sha256": "4a4ebe87dd4b445db44d3eaa0eee42b274fce7a39a87362e77d51ea0a1a080dd",
+      "size": 5571
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "adc01fb7b99e6d574814c47fe3e8191eb176316fca6173ba59cae57551c97e2e",
-      "size": 21724
+      "sha256": "babf56700d1362a27db41ee12ab74e28c5092454838cb3345da35e09ae1c00d0",
+      "size": 21723
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -157,8 +157,8 @@
     },
     {
       "path": "app/log_uploader.py",
-      "sha256": "c8fdb47d5f5ed199a630b782fede9a6473c095e4e7e112ed5cab8a6b49c09d6f",
-      "size": 5716
+      "sha256": "87c6dadac377c0cbb8fa4a6f3f1e9d5e268e0fa68800f0e698966d17c0336fb4",
+      "size": 5909
     },
     {
       "path": "app/ltx_quality.py",
@@ -167,8 +167,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "d62903f1e25393f30b893a6da355a9922c3dbf8207e57435b0ef4ac9d3fd0c3f",
-      "size": 23701
+      "sha256": "e9585b5c5f882edbbfcbeacbc48478a2091c05b7ec78b24300ab1a9c69f06ef7",
+      "size": 24576
     },
     {
       "path": "app/nanobanana_client.py",

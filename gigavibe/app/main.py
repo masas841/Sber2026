@@ -27,8 +27,33 @@ if ASSETS_DIR.exists():
     app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
 
 
+def _configure_file_logging() -> None:
+    log_path = ROOT / "server.log"
+    root_logger = logging.getLogger()
+    for handler in root_logger.handlers:
+        if getattr(handler, "_gigavibe_file_handler", False):
+            return
+
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler._gigavibe_file_handler = True
+    handler.setFormatter(
+        logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s")
+    )
+    root_logger.addHandler(handler)
+    if root_logger.level > logging.INFO:
+        root_logger.setLevel(logging.INFO)
+    logger.info("file logging enabled: %s", log_path)
+
+
 @app.on_event("startup")
 def startup() -> None:
+    _configure_file_logging()
+    logger.info(
+        "startup log_upload_enabled=%s log_upload_url=%s output_upload_url=%s",
+        settings.log_upload_enabled,
+        settings.log_upload_url or "",
+        settings.output_upload_url or "",
+    )
     start_upload_queue_worker()
     start_log_upload_worker()
     mode = settings.generator_mode.lower()

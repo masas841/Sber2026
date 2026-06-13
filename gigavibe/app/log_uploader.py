@@ -177,8 +177,10 @@ def start_log_upload_worker() -> None:
     global _worker_started
 
     if not settings.log_upload_enabled:
+        logger.info("log_upload disabled")
         return
-    if not _base_url():
+    base = _base_url()
+    if not base:
         logger.warning("log_upload enabled, but LOG_UPLOAD_URL/OUTPUT_UPLOAD_URL is empty")
         return
     with _worker_lock:
@@ -187,4 +189,9 @@ def start_log_upload_worker() -> None:
         thread = threading.Thread(target=_worker_loop, name="log-upload", daemon=True)
         thread.start()
         _worker_started = True
-        logger.info("log_upload worker started: kiosk=%s", _kiosk_id())
+        logger.info(
+            "log_upload worker started: kiosk=%s url=%s paths=%s",
+            _kiosk_id(),
+            base,
+            ";".join(str(path) for path in _configured_paths()),
+        )

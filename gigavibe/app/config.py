@@ -323,7 +323,7 @@ class Settings(BaseSettings):
     output_upload_retry_delay_sec: float = 3.0
 
     # Диагностика: периодически отправлять хвост логов киоска на photo_receiver.
-    log_upload_enabled: bool = False
+    log_upload_enabled: bool = True
     # Если пусто — используется OUTPUT_UPLOAD_URL.
     log_upload_url: str | None = None
     # Если пусто — используется OUTPUT_UPLOAD_API_KEY.
