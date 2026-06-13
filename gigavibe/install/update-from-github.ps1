@@ -184,6 +184,27 @@ function Update-GigaEnvDefaults {
     }
 }
 
+function Ensure-GigaMediaPipeVendor {
+    param([string]$Root)
+
+    $bundle = Join-Path $Root "web\vendor\mediapipe\tasks-vision\vision_bundle.mjs"
+    if (Test-Path $bundle) { return }
+    $script = Join-Path $Root "scripts\download_mediapipe_tasks_vision.ps1"
+    if (-not (Test-Path $script)) {
+        Write-Host "[GIGAvibe] WARN: MediaPipe vendor missing and download script not found" -ForegroundColor Yellow
+        return
+    }
+    Write-Host "[GIGAvibe] Downloading local MediaPipe tasks-vision (offline WASM)..." -ForegroundColor Yellow
+    & $script
+}
+
+function Invoke-GigaPostUpdateHooks {
+    param([string]$Root)
+
+    Update-GigaEnvDefaults -Root $Root
+    Ensure-GigaMediaPipeVendor -Root $Root
+}
+
 $envPath = Join-Path $Root ".env"
 if (-not $ManifestUrl) {
     $ManifestUrl = Read-DotEnvValue -Path $envPath -Name "UPDATE_MANIFEST_URL"
@@ -326,7 +347,7 @@ try {
             "Changed=$($changed.Count)",
             "Removed=$($removed.Count)"
         ) | Set-Content -Path $marker -Encoding UTF8
-        Update-GigaEnvDefaults -Root $Root
+        Invoke-GigaPostUpdateHooks -Root $Root
         Write-Host "[GIGAvibe] Update complete." -ForegroundColor Green
         return
     }
@@ -401,7 +422,7 @@ try {
             "UpdatedAt=$((Get-Date).ToString("s"))",
             "Source=$RepoArchiveUrl"
         ) | Set-Content -Path $marker -Encoding UTF8
-        Update-GigaEnvDefaults -Root $Root
+        Invoke-GigaPostUpdateHooks -Root $Root
         Write-Host "[GIGAvibe] Update complete." -ForegroundColor Green
     }
 } finally {

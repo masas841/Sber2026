@@ -58,6 +58,7 @@ if (-not $SkipModels) {
         }
     } else {
         & $Root\scripts\download_smile_model.ps1
+        Ensure-GigaMediaPipeVendor -Root $Root
         python $Root\scripts\download_buffalo_l.py
         if ($LASTEXITCODE -ne 0) {
             throw "buffalo_l download failed"

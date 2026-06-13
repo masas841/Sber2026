@@ -12,8 +12,8 @@
     },
     {
       "path": "app/aitunnel_image_client.py",
-      "sha256": "dbd9bc533ca80c57995b5e8a501cce91237f5b9e5cebd35154ab9bb2a3ffe84f",
-      "size": 7795
+      "sha256": "117343b7ed64dd6604a1ba38a2138e66e2b749b585c7f22740c82a7f5c10f0b6",
+      "size": 9017
     },
     {
       "path": "app/compositor.py",
@@ -502,8 +502,8 @@
     },
     {
       "path": "install/install.ps1",
-      "sha256": "19aae791c530dd00328c3183d7c436f379d0ac28a1909e9575ed447d56ff7fa9",
-      "size": 3211
+      "sha256": "acda7213d3033e7d2c0565ff74caaaf60d80aa90667232ad8a51003f5736d2ad",
+      "size": 3258
     },
     {
       "path": "install/README-INSTALL.md",
@@ -522,13 +522,13 @@
     },
     {
       "path": "install/Update-EnvDefaults.ps1",
-      "sha256": "db8d1fe9f7880ee16a3450cab0d9c9797d5f222690aeaa0ae85a549149bd038b",
-      "size": 2894
+      "sha256": "0e30f74c0c6e2adae393aed913d75c86166a27268c2bad7cd7c5b3c8c1c0fb45",
+      "size": 3447
     },
     {
       "path": "install/update-from-github.ps1",
-      "sha256": "3a57f40627beedb94cc2e858d843f9e28018d939f74aa2232e49e13f78d63295",
-      "size": 14398
+      "sha256": "85b3b6f22f05701a65e1fee6c70dc2d5219432d69cecdbb7dac9f29d79f8527a",
+      "size": 15119
     },
     {
       "path": "install/update-gigavibe.cmd",
@@ -557,8 +557,8 @@
     },
     {
       "path": "run-kiosk.ps1",
-      "sha256": "4872359ef11fb627e5bee0babaf0e0149768e2ea51b2f35e691c13103e256d08",
-      "size": 3249
+      "sha256": "d1bd408cd2eb1baf1f222c8df2be0275e3e3e1b71bdc76cbd09a5699750a9e5c",
+      "size": 3300
     },
     {
       "path": "run.ps1",
@@ -749,6 +749,11 @@
       "path": "scripts/download_ltx.py",
       "sha256": "5fd3f7937fba8a7548779dc4ee05997862b4c750e5af4e38d4e39644ee0b4943",
       "size": 4300
+    },
+    {
+      "path": "scripts/download_mediapipe_tasks_vision.ps1",
+      "sha256": "be87163f3a04fc3cf550f95c56d90ca100b71ca27054b145c7e11c6f47561b0d",
+      "size": 1272
     },
     {
       "path": "scripts/download_portrait_models.py",
@@ -1397,8 +1402,8 @@
     },
     {
       "path": "web/face-landmarker.js",
-      "sha256": "8be8e4b7a4c63cdca0bbd287ff5406d5d2c4537dafecab81721d7a05ec3efe3d",
-      "size": 2102
+      "sha256": "a12962f74827b51d99937361f33026b5c3873b3419684df0f578f612f3855039",
+      "size": 2678
     },
     {
       "path": "web/face-presence.js",

@@ -83,6 +83,7 @@ $envDefaults = Join-Path $PSScriptRoot "install\Update-EnvDefaults.ps1"
 if (Test-Path $envDefaults) {
     . $envDefaults
     Update-GigaEnvDefaults -Root $PSScriptRoot
+    Ensure-GigaMediaPipeVendor -Root $PSScriptRoot
 }
 
 $torchLib = & python -c "import os, torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))" 2>$null

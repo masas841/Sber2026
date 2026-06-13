@@ -2,33 +2,58 @@
  * Общая инициализация MediaPipe Face Landmarker для киоска.
  */
 
-const MP_PKG = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14";
-const WASM_DIR = `${MP_PKG}/wasm`;
+const MP_VERSION = "0.10.14";
+const MP_CDN = `https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${MP_VERSION}`;
+const MP_LOCAL_BASE = "/static/vendor/mediapipe/tasks-vision";
 const MODEL_REMOTE =
   "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
 const MODEL_LOCAL = "/static/models/face_landmarker.task";
 
+let assetsPromise = null;
 let modelUrlPromise = null;
 let tasksVisionPromise = null;
 let visionPromise = null;
 
-async function resolveModelUrl() {
+async function probeOk(url) {
   try {
-    const head = await fetch(MODEL_LOCAL, { method: "HEAD" });
-    if (head.ok) return MODEL_LOCAL;
+    const head = await fetch(url, { method: "HEAD" });
+    return head.ok;
   } catch {
-    /* offline or missing file */
+    return false;
   }
+}
+
+async function resolveModelUrl() {
+  if (await probeOk(MODEL_LOCAL)) return MODEL_LOCAL;
   return MODEL_REMOTE;
 }
 
-export async function createFaceLandmarker() {
-  modelUrlPromise ||= resolveModelUrl();
-  tasksVisionPromise ||= import(MP_PKG);
+async function resolveMediaPipeAssets() {
+  const localBundle = `${MP_LOCAL_BASE}/vision_bundle.mjs`;
+  if (await probeOk(localBundle)) {
+    return {
+      importUrl: localBundle,
+      wasmDir: `${MP_LOCAL_BASE}/wasm`,
+    };
+  }
+  return {
+    importUrl: MP_CDN,
+    wasmDir: `${MP_CDN}/wasm`,
+  };
+}
 
-  const modelUrl = await modelUrlPromise;
-  const { FaceLandmarker, FilesetResolver } = await tasksVisionPromise;
-  visionPromise ||= FilesetResolver.forVisionTasks(WASM_DIR);
+export async function createFaceLandmarker() {
+  assetsPromise ||= resolveMediaPipeAssets();
+  modelUrlPromise ||= resolveModelUrl();
+  tasksVisionPromise ||= assetsPromise.then(({ importUrl }) => import(importUrl));
+
+  const [{ wasmDir }, modelUrl, { FaceLandmarker, FilesetResolver }] = await Promise.all([
+    assetsPromise,
+    modelUrlPromise,
+    tasksVisionPromise,
+  ]);
+
+  visionPromise ||= FilesetResolver.forVisionTasks(wasmDir);
   const vision = await visionPromise;
   const baseOpts = {
     baseOptions: { modelAssetPath: modelUrl },
