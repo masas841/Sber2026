@@ -4,6 +4,7 @@ const THREAT_ASSET = "/static/assets/figma/threats/";
 const THREAT_ASSET_VERSION = "figma-export-3";
 const THREAT_FALL_SPEED_MULTIPLIER = 3;
 const HIT_FLASH_VISIBLE_MS = 1000;
+const HIT_FLASH_WIDTH = 382;
 
 const THREAT_LAYOUTS = [
   {
@@ -758,6 +759,12 @@ function pulseProtector() {
 
 function showHitFlash(threat) {
   const box = hitBoxForThreat(threat);
+  const hitX = box.x + box.w / 2;
+  const hitY = box.y + box.h / 2;
+  const hitFlashWidth = hitFlash.offsetWidth || HIT_FLASH_WIDTH;
+  const hitFlashHalfWidth = hitFlashWidth / 2;
+  const showOnRight = hitX < STAGE / 2;
+  const targetX = showOnRight ? hitX + hitFlashHalfWidth : hitX - hitFlashHalfWidth;
   const badgeKey = threat.badgeKey ?? "badge-home";
   const badgeSrc = BADGE_ASSET_URLS.get(badgeKey) ?? BADGE_ASSET_URLS.get("badge-home");
   const badgeImage = preloadedBadgeImages.get(badgeKey) ?? preloadedBadgeImages.get("badge-home");
@@ -769,8 +776,9 @@ function showHitFlash(threat) {
   void hitFlash.offsetWidth;
   hitFlash.setAttribute("aria-label", threat.badgeText);
   hitFlash.dataset.badge = badgeKey;
-  hitFlash.style.left = `${box.x + box.w / 2}px`;
-  hitFlash.style.top = `${box.y + box.h / 2}px`;
+  hitFlash.dataset.side = showOnRight ? "right" : "left";
+  hitFlash.style.left = `${targetX}px`;
+  hitFlash.style.top = `${hitY}px`;
 
   const reveal = () => {
     if (token !== hitFlashToken) {
