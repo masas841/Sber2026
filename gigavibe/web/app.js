@@ -49,6 +49,7 @@ const btnRetry = document.getElementById("btn-retry");
 const RESULT_LOOP_SEC = 20;
 const CAMERA_ZOOM = 2;
 const CAMERA_ROTATION_RAD = Math.PI;
+const CAPTURE_SNAPSHOT_SCALE = 2;
 const DETECTION_FRAME_W = 640;
 const DETECTION_FRAME_H = 480;
 const DETECTION_READY_TIMEOUT_MS = 900;
@@ -102,8 +103,6 @@ let captureLocked = false;
 let onCaptureScreen = false;
 const screenHideTimers = new Map();
 let screenRevealToken = 0;
-let previewRaf = null;
-let previewVideoFrame = null;
 const detectionCanvas = document.createElement("canvas");
 detectionCanvas.width = 0;
 detectionCanvas.height = 0;
@@ -148,8 +147,8 @@ function drawVideoFit(
   ctx.restore();
 }
 
-function drawPreviewFrame() {
-  if (!preview.videoWidth || !preview.videoHeight || preview.readyState < 2) return;
+function prepareDetectionFrame() {
+  if (!preview.videoWidth || !preview.videoHeight || preview.readyState < 2) return null;
 
   if (
     detectionCanvas.width !== DETECTION_FRAME_W ||
@@ -165,49 +164,14 @@ function drawPreviewFrame() {
     DETECTION_FRAME_H,
     { zoom: CAMERA_ZOOM },
   );
-
-  if (!previewCanvas) return;
-  const cw = previewCanvas.clientWidth;
-  const ch = previewCanvas.clientHeight;
-  if (cw >= 1 && ch >= 1) {
-    if (previewCanvas.width !== cw || previewCanvas.height !== ch) {
-      previewCanvas.width = cw;
-      previewCanvas.height = ch;
-    }
-    drawVideoFit(previewCanvas.getContext("2d"), preview, cw, ch, { zoom: CAMERA_ZOOM });
-  }
+  return detectionCanvas;
 }
 
-function startPreviewLoop() {
-  stopPreviewLoop();
-  if (typeof preview.requestVideoFrameCallback === "function") {
-    const tick = () => {
-      drawPreviewFrame();
-      previewVideoFrame = preview.requestVideoFrameCallback(tick);
-    };
-    previewVideoFrame = preview.requestVideoFrameCallback(tick);
-    return;
-  }
-
-  const tick = () => {
-    drawPreviewFrame();
-    previewRaf = requestAnimationFrame(tick);
-  };
-  previewRaf = requestAnimationFrame(tick);
+function syncDetectionFrame() {
+  prepareDetectionFrame();
 }
 
-function stopPreviewLoop() {
-  if (
-    previewVideoFrame != null &&
-    typeof preview.cancelVideoFrameCallback === "function"
-  ) {
-    preview.cancelVideoFrameCallback(previewVideoFrame);
-    previewVideoFrame = null;
-  }
-  if (previewRaf != null) {
-    cancelAnimationFrame(previewRaf);
-    previewRaf = null;
-  }
+function clearDetectionFrame() {
   if (previewCanvas) {
     const ctx = previewCanvas.getContext("2d");
     ctx?.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
@@ -223,7 +187,7 @@ function detectionSourceReady() {
 async function resolveDetectionSource(timeoutMs = DETECTION_READY_TIMEOUT_MS) {
   const start = performance.now();
   while (performance.now() - start < timeoutMs) {
-    drawPreviewFrame();
+    prepareDetectionFrame();
     if (detectionSourceReady()) return detectionCanvas;
     await new Promise((resolve) => requestAnimationFrame(resolve));
   }
@@ -273,7 +237,7 @@ function bindCaptureLayout() {
   });
   preview.addEventListener("loadedmetadata", () => {
     layoutCapturePreview();
-    drawPreviewFrame();
+    prepareDetectionFrame();
   });
 }
 
@@ -546,7 +510,7 @@ async function startCamera() {
   preview.srcObject = stream;
   await preview.play().catch(() => {});
   layoutCapturePreview();
-  startPreviewLoop();
+  syncDetectionFrame();
 }
 
 async function startPresenceWatch() {
@@ -561,6 +525,7 @@ async function startPresenceWatch() {
       holdMs: kioskCfg.kiosk_face_hold_ms,
       releaseMs: kioskCfg.kiosk_face_release_ms,
       detectStride: kioskCfg.kiosk_face_detect_stride,
+      prepareFrame: prepareDetectionFrame,
       onStatus: updateStartHint,
       onReady: () => enterCapture(),
       onError: (e) => console.warn("presence", e),
@@ -584,7 +549,7 @@ async function enterCapture() {
   mountCameraLive();
   relayoutCaptureOverlays();
   layoutCapturePreview();
-  startPreviewLoop();
+  syncDetectionFrame();
 
   smileStatus.textContent = "Улыбнитесь для снимка";
   if (captureHint) captureHint.textContent = "Улыбайтесь!";
@@ -602,10 +567,10 @@ async function returnToIdle() {
   qrImg.removeAttribute("src");
   errorText.textContent = "";
 
-  stopPreviewLoop();
+  clearDetectionFrame();
   mountCameraProbe();
   show("start");
-  startPreviewLoop();
+  syncDetectionFrame();
 
   if (stream) {
     await startPresenceWatch();
@@ -626,6 +591,7 @@ async function startSmileCapture() {
       minFaceSize: kioskCfg.kiosk_face_min_size * 0.85,
       releaseMs: kioskCfg.kiosk_face_release_ms,
       detectStride: kioskCfg.kiosk_smile_detect_stride,
+      prepareFrame: prepareDetectionFrame,
       onStatus: updateSmileUi,
       onSmile: () => triggerCapture(),
       onLost: () => {
@@ -658,7 +624,7 @@ async function triggerCapture() {
 }
 
 function stopCamera() {
-  stopPreviewLoop();
+  clearDetectionFrame();
   smileWatcher?.stop();
   if (stream) {
     stream.getTracks().forEach((t) => t.stop());
@@ -667,11 +633,13 @@ function stopCamera() {
 }
 
 function captureBlob() {
-  const w = videoWidth;
-  const h = videoHeight;
+  const frameW = captureFrameSlot?.clientWidth || videoWidth;
+  const frameH = captureFrameSlot?.clientHeight || videoHeight;
+  const w = Math.max(1, Math.round(frameW * CAPTURE_SNAPSHOT_SCALE));
+  const h = Math.max(1, Math.round(frameH * CAPTURE_SNAPSHOT_SCALE));
   snapshot.width = w;
   snapshot.height = h;
-  drawVideoFit(snapshot.getContext("2d"), preview, w, h, { zoom: 1 });
+  drawVideoFit(snapshot.getContext("2d"), preview, w, h, { zoom: CAMERA_ZOOM });
   const q = kioskCfg.kiosk_jpeg_quality ?? 0.96;
   return new Promise((resolve) => {
     snapshot.toBlob((blob) => resolve(blob), "image/jpeg", q);

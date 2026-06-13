@@ -22,6 +22,7 @@ export async function createSmileWatcher(videoEl, options = {}) {
     onLost,
     onStatus,
     onError,
+    prepareFrame,
   } = options;
 
   let landmarker;
@@ -57,7 +58,8 @@ export async function createSmileWatcher(videoEl, options = {}) {
   }
 
   function tick() {
-    if (!running || !sourceReady(videoEl)) {
+    if (!running) return;
+    if (!prepareFrame && !sourceReady(videoEl)) {
       rafId = requestAnimationFrame(tick);
       return;
     }
@@ -66,8 +68,13 @@ export async function createSmileWatcher(videoEl, options = {}) {
       rafId = requestAnimationFrame(tick);
       return;
     }
+    const source = prepareFrame?.() ?? videoEl;
+    if (!sourceReady(source)) {
+      rafId = requestAnimationFrame(tick);
+      return;
+    }
     const ts = performance.now();
-    const result = landmarker.detectForVideo(videoEl, ts);
+    const result = landmarker.detectForVideo(source, ts);
 
     const landmarks = result?.faceLandmarks?.[0];
     const bounds = faceBounds(landmarks);

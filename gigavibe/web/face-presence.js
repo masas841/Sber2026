@@ -24,6 +24,7 @@ export async function createFacePresenceWatcher(videoEl, options = {}) {
     onLost,
     onStatus,
     onError,
+    prepareFrame,
   } = options;
 
   let landmarker;
@@ -50,7 +51,7 @@ export async function createFacePresenceWatcher(videoEl, options = {}) {
 
   function tick() {
     if (!running) return;
-    if (!sourceReady(videoEl)) {
+    if (!prepareFrame && !sourceReady(videoEl)) {
       rafId = requestAnimationFrame(tick);
       return;
     }
@@ -61,8 +62,14 @@ export async function createFacePresenceWatcher(videoEl, options = {}) {
       return;
     }
 
+    const source = prepareFrame?.() ?? videoEl;
+    if (!sourceReady(source)) {
+      rafId = requestAnimationFrame(tick);
+      return;
+    }
+
     const ts = performance.now();
-    const result = landmarker.detectForVideo(videoEl, ts);
+    const result = landmarker.detectForVideo(source, ts);
     lastTs = ts;
 
     const landmarks = result?.faceLandmarks?.[0];

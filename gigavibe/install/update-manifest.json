@@ -912,8 +912,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "8c9f06a2fe68fb1dcf6391303e8954e0205bc740a5ea2fe2f0171480b9869045",
-      "size": 27600
+      "sha256": "98e37f5c7a78e7aaf05460653973846b025b4d0d25adad48f89909f39c60055d",
+      "size": 26889
     },
     {
       "path": "web/assets/figma/giga-full.svg",
@@ -1392,8 +1392,8 @@
     },
     {
       "path": "web/face-presence.js",
-      "sha256": "4d25a476c2b3010f25a05fc2016c0834e06a086c6e0fb07e24dbfa8748b0c109",
-      "size": 4667
+      "sha256": "ab695818c18ee10c90db2f2946400fc7aa0e0a879134292e32215006a4831b01",
+      "size": 4845
     },
     {
       "path": "web/fonts/SBSansDisplay-Bold.woff",
@@ -1477,13 +1477,13 @@
     },
     {
       "path": "web/smile-capture.js",
-      "sha256": "7583bf3a2f04f371d3f76240f84fef3b19908f2e252ec7a07e572eee685db93f",
-      "size": 3617
+      "sha256": "e3a61f01ad10b3321522f163ddd058c711634d066a15589e87ce92322682ad68",
+      "size": 3808
     },
     {
       "path": "web/style.css",
-      "sha256": "f884ffc5ae4e592e578db299ffd8a29191820e08c9d519e9e80321c38b0ac20b",
-      "size": 12950
+      "sha256": "8aea9c478fb5ac856e2e6d94ab26b0a3932780f30cee17d6379bace3633d0907",
+      "size": 13058
     }
   ],
   "root": "gigavibe",
