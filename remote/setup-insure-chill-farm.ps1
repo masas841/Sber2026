@@ -5,6 +5,7 @@ $proj = "C:\Users\user\insure-chill"
 $remote = Join-Path $proj "remote"
 Set-Location $proj
 
+New-Item -ItemType Directory -Path (Join-Path $proj "data") -Force | Out-Null
 New-Item -ItemType Directory -Path $remote -Force | Out-Null
 
 if (-not (Test-Path ".venv\Scripts\python.exe")) {

@@ -106,6 +106,7 @@ class BootScene extends Phaser.Scene {
     this.registry.set("joystick", joy);
 
     KopilkaFigmaUi.prefetchScreen("game-bg");
+    window.KopilkaLog?.log("visit");
     this.scene.start("Start");
 
     const ac = typeof AbortController !== "undefined" ? new AbortController() : null;
@@ -306,6 +307,7 @@ class GameScene extends Phaser.Scene {
   }
 
   create() {
+    window.KopilkaLog?.log("game_start");
     KopilkaFigmaUi.hideStaticOverlay();
     KopilkaFigmaUi.showGameLayer().then(() => {
       if (this._ending) return;
@@ -653,6 +655,17 @@ class GameScene extends Phaser.Scene {
     this.pelletGroup.getChildren().forEach((child) => {
       if (child.getData("pelletId") === id) child.destroy();
     });
+    this.checkPelletsCleared();
+  }
+
+  checkPelletsCleared() {
+    if (this._ending || this.pellets.size > 0) return;
+    this.hudMode.setText("Все собрано!");
+    if (this.clockTimer) {
+      this.clockTimer.remove(false);
+      this.clockTimer = null;
+    }
+    this.endGame();
   }
 
   collectAt(gx, gy) {
@@ -941,6 +954,7 @@ class GameScene extends Phaser.Scene {
     this.clockTimer?.remove(false);
     this.clockTimer = null;
     this.registry.set("lastScore", this.score);
+    window.KopilkaLog?.log("game_finish", { score: this.score });
 
     KopilkaFigmaUi.prefetchScreen("result_score");
     KopilkaFigmaUi.prefetchScreen(classifyStarsResultScreen(this.score));

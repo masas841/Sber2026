@@ -1,12 +1,14 @@
+from datetime import date
 from pathlib import Path
 from typing import Any, Literal
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, Query, WebSocket, WebSocketDisconnect
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
+from app.game_log import append_event, stats_for_day, summary
 
 ROOT = Path(__file__).resolve().parent.parent
 STATIC_DIR = ROOT / "static"
@@ -84,8 +86,19 @@ class ConnectionHub:
             for key in ("phase", "score", "remaining"):
                 if key in payload:
                     self.state[key] = payload[key]
+            self._log_screen_event(payload)
             await self.broadcast("event", payload, target="control")
             return
+
+    def _log_screen_event(self, payload: dict[str, Any]) -> None:
+        kind = payload.get("kind")
+        if kind == "result-intro":
+            append_event(
+                "finish",
+                round=self.state.get("round"),
+                score=payload.get("score"),
+                phase=payload.get("phase"),
+            )
 
     async def broadcast(self, message_type: str, payload: Any, target: Role | None = None) -> None:
         recipients: list[WebSocket]
@@ -108,13 +121,15 @@ class ConnectionHub:
 
     async def _handle_control(self, message_type: str) -> None:
         if message_type == "start":
+            next_round = self.state.get("round", 0) + 1
             self.state = {
                 "phase": "playing",
                 "score": 0,
                 "remaining": settings.game_duration_sec,
-                "round": self.state.get("round", 0) + 1,
+                "round": next_round,
                 "lastEvent": {"kind": "start"},
             }
+            append_event("start", round=next_round)
             await self.broadcast("command", {"command": "start", "state": self.state}, target="screen")
             await self.broadcast("state", self.state, target="control")
             return
@@ -161,6 +176,24 @@ def health() -> dict[str, Any]:
 @app.get("/api/config")
 def api_config() -> dict[str, int]:
     return client_config()
+
+
+@app.get("/api/stats")
+def api_stats(
+    date_param: str | None = Query(default=None, alias="date"),
+    days: int | None = Query(default=None, ge=1, le=31),
+) -> dict[str, Any]:
+    if days is not None:
+        return {"days": summary(days)}
+
+    if date_param:
+        try:
+            target = date.fromisoformat(date_param)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail="date must be YYYY-MM-DD") from exc
+        return stats_for_day(target)
+
+    return stats_for_day()
 
 
 @app.get("/")

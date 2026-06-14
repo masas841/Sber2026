@@ -2,9 +2,11 @@ import secrets
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
+
+from app.play_log import append_play, logged_count, stats_for_date, stats_summary
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
@@ -25,7 +27,22 @@ def index() -> FileResponse:
 
 @app.get("/api/health")
 def health() -> dict:
-    return {"ok": True, "service": "smile-pay", "sessions": len(_sessions)}
+    return {
+        "ok": True,
+        "service": "smile-pay",
+        "sessions": len(_sessions),
+        "plays_logged": logged_count(),
+    }
+
+
+@app.get("/api/stats")
+def stats(date: str | None = Query(default=None)) -> dict:
+    if date:
+        try:
+            return stats_for_date(date)
+        except ValueError as exc:
+            raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return stats_summary()
 
 
 @app.post("/api/capture")
@@ -40,11 +57,19 @@ async def capture(request: Request, photo: UploadFile = File(...)) -> dict:
     session_id = secrets.token_urlsafe(10)
     base = str(request.base_url).rstrip("/")
     pay_url = f"{base}/pay/{session_id}"
+    content_type = photo.content_type or "image/jpeg"
+    client_ip = request.client.host if request.client else None
     _sessions[session_id] = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "bytes": len(data),
-        "content_type": photo.content_type or "image/jpeg",
+        "content_type": content_type,
     }
+    append_play(
+        session_id=session_id,
+        bytes_count=len(data),
+        content_type=content_type,
+        client_ip=client_ip,
+    )
 
     return {
         "session_id": session_id,

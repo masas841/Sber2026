@@ -11,6 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from app.config import settings
+from app.game_log import init_log_db, log_event, stats_for_day, stats_to_dict
 from app.leaderboard import add_score, config_for_client, init_db, top_today
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -19,6 +20,7 @@ WEB_DIR = ROOT / "web"
 app = FastAPI(title="SberKopilka", version="0.1.0")
 
 init_db()
+init_log_db()
 
 if WEB_DIR.exists():
     app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
@@ -27,6 +29,14 @@ if WEB_DIR.exists():
 class ScoreSubmit(BaseModel):
     player_name: str = Field(default="Гость", max_length=24)
     score: int = Field(ge=0, le=9_999_999)
+    session_id: str | None = Field(default=None, max_length=64)
+
+
+class LogEventSubmit(BaseModel):
+    session_id: str = Field(min_length=1, max_length=64)
+    event: str = Field(min_length=1, max_length=32)
+    score: int | None = Field(default=None, ge=0, le=9_999_999)
+    player_name: str | None = Field(default=None, max_length=24)
 
 
 @app.get("/api/health")
@@ -55,12 +65,41 @@ def api_leaderboard(limit: int = 10) -> dict:
 @app.post("/api/leaderboard")
 def api_submit(body: ScoreSubmit) -> dict:
     entry = add_score(body.player_name, body.score)
+    if body.session_id:
+        try:
+            log_event(
+                session_id=body.session_id,
+                event="score_submit",
+                score=body.score,
+                player_name=body.player_name,
+            )
+        except ValueError:
+            pass
     return {
         "rank": entry.rank,
         "name": entry.player_name,
         "score": entry.score,
         "day": config_for_client()["leaderboard_day"],
     }
+
+
+@app.post("/api/log")
+def api_log(body: LogEventSubmit) -> dict:
+    try:
+        log_event(
+            session_id=body.session_id,
+            event=body.event,
+            score=body.score,
+            player_name=body.player_name,
+        )
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    return {"ok": True}
+
+
+@app.get("/api/log/stats")
+def api_log_stats(day: str | None = None) -> dict:
+    return stats_to_dict(stats_for_day(day))
 
 
 _NO_CACHE = {"Cache-Control": "no-store, no-cache, must-revalidate"}
