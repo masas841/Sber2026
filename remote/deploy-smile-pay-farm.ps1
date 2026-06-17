@@ -22,6 +22,16 @@ function Invoke-Ssh {
 Write-Host "=== Ensure remote dirs ===" -ForegroundColor Cyan
 Invoke-Ssh "if not exist C:\Users\user\smile-pay\remote mkdir C:\Users\user\smile-pay\remote & exit 0"
 
+Write-Host "=== Ensure offline MediaPipe assets ===" -ForegroundColor Cyan
+$modelPath = Join-Path $LocalRoot "web\models\face_landmarker.task"
+$bundlePath = Join-Path $LocalRoot "web\vendor\mediapipe\tasks-vision\vision_bundle.mjs"
+if (-not (Test-Path $modelPath)) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $LocalRoot "scripts\download_smile_model.ps1")
+}
+if (-not (Test-Path $bundlePath)) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $LocalRoot "scripts\download_mediapipe_tasks_vision.ps1")
+}
+
 Write-Host "=== Pack app/ + web/ + scripts/ + requirements.txt ===" -ForegroundColor Cyan
 $Archive = Join-Path $env:TEMP "smile-pay-deploy.tar.gz"
 if (Test-Path $Archive) { Remove-Item $Archive -Force }

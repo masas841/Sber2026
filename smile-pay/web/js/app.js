@@ -5,14 +5,16 @@ import {
   resolveStage,
 } from "./smile-stage.js?v=20260613-stage-timing";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js?v=20260613-detection-zoom-3";
-import { createFacePresenceWatcher } from "./face-presence.js?v=20260613-detection-zoom-3";
+import { createSmileWatcher } from "./smile-capture.js?v=20260614-offline-mp";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260614-offline-mp";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
 const demo = params.has("demo");
 const debug = params.has("debug");
 const live = !params.has("nostage") && !stageParam && !demo;
+
+const HOURLY_REFRESH_MS = 60 * 60 * 1000;
 
 const PRESENCE = {
   minFaceSize: 0.025,
@@ -58,6 +60,13 @@ function setStatus(text) {
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function scheduleHourlyRefresh() {
+  if (!live) return;
+  window.setTimeout(() => {
+    window.location.reload();
+  }, HOURLY_REFRESH_MS);
 }
 
 function captureBlob() {
@@ -310,6 +319,7 @@ async function init() {
   }
 
   if (live) {
+    scheduleHourlyRefresh();
     await beginLiveSession();
     return;
   }
