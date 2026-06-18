@@ -9,6 +9,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
 from app.game_log import append_event, stats_for_day, summary
+from app.install_routes import register_install_routes
 
 ROOT = Path(__file__).resolve().parent.parent
 STATIC_DIR = ROOT / "static"
@@ -23,6 +24,8 @@ if STATIC_DIR.exists():
 
 if IMG_DIR.exists():
     app.mount("/img", StaticFiles(directory=IMG_DIR), name="img")
+
+register_install_routes(app, ROOT, "Insure Chill")
 
 _NO_CACHE = {"Cache-Control": "no-store, no-cache, must-revalidate"}
 

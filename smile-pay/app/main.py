@@ -7,6 +7,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.play_log import append_play, logged_count, stats_for_date, stats_summary
+from app.install_routes import register_install_routes
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
@@ -18,6 +19,8 @@ _sessions: dict[str, dict] = {}
 
 if WEB.exists():
     app.mount("/static", StaticFiles(directory=WEB), name="static")
+
+register_install_routes(app, ROOT, "Smile Pay")
 
 
 @app.get("/")

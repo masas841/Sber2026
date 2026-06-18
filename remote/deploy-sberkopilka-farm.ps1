@@ -58,8 +58,13 @@ Write-Host "=== Restart SberKopilka ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 2
 Invoke-Ssh "powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\user\sberkopilka\remote\restart-sberkopilka.ps1"
 
+Write-Host "=== Upload install package for /install ===" -ForegroundColor Cyan
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "..\scripts\kiosk\deploy_install_dist.ps1") `
+    -Farm $Farm -LocalRoot $LocalRoot -RemoteRoot $RemoteRoot -PackageName "sberkopilka-kiosk"
+
 Write-Host "=== Health check ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 8
 & curl.exe -s "http://192.168.1.243:8766/api/health"
 Write-Host ""
 Write-Host "SberKopilka: http://192.168.1.243:8766" -ForegroundColor Green
+Write-Host "Install:    http://192.168.1.243:8766/install/" -ForegroundColor Green

@@ -19,7 +19,16 @@ cd gigavibe
 .\run-kiosk.ps1
 ```
 
-Установка и сборка пакета: `gigavibe/install/README-INSTALL.md`
+Установка и сборка пакетов:
+
+| Проект | Документация |
+|--------|--------------|
+| `gigavibe/` | `gigavibe/install/README-INSTALL.md` |
+| `sberkopilka/` | `sberkopilka/install/README-INSTALL.md` |
+| `insure-chill/` | `insure-chill/install/README-INSTALL.md` |
+| `smile-pay/` | `smile-pay/install/README-INSTALL.md` |
+
+Общие скрипты установки: `scripts/kiosk/`
 
 ## Секреты
 

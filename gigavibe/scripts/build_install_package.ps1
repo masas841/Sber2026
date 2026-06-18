@@ -101,7 +101,10 @@ Compress-Archive -Path (Join-Path $staging "*") -DestinationPath $zipPath -Compr
 Remove-Item $staging -Recurse -Force
 
 $mb = [math]::Round((Get-Item $zipPath).Length / 1MB, 1)
+$latestPath = Join-Path $distDir "gigavibe-kiosk-latest.zip"
+Copy-Item $zipPath $latestPath -Force
 Write-Host "OK: $zipPath ($mb MB)" -ForegroundColor Green
+Write-Host "Latest: $latestPath" -ForegroundColor Green
 if ($Offline) {
     Write-Host "On target machine: unzip -> .\install\install.ps1 -Offline -> .env -> .\run-kiosk.ps1"
 } elseif ($IncludePython) {

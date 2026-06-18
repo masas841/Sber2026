@@ -58,6 +58,10 @@ Write-Host "=== Restart Insure Chill ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 2
 Invoke-Ssh "powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\user\insure-chill\remote\restart-insure-chill.ps1"
 
+Write-Host "=== Upload install package for /install ===" -ForegroundColor Cyan
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "..\scripts\kiosk\deploy_install_dist.ps1") `
+    -Farm $Farm -LocalRoot $LocalRoot -RemoteRoot $RemoteRoot -PackageName "insure-chill-kiosk"
+
 Write-Host "=== Health check ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 8
 & curl.exe -sk "https://192.168.1.243:8768/api/health"
@@ -65,3 +69,4 @@ Write-Host ""
 Write-Host "Insure Chill screen:  https://slash.omelchak.com:8768/" -ForegroundColor Green
 Write-Host "Insure Chill tablet:  https://slash.omelchak.com:8768/control" -ForegroundColor Green
 Write-Host "LAN:                  https://192.168.1.243:8768/" -ForegroundColor Green
+Write-Host "Install:              https://slash.omelchak.com:8768/install/" -ForegroundColor Green

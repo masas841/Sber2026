@@ -9,6 +9,7 @@ from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.config import settings
+from app.install_routes import register_install_routes
 from app.log_uploader import start_log_upload_worker
 from app.pipeline import JobStatus, PORTRAIT_MODES, create_job_from_upload, get_job, process_job
 from app.qr_util import build_download_url, qr_output_path, save_job_qr
@@ -25,6 +26,8 @@ if WEB_DIR.exists():
     app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
 if ASSETS_DIR.exists():
     app.mount("/assets", StaticFiles(directory=ASSETS_DIR), name="assets")
+
+register_install_routes(app, ROOT, "GIGAvibe")
 
 
 class _SuppressAsyncioConnectionResetFilter(logging.Filter):

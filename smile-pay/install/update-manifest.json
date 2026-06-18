@@ -1,0 +1,1311 @@
+{
+  "files": [
+    {
+      "path": "app/main.py",
+      "sha256": "386dfcec386e759a3776ac8cba1aeb5542d5670772ad3396441ec0e7ce4e99f0",
+      "size": 4644
+    },
+    {
+      "path": "app/play_log.py",
+      "sha256": "8dc71e46338b526d1d75baa10f3adfaf0e605bca37a3303aacdf901a6c9c326d",
+      "size": 3901
+    },
+    {
+      "path": "CONTEXT.md",
+      "sha256": "5acce481739a341fb9ba783177aa44ac33dcd67ecbed1d7bdb6df38c89bd3f50",
+      "size": 6413
+    },
+    {
+      "path": "install/.env.kiosk.example",
+      "sha256": "7a7dcfe622e92861bb8481a6601d94fc07eac0d4aec29d17c50a9833fb5de1fe",
+      "size": 704
+    },
+    {
+      "path": "install/install.ps1",
+      "sha256": "6d00481127c947bab2cce1c602465de9098ae71419435786b02a0737699b8b0e",
+      "size": 2674
+    },
+    {
+      "path": "install/README-INSTALL.md",
+      "sha256": "b3dce37f36b1b7a92414864c1ef068501722ba772d836b72c65898050b63a959",
+      "size": 1217
+    },
+    {
+      "path": "install/start-smile-pay.cmd",
+      "sha256": "81372b8bdade21231c87ba127ed3c2fca98657d94d559577170228ad09c2d871",
+      "size": 101
+    },
+    {
+      "path": "install/Update-EnvDefaults.ps1",
+      "sha256": "a6c909ab8c025aaf592fc77713403de0a4ea0ed69e7fef7b48fdd0cf2131208d",
+      "size": 3804
+    },
+    {
+      "path": "install/update-from-github.ps1",
+      "sha256": "a870f92b85f39fbef15cfa80899b08c7912ff74d50db055d7b87e86d66c8141d",
+      "size": 521
+    },
+    {
+      "path": "install/update-smile-pay.cmd",
+      "sha256": "7591921868213c63328c0af6ec2a12a5d98586482a67bcb3583c2216a419b79b",
+      "size": 114
+    },
+    {
+      "path": "node_modules/.bin/playwright",
+      "sha256": "3d54541c28af53536fa11918a3156d4efd0391b3a21a494830e7c4ae3338edbd",
+      "size": 383
+    },
+    {
+      "path": "node_modules/.bin/playwright-core",
+      "sha256": "584cae79499218fcc26f02060943b348ae924a9faf170c81b2039e0859f007aa",
+      "size": 393
+    },
+    {
+      "path": "node_modules/.bin/playwright-core.cmd",
+      "sha256": "78052a48402779d4861c55439cf37ebc358dcb60cff17df2c401b1963c6c2282",
+      "size": 310
+    },
+    {
+      "path": "node_modules/.bin/playwright-core.ps1",
+      "sha256": "3bf0f558069840dbf93f823da0886e3f7b01e58f00c26ca9a2a5551bafd6052b",
+      "size": 813
+    },
+    {
+      "path": "node_modules/.bin/playwright.cmd",
+      "sha256": "6b54abe0d07f7c7b3f13553a8753e7ea293d63dd23c60dad2b1be42b48ee73c7",
+      "size": 305
+    },
+    {
+      "path": "node_modules/.bin/playwright.ps1",
+      "sha256": "b0c82bb175cf90f0fe094051456043d25f226508001d2c139c4875f8501cc51d",
+      "size": 793
+    },
+    {
+      "path": "node_modules/.package-lock.json",
+      "sha256": "6e25614957c1928e5b85ecae29a09c6c72e503df21683d30a4888658fb204217",
+      "size": 1078
+    },
+    {
+      "path": "node_modules/playwright/cli.js",
+      "sha256": "5e79302a6aad7d835d92d5ae6b4244c91cf61b28e94d7917279090e6c231f7a1",
+      "size": 698
+    },
+    {
+      "path": "node_modules/playwright/index.d.ts",
+      "sha256": "b07f64ff6ec710998a62b07377fbda0ab4c313ba1f0055bfe9faa22cffedd47c",
+      "size": 636
+    },
+    {
+      "path": "node_modules/playwright/index.js",
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44",
+      "size": 648
+    },
+    {
+      "path": "node_modules/playwright/index.mjs",
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f",
+      "size": 704
+    },
+    {
+      "path": "node_modules/playwright/jsx-runtime.js",
+      "sha256": "2fefb7ec3a42dcf1cea35ca7e3eb107507c4d80821b1d6abf6cfc9bca36498f0",
+      "size": 942
+    },
+    {
+      "path": "node_modules/playwright/jsx-runtime.mjs",
+      "sha256": "a6ae8df3a36f154f433b01fe1592170500f5fbe7798f6dacdfea5b492f31d1a6",
+      "size": 764
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/agentParser.js",
+      "sha256": "a2f630c1c2c9eafa0a3ca9cdbeaa26e74801615bc572e3fce226acb662ceb0eb",
+      "size": 3475
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/copilot-setup-steps.yml",
+      "sha256": "57f0fa74a9cc9e5abdf46846167d6e7d5a5aa274399cb5896616530db7b85da1",
+      "size": 646
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/generateAgents.js",
+      "sha256": "7567b9de3e8ffae0068a8e8a0c94c160124b3b1ea995cc470911151b58c2be99",
+      "size": 14441
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-coverage.prompt.md",
+      "sha256": "8e8a32e98c7069c8af29a088a91999c81dafbeb09a144b143ebe888b48b94355",
+      "size": 1294
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-generate.prompt.md",
+      "sha256": "6031c3eacf1e55d527a0397066b64d134d9f925fd7286bcc78646e714611da10",
+      "size": 175
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-generator.agent.md",
+      "sha256": "0a61b313ff2573198fc89c7ab5b7e7db1c557193a470104ac90b2d6a0332be80",
+      "size": 3336
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-heal.prompt.md",
+      "sha256": "19f2bea9648ddac89b90b40a3f87b50c276d416677f8bb2fbcdac894cdb6946b",
+      "size": 105
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-healer.agent.md",
+      "sha256": "b3e1d85219df5ead7e3ef0dc69959b0263cc16e885f71d5b64bafdf97e6f9215",
+      "size": 2891
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-plan.prompt.md",
+      "sha256": "6ce2c51b356b4e89ac1e3c2b8b3ff0a390c7b518c1d4d24f019f9eb179cd6669",
+      "size": 196
+    },
+    {
+      "path": "node_modules/playwright/lib/agents/playwright-test-planner.agent.md",
+      "sha256": "bf4baa68205aa04c4512a80bcc6a5362d3aaa76ae9165f05a9d5a29e1d34c0fd",
+      "size": 2808
+    },
+    {
+      "path": "node_modules/playwright/lib/cli/reportActions.js",
+      "sha256": "1ea9e8660db28045b853a54c24493b08029e148d9a0ee6e88027e409b497e3f1",
+      "size": 3562
+    },
+    {
+      "path": "node_modules/playwright/lib/cli/testActions.js",
+      "sha256": "b1fc25798995a3a0bce45e5da7f1158c076b807099dc35fdbb559acb75623b95",
+      "size": 9295
+    },
+    {
+      "path": "node_modules/playwright/lib/common/index.js",
+      "sha256": "3d90db5e5823c18827bce6bb5e05531511d6e0a31efe8c0188eeb07900539cfe",
+      "size": 113886
+    },
+    {
+      "path": "node_modules/playwright/lib/common/index.js.txt",
+      "sha256": "c3afc9fe68a167516650e298aa21673719c168c75aab38dddec121142ee5b748",
+      "size": 1427
+    },
+    {
+      "path": "node_modules/playwright/lib/errorContext.js",
+      "sha256": "7fdc8216d80ba10c5edea9617463da2e76ba56d966a14a963176952415d03871",
+      "size": 4619
+    },
+    {
+      "path": "node_modules/playwright/lib/globals.js",
+      "sha256": "f5922eb1fb6051900157492eb9c218e62d07378eed135bca4b2f173ed1184d1c",
+      "size": 1935
+    },
+    {
+      "path": "node_modules/playwright/lib/index.js",
+      "sha256": "36faa53b7c6fa8f76788f2bcfa21d72edc22e5f528c45328b71d07e215d79a32",
+      "size": 34490
+    },
+    {
+      "path": "node_modules/playwright/lib/isomorphic.js",
+      "sha256": "3d61508f951aa9518adb4bf6594d61dfd1099c95a1a4f0af809a58ccebc59025",
+      "size": 8191
+    },
+    {
+      "path": "node_modules/playwright/lib/isomorphic.js.txt",
+      "sha256": "36c16ae5721dfe8ac2555e84d26b5895b7ca113e7304bd3735a16d56b5a71b3c",
+      "size": 267
+    },
+    {
+      "path": "node_modules/playwright/lib/loader/loaderProcessEntry.js",
+      "sha256": "aca731ba223e3beee379877d5829f3b5a1f85241462b835cb77555c8a78dee5e",
+      "size": 1256
+    },
+    {
+      "path": "node_modules/playwright/lib/loader/loaderProcessEntry.js.txt",
+      "sha256": "0fc4ad550d17a23e9f1cbc78f646e57461f4feb22253dd5220034ef44091005c",
+      "size": 234
+    },
+    {
+      "path": "node_modules/playwright/lib/matchers/expect.js",
+      "sha256": "10b9442388bd9cfaae64e3f76c74081548687ab89e7d1f1ea20c93de6bd02358",
+      "size": 526071
+    },
+    {
+      "path": "node_modules/playwright/lib/matchers/expect.js.LICENSE",
+      "sha256": "4de4f5013cf10f5e438eb155af434c36083395e7c2c52d0385b4a7cbab71391e",
+      "size": 39215
+    },
+    {
+      "path": "node_modules/playwright/lib/matchers/expect.js.txt",
+      "sha256": "307538a15caea16fecb5cea48bf24a625e02718aba077010b3fb1ff389d7b4ef",
+      "size": 3903
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/browserBackend.js",
+      "sha256": "7143473e53c8b76720e42efab95f55227807590d2818104223d5df6ac46b681e",
+      "size": 4889
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/generatorTools.js",
+      "sha256": "3c53feaeb9fc2ff728f334cb31f9b7211e65b20c692c7585459c3c97bdd13a12",
+      "size": 5427
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/plannerTools.js",
+      "sha256": "715abc888d9ea30b532b75c6f09aa34101ab15c1eeb959c50cf9dedcf3a459ac",
+      "size": 6379
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/seed.js",
+      "sha256": "f36f7fb76d4ed33225e80be208cccc9757d363a9d1527cf560736c0f1e5edd31",
+      "size": 3239
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/streams.js",
+      "sha256": "8affc240a6a90ee2dbdedcde9927018efe426ec0d390bcd1ee4f0464e75adc0f",
+      "size": 1577
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/testBackend.js",
+      "sha256": "dcd8d09366617f13213ce544efb5fe47df5a87258ae93545d4d0738623f43ad1",
+      "size": 4067
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/testContext.js",
+      "sha256": "5aee6d6a147dab40a5606b6d0c39e5e0642e307ea60c32b303c71042e7e44922",
+      "size": 11540
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/testTool.js",
+      "sha256": "2a8f17d0a61ccb8a4ca9c52a3255d624deca989c0b06281d579629c664f8cc8e",
+      "size": 1104
+    },
+    {
+      "path": "node_modules/playwright/lib/mcp/test/testTools.js",
+      "sha256": "14710b5f34246005d974762b83a2a50e5cc17130af841cd3bc447811d69c6af7",
+      "size": 3714
+    },
+    {
+      "path": "node_modules/playwright/lib/package.js",
+      "sha256": "544a18417ea51dd4c8a9f3dbc4e2b47e46c80f452e0cd23d55e9b3680bc6241e",
+      "size": 2013
+    },
+    {
+      "path": "node_modules/playwright/lib/program.js",
+      "sha256": "32ce0bd8236a62a298d37e78a61e5e45245f4285bc41a3d15fa8b1a30c55a73a",
+      "size": 12979
+    },
+    {
+      "path": "node_modules/playwright/lib/runner/index.js",
+      "sha256": "c7cb914ada6fcd32be125522c7524aad3359e521090b7020259f9862be70b87f",
+      "size": 295497
+    },
+    {
+      "path": "node_modules/playwright/lib/runner/index.js.txt",
+      "sha256": "46d3fb2ce23c0eda94df7243d70adf23eaabd1b4698439b99fb0919bed446c31",
+      "size": 2857
+    },
+    {
+      "path": "node_modules/playwright/lib/transform/babelBundle.js",
+      "sha256": "9201df11ae9c9ee1febd587c5013c4f862aa7e9981b92b86ccbbbd37e71f9124",
+      "size": 2789601
+    },
+    {
+      "path": "node_modules/playwright/lib/transform/babelBundle.js.LICENSE",
+      "sha256": "676fa240edb9d844720e8e42e61be5457a4ced8dae0c6e63efb4b85e95d2d276",
+      "size": 121614
+    },
+    {
+      "path": "node_modules/playwright/lib/transform/babelBundle.js.txt",
+      "sha256": "4f8cd1987142f0cac537e30835b45c6fc18953451d74aa3bd9d82729fd0fdf1d",
+      "size": 21706
+    },
+    {
+      "path": "node_modules/playwright/lib/transform/esmLoader.js",
+      "sha256": "4e08f072635ccd32497256c28fd92663ca89e585ee93335f32d4cbc02d68b0c3",
+      "size": 250901
+    },
+    {
+      "path": "node_modules/playwright/lib/transform/esmLoader.js.LICENSE",
+      "sha256": "1e61a7d29900da9ab323e85c2b89066e5d899a95b94f33aedc5f11d02d3da31a",
+      "size": 17875
+    },
+    {
+      "path": "node_modules/playwright/lib/transform/esmLoader.js.txt",
+      "sha256": "d5cce5c3f956171982e1007068dd4e87785b10605dbf59c44a8f878227dfb7bf",
+      "size": 2375
+    },
+    {
+      "path": "node_modules/playwright/lib/util.js",
+      "sha256": "f7734786062157d60ed0388f1f9fcf3507d811327fb3b287576dfdfd9670f083",
+      "size": 15242
+    },
+    {
+      "path": "node_modules/playwright/lib/worker/workerProcessEntry.js",
+      "sha256": "0f7b9c0a004787e0bef22a95ea38a4fa9d8879d4be52d8fad07795eddb93cc51",
+      "size": 126385
+    },
+    {
+      "path": "node_modules/playwright/lib/worker/workerProcessEntry.js.txt",
+      "sha256": "b3b745644e1bb46c14e7d4621fda12edb8ec7bb9746a3bc465e62113cdc97bd4",
+      "size": 916
+    },
+    {
+      "path": "node_modules/playwright/LICENSE",
+      "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb",
+      "size": 11601
+    },
+    {
+      "path": "node_modules/playwright/NOTICE",
+      "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d",
+      "size": 254
+    },
+    {
+      "path": "node_modules/playwright/package.json",
+      "sha256": "8be9edc5642a8c761b677e7af8b9937f36c0443a91e14765877716d70034e5bf",
+      "size": 1559
+    },
+    {
+      "path": "node_modules/playwright/README.md",
+      "sha256": "55d307acd3f163579065fc431c27c821e99f2a3571d55c7197c3dc0a7e4f9d22",
+      "size": 11270
+    },
+    {
+      "path": "node_modules/playwright/test.d.ts",
+      "sha256": "3f00324f263189b385c3a9383b1f4dae6237697bcf0801f96aa35c340512d79c",
+      "size": 673
+    },
+    {
+      "path": "node_modules/playwright/test.js",
+      "sha256": "b97fa53a6ab864f51c9c48b5e4647d0acae45ba2948c5d78e38bfeb56755d974",
+      "size": 806
+    },
+    {
+      "path": "node_modules/playwright/test.mjs",
+      "sha256": "1deb265617d0e87b6d05bf8b3d5bf73cd4b788665c249c609a01b94ceff2eea1",
+      "size": 1400
+    },
+    {
+      "path": "node_modules/playwright/ThirdPartyNotices.txt",
+      "sha256": "b17ac0bd6f4b8207e440639cc8e0ba1bf1d9eaf9b12236764ab93b346c7abd8e",
+      "size": 705
+    },
+    {
+      "path": "node_modules/playwright/types/test.d.ts",
+      "sha256": "f02650de64b96593c1eb736f28a6a0a773c51662d8525b06cc735d77fa9c7af8",
+      "size": 371716
+    },
+    {
+      "path": "node_modules/playwright/types/testReporter.d.ts",
+      "sha256": "a724fe8a5f72bc65ca93f5d2c2d9f49d9be93074ca4c011e71c5fdd0094da619",
+      "size": 28107
+    },
+    {
+      "path": "node_modules/playwright-core/bin/install_media_pack.ps1",
+      "sha256": "bc20f049badf021e3a53bdb4156603caa5ef482c9a9a251f927605e676a44171",
+      "size": 174
+    },
+    {
+      "path": "node_modules/playwright-core/bin/install_webkit_wsl.ps1",
+      "sha256": "bc61beda37a808eef27d39ce684baa792f6d17737a25a432b1a84d3b591ab815",
+      "size": 1464
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_chrome_beta_linux.sh",
+      "sha256": "1516fd36def44bfcf87855850322a54e3b26e863a82fbdf2a44a5f5134f7eedf",
+      "size": 1214
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_chrome_beta_mac.sh",
+      "sha256": "42d0572860dcecb094d409b879e469292c58a7645085357156453a6299315770",
+      "size": 560
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_chrome_beta_win.ps1",
+      "sha256": "b6d9e44742feafb98d5edc56fa20042949973cf30d141a1c5b4fb384096967c5",
+      "size": 957
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_chrome_stable_linux.sh",
+      "sha256": "8b578baa16f286f17d6a29cc8998a7a16f2635b7fb018f9473d5c498e0be450f",
+      "size": 1209
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_chrome_stable_mac.sh",
+      "sha256": "8532b8ff7600f208aada15584978fa91baffb0d4bb77bd30332ec827de501d72",
+      "size": 516
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_chrome_stable_win.ps1",
+      "sha256": "3d96c4e2f4ebbb3fad44cf3ba58d9cf90af1c9fb3073e3b27d45a74cf005515b",
+      "size": 923
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_beta_linux.sh",
+      "sha256": "50a5fb48211ce0dc524e17e18547f40e863c1732555ca288cbc69cd6cb55ae2a",
+      "size": 1491
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_beta_mac.sh",
+      "sha256": "a280a4d02c2c908a6a523b781dd953bcf438689ceb4723133255b0d11955b124",
+      "size": 374
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_beta_win.ps1",
+      "sha256": "b173c378a59f0cc38033cee702de1f44f09276c9b2270d1a650ebe66ee312433",
+      "size": 874
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_dev_linux.sh",
+      "sha256": "38e74c2ac8a403c512590d11d20742773d338d8b68b02022b209a9d8a6e03d7c",
+      "size": 1486
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_dev_mac.sh",
+      "sha256": "48d96b6d58b4a1a42e116545b523f4efd25edac1f3fa323a97eb596fa3bb654a",
+      "size": 369
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_dev_win.ps1",
+      "sha256": "46f7f98c81cb0abe687d7f4a5afea9b897a38d2a6dd6f6662fbd847f7a22bd51",
+      "size": 869
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_stable_linux.sh",
+      "sha256": "db2fb3492a689ee5472ec159fef6a5efb7a62f1f513339350813c9d1334ba8d2",
+      "size": 1504
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_stable_mac.sh",
+      "sha256": "e176bc37da1a3e5b5cde36b941ed6134f7d5ee784587d034140cf40c53456b27",
+      "size": 368
+    },
+    {
+      "path": "node_modules/playwright-core/bin/reinstall_msedge_stable_win.ps1",
+      "sha256": "40bb5fcbfcebbbe2ce43c6e736e7c5deefc5be03b6e9c6914423c06ec1f591be",
+      "size": 856
+    },
+    {
+      "path": "node_modules/playwright-core/browsers.json",
+      "sha256": "af53e32ffe35a024ddb34563700956b01ada00ac7e9270ba5df0604ec57e38e1",
+      "size": 1941
+    },
+    {
+      "path": "node_modules/playwright-core/cli.js",
+      "sha256": "f1c4075aef116c766092250d7f37b3249a7cee6465d953207fc38c8f6145becd",
+      "size": 839
+    },
+    {
+      "path": "node_modules/playwright-core/index.d.ts",
+      "sha256": "7a8ec10b0834eb7183e4bfcd929838ac77583828e343211bb73676d1e47f6f01",
+      "size": 634
+    },
+    {
+      "path": "node_modules/playwright-core/index.js",
+      "sha256": "dca9d1e7d21c43390b59d79d55df309cf5d195edc668c35862bb4db67e116fc0",
+      "size": 1117
+    },
+    {
+      "path": "node_modules/playwright-core/index.mjs",
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd",
+      "size": 1063
+    },
+    {
+      "path": "node_modules/playwright-core/lib/bootstrap.js",
+      "sha256": "0e3cc200f6e99557e953b6caace213e652750d1da0e800b92ed94f459a33ef59",
+      "size": 3100
+    },
+    {
+      "path": "node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "f74353fcb8e406756a70a6af0dfc4a5069acd577e35ec9d923ccf36ac009c2f5",
+      "size": 3206963
+    },
+    {
+      "path": "node_modules/playwright-core/lib/entry/cliDaemon.js",
+      "sha256": "062f256fb29a7bf91793a014b9c3f1f9cf2dc6b12e40a8a2ebba88a630ae16a0",
+      "size": 197
+    },
+    {
+      "path": "node_modules/playwright-core/lib/entry/dashboardApp.js",
+      "sha256": "209962c6eaeef11629f226d6a2ab33ec7a2480754242b6e19590a9e6eb71d126",
+      "size": 108
+    },
+    {
+      "path": "node_modules/playwright-core/lib/entry/mcp.js",
+      "sha256": "cc87dc0020cb41caebbf04f50e42bc7835b033a6d80e9c3f0a3d0b3dbdf341c7",
+      "size": 442
+    },
+    {
+      "path": "node_modules/playwright-core/lib/entry/oopBrowserDownload.js",
+      "sha256": "87567cdbd67dd2f50bb232d47d3784701ece7c81e39c0287bb7d1b466b68cf06",
+      "size": 120
+    },
+    {
+      "path": "node_modules/playwright-core/lib/package.js",
+      "sha256": "9f938e1d44a0dd231b1660ca62f7dae964859b79cbdc370b8542c5d375ca3c05",
+      "size": 2112
+    },
+    {
+      "path": "node_modules/playwright-core/lib/server/chromium/appIcon.png",
+      "sha256": "6ba994f05c5cf18e22d9b6bef9898fbdec6ad4d4d77f5187d0609cb42d72d01e",
+      "size": 16565
+    },
+    {
+      "path": "node_modules/playwright-core/lib/server/deviceDescriptorsSource.json",
+      "sha256": "933d568bfa2d50de5805ce52f55a33509c66c8b8b7aa2c07a82d5475c39fe851",
+      "size": 54181
+    },
+    {
+      "path": "node_modules/playwright-core/lib/server/electron/loader.js",
+      "sha256": "8c99c632a9fcef9d691160954d01acdf374ba15566e153bef7fb61b0d3796e6d",
+      "size": 4821
+    },
+    {
+      "path": "node_modules/playwright-core/lib/serverRegistry.js",
+      "sha256": "b7173eb632bdbf34a6aa137b55e50fbdc95acda4851480423afe6caa86cc48b7",
+      "size": 247054
+    },
+    {
+      "path": "node_modules/playwright-core/lib/serverRegistry.js.LICENSE",
+      "sha256": "5cf540fe55a2ba9bcf0eb76e739b454faa8581e2f1a0f777602ef0855534302e",
+      "size": 18617
+    },
+    {
+      "path": "node_modules/playwright-core/lib/utilsBundle.js",
+      "sha256": "5c42363c10d2f2f5bc91e07feaa9fa5f417a1a55e6559448d0c20d66f73db9e0",
+      "size": 3093405
+    },
+    {
+      "path": "node_modules/playwright-core/lib/utilsBundle.js.LICENSE",
+      "sha256": "8807264f1ac7f9950a93bf134d5ba28ebd52371fdfda54c75e87d10fdf13aa6e",
+      "size": 107836
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/codicon-DCmgc-ay.ttf",
+      "sha256": "0f1d5219934e96e83b8db162d60b4d8c09b5de1e7d38031cbafe4a3c0f2889c9",
+      "size": 80340
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/firefox-1bWoP6pv.svg",
+      "sha256": "3f3742d1e78c0db6c2d3531250f70c30675ee5310de32fa89befaf738c54efd0",
+      "size": 7488
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/firefox-beta-k3eOH_eK.svg",
+      "sha256": "7eab5ffdc25903ba33a7202f7fffa1999f119c7be45a39e9e703c118904f917a",
+      "size": 9280
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/firefox-nightly-Cp5nfeDT.svg",
+      "sha256": "f311c074b0fa999fcd6b73441301fb54ee87a48ff3bf05f318647928110476da",
+      "size": 9143
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/index-BY2S1tHT.css",
+      "sha256": "4e741ba6be0fb15305f6dfd907e245e68554f6dbd5282a58dcc1e9d2493eb917",
+      "size": 142433
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/index-DpEq2p62.js",
+      "sha256": "120037d62d91187eb3a2ac4e4534742c32a04b10f15ac938e06fcf5f261a659f",
+      "size": 331408
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/assets/safari-na3_-uQk.svg",
+      "sha256": "80fd72ca5eb8545f1981277b31f4f92951d469d4efebd078e4086b676fe517dc",
+      "size": 5254
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/index.html",
+      "sha256": "0f3061205ab98917439bbc7a4bc06e75a201d04e6c89f4b0ff9da5961010d5ca",
+      "size": 1078
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/dashboard/playwright-logo.svg",
+      "sha256": "511524a1c145819303a18fb71870a4307c3e740f9e9722f7686a2b42b0995b6c",
+      "size": 5645
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/htmlReport/index.html",
+      "sha256": "ce7c098020a0eb9ce10edd416245ea6da50dfeaab18dfd0a2176979d22643be6",
+      "size": 464
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/htmlReport/report.css",
+      "sha256": "3298f11062d5112516c8b3fa2368c6138b4700aa9fa215bb5fc0a1f0efe94e3f",
+      "size": 108330
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/htmlReport/report.js",
+      "sha256": "d354496707a505d2d5d58f67ad4216cdf681233b47f2e028dbfdd1e197126792",
+      "size": 415587
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/assets/codeMirrorModule-BHYmBp6h.js",
+      "sha256": "954a850a323b8c35d071a149aee3504ef8ed4f3989e42debc3fe93a782f55288",
+      "size": 313009
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/assets/codeMirrorModule-DYBRYzYX.css",
+      "sha256": "70bf421a13e87857ca684bfa2cc55f06d7c5a50f71253a3ff1d74769b14a957e",
+      "size": 6421
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/assets/codicon-DCmgc-ay.ttf",
+      "sha256": "0f1d5219934e96e83b8db162d60b4d8c09b5de1e7d38031cbafe4a3c0f2889c9",
+      "size": 80340
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/assets/index-4ZiSSCmn.css",
+      "sha256": "4278e600a533667369328e9eb52a212693d52e46072ec37228e0ef8621a48ead",
+      "size": 92234
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/assets/index-DA10QRaq.js",
+      "sha256": "184fed3d752d1764bd26b9e8ccf735ce109cd69b3ed62c2f403e6865662bab10",
+      "size": 364880
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/index.html",
+      "sha256": "6e87705cd06a9347ab8f623acd675ef38dae96886b2db3f656d87c2e6cef4828",
+      "size": 1078
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/recorder/playwright-logo.svg",
+      "sha256": "6b0a4367bdeab10995bc239278f04c68c10e48adbec15e799e01909a0d66dcb9",
+      "size": 5033
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/assets/codeMirrorModule-Ds_H_9Yq.js",
+      "sha256": "97273402dd9c1dbe012459a05a57d5f81fcf900828c7db1e8a33d2d1b8f73e17",
+      "size": 313054
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/assets/defaultSettingsView-D31xz8zv.js",
+      "sha256": "89918f149a8f31f3f0931be88224ce73991c11b328aaf96f6c8553af243d36f1",
+      "size": 649133
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/assets/urlMatch-BYQrIQwR.js",
+      "sha256": "168c4dee4815ea8d3c131a504033cd23d4b15aefa0209dd10ad3f643e8f1d8a7",
+      "size": 819
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/assets/xtermModule-CsJ4vdCR.js",
+      "sha256": "4aa82b0448cef1cf951bbe0ac80bf2d2b7c5d279dd74bcc798a9e563e98e5295",
+      "size": 292244
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/codeMirrorModule.DYBRYzYX.css",
+      "sha256": "70bf421a13e87857ca684bfa2cc55f06d7c5a50f71253a3ff1d74769b14a957e",
+      "size": 6421
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/codicon.DCmgc-ay.ttf",
+      "sha256": "0f1d5219934e96e83b8db162d60b4d8c09b5de1e7d38031cbafe4a3c0f2889c9",
+      "size": 80340
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/defaultSettingsView.BDKsFU3c.css",
+      "sha256": "0a7ab260fedb13141b5635b80704878e37adba89198a16d43b83972e981ca648",
+      "size": 110856
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/index.BCnMPevh.js",
+      "sha256": "b7b21f6a648db1af9b77717e1be7bbf0ecb09e0e23e596c815b7b84661de4b87",
+      "size": 6591
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/index.CzXZzn5A.css",
+      "sha256": "4ec2a3d49db259ce9025cb4fa48d73b1afd58215e567eef3b4a4cbf76c1674d9",
+      "size": 2111
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/index.html",
+      "sha256": "86a5792cff2ecf975e580491d8593e322104711946efd765edd250039a2e2f3d",
+      "size": 2363
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/manifest.webmanifest",
+      "sha256": "d8540500603a32a39fe7e5a0375dc0f9ebafd11118e06a846db7efc608223ab9",
+      "size": 429
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/playwright-logo.svg",
+      "sha256": "6b0a4367bdeab10995bc239278f04c68c10e48adbec15e799e01909a0d66dcb9",
+      "size": 5033
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/snapshot.html",
+      "sha256": "11c80efe4f4424fa59004bcc71fed77a420d2da5f199790e355c30a5b965d0cd",
+      "size": 389
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/snapshot.v8KI4P3m.js",
+      "sha256": "97a3cd6d67aaac66efc838d7d743ac51bbf7d272e1287981c11758fca21a0657",
+      "size": 660
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/sw.bundle.js",
+      "sha256": "eb666dd23c07d2305f216af443a83ee71e06433e0d5b9da2927a9fee18aa2ab9",
+      "size": 95469
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/uiMode.Btcz36p_.css",
+      "sha256": "bfe8330cc78eeb1b1c4d8983aab7068d725526e407903ee19e515996250cb221",
+      "size": 60239
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/uiMode.C2Efnu2P.js",
+      "sha256": "fcde5934289592310ce4db673b29df510adcdbc0c028264e0c8d3605ec253ee8",
+      "size": 38201
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/uiMode.html",
+      "sha256": "5f17cd4e1ddcf1915c15487b7b4e6a4a812ca6fd79ecedea97ef0dd2900dd635",
+      "size": 727
+    },
+    {
+      "path": "node_modules/playwright-core/lib/vite/traceViewer/xtermModule.DYP7pi_n.css",
+      "sha256": "7c5a01f382f76539fc9b4db6b18e18a7035741845fd14968c5cdc0a7e373d817",
+      "size": 4150
+    },
+    {
+      "path": "node_modules/playwright-core/lib/xdg-open",
+      "sha256": "2e79a4d5171dd384d20a75b023dfe0e9f4330cdb5d441f6c3859a11fce3db51a",
+      "size": 25778
+    },
+    {
+      "path": "node_modules/playwright-core/LICENSE",
+      "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb",
+      "size": 11601
+    },
+    {
+      "path": "node_modules/playwright-core/NOTICE",
+      "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d",
+      "size": 254
+    },
+    {
+      "path": "node_modules/playwright-core/package.json",
+      "sha256": "6f7b58cc55449321279f11ca97d4e451c391738b77db32cdbcedf02851e3f097",
+      "size": 876
+    },
+    {
+      "path": "node_modules/playwright-core/README.md",
+      "sha256": "d16ff7f8e38fa1fc954f695ad551cdc118d9c9bdd5f3d83203901f4c317d7d7e",
+      "size": 120
+    },
+    {
+      "path": "node_modules/playwright-core/ThirdPartyNotices.txt",
+      "sha256": "a549d329bad8806fe279f0ecae0fc0270dec7e7c2dc8ec10f90e394f7c32b144",
+      "size": 676
+    },
+    {
+      "path": "node_modules/playwright-core/types/protocol.d.ts",
+      "sha256": "681cf9768031b874fafdd81a20e8a20ca6c92a5cbf12e86532a69182e315b065",
+      "size": 812393
+    },
+    {
+      "path": "node_modules/playwright-core/types/structs.d.ts",
+      "sha256": "32727845ab5bd8a9ef3e4844c567c09f6d418fcf0f90d381c00652a6f23e7f6e",
+      "size": 2103
+    },
+    {
+      "path": "node_modules/playwright-core/types/types.d.ts",
+      "sha256": "e5b810845dedef5aa0d682efa61be20dcb2e28c27a64ff5cc4cfc122f3f3980f",
+      "size": 1013672
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "01aef8acfdd1a5dcbab9f42c00743b46e0838b4d16f19d0e0723d7224d12eb4d",
+      "size": 1692
+    },
+    {
+      "path": "package.json",
+      "sha256": "6192453f04258ce3342d9b110a2c57103f8592c0bbe581b13c5004308d2d91fa",
+      "size": 538
+    },
+    {
+      "path": "README.md",
+      "sha256": "cfff6e38ed8f74597e6d01532d880faabc3cdbb272c2bfbe57aea5e624ef4ac9",
+      "size": 2673
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "9ea13fe559e76b36485fa4cc24870d0ddd86c4ee0652661749094ff3ac19c1da",
+      "size": 102
+    },
+    {
+      "path": "run-kiosk.ps1",
+      "sha256": "907631db8f12ca96eff7d94cfd65cb8121e89d8d97a0c93c4c0b12377d4ad021",
+      "size": 2319
+    },
+    {
+      "path": "run.ps1",
+      "sha256": "ff8105572c8a3bcb9674a11c98c015e69204e4664060ecf3c182c68f5db4d3af",
+      "size": 436
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "path": "scripts/build_install_package.ps1",
+      "sha256": "94582e25f5164d9dd200925b9410e79438f3239cde5568f3ca46331ca820c9a1",
+      "size": 740
+    },
+    {
+      "path": "scripts/download_figma_assets.ps1",
+      "sha256": "253705dfad4f04b36736621b70d761cc8847798824659e3a3383c7e46d2539e1",
+      "size": 3578
+    },
+    {
+      "path": "scripts/download_fonts.ps1",
+      "sha256": "c9018efe2c54d7738b76ca8b334d959a1b85bc631460b4555a2ff4a7b27bf6c1",
+      "size": 516
+    },
+    {
+      "path": "scripts/download_mediapipe_tasks_vision.ps1",
+      "sha256": "be87163f3a04fc3cf550f95c56d90ca100b71ca27054b145c7e11c6f47561b0d",
+      "size": 1272
+    },
+    {
+      "path": "scripts/download_smile_model.ps1",
+      "sha256": "9004df095f9e147413b0145ad7d81a54a54ee24b6131933e33a3903f05eca461",
+      "size": 578
+    },
+    {
+      "path": "scripts/export_text_paths.mjs",
+      "sha256": "e7d42e2f297bb2c5ed23cf7d1c43e2f9c74d6e84b235989102a646c84ec0ff3f",
+      "size": 998
+    },
+    {
+      "path": "scripts/figma_mcp_call.mjs",
+      "sha256": "428603ba8a428bfc673913320cd3da9d38ef825cca72c385b246e9bf3366f33d",
+      "size": 4978
+    },
+    {
+      "path": "scripts/figma_mcp_probe.mjs",
+      "sha256": "8fa5c4086149a78b47ee4dcc693df66dd041d1f05c128ac844be1d044db7dcdd",
+      "size": 2361
+    },
+    {
+      "path": "scripts/figma_probe_out.txt",
+      "sha256": "a7461ccb3640ac5c5823b12cab9e740e3c0509257e882606e96c78930c90ed18",
+      "size": 31519
+    },
+    {
+      "path": "scripts/gen_self_signed_cert.py",
+      "sha256": "74a310527f2da637bd7932888df8f45fa30512a4c53cc650960f763dd00dbc5a",
+      "size": 3471
+    },
+    {
+      "path": "scripts/shot_browser.mjs",
+      "sha256": "3f50d4b37301bbe4b898b037bf5dbf9fea48be6b8b25c0565cf38e6c230a61e8",
+      "size": 856
+    },
+    {
+      "path": "scripts/verify_flow.mjs",
+      "sha256": "6652ec3c2c46a42236f80c0e7ad20f8ffbd3a355b7ce2eaf20dd6ba5d075b0c0",
+      "size": 1239
+    },
+    {
+      "path": "web/assets/copy/lines.txt",
+      "sha256": "3695fdc82296974d38c28d742ec8d2057af67c73aeff6e0213527310051ec16d",
+      "size": 1198
+    },
+    {
+      "path": "web/assets/figma/frame-idle.png",
+      "sha256": "4184fe9df0253eca027382ada8b268cc2605edc3ee7ac68655745d7aaf7608e6",
+      "size": 137275
+    },
+    {
+      "path": "web/assets/figma/frame-qr.png",
+      "sha256": "20033d5734cbb38429fdd4714fbb17a519e37efd82c292f4ab5fe397e3d4a6be",
+      "size": 130570
+    },
+    {
+      "path": "web/assets/figma/hold-bg-sber.svg",
+      "sha256": "d574b322668e9314b2d9ad68c00a3adc420bc1bc749211432956427564e7ebb6",
+      "size": 3056
+    },
+    {
+      "path": "web/assets/figma/hold-bg-smile-left.svg",
+      "sha256": "3267b7c11db197879475a933ab19c80ee83daaa57f15c820f5c6b146284c2915",
+      "size": 1533
+    },
+    {
+      "path": "web/assets/figma/hold-bg-smile-right.svg",
+      "sha256": "10f00a2ae27d907cdb0133c682d385166200f3935637bbed81771f9dff33b66c",
+      "size": 1533
+    },
+    {
+      "path": "web/assets/figma/hold-bg-star-blue-small.svg",
+      "sha256": "ea06ccd73e59f0f50a5eeeac31f1a3f0ba8961b1e8ac4a99346e769f49ddea1d",
+      "size": 825
+    },
+    {
+      "path": "web/assets/figma/hold-bg-star-left.svg",
+      "sha256": "c848036a8998f8b5bae219cc651925462f9dbeeb0890137dd41e8f79094c8c16",
+      "size": 1367
+    },
+    {
+      "path": "web/assets/figma/hold-bg-star-pink-right.svg",
+      "sha256": "f9203e2b24f4b434a0d09baead14abe9c7b516a9cf83f1bb4a3ff40952023581",
+      "size": 774
+    },
+    {
+      "path": "web/assets/figma/hold-bg-star-pink-small.svg",
+      "sha256": "af5519b121f9265624e1fc80420daf13b947bc7c87cb5b07f4ceb4ed1cb3fb14",
+      "size": 771
+    },
+    {
+      "path": "web/assets/figma/hold-bg-wave-left.svg",
+      "sha256": "65681798121f588536c2cc623b289aedce50acaf906a431cab4d8094e5752d0c",
+      "size": 2663
+    },
+    {
+      "path": "web/assets/figma/hold-bg-wave-right-low.svg",
+      "sha256": "54e5472c2572b0de43f5063dfc200dddd632008a1acbdf78aa67589ad1a7acef",
+      "size": 2863
+    },
+    {
+      "path": "web/assets/figma/hold-bg-wave-right-top.svg",
+      "sha256": "4bcb551690470ba580194600ed9579a5529ca5dfa27bc08c26a9bbea36c72cda",
+      "size": 2663
+    },
+    {
+      "path": "web/assets/figma/hold-flower-green.svg",
+      "sha256": "7f47fe6b413bcf488026bd1d68a234d3cca9d757ec5ef854483ea0f8dc44a441",
+      "size": 3816
+    },
+    {
+      "path": "web/assets/figma/hold-flower-lime.svg",
+      "sha256": "a73d9aa1b6c374699a70ee50ecb0c0624b47bce2dceb31e167c1a1a854b6c304",
+      "size": 3058
+    },
+    {
+      "path": "web/assets/figma/hold-smile-blue.svg",
+      "sha256": "b3b17b5573fa654e7be6cc0025e23a5ca292eb14722eb28d463dfe28c33aedf1",
+      "size": 1552
+    },
+    {
+      "path": "web/assets/figma/hold-smile-green.svg",
+      "sha256": "061f37d95b2f9b1eac838530e891008344f94a0e28ded4e83a170467ab164df3",
+      "size": 1552
+    },
+    {
+      "path": "web/assets/figma/hold-smile-pink.svg",
+      "sha256": "13a134fe0c69df3210778e4a78184daf8edb9f2b574937e1189e6d16de402770",
+      "size": 1552
+    },
+    {
+      "path": "web/assets/figma/layout.json",
+      "sha256": "1b5d6f3313c910f7bd3e7e5798007d092daaa0ca9ebe4e3c665c5ab5749050df",
+      "size": 2564
+    },
+    {
+      "path": "web/assets/figma/mask-subtract.svg",
+      "sha256": "7bed8fc6acfde500d1bfceff014ad9430b1a4be03c6e5820ce08cf0eef2c9f52",
+      "size": 917
+    },
+    {
+      "path": "web/assets/figma/master-gradient.svg",
+      "sha256": "9adb6a25e801aaecd76b2a80c31f5296372b9c2e51d71d097a1494c288bb9de1",
+      "size": 276
+    },
+    {
+      "path": "web/assets/figma/qr-cluster-tl.svg",
+      "sha256": "93f2a407fdb7c21ec12aac5e600f349d6d9294ab3073809b0b32431b6b4c99e2",
+      "size": 2864
+    },
+    {
+      "path": "web/assets/figma/qr-cluster-tr.svg",
+      "sha256": "93f2a407fdb7c21ec12aac5e600f349d6d9294ab3073809b0b32431b6b4c99e2",
+      "size": 2864
+    },
+    {
+      "path": "web/assets/figma/qr-cluster.svg",
+      "sha256": "93f2a407fdb7c21ec12aac5e600f349d6d9294ab3073809b0b32431b6b4c99e2",
+      "size": 2864
+    },
+    {
+      "path": "web/assets/figma/qr-code.png",
+      "sha256": "964184684f2d561b6b1d0a20fa8be40675242b18b67ee2636b7862543b62da53",
+      "size": 6579
+    },
+    {
+      "path": "web/assets/figma/spring-scribble-qr.svg",
+      "sha256": "303a40072bf652f0c872400d4f3d7cf6a80110e2ab72965982e45bf3e5da36d3",
+      "size": 2577
+    },
+    {
+      "path": "web/assets/figma/spring-scribble.svg",
+      "sha256": "035ad9fed4fe811664d5ecd31513433ae1d0089272f88adbda511261a7d958ec",
+      "size": 2696
+    },
+    {
+      "path": "web/assets/figma/star-big.svg",
+      "sha256": "22991ea5c2fd22e798e2d41f9c5114f91124d48f51e5e914211ff76b5f959140",
+      "size": 826
+    },
+    {
+      "path": "web/assets/figma/star-large.svg",
+      "sha256": "66d0c0ffeb388cfac3e46cda6fa2f0208345721565e934ef22d2ecba4b3e07d2",
+      "size": 825
+    },
+    {
+      "path": "web/assets/figma/star-mid.svg",
+      "sha256": "79508d5e967cc57fc6f6088c488995064c93ac659063b2ca2b1b80d918c7e0c0",
+      "size": 827
+    },
+    {
+      "path": "web/assets/figma/star-qr-blue.svg",
+      "sha256": "b8e024226a40369a46f1af134d04b3ebd82e94bb2626f634b6cc014acf7f5238",
+      "size": 624
+    },
+    {
+      "path": "web/assets/figma/star-qr-pink.svg",
+      "sha256": "c5fd4d317e3b3a239760000d8e06626f9e2b51b75b86967aefd1fee8a3a6793d",
+      "size": 623
+    },
+    {
+      "path": "web/assets/figma/star-small.svg",
+      "sha256": "c5fd4d317e3b3a239760000d8e06626f9e2b51b75b86967aefd1fee8a3a6793d",
+      "size": 623
+    },
+    {
+      "path": "web/assets/figma/star-tiny.svg",
+      "sha256": "b8e024226a40369a46f1af134d04b3ebd82e94bb2626f634b6cc014acf7f5238",
+      "size": 624
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-a.svg",
+      "sha256": "96ad1a1ff3d8732a3d7f13d0792a291e267b1e28424aa44a2d6ece80b459e84a",
+      "size": 3054
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-b.svg",
+      "sha256": "10ec9b2ef296c8c7db70cf959b0f09d391271b936d9328de7e481935ecd4a354",
+      "size": 3059
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-c.svg",
+      "sha256": "bd44b3c00c2a822c6e74363d1bc97ab7cd73f09204801d72e984ce8ae9fabcbe",
+      "size": 3054
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-d.svg",
+      "sha256": "7447ad53838873b65816a173938f8468467f6eafb204e0d776bbd19cb6285155",
+      "size": 3054
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-e.svg",
+      "sha256": "3a1a1da5a0b50037d1f0ecaa73b0578c3138896f19b3ee8174e6e9c6f5ee150b",
+      "size": 1775
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-f.svg",
+      "sha256": "7a2d5fcfdc23aabfd10973eecb2b49d622bc5b5fed73ab5f7254650ac98965b3",
+      "size": 1775
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-g.svg",
+      "sha256": "b4fb5df193eb118586deb32bb096060358d615809406419e3608d52a483ef925",
+      "size": 1775
+    },
+    {
+      "path": "web/assets/figma/sticker-cluster-h.svg",
+      "sha256": "5e5a38f7f06d374e8e172a4732b462ceaa9d302af8969aceee2e0630b6391752",
+      "size": 3063
+    },
+    {
+      "path": "web/assets/figma/sticker-sber-lg.svg",
+      "sha256": "71cc78a1d2beeb45d9a30865d5bec757ca6edc831f46264cb334d5a51e870b96",
+      "size": 3055
+    },
+    {
+      "path": "web/assets/figma/sticker-sber.svg",
+      "sha256": "9cdf69571efe22c2f7f36fea26b103f31a53ac770db8289b79a7509bbdc2b9fb",
+      "size": 3837
+    },
+    {
+      "path": "web/assets/figma/sticker-smile-qr.svg",
+      "sha256": "bef62a37a750a7d3dbf7a3f12ca1fd8126d6477190aba54be2efe73269cd202b",
+      "size": 1787
+    },
+    {
+      "path": "web/assets/figma/sticker-smile.svg",
+      "sha256": "83fb42bd20d8da30d8afd41f6ab3d5def0e5ee5f3a08018b54e5ea4aa22dcfad",
+      "size": 1775
+    },
+    {
+      "path": "web/assets/figma/text-path-bottom.svg",
+      "sha256": "c63eacd98e03577aac0f8b43b447dcc55342bd9243cf1c8b42f16ece940c816d",
+      "size": 282
+    },
+    {
+      "path": "web/assets/figma/text-path-top.svg",
+      "sha256": "008c178175b9641bbfbaff8dde13e9492a6233e6b2a804d617543e1bd3b2a5af",
+      "size": 275
+    },
+    {
+      "path": "web/assets/figma/text-paths.json",
+      "sha256": "538b3dd149514f3cc0d1a5a6e5923a81ba4d6d70b79c08968613848ad00b8993",
+      "size": 621
+    },
+    {
+      "path": "web/assets/figma/wave-curve.svg",
+      "sha256": "def0cecf7161f04ce9f5f0fbb4e22130d6186544ee838411763717f7929957f2",
+      "size": 2847
+    },
+    {
+      "path": "web/css/fonts.css",
+      "sha256": "27af5d4b8a917d80da1c67295897859a753375d1e7b302653605d8e6133732e1",
+      "size": 1744
+    },
+    {
+      "path": "web/css/style.css",
+      "sha256": "425eb582557dd19e74ecdea74532f2e37c298991648ad8f7c00e80476144ef8d",
+      "size": 15928
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Bold.woff",
+      "sha256": "1faf1d2dd5f0c2cc1c71ac44c2ee416b5a245d1d2ce1546184915e06b3e37905",
+      "size": 53156
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Bold.woff2",
+      "sha256": "d9efa4bed54b226cdba843a3b7b3754cd8efaca11876a8839ba0ac58a32dc950",
+      "size": 39460
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Light.woff",
+      "sha256": "d6d690eaaee0756c740e887f12cd41d33dccef6b9b4456b2d4c119960e9f1990",
+      "size": 47272
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Light.woff2",
+      "sha256": "dcddfa143817eb5310a4fd7e7af6114e49e9b5481cbcde2eb4ad54ca64b827da",
+      "size": 34956
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Medium.woff",
+      "sha256": "aeda22d24c623f20d6298a36f732fde96e25bba444f72a77f62152ff6b5aaa99",
+      "size": 56556
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Medium.woff2",
+      "sha256": "24490496e06316d75565b080989e959f275f5cfb73261cc6aa12da6236e080aa",
+      "size": 41908
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Regular.woff",
+      "sha256": "21342eda7c191a98bfd8683c74073e3a8142419aad26a8eeafbd294478fff420",
+      "size": 54416
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Regular.woff2",
+      "sha256": "0b4bce768b91f77e384b3088fdcbf71af94ce8b3b331175d81c45f0e1648a6c8",
+      "size": 40172
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Semibold.woff",
+      "sha256": "754b9ff269510fd410cc540545d125ac9f527b1878e0aa589667a5081275e04a",
+      "size": 61192
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Semibold.woff2",
+      "sha256": "fbad9079fbef813a5591c388e36b3dfab45edbf740e37df2ad5075ae4851e8ba",
+      "size": 45460
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Thin.woff",
+      "sha256": "2873d3ea6a190b3af39d9d80396250c3b6fbdd698712267887f1dd735f343e2f",
+      "size": 47416
+    },
+    {
+      "path": "web/fonts/SBSansDisplay-Thin.woff2",
+      "sha256": "eca82af6e6a450d06e273f45776d6ec0ffea725f557d70e17f50fd56187961ba",
+      "size": 35160
+    },
+    {
+      "path": "web/fonts/SBSansText-Semibold.woff2",
+      "sha256": "5f7ee13e5eaa82b3f406b3932df8658a525d64fde0889b610eb2e20335458c2e",
+      "size": 23805
+    },
+    {
+      "path": "web/index.html",
+      "sha256": "071698e8580d578555d890b03e1b3c373b2e435fca67947248b45fd54de666f1",
+      "size": 1045
+    },
+    {
+      "path": "web/js/app.js",
+      "sha256": "bf1d036d0d3f31666fb47d0390c97f98a8d45028412afc773cfcf33e66086195",
+      "size": 8489
+    },
+    {
+      "path": "web/js/cam-geometry.js",
+      "sha256": "54268f06f854e03f7cb5d67265e631be03193d98da228bcf55011e3c4d74e0f4",
+      "size": 1973
+    },
+    {
+      "path": "web/js/cam-mask.js",
+      "sha256": "61a4d80b4056e1ca5c8f6f87331005f059fe2f9f56969b9585206ea19ad31fc2",
+      "size": 1421
+    },
+    {
+      "path": "web/js/copy-lines.js",
+      "sha256": "9fd7639fe684addaca49e5185a53e51a896a08d9d8e782444093a02eaf4685a3",
+      "size": 1774
+    },
+    {
+      "path": "web/js/face-landmarker.js",
+      "sha256": "1cb8643d49d4d0d709fe0376e8aa4bcaaec0525fbaae472b3cb5395cb76832e9",
+      "size": 4241
+    },
+    {
+      "path": "web/js/face-presence.js",
+      "sha256": "6fc14e0feb629b057104bb03bb5325219abda054febec73588af755a458282a3",
+      "size": 4085
+    },
+    {
+      "path": "web/js/figma-layout.js",
+      "sha256": "cdc02b081a6f8a2084474b4c7b0a6771b5bbb26a39518eece1a5a3ae68317e85",
+      "size": 11684
+    },
+    {
+      "path": "web/js/smile-capture.js",
+      "sha256": "b16eb9463d52ac21e544fade30d929642c0bfa294705bb608fef2456c9fd00ef",
+      "size": 3471
+    },
+    {
+      "path": "web/js/smile-stage.js",
+      "sha256": "7b3037d50c07550a07db65f1157d477c9ccc56ad3322e51d9f0675566c413d18",
+      "size": 19450
+    },
+    {
+      "path": "web/js/subtract-svg.js",
+      "sha256": "da2a2ba69f85344b786b5197f29a3e10eab296856aa58357f0d3c4479b5f35aa",
+      "size": 1433
+    },
+    {
+      "path": "web/js/text-paths.js",
+      "sha256": "f662bedc8cf30abd39a61709a92c7a4d8cfa1806905992323f7c3bfa5c58c21f",
+      "size": 1801
+    },
+    {
+      "path": "web/vendor/mediapipe/tasks-vision/vision_bundle.mjs",
+      "sha256": "e77f281f9619150d937023c355bae170e9120e3b9e43f1e23a2a7bee07197669",
+      "size": 136870
+    },
+    {
+      "path": "web/vendor/mediapipe/tasks-vision/wasm/vision_wasm_internal.js",
+      "sha256": "9440cf0cc0cea21800e31581ec32aeedcc5fbf9df4509796bbc7d3f99e52ab9c",
+      "size": 209826
+    },
+    {
+      "path": "web/vendor/mediapipe/tasks-vision/wasm/vision_wasm_internal.wasm",
+      "sha256": "1554a825f76b136c040d50d2265694fa18dda1cd182c7b099932d8896c3892c2",
+      "size": 6227627
+    }
+  ],
+  "root": "smile-pay",
+  "version": 1
+}

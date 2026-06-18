@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 
 from app.config import settings
 from app.game_log import init_log_db, log_event, stats_for_day, stats_to_dict
+from app.install_routes import register_install_routes
 from app.leaderboard import add_score, config_for_client, init_db, top_today
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -24,6 +25,8 @@ init_log_db()
 
 if WEB_DIR.exists():
     app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
+
+register_install_routes(app, ROOT, "SberKopilka")
 
 
 class ScoreSubmit(BaseModel):

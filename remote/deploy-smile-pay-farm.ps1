@@ -68,9 +68,14 @@ Write-Host "=== Restart Smile Pay ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 2
 Invoke-Ssh "powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\user\smile-pay\remote\restart-smile-pay.ps1"
 
+Write-Host "=== Upload install package for /install ===" -ForegroundColor Cyan
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "..\scripts\kiosk\deploy_install_dist.ps1") `
+    -Farm $Farm -LocalRoot $LocalRoot -RemoteRoot $RemoteRoot -PackageName "smile-pay-kiosk"
+
 Write-Host "=== Health check ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 8
 & curl.exe -sk "https://192.168.1.243:8767/api/health"
 Write-Host ""
 Write-Host "Smile Pay: https://slash.omelchak.com:8767" -ForegroundColor Green
 Write-Host "LAN:       https://192.168.1.243:8767" -ForegroundColor Green
+Write-Host "Install:   https://slash.omelchak.com:8767/install/" -ForegroundColor Green

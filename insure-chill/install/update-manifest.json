@@ -1,0 +1,1816 @@
+{
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "16a323207ed90656819fff496a789bfdbc833f1a87c64f529081846e68c2b648",
+      "size": 62
+    },
+    {
+      "path": "app/__init__.py",
+      "sha256": "3525468bf0fbb5c2a19b2e496f54965bc1dfa240af85bbdfd8972c6f0033d86f",
+      "size": 35
+    },
+    {
+      "path": "app/config.py",
+      "sha256": "3f44d161f76bc9a9e0e37e6633e8547b9c3ae170c12b0a116b23a6b4da718425",
+      "size": 326
+    },
+    {
+      "path": "app/game_log.py",
+      "sha256": "91591bdce60c12a0956d17f6d8f3081f6c0ae7915a4e58c5780ccbcc9c9564e9",
+      "size": 2601
+    },
+    {
+      "path": "app/main.py",
+      "sha256": "bccaddaf0a1286fa0b00cfe7bedf9d416326ed4693840dc0c3b7f3005fbf7f0d",
+      "size": 8598
+    },
+    {
+      "path": "docs/figma-selection.md",
+      "sha256": "9b8817ac1647464949c3d89a9cc495ff0130d654a79c3193f5cc3b43345476fe",
+      "size": 1699
+    },
+    {
+      "path": "img/drop.png",
+      "sha256": "3b8e348d51deaae6a059d3b35c3b85849f5a35a02bb9ae93ac2637ba50d1e0d2",
+      "size": 336366
+    },
+    {
+      "path": "img/drop2.png",
+      "sha256": "48c7f00def6b286fd5751465c0778e20c68078226b00f2e5ad0aafc5eecccb2b",
+      "size": 662803
+    },
+    {
+      "path": "img/hummer.png",
+      "sha256": "baa53bdaf359f06e419fa1c4c67b9c47c851ca7a616159e426c1c1dfe31f745c",
+      "size": 374949
+    },
+    {
+      "path": "img/molotok.png",
+      "sha256": "adcda08f7da796d981d09d6657911517cd2df9b359f20aa47c7f7ce460ec580a",
+      "size": 402876
+    },
+    {
+      "path": "img/New/back.png",
+      "sha256": "c6890bb57cb1b11be4d70879f8b6cf440925aac9364bcd5e4b41601b59ac2881",
+      "size": 1737751
+    },
+    {
+      "path": "img/New/drop.png",
+      "sha256": "1c65a246e8dfbc115690a8be0b240df9cd61d9492f74a08e2aee749ba0be765e",
+      "size": 387940
+    },
+    {
+      "path": "img/New/fist.png",
+      "sha256": "33ee853b1ba9c3c9a6d0dd50ed22c33674e11c68e50b4a3a027b3ae87445deab",
+      "size": 403857
+    },
+    {
+      "path": "img/New/hummer.png",
+      "sha256": "d827eef7a835d15dbae1e0dfc3754aa53462a5369f46d6c82dc304168da0612a",
+      "size": 387829
+    },
+    {
+      "path": "img/New/insure.png",
+      "sha256": "71601730de0837f14512b652d7e61f6f25eea5d862a1f80ec818be32a0970e34",
+      "size": 21313
+    },
+    {
+      "path": "img/New/logo.png",
+      "sha256": "399ae1a584e205cca72b0222d0648f0e48b34a840f38dbf7026ac13dbdd2d7ef",
+      "size": 37022
+    },
+    {
+      "path": "img/soap.png",
+      "sha256": "14185ddb8e0c0c8a2071acbe84b9981e6d24dd79ae477742b4e0607220186afd",
+      "size": 234338
+    },
+    {
+      "path": "install/.env.kiosk.example",
+      "sha256": "9135345151b79d3d503421507d948d6660fdda7419770f4d280088191eddb574",
+      "size": 752
+    },
+    {
+      "path": "install/install.ps1",
+      "sha256": "fda4f4cd7d8d48a77c7ecc9618706fffe7345a80ae0fd0d51a2d5a743c5ee1fb",
+      "size": 2134
+    },
+    {
+      "path": "install/README-INSTALL.md",
+      "sha256": "5195ccab3071b0cb01594932cc2bfa8a94ca03319f7320a49a3db19a2e0ed10d",
+      "size": 869
+    },
+    {
+      "path": "install/start-insure-chill.cmd",
+      "sha256": "81372b8bdade21231c87ba127ed3c2fca98657d94d559577170228ad09c2d871",
+      "size": 101
+    },
+    {
+      "path": "install/Update-EnvDefaults.ps1",
+      "sha256": "f66e7ea0e61ac5c6c40f7eabeee2fd16f0bff8361a32984c00182eb747d449ed",
+      "size": 2538
+    },
+    {
+      "path": "install/update-from-github.ps1",
+      "sha256": "f568d714fe3a54faf4ecd3dda096c7fc388f28c4aff4bc3667153dba8e2abde2",
+      "size": 526
+    },
+    {
+      "path": "install/update-insure-chill.cmd",
+      "sha256": "7591921868213c63328c0af6ec2a12a5d98586482a67bcb3583c2216a419b79b",
+      "size": 114
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "f6ffbd4a6ce45c821006ee29a59c393ccb65cc265b12d709c52e9d2fb94e2cfc",
+      "size": 89
+    },
+    {
+      "path": "run-kiosk.ps1",
+      "sha256": "3edda4d100429b45e05d14508d01e34c81c15c0b0ff4b533b3e97b74c4f4eb51",
+      "size": 2730
+    },
+    {
+      "path": "run.ps1",
+      "sha256": "ce8d8bb1f5954855540a0f25e5cbc658d2af1d0f27e2d2a0331e9abfa60ae501",
+      "size": 799
+    },
+    {
+      "path": "scripts/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "path": "scripts/build_install_package.ps1",
+      "sha256": "1ec24d002c15875a0d24c64df3c9acebe9e49b825f911239f5dd3c2fc8fae719",
+      "size": 585
+    },
+    {
+      "path": "scripts/download_figma_assets.ps1",
+      "sha256": "68281df36c5ffa70cc2565353449692eab6cc7bc99bebb751b939bc058105499",
+      "size": 8314
+    },
+    {
+      "path": "scripts/gen_self_signed_cert.py",
+      "sha256": "a7f97e5758fe0d6736e7c1a800cab2988355b65b5ceeef31150415366032e4bb",
+      "size": 3477
+    },
+    {
+      "path": "static/assets/figma/blob-left.svg",
+      "sha256": "98f4d7851536c514e87774fa6e23c647e72866292eb60d827f712b20411aa51d",
+      "size": 2689
+    },
+    {
+      "path": "static/assets/figma/blob-small.svg",
+      "sha256": "a938c43e06828836b9b3b85dc48ec4e4bd298cac4d0d66b0e2d4d25ef2c31ff6",
+      "size": 2691
+    },
+    {
+      "path": "static/assets/figma/blob-top-left.svg",
+      "sha256": "1085656e6fdc29fca2772013ffed2816e14a402059739a3d03004ea6f8237023",
+      "size": 2700
+    },
+    {
+      "path": "static/assets/figma/blob-top-right.svg",
+      "sha256": "f8f13e77c99d465a871c09d411cb372935849b7c7c2ae1f607133badf87cf4ea",
+      "size": 2681
+    },
+    {
+      "path": "static/assets/figma/control/asset-manifest.json",
+      "sha256": "44e377b0d0879b12be27bfd3c03fc62676a065f8b7cf3e032c86183fa6530208",
+      "size": 20530
+    },
+    {
+      "path": "static/assets/figma/control/raw/00b04727579141737620deeacb25fa19e92ae1f5.png",
+      "sha256": "03a6f26ea47943da342e1d1b1fb1a0f7d56b96274afb7ecab52449ede9eb6e12",
+      "size": 9281296
+    },
+    {
+      "path": "static/assets/figma/control/raw/00b2803e9ebef4948ac4a3f43a2cda326b5d6343.svg",
+      "sha256": "69960964b60b9ba90c84eae5054891a1ca7e0fb0d3815ead09acbac059961959",
+      "size": 3961
+    },
+    {
+      "path": "static/assets/figma/control/raw/0126340ecb1c5d11f3b6f848f5662f878f82a6d5.svg",
+      "sha256": "03019f65ed4683cd909e105337f34a72f6f751302a54062a87bfc794d8fabd9a",
+      "size": 436
+    },
+    {
+      "path": "static/assets/figma/control/raw/10d4938d8931cabe5ffe50c8e2e6c0ec70203e17.svg",
+      "sha256": "698002f16666882b6131b44d9f692912fc0baf323504f1f5209593a1edfdd745",
+      "size": 722
+    },
+    {
+      "path": "static/assets/figma/control/raw/136c62ec0b78726f0cd2e447023a081e19d82cb0.svg",
+      "sha256": "c2f829afe0df2a9bce683bcf4702c604b996f7f12d2331e9bc911fd488ca3145",
+      "size": 735
+    },
+    {
+      "path": "static/assets/figma/control/raw/15ad97e218886afc1e4a1b57a085e74c80345146.svg",
+      "sha256": "0c29812cb6f39bc9f0c9237cc09a4f8f89b9be8621d7398933702946537a0bbb",
+      "size": 753
+    },
+    {
+      "path": "static/assets/figma/control/raw/180918f8da7d62fb8a78a79158770294078c06fe.png",
+      "sha256": "ecd7b5f9e407e764253e05e24953c6df1f788ddcdfd9fab65cc6a89682d115f7",
+      "size": 398633
+    },
+    {
+      "path": "static/assets/figma/control/raw/1b06b60199daa6844c7e6ccb990877d12f275058.svg",
+      "sha256": "9d440823981c7cf1b11f980b19926d14f6c5f63d25c07489cd68d8b93339f4df",
+      "size": 719
+    },
+    {
+      "path": "static/assets/figma/control/raw/205fe64e35cead6ed9d9800cdf9d7094b60aa2dc.svg",
+      "sha256": "5553be22c133b3d7769aac70e3d3f1daebaa981ea9d562d90dd446c8ee3c96cd",
+      "size": 751
+    },
+    {
+      "path": "static/assets/figma/control/raw/21f77010dd0e8bcfcc1b20b2d2190255518bc2f8.svg",
+      "sha256": "1c1b9743ea5e5d63cc9470b5bf32b5488d0fd9065257cf4177bdaa8cf48b23d6",
+      "size": 766
+    },
+    {
+      "path": "static/assets/figma/control/raw/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png",
+      "sha256": "80c9a58f663cc7735738a88f02706669a8688d318836289a5931bdcf179a0e88",
+      "size": 1699986
+    },
+    {
+      "path": "static/assets/figma/control/raw/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png",
+      "sha256": "9a7f1398c4f53efaa7ecf0b6c12582e37c489b3ad1b5b9c09ad36f1d30e25cff",
+      "size": 2765529
+    },
+    {
+      "path": "static/assets/figma/control/raw/2da3f8923a053f8811a635148d5f6eb019cc4afe.svg",
+      "sha256": "f44aedc770f7f747b5559c16f695ee77492fb37bcc08b2746b03478571ad44ab",
+      "size": 8525
+    },
+    {
+      "path": "static/assets/figma/control/raw/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/control/raw/39738ebab60f27354163b2b3077e99a270f653d1.svg",
+      "sha256": "9d5185bb3ba21de74751c3312d426cf0e7b5df893fe466ef8f6b35a69103840e",
+      "size": 719
+    },
+    {
+      "path": "static/assets/figma/control/raw/3a679517e21ec98de158acfd9644eef881368f93.svg",
+      "sha256": "1ec151565b2301b2d3fc2dfbff13138930289734d0fb5e72984aacc21b770666",
+      "size": 748
+    },
+    {
+      "path": "static/assets/figma/control/raw/3a89e5526e440703b0c1e5e36b052cfa195c23be.svg",
+      "sha256": "92b4afb1fb7d5b85776a2e18e8a1407f41acf3a1c4aca582cbdcaa743cdf36e7",
+      "size": 748
+    },
+    {
+      "path": "static/assets/figma/control/raw/3d3261d5bc16510258de2a0e4e687de29d9f76f2.svg",
+      "sha256": "fd1e8f1366443ace83d1653c79a6a7428c5ab40def85607d551fa232c0baec01",
+      "size": 437
+    },
+    {
+      "path": "static/assets/figma/control/raw/40b73196591e6164b318bfe733af0037bbf17503.png",
+      "sha256": "853f1614a6e72cf117ae31e3ad68b9c892bea27f6771f9f0b579416dee065949",
+      "size": 3445718
+    },
+    {
+      "path": "static/assets/figma/control/raw/42f083c30b49b2fc381dc7edbc328a0f88311c5d.svg",
+      "sha256": "581349a2dfae22f156ed20c9ada2b4a65109e39626cbe5bf9f5df2b3e674ec64",
+      "size": 708
+    },
+    {
+      "path": "static/assets/figma/control/raw/4c0856158c6bc72fb550d2c432c1b751848987a5.svg",
+      "sha256": "960e345c2c10ab4834a8542f1ac0930539812493ffb2517357223d32bbb40717",
+      "size": 703
+    },
+    {
+      "path": "static/assets/figma/control/raw/4f873fe0741a3d385020fb0b742b3c0824a7f292.png",
+      "sha256": "f113926c3421303dfe50923d548c20c86cf16a6d7518a8d869724091227c7899",
+      "size": 4099041
+    },
+    {
+      "path": "static/assets/figma/control/raw/503703075c99a444dc725111aec539fa5ee7c9ca.svg",
+      "sha256": "7acd4ad69fc10f56d735c3c04a2bedaab3cfa60a8c4067cd55b02e365d18c257",
+      "size": 725
+    },
+    {
+      "path": "static/assets/figma/control/raw/50dd6d488abd268621b18460892b1285006a37a8.png",
+      "sha256": "845d584eb179db090f73dc6abebe9ceb1308e99ec87e7099ac809d67841027a9",
+      "size": 3507348
+    },
+    {
+      "path": "static/assets/figma/control/raw/5611a6b49908a17463c6c6b46f8a6404f63d357a.svg",
+      "sha256": "9ed6d35b7072cedd2318650e1ac650a6f09d9ab7ea7068c4be00714b4d57def7",
+      "size": 666
+    },
+    {
+      "path": "static/assets/figma/control/raw/57dc28e138203a848aecbd237c363f781468c478.png",
+      "sha256": "427c1fbdff52f512a31a8fae8c30307e4e346498c60f205b8eeac69d8d00914e",
+      "size": 376969
+    },
+    {
+      "path": "static/assets/figma/control/raw/6288dde812d9218481cc2470d7f0988bf7b4ab62.svg",
+      "sha256": "0d90edefbf9466f733e3ed6def02204352499733767ed7185b5ef1d7761dfa79",
+      "size": 259
+    },
+    {
+      "path": "static/assets/figma/control/raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg",
+      "sha256": "9ca39b0f79a83ea1474b1dcfa99c14fd283eadbaddfbdea3463e2d0dd11a36b9",
+      "size": 2691
+    },
+    {
+      "path": "static/assets/figma/control/raw/6673cbade181dcc33a61dff27988471bff744edc.svg",
+      "sha256": "cb06545504312dce99aa3cf1c042112e9360e64b8b020574be5205d02ec5773b",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/control/raw/66ef35a5d32b6ae24598794ab7562171a475908e.svg",
+      "sha256": "34bb07dc750aa3dae5ce828e993f47554a9da382d429025bffe33703674bb4ab",
+      "size": 2033
+    },
+    {
+      "path": "static/assets/figma/control/raw/6718c13ddf7b3dd2d320821ef735c2e160bc416c.svg",
+      "sha256": "3d11ee8c36f4fec9da331caa702cae1e5be4d3c5793462e05c594b0b904b39e9",
+      "size": 820
+    },
+    {
+      "path": "static/assets/figma/control/raw/6dd218afa867579faaa4bb9a1b8764a1e91fbe9d.svg",
+      "sha256": "7c7377774f4ff2457daf36e2123c789cf95e65524a0e311baa27aeb0578f0a5f",
+      "size": 438
+    },
+    {
+      "path": "static/assets/figma/control/raw/705feef70c51a6a563c0f51554517b1d92bfbbb7.svg",
+      "sha256": "09ef596565edad12fdfdebc3aef3f757103dba8317ba0bf54efa94e6c77eb4dd",
+      "size": 741
+    },
+    {
+      "path": "static/assets/figma/control/raw/74346d28e627b8d65b51c03a19becf42a38e08e2.svg",
+      "sha256": "cb6132655738d8d46abeb070254ded2ee0b3010c1f0f3a7ab00822404914d119",
+      "size": 708
+    },
+    {
+      "path": "static/assets/figma/control/raw/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg",
+      "sha256": "2d1674469d5a550bec1c0dedd36463fb419f7402e52299d98a55d03058fadb14",
+      "size": 816
+    },
+    {
+      "path": "static/assets/figma/control/raw/754e360ed74a192b6836094e57adba67efd84e9c.svg",
+      "sha256": "565fc41f4e2d91424921ef10df0adeb991400a72b539d0b354dcd4510eabaa3a",
+      "size": 748
+    },
+    {
+      "path": "static/assets/figma/control/raw/758b324c82f48052d9537c8f4058eacfe56327c7.png",
+      "sha256": "b03bd6c5b6349db9d820c330c068309ba579b99ad3a7e2de5178243859af5ed4",
+      "size": 2792903
+    },
+    {
+      "path": "static/assets/figma/control/raw/77e8f46db01b9ca809b5d918c3b7c482b5c0315d.svg",
+      "sha256": "bce7f0c99efb6c0221ba968a794d3608d357a8b2e42023908c98823496ef5d1b",
+      "size": 727
+    },
+    {
+      "path": "static/assets/figma/control/raw/7b14360a994d599902eb81b23613e97fc2d44b8b.svg",
+      "sha256": "3936a72ccb86dd65a99718812c89da2b548afaf523973297a29b91f2f194ea37",
+      "size": 8482
+    },
+    {
+      "path": "static/assets/figma/control/raw/826b5b9671756c61e3831e522c4fc0bc0358ea5a.svg",
+      "sha256": "9a3acdf390b1e48e86e14a6b3e8ab5deb0cb0fbeaea1d7cd4b6270b27f7b38ec",
+      "size": 465
+    },
+    {
+      "path": "static/assets/figma/control/raw/85c7e59d1d7817946c484bfad3d17a631c87cd2c.svg",
+      "sha256": "d32ee66320f02016f62a7159a42b1d653788884fe576a26e3d6da4edca3104ef",
+      "size": 747
+    },
+    {
+      "path": "static/assets/figma/control/raw/8c145900e8f6d40628c0efa3a0726e1a099bae7f.svg",
+      "sha256": "b895075cd00b1edaf903fc8f35c40aa21006de1f6a4563d627c72f05b5bef3f4",
+      "size": 938
+    },
+    {
+      "path": "static/assets/figma/control/raw/917e1200ee445ccd2ac9a76fce5277201f44d95c.svg",
+      "sha256": "20792768e4c7b0c6022a8fe88e7021cc539d79a6942889daf8aaf3754e4e5657",
+      "size": 746
+    },
+    {
+      "path": "static/assets/figma/control/raw/96b00f6abbb9e1924abceaa9311592f24d4e8461.svg",
+      "sha256": "6e0496078283746a3ac6c9eb922baf89bb521496f91e4801bcd3749466c59107",
+      "size": 1731
+    },
+    {
+      "path": "static/assets/figma/control/raw/96fad22d125f90beb31f61282dbedff719ceb1dd.svg",
+      "sha256": "3d546a887ec6f63cf2162862fd8ecf0b4bd089a6fbdf59c6e0e0a0901721b790",
+      "size": 747
+    },
+    {
+      "path": "static/assets/figma/control/raw/9a07b655289f0fb2458869251c3290e843937a2e.png",
+      "sha256": "2ea092185a89a24310a528788df1ba98f37681cbf44de796098cdad52138df09",
+      "size": 4910304
+    },
+    {
+      "path": "static/assets/figma/control/raw/9e948560d667a1c99baab6b60281ace616e8cb6c.svg",
+      "sha256": "6003566ca75b8a69f47179e4caadf39ab53a50a125f18d93ef691efb907acf27",
+      "size": 817
+    },
+    {
+      "path": "static/assets/figma/control/raw/9f7d921244f8a87720fb41610a93ffa0de6d9559.png",
+      "sha256": "a4ddfa0619abf0bfedd7f7ef94d80576a9c3341f779f6201e5d18d0a0bba2a2c",
+      "size": 2738781
+    },
+    {
+      "path": "static/assets/figma/control/raw/a7252c9bdd8683c2ca6949136f8d237e1ac96372.svg",
+      "sha256": "a1a73ab522a8c5e06683d9427b19be2782140e4340f6b9466dd3ebe6783dec03",
+      "size": 815
+    },
+    {
+      "path": "static/assets/figma/control/raw/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg",
+      "sha256": "dec5b3d8ac03f9159975a55f37601b7fb89d854ac932d29a02f970274c6b0368",
+      "size": 2336
+    },
+    {
+      "path": "static/assets/figma/control/raw/b4ff201ce61600322d6e7a36d32817f6fc9b81ac.svg",
+      "sha256": "21c1ebf5fefa2eae03348072023c494a966cf630a7581a36e15bd55104d11491",
+      "size": 742
+    },
+    {
+      "path": "static/assets/figma/control/raw/b748448e26c1434b84554afd38fadc5df9bdccd7.svg",
+      "sha256": "ec28aadf43eb43272c032d256e4a145b60ae669e6de7291dead961acbfbb3549",
+      "size": 766
+    },
+    {
+      "path": "static/assets/figma/control/raw/c292fdd83b98d20cb547090b8f9de688e6f81a81.svg",
+      "sha256": "225fbedaf78b0ba537e517da0d4fec45e7c7aab3bf7e3470cff4ead4871e000b",
+      "size": 797
+    },
+    {
+      "path": "static/assets/figma/control/raw/c6918a959f6617d89b782bfa99f4ff17314dcdb7.svg",
+      "sha256": "91644c9c4ff6d0f09e0935264077cef30b08de0e5ddec04e401694a0f73d9764",
+      "size": 788
+    },
+    {
+      "path": "static/assets/figma/control/raw/c7c4fcb5ff38869ca35da29f0306e5e722d206ea.svg",
+      "sha256": "bfaf1e22743a89165164b5bf859d2424b0145eecc3fa8608c4c9b442eeac3b66",
+      "size": 808
+    },
+    {
+      "path": "static/assets/figma/control/raw/c8a2a7ccf363a7456714b58ddfd7d65b76c03980.svg",
+      "sha256": "3b18712a158f73350c976668dc8ce711a32ddfd73015780199f540e85395f689",
+      "size": 719
+    },
+    {
+      "path": "static/assets/figma/control/raw/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg",
+      "sha256": "1d2a185d8552082061e82413053fe85c14fc526a2bc315ac79674a3c19b27d0e",
+      "size": 2691
+    },
+    {
+      "path": "static/assets/figma/control/raw/cb53fc9c20b6e2484fea096d87d3cabc4a1a97ac.svg",
+      "sha256": "2552dc74ba6c4cfb925c66e7c06172d22b60d7b3c896f21ba33f209156b4c424",
+      "size": 719
+    },
+    {
+      "path": "static/assets/figma/control/raw/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg",
+      "sha256": "11f782e09db70d95d15ae221840911df165d5f47c13d69d57fe71ca159892437",
+      "size": 699
+    },
+    {
+      "path": "static/assets/figma/control/raw/dc3cb622f1e47b456839d5b24ff0448b31ef17b5.png",
+      "sha256": "b0b0e5ca48cb7f0a6758c309e9ae98d0ef242020185eabb211d97f6ddd5d8cc1",
+      "size": 643641
+    },
+    {
+      "path": "static/assets/figma/control/raw/e5f6bb9d3a9599b9e0ca6b1423eaa53ce5b783d6.svg",
+      "sha256": "afdd14480a299592e19ace7523ceba9cfa7f344103fcdf88142207c4cc24aa21",
+      "size": 705
+    },
+    {
+      "path": "static/assets/figma/control/raw/e6a41f52c1e7801e6db7dbe03837f2a4eedf0ca6.svg",
+      "sha256": "622a55189830becc47a832cd78152496198abe125328cdc223e5d7c86dcaa39d",
+      "size": 711
+    },
+    {
+      "path": "static/assets/figma/control/raw/e70745f3b1b77cd8d4560ba5b5b5abfb037f00f4.svg",
+      "sha256": "311f8a1808536e6a7a6874c0f76dfcb8a40c30f6c2a0270b1313f3b0a8ff101c",
+      "size": 808
+    },
+    {
+      "path": "static/assets/figma/control/raw/e9e336aa4b959b2ee16a832f33f9db79ca5d5ec3.svg",
+      "sha256": "e5b9359da3cb6e0f3a7cbf88bb9bfb6fd9d8264c47711cfa4bd4df2ee8bc69b1",
+      "size": 1744
+    },
+    {
+      "path": "static/assets/figma/control/raw/eb995aaf749f4fa70bfc30b2570b2b09f36de922.svg",
+      "sha256": "b5429e3f9c2ee76613c1af802428256abc2b967b772f23f542f08fda06d9789e",
+      "size": 717
+    },
+    {
+      "path": "static/assets/figma/control/raw/f042c6d5788591ce9c23f82f5d15f0c948179f14.svg",
+      "sha256": "d6bfacdc05905eb0001ac6576ef2f6d3e665bda3a0032c377d952abd77215745",
+      "size": 746
+    },
+    {
+      "path": "static/assets/figma/control/raw/f6128198a813be92610df498e15742dd9f0f28ff.svg",
+      "sha256": "bfaf1e22743a89165164b5bf859d2424b0145eecc3fa8608c4c9b442eeac3b66",
+      "size": 808
+    },
+    {
+      "path": "static/assets/figma/control/raw/f75f19146b3ba0ea023643998afcdecf40f41193.svg",
+      "sha256": "804741bbd2de604bf2be92f3b616dfada6c1caee027112e40a6d89c7d82b06b6",
+      "size": 719
+    },
+    {
+      "path": "static/assets/figma/control/raw/f8bdcbf65236835dcff5c84d001f71f941f7cdf4.svg",
+      "sha256": "f44aedc770f7f747b5559c16f695ee77492fb37bcc08b2746b03478571ad44ab",
+      "size": 8525
+    },
+    {
+      "path": "static/assets/figma/control/raw/f96a78c7459464dd516ccc98cfa25810fbca026a.svg",
+      "sha256": "9430f0a940106f78416e46cede5b09b166383d92996d904d67b50c5e15691dc7",
+      "size": 473
+    },
+    {
+      "path": "static/assets/figma/control/raw/fadb063a4a1ccd1451a926ccf3dd9ce6533f398c.svg",
+      "sha256": "69085eac6a5d47433b6dfa51492fa3b0ec417dc534029842f9ef3c42a384d8d6",
+      "size": 770
+    },
+    {
+      "path": "static/assets/figma/control/raw/fc4141073ed66e51a649f6740fbe462d6b32f07b.svg",
+      "sha256": "6a7ea437f808c04ae4bb7a11f8354639827035db1f2867a58443d9dc46430874",
+      "size": 737
+    },
+    {
+      "path": "static/assets/figma/final-shadow-a.svg",
+      "sha256": "018ad7e284fe2fe4f82c14fd20da60b9784a092caa860b377d88a3229f84c781",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/final-shadow-b.svg",
+      "sha256": "18ea015bedffe83be93c682351bca0107a126f9a807d322c00efa15e28d8311d",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/final-shadow-c.svg",
+      "sha256": "492d0b1264504419f0d55dd81373a10d45fa148b811dc1c8d2d51bd1846edc4a",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/grass-1.png",
+      "sha256": "d7035dd361e55cfdd83dff8a965b5f388029ab8e9e9e02dd5ef705518c2f4d93",
+      "size": 749747
+    },
+    {
+      "path": "static/assets/figma/grass-2-a.png",
+      "sha256": "fa06fa5cf4d7b63b1bd464c2e9f471b928b46106dfea12e57e5d31dddfaa9fa4",
+      "size": 511909
+    },
+    {
+      "path": "static/assets/figma/grass-2-b.png",
+      "sha256": "5fb1dd0d3f7237ad5fda68964ebe57f03381a6f17e6ba5aff0e9a806b88fd938",
+      "size": 531457
+    },
+    {
+      "path": "static/assets/figma/ground-shadow-mask.png",
+      "sha256": "427c1fbdff52f512a31a8fae8c30307e4e346498c60f205b8eeac69d8d00914e",
+      "size": 376969
+    },
+    {
+      "path": "static/assets/figma/ground-shadow.svg",
+      "sha256": "d8b1578f9cece2086246490ea832aa8079c8ad7ec257d446410da87fb6264710",
+      "size": 722
+    },
+    {
+      "path": "static/assets/figma/logo-sberinsurance-game.svg",
+      "sha256": "c985db98f61a11bf59d7a65fa22df20ee0f08a622fa89022c182f5c929416070",
+      "size": 8570
+    },
+    {
+      "path": "static/assets/figma/logo-sberinsurance-start.svg",
+      "sha256": "254146c5915675d026c809a041a1bd134b3d983bbda62440f9a4c76ae5548903",
+      "size": 8502
+    },
+    {
+      "path": "static/assets/figma/manifest.json",
+      "sha256": "cfd12d74666f92bbbabaae60059e494054e1d077970a2ba22b7edc3c0f5b1dc7",
+      "size": 10902
+    },
+    {
+      "path": "static/assets/figma/mask-fist-label.svg",
+      "sha256": "24234cb9fe58610333e12a562ffa9e1c79ef9b9cfa114af97baebc1bdfac8cfc",
+      "size": 470
+    },
+    {
+      "path": "static/assets/figma/mask-nail-phone.svg",
+      "sha256": "af5697cd12b1f9faf7fc0c2cebbd0d03a13cc82cab4b73b4101ee1b248beb2a9",
+      "size": 673
+    },
+    {
+      "path": "static/assets/figma/mask-water-drop.svg",
+      "sha256": "28eba0a04a6e86969742b807e256fdd7060142e75b32f6036ac772f5b8d9e36c",
+      "size": 437
+    },
+    {
+      "path": "static/assets/figma/mask-water-label.svg",
+      "sha256": "28f21c77d6dc52cf0217ad0800ae97e63fc0b9b461ff6f37f446988e558f836f",
+      "size": 474
+    },
+    {
+      "path": "static/assets/figma/nail-parts-game.svg",
+      "sha256": "5029818eda0740a426ae1c6c9e667fa7f31617a3928f5cdbda9b7807ca182f35",
+      "size": 1743
+    },
+    {
+      "path": "static/assets/figma/nail-parts-start.svg",
+      "sha256": "425f17770729fb6ccca9429e1d57bb24ba0bfedb62367fcdcb7824e94ba2ef8d",
+      "size": 1748
+    },
+    {
+      "path": "static/assets/figma/rating-star-single.svg",
+      "sha256": "8f67d648af26faba5ab8cb5a902da79d76f933fd830349f4af0d94c322bb2777",
+      "size": 1122
+    },
+    {
+      "path": "static/assets/figma/rating-stars-0.svg",
+      "sha256": "f45c020f1f63f19520cb58cd87e356604e6ca40e3442e5159c091225c2dcc172",
+      "size": 3124
+    },
+    {
+      "path": "static/assets/figma/rating-stars-1.svg",
+      "sha256": "954f78fa43f100f5d756b53f05998ddbb14a583d7c97c302b1f71f7f88ff70aa",
+      "size": 3110
+    },
+    {
+      "path": "static/assets/figma/rating-stars-2.svg",
+      "sha256": "3ba90f2fcb7afb10bae09e9bb9d550332c9b21b3cc4e1276f9e0badde60362dd",
+      "size": 3096
+    },
+    {
+      "path": "static/assets/figma/rating-stars-3.svg",
+      "sha256": "ea1285983d4b829fd29a3f90edcad40fee5ec0d759f7760480a75d1221ff906b",
+      "size": 3112
+    },
+    {
+      "path": "static/assets/figma/score-star-final.svg",
+      "sha256": "a22009c0e6d3923854dbc63e68a7047f0c5a79b75cc78d9bf3c6ab554be477ea",
+      "size": 780
+    },
+    {
+      "path": "static/assets/figma/score-star-small.svg",
+      "sha256": "a66ebb8bb7709a25c1a6fa7903ad9535716f2ef065a81ce37a323af787ca5fc9",
+      "size": 776
+    },
+    {
+      "path": "static/assets/figma/score-star-start.svg",
+      "sha256": "25d2eaf02115781153350d59d7dbfcd1c8d1d858ce54faad68894187c71d4a93",
+      "size": 3669
+    },
+    {
+      "path": "static/assets/figma/scribble-final.svg",
+      "sha256": "87451b4aab94286206b3f8da10adcf94e693677ab199cfa2ac0a798ceb7e8a60",
+      "size": 533
+    },
+    {
+      "path": "static/assets/figma/scribble-start.svg",
+      "sha256": "4043bf5dc24c139ba77557592bc0d928190068506716662267cf01002beaa299",
+      "size": 529
+    },
+    {
+      "path": "static/assets/figma/shadow-phone-a.svg",
+      "sha256": "f4c14d3fa41133e4c6e34ee3ad7ea2b037d8078ef1e582ea15b71f8d6e08a0b0",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/shadow-phone-b.svg",
+      "sha256": "7525c1c9dd2685030940b091ff29a1766419285fd35fb9e8ac5e21a25b69e8d0",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/shadow-phone-c.svg",
+      "sha256": "45cdf0085256143d76eb0cfb68249ea03d4366eb6897bce65b0145190aa63c41",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/shadow-small-a.svg",
+      "sha256": "7c589ae571d3cb7fac9c369d43100827af951cf4e96a36c70ddfd8b34d2ea090",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/shadow-small-b.svg",
+      "sha256": "802b1a1928017aaad69ec99a804ec576ccd027deca5b797afa3bee4fd735976a",
+      "size": 766
+    },
+    {
+      "path": "static/assets/figma/shadow-small-c.svg",
+      "sha256": "60da433b8fb1193165dd6db252fa9a427b86bfe4cd93aa198bc3a54f2993364a",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/shadow-wide-a.svg",
+      "sha256": "5f76498b2937032defab2db276787ac30f0cdcaceac8042a373e4823d637557a",
+      "size": 766
+    },
+    {
+      "path": "static/assets/figma/shadow-wide-b.svg",
+      "sha256": "ae68a90052e42f2e5e2de8cc1655daabd82fb3bb2c4948e9502b4dcdcf3c2173",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/shadow-wide-c.svg",
+      "sha256": "3a7733d77a5ff7be16104ef4dd4f4292cdc7acf95f1a76f5028e4a1c8ae59006",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/small-decor-start.svg",
+      "sha256": "9a982f257cf2ade9cc42e69724c908f15c501d16e5669ae5436ebfe1994ff747",
+      "size": 1090
+    },
+    {
+      "path": "static/assets/figma/soap-phone-parts.svg",
+      "sha256": "2661ff38c3e2c4d0f4f1b39c37fb5904d139ea367df5f300373de96daea5842f",
+      "size": 939
+    },
+    {
+      "path": "static/assets/figma/soap-phone-vector.svg",
+      "sha256": "71b95d0efa0b22c2a82c2e60c23ff42a72238d33603318ab87db793efbbff01b",
+      "size": 767
+    },
+    {
+      "path": "static/assets/figma/stage-ellipse.svg",
+      "sha256": "ff5d181e5f418f691666bd84985caa3f9b4815057c2f34bf4b1bbed73468f5da",
+      "size": 735
+    },
+    {
+      "path": "static/assets/figma/threat-cat-paw.png",
+      "sha256": "b03bd6c5b6349db9d820c330c068309ba579b99ad3a7e2de5178243859af5ed4",
+      "size": 2792903
+    },
+    {
+      "path": "static/assets/figma/threat-fist.png",
+      "sha256": "80c9a58f663cc7735738a88f02706669a8688d318836289a5931bdcf179a0e88",
+      "size": 1699986
+    },
+    {
+      "path": "static/assets/figma/threat-nail-phone.png",
+      "sha256": "9a7f1398c4f53efaa7ecf0b6c12582e37c489b3ad1b5b9c09ad36f1d30e25cff",
+      "size": 2765529
+    },
+    {
+      "path": "static/assets/figma/threat-parts.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threat-soap-phone.png",
+      "sha256": "845d584eb179db090f73dc6abebe9ceb1308e99ec87e7099ac809d67841027a9",
+      "size": 3507348
+    },
+    {
+      "path": "static/assets/figma/threat-water-drop.png",
+      "sha256": "a4ddfa0619abf0bfedd7f7ef94d80576a9c3341f779f6201e5d18d0a0bba2a2c",
+      "size": 2738781
+    },
+    {
+      "path": "static/assets/figma/threats/direct-asset-manifest-v2.json",
+      "sha256": "bf0cc3c37e172cc95c91223ec825ade644e8e1aa3f3c5e609248d3aea2010f6c",
+      "size": 11566
+    },
+    {
+      "path": "static/assets/figma/threats/direct-asset-manifest.json",
+      "sha256": "263cbf1c995e26fee7aee098d24616834ba0c8a9b48b0ed8e07d460dc9345281",
+      "size": 21273
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-animals-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-animals-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-animals-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-baggage-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-baggage-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-baggage-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-home-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-home-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-home-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-injury-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-injury-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-injury-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-injury-alt-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-injury-alt-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-injury-alt-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-kasko-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-kasko-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-kasko-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-money-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-money-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-money-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-osago-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-osago-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-osago-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-pet-policy-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-pet-policy-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-pet-policy-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-screen-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-screen-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-screen-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-screen-alt-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-screen-alt-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-screen-alt-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-tick-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-tick-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-tick-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-travel-01.svg",
+      "sha256": "0091380c3b1bd72fa265fb4d16ac7f2e5a9ac2271ffda2f7a7d1c8a54b80cd6c",
+      "size": 8458
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-travel-02.svg",
+      "sha256": "79288144243ff01ae4ffb81906f78aec0bce3c8a3ae24f4049470846ccdeaf5e",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/badge-travel-03.svg",
+      "sha256": "ea988d41d94a735e20853309815d679d6c495b759f154dc1a04b2a44a76ccbfd",
+      "size": 768
+    },
+    {
+      "path": "static/assets/figma/threats/raw/brick-gadget-01.png",
+      "sha256": "eab47c931ccb0fec1312e57d32e834f431b38b6585c9912a5df290b7f07c56b7",
+      "size": 2503103
+    },
+    {
+      "path": "static/assets/figma/threats/raw/brick-gadget-02.svg",
+      "sha256": "037d17201dff529558f00016d18ae3ce6e6c020b69212ed05e57c2b58c14afc3",
+      "size": 355
+    },
+    {
+      "path": "static/assets/figma/threats/raw/brick-gadget-03.svg",
+      "sha256": "9e3e5539ad8691f575c7525beed334b174a6bce3b2c14ad82ea199db223ca8f2",
+      "size": 355
+    },
+    {
+      "path": "static/assets/figma/threats/raw/brick-gadget-04.svg",
+      "sha256": "8ebac2ed5b33124a9ebf58a5b9fea371c4408e6e98a8ae16d77de095d3f26cd9",
+      "size": 355
+    },
+    {
+      "path": "static/assets/figma/threats/raw/bumper-kiss-01.png",
+      "sha256": "67fbed053c942842eec1a1fc4c5d64040b23eff77166671ef67501be03ed6545",
+      "size": 1699918
+    },
+    {
+      "path": "static/assets/figma/threats/raw/bumper-kiss-02.png",
+      "sha256": "526bb847c216fb2c3e8220078699ce7c4d9ecbd791231311005417bef1abe52d",
+      "size": 606459
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/brick-gadget-01-imgImage2090009733.png",
+      "sha256": "eab47c931ccb0fec1312e57d32e834f431b38b6585c9912a5df290b7f07c56b7",
+      "size": 2503103
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/brick-gadget-02-imgVector1474.svg",
+      "sha256": "037d17201dff529558f00016d18ae3ce6e6c020b69212ed05e57c2b58c14afc3",
+      "size": 355
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/brick-gadget-03-imgVector1475.svg",
+      "sha256": "9e3e5539ad8691f575c7525beed334b174a6bce3b2c14ad82ea199db223ca8f2",
+      "size": 355
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/brick-gadget-04-imgVector1476.svg",
+      "sha256": "8ebac2ed5b33124a9ebf58a5b9fea371c4408e6e98a8ae16d77de095d3f26cd9",
+      "size": 355
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/bumper-kiss-01-imgImage2090010250.png",
+      "sha256": "67fbed053c942842eec1a1fc4c5d64040b23eff77166671ef67501be03ed6545",
+      "size": 1699918
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/bumper-kiss-02-imgImage2090010252.png",
+      "sha256": "526bb847c216fb2c3e8220078699ce7c4d9ecbd791231311005417bef1abe52d",
+      "size": 606459
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-01-imgImage2090010244.png",
+      "sha256": "229fa2afbd787f617a9e096e1878226c7da9c861f34e2db6c90555cc90b6055b",
+      "size": 1861613
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-02-imgImage2090010241.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-03-imgImage2090010242.png",
+      "sha256": "e262fecfd826a4371bda675ac807212006172b6ec8e393359ac6b273ff624bf3",
+      "size": 433941
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-04-imgImage2090010246.png",
+      "sha256": "44bfc0f0fa773522956d63cc609aad4d46fdb64086972718430f2881e36c5f59",
+      "size": 595143
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-05-imgVector1478.svg",
+      "sha256": "ec4b43d0a1aa049d3b541d8ee93ce18b29c38a3d3ade568d9bd40d21ee050f66",
+      "size": 348
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-06-imgImage2090010240.svg",
+      "sha256": "f33022c7b9e9c9917af7456fca9d89d2de92166a4567162fbe37ee679cb9004f",
+      "size": 907
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-07-imgEllipse29172.svg",
+      "sha256": "83a228bc3b9c2c332dd61b86b9f691b782af46ff2ea7983658aeecb24c588327",
+      "size": 299
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-08-imgGroup2136141789.svg",
+      "sha256": "ce339ce2434a3ee7d8f887b19ed8ad97ac017be4d4540d2cca47e7299b780bd3",
+      "size": 1913
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-09-imgVector234258257.svg",
+      "sha256": "44ea92f975cd9ce3991657732dbb0cea8d8e530f9d56cb8775cdad8765c7df48",
+      "size": 364
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/dog-vacuum-10-imgVector234258258.svg",
+      "sha256": "8baf4ff6d8ee5eaf46e45b129207c28eaa40629a62ff4510fc1e43a669edf73b",
+      "size": 595
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-01-imgChatGptImage1020261103433.png",
+      "sha256": "a4ddfa0619abf0bfedd7f7ef94d80576a9c3341f779f6201e5d18d0a0bba2a2c",
+      "size": 2738781
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-02-imgImage2090010239.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-03-imgGroup2136141820.svg",
+      "sha256": "97b7aff283c870c7db4df5a50690b2b77a5ebf8f6b5223e43a6d9121a906efda",
+      "size": 7700
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-04-imgChatGptImage1020261103432.svg",
+      "sha256": "6ffd202ba2365890c4476e013e7dc59db699df311b10b1fc8c0301554976320a",
+      "size": 414
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-05-imgMaskGroup.svg",
+      "sha256": "991513c5eeafe8bfa2f6ce44de0671d49758b46a77d39d68ad2d19d5ee6e2996",
+      "size": 658
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-06-imgGroup2136140167.svg",
+      "sha256": "fa524da48aff939071792ddcacb795bbdfc2e7d77f9ffe6a0266d4f881e4a083",
+      "size": 1759
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/flood-07-imgVector234258259.svg",
+      "sha256": "de9bf93aba3bf214fe99019d59f2d9ac42458b7451da2e817fda28f32f582243",
+      "size": 366
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/fluffy-acrobat-01-imgChatGptImage1020261106111.png",
+      "sha256": "b03bd6c5b6349db9d820c330c068309ba579b99ad3a7e2de5178243859af5ed4",
+      "size": 2792903
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/fluffy-acrobat-02-imgGroup2136141820.svg",
+      "sha256": "d3f1f1f57e3572dd18b7f940da5387dda84c55cab20044859afabc13b3052f99",
+      "size": 5540
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/fluffy-acrobat-03-imgVector234258259.svg",
+      "sha256": "de9bf93aba3bf214fe99019d59f2d9ac42458b7451da2e817fda28f32f582243",
+      "size": 366
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/fraud-01-imgChatGptImage1020261158092.png",
+      "sha256": "80c9a58f663cc7735738a88f02706669a8688d318836289a5931bdcf179a0e88",
+      "size": 1699986
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/fraud-02-imgRectangle2085657024.svg",
+      "sha256": "36a55f1256390117caf52301034db851b6ae7d57fe84201740e5df16541aa3b9",
+      "size": 470
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/ghost-plane-01-imgImage2090010241.png",
+      "sha256": "c983873a14ee0906f01fb2ab61a5feff442d3679f4dae08cdb7b5b3d34935d49",
+      "size": 651529
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/ghost-plane-02-imgVector234258255.svg",
+      "sha256": "de5408d47b49fc990c1694618abc41592f7cb60e99ba7a356f4d79147085f9bb",
+      "size": 361
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/ghost-plane-03-imgVector234258256.svg",
+      "sha256": "4c0c16768e89ce894e56168fab7bb6f6b28ed7e8e085989ca65db9b4e005ddde",
+      "size": 360
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/lost-sneaker-01-imgImage2090010248.png",
+      "sha256": "44bfc0f0fa773522956d63cc609aad4d46fdb64086972718430f2881e36c5f59",
+      "size": 595143
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/lost-sneaker-02-imgRectangle2085657736.png",
+      "sha256": "b72b8ce98320cc356ddf36f40da042b30aa00aebf742fe6999e009c04e9219de",
+      "size": 164159
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/lost-sneaker-03-imgImage2090010247.png",
+      "sha256": "5065e92d95e3a0f6763a5a4efdad26722f9d9afc9dea636fc44fbb2748aa1c08",
+      "size": 1415283
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/lost-sneaker-04-imgVector234258259.svg",
+      "sha256": "6e8364729266447b6374a35d80e32813ef30f987f1e6b4301e27466f1a7faccc",
+      "size": 365
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/micro-hater-01-imgImage2090009732.png",
+      "sha256": "37dc2865eaa7c633c04e6f977757ea77caa1a40518fe4f27a502a8fd71f8c171",
+      "size": 757246
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/micro-hater-02-imgImage2090010240.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/micro-hater-03-imgGroup2136141794.svg",
+      "sha256": "1c1843ea526a3b59f7a3ca1feb7fc2add492fa94349fb620465036d71faf2eaf",
+      "size": 2258
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/micro-hater-04-imgVector234258259.svg",
+      "sha256": "1f56f53bb7779e2f8602f449eee06e5f99807080b6fbd25dd9b1ec44a0062cff",
+      "size": 364
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-01-imgImage2090010254.png",
+      "sha256": "0cec4134a580b53d2d4e0265343fefb62c014180aeaa504d388d53e42609982c",
+      "size": 626666
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-02-imgImage2090009888.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-03-imgImage2090010257.png",
+      "sha256": "248c2a325e24250bd68ca72800afdf909960891d7ed435e27cc2a9bed0a47cec",
+      "size": 1847102
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-04-imgVector234258251.svg",
+      "sha256": "66661634e3aa217a0204b9e7e2870913db76e2c43d1408c08f9834fc52ae9462",
+      "size": 359
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-05-imgImage2090010253.svg",
+      "sha256": "8ebd6a4b1fb1f5a3b25a1b53da8499a28ebe36c50a674332aa030ed6e489683d",
+      "size": 943
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-06-imgVector1478.svg",
+      "sha256": "94b8b2af4d1f7eb4aea2f753e36f2cdaf96ab137b97e584401f1045ed3869583",
+      "size": 349
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-07-imgEllipse29173.svg",
+      "sha256": "003fff81b62a36a785efa640e0d135ba71522bf816aa6f158e0fa50adab14da1",
+      "size": 734
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/pigeon-picasso-08-imgEllipse29174.svg",
+      "sha256": "7dff96f9e4dfab521be1fbb24d16fd3a32cc4cd855e7c18c82e10bad56225ba9",
+      "size": 734
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/slam-salto-01-imgImage2090009736.png",
+      "sha256": "ba4c21a116ae5d817eeb2032e71a7f20bfdac74fdbc30b2a43a72dbac0f026e6",
+      "size": 544553
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/slam-salto-02-imgImage2090009737.png",
+      "sha256": "4baa4a217605f7610763b7b71aa23e842dac24eaa02e86f4e47217971f8a4ff8",
+      "size": 546046
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/slam-salto-03-imgVector1478.svg",
+      "sha256": "30823c46caa1961afc868b89380e4127c2675370574dbd6ac4ce8f7c347caab8",
+      "size": 356
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/slam-salto-04-imgVector1479.svg",
+      "sha256": "e131179125b7f42a90786afc86e789e6c6eedfd22852ddf033482faea8b98ae3",
+      "size": 350
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/soap-phone-01-imgChatGptImage1020261127263.png",
+      "sha256": "845d584eb179db090f73dc6abebe9ceb1308e99ec87e7099ac809d67841027a9",
+      "size": 3507348
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/soap-phone-02-imgImage2090009888.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/soap-phone-03-imgGroup2136140162.svg",
+      "sha256": "7c0073518538889299b7e5c8773d89486d12025ead9a0909cf8d97b3bd63dcd5",
+      "size": 966
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/soap-phone-04-imgVector1474.svg",
+      "sha256": "96103017f1a21d3097bd79c12af81fce58b2ad73b37a4b306ccd6831902d7ebf",
+      "size": 763
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/toe-menace-01-imgChatGptImage1020261123483.png",
+      "sha256": "9a7f1398c4f53efaa7ecf0b6c12582e37c489b3ad1b5b9c09ad36f1d30e25cff",
+      "size": 2765529
+    },
+    {
+      "path": "static/assets/figma/threats/raw/composite/toe-menace-02-imgChatGptImage1020261123482.svg",
+      "sha256": "e23d263ac045bcb62cf85ed476642cd899db5e8f27a492f881f40e453e23d7dd",
+      "size": 672
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-01.png",
+      "sha256": "229fa2afbd787f617a9e096e1878226c7da9c861f34e2db6c90555cc90b6055b",
+      "size": 1861613
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-02.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-03.png",
+      "sha256": "e262fecfd826a4371bda675ac807212006172b6ec8e393359ac6b273ff624bf3",
+      "size": 433941
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-04.png",
+      "sha256": "44bfc0f0fa773522956d63cc609aad4d46fdb64086972718430f2881e36c5f59",
+      "size": 595143
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-05.svg",
+      "sha256": "ec4b43d0a1aa049d3b541d8ee93ce18b29c38a3d3ade568d9bd40d21ee050f66",
+      "size": 348
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-06.svg",
+      "sha256": "f33022c7b9e9c9917af7456fca9d89d2de92166a4567162fbe37ee679cb9004f",
+      "size": 907
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-07.svg",
+      "sha256": "83a228bc3b9c2c332dd61b86b9f691b782af46ff2ea7983658aeecb24c588327",
+      "size": 299
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-08.svg",
+      "sha256": "8982ef8ff914458b8664a2e39f51c80589019625ad49c96447170372bf98eee0",
+      "size": 1894
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-09.svg",
+      "sha256": "44ea92f975cd9ce3991657732dbb0cea8d8e530f9d56cb8775cdad8765c7df48",
+      "size": 364
+    },
+    {
+      "path": "static/assets/figma/threats/raw/dog-vacuum-10.svg",
+      "sha256": "8baf4ff6d8ee5eaf46e45b129207c28eaa40629a62ff4510fc1e43a669edf73b",
+      "size": 595
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-animals.svg",
+      "sha256": "8b21c1aa9b791858aa07b345ecf42369d24a030484b29692d27fb5db96b2c81e",
+      "size": 20777
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-baggage.svg",
+      "sha256": "53e905186ec00a795f822b6ed7ab1ff0721f5d57aab133a0c082e74b7dfc5087",
+      "size": 22297
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-home.svg",
+      "sha256": "4f5dd8807cc687f298dde70a2c184402afa614a3616bd2df6159e0208223a027",
+      "size": 26817
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-injury-alt.svg",
+      "sha256": "48c9d119a2ca7605bba20101c59daabc343e3e7e1377460e77814e48c2bcd34a",
+      "size": 21675
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-injury.svg",
+      "sha256": "a195b56dd673d75538bd511e45099fbe160c00b67d699386074a4c2dc4a43c9a",
+      "size": 21675
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-kasko.svg",
+      "sha256": "33285d8fd7d5a6456052dbe9019339a4554075dc7718a1317ed9cf04129b339e",
+      "size": 16848
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-money.svg",
+      "sha256": "8ec2e5f4f17eccd898d8b9ad26e07e0b5e88443fd14da42c9768bcdac5326ff0",
+      "size": 18762
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-osago.svg",
+      "sha256": "4a65efad496610c20ace8f1605229b71e3daf805960b05a76400214baf46db91",
+      "size": 17889
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-pet-policy.svg",
+      "sha256": "2c647b1452aba5fbfae7a03217272a0b955f281f6c8af77034a7bbac4ef11773",
+      "size": 24382
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-screen-alt.svg",
+      "sha256": "ff3fc4dffa1d266c95450f6d8bfbcf4b5adfb0a67b4c38f61749d4fdd780c8b2",
+      "size": 21415
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-screen.svg",
+      "sha256": "8bcc8425a0aa0a57801b26d13c6f737754081a5d83290d8695b522e0a3cba52d",
+      "size": 21415
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-tick.svg",
+      "sha256": "818efed6bd84afe6a0c46bd8c9a48ea75cabf20f1805e6d2c13584d8e67cc4a8",
+      "size": 20347
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/badge-travel.svg",
+      "sha256": "05cb1527fea9f2bb0def4f58a6b2b127ab7b74fa0bf04f2e717be8dadc707096",
+      "size": 33987
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/brick-gadget.svg",
+      "sha256": "b6f9d645fd5b2d4c4af3a8fa1ba79c834aae1dca11c4b425fda127692a01d6c6",
+      "size": 3353823
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/bumper-kiss.png",
+      "sha256": "e4098b7b0bd50b138ad59eafb575467e80642ee8ea5b7d53a146061dfd758d34",
+      "size": 319886
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/dog-vacuum.png",
+      "sha256": "833cbdf87908b2d211d721c471dad33b55a05cb7f879ae85a7346d4d764c3570",
+      "size": 241268
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/flood.png",
+      "sha256": "7ffce7fa75ccd64c1263cfd1fb239a6d22f604d7ec45580e9ea71bd2706e0d0b",
+      "size": 266216
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/fluffy-acrobat.svg",
+      "sha256": "b1280a0cc02b48ec58dfb7884b1ff7557c48ea37568eaddb8e45aea3fdee027e",
+      "size": 3737164
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/fraud.svg",
+      "sha256": "4f671c03bdad483edb3f5b0497fef949110b8d3ac058d555daeb5b18c3b46e31",
+      "size": 2278729
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/ghost-plane.svg",
+      "sha256": "164db23d17415d5eca19726de85e9918319dcb4e77fbfb2fd3c61d71c82803fa",
+      "size": 881547
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/lost-sneaker.svg",
+      "sha256": "cb258e434fedd2ddda610c8ee35f6f18d76972926314fd67b6c34fc680aef5e4",
+      "size": 2696581
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/micro-hater.png",
+      "sha256": "1f8b0bfc6bf9b1c6bd15a4458143a718db7595eb053fc9263e3482fbb05f79f2",
+      "size": 228581
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/pigeon-picasso.png",
+      "sha256": "452e6c3e6601bdf745ab55fa44d0ca0eec780572adc28f5503c1b80506cad922",
+      "size": 212522
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/slam-salto.png",
+      "sha256": "c37ea7fa61708a2749215ab0cd46a4f0bdd652603c4773f7272ff4be33c6eada",
+      "size": 216896
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/soap-phone.png",
+      "sha256": "85723c7bc4c691bfba0b1d29d9d7522cab4a3fa2b7bc3ea258d1dbb6798f7d19",
+      "size": 313119
+    },
+    {
+      "path": "static/assets/figma/threats/raw/exported/toe-menace.svg",
+      "sha256": "8ea5122bb94ea45a8f79f57868dce6bada5b3b9968e8ba0ae561969b9850079b",
+      "size": 3705181
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-01.png",
+      "sha256": "a4ddfa0619abf0bfedd7f7ef94d80576a9c3341f779f6201e5d18d0a0bba2a2c",
+      "size": 2738781
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-02.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-03.svg",
+      "sha256": "f6af37af38b683de2f9049d7715b264b4d955ab37d113bc3ed2546d7d6f510b4",
+      "size": 7703
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-04.svg",
+      "sha256": "6ffd202ba2365890c4476e013e7dc59db699df311b10b1fc8c0301554976320a",
+      "size": 414
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-05.svg",
+      "sha256": "991513c5eeafe8bfa2f6ce44de0671d49758b46a77d39d68ad2d19d5ee6e2996",
+      "size": 658
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-06.svg",
+      "sha256": "961e8a47305f6edc5adc7a7006a4c494014e0aae580444bc47a61e7401b6f1e6",
+      "size": 1747
+    },
+    {
+      "path": "static/assets/figma/threats/raw/flood-07.svg",
+      "sha256": "de9bf93aba3bf214fe99019d59f2d9ac42458b7451da2e817fda28f32f582243",
+      "size": 366
+    },
+    {
+      "path": "static/assets/figma/threats/raw/fluffy-acrobat-01.png",
+      "sha256": "b03bd6c5b6349db9d820c330c068309ba579b99ad3a7e2de5178243859af5ed4",
+      "size": 2792903
+    },
+    {
+      "path": "static/assets/figma/threats/raw/fluffy-acrobat-02.svg",
+      "sha256": "4028d22d2b6bc9ded521b529c3576813c25fdced7f8ea96d1883f08e94082506",
+      "size": 5540
+    },
+    {
+      "path": "static/assets/figma/threats/raw/fluffy-acrobat-03.svg",
+      "sha256": "de9bf93aba3bf214fe99019d59f2d9ac42458b7451da2e817fda28f32f582243",
+      "size": 366
+    },
+    {
+      "path": "static/assets/figma/threats/raw/fraud-01.png",
+      "sha256": "80c9a58f663cc7735738a88f02706669a8688d318836289a5931bdcf179a0e88",
+      "size": 1699986
+    },
+    {
+      "path": "static/assets/figma/threats/raw/fraud-02.svg",
+      "sha256": "36a55f1256390117caf52301034db851b6ae7d57fe84201740e5df16541aa3b9",
+      "size": 470
+    },
+    {
+      "path": "static/assets/figma/threats/raw/ghost-plane-01.png",
+      "sha256": "c983873a14ee0906f01fb2ab61a5feff442d3679f4dae08cdb7b5b3d34935d49",
+      "size": 651529
+    },
+    {
+      "path": "static/assets/figma/threats/raw/ghost-plane-02.svg",
+      "sha256": "de5408d47b49fc990c1694618abc41592f7cb60e99ba7a356f4d79147085f9bb",
+      "size": 361
+    },
+    {
+      "path": "static/assets/figma/threats/raw/ghost-plane-03.svg",
+      "sha256": "4c0c16768e89ce894e56168fab7bb6f6b28ed7e8e085989ca65db9b4e005ddde",
+      "size": 360
+    },
+    {
+      "path": "static/assets/figma/threats/raw/lost-sneaker-01.png",
+      "sha256": "44bfc0f0fa773522956d63cc609aad4d46fdb64086972718430f2881e36c5f59",
+      "size": 595143
+    },
+    {
+      "path": "static/assets/figma/threats/raw/lost-sneaker-02.png",
+      "sha256": "b72b8ce98320cc356ddf36f40da042b30aa00aebf742fe6999e009c04e9219de",
+      "size": 164159
+    },
+    {
+      "path": "static/assets/figma/threats/raw/lost-sneaker-03.png",
+      "sha256": "5065e92d95e3a0f6763a5a4efdad26722f9d9afc9dea636fc44fbb2748aa1c08",
+      "size": 1415283
+    },
+    {
+      "path": "static/assets/figma/threats/raw/lost-sneaker-04.svg",
+      "sha256": "6e8364729266447b6374a35d80e32813ef30f987f1e6b4301e27466f1a7faccc",
+      "size": 365
+    },
+    {
+      "path": "static/assets/figma/threats/raw/micro-hater-01.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/micro-hater-02.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/micro-hater-03.svg",
+      "sha256": "abb5b5484d5f186f75614dd0f28b50c14df3c93d9195881c61b58205cb8851d2",
+      "size": 2231
+    },
+    {
+      "path": "static/assets/figma/threats/raw/micro-hater-04.svg",
+      "sha256": "1f56f53bb7779e2f8602f449eee06e5f99807080b6fbd25dd9b1ec44a0062cff",
+      "size": 364
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-01.png",
+      "sha256": "0cec4134a580b53d2d4e0265343fefb62c014180aeaa504d388d53e42609982c",
+      "size": 626666
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-02.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-03.png",
+      "sha256": "248c2a325e24250bd68ca72800afdf909960891d7ed435e27cc2a9bed0a47cec",
+      "size": 1847102
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-04.svg",
+      "sha256": "66661634e3aa217a0204b9e7e2870913db76e2c43d1408c08f9834fc52ae9462",
+      "size": 359
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-05.svg",
+      "sha256": "8ebd6a4b1fb1f5a3b25a1b53da8499a28ebe36c50a674332aa030ed6e489683d",
+      "size": 943
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-06.svg",
+      "sha256": "94b8b2af4d1f7eb4aea2f753e36f2cdaf96ab137b97e584401f1045ed3869583",
+      "size": 349
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-07.svg",
+      "sha256": "003fff81b62a36a785efa640e0d135ba71522bf816aa6f158e0fa50adab14da1",
+      "size": 734
+    },
+    {
+      "path": "static/assets/figma/threats/raw/pigeon-picasso-08.svg",
+      "sha256": "7dff96f9e4dfab521be1fbb24d16fd3a32cc4cd855e7c18c82e10bad56225ba9",
+      "size": 734
+    },
+    {
+      "path": "static/assets/figma/threats/raw/slam-salto-01.png",
+      "sha256": "4baa4a217605f7610763b7b71aa23e842dac24eaa02e86f4e47217971f8a4ff8",
+      "size": 546046
+    },
+    {
+      "path": "static/assets/figma/threats/raw/slam-salto-02.png",
+      "sha256": "4baa4a217605f7610763b7b71aa23e842dac24eaa02e86f4e47217971f8a4ff8",
+      "size": 546046
+    },
+    {
+      "path": "static/assets/figma/threats/raw/slam-salto-03.svg",
+      "sha256": "30823c46caa1961afc868b89380e4127c2675370574dbd6ac4ce8f7c347caab8",
+      "size": 356
+    },
+    {
+      "path": "static/assets/figma/threats/raw/slam-salto-04.svg",
+      "sha256": "e131179125b7f42a90786afc86e789e6c6eedfd22852ddf033482faea8b98ae3",
+      "size": 350
+    },
+    {
+      "path": "static/assets/figma/threats/raw/soap-phone-01.png",
+      "sha256": "845d584eb179db090f73dc6abebe9ceb1308e99ec87e7099ac809d67841027a9",
+      "size": 3507348
+    },
+    {
+      "path": "static/assets/figma/threats/raw/soap-phone-02.png",
+      "sha256": "e424e8c56e82bda8492556b10a9cff439b3676fa5c65efbbd1b9139dc8397a1a",
+      "size": 805115
+    },
+    {
+      "path": "static/assets/figma/threats/raw/soap-phone-03.svg",
+      "sha256": "9a3d76292c1bd76e81c68b408407459492404ec49736c95fc47695abf5497970",
+      "size": 946
+    },
+    {
+      "path": "static/assets/figma/threats/raw/soap-phone-04.svg",
+      "sha256": "96103017f1a21d3097bd79c12af81fce58b2ad73b37a4b306ccd6831902d7ebf",
+      "size": 763
+    },
+    {
+      "path": "static/assets/figma/threats/raw/toe-menace-01.png",
+      "sha256": "9a7f1398c4f53efaa7ecf0b6c12582e37c489b3ad1b5b9c09ad36f1d30e25cff",
+      "size": 2765529
+    },
+    {
+      "path": "static/assets/figma/threats/raw/toe-menace-02.svg",
+      "sha256": "e23d263ac045bcb62cf85ed476642cd899db5e8f27a492f881f40e453e23d7dd",
+      "size": 672
+    },
+    {
+      "path": "static/assets/figma/timer-circle.svg",
+      "sha256": "6b91634df90699b3d55b550de63aeba9629bfb67e9143e517e21727668245925",
+      "size": 259
+    },
+    {
+      "path": "static/assets/figma/title-star-final.svg",
+      "sha256": "f69dd07b77c08107ceb96b80d1ad15881a911aeb725c3395513755ff45953914",
+      "size": 3982
+    },
+    {
+      "path": "static/assets/figma/title-star-game.svg",
+      "sha256": "9696c2964b88b1321effe5156e15f98435b5c9337671591a0bb20fa642a22150",
+      "size": 3974
+    },
+    {
+      "path": "static/assets/figma/title-star-start.svg",
+      "sha256": "9fb8b5ee3208e6c3aa5bfb699cc768b2fd1676790732978a1b7860864783c8e6",
+      "size": 3955
+    },
+    {
+      "path": "static/assets/figma/water-drop-eyes-start.svg",
+      "sha256": "8814bc5512ae48b211e0189fde85999bfe225cbe9a6c335e4f5a7f4b4fb8d24a",
+      "size": 1736
+    },
+    {
+      "path": "static/assets/figma/water-drop-mask-game.svg",
+      "sha256": "1e55dd0818b54e67b770c3eadce2ca14ed4ae0450811b2a13fa0ae431306b121",
+      "size": 439
+    },
+    {
+      "path": "static/assets/figma/water-drop-secondary-mask.svg",
+      "sha256": "52c84923551576d35219701341e4489651f28763f1bac22ce88e036423ab804e",
+      "size": 664
+    },
+    {
+      "path": "static/control.html",
+      "sha256": "3a1fdb176bbd8ffa2d76e8431ac0d46ace01e8bb112a871e123ed6eba9b0ea84",
+      "size": 6630
+    },
+    {
+      "path": "static/css/control.css",
+      "sha256": "b59b15e21877771b845f5724b64ee6ca7a6bc742b7e17358b02e5f883f30659c",
+      "size": 13062
+    },
+    {
+      "path": "static/css/game.css",
+      "sha256": "4f0cb51c90da55547dc3e8427bfbcbf02948b47ac3c2946546eaae7567b3ac30",
+      "size": 24525
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Bold.woff",
+      "sha256": "1faf1d2dd5f0c2cc1c71ac44c2ee416b5a245d1d2ce1546184915e06b3e37905",
+      "size": 53156
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Bold.woff2",
+      "sha256": "d9efa4bed54b226cdba843a3b7b3754cd8efaca11876a8839ba0ac58a32dc950",
+      "size": 39460
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Light.woff",
+      "sha256": "d6d690eaaee0756c740e887f12cd41d33dccef6b9b4456b2d4c119960e9f1990",
+      "size": 47272
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Light.woff2",
+      "sha256": "dcddfa143817eb5310a4fd7e7af6114e49e9b5481cbcde2eb4ad54ca64b827da",
+      "size": 34956
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Medium.woff",
+      "sha256": "aeda22d24c623f20d6298a36f732fde96e25bba444f72a77f62152ff6b5aaa99",
+      "size": 56556
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Medium.woff2",
+      "sha256": "24490496e06316d75565b080989e959f275f5cfb73261cc6aa12da6236e080aa",
+      "size": 41908
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Regular.woff",
+      "sha256": "21342eda7c191a98bfd8683c74073e3a8142419aad26a8eeafbd294478fff420",
+      "size": 54416
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Regular.woff2",
+      "sha256": "0b4bce768b91f77e384b3088fdcbf71af94ce8b3b331175d81c45f0e1648a6c8",
+      "size": 40172
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Semibold.woff",
+      "sha256": "754b9ff269510fd410cc540545d125ac9f527b1878e0aa589667a5081275e04a",
+      "size": 61192
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Semibold.woff2",
+      "sha256": "fbad9079fbef813a5591c388e36b3dfab45edbf740e37df2ad5075ae4851e8ba",
+      "size": 45460
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Thin.woff",
+      "sha256": "2873d3ea6a190b3af39d9d80396250c3b6fbdd698712267887f1dd735f343e2f",
+      "size": 47416
+    },
+    {
+      "path": "static/fonts/SBSansDisplay-Thin.woff2",
+      "sha256": "eca82af6e6a450d06e273f45776d6ec0ffea725f557d70e17f50fd56187961ba",
+      "size": 35160
+    },
+    {
+      "path": "static/fonts/SBSansText-Medium.woff2",
+      "sha256": "31b4eac7457ba11e2fe7c814829ca44f8e25d0dcc1fa39a8e63c04bf84c9ec36",
+      "size": 26680
+    },
+    {
+      "path": "static/fonts/SBSansText-Semibold.woff2",
+      "sha256": "1674705a354f952f68577db5ec5945b08fe325a530dd7267f21f2431c54f0239",
+      "size": 37076
+    },
+    {
+      "path": "static/index.html",
+      "sha256": "5e2acb01c68d0fcad6cad99bc3bdf65810c919c991c4f3097d861e82300c5ab2",
+      "size": 6591
+    },
+    {
+      "path": "static/js/control.js",
+      "sha256": "4cfbb0ce9815d5d1c0572e1e076cb887bb803fca4faf8486a9efcb395d4f513c",
+      "size": 5911
+    },
+    {
+      "path": "static/js/game.js",
+      "sha256": "311b53c4e138b576d00a264c1d6ff788497a2d9f7413067f65b5c2add7afe3b8",
+      "size": 23240
+    }
+  ],
+  "root": "insure-chill",
+  "version": 1
+}

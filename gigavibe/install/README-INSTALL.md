@@ -55,6 +55,15 @@ cd C:\gigavibe
 
 Киоск: `http://127.0.0.1:8765` · health: `/api/health`
 
+## Скачать пакет с FARM
+
+На площадке с уже работающим киоском пакет доступен по тому же адресу:
+
+- FARM: `https://slash.omelchak.com:8765/install/`
+- LAN: `https://192.168.1.243:8765/install/`
+
+Стабильная ссылка на последний пакет: `/install/gigavibe-kiosk-latest.zip`
+
 ## Обновление из GitHub
 
 Для распакованных zip-установок без `.git` есть updater:

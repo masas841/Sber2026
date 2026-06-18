@@ -61,7 +61,12 @@ Write-Host "=== Restart GIGAvibe ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 2
 Invoke-Ssh "powershell -NoProfile -ExecutionPolicy Bypass -File C:\Users\user\gigavibe\remote\restart-gigavibe.ps1"
 
+Write-Host "=== Upload install package for /install ===" -ForegroundColor Cyan
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "..\scripts\kiosk\deploy_install_dist.ps1") `
+    -Farm $Farm -LocalRoot $LocalGiga -RemoteRoot $RemoteRoot -PackageName "gigavibe-kiosk"
+
 Write-Host "=== Health check ===" -ForegroundColor Cyan
 Start-Sleep -Seconds 12
 & curl.exe -sk "https://192.168.1.243:8765/api/health"
 Write-Host ""
+Write-Host "Install: https://slash.omelchak.com:8765/install/" -ForegroundColor Green
