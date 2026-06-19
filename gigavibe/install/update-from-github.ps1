@@ -95,6 +95,8 @@ function ConvertTo-GigaCdnUrl {
     return "https://cdn.jsdelivr.net/gh/masas841/Sber2026@$ref/$path"
 }
 
+$script:GigaPreferCdnDownloads = $false
+
 function Invoke-GigaDownloadFile {
     param(
         [Parameter(Mandatory = $true)]
@@ -106,34 +108,51 @@ function Invoke-GigaDownloadFile {
     )
 
     $lastError = $null
-    $downloadUris = @($Uri)
     $cdnUri = ConvertTo-GigaCdnUrl -Uri $Uri
-    if ($cdnUri -and $cdnUri -ne $Uri) {
+    if ($script:GigaPreferCdnDownloads -and $cdnUri) {
+        $downloadUris = @($cdnUri)
+    } else {
+        $downloadUris = @($Uri)
+    }
+    if (-not $script:GigaPreferCdnDownloads -and $cdnUri -and $cdnUri -ne $Uri) {
         $downloadUris += $cdnUri
     }
 
     foreach ($downloadUri in $downloadUris) {
-        if ($downloadUri -ne $Uri) {
+        $isCdn = ($cdnUri -and $downloadUri -eq $cdnUri)
+        $rawHasCdnFallback = ($cdnUri -and $downloadUri -eq $Uri)
+        $attemptLimit = if ($rawHasCdnFallback) { 1 } else { $Attempts }
+
+        if ($isCdn) {
             Write-Host "[GIGAvibe] WARN: trying CDN fallback: $downloadUri" -ForegroundColor Yellow
         }
 
-        for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+        for ($attempt = 1; $attempt -le $attemptLimit; $attempt++) {
             try {
                 if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
                 Invoke-WebRequest -Uri $downloadUri -OutFile $OutFile -UseBasicParsing -Headers $Headers -TimeoutSec 120
                 if ((Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
+                    if ($isCdn) {
+                        $script:GigaPreferCdnDownloads = $true
+                    }
                     return
                 }
                 throw "Downloaded empty file"
             } catch {
                 $lastError = $_
-                if ($attempt -lt $Attempts) {
+                if ($attempt -lt $attemptLimit) {
                     $delay = [Math]::Min(10, 2 * $attempt)
-                    Write-Host "[GIGAvibe] WARN: download failed ($attempt/$Attempts), retry in ${delay}s: $downloadUri" -ForegroundColor Yellow
+                    Write-Host "[GIGAvibe] WARN: download failed ($attempt/$attemptLimit), retry in ${delay}s: $downloadUri" -ForegroundColor Yellow
                     Write-Host "[GIGAvibe] WARN: $($_.Exception.Message)" -ForegroundColor DarkYellow
                     Start-Sleep -Seconds $delay
+                } elseif ($rawHasCdnFallback) {
+                    Write-Host "[GIGAvibe] WARN: raw GitHub download failed, switching to CDN for this and next files." -ForegroundColor Yellow
                 }
             }
+        }
+
+        if ($rawHasCdnFallback) {
+            continue
         }
 
         $curl = Get-Command curl.exe -ErrorAction SilentlyContinue
@@ -157,6 +176,9 @@ function Invoke-GigaDownloadFile {
             $curlArgs += $downloadUri
             & $curl.Source @curlArgs
             if ($LASTEXITCODE -eq 0 -and (Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
+                if ($isCdn) {
+                    $script:GigaPreferCdnDownloads = $true
+                }
                 return
             }
         }
