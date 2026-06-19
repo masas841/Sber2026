@@ -537,8 +537,8 @@
     },
     {
       "path": "install/update-from-github.ps1",
-      "sha256": "85b3b6f22f05701a65e1fee6c70dc2d5219432d69cecdbb7dac9f29d79f8527a",
-      "size": 15119
+      "sha256": "9e22914f881c27684400834c7c7f44898fd35d34eafad345fd6fc02ced52cd74",
+      "size": 17238
     },
     {
       "path": "install/update-gigavibe.cmd",

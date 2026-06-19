@@ -81,6 +81,65 @@ function Read-JsonFile {
     return Get-Content -Path $Path -Raw -Encoding UTF8 | ConvertFrom-Json
 }
 
+function Invoke-GigaDownloadFile {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Uri,
+        [Parameter(Mandatory = $true)]
+        [string]$OutFile,
+        [hashtable]$Headers = @{},
+        [int]$Attempts = 4
+    )
+
+    $lastError = $null
+    for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+        try {
+            if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
+            Invoke-WebRequest -Uri $Uri -OutFile $OutFile -UseBasicParsing -Headers $Headers -TimeoutSec 120
+            if ((Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
+                return
+            }
+            throw "Downloaded empty file"
+        } catch {
+            $lastError = $_
+            if ($attempt -lt $Attempts) {
+                $delay = [Math]::Min(10, 2 * $attempt)
+                Write-Host "[GIGAvibe] WARN: download failed ($attempt/$Attempts), retry in ${delay}s: $Uri" -ForegroundColor Yellow
+                Write-Host "[GIGAvibe] WARN: $($_.Exception.Message)" -ForegroundColor DarkYellow
+                Start-Sleep -Seconds $delay
+            }
+        }
+    }
+
+    $curl = Get-Command curl.exe -ErrorAction SilentlyContinue
+    if ($curl) {
+        Write-Host "[GIGAvibe] WARN: falling back to curl.exe: $Uri" -ForegroundColor Yellow
+        if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
+        $curlArgs = @(
+            "-L",
+            "--fail",
+            "--retry", "5",
+            "--retry-delay", "2",
+            "--connect-timeout", "20",
+            "--max-time", "180",
+            "-A", "GIGAvibe-Updater",
+            "-o", $OutFile
+        )
+        foreach ($header in $Headers.GetEnumerator()) {
+            if ($header.Key -eq "User-Agent") { continue }
+            $curlArgs += @("-H", "$($header.Key): $($header.Value)")
+        }
+        $curlArgs += $Uri
+        & $curl.Source @curlArgs
+        if ($LASTEXITCODE -eq 0 -and (Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
+            return
+        }
+    }
+
+    $message = if ($lastError) { $lastError.Exception.Message } else { "unknown error" }
+    throw "Download failed after retries: $Uri ($message)"
+}
+
 function Resolve-GitHubCommitSha {
     param(
         [string]$Ref,
@@ -259,16 +318,13 @@ try {
             $RawBaseUrl = Use-GitHubRawRef -Url $RawBaseUrl -Ref $rawRef -Sha $rawSha
             Write-Host "[GIGAvibe] GitHub ref $rawRef -> $rawSha" -ForegroundColor DarkGray
         }
-        $manifestArgs = @{
-            Uri = $ManifestUrl
-            OutFile = $remoteManifestPath
-            UseBasicParsing = $true
-            Headers = $headers
-        }
         try {
-            Invoke-WebRequest @manifestArgs
+            Invoke-GigaDownloadFile -Uri $ManifestUrl -OutFile $remoteManifestPath -Headers $headers
         } catch {
-            $statusCode = $_.Exception.Response.StatusCode.value__
+            $statusCode = $null
+            if ($_.Exception.Response) {
+                $statusCode = $_.Exception.Response.StatusCode.value__
+            }
             if ($statusCode -eq 404 -and -not $githubToken) {
                 Write-Host "[GIGAvibe] GitHub manifest is not available anonymously." -ForegroundColor Yellow
                 Write-Host "[GIGAvibe] If the repo is private, set UPDATE_GITHUB_TOKEN in .env." -ForegroundColor Yellow
@@ -317,7 +373,7 @@ try {
             New-Item -ItemType Directory -Force -Path (Split-Path $targetPath -Parent) | Out-Null
             $fileUrl = ($RawBaseUrl.TrimEnd("/") + "/" + (ConvertTo-UrlPath -Path $rel))
             $tmpFile = Join-Path $tempRoot ("file-" + [guid]::NewGuid().ToString("N"))
-            Invoke-WebRequest -Uri $fileUrl -OutFile $tmpFile -UseBasicParsing -Headers $headers
+            Invoke-GigaDownloadFile -Uri $fileUrl -OutFile $tmpFile -Headers $headers
             $downloadHash = Get-FileSha256 -Path $tmpFile
             if ($downloadHash -ne ([string]$file.sha256).ToLowerInvariant()) {
                 throw "sha256 mismatch for $rel"
@@ -354,16 +410,13 @@ try {
 
     Write-Host "[GIGAvibe] Full archive fallback enabled." -ForegroundColor Yellow
     Write-Host "[GIGAvibe] Update source: $RepoArchiveUrl" -ForegroundColor Cyan
-    $requestArgs = @{
-        Uri = $RepoArchiveUrl
-        OutFile = $zipPath
-        UseBasicParsing = $true
-        Headers = $headers
-    }
     try {
-        Invoke-WebRequest @requestArgs
+        Invoke-GigaDownloadFile -Uri $RepoArchiveUrl -OutFile $zipPath -Headers $headers
     } catch {
-        $statusCode = $_.Exception.Response.StatusCode.value__
+        $statusCode = $null
+        if ($_.Exception.Response) {
+            $statusCode = $_.Exception.Response.StatusCode.value__
+        }
         if ($statusCode -eq 404 -and -not $githubToken) {
             Write-Host "[GIGAvibe] GitHub archive is not available anonymously." -ForegroundColor Yellow
             Write-Host "[GIGAvibe] If the repo is private, set UPDATE_GITHUB_TOKEN in .env." -ForegroundColor Yellow
