@@ -130,13 +130,15 @@ body {
 
 .camera-slot__boomerang {
   z-index: 2;
-  display: none;
+  display: block;
+  opacity: 0;
   object-fit: cover;
   background: #000;
+  transition: opacity 0.26s ease;
 }
 
 .camera-slot__boomerang--active {
-  display: block;
+  opacity: 1;
 }
 
 .stage-root {

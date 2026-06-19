@@ -1,9 +1,10 @@
 const DEFAULT_OPTIONS = {
   size: 504,
-  recordMs: 1200,
+  recordMs: 3000,
   captureFps: 12,
   playFps: 18,
-  loops: 3,
+  playbackMs: 3000,
+  fadeMs: 260,
 };
 
 function readCameraZoom(videoEl) {
@@ -40,6 +41,10 @@ function cloneCanvas(source) {
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function nextFrame() {
+  return new Promise((resolve) => requestAnimationFrame(resolve));
 }
 
 export function createBoomerangRecorder(videoEl, outputCanvas, options = {}) {
@@ -109,7 +114,7 @@ export function createBoomerangRecorder(videoEl, outputCanvas, options = {}) {
     hasFrames() {
       return frames.length > 2;
     },
-    async play({ loops = config.loops } = {}) {
+    async play({ durationMs = config.playbackMs } = {}) {
       this.stop();
       if (!outputCanvas || !outputCtx || frames.length <= 2) return false;
 
@@ -123,17 +128,24 @@ export function createBoomerangRecorder(videoEl, outputCanvas, options = {}) {
       const backward = forward.slice(1, -1).reverse();
       const sequence = [...forward, ...backward];
       const frameInterval = 1000 / config.playFps;
+      const endAt = performance.now() + durationMs;
+      let index = 0;
 
-      for (let loop = 0; loop < loops && playing && token === playToken; loop += 1) {
-        for (const frame of sequence) {
-          if (!playing || token !== playToken) break;
-          outputCtx.drawImage(frame, 0, 0, outputCanvas.width, outputCanvas.height);
-          await delay(frameInterval);
-        }
+      outputCtx.drawImage(sequence[0], 0, 0, outputCanvas.width, outputCanvas.height);
+      await nextFrame();
+      outputCanvas.classList.add("camera-slot__boomerang--active");
+      await delay(config.fadeMs);
+
+      while (performance.now() < endAt && playing && token === playToken) {
+        outputCtx.drawImage(sequence[index], 0, 0, outputCanvas.width, outputCanvas.height);
+        index = (index + 1) % sequence.length;
+        await delay(frameInterval);
       }
 
       if (token === playToken) {
         playing = false;
+        outputCanvas.classList.remove("camera-slot__boomerang--active");
+        await delay(config.fadeMs);
         hideOutput();
       }
       return true;
