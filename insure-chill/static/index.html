@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=672, initial-scale=1" />
   <title>Застрахуй свой чилл</title>
   <link rel="stylesheet" href="/static/css/game.css?v=figma-export-5" />
+  <link rel="stylesheet" href="/static/css/kiosk-install-standby.css" />
 </head>
 <body>
-  <main id="stage" class="stage" data-phase="idle">
+  <div id="kiosk-install-standby" class="kiosk-install-standby hidden" hidden aria-live="polite">
+    <div class="kiosk-install-standby__inner">
+      <h1 class="kiosk-install-standby__title">Застрахуй свой чилл скоро откроется</h1>
+      <p class="kiosk-install-standby__text">Специальный экран из Figma будет здесь.</p>
+    </div>
+  </div>
+  <main id="stage" class="stage" data-phase="idle" data-kiosk-main>
     <section id="idleLayer" class="scene-layer scene-layer--active idle-scene main-scene" aria-label="Заставка">
       <img class="main-scene__asset main-scene__asset--back" src="/img/New/back.png" alt="" />
       <img class="main-scene__asset main-scene__asset--fist main-scene__asset--breathe" src="/img/New/fist.png" alt="" />

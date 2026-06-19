@@ -1,4 +1,6 @@
-﻿const STAGE = 672;
+﻿import { initKioskInstallGate } from "./kiosk-install-mode.js";
+
+const STAGE = 672;
 const DEFAULT_DURATION = 59;
 const THREAT_ASSET = "/static/assets/figma/threats/";
 const THREAT_ASSET_VERSION = "figma-export-3";
@@ -874,10 +876,16 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-setupThreats();
-setIdle();
-connectScreen();
-requestAnimationFrame(tick);
+(async function bootInsureChill() {
+  const installGate = await initKioskInstallGate({
+    activityId: "insure-chill",
+    standbyEl: document.getElementById("kiosk-install-standby"),
+    mainEl: document.getElementById("stage"),
+  });
+  if (installGate.installOff) return;
 
-
-
+  setupThreats();
+  setIdle();
+  connectScreen();
+  requestAnimationFrame(tick);
+})();

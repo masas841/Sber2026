@@ -7,9 +7,16 @@
   <title>ГИГАвайб — фестивальный киоск</title>
   <link rel="stylesheet" href="/static/css/figma-fonts.css" />
   <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/kiosk-install-standby.css" />
 </head>
 <body>
-  <main class="shell" data-screen="start">
+  <div id="kiosk-install-standby" class="kiosk-install-standby hidden" hidden aria-live="polite">
+    <div class="kiosk-install-standby__inner">
+      <h1 class="kiosk-install-standby__title">ГИГАвайб скоро откроется</h1>
+      <p class="kiosk-install-standby__text">Специальный экран из Figma будет здесь.</p>
+    </div>
+  </div>
+  <main class="shell" data-screen="start" data-kiosk-main>
     <video
       id="idle-bg-video"
       class="kiosk-bg-video"

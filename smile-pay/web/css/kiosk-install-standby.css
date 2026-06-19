@@ -1,0 +1,45 @@
+/* Placeholder standby — заменить ассетами из Figma для каждой активации */
+.kiosk-install-standby {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #0d8523 0%, #21a038 45%, #3fd05a 100%);
+  color: #fff;
+  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+.kiosk-install-standby.hidden {
+  display: none !important;
+}
+
+.kiosk-install-standby__inner {
+  max-width: 28rem;
+}
+
+.kiosk-install-standby__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.kiosk-install-standby__text {
+  margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.45;
+  opacity: 0.92;
+}
+
+.kiosk-install-off [data-kiosk-main],
+.kiosk-install-off main[data-kiosk-main] {
+  visibility: hidden;
+}
+
+.kiosk-install-off .pad-status {
+  display: none !important;
+}

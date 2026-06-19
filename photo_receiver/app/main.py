@@ -20,16 +20,26 @@ from fastapi import (
     WebSocket,
     WebSocketDisconnect,
 )
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from app.config import settings
 from app import storage
+from app.kiosk_install_mode import ACTIVITIES, activity_state, read_state, write_state
 
 app = FastAPI(title="GIGAvibe Photo Receiver", version="1.0.0")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
+)
+
 _STATIC = Path(__file__).resolve().parent.parent / "static"
+_ADMIN_KIOSK_INSTALL = _STATIC / "admin" / "kiosk-install.html"
 _STUB_HTML = _STATIC / "index.html"
 _PHOTO_HTML = _STATIC / "photo.html"
 _SAFE_SEGMENT_RE = re.compile(r"[^A-Za-z0-9_.-]+")
@@ -405,6 +415,10 @@ class InitBody(BaseModel):
     face_count: str = ""
 
 
+class KioskInstallModeBody(BaseModel):
+    activities: dict[str, bool] = Field(default_factory=dict)
+
+
 class LogWebSocketHub:
     def __init__(self) -> None:
         self._clients: set[WebSocket] = set()
@@ -487,7 +501,53 @@ def health() -> dict:
         "chunk_size": settings.chunk_size,
         "kiosk_logs": True,
         "kiosk_logs_realtime": True,
+        "kiosk_install_mode": True,
     }
+
+
+@app.get("/api/kiosk-install-mode")
+def kiosk_install_mode_all() -> dict:
+    state = read_state()
+    return {
+        "version": state["version"],
+        "updated_at": state["updated_at"],
+        "activities": state["activities"],
+        "labels": ACTIVITIES,
+    }
+
+
+@app.get("/api/kiosk-install-mode/{activity_id}")
+def kiosk_install_mode_one(activity_id: str) -> dict:
+    try:
+        return activity_state(activity_id)
+    except KeyError:
+        raise HTTPException(404, "Unknown activity") from None
+
+
+@app.post("/api/kiosk-install-mode")
+def kiosk_install_mode_update(
+    body: KioskInstallModeBody,
+    _: None = Depends(_check_api_key),
+) -> dict:
+    payload = write_state(body.activities)
+    return {
+        "version": payload["version"],
+        "updated_at": payload["updated_at"],
+        "activities": payload["activities"],
+        "labels": ACTIVITIES,
+    }
+
+
+@app.get("/admin/kiosk-install", response_class=HTMLResponse)
+@app.get("/install", response_class=HTMLResponse)
+def kiosk_install_admin_page() -> HTMLResponse:
+    if not _ADMIN_KIOSK_INSTALL.is_file():
+        raise HTTPException(500, "admin page missing")
+    return FileResponse(
+        _ADMIN_KIOSK_INSTALL,
+        media_type="text/html; charset=utf-8",
+        headers={"Cache-Control": "no-cache, must-revalidate"},
+    )
 
 
 @app.get("/logs", response_class=HTMLResponse)

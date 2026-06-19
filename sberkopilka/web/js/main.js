@@ -6,6 +6,10 @@ function showBootError(msg) {
   console.error("[SberKopilka]", msg);
 }
 
+(async function bootKopilka() {
+  const gate = await (window.__kopilkaInstallGate || Promise.resolve({ installOff: false }));
+  if (gate.installOff) return;
+
 if (window.__kopilkaLoadError) {
   showBootError(window.__kopilkaLoadError);
 } else if (typeof Phaser === "undefined") {
@@ -77,3 +81,4 @@ if (window.__kopilkaLoadError) {
     showBootError(`Ошибка запуска Phaser: ${e.message}`);
   }
 }
+})();

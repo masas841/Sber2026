@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Режим киосков — sberfest2026.ru</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b1116;
+      --panel: #121b23;
+      --text: #edf6ff;
+      --muted: #8ea3b5;
+      --ok: #32d583;
+      --accent: #21a038;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: radial-gradient(circle at 10% 0%, #17324a 0, transparent 32rem), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    main {
+      width: min(720px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+    h1 { margin: 0 0 8px; font-size: 1.75rem; }
+    .lead { color: var(--muted); margin: 0 0 24px; line-height: 1.45; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .row:last-child { border-bottom: none; }
+    .name { font-weight: 600; }
+    .id { color: var(--muted); font-size: 0.85rem; }
+    label.switch { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0a1015;
+      color: var(--text);
+      margin-top: 6px;
+    }
+    button {
+      margin-top: 16px;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    #status { margin-top: 12px; color: var(--muted); }
+    #status.ok { color: var(--ok); }
+    #status.err { color: #ff5f57; }
+    code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Режим «инсталляции выключены»</h1>
+    <p class="lead">
+      Когда переключатель включён, киоск показывает специальный экран (standby) вместо интерактива.
+      Киоски проверяют флаг каждые 10 секунд: <code>GET /api/kiosk-install-mode/{activity}</code>.
+    </p>
+
+    <div class="panel">
+      <label for="apiKey">API ключ (UPLOAD_API_KEY)</label>
+      <input id="apiKey" type="password" autocomplete="off" placeholder="Ключ для сохранения" />
+    </div>
+
+    <div class="panel" id="activities"></div>
+
+    <button type="button" id="saveBtn">Сохранить</button>
+    <p id="status"></p>
+  </main>
+  <script>
+    const activitiesEl = document.getElementById("activities");
+    const saveBtn = document.getElementById("saveBtn");
+    const statusEl = document.getElementById("status");
+    const apiKeyEl = document.getElementById("apiKey");
+
+    const params = new URLSearchParams(location.search);
+    if (params.get("key")) {
+      apiKeyEl.value = params.get("key");
+    }
+
+    let state = { activities: {} };
+
+    function setStatus(text, kind) {
+      statusEl.textContent = text;
+      statusEl.className = kind || "";
+    }
+
+    function render() {
+      activitiesEl.innerHTML = "";
+      for (const [id, label] of Object.entries(state.labels || {})) {
+        const on = Boolean(state.activities[id]);
+        const row = document.createElement("div");
+        row.className = "row";
+        row.innerHTML = `
+          <div>
+            <div class="name">${label}</div>
+            <div class="id">${id}</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" data-id="${id}" ${on ? "checked" : ""} />
+            инсталляции выключены
+          </label>
+        `;
+        activitiesEl.appendChild(row);
+      }
+    }
+
+    async function load() {
+      setStatus("Загрузка…");
+      const res = await fetch("/api/kiosk-install-mode", { cache: "no-store" });
+      if (!res.ok) throw new Error("load failed");
+      const data = await res.json();
+      state = {
+        activities: data.activities || {},
+        labels: data.labels || {},
+        updated_at: data.updated_at,
+      };
+      render();
+      setStatus(`Обновлено: ${data.updated_at || "—"}`, "ok");
+    }
+
+    saveBtn.addEventListener("click", async () => {
+      const key = apiKeyEl.value.trim();
+      if (!key) {
+        setStatus("Введите API ключ", "err");
+        return;
+      }
+      const activities = {};
+      activitiesEl.querySelectorAll("input[type=checkbox][data-id]").forEach((el) => {
+        activities[el.dataset.id] = el.checked;
+      });
+      saveBtn.disabled = true;
+      setStatus("Сохранение…");
+      try {
+        const res = await fetch("/api/kiosk-install-mode", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${key}`,
+          },
+          body: JSON.stringify({ activities }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        state.activities = data.activities;
+        state.updated_at = data.updated_at;
+        render();
+        setStatus("Сохранено", "ok");
+      } catch (e) {
+        setStatus(`Ошибка: ${e.message}`, "err");
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+
+    load().catch((e) => setStatus(`Ошибка загрузки: ${e.message}`, "err"));
+  </script>
+</body>
+</html>

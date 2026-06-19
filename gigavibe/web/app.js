@@ -1,5 +1,6 @@
 import { createSmileWatcher } from "./smile-capture.js";
 import { createFacePresenceWatcher } from "./face-presence.js";
+import { initKioskInstallGate } from "./kiosk-install-mode.js";
 import {
   initCaptureOverlays,
   relayoutCaptureOverlays,
@@ -975,6 +976,13 @@ function devPreviewResult() {
 }
 
 (async () => {
+  const installGate = await initKioskInstallGate({
+    activityId: "gigavibe",
+    standbyEl: document.getElementById("kiosk-install-standby"),
+    mainEl: shell,
+  });
+  if (installGate.installOff) return;
+
   bindCaptureLayout();
   await initCaptureOverlays({
     back: captureOverlayBack,

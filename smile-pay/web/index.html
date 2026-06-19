@@ -7,9 +7,16 @@
   <title>Smile Pay — оплата улыбкой</title>
   <link rel="stylesheet" href="/static/css/fonts.css?v=20260612-qr-sticker-fill-2" />
   <link rel="stylesheet" href="/static/css/style.css?v=20260613-detect-zoom-app-y" />
+  <link rel="stylesheet" href="/static/css/kiosk-install-standby.css" />
 </head>
 <body>
-  <main class="shell" id="shell">
+  <div id="kiosk-install-standby" class="kiosk-install-standby hidden" hidden aria-live="polite">
+    <div class="kiosk-install-standby__inner">
+      <h1 class="kiosk-install-standby__title">Smile Pay скоро откроется</h1>
+      <p class="kiosk-install-standby__text">Специальный экран из Figma будет здесь.</p>
+    </div>
+  </div>
+  <main class="shell" id="shell" data-kiosk-main>
     <div id="camera-slot" class="camera-slot">
       <div class="camera-slot__view">
         <div class="camera-slot__placeholder" aria-hidden="true"></div>

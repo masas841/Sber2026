@@ -7,6 +7,7 @@ import {
 import { loadCopyLines } from "./copy-lines.js";
 import { createSmileWatcher } from "./smile-capture.js?v=20260614-offline-mp";
 import { createFacePresenceWatcher } from "./face-presence.js?v=20260614-offline-mp";
+import { initKioskInstallGate } from "./kiosk-install-mode.js";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
@@ -303,6 +304,13 @@ function applyStagePreview(id) {
 }
 
 async function init() {
+  const installGate = await initKioskInstallGate({
+    activityId: "smile-pay",
+    standbyEl: document.getElementById("kiosk-install-standby"),
+    mainEl: document.getElementById("shell"),
+  });
+  if (installGate.installOff) return;
+
   const copy = await loadCopyLines();
   stage.applyCopy(copy);
 
