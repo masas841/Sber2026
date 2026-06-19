@@ -156,6 +156,11 @@
       "size": 7454
     },
     {
+      "path": "app/install_routes.py",
+      "sha256": "8eccf1363b551f4fb972ca8033561a2914f28de0288fee11f5254754b50318c3",
+      "size": 2822
+    },
+    {
       "path": "app/log_uploader.py",
       "sha256": "87c6dadac377c0cbb8fa4a6f3f1e9d5e268e0fa68800f0e698966d17c0336fb4",
       "size": 5909
@@ -167,8 +172,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "ea7ffbe0659fa95743fbfa10e88fbf6f442b6e16117b6ae01fb2424cc894c44f",
-      "size": 25557
+      "sha256": "f4c68fe0f89f74bf10cf17aaeb942c49bf9b632ff69baae3135b83bbf4d37e2d",
+      "size": 25660
     },
     {
       "path": "app/nanobanana_client.py",
@@ -507,8 +512,8 @@
     },
     {
       "path": "install/README-INSTALL.md",
-      "sha256": "ae6c0321d19f12ec0c56fcc26c025278185919f4e394ffbbab35f8a9191f98b0",
-      "size": 3936
+      "sha256": "30cb5ee8bf2bfedc4e17d07eecc5580de875757ef553ce850b32d414a7464eb7",
+      "size": 4309
     },
     {
       "path": "install/Resolve-Python.ps1",
@@ -687,8 +692,8 @@
     },
     {
       "path": "scripts/build_install_package.ps1",
-      "sha256": "51370b96f23de09ba17338aed6fe7a25842900d58ba20e47dbbaf34f3c49dcd2",
-      "size": 4116
+      "sha256": "ec6204942ee086b1fd5ad5366da0d6a55ed0198a9fdc812293490b751d4422f1",
+      "size": 4271
     },
     {
       "path": "scripts/build_update_manifest.py",
@@ -937,8 +942,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "c297f7cce3f5af6c17499a88a8bee7a82aad8d7057b98b710792f104f3c658fc",
-      "size": 30910
+      "sha256": "ffe9baa73776e5e9b57baff5d083a4d1af94d28ef214447378525f05c3348b5a",
+      "size": 31182
     },
     {
       "path": "web/assets/figma/giga-full.svg",
@@ -1371,6 +1376,11 @@
       "size": 1809184
     },
     {
+      "path": "web/assets/figma/standby/install-off-57-436.png",
+      "sha256": "f537c9f002ddb548cc3aa98c7fa6828f5e68db93303e637e6d534e14b8c7046f",
+      "size": 1369137
+    },
+    {
       "path": "web/assets/figma/ui/front-flower-left.png",
       "sha256": "00d160cd40f548e383f8cc05d43a32e4090df9b2df598b2a370435fd78e2e9b2",
       "size": 1176053
@@ -1492,8 +1502,18 @@
     },
     {
       "path": "web/index.html",
-      "sha256": "f39a121117ae484a8e58aa42c92289d831ff9719d91a59550fb117f3e561f62c",
-      "size": 4832
+      "sha256": "268b9af9140551949171f68a117449a42d7cfa186766243f0355ad5e3b31f07b",
+      "size": 5727
+    },
+    {
+      "path": "web/kiosk-install-mode.js",
+      "sha256": "52e266b2e7d813a72a09cf2b16995ca6e090bab1bd7ec200c4bdead2ee89078e",
+      "size": 2548
+    },
+    {
+      "path": "web/kiosk-install-standby.css",
+      "sha256": "499b0a0945e91bc50dacb722d5b5a652dfa65d4e2f833ca1762bd13eba99c921",
+      "size": 1155
     },
     {
       "path": "web/overlay-sprites.js",

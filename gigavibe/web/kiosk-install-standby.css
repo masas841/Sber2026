@@ -1,38 +1,53 @@
-/* Placeholder standby — заменить ассетами из Figma для каждой активации */
+/* Standby Gigavibe — Figma node 57:436 via figma-implement-design workflow. */
 .kiosk-install-standby {
   position: fixed;
   inset: 0;
   z-index: 100000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(160deg, #0d8523 0%, #21a038 45%, #3fd05a 100%);
-  color: #fff;
+  display: block;
+  overflow: hidden;
+  background: #dffff2;
   font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif;
-  text-align: center;
-  padding: 2rem;
 }
 
 .kiosk-install-standby.hidden {
   display: none !important;
 }
 
-.kiosk-install-standby__inner {
-  max-width: 28rem;
+.kiosk-install-standby__stage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--kiosk-w, 1008px);
+  height: var(--kiosk-h, 672px);
+  transform: scale(var(--kiosk-scale, 1));
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.kiosk-install-standby__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.kiosk-install-standby__copy {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .kiosk-install-standby__title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1.15;
+  margin: 0;
 }
 
 .kiosk-install-standby__text {
   margin: 0;
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
-  line-height: 1.45;
-  opacity: 0.92;
 }
 
 .kiosk-install-off [data-kiosk-main],
