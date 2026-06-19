@@ -81,6 +81,20 @@ function Read-JsonFile {
     return Get-Content -Path $Path -Raw -Encoding UTF8 | ConvertFrom-Json
 }
 
+function ConvertTo-GigaCdnUrl {
+    param([string]$Uri)
+
+    $prefix = "https://raw.githubusercontent.com/masas841/Sber2026/"
+    if (-not $Uri.StartsWith($prefix)) { return "" }
+    $tail = $Uri.Substring($prefix.Length)
+    $slash = $tail.IndexOf("/")
+    if ($slash -lt 1) { return "" }
+    $ref = $tail.Substring(0, $slash)
+    $path = $tail.Substring($slash + 1)
+    if (-not $path) { return "" }
+    return "https://cdn.jsdelivr.net/gh/masas841/Sber2026@$ref/$path"
+}
+
 function Invoke-GigaDownloadFile {
     param(
         [Parameter(Mandatory = $true)]
@@ -92,47 +106,59 @@ function Invoke-GigaDownloadFile {
     )
 
     $lastError = $null
-    for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
-        try {
-            if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
-            Invoke-WebRequest -Uri $Uri -OutFile $OutFile -UseBasicParsing -Headers $Headers -TimeoutSec 120
-            if ((Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
-                return
-            }
-            throw "Downloaded empty file"
-        } catch {
-            $lastError = $_
-            if ($attempt -lt $Attempts) {
-                $delay = [Math]::Min(10, 2 * $attempt)
-                Write-Host "[GIGAvibe] WARN: download failed ($attempt/$Attempts), retry in ${delay}s: $Uri" -ForegroundColor Yellow
-                Write-Host "[GIGAvibe] WARN: $($_.Exception.Message)" -ForegroundColor DarkYellow
-                Start-Sleep -Seconds $delay
-            }
-        }
+    $downloadUris = @($Uri)
+    $cdnUri = ConvertTo-GigaCdnUrl -Uri $Uri
+    if ($cdnUri -and $cdnUri -ne $Uri) {
+        $downloadUris += $cdnUri
     }
 
-    $curl = Get-Command curl.exe -ErrorAction SilentlyContinue
-    if ($curl) {
-        Write-Host "[GIGAvibe] WARN: falling back to curl.exe: $Uri" -ForegroundColor Yellow
-        if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
-        $curlArgs = @(
-            "-L",
-            "--fail",
-            "--retry", "5",
-            "--retry-delay", "2",
-            "--connect-timeout", "20",
-            "--max-time", "180",
-            "-A", "GIGAvibe-Updater",
-            "-o", $OutFile
-        )
-        foreach ($header in $Headers.GetEnumerator()) {
-            if ($header.Key -eq "User-Agent") { continue }
-            $curlArgs += @("-H", "$($header.Key): $($header.Value)")
+    foreach ($downloadUri in $downloadUris) {
+        if ($downloadUri -ne $Uri) {
+            Write-Host "[GIGAvibe] WARN: trying CDN fallback: $downloadUri" -ForegroundColor Yellow
         }
-        $curlArgs += $Uri
-        & $curl.Source @curlArgs
-        if ($LASTEXITCODE -eq 0 -and (Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
-            return
+
+        for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+            try {
+                if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
+                Invoke-WebRequest -Uri $downloadUri -OutFile $OutFile -UseBasicParsing -Headers $Headers -TimeoutSec 120
+                if ((Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
+                    return
+                }
+                throw "Downloaded empty file"
+            } catch {
+                $lastError = $_
+                if ($attempt -lt $Attempts) {
+                    $delay = [Math]::Min(10, 2 * $attempt)
+                    Write-Host "[GIGAvibe] WARN: download failed ($attempt/$Attempts), retry in ${delay}s: $downloadUri" -ForegroundColor Yellow
+                    Write-Host "[GIGAvibe] WARN: $($_.Exception.Message)" -ForegroundColor DarkYellow
+                    Start-Sleep -Seconds $delay
+                }
+            }
+        }
+
+        $curl = Get-Command curl.exe -ErrorAction SilentlyContinue
+        if ($curl) {
+            Write-Host "[GIGAvibe] WARN: falling back to curl.exe: $downloadUri" -ForegroundColor Yellow
+            if (Test-Path $OutFile) { Remove-Item $OutFile -Force }
+            $curlArgs = @(
+                "-L",
+                "--fail",
+                "--retry", "5",
+                "--retry-delay", "2",
+                "--connect-timeout", "20",
+                "--max-time", "180",
+                "-A", "GIGAvibe-Updater",
+                "-o", $OutFile
+            )
+            foreach ($header in $Headers.GetEnumerator()) {
+                if ($header.Key -eq "User-Agent") { continue }
+                $curlArgs += @("-H", "$($header.Key): $($header.Value)")
+            }
+            $curlArgs += $downloadUri
+            & $curl.Source @curlArgs
+            if ($LASTEXITCODE -eq 0 -and (Test-Path $OutFile) -and ((Get-Item $OutFile).Length -gt 0)) {
+                return
+            }
         }
     }
 
