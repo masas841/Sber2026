@@ -74,7 +74,7 @@ class ConnectionHub:
     async def handle(self, role: Role, message: dict[str, Any]) -> None:
         message_type = str(message.get("type", ""))
         if role == "control":
-            await self._handle_control(message_type)
+            await self._handle_control(message_type, dict(message.get("payload") or {}))
             return
 
         if message_type == "state":
@@ -122,7 +122,7 @@ class ConnectionHub:
         for websocket, role in stale:
             self._bucket(role).discard(websocket)
 
-    async def _handle_control(self, message_type: str) -> None:
+    async def _handle_control(self, message_type: str, payload: dict[str, Any]) -> None:
         if message_type == "start":
             next_round = self.state.get("round", 0) + 1
             self.state = {
@@ -138,7 +138,11 @@ class ConnectionHub:
             return
 
         if message_type == "insure":
-            await self.broadcast("command", {"command": "insure"}, target="screen")
+            await self.broadcast("command", {"command": "insure", "position": payload}, target="screen")
+            return
+
+        if message_type == "aim":
+            await self.broadcast("command", {"command": "aim", "position": payload}, target="screen")
             return
 
         if message_type == "reset":

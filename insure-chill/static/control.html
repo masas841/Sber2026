@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Пульт: Застрахуй свой чилл</title>
-  <link rel="stylesheet" href="/static/css/control.css?v=figma-control-frames" />
+  <link rel="stylesheet" href="/static/css/control.css?v=rating-stars-1" />
 </head>
 <body>
   <main id="control" class="control" data-phase="idle">
@@ -43,30 +43,51 @@
     </section>
 
     <section class="control-screen control-screen--game" data-screen="playing" aria-label="Игра" hidden>
-      <div class="scene-bg" aria-hidden="true">
-        <img class="blob blob--a" src="/static/assets/figma/control/raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg" alt="" />
-        <img class="blob blob--b" src="/static/assets/figma/control/raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg" alt="" />
-        <img class="fur fur--game-left" src="/static/assets/figma/control/raw/00b04727579141737620deeacb25fa19e92ae1f5.png" alt="" />
-        <img class="fur fur--game-right" src="/static/assets/figma/control/raw/180918f8da7d62fb8a78a79158770294078c06fe.png" alt="" />
-      </div>
-      <div class="game-card">
+      <div id="aimSurface" class="aim-surface" role="button" tabindex="0" aria-label="Ведите пальцем для наведения, повторный тап в той же точке для хита">
+        <div class="scene-bg" aria-hidden="true">
+          <img class="blob blob--aim-left" src="/static/assets/figma/control/raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg" alt="" />
+          <img class="blob blob--aim-right" src="/static/assets/figma/control/raw/63ed6a4ccea3f66b2fb6e7da8ee2acf338557a82.svg" alt="" />
+          <img class="blob blob--aim-bottom" src="/static/assets/figma/control/raw/cafd6de13e6d17c1a1231c05ef24640d2882b99c.svg" alt="" />
+          <img class="fur fur--game-left" src="/static/assets/figma/control/raw/00b04727579141737620deeacb25fa19e92ae1f5.png" alt="" />
+          <img class="fur fur--game-right" src="/static/assets/figma/control/raw/180918f8da7d62fb8a78a79158770294078c06fe.png" alt="" />
+        </div>
+        <div class="game-brand-panel" aria-hidden="true"></div>
         <img class="logo logo--game" src="/static/assets/figma/control/raw/7b14360a994d599902eb81b23613e97fc2d44b8b.svg" alt="СберСтрахование" />
         <h2 class="game-title">защити свой вайб</h2>
-      </div>
-      <img class="ribbon ribbon--game" src="/static/assets/figma/control/raw/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg" alt="" />
-      <img class="star star--game-a" src="/static/assets/figma/control/raw/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg" alt="" />
-      <img class="star star--game-b" src="/static/assets/figma/control/raw/c7c4fcb5ff38869ca35da29f0306e5e722d206ea.svg" alt="" />
-      <div class="stats" aria-live="polite">
-        <div class="stat-card">
-          <span>ваш счёт:</span>
-          <strong id="score">000</strong>
+        <img class="ribbon ribbon--game" src="/static/assets/figma/control/raw/b18f33e9853ec47a872957ecaf2ca74df67b398b.svg" alt="" />
+        <img class="star star--game-a" src="/static/assets/figma/control/raw/75030c4d25dc9f4bbf5edeb5fa78c37b0d43acfb.svg" alt="" />
+        <img class="star star--game-b" src="/static/assets/figma/control/raw/e70745f3b1b77cd8d4560ba5b5b5abfb037f00f4.svg" alt="" />
+        <svg class="rating-stars" viewBox="0 0 236 68" fill="none" aria-hidden="true">
+          <path class="rating-stars__path" data-star="2" d="M198.188 5.81543C199.388 2.12315 204.612 2.12316 205.812 5.81543L210.883 21.4229C210.93 21.5674 211.065 21.6649 211.217 21.665H227.628C231.51 21.6654 233.124 26.6331 229.983 28.915L216.707 38.5615C216.584 38.651 216.532 38.8093 216.579 38.9541L221.65 54.5615C222.85 58.2538 218.624 61.3238 215.483 59.042L202.207 49.3965C202.084 49.3069 201.916 49.3069 201.793 49.3965L188.517 59.042C185.376 61.3238 181.15 58.2538 182.35 54.5615L187.421 38.9541C187.468 38.8093 187.416 38.651 187.293 38.5615L174.017 28.915C170.876 26.6331 172.49 21.6654 176.372 21.665H192.783C192.935 21.6649 193.07 21.5674 193.117 21.4229L198.188 5.81543Z" fill="url(#control-rating-star-right)" stroke="white" stroke-width="3.65586" />
+          <path class="rating-stars__path" data-star="1" d="M114.188 5.81543C115.388 2.12315 120.612 2.12316 121.812 5.81543L126.883 21.4229C126.93 21.5674 127.065 21.6649 127.217 21.665H143.628C147.51 21.6654 149.124 26.6331 145.983 28.915L132.707 38.5615C132.584 38.651 132.532 38.8093 132.579 38.9541L137.65 54.5615C138.85 58.2538 134.624 61.3238 131.483 59.042L118.207 49.3965C118.084 49.3069 117.916 49.3069 117.793 49.3965L104.517 59.042C101.376 61.3238 97.1499 58.2538 98.3496 54.5615L103.421 38.9541C103.468 38.8093 103.416 38.651 103.293 38.5615L90.0166 28.915C86.8763 26.6331 88.4902 21.6654 92.3721 21.665H108.783C108.935 21.6649 109.07 21.5674 109.117 21.4229L114.188 5.81543Z" fill="url(#control-rating-star-middle)" stroke="white" stroke-width="3.65586" />
+          <path class="rating-stars__path" data-star="0" d="M30.1885 5.81543C31.3882 2.12315 36.6118 2.12316 37.8115 5.81543L42.8828 21.4229C42.93 21.5674 43.0647 21.6649 43.2168 21.665H59.6279C63.5098 21.6654 65.1237 26.6331 61.9834 28.915L48.707 38.5615C48.5839 38.651 48.5322 38.8093 48.5791 38.9541L53.6504 54.5615C54.8501 58.2538 50.6242 61.3238 47.4834 59.042L34.207 49.3965C34.0837 49.3069 33.9163 49.3069 33.793 49.3965L20.5166 59.042C17.3758 61.3238 13.1499 58.2538 14.3496 54.5615L19.4209 38.9541C19.4678 38.8093 19.4161 38.651 19.293 38.5615L6.0166 28.915C2.87633 26.6331 4.49024 21.6654 8.37207 21.665H24.7832C24.9353 21.6649 25.07 21.5674 25.1172 21.4229L30.1885 5.81543Z" fill="url(#control-rating-star-left)" stroke="white" stroke-width="3.65586" />
+          <defs>
+            <linearGradient id="control-rating-star-right" x1="202" y1="0" x2="202" y2="68" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#57FF43" />
+              <stop offset="1" stop-color="#00ADEE" />
+            </linearGradient>
+            <linearGradient id="control-rating-star-middle" x1="118" y1="0" x2="118" y2="68" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#57FF43" />
+              <stop offset="1" stop-color="#00ADEE" />
+            </linearGradient>
+            <linearGradient id="control-rating-star-left" x1="34" y1="0" x2="34" y2="68" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#57FF43" />
+              <stop offset="1" stop-color="#00ADEE" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="stats" aria-live="polite">
+          <div class="stat-card">
+            <span>ваш счёт:</span>
+            <strong id="score">000</strong>
+          </div>
+          <div class="stat-card">
+            <span>таймер:</span>
+            <strong id="timer">59 с</strong>
+          </div>
         </div>
-        <div class="stat-card">
-          <span>таймер:</span>
-          <strong id="timer">59 с</strong>
-        </div>
+        <img id="aimCursor" class="aim-cursor" src="/static/assets/figma/control/raw/control-aim-cursor.svg" alt="" aria-hidden="true" />
       </div>
-      <button id="insureButton" class="control-button control-button--insure" type="button" disabled>застраховать</button>
     </section>
 
     <section class="control-screen control-screen--result" data-screen="result" aria-label="После игры" hidden>
@@ -89,6 +110,6 @@
     <button id="resetButton" class="service-reset" type="button">сброс</button>
   </main>
 
-  <script type="module" src="/static/js/control.js?v=result-22"></script>
+  <script type="module" src="/static/js/control.js?v=rating-stars-1"></script>
 </body>
 </html>

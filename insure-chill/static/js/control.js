@@ -3,6 +3,11 @@ const CONTROL_HEIGHT = 744;
 const DEFAULT_GAME_DURATION = 59;
 const RESULT_COUNTDOWN_SECONDS = 22;
 const INITIAL_COUNTER_FLASH_GUARD_MS = 700;
+const RATING_STAR_THRESHOLDS = [5, 8, 14];
+const AIM_SEND_INTERVAL_MS = 33;
+const AIM_HIT_DISTANCE_PX = 30;
+const AIM_INITIAL_X = 352;
+const AIM_INITIAL_Y = 413;
 
 const control = document.querySelector("#control");
 const connection = document.querySelector("#connection");
@@ -11,8 +16,10 @@ const scoreEl = document.querySelector("#score");
 const timerEl = document.querySelector("#timer");
 const resultCountdownEl = document.querySelector("#resultCountdown");
 const startButton = document.querySelector("#startButton");
-const insureButton = document.querySelector("#insureButton");
 const resetButton = document.querySelector("#resetButton");
+const aimSurface = document.querySelector("#aimSurface");
+const aimCursor = document.querySelector("#aimCursor");
+const ratingStars = Array.from(document.querySelectorAll(".rating-stars__path"));
 
 const state = {
   phase: "idle",
@@ -20,6 +27,12 @@ const state = {
   remaining: DEFAULT_GAME_DURATION,
   duration: DEFAULT_GAME_DURATION,
   resultCountdown: RESULT_COUNTDOWN_SECONDS,
+  aim: {
+    x: AIM_INITIAL_X,
+    y: AIM_INITIAL_Y,
+    nx: AIM_INITIAL_X / CONTROL_WIDTH,
+    ny: AIM_INITIAL_Y / CONTROL_HEIGHT,
+  },
 };
 
 let socket = null;
@@ -27,9 +40,17 @@ let lastPhase = "idle";
 let lastInsureAt = 0;
 let resultCountdownTimer = null;
 let resultResetSent = false;
+let activePointerId = null;
+let lastAimSentAt = 0;
+let lastTapPosition = null;
+let hitAnimationTimerId = 0;
 
 function isNumber(value) {
   return Number.isFinite(Number(value));
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
 }
 
 function formatScore(score) {
@@ -68,6 +89,70 @@ function syncScale() {
     window.innerHeight / CONTROL_HEIGHT
   );
   control.style.setProperty("--control-scale", String(scale));
+}
+
+function renderAimCursor() {
+  aimCursor.style.setProperty("--aim-x", `${state.aim.x}px`);
+  aimCursor.style.setProperty("--aim-y", `${state.aim.y}px`);
+}
+
+function normalizeAimPosition(x, y) {
+  const clampedX = clamp(x, 0, CONTROL_WIDTH);
+  const clampedY = clamp(y, 0, CONTROL_HEIGHT);
+  return {
+    x: clampedX,
+    y: clampedY,
+    nx: clampedX / CONTROL_WIDTH,
+    ny: clampedY / CONTROL_HEIGHT,
+  };
+}
+
+function getAimPositionFromEvent(event) {
+  const rect = aimSurface.getBoundingClientRect();
+  const scaleX = CONTROL_WIDTH / rect.width;
+  const scaleY = CONTROL_HEIGHT / rect.height;
+  return normalizeAimPosition(
+    (event.clientX - rect.left) * scaleX,
+    (event.clientY - rect.top) * scaleY
+  );
+}
+
+function distanceBetween(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+function sendAim(position, force = false) {
+  if (state.phase !== "playing") {
+    return;
+  }
+  const now = performance.now();
+  if (!force && now - lastAimSentAt < AIM_SEND_INTERVAL_MS) {
+    return;
+  }
+  lastAimSentAt = now;
+  send("aim", { x: position.nx, y: position.ny });
+}
+
+function setAimPosition(position, force = false) {
+  state.aim = position;
+  renderAimCursor();
+  sendAim(position, force);
+}
+
+function pulseAimCursor() {
+  window.clearTimeout(hitAnimationTimerId);
+  aimCursor.classList.add("is-hit");
+  hitAnimationTimerId = window.setTimeout(() => {
+    aimCursor.classList.remove("is-hit");
+  }, 160);
+}
+
+function sendHit(position) {
+  lastInsureAt = performance.now();
+  setAimPosition(position, true);
+  pulseAimCursor();
+  navigator.vibrate?.(25);
+  send("insure", { x: position.nx, y: position.ny });
 }
 
 function renderResultCountdown() {
@@ -129,6 +214,19 @@ function renderGameCounters(phase) {
 
   scoreEl.textContent = formatScore(nextScore);
   timerEl.textContent = formatTimer(nextRemaining);
+  renderRatingStars(nextScore);
+}
+
+function getRatingStarCount(score) {
+  return RATING_STAR_THRESHOLDS.filter((threshold) => score >= threshold).length;
+}
+
+function renderRatingStars(score) {
+  const litCount = getRatingStarCount(Number(score) || 0);
+  for (const star of ratingStars) {
+    const index = Number(star.dataset.star);
+    star.classList.toggle("is-lit", index < litCount);
+  }
 }
 
 function updateUi() {
@@ -143,7 +241,14 @@ function updateUi() {
   renderGameCounters(phase);
   syncResultCountdown(phase);
   startButton.disabled = phase === "playing";
-  insureButton.disabled = phase !== "playing";
+  aimSurface.setAttribute("aria-disabled", String(phase !== "playing"));
+  if (phase === "playing" && lastPhase !== "playing") {
+    sendAim(state.aim, true);
+  }
+  if (phase !== "playing" && lastPhase === "playing") {
+    activePointerId = null;
+    lastTapPosition = null;
+  }
   lastPhase = phase;
 }
 
@@ -195,17 +300,64 @@ function connectControl() {
   });
 }
 
-function send(type) {
+function send(type, payload = null) {
   if (socket?.readyState === WebSocket.OPEN) {
-    socket.send(JSON.stringify({ type }));
+    socket.send(JSON.stringify(payload ? { type, payload } : { type }));
   }
 }
 
 startButton.addEventListener("click", () => send("start"));
-insureButton.addEventListener("pointerdown", (event) => {
+aimSurface.addEventListener("pointerdown", (event) => {
+  if (state.phase !== "playing") {
+    return;
+  }
   event.preventDefault();
-  lastInsureAt = performance.now();
-  send("insure");
+  activePointerId = event.pointerId;
+  try {
+    aimSurface.setPointerCapture?.(event.pointerId);
+  } catch {
+    // Synthetic pointer events in browser checks may not be capturable.
+  }
+  const position = getAimPositionFromEvent(event);
+  const shouldHit =
+    lastTapPosition && distanceBetween(lastTapPosition, position) <= AIM_HIT_DISTANCE_PX;
+
+  if (shouldHit) {
+    sendHit(position);
+  } else {
+    setAimPosition(position, true);
+  }
+});
+aimSurface.addEventListener("pointermove", (event) => {
+  if (state.phase !== "playing" || activePointerId !== event.pointerId) {
+    return;
+  }
+  event.preventDefault();
+  setAimPosition(getAimPositionFromEvent(event));
+});
+aimSurface.addEventListener("pointerup", (event) => {
+  if (activePointerId !== event.pointerId) {
+    return;
+  }
+  event.preventDefault();
+  const position = getAimPositionFromEvent(event);
+  setAimPosition(position, true);
+  lastTapPosition = position;
+  activePointerId = null;
+});
+aimSurface.addEventListener("pointercancel", (event) => {
+  if (activePointerId === event.pointerId) {
+    activePointerId = null;
+  }
+});
+aimSurface.addEventListener("keydown", (event) => {
+  if (state.phase !== "playing") {
+    return;
+  }
+  if (event.key === "Enter" || event.code === "Space") {
+    event.preventDefault();
+    sendHit(state.aim);
+  }
 });
 resetButton.addEventListener("click", () => {
   resultResetSent = true;
@@ -215,5 +367,6 @@ window.addEventListener("resize", syncScale);
 
 syncScale();
 setConnection(false);
+renderAimCursor();
 updateUi();
 connectControl();

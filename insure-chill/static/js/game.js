@@ -380,6 +380,10 @@ function formatScore(score) {
   return String(score).padStart(3, "0");
 }
 
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
 function createThreat(layout) {
   const element = document.createElement("div");
   element.className = `threat ${layout.className}`;
@@ -431,7 +435,10 @@ function connectScreen() {
     const command = message.payload?.command;
     if (command === "start") {
       startGame();
+    } else if (command === "aim") {
+      moveProtectorToControlPosition(message.payload?.position);
     } else if (command === "insure") {
+      moveProtectorToControlPosition(message.payload?.position, true);
       attemptInsure();
     } else if (command === "reset") {
       setIdle();
@@ -646,6 +653,26 @@ function updateThreat(threat, now, dt) {
   }
 }
 
+function moveProtectorToControlPosition(position, immediate = false) {
+  const normalizedX = Number(position?.x);
+  const normalizedY = Number(position?.y);
+  if (!Number.isFinite(normalizedX) || !Number.isFinite(normalizedY)) {
+    return;
+  }
+
+  const p = game.protector;
+  p.targetX = clamp(normalizedX, 0, 1) * STAGE - p.w / 2;
+  p.targetY = clamp(normalizedY, 0, 1) * STAGE - p.h / 2;
+  p.targetX = clamp(p.targetX, 0, STAGE - p.w);
+  p.targetY = clamp(p.targetY, 0, STAGE - p.h);
+
+  if (immediate) {
+    p.x = p.targetX;
+    p.y = p.targetY;
+    protectorEl.style.transform = `translate(${p.x}px, ${p.y}px)`;
+  }
+}
+
 function chooseProtectorTarget(now) {
   if (now < game.protector.nextTargetAt) {
     return;
@@ -657,9 +684,8 @@ function chooseProtectorTarget(now) {
 }
 
 function updateProtector(now, dt) {
-  chooseProtectorTarget(now);
   const p = game.protector;
-  const stiffness = Math.min(1, dt * 2.8);
+  const stiffness = Math.min(1, dt * 12);
   const jitterX = Math.sin(now / 330) * 0.45;
   const jitterY = Math.cos(now / 410) * 0.45;
   p.x += (p.targetX - p.x) * stiffness + jitterX;
