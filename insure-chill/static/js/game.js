@@ -661,10 +661,8 @@ function chooseProtectorTarget(now) {
 function updateProtector(now, dt) {
   const p = game.protector;
   const stiffness = Math.min(1, dt * 12);
-  const jitterX = Math.sin(now / 330) * 0.45;
-  const jitterY = Math.cos(now / 410) * 0.45;
-  p.x += (p.targetX - p.x) * stiffness + jitterX;
-  p.y += (p.targetY - p.y) * stiffness + jitterY;
+  p.x += (p.targetX - p.x) * stiffness;
+  p.y += (p.targetY - p.y) * stiffness;
   p.x = Math.max(0, Math.min(STAGE - p.w, p.x));
   p.y = Math.max(0, Math.min(STAGE - p.h, p.y));
   protectorEl.style.transform = `translate(${p.x}px, ${p.y}px)`;

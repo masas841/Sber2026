@@ -43,6 +43,7 @@ let resultResetSent = false;
 let activePointerId = null;
 let lastAimSentAt = 0;
 let lastTapPosition = null;
+let hitPointerId = null;
 let hitAnimationTimerId = 0;
 
 function isNumber(value) {
@@ -248,6 +249,7 @@ function updateUi() {
   if (phase !== "playing" && lastPhase === "playing") {
     activePointerId = null;
     lastTapPosition = null;
+    hitPointerId = null;
   }
   lastPhase = phase;
 }
@@ -323,8 +325,10 @@ aimSurface.addEventListener("pointerdown", (event) => {
     lastTapPosition && distanceBetween(lastTapPosition, position) <= AIM_HIT_DISTANCE_PX;
 
   if (shouldHit) {
-    sendHit(position);
+    hitPointerId = event.pointerId;
+    sendHit(lastTapPosition);
   } else {
+    hitPointerId = null;
     setAimPosition(position, true);
   }
 });
@@ -340,14 +344,20 @@ aimSurface.addEventListener("pointerup", (event) => {
     return;
   }
   event.preventDefault();
-  const position = getAimPositionFromEvent(event);
-  setAimPosition(position, true);
-  lastTapPosition = position;
+  if (hitPointerId === event.pointerId) {
+    hitPointerId = null;
+    activePointerId = null;
+    return;
+  }
+  lastTapPosition = state.aim;
   activePointerId = null;
 });
 aimSurface.addEventListener("pointercancel", (event) => {
   if (activePointerId === event.pointerId) {
     activePointerId = null;
+  }
+  if (hitPointerId === event.pointerId) {
+    hitPointerId = null;
   }
 });
 aimSurface.addEventListener("keydown", (event) => {
