@@ -67,6 +67,11 @@
     hudTimerCloud: "0747bba018661685d182a59d88588b54a787e0e0.svg",
     hudScoreDecorL: "ba47078de54d7143dc1bde2652234fe9ba7aa8c5.svg",
     hudScoreDecorR: "54085f72c9f34ea2479243b6fbd1a3260f02d2b2.svg",
+    hudScoreStarsLit: "hud-score-stars-lit.svg",
+    hudScoreStarEmptySide: "fe265d5fb2cf2a3bd5116ce6ded47220bc7ab7fc.svg",
+    hudScoreStarEmptyCenter: "61c22506e221233b1f28719d0e16d4a25431533d.svg",
+    hudScoreStarLitSide: "0eb84b37a8066f4cf4affba9834145a20520ae37.svg",
+    hudScoreStarLitCenter: "04fe5f03fde17a8ca1b74e99deeb398a69d3aa72.svg",
     /** Экраны результата — три лица копилки (assets/img) */
     resultPigMiss: "/static/assets/img/pig_failure.png",
     resultPigTop: "/static/assets/img/pig_middle.png",

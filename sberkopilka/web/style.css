@@ -249,6 +249,21 @@ body.kopilka-game-active .figma-overlay__hint {
   }
 }
 
+@keyframes kop-score-star-ignite {
+  0% {
+    filter: drop-shadow(0 0 0 rgba(1, 215, 1, 0));
+    transform: scale(0.94);
+  }
+  48% {
+    filter: drop-shadow(0 0 16px rgba(87, 255, 67, 0.68));
+    transform: scale(1.06);
+  }
+  100% {
+    filter: drop-shadow(0 3px 8px rgba(1, 173, 238, 0.22));
+    transform: scale(1);
+  }
+}
+
 .figma-game-hud-hearts {
   position: absolute;
   left: 50%;
@@ -328,6 +343,43 @@ body.kopilka-game-active .figma-overlay__hint {
   color: #122654;
   letter-spacing: -0.07em;
   line-height: 0.75;
+}
+
+.figma-game-hud-score-stars {
+  position: absolute;
+  left: 17.5%;
+  top: -8%;
+  z-index: 3;
+  width: 65.5%;
+  height: 28.45%;
+  pointer-events: none;
+  transform-origin: 50% 55%;
+  --kop-score-stars-fill: 0%;
+}
+
+.figma-game-hud-score-stars__img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(18, 38, 84, 0.16));
+  transform-origin: 50% 55%;
+  will-change: transform, filter;
+}
+
+.figma-game-hud-score-stars__img--empty {
+  opacity: 0.18;
+}
+
+.figma-game-hud-score-stars__img--lit {
+  clip-path: inset(0 calc(100% - var(--kop-score-stars-fill)) 0 0);
+  filter: drop-shadow(0 3px 8px rgba(1, 173, 238, 0.22));
+}
+
+.figma-game-hud-score-stars.is-igniting .figma-game-hud-score-stars__img--lit {
+  animation: kop-score-star-ignite 0.48s ease-out both;
 }
 
 .figma-game-hud-score-decor {

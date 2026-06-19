@@ -10,6 +10,7 @@
   const DESIGN = 672;
   const SCREENS_BASE = "/static/assets/figma/screens/";
   const HTML_BASE = "/static/figma-screens/";
+  const SCORE_STAR_THRESHOLDS = [500, 701, 1101];
 
   const DYNAMIC = {
     result_score: {
@@ -1219,6 +1220,49 @@
     return makeHudCloudImg("figma-game-hud-timer-cloud", "hudTimerCloud");
   }
 
+  function scoreStarCount(score) {
+    const n = Number(score) || 0;
+    return SCORE_STAR_THRESHOLDS.reduce((count, threshold) => (
+      n >= threshold ? count + 1 : count
+    ), 0);
+  }
+
+  function makeScoreStarsEl() {
+    const design = D();
+    const wrap = document.createElement("div");
+    wrap.className = "figma-game-hud-score-stars";
+
+    const empty = document.createElement("img");
+    empty.className = "figma-game-hud-score-stars__img figma-game-hud-score-stars__img--empty";
+    empty.alt = "";
+    empty.src = design?.url(design.shared.hudScoreStarsLit) || "";
+
+    const lit = document.createElement("img");
+    lit.className = "figma-game-hud-score-stars__img figma-game-hud-score-stars__img--lit";
+    lit.alt = "";
+    lit.src = design?.url(design.shared.hudScoreStarsLit) || "";
+
+    wrap.append(empty, lit);
+    return wrap;
+  }
+
+  function updateGameScoreStars(score, previousCount = 0) {
+    const stars = gameHudEls?.scoreStars;
+    if (!stars) return;
+    const litCount = scoreStarCount(score);
+    const fill = litCount === 0 ? 0 : litCount === 1 ? 34 : litCount === 2 ? 67 : 100;
+
+    stars.style.setProperty("--kop-score-stars-fill", `${fill}%`);
+    stars.dataset.starCount = String(litCount);
+
+    if (litCount > previousCount) {
+      stars.classList.remove("is-igniting");
+      void stars.offsetWidth;
+      stars.classList.add("is-igniting");
+      window.setTimeout(() => stars.classList.remove("is-igniting"), 520);
+    }
+  }
+
   function ensureGameHudChrome() {
     const design = D();
     const root = ensureGameHudRoot();
@@ -1273,6 +1317,8 @@
     score.className = "figma-game-hud-score-value";
     score.textContent = "000";
 
+    const scoreStars = makeScoreStarsEl();
+
     const scoreDecorL = document.createElement("img");
     scoreDecorL.className = "figma-game-hud-score-decor figma-game-hud-score-decor--l";
     scoreDecorL.alt = "";
@@ -1283,10 +1329,10 @@
     scoreDecorR.alt = "";
     scoreDecorR.src = design?.url(design.shared.hudScoreDecorR) || "";
 
-    scoreBlock.append(makeScoreCloudEl(), scoreDecorL, scoreDecorR, scoreLabel, score);
+    scoreBlock.append(makeScoreCloudEl(), scoreStars, scoreDecorL, scoreDecorR, scoreLabel, score);
 
     root.append(livesBlock, timeBlock, mode, scoreBlock);
-    gameHudEls = { livesBlock, heartsRow, timeBlock, time, mode, scoreEl: score };
+    gameHudEls = { livesBlock, heartsRow, timeBlock, time, mode, scoreEl: score, scoreStars };
     return gameHudEls;
   }
 
@@ -1338,9 +1384,11 @@
   }
 
   function updateGameScore(score) {
+    const previousStarCount = scoreStarCount(lastGameScore);
     lastGameScore = Number(score) || 0;
     const text = String(lastGameScore).padStart(3, "0");
     if (gameHudEls?.scoreEl) gameHudEls.scoreEl.textContent = text;
+    updateGameScoreStars(lastGameScore, previousStarCount);
   }
 
   function updateGameLives(lives) {
