@@ -735,7 +735,7 @@ button {
   object-fit: contain;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: left 90ms linear, top 90ms linear, transform 120ms ease;
+  transition: transform 120ms ease;
 }
 
 .aim-cursor.is-hit {

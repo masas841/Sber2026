@@ -326,7 +326,7 @@ aimSurface.addEventListener("pointerdown", (event) => {
 
   if (shouldHit) {
     hitPointerId = event.pointerId;
-    sendHit(lastTapPosition);
+    sendHit(position);
   } else {
     hitPointerId = null;
     setAimPosition(position, true);
