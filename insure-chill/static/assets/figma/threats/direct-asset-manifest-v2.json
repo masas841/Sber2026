@@ -1,0 +1,383 @@
+{
+  "threats": [
+    {
+      "id": "toe-menace",
+      "nodeId": "36:1911",
+      "file": "raw/toe-menace-01.png",
+      "url": "http://localhost:3845/assets/2d0eda5d923da2d8f70da9c747d3d14fcee4f987.png",
+      "bytes": 2765529,
+      "candidates": 1
+    },
+    {
+      "id": "fraud",
+      "nodeId": "36:1922",
+      "file": "raw/fraud-01.png",
+      "url": "http://localhost:3845/assets/2c0e597ef34e1e25f22bece7f07f9071453c26c7.png",
+      "bytes": 1699986,
+      "candidates": 1
+    },
+    {
+      "id": "soap-phone",
+      "nodeId": "36:1932",
+      "file": "raw/soap-phone-01.png",
+      "url": "http://localhost:3845/assets/50dd6d488abd268621b18460892b1285006a37a8.png",
+      "bytes": 3507348,
+      "candidates": 2
+    },
+    {
+      "id": "fluffy-acrobat",
+      "nodeId": "36:1883",
+      "file": "raw/fluffy-acrobat-01.png",
+      "url": "http://localhost:3845/assets/758b324c82f48052d9537c8f4058eacfe56327c7.png",
+      "bytes": 2792903,
+      "candidates": 1
+    },
+    {
+      "id": "flood",
+      "nodeId": "36:1890",
+      "file": "raw/flood-01.png",
+      "url": "http://localhost:3845/assets/9f7d921244f8a87720fb41610a93ffa0de6d9559.png",
+      "bytes": 2738781,
+      "candidates": 2
+    },
+    {
+      "id": "ghost-plane",
+      "nodeId": "36:2290",
+      "file": "raw/ghost-plane-01.png",
+      "url": "http://localhost:3845/assets/676832ff37ae9a32579913ae49e44a4a3340240a.png",
+      "bytes": 651529,
+      "candidates": 1
+    },
+    {
+      "id": "brick-gadget",
+      "nodeId": "36:2283",
+      "file": "raw/brick-gadget-01.png",
+      "url": "http://localhost:3845/assets/96055084c35cdc0742b50ff0234255b5c7655fe9.png",
+      "bytes": 2503103,
+      "candidates": 1
+    },
+    {
+      "id": "dog-vacuum",
+      "nodeId": "36:2296",
+      "file": "raw/dog-vacuum-01.png",
+      "url": "http://localhost:3845/assets/fe5244ca8453d790750767c06945dc2a0e62d36e.png",
+      "bytes": 1861613,
+      "candidates": 4
+    },
+    {
+      "id": "micro-hater",
+      "nodeId": "36:2271",
+      "file": "raw/micro-hater-01.png",
+      "url": "http://localhost:3845/assets/34a734bd52b929f7da6e261c6f5e9256c7a799a8.png",
+      "bytes": 805115,
+      "candidates": 2
+    },
+    {
+      "id": "slam-salto",
+      "nodeId": "36:2318",
+      "file": "raw/slam-salto-01.png",
+      "url": "http://localhost:3845/assets/ece71bb88e22fb32508ce08655a5b3c4cbe15acc.png",
+      "bytes": 546046,
+      "candidates": 2
+    },
+    {
+      "id": "lost-sneaker",
+      "nodeId": "36:2325",
+      "file": "raw/lost-sneaker-03.png",
+      "url": "http://localhost:3845/assets/276c015e559d2208d614c7325cd1cf7594c6343e.png",
+      "bytes": 1415283,
+      "candidates": 3
+    },
+    {
+      "id": "bumper-kiss",
+      "nodeId": "36:2336",
+      "file": "raw/bumper-kiss-01.png",
+      "url": "http://localhost:3845/assets/ca953d3d2dc1678bc15c5c7ebd4c8eaf0775373a.png",
+      "bytes": 1699918,
+      "candidates": 2
+    },
+    {
+      "id": "pigeon-picasso",
+      "nodeId": "36:2344",
+      "file": "raw/pigeon-picasso-03.png",
+      "url": "http://localhost:3845/assets/82587f095f53980163b001eefbedb36e952dc3e0.png",
+      "bytes": 1847102,
+      "candidates": 3
+    }
+  ],
+  "badges": [
+    {
+      "id": "badge-home",
+      "nodeId": "36:1946",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-home-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-home-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-home-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-animals",
+      "nodeId": "36:2221",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-animals-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-animals-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1931e3e415f82e52bcae88d0964c09b17c75e55b.svg",
+          "file": "raw/badge-animals-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-injury",
+      "nodeId": "36:2021",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-injury-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-injury-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-injury-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-money",
+      "nodeId": "36:2246",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-money-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-money-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1931e3e415f82e52bcae88d0964c09b17c75e55b.svg",
+          "file": "raw/badge-money-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-screen",
+      "nodeId": "36:2171",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-screen-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-screen-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-screen-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-travel",
+      "nodeId": "36:1996",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-travel-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-travel-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-travel-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-screen-alt",
+      "nodeId": "36:2196",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-screen-alt-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-screen-alt-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-screen-alt-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-pet-policy",
+      "nodeId": "36:1971",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-pet-policy-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-pet-policy-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-pet-policy-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-tick",
+      "nodeId": "36:2046",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-tick-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-tick-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-tick-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-injury-alt",
+      "nodeId": "36:2096",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-injury-alt-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-injury-alt-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-injury-alt-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-baggage",
+      "nodeId": "36:2071",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-baggage-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-baggage-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-baggage-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-osago",
+      "nodeId": "36:2121",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-osago-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-osago-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-osago-03.svg",
+          "bytes": 768
+        }
+      ]
+    },
+    {
+      "id": "badge-kasko",
+      "nodeId": "36:2146",
+      "assets": [
+        {
+          "url": "http://localhost:3845/assets/e8b23fbff880d67548f44431702ef2f3529c1942.svg",
+          "file": "raw/badge-kasko-01.svg",
+          "bytes": 8458
+        },
+        {
+          "url": "http://localhost:3845/assets/0c09ddf91b86cc54a689d652e0b5a8f031919664.svg",
+          "file": "raw/badge-kasko-02.svg",
+          "bytes": 768
+        },
+        {
+          "url": "http://localhost:3845/assets/1f1fa59529830e25fec1cbb2d421b6c96d6031cc.svg",
+          "file": "raw/badge-kasko-03.svg",
+          "bytes": 768
+        }
+      ]
+    }
+  ]
+}
