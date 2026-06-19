@@ -6,7 +6,15 @@ param(
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent
 $Monorepo = Split-Path $Root -Parent
-$Kiosk = Join-Path $Monorepo "scripts\kiosk"
+$LocalKiosk = $PSScriptRoot
+$MonorepoKiosk = Join-Path $Monorepo "scripts\kiosk"
+$Kiosk = $MonorepoKiosk
+if (
+    (Test-Path (Join-Path $LocalKiosk "Resolve-Python.ps1")) -and
+    (Test-Path (Join-Path $LocalKiosk "Install-PipDeps.ps1"))
+) {
+    $Kiosk = $LocalKiosk
+}
 Set-Location $Root
 
 Write-Host "=== Insure Chill kiosk install ===" -ForegroundColor Cyan

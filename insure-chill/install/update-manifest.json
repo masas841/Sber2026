@@ -21,9 +21,14 @@
       "size": 2601
     },
     {
+      "path": "app/install_routes.py",
+      "sha256": "8eccf1363b551f4fb972ca8033561a2914f28de0288fee11f5254754b50318c3",
+      "size": 2822
+    },
+    {
       "path": "app/main.py",
-      "sha256": "bccaddaf0a1286fa0b00cfe7bedf9d416326ed4693840dc0c3b7f3005fbf7f0d",
-      "size": 8598
+      "sha256": "df368ad3f9a98578da172b169e836e86bf8294c51d072c615614f576f60660cb",
+      "size": 8943
     },
     {
       "path": "docs/figma-selection.md",
@@ -91,14 +96,24 @@
       "size": 752
     },
     {
+      "path": "install/Install-PipDeps.ps1",
+      "sha256": "a21ed07f394d9fc3098e64ed8deaf2a567f854eaeed19115b66aabc9d3213488",
+      "size": 1457
+    },
+    {
       "path": "install/install.ps1",
-      "sha256": "fda4f4cd7d8d48a77c7ecc9618706fffe7345a80ae0fd0d51a2d5a743c5ee1fb",
-      "size": 2134
+      "sha256": "867a1f08ccb147cae711d1de78082af6592b520468f669c339bdf8db9594cca8",
+      "size": 2358
     },
     {
       "path": "install/README-INSTALL.md",
-      "sha256": "5195ccab3071b0cb01594932cc2bfa8a94ca03319f7320a49a3db19a2e0ed10d",
-      "size": 869
+      "sha256": "f95826729b4a0090ba117d3a4f9f7c972b207ae49eec9f1f152df7250430846b",
+      "size": 1071
+    },
+    {
+      "path": "install/Resolve-Python.ps1",
+      "sha256": "4b7479ccb5b3ffca70515f601a80c77404d73c32f42cc8316e57115e367836d0",
+      "size": 2052
     },
     {
       "path": "install/start-insure-chill.cmd",
@@ -149,6 +164,16 @@
       "path": "scripts/download_figma_assets.ps1",
       "sha256": "68281df36c5ffa70cc2565353449692eab6cc7bc99bebb751b939bc058105499",
       "size": 8314
+    },
+    {
+      "path": "scripts/download_sber_fonts.ps1",
+      "sha256": "270e412658c915ef04be68a2c02be0386165442feccdc48bd0433a9df2652494",
+      "size": 731
+    },
+    {
+      "path": "scripts/download_standby_assets.ps1",
+      "sha256": "6691049edcb40449b776382d30cb00404a99b2a672ffc610a8e913cda324d2af",
+      "size": 2007
     },
     {
       "path": "scripts/gen_self_signed_cert.py",
@@ -471,6 +496,11 @@
       "size": 719
     },
     {
+      "path": "static/assets/figma/control/raw/control-aim-cursor.svg",
+      "sha256": "547633d60ec59cedc0f2eb9a9e0d1d9638322194950f8f222fe0c4f2d60abe2c",
+      "size": 1086
+    },
+    {
       "path": "static/assets/figma/control/raw/d75db6f51a313d9d8e82889e3539af1abae1fa56.svg",
       "sha256": "11f782e09db70d95d15ae221840911df165d5f47c13d69d57fe71ca159892437",
       "size": 699
@@ -651,6 +681,16 @@
       "size": 3112
     },
     {
+      "path": "static/assets/figma/result-followup-panel.svg",
+      "sha256": "209e59b8387ecdca471d095aff2e31b9f7cc4209a841988d005d4108f5d20a3b",
+      "size": 3976
+    },
+    {
+      "path": "static/assets/figma/result-followup-qr.png",
+      "sha256": "1a494c89498c1ecff4303ebc12d52d43ca962bda848765affb332a828b77e1b9",
+      "size": 139885
+    },
+    {
       "path": "static/assets/figma/score-star-final.svg",
       "sha256": "a22009c0e6d3923854dbc63e68a7047f0c5a79b75cc78d9bf3c6ab554be477ea",
       "size": 780
@@ -739,6 +779,156 @@
       "path": "static/assets/figma/stage-ellipse.svg",
       "sha256": "ff5d181e5f418f691666bd84985caa3f9b4815057c2f34bf4b1bbed73468f5da",
       "size": 735
+    },
+    {
+      "path": "static/assets/figma/standby/blob-1.svg",
+      "sha256": "489599dc3640de6fe8b2bb3645c84d42324a390f5c8d975c06bcd9f56b21c179",
+      "size": 2697
+    },
+    {
+      "path": "static/assets/figma/standby/blob-2.svg",
+      "sha256": "98f4d7851536c514e87774fa6e23c647e72866292eb60d827f712b20411aa51d",
+      "size": 2689
+    },
+    {
+      "path": "static/assets/figma/standby/blob-3.svg",
+      "sha256": "fc41516d4254b27aed06da006817ef70ad7ee8076b7ca8085f178e11ada88831",
+      "size": 2694
+    },
+    {
+      "path": "static/assets/figma/standby/drop.png",
+      "sha256": "7196e4a1faf9e339bfa6932765942068e859caf53630999c2bd60819cb9c6f90",
+      "size": 866839
+    },
+    {
+      "path": "static/assets/figma/standby/export-2x.png",
+      "sha256": "5b51ebb0a8c546c41a54831ae51620778167f1c1907b038b3ed4d0e529cbd908",
+      "size": 516339
+    },
+    {
+      "path": "static/assets/figma/standby/fist.png",
+      "sha256": "80c9a58f663cc7735738a88f02706669a8688d318836289a5931bdcf179a0e88",
+      "size": 1699986
+    },
+    {
+      "path": "static/assets/figma/standby/flood-sponge.png",
+      "sha256": "a4ddfa0619abf0bfedd7f7ef94d80576a9c3341f779f6201e5d18d0a0bba2a2c",
+      "size": 2738781
+    },
+    {
+      "path": "static/assets/figma/standby/grass-2x.png",
+      "sha256": "8bc589b2347c333fd82d919e6fb00b1fe50ae3afe84cb508dbadb59ef4e8afca",
+      "size": 798348
+    },
+    {
+      "path": "static/assets/figma/standby/grass-standby.png",
+      "sha256": "e36d1580fc75b3bf5f9bcf28d1099505f3d33fcde107e70842e7e63143048d34",
+      "size": 751473
+    },
+    {
+      "path": "static/assets/figma/standby/grass.png",
+      "sha256": "e36d1580fc75b3bf5f9bcf28d1099505f3d33fcde107e70842e7e63143048d34",
+      "size": 751473
+    },
+    {
+      "path": "static/assets/figma/standby/hammer-texture.png",
+      "sha256": "9a7f1398c4f53efaa7ecf0b6c12582e37c489b3ad1b5b9c09ad36f1d30e25cff",
+      "size": 2765529
+    },
+    {
+      "path": "static/assets/figma/standby/layer-bg-2x.png",
+      "sha256": "841fd29d0895c4a0cce54c2ef1e11a0f0c560fe2cd52b8b6bdc61785c627e734",
+      "size": 1593813
+    },
+    {
+      "path": "static/assets/figma/standby/layer-center-2x.png",
+      "sha256": "48d0e8e37c5318716b703a9e43bf5c2f395dad1b164bf52073aefdfb882f8d1a",
+      "size": 160891
+    },
+    {
+      "path": "static/assets/figma/standby/layer-fist-2x.png",
+      "sha256": "d7bdf7ae6d9eba7cc95a869490c008c9c97cc742f90bd2f6d11c2fab77203013",
+      "size": 539939
+    },
+    {
+      "path": "static/assets/figma/standby/layer-flood-2x.png",
+      "sha256": "cb6b602bf2f19e0c7bd73e3696771113d7004e930e9b06e79c67d99abe69531d",
+      "size": 445445
+    },
+    {
+      "path": "static/assets/figma/standby/layer-hammer-2x.png",
+      "sha256": "67c928fb281838309ce242e60de5e437f9b71b5c0013b75473838a511eea7afe",
+      "size": 520688
+    },
+    {
+      "path": "static/assets/figma/standby/layer-insured-2x.png",
+      "sha256": "374214ce8db4df226b866c7095cf46a9fccd42cf53301584c9e391af9e35163d",
+      "size": 13371
+    },
+    {
+      "path": "static/assets/figma/standby/layer-logo-2x.png",
+      "sha256": "cd2c85415630851eaa5f04e3fa5ed2c9b1bac330fa06815e3962e208e0efc98b",
+      "size": 6478
+    },
+    {
+      "path": "static/assets/figma/standby/logo-sberinsurance-standby.svg",
+      "sha256": "df14d5c79e12250356e63af2e66fa7706ea06bc463e096c9fc443e34955c626e",
+      "size": 8549
+    },
+    {
+      "path": "static/assets/figma/standby/logo.svg",
+      "sha256": "df14d5c79e12250356e63af2e66fa7706ea06bc463e096c9fc443e34955c626e",
+      "size": 8549
+    },
+    {
+      "path": "static/assets/figma/standby/manifest.json",
+      "sha256": "9815a95faa78029dbeec5e587e50b7eff8057421e634f3533854734365631899",
+      "size": 1455
+    },
+    {
+      "path": "static/assets/figma/standby/mask-attack.svg",
+      "sha256": "973d5ecf86383048e3eaa2d45a7e6173350ccb6da35629475b66c51f0f9a93a0",
+      "size": 470
+    },
+    {
+      "path": "static/assets/figma/standby/mask-flood.svg",
+      "sha256": "2add631970aec1e143a6d78ce0222be85600faea256db394cb648e1c97774239",
+      "size": 438
+    },
+    {
+      "path": "static/assets/figma/standby/mask-hammer-1.svg",
+      "sha256": "f52dd56c1002b7e483d68cdb23f6eef013eb0b343b7246a48673aa5d56923506",
+      "size": 668
+    },
+    {
+      "path": "static/assets/figma/standby/mask-hammer-2.svg",
+      "sha256": "9df2458a0ef9b3f421b18fdd9c9058bf6996fcf3b86b1891629b6066537a7112",
+      "size": 989
+    },
+    {
+      "path": "static/assets/figma/standby/pill-neighbor.svg",
+      "sha256": "2af5af30a34005f2eb04aa1a4fa902039dbd37221f16bdfee05ac5395d61ca62",
+      "size": 8317
+    },
+    {
+      "path": "static/assets/figma/standby/pill-sosedsky.svg",
+      "sha256": "3637c285889906d95ef1255cf0f1a950f3d77f75f8ab0d7e1e3f307119788f4e",
+      "size": 1733
+    },
+    {
+      "path": "static/assets/figma/standby/splash.svg",
+      "sha256": "a84624bb2d602bbdc2df189b537edf83aa3549d0d12cefd998638c2aecd48e35",
+      "size": 365
+    },
+    {
+      "path": "static/assets/figma/standby/star-blob.svg",
+      "sha256": "71760c18770b12e7752aa2b27c542e61870dae9b66083b7e2d303a765ad71833",
+      "size": 3967
+    },
+    {
+      "path": "static/assets/figma/standby/title-star-standby.svg",
+      "sha256": "71760c18770b12e7752aa2b27c542e61870dae9b66083b7e2d303a765ad71833",
+      "size": 3967
     },
     {
       "path": "static/assets/figma/threat-cat-paw.png",
@@ -1712,18 +1902,23 @@
     },
     {
       "path": "static/control.html",
-      "sha256": "3a1fdb176bbd8ffa2d76e8431ac0d46ace01e8bb112a871e123ed6eba9b0ea84",
-      "size": 6630
+      "sha256": "ad260da723e4d845147a648de12e3d7615722dc941d1ed59a230115c2bf11c7f",
+      "size": 10262
     },
     {
       "path": "static/css/control.css",
-      "sha256": "b59b15e21877771b845f5724b64ee6ca7a6bc742b7e17358b02e5f883f30659c",
-      "size": 13062
+      "sha256": "9630da21f8f20457933eef38304f007c9d5ec9c12bc725f4099d256cfcdbbf97",
+      "size": 14643
     },
     {
       "path": "static/css/game.css",
-      "sha256": "4f0cb51c90da55547dc3e8427bfbcbf02948b47ac3c2946546eaae7567b3ac30",
-      "size": 24525
+      "sha256": "1561bb840ddba42ec7fca1d20cc05311840a647abb7bbc7c93a7b9e49cfe00cd",
+      "size": 27181
+    },
+    {
+      "path": "static/css/kiosk-install-standby.css",
+      "sha256": "47ef083b2f3db94827959c67615afdc65a346bff10cf8ba3fef051364ce0265c",
+      "size": 2239
     },
     {
       "path": "static/fonts/SBSansDisplay-Bold.woff",
@@ -1787,28 +1982,33 @@
     },
     {
       "path": "static/fonts/SBSansText-Medium.woff2",
-      "sha256": "31b4eac7457ba11e2fe7c814829ca44f8e25d0dcc1fa39a8e63c04bf84c9ec36",
-      "size": 26680
+      "sha256": "e9d247693a763a50a98d5dcebd5619f30ecade84b8153dcd1cb16ed379686be4",
+      "size": 37664
     },
     {
       "path": "static/fonts/SBSansText-Semibold.woff2",
-      "sha256": "1674705a354f952f68577db5ec5945b08fe325a530dd7267f21f2431c54f0239",
-      "size": 37076
+      "sha256": "44fec0fbbe87a73b27d026fae5d206eb121193dc7430e2849594623abe8acd8d",
+      "size": 43736
     },
     {
       "path": "static/index.html",
-      "sha256": "5e2acb01c68d0fcad6cad99bc3bdf65810c919c991c4f3097d861e82300c5ab2",
-      "size": 6591
+      "sha256": "5dd2c9ea17164a2b77ec3fec126d71e0b38a0983583edd1f0acb2b79ce7c488e",
+      "size": 11695
     },
     {
       "path": "static/js/control.js",
-      "sha256": "4cfbb0ce9815d5d1c0572e1e076cb887bb803fca4faf8486a9efcb395d4f513c",
-      "size": 5911
+      "sha256": "7ec2845e789a3afdd5f5528d0362dbd0767201c435ff184ea79354515ccb4416",
+      "size": 10365
     },
     {
       "path": "static/js/game.js",
-      "sha256": "311b53c4e138b576d00a264c1d6ff788497a2d9f7413067f65b5c2add7afe3b8",
-      "size": 23240
+      "sha256": "b9d426f30a06e3afed2fd4b69ffef959c64f88dfa3460bd4f8321d83dcc05743",
+      "size": 23827
+    },
+    {
+      "path": "static/js/kiosk-install-mode.js",
+      "sha256": "52e266b2e7d813a72a09cf2b16995ca6e090bab1bd7ec200c4bdead2ee89078e",
+      "size": 2548
     }
   ],
   "root": "insure-chill",

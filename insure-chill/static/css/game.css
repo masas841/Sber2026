@@ -1371,6 +1371,10 @@ body {
   font-weight: 700;
 }
 
+.result-followup-copy-nowrap {
+  white-space: nowrap;
+}
+
 .result-followup-qr {
   left: 249px;
   top: 365px;
