@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import hmac
+import hashlib
 import re
 from datetime import UTC, datetime
 from pathlib import Path
@@ -21,7 +23,7 @@ from fastapi import (
     WebSocketDisconnect,
 )
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -40,6 +42,7 @@ app.add_middleware(
 
 _STATIC = Path(__file__).resolve().parent.parent / "static"
 _ADMIN_KIOSK_INSTALL = _STATIC / "admin" / "kiosk-install.html"
+_ADMIN_KIOSK_INSTALL_COOKIE = "kiosk_install_admin"
 _STUB_HTML = _STATIC / "index.html"
 _PHOTO_HTML = _STATIC / "photo.html"
 _SAFE_SEGMENT_RE = re.compile(r"[^A-Za-z0-9_.-]+")
@@ -460,6 +463,89 @@ def _is_api_token_valid(token: str | None) -> bool:
     return (token or "").strip() == expected
 
 
+def _kiosk_install_admin_token() -> str:
+    password = (settings.kiosk_install_admin_password or "").strip()
+    secret = (settings.upload_api_key or password or "photo-receiver").encode("utf-8")
+    return hmac.new(secret, b"kiosk-install-admin", hashlib.sha256).hexdigest()
+
+
+def _is_kiosk_install_admin_session(request: Request) -> bool:
+    password = (settings.kiosk_install_admin_password or "").strip()
+    if not password:
+        return True
+    cookie = request.cookies.get(_ADMIN_KIOSK_INSTALL_COOKIE, "")
+    return hmac.compare_digest(cookie, _kiosk_install_admin_token())
+
+
+def _kiosk_install_login_page(error: str = "") -> HTMLResponse:
+    error_html = f'<p class="error">{error}</p>' if error else ""
+    return HTMLResponse(
+        f"""<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Вход — режим киосков</title>
+  <style>
+    :root {{ color-scheme: dark; --bg: #0b1116; --panel: #121b23; --text: #edf6ff; --muted: #8ea3b5; --accent: #21a038; }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 20% 0%, #17324a 0, transparent 34rem), var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }}
+    form {{
+      width: min(380px, calc(100vw - 32px));
+      padding: 24px;
+      border-radius: 16px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.12);
+    }}
+    h1 {{ margin: 0 0 8px; font-size: 1.45rem; }}
+    p {{ margin: 0 0 18px; color: var(--muted); line-height: 1.4; }}
+    label {{ display: block; margin-bottom: 8px; font-weight: 600; }}
+    input {{
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0a1015;
+      color: var(--text);
+      font: inherit;
+    }}
+    button {{
+      width: 100%;
+      margin-top: 16px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }}
+    .error {{ color: #ff5f57; margin-top: 12px; }}
+  </style>
+</head>
+<body>
+  <form method="post" action="/off/login">
+    <h1>Режим киосков</h1>
+    <p>Введите пароль для доступа к управлению активностями.</p>
+    <label for="password">Пароль</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" autofocus />
+    {error_html}
+    <button type="submit">Войти</button>
+  </form>
+</body>
+</html>""",
+        headers={"Cache-Control": "no-cache, must-revalidate"},
+    )
+
+
 def _check_api_key(
     x_api_key: str | None = Header(default=None),
     authorization: str | None = Header(default=None),
@@ -538,9 +624,16 @@ def kiosk_install_mode_update(
     }
 
 
-@app.get("/admin/kiosk-install", response_class=HTMLResponse)
+@app.get("/admin/kiosk-install")
+def kiosk_install_admin_legacy_redirect() -> RedirectResponse:
+    return RedirectResponse("/off", status_code=307)
+
+
+@app.get("/off", response_class=HTMLResponse)
 @app.get("/install", response_class=HTMLResponse)
-def kiosk_install_admin_page() -> HTMLResponse:
+def kiosk_install_admin_page(request: Request) -> HTMLResponse:
+    if not _is_kiosk_install_admin_session(request):
+        return _kiosk_install_login_page()
     if not _ADMIN_KIOSK_INSTALL.is_file():
         raise HTTPException(500, "admin page missing")
     return FileResponse(
@@ -548,6 +641,23 @@ def kiosk_install_admin_page() -> HTMLResponse:
         media_type="text/html; charset=utf-8",
         headers={"Cache-Control": "no-cache, must-revalidate"},
     )
+
+
+@app.post("/off/login")
+def kiosk_install_admin_login(password: str = Form("")) -> HTMLResponse:
+    expected = (settings.kiosk_install_admin_password or "").strip()
+    if expected and not hmac.compare_digest((password or "").strip(), expected):
+        return _kiosk_install_login_page("Неверный пароль")
+    response = RedirectResponse("/off", status_code=303)
+    response.set_cookie(
+        _ADMIN_KIOSK_INSTALL_COOKIE,
+        _kiosk_install_admin_token(),
+        max_age=12 * 60 * 60,
+        httponly=True,
+        secure=True,
+        samesite="lax",
+    )
+    return response
 
 
 @app.get("/logs", response_class=HTMLResponse)

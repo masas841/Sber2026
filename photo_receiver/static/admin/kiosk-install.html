@@ -48,7 +48,122 @@
     .row:last-child { border-bottom: none; }
     .name { font-weight: 600; }
     .id { color: var(--muted); font-size: 0.85rem; }
-    label.switch { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .master-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background:
+        linear-gradient(135deg, rgba(50, 213, 131, 0.14), rgba(33, 160, 56, 0.04)),
+        var(--panel);
+    }
+    .master-copy p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    label.switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .switch input,
+    .master-switch input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .switch-ui,
+    .master-switch__track {
+      position: relative;
+      flex: none;
+      border-radius: 999px;
+      background: #263441;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+      transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+    .switch-ui {
+      width: 46px;
+      height: 26px;
+    }
+    .switch-ui::after,
+    .master-switch__thumb {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+      transition: transform 220ms cubic-bezier(.2,.9,.2,1), width 160ms ease;
+    }
+    .switch-ui::after {
+      width: 20px;
+      height: 20px;
+      left: 3px;
+      top: 3px;
+    }
+    .switch input:checked + .switch-ui,
+    .master-switch input:checked + .master-switch__track {
+      background: linear-gradient(135deg, #21a038, #32d583);
+      box-shadow: 0 0 0 1px rgba(50,213,131,0.5), 0 0 28px rgba(50,213,131,0.22);
+    }
+    .switch input:checked + .switch-ui::after {
+      transform: translateX(20px);
+    }
+    .switch:hover .switch-ui,
+    .master-switch:hover .master-switch__track {
+      transform: translateY(-1px);
+    }
+    .master-switch {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+    .master-switch__track {
+      display: grid;
+      place-items: center;
+      width: 164px;
+      height: 74px;
+      padding: 0 18px;
+      overflow: hidden;
+    }
+    .master-switch__thumb {
+      width: 58px;
+      height: 58px;
+      left: 8px;
+      top: 8px;
+    }
+    .master-switch__label {
+      position: relative;
+      z-index: 1;
+      margin-left: 54px;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: margin 220ms ease, color 180ms ease;
+    }
+    .master-switch input:checked + .master-switch__track .master-switch__thumb {
+      transform: translateX(90px);
+    }
+    .master-switch input:checked + .master-switch__track .master-switch__label {
+      margin-left: -54px;
+      color: #05220f;
+    }
+    .master-switch.is-mixed .master-switch__track {
+      background: linear-gradient(135deg, #fdb022, #f79009);
+      box-shadow: 0 0 0 1px rgba(253,176,34,0.5), 0 0 28px rgba(253,176,34,0.18);
+    }
+    .master-switch.is-mixed .master-switch__thumb {
+      transform: translateX(45px);
+    }
+    .master-switch.is-mixed .master-switch__label {
+      margin-left: 0;
+      color: #251300;
+    }
     input[type="text"], input[type="password"] {
       width: 100%;
       padding: 10px 12px;
@@ -76,7 +191,6 @@
     }
     .actions button { margin-top: 0; }
     button.secondary { background: #233241; }
-    button.danger { background: #b42318; }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
     #status { margin-top: 12px; color: var(--muted); }
     #status.ok { color: var(--ok); }
@@ -97,11 +211,23 @@
       <input id="apiKey" type="password" autocomplete="off" placeholder="Ключ для сохранения" />
     </div>
 
+    <div class="panel master-panel">
+      <div class="master-copy">
+        <div class="name">Все активности выключены</div>
+        <p>Большой тумблер сразу переводит все киоски в standby-режим или возвращает их в работу.</p>
+      </div>
+      <label class="master-switch" id="masterSwitchWrap" aria-label="Выключить или включить все активности">
+        <input id="masterToggle" type="checkbox" />
+        <span class="master-switch__track" aria-hidden="true">
+          <span class="master-switch__thumb"></span>
+          <span class="master-switch__label">OFF</span>
+        </span>
+      </label>
+    </div>
+
     <div class="panel" id="activities"></div>
 
     <div class="actions">
-      <button type="button" id="allOffBtn" class="danger">Выключить все активности</button>
-      <button type="button" id="allOnBtn" class="secondary">Включить все активности</button>
       <button type="button" id="saveBtn">Сохранить выбранное</button>
     </div>
     <p id="status"></p>
@@ -109,8 +235,8 @@
   <script>
     const activitiesEl = document.getElementById("activities");
     const saveBtn = document.getElementById("saveBtn");
-    const allOffBtn = document.getElementById("allOffBtn");
-    const allOnBtn = document.getElementById("allOnBtn");
+    const masterToggle = document.getElementById("masterToggle");
+    const masterSwitchWrap = document.getElementById("masterSwitchWrap");
     const statusEl = document.getElementById("status");
     const apiKeyEl = document.getElementById("apiKey");
 
@@ -139,11 +265,33 @@
           </div>
           <label class="switch">
             <input type="checkbox" data-id="${id}" ${on ? "checked" : ""} />
-            инсталляции выключены
+            <span class="switch-ui" aria-hidden="true"></span>
+            <span>инсталляции выключены</span>
           </label>
         `;
         activitiesEl.appendChild(row);
       }
+      syncMasterToggle();
+    }
+
+    function activityIds() {
+      return Object.keys(state.labels || {});
+    }
+
+    function syncMasterToggle() {
+      const checked = readCheckedActivities();
+      const source = Object.keys(checked).length > 0 ? checked : state.activities;
+      const values = activityIds().map((id) => Boolean(source?.[id]));
+      const allOff = values.length > 0 && values.every(Boolean);
+      const anyOff = values.some(Boolean);
+      masterToggle.checked = allOff;
+      masterToggle.indeterminate = anyOff && !allOff;
+      masterSwitchWrap.classList.toggle("is-mixed", masterToggle.indeterminate);
+      masterSwitchWrap.querySelector(".master-switch__label").textContent = allOff
+        ? "ON"
+        : masterToggle.indeterminate
+          ? "MIX"
+          : "OFF";
     }
 
     function readCheckedActivities() {
@@ -181,8 +329,7 @@
         return;
       }
       saveBtn.disabled = true;
-      allOffBtn.disabled = true;
-      allOnBtn.disabled = true;
+      masterToggle.disabled = true;
       setStatus("Сохранение…");
       try {
         const res = await fetch("/api/kiosk-install-mode", {
@@ -203,8 +350,7 @@
         setStatus(`Ошибка: ${e.message}`, "err");
       } finally {
         saveBtn.disabled = false;
-        allOffBtn.disabled = false;
-        allOnBtn.disabled = false;
+        masterToggle.disabled = false;
       }
     }
 
@@ -212,13 +358,11 @@
       saveActivities(readCheckedActivities());
     });
 
-    allOffBtn.addEventListener("click", () => {
-      setAllChecked(true);
-      saveActivities(readCheckedActivities());
-    });
+    activitiesEl.addEventListener("change", syncMasterToggle);
 
-    allOnBtn.addEventListener("click", () => {
-      setAllChecked(false);
+    masterToggle.addEventListener("change", () => {
+      setAllChecked(masterToggle.checked);
+      syncMasterToggle();
       saveActivities(readCheckedActivities());
     });
 

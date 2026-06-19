@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     data_dir: Path = Path("data")
     chunk_size: int = 262144
     upload_api_key: str | None = None
+    kiosk_install_admin_password: str = "55500640"
     max_upload_bytes: int = 20 * 1024 * 1024
     max_log_upload_bytes: int = 2 * 1024 * 1024
 
