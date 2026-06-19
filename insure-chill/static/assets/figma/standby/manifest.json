@@ -1,0 +1,71 @@
+{
+  "figmaNode": "55:62",
+  "fileKey": "AnXkfv1tOAPkBLcjzexhaG",
+  "stage": 672,
+  "layers": [
+    {
+      "id": "hammer",
+      "nodeId": "55:78",
+      "file": "layer-hammer-2x.png",
+      "left": 101.49,
+      "top": -93,
+      "width": 574.72,
+      "height": 587.4,
+      "animation": "breathe",
+      "delay": -0.9
+    },
+    {
+      "id": "fist",
+      "nodeId": "55:68",
+      "file": "layer-fist-2x.png",
+      "left": 210,
+      "top": 112.54,
+      "width": 596.76,
+      "height": 596.76,
+      "animation": "breathe",
+      "delay": -2.6
+    },
+    {
+      "id": "center",
+      "nodeId": "55:124",
+      "file": "layer-center-2x.png",
+      "left": 58.58,
+      "top": 49,
+      "width": 554.84,
+      "height": 483.75,
+      "animation": "breathe-slow"
+    },
+    {
+      "id": "logo",
+      "nodeId": "55:127",
+      "file": "layer-logo-2x.png",
+      "left": 201,
+      "top": 178,
+      "width": 269.91,
+      "height": 25.12,
+      "animation": "breathe-slow",
+      "delay": -1.2
+    },
+    {
+      "id": "flood",
+      "nodeId": "55:147",
+      "file": "layer-flood-2x.png",
+      "left": 156,
+      "top": 141.2,
+      "width": 653.69,
+      "height": 651.97,
+      "animation": "breathe",
+      "delay": -1.8
+    },
+    {
+      "id": "insured",
+      "nodeId": "55:168",
+      "file": "layer-insured-2x.png",
+      "left": 326,
+      "top": 497,
+      "width": 283.31,
+      "height": 103.11,
+      "animation": "pulse"
+    }
+  ]
+}

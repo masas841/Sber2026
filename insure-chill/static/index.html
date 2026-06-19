@@ -5,13 +5,27 @@
   <meta name="viewport" content="width=672, initial-scale=1" />
   <title>Застрахуй свой чилл</title>
   <link rel="stylesheet" href="/static/css/game.css?v=figma-export-5" />
-  <link rel="stylesheet" href="/static/css/kiosk-install-standby.css" />
+  <link rel="stylesheet" href="/static/css/kiosk-install-standby.css?v=standby-figma-implement-4" />
 </head>
 <body>
   <div id="kiosk-install-standby" class="kiosk-install-standby hidden" hidden aria-live="polite">
-    <div class="kiosk-install-standby__inner">
-      <h1 class="kiosk-install-standby__title">Застрахуй свой чилл скоро откроется</h1>
-      <p class="kiosk-install-standby__text">Специальный экран из Figma будет здесь.</p>
+    <div class="kiosk-install-standby__stage">
+      <section class="idle-scene main-scene standby-scene" aria-label="Скоро откроемся">
+        <img class="main-scene__asset main-scene__asset--back" src="/img/New/back.png" alt="" />
+        <img class="main-scene__asset main-scene__asset--fist main-scene__asset--breathe" src="/img/New/fist.png" alt="" />
+        <img class="main-scene__asset main-scene__asset--hummer main-scene__asset--breathe" src="/img/New/hummer.png" alt="" />
+        <img class="standby-logo" src="/static/assets/figma/standby/logo-sberinsurance-standby.svg" alt="СберСтрахование" />
+        <div class="standby-title breathe breathe--slow">
+          <img class="standby-title__star" src="/static/assets/figma/standby/title-star-standby.svg" alt="" />
+          <span class="standby-title__text">до встречи!</span>
+        </div>
+        <p class="standby-subtitle">спасибо что провели этот день вместе со сбер!</p>
+        <img class="main-scene__asset main-scene__asset--drop main-scene__asset--breathe main-scene__asset--breathe-slow" src="/img/New/drop.png" alt="" />
+        <div class="main-scene__insure main-scene__asset--breathe" aria-hidden="true">
+          <span class="main-scene__insure-blur"></span>
+          <img class="main-scene__asset main-scene__asset--insure" src="/img/New/insure.png" alt="" />
+        </div>
+      </section>
     </div>
   </div>
   <main id="stage" class="stage" data-phase="idle" data-kiosk-main>
@@ -100,9 +114,6 @@
     </section>
   </main>
 
-  <script type="module" src="/static/js/game.js?v=figma-export-8"></script>
+  <script type="module" src="/static/js/game.js?v=figma-export-9"></script>
 </body>
 </html>
-
-
-

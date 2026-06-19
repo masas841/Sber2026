@@ -877,6 +877,17 @@ document.addEventListener("keydown", (event) => {
 });
 
 (async function bootInsureChill() {
+  const STAGE_PX = 672;
+  const DESIGN_SCALE = 0.85;
+
+  function syncAppScale() {
+    const fit = Math.min(1, window.innerWidth / STAGE_PX, window.innerHeight / STAGE_PX);
+    document.documentElement.style.setProperty("--app-scale", String(DESIGN_SCALE * fit));
+  }
+
+  window.addEventListener("resize", syncAppScale);
+  syncAppScale();
+
   const installGate = await initKioskInstallGate({
     activityId: "insure-chill",
     standbyEl: document.getElementById("kiosk-install-standby"),

@@ -1,38 +1,106 @@
-/* Placeholder standby — заменить ассетами из Figma для каждой активации */
+/* Standby Insure Chill — node 55:62 via figma-implement-design workflow */
+
 .kiosk-install-standby {
   position: fixed;
   inset: 0;
   z-index: 100000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(160deg, #0d8523 0%, #21a038 45%, #3fd05a 100%);
-  color: #fff;
-  font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif;
-  text-align: center;
-  padding: 2rem;
+  background: #111;
+  pointer-events: none;
 }
 
 .kiosk-install-standby.hidden {
   display: none !important;
 }
 
-.kiosk-install-standby__inner {
-  max-width: 28rem;
+/* Как .stage + .scene-layer: 672×672, left -20px, scale через --app-scale */
+.kiosk-install-standby__stage {
+  position: fixed;
+  left: -20px;
+  top: 0;
+  width: var(--stage);
+  height: var(--stage);
+  overflow: hidden;
+  transform: scale(var(--app-scale));
+  transform-origin: center;
 }
 
-.kiosk-install-standby__title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-  font-weight: 600;
-  line-height: 1.15;
+.standby-scene {
+  position: absolute;
+  inset: 0;
 }
 
-.kiosk-install-standby__text {
+/* Figma 55:127 sberinsurance H — статичный, без breathe */
+.standby-logo {
+  position: absolute;
+  left: 201px;
+  top: 178px;
+  width: 269.91px;
+  height: 25.12px;
+  z-index: 18;
+  pointer-events: none;
+  user-select: none;
+  animation: none;
+}
+
+/* Figma 55:124 Group 2136141776 */
+.standby-title {
+  position: absolute;
+  left: 58.58px;
+  top: 49px;
+  width: 554.84px;
+  height: 483.75px;
+  z-index: 14;
+  pointer-events: none;
+  user-select: none;
+}
+
+.standby-title__star {
+  position: absolute;
+  left: 35.54px;
+  top: 0;
+  width: 483.75px;
+  height: 483.75px;
+  display: block;
+}
+
+/* Figma 55:126 — SB Sans Display BETA2 Extended Semibold */
+.standby-title__text {
+  position: absolute;
+  left: 0;
+  top: 201px;
+  width: 554.84px;
   margin: 0;
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
-  line-height: 1.45;
-  opacity: 0.92;
+  font-family: var(--font-display);
+  font-size: 43.253px;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -3.0277px;
+  text-align: center;
+  text-transform: lowercase;
+  color: var(--ink);
+  transform: scaleX(1.545);
+  transform-origin: center;
+}
+
+/* Figma 55:172 — SB Sans Text Medium */
+.standby-subtitle {
+  position: absolute;
+  left: 180px;
+  top: 302px;
+  width: 311.92px;
+  margin: 0;
+  z-index: 16;
+  font-family: var(--font-text);
+  font-size: 22.603px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1.5822px;
+  text-align: center;
+  text-transform: lowercase;
+  color: var(--ink);
+  pointer-events: none;
+  user-select: none;
+  font-synthesis: none;
 }
 
 .kiosk-install-off [data-kiosk-main],
