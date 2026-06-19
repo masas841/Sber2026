@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=672, initial-scale=1" />
   <title>Застрахуй свой чилл</title>
-  <link rel="stylesheet" href="/static/css/game.css?v=figma-export-5" />
+  <link rel="stylesheet" href="/static/css/game.css?v=result-followup-2" />
   <link rel="stylesheet" href="/static/css/kiosk-install-standby.css?v=standby-figma-implement-4" />
 </head>
 <body>
@@ -56,6 +56,25 @@
         <span>счёт:</span>
         <strong id="scoreValue">000</strong>
       </div>
+      <svg id="gameRatingStars" class="game-rating-stars" viewBox="0 0 118.192 52.5127" fill="none" aria-hidden="true">
+        <path class="game-rating-stars__path" data-star="2" d="M94.0967 14.332C94.9904 11.5815 98.8817 11.5815 99.7754 14.332L102.639 23.1445C102.674 23.2524 102.774 23.326 102.888 23.3262H112.154C115.046 23.3262 116.249 27.0267 113.909 28.7266L106.413 34.1738C106.321 34.2406 106.282 34.3588 106.317 34.4668L109.181 43.2793C110.074 46.0298 106.927 48.3171 104.587 46.6172L97.0898 41.1709C96.998 41.1042 96.8741 41.1042 96.7822 41.1709L89.2852 46.6172C86.9454 48.3171 83.7977 46.0298 84.6914 43.2793L87.5547 34.4668C87.5898 34.3588 87.5508 34.2406 87.459 34.1738L79.9629 28.7266C77.6232 27.0267 78.8257 23.3262 81.7178 23.3262H90.9844C91.0977 23.326 91.1984 23.2524 91.2334 23.1445L94.0967 14.332Z" fill="url(#game-rating-star-right)" stroke="white" stroke-width="2.72338" />
+        <path class="game-rating-stars__path" data-star="1" d="M55.6094 4.33203C56.5031 1.58153 60.3944 1.58153 61.2881 4.33203L64.1514 13.1445C64.1864 13.2524 64.287 13.326 64.4004 13.3262H73.667C76.559 13.3262 77.7616 17.0267 75.4219 18.7266L67.9258 24.1738C67.8339 24.2406 67.795 24.3588 67.8301 24.4668L70.6934 33.2793C71.5871 36.0298 68.4393 38.3171 66.0996 36.6172L58.6025 31.1709C58.5107 31.1042 58.3868 31.1042 58.2949 31.1709L50.7979 36.6172C48.4581 38.3171 45.3104 36.0298 46.2041 33.2793L49.0674 24.4668C49.1025 24.3588 49.0635 24.2406 48.9717 24.1738L41.4756 18.7266C39.1359 17.0267 40.3384 13.3262 43.2305 13.3262H52.4971C52.6104 13.326 52.7111 13.2524 52.7461 13.1445L55.6094 4.33203Z" fill="url(#game-rating-star-middle)" stroke="white" stroke-width="2.72338" />
+        <path class="game-rating-stars__path" data-star="0" d="M18.417 14.332C19.3107 11.5815 23.202 11.5815 24.0957 14.332L26.959 23.1445C26.994 23.2524 27.0946 23.326 27.208 23.3262H36.4746C39.3667 23.3262 40.5692 27.0267 38.2295 28.7266L30.7334 34.1738C30.6416 34.2406 30.6026 34.3588 30.6377 34.4668L33.501 43.2793C34.3947 46.0298 31.2469 48.3171 28.9072 46.6172L21.4102 41.1709C21.3183 41.1042 21.1944 41.1042 21.1025 41.1709L13.6055 46.6172C11.2658 48.3171 8.11803 46.0298 9.01172 43.2793L11.875 34.4668C11.9101 34.3588 11.8711 34.2406 11.7793 34.1738L4.2832 28.7266C1.94349 27.0267 3.14604 23.3262 6.03809 23.3262H15.3047C15.418 23.326 15.5187 23.2524 15.5537 23.1445L18.417 14.332Z" fill="url(#game-rating-star-left)" stroke="white" stroke-width="2.72338" />
+        <defs>
+          <linearGradient id="game-rating-star-right" x1="96.936" y1="10" x2="96.936" y2="52.5127" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#57FF43" />
+            <stop offset="1" stop-color="#00ADEE" />
+          </linearGradient>
+          <linearGradient id="game-rating-star-middle" x1="58.4487" y1="0" x2="58.4487" y2="42.5127" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#57FF43" />
+            <stop offset="1" stop-color="#00ADEE" />
+          </linearGradient>
+          <linearGradient id="game-rating-star-left" x1="21.2563" y1="10" x2="21.2563" y2="52.5127" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#57FF43" />
+            <stop offset="1" stop-color="#00ADEE" />
+          </linearGradient>
+        </defs>
+      </svg>
       <div class="timer-game">
         <span>таймер</span>
         <strong id="timerValue">59 с</strong>
@@ -92,28 +111,25 @@
         <div class="insured-stamp insured-stamp--result insured-stamp--result-intro result-anim-item"><span>застраховано</span></div>
       </div>
 
-      <div id="resultFinal" class="result-phase result-phase--final" hidden>
-        <img class="result-final-star result-anim-item" src="/static/assets/figma/title-star-final.svg" alt="" />
-        <img class="result-final-star-deco result-anim-item" src="/static/assets/figma/score-star-final.svg" alt="" />
-        <div class="result-final-score result-anim-item">
-          <span>ваш счёт:</span>
-          <strong id="resultFinalScore">000</strong>
-        </div>
-        <div class="result-final-copy result-anim-item">
-          <h1 id="resultTitle">неплохой результат!</h1>
-          <p id="resultText">Ты смог защититься от многих неприятностей, для всего остального есть СберСтрахование.</p>
-        </div>
-        <div id="resultRating" class="result-rating result-anim-item" aria-hidden="true">
-          <span class="result-rating__star" data-star="0"><img src="/static/assets/figma/rating-star-single.svg" alt="" /></span>
-          <span class="result-rating__star" data-star="1"><img src="/static/assets/figma/rating-star-single.svg" alt="" /></span>
-          <span class="result-rating__star" data-star="2"><img src="/static/assets/figma/rating-star-single.svg" alt="" /></span>
-        </div>
-        <img class="scribble-final result-anim-item" src="/static/assets/figma/scribble-final.svg" alt="" />
-        <div class="insured-stamp insured-stamp--result insured-stamp--result-final result-anim-item"><span>застраховано</span></div>
+      <div id="resultFinal" class="result-phase result-phase--final result-phase--followup" hidden>
+        <img class="result-followup-panel result-anim-item" src="/static/assets/figma/result-followup-panel.svg" alt="" />
+        <img class="result-followup-logo result-anim-item" src="/static/assets/figma/logo-sberinsurance-game.svg" alt="СберСтрахование" />
+        <h1 class="result-followup-title result-anim-item">поздравляем,</h1>
+        <p class="result-followup-copy result-anim-item">
+          ты уже знаешь какие страховки могут помочь в разных жизненных ситуациях.
+          А для того чтобы все было максимально просто и выгодно — есть единый полис
+          <strong>«защита на любой случай».</strong>
+        </p>
+        <img class="result-followup-qr result-anim-item" src="/static/assets/figma/result-followup-qr.png" alt="QR-код" />
+        <img class="result-followup-drop result-anim-item breathe breathe--slow" src="/img/drop2.png" alt="" />
+        <img class="result-followup-grass result-anim-item" src="/static/assets/figma/grass-1.png" alt="" />
+        <img class="result-followup-ribbon result-anim-item" src="/static/assets/figma/scribble-start.svg" alt="" />
+        <img class="result-followup-star result-followup-star--top result-anim-item" src="/static/assets/figma/score-star-small.svg" alt="" />
+        <img class="result-followup-star result-followup-star--left result-anim-item" src="/static/assets/figma/score-star-small.svg" alt="" />
       </div>
     </section>
   </main>
 
-  <script type="module" src="/static/js/game.js?v=aim-control-1"></script>
+  <script type="module" src="/static/js/game.js?v=result-followup-1"></script>
 </body>
 </html>

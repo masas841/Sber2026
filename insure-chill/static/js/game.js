@@ -283,7 +283,7 @@ const preloadedBadgeImages = new Map(
   })
 );
 
-const RESULT_INTRO_HOLD_MS = 6000;
+const RESULT_INTRO_HOLD_MS = 5000;
 const RESULT_TRANSITION_MS = 480;
 const RESULT_FINAL_HOLD_MS = 15000;
 const STAR_LIGHT_DELAY_MS = 420;
@@ -333,15 +333,12 @@ const debugLayer = document.querySelector("#debugLayer");
 const protectorEl = document.querySelector("#protector");
 const scoreValue = document.querySelector("#scoreValue");
 const timerValue = document.querySelector("#timerValue");
+const gameRatingStars = Array.from(document.querySelectorAll(".game-rating-stars__path"));
 const hitFlash = document.querySelector("#hitFlash");
 const hitFlashBadge = document.querySelector("#hitFlashBadge");
 const resultIntro = document.querySelector("#resultIntro");
 const resultFinal = document.querySelector("#resultFinal");
 const resultIntroScore = document.querySelector("#resultIntroScore");
-const resultFinalScore = document.querySelector("#resultFinalScore");
-const resultTitle = document.querySelector("#resultTitle");
-const resultText = document.querySelector("#resultText");
-const resultRating = document.querySelector("#resultRating");
 
 const query = new URLSearchParams(window.location.search);
 const isDebug = query.get("debug") === "1";
@@ -479,12 +476,7 @@ function clearResultFlow() {
   resultIntro.classList.remove("is-leaving", "is-animating", "is-hidden");
   resultFinal.classList.remove("is-active", "is-animating");
   resultFinal.hidden = true;
-  resultText.hidden = false;
   resultLayer.dataset.variant = "";
-
-  for (const star of resultRating.querySelectorAll(".result-rating__star")) {
-    star.classList.remove("is-lit");
-  }
 }
 
 function scheduleResultStep(callback, delayMs) {
@@ -499,31 +491,8 @@ function playResultAnimation(container) {
   container.classList.add("is-animating");
 }
 
-function animateRatingStars(starCount) {
-  const stars = resultRating.querySelectorAll(".result-rating__star");
-  for (const star of stars) {
-    star.classList.remove("is-lit");
-  }
-
-  for (let index = 0; index < starCount; index += 1) {
-    scheduleResultStep(() => {
-      stars[index]?.classList.add("is-lit");
-    }, STAR_LIGHT_START_MS + index * STAR_LIGHT_DELAY_MS);
-  }
-}
-
 function renderResultIntro() {
   resultIntroScore.textContent = formatScore(game.score);
-}
-
-function renderResultFinal() {
-  const variant = getResultVariant(game.score);
-  game.resultVariant = variant.id;
-  resultLayer.dataset.variant = variant.id;
-  resultFinalScore.textContent = formatScore(game.score);
-  resultTitle.textContent = variant.title;
-  resultText.textContent = variant.text;
-  resultText.hidden = false;
 }
 
 function returnToIdleFromResult() {
@@ -534,21 +503,19 @@ function returnToIdleFromResult() {
 }
 
 function showResultFinal() {
-  const variant = getResultVariant(game.score);
   resultIntro.classList.add("is-leaving");
   scheduleResultStep(() => {
     resultIntro.classList.remove("is-leaving", "is-animating");
     resultIntro.classList.add("is-hidden");
     resultFinal.hidden = false;
     resultFinal.classList.add("is-active");
-    renderResultFinal();
+    resultLayer.dataset.variant = "followup";
     playResultAnimation(resultFinal);
-    animateRatingStars(variant.starCount);
     scheduleResultStep(returnToIdleFromResult, RESULT_FINAL_HOLD_MS);
     send("event", {
       kind: "result-final",
       phase: "result",
-      variant: variant.id,
+      variant: "followup",
       score: game.score,
       remaining: 0,
     });
@@ -617,12 +584,20 @@ function finishGame() {
 
 function renderResult() {
   renderResultIntro();
-  renderResultFinal();
+}
+
+function renderGameRatingStars(score) {
+  const litCount = getResultVariant(score).starCount;
+  for (const star of gameRatingStars) {
+    const index = Number(star.dataset.star);
+    star.classList.toggle("is-lit", index < litCount);
+  }
 }
 
 function updateHud() {
   scoreValue.textContent = formatScore(game.score);
   timerValue.textContent = `${Math.ceil(game.remaining)} с`;
+  renderGameRatingStars(game.score);
 }
 
 function updateThreat(threat, now, dt) {

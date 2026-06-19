@@ -320,6 +320,15 @@ body {
 .result-final-title,
 .result-final-text,
 .result-rating,
+.result-followup-panel,
+.result-followup-logo,
+.result-followup-title,
+.result-followup-copy,
+.result-followup-qr,
+.result-followup-drop,
+.result-followup-grass,
+.result-followup-ribbon,
+.result-followup-star,
 .result-ground-shadow {
   position: absolute;
 }
@@ -773,6 +782,30 @@ body {
   line-height: 0.85;
   letter-spacing: -2.8863px;
   z-index: 3;
+}
+
+.game-rating-stars {
+  position: absolute;
+  left: 197.81px;
+  top: 516px;
+  z-index: 31;
+  width: 118.19px;
+  height: 52.51px;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.game-rating-stars__path {
+  opacity: 0.3;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.game-rating-stars__path.is-lit {
+  opacity: 1;
+  transform: scale(1.04);
 }
 
 .timer-game {
@@ -1275,6 +1308,128 @@ body {
   height: 152px;
   transform: rotate(-165deg);
   z-index: 6;
+}
+
+.result-phase--followup {
+  overflow: hidden;
+}
+
+.result-scene[data-variant="followup"] > .blob,
+.result-scene[data-variant="followup"] > .grass,
+.result-scene[data-variant="followup"] > .result-ground-shadow {
+  display: none;
+}
+
+.result-followup-panel {
+  left: 2px;
+  top: -10px;
+  width: 668px;
+  height: 668px;
+  z-index: 5;
+}
+
+.result-followup-logo {
+  left: 202px;
+  top: 141px;
+  width: 270px;
+  height: 25px;
+  z-index: 7;
+}
+
+.result-followup-title {
+  position: absolute;
+  left: 59px;
+  top: 191px;
+  z-index: 7;
+  width: 555px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 43.253px;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -3.0277px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.result-followup-copy {
+  left: 163px;
+  top: 242px;
+  z-index: 7;
+  width: 346px;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 18.891px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -1.3223px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.result-followup-copy strong {
+  font-weight: 700;
+}
+
+.result-followup-qr {
+  left: 249px;
+  top: 355px;
+  z-index: 7;
+  width: 175px;
+  height: 175px;
+  border-radius: 13px 13px 7px;
+  object-fit: cover;
+}
+
+.result-followup-drop {
+  left: -62px;
+  top: 336px;
+  z-index: 8;
+  width: 330px;
+  height: 330px;
+  object-fit: contain;
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+
+.result-followup-grass {
+  left: 250px;
+  top: 510px;
+  z-index: 4;
+  width: 610px;
+  height: 520px;
+  object-fit: cover;
+  transform: rotate(158deg) scaleY(-1);
+  transform-origin: center;
+}
+
+.result-followup-ribbon {
+  left: 474px;
+  top: 70px;
+  z-index: 8;
+  width: 152px;
+  height: 142px;
+  transform: rotate(99deg);
+}
+
+.result-followup-star {
+  z-index: 9;
+  width: 86px;
+  height: 86px;
+}
+
+.result-followup-star--top {
+  left: 456px;
+  top: 43px;
+  transform: rotate(20.22deg);
+}
+
+.result-followup-star--left {
+  left: 68px;
+  top: 268px;
+  transform: rotate(-25.48deg);
 }
 
 .insured-stamp {
