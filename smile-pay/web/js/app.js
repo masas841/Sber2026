@@ -7,7 +7,7 @@ import {
 import { loadCopyLines } from "./copy-lines.js";
 import { createSmileWatcher } from "./smile-capture.js?v=20260614-offline-mp";
 import { createFacePresenceWatcher } from "./face-presence.js?v=20260614-offline-mp";
-import { initKioskInstallGate } from "./kiosk-install-mode.js";
+import { initKioskInstallGate } from "./kiosk-install-mode.js?v=20260619-install-timeout";
 
 const params = new URLSearchParams(window.location.search);
 const stageParam = params.get("stage");
