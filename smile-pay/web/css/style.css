@@ -106,7 +106,8 @@ body {
 }
 
 .camera-slot__placeholder,
-.camera-slot video {
+.camera-slot video,
+.camera-slot__boomerang {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -125,6 +126,17 @@ body {
   transform-origin: center center;
   z-index: 1;
   background: #000;
+}
+
+.camera-slot__boomerang {
+  z-index: 2;
+  display: none;
+  object-fit: cover;
+  background: #000;
+}
+
+.camera-slot__boomerang--active {
+  display: block;
 }
 
 .stage-root {
@@ -663,6 +675,23 @@ body {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.72);
   white-space: nowrap;
+  pointer-events: none;
+}
+
+.smile-diag {
+  position: fixed;
+  left: 6px;
+  top: 6px;
+  z-index: 200000;
+  max-width: 492px;
+  margin: 0;
+  padding: 7px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #9dffb0;
+  font: 10px/1.25 Consolas, "Courier New", monospace;
+  text-align: left;
+  white-space: pre-wrap;
   pointer-events: none;
 }
 

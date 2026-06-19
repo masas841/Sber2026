@@ -31,11 +31,12 @@
 ## Live-флоу (актуальный)
 
 1. **idle** — зелёный градиент, камера **активна**, но **скрыта** (clip-path = 0). MediaPipe ищет лицо на скрытом потоке.
-2. **face** — лицо найдено и удержано → `revealCamera()`, случайный bottom line, «Улыбнитесь!». Удержание улыбки **3 с** с прогрессом и hold-стикерами (текст нижнего лайна стирается по символам).
-3. После успешной улыбки — пауза **2 с**, JPEG-снимок → `POST /api/capture` (ошибка API не блокирует анимацию).
-4. **stickers** → **qr** (без стадии **line** в live: `playPostSmileSequence({ skipLine: true })`).
-5. **qr** — **10 с**, затем переход в idle через **sticker curtain**: стикеры заполняют экран на QR → idle под ними → стикеры разлетаются (`preserveStickerCurtain`, `stickers-in` / `stickers-out`).
-6. Цикл снова с **idle** + presence watcher.
+2. **face** — лицо найдено и удержано → `revealCamera()`, случайный bottom line, «Улыбнитесь!». Удержание улыбки **3 с** с прогрессом и hold-стикерами (текст нижнего лайна стирается по символам). Пока MediaPipe отдаёт фазу `smile`, `boomerang-recorder.js` копит последние ~1.2 с кадров в память.
+3. После успешной улыбки — JPEG-снимок → `POST /api/capture` в фоне (ошибка API не блокирует анимацию).
+4. **line** — нижний текст печатается до конца; затем canvas-бумеранг пользователя проигрывается **3 раза** поверх окна камеры.
+5. **stickers** → **qr** через `playPostSmileSequence({ skipLine: true })` (line уже был показан вручную).
+6. **qr** — **10 с**, затем переход в idle через **sticker curtain**: стикеры заполняют экран на QR → idle под ними → стикеры разлетаются (`preserveStickerCurtain`, `stickers-in` / `stickers-out`).
+7. Цикл снова с **idle** + presence watcher.
 
 **Demo** (`?demo=1`): полная цепочка **с line 15 с**, автоповтор.
 
@@ -52,7 +53,7 @@
 ```javascript
 PRESENCE = { minFaceSize: 0.025, holdMs: 180, releaseMs: 1400, detectStride: 6 }
 SMILE    = { threshold: 0.21, minFaceSize: 0.07, holdMs: 3000, releaseMs: 1500, detectStride: 4 }
-SMILE_HOLD = { requiredMs: 3000, successPauseMs: 2000 }
+SMILE_HOLD = { requiredMs: 3000 }
 ```
 
 ### MediaPipe (`face-landmarker.js`)
@@ -120,6 +121,7 @@ smile-pay/
   web/js/face-landmarker.js MediaPipe, getDetectionFrame
   web/js/face-presence.js  ожидание лица → revealCamera
   web/js/smile-capture.js  детект улыбки
+  web/js/boomerang-recorder.js  запись кадров улыбки и canvas-бумеранг
   web/js/app.js            live / demo / preview, PRESENCE/SMILE
   web/js/kiosk-install-mode.js  poll install_off
   web/css/style.css

@@ -6,6 +6,7 @@
 const MP_VERSION = "0.10.14";
 const MP_CDN = `https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@${MP_VERSION}`;
 const MP_LOCAL_BASE = "/static/vendor/mediapipe/tasks-vision";
+const MIN_INTERNAL_WASM_BYTES = 9_000_000;
 const MODEL_REMOTE =
   "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task";
 const MODEL_LOCAL = "/static/models/face_landmarker.task";
@@ -34,6 +35,17 @@ async function probeOk(url) {
   }
 }
 
+async function probeMinSize(url, minBytes) {
+  try {
+    const head = await fetch(url, { method: "HEAD" });
+    if (!head.ok) return false;
+    const size = Number(head.headers.get("content-length"));
+    return Number.isFinite(size) && size >= minBytes;
+  } catch {
+    return false;
+  }
+}
+
 async function resolveModelUrl() {
   if (await probeOk(MODEL_LOCAL)) return MODEL_LOCAL;
   return MODEL_REMOTE;
@@ -41,7 +53,8 @@ async function resolveModelUrl() {
 
 async function resolveMediaPipeAssets() {
   const localBundle = `${MP_LOCAL_BASE}/vision_bundle.mjs`;
-  if (await probeOk(localBundle)) {
+  const localWasm = `${MP_LOCAL_BASE}/wasm/vision_wasm_internal.wasm`;
+  if (await probeOk(localBundle) && await probeMinSize(localWasm, MIN_INTERNAL_WASM_BYTES)) {
     return {
       importUrl: localBundle,
       wasmDir: `${MP_LOCAL_BASE}/wasm`,

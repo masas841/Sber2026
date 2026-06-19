@@ -320,6 +320,8 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
   const qrCaptionEl = () => root.querySelector(".smile-stage__qr-caption");
   let timer = null;
   let typeTimer = null;
+  let lineTextPromise = Promise.resolve(false);
+  let lineTextResolve = null;
   let holdTextTimer = null;
 
   function clearTimer() {
@@ -333,6 +335,10 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
     if (typeTimer) {
       clearTimeout(typeTimer);
       typeTimer = null;
+    }
+    if (lineTextResolve) {
+      lineTextResolve(false);
+      lineTextResolve = null;
     }
   }
 
@@ -369,16 +375,19 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
 
   function typeBottomLine(text) {
     const node = bottomLine();
-    if (!node) return;
+    if (!node) return Promise.resolve(false);
 
     clearTypewriter();
     node.textContent = "";
 
     const chars = Array.from(text);
-    if (!chars.length) return;
+    if (!chars.length) return Promise.resolve(true);
 
     const stepMs = LINE_TYPEWRITER.duration / chars.length;
     let index = 0;
+    const done = new Promise((resolve) => {
+      lineTextResolve = resolve;
+    });
 
     function tick() {
       if (root.dataset.stage !== "line") {
@@ -393,10 +402,13 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
         typeTimer = setTimeout(tick, stepMs);
       } else {
         typeTimer = null;
+        lineTextResolve?.(true);
+        lineTextResolve = null;
       }
     }
 
     typeTimer = setTimeout(tick, LINE_TYPEWRITER.delay);
+    return done;
   }
 
   function setSmileHoldProgress(progress) {
@@ -522,7 +534,9 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
     }
     if (stage === "line") {
       root.classList.add("smile-stage--cam-open", "smile-stage--line-expanded");
-      typeBottomLine(currentBottomText("line"));
+      lineTextPromise = typeBottomLine(currentBottomText("line"));
+    } else {
+      lineTextPromise = Promise.resolve(false);
     }
     if (stage === "stickers") {
       requestAnimationFrame(() => root.classList.add("smile-stage--stickers-in"));
@@ -544,6 +558,10 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
 
   function showLine() {
     setStage("line");
+  }
+
+  function waitForLineText() {
+    return lineTextPromise;
   }
 
   function playPostSmileSequence({ onComplete, skipLine = false } = {}) {
@@ -601,6 +619,7 @@ export function createSmileStage(container, { debug = false, copy: initialCopy }
     revealCamera,
     hideCamera,
     showLine,
+    waitForLineText,
     playPostSmileSequence,
     reset,
     applyCopy,
