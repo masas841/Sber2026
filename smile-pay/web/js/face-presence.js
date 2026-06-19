@@ -2,7 +2,7 @@
  * Ожидание гостя: лицо достаточно крупное → открываем «окно» камеры.
  */
 
-import { createFaceLandmarker, faceBounds, getDetectionFrame } from "./face-landmarker.js?v=20260619-wasm-guard";
+import { createFaceLandmarker, faceBounds, getDetectionFrame } from "./face-landmarker.js?v=20260619-camera-upright";
 
 export async function createFacePresenceWatcher(videoEl, options = {}) {
   const {

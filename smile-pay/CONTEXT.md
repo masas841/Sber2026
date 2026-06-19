@@ -60,8 +60,8 @@ SMILE_HOLD = { requiredMs: 3000 }
 
 - Локальные assets: `/static/vendor/mediapipe/tasks-vision` + `/static/models/face_landmarker.task` (CDN fallback).
 - `minFaceDetectionConfidence / minFacePresenceConfidence / minTrackingConfidence`: **0.05**.
-- `getDetectionFrame()`: crop по `--detection-zoom`, поворот кадра **180°** для inference.
-- Визуальный preview: `rotate(180deg) scaleX(-1) scale(var(--camera-zoom))`.
+- `getDetectionFrame()`: crop по `--detection-zoom`, без поворота кадра (камера закреплена в нормальном положении).
+- Визуальный preview: `scaleX(-1) scale(var(--camera-zoom))`.
 - Снимок: горизонтальное зеркалирование через canvas.
 
 ### Видео
@@ -189,7 +189,7 @@ cd smile-pay
 
 ## Отладка «дистанции открытия камеры»
 
-Порядок: MediaPipe на **detection canvas** (zoom 3, rotate 180°) → `faceBounds().size` vs `PRESENCE.minFaceSize` (0.025) → hold **180 ms** → `onFaceReady` → `revealCamera()`.
+Порядок: MediaPipe на **detection canvas** (zoom 3, без поворота) → `faceBounds().size` vs `PRESENCE.minFaceSize` (0.025) → hold **180 ms** → `onFaceReady` → `revealCamera()`.
 
 Если открытие «на той же дистанции», проверить: задеплоена ли версия с `--detection-zoom: 3`, confidence **0.05**, а не только `minFaceSize`. Также версии в `curl` index.html и cache-busting query.
 

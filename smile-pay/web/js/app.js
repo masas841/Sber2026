@@ -5,9 +5,9 @@ import {
   resolveStage,
 } from "./smile-stage.js?v=20260619-boomerang";
 import { loadCopyLines } from "./copy-lines.js";
-import { createSmileWatcher } from "./smile-capture.js?v=20260619-diag";
-import { createFacePresenceWatcher } from "./face-presence.js?v=20260619-diag";
-import { createBoomerangRecorder } from "./boomerang-recorder.js?v=20260619-boomerang";
+import { createSmileWatcher } from "./smile-capture.js?v=20260619-camera-upright";
+import { createFacePresenceWatcher } from "./face-presence.js?v=20260619-camera-upright";
+import { createBoomerangRecorder } from "./boomerang-recorder.js?v=20260619-camera-upright";
 import { initKioskInstallGate } from "./kiosk-install-mode.js?v=20260619-install-timeout";
 
 const params = new URLSearchParams(window.location.search);

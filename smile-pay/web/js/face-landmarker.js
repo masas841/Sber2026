@@ -120,7 +120,7 @@ export function getDetectionFrame(videoEl) {
   const sourceX = (width - sourceWidth) / 2;
   const sourceY = (height - sourceHeight) / 2;
 
-  detectionCtx.setTransform(-1, 0, 0, -1, width, height);
+  detectionCtx.setTransform(1, 0, 0, 1, 0, 0);
   detectionCtx.drawImage(
     videoEl,
     sourceX,

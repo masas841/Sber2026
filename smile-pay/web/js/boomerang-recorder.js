@@ -24,7 +24,7 @@ function drawCameraFrame(ctx, videoEl, size) {
 
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.clearRect(0, 0, size, size);
-  ctx.setTransform(1, 0, 0, -1, 0, size);
+  ctx.setTransform(-1, 0, 0, 1, size, 0);
   ctx.drawImage(videoEl, sourceX, sourceY, sourceSize, sourceSize, 0, 0, size, size);
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   return true;
