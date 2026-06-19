@@ -2,8 +2,9 @@ const DEFAULT_OPTIONS = {
   size: 504,
   recordMs: 3000,
   captureFps: 12,
-  playFps: 18,
+  playFps: 30,
   playbackMs: 3000,
+  loops: 3,
   fadeMs: 260,
 };
 
@@ -114,7 +115,7 @@ export function createBoomerangRecorder(videoEl, outputCanvas, options = {}) {
     hasFrames() {
       return frames.length > 2;
     },
-    async play({ durationMs = config.playbackMs } = {}) {
+    async play({ durationMs = config.playbackMs, loops = config.loops } = {}) {
       this.stop();
       if (!outputCanvas || !outputCtx || frames.length <= 2) return false;
 
@@ -127,19 +128,22 @@ export function createBoomerangRecorder(videoEl, outputCanvas, options = {}) {
       const forward = frames.map((frame) => frame.canvas);
       const backward = forward.slice(1, -1).reverse();
       const sequence = [...forward, ...backward];
-      const frameInterval = 1000 / config.playFps;
-      const endAt = performance.now() + durationMs;
-      let index = 0;
-
       outputCtx.drawImage(sequence[0], 0, 0, outputCanvas.width, outputCanvas.height);
       await nextFrame();
       outputCanvas.classList.add("camera-slot__boomerang--active");
       await delay(config.fadeMs);
 
-      while (performance.now() < endAt && playing && token === playToken) {
-        outputCtx.drawImage(sequence[index], 0, 0, outputCanvas.width, outputCanvas.height);
-        index = (index + 1) % sequence.length;
-        await delay(frameInterval);
+      const frameInterval = 1000 / config.playFps;
+      for (let loop = 0; loop < loops && playing && token === playToken; loop += 1) {
+        const startAt = performance.now();
+        while (playing && token === playToken) {
+          const elapsed = performance.now() - startAt;
+          const progress = Math.min(1, elapsed / durationMs);
+          const index = Math.min(sequence.length - 1, Math.floor(progress * sequence.length));
+          outputCtx.drawImage(sequence[index], 0, 0, outputCanvas.width, outputCanvas.height);
+          if (progress >= 1) break;
+          await delay(frameInterval);
+        }
       }
 
       if (token === playToken) {

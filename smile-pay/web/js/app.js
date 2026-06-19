@@ -7,7 +7,7 @@ import {
 import { loadCopyLines } from "./copy-lines.js";
 import { createSmileWatcher } from "./smile-capture.js?v=20260619-camera-upright";
 import { createFacePresenceWatcher } from "./face-presence.js?v=20260619-camera-upright";
-import { createBoomerangRecorder } from "./boomerang-recorder.js?v=20260619-boomerang-3s";
+import { createBoomerangRecorder } from "./boomerang-recorder.js?v=20260619-boomerang-3x";
 import { initKioskInstallGate } from "./kiosk-install-mode.js?v=20260619-install-timeout";
 
 const params = new URLSearchParams(window.location.search);
@@ -176,8 +176,8 @@ async function onSmileDetected() {
 
     stage.showLine();
     await stage.waitForLineText();
-    diagUpdate({ boomerang: "playing 3000ms", boomerangFrames: boomerang.frameCount() });
-    const played = await boomerang.play({ durationMs: 3000 });
+    diagUpdate({ boomerang: "playing 3000ms x3", boomerangFrames: boomerang.frameCount() });
+    const played = await boomerang.play({ durationMs: 3000, loops: 3 });
     diagUpdate({ boomerang: played ? "played" : "skipped", boomerangPlayed: played });
 
     stage.playPostSmileSequence({
