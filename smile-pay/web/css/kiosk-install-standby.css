@@ -1,38 +1,129 @@
-/* Placeholder standby — заменить ассетами из Figma для каждой активации */
 .kiosk-install-standby {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
   z-index: 100000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(160deg, #0d8523 0%, #21a038 45%, #3fd05a 100%);
+  width: var(--stage-size, 504px);
+  height: var(--stage-size, 504px);
+  overflow: hidden;
+  background: #21a038;
   color: #fff;
   font-family: "SB Sans Display", "Segoe UI", system-ui, sans-serif;
   text-align: center;
-  padding: 2rem;
 }
 
 .kiosk-install-standby.hidden {
   display: none !important;
 }
 
-.kiosk-install-standby__inner {
-  max-width: 28rem;
+.kiosk-install-standby__canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 43% 38%, rgba(215, 255, 246, 0.54) 0 16%, rgba(178, 241, 147, 0.35) 33%, transparent 51%),
+    radial-gradient(circle at 48% 79%, rgba(0, 217, 0, 0.52) 0 25%, rgba(0, 217, 0, 0.22) 43%, transparent 62%),
+    radial-gradient(circle at 12% 98%, rgba(33, 160, 56, 0.65) 0 18%, transparent 46%),
+    linear-gradient(150deg, #a3cd39 0%, #92df22 36%, #62de42 62%, #a7e20f 100%);
+}
+
+.kiosk-install-standby__pill {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  top: 173px;
+  width: 464.17px;
+  height: 157.31px;
+  border-radius: 73.5px;
+  background: #21a038;
+  transform: rotate(-5.82deg);
+  transform-origin: center;
+  box-shadow: 0 0 0 1px rgba(33, 160, 56, 0.01);
+}
+
+.kiosk-install-standby__copy {
+  position: absolute;
+  left: 65px;
+  top: 202px;
+  z-index: 6;
+  width: 383.87px;
+  color: #fff;
+  transform: rotate(-5.82deg);
+  transform-origin: center;
 }
 
 .kiosk-install-standby__title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin: 0 0 9px;
+  font-size: 39.316px;
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
 }
 
 .kiosk-install-standby__text {
   margin: 0;
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
-  line-height: 1.45;
-  opacity: 0.92;
+  font-size: 25.985px;
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.kiosk-install-standby__decor {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.kiosk-install-standby__decor--flower {
+  z-index: 1;
+  left: 218px;
+  top: 4px;
+  width: 251.51px;
+  height: 251.51px;
+  transform: rotate(16.62deg);
+  transform-origin: center;
+}
+
+.kiosk-install-standby__decor--smile {
+  z-index: 5;
+  left: 71px;
+  top: 311px;
+  width: 141.14px;
+  height: 141.14px;
+  transform: rotate(18.03deg);
+  transform-origin: center;
+}
+
+.kiosk-install-standby__decor--squiggle {
+  z-index: 5;
+  left: 326px;
+  top: 280px;
+  width: 134.05px;
+  height: 104.5px;
+  transform: rotate(-52.01deg);
+  transform-origin: center;
+}
+
+.kiosk-install-standby__decor--star-pink {
+  z-index: 5;
+  left: 60px;
+  top: 146px;
+  width: 73.22px;
+  height: 73.22px;
+  transform: rotate(13.05deg);
+  transform-origin: center;
+}
+
+.kiosk-install-standby__decor--star-blue {
+  z-index: 5;
+  left: 125px;
+  top: 133px;
+  width: 46.26px;
+  height: 46.26px;
+  transform: rotate(-9.97deg);
+  transform-origin: center;
 }
 
 .kiosk-install-off [data-kiosk-main],

@@ -7,13 +7,21 @@
   <title>Smile Pay — оплата улыбкой</title>
   <link rel="stylesheet" href="/static/css/fonts.css?v=20260612-qr-sticker-fill-2" />
   <link rel="stylesheet" href="/static/css/style.css?v=20260613-detect-zoom-app-y" />
-  <link rel="stylesheet" href="/static/css/kiosk-install-standby.css" />
+  <link rel="stylesheet" href="/static/css/kiosk-install-standby.css?v=20260619-figma" />
 </head>
 <body>
   <div id="kiosk-install-standby" class="kiosk-install-standby hidden" hidden aria-live="polite">
-    <div class="kiosk-install-standby__inner">
-      <h1 class="kiosk-install-standby__title">Smile Pay скоро откроется</h1>
-      <p class="kiosk-install-standby__text">Специальный экран из Figma будет здесь.</p>
+    <div class="kiosk-install-standby__canvas" role="status">
+      <div class="kiosk-install-standby__pill" aria-hidden="true"></div>
+      <div class="kiosk-install-standby__copy">
+        <h1 class="kiosk-install-standby__title">До встречи!</h1>
+        <p class="kiosk-install-standby__text">Спасибо что провели этот день вместе со Сбер!</p>
+      </div>
+      <img class="kiosk-install-standby__decor kiosk-install-standby__decor--flower" src="/static/assets/figma/install-off/flower-sber.svg" alt="" aria-hidden="true" />
+      <img class="kiosk-install-standby__decor kiosk-install-standby__decor--smile" src="/static/assets/figma/install-off/smile-pink.svg" alt="" aria-hidden="true" />
+      <img class="kiosk-install-standby__decor kiosk-install-standby__decor--squiggle" src="/static/assets/figma/install-off/squiggle-blue.svg" alt="" aria-hidden="true" />
+      <img class="kiosk-install-standby__decor kiosk-install-standby__decor--star-pink" src="/static/assets/figma/install-off/star-pink.svg" alt="" aria-hidden="true" />
+      <img class="kiosk-install-standby__decor kiosk-install-standby__decor--star-blue" src="/static/assets/figma/install-off/star-blue.svg" alt="" aria-hidden="true" />
     </div>
   </div>
   <main class="shell" id="shell" data-kiosk-main>
