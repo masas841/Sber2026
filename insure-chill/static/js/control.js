@@ -46,7 +46,6 @@ let lastAimSentAt = 0;
 let lastTapPosition = null;
 let pointerStartPosition = null;
 let pointerHasDragged = false;
-let hitPointerId = null;
 let hitAnimationTimerId = 0;
 
 function isNumber(value) {
@@ -254,7 +253,6 @@ function updateUi() {
     lastTapPosition = null;
     pointerStartPosition = null;
     pointerHasDragged = false;
-    hitPointerId = null;
   }
   lastPhase = phase;
 }
@@ -328,24 +326,12 @@ aimSurface.addEventListener("pointerdown", (event) => {
   const position = getAimPositionFromEvent(event);
   pointerStartPosition = position;
   pointerHasDragged = false;
-  const shouldHit =
-    lastTapPosition && distanceBetween(lastTapPosition, position) <= AIM_HIT_DISTANCE_PX;
-
-  if (shouldHit) {
-    hitPointerId = event.pointerId;
-    sendHit(position);
-  } else {
-    hitPointerId = null;
-  }
 });
 aimSurface.addEventListener("pointermove", (event) => {
   if (state.phase !== "playing" || activePointerId !== event.pointerId) {
     return;
   }
   event.preventDefault();
-  if (hitPointerId === event.pointerId) {
-    return;
-  }
   const position = getAimPositionFromEvent(event);
   if (!pointerHasDragged) {
     if (!pointerStartPosition || distanceBetween(pointerStartPosition, position) < AIM_DRAG_DISTANCE_PX) {
@@ -360,14 +346,15 @@ aimSurface.addEventListener("pointerup", (event) => {
     return;
   }
   event.preventDefault();
-  if (hitPointerId === event.pointerId) {
-    hitPointerId = null;
-    activePointerId = null;
-    pointerStartPosition = null;
-    pointerHasDragged = false;
-    return;
+  const position = getAimPositionFromEvent(event);
+  if (pointerHasDragged) {
+    lastTapPosition = state.aim;
+  } else if (lastTapPosition && pointerStartPosition && distanceBetween(lastTapPosition, position) <= AIM_HIT_DISTANCE_PX) {
+    sendHit(position);
+    lastTapPosition = null;
+  } else {
+    lastTapPosition = pointerStartPosition;
   }
-  lastTapPosition = pointerHasDragged ? state.aim : pointerStartPosition;
   activePointerId = null;
   pointerStartPosition = null;
   pointerHasDragged = false;
@@ -375,9 +362,6 @@ aimSurface.addEventListener("pointerup", (event) => {
 aimSurface.addEventListener("pointercancel", (event) => {
   if (activePointerId === event.pointerId) {
     activePointerId = null;
-  }
-  if (hitPointerId === event.pointerId) {
-    hitPointerId = null;
   }
   pointerStartPosition = null;
   pointerHasDragged = false;
