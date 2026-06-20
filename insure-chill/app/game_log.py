@@ -5,20 +5,33 @@ from datetime import date, datetime
 from pathlib import Path
 from threading import Lock
 from typing import Any
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
+
+from app.config import settings
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_LOG_PATH = ROOT / "data" / "games.jsonl"
+LEGACY_LOG_PATH = ROOT / "data" / "games.jsonl"
 
 _lock = Lock()
 
 
 def log_path() -> Path:
-    return DEFAULT_LOG_PATH
+    path = Path(settings.play_log_file or "data/plays.jsonl")
+    return path if path.is_absolute() else ROOT / path
+
+
+def _timezone() -> ZoneInfo | None:
+    try:
+        return ZoneInfo(settings.play_log_tz)
+    except ZoneInfoNotFoundError:
+        return None
 
 
 def append_event(event: str, **fields: Any) -> dict[str, Any]:
+    tz = _timezone()
+    now = datetime.now(tz) if tz else datetime.now().astimezone()
     record: dict[str, Any] = {
-        "ts": datetime.now().astimezone().isoformat(timespec="seconds"),
+        "ts": now.isoformat(timespec="seconds"),
         "event": event,
         **fields,
     }
@@ -32,20 +45,23 @@ def append_event(event: str, **fields: Any) -> dict[str, Any]:
 
 
 def read_events() -> list[dict[str, Any]]:
-    path = log_path()
-    if not path.exists():
-        return []
-
     events: list[dict[str, Any]] = []
-    with _lock:
-        for raw_line in path.read_text(encoding="utf-8").splitlines():
-            line = raw_line.strip()
-            if not line:
-                continue
-            try:
-                events.append(json.loads(line))
-            except json.JSONDecodeError:
-                continue
+    paths = [log_path()]
+    if LEGACY_LOG_PATH != paths[0]:
+        paths.append(LEGACY_LOG_PATH)
+
+    for path in paths:
+        if not path.exists():
+            continue
+        with _lock:
+            for raw_line in path.read_text(encoding="utf-8").splitlines():
+                line = raw_line.strip()
+                if not line:
+                    continue
+                try:
+                    events.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
     return events
 
 

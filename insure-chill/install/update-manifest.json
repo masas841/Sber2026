@@ -12,13 +12,13 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "685f2f55272b113e3871d51a657699349de13ef3d0e918f85f468d9a69b91a3f",
-      "size": 1053
+      "sha256": "a7333dd18bd5655159fda73510d6cd2ab996e2f1ced3330d3fa1d1f600af0bbb",
+      "size": 1136
     },
     {
       "path": "app/game_log.py",
-      "sha256": "91591bdce60c12a0956d17f6d8f3081f6c0ae7915a4e58c5780ccbcc9c9564e9",
-      "size": 2601
+      "sha256": "98f134e3a865a98433efb04a6d1ae0a3c8802dcba75462812d64fe7965772522",
+      "size": 3128
     },
     {
       "path": "app/install_routes.py",

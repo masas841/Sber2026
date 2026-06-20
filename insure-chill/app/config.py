@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     game_duration_sec: int = 59
     hit_padding_px: int = 10
     data_dir: Path = Path("data")
+    play_log_file: str = "data/plays.jsonl"
+    play_log_tz: str = "Europe/Moscow"
 
     # Диагностика: периодически отправлять хвост логов киоска на photo_receiver.
     log_upload_enabled: bool = True
