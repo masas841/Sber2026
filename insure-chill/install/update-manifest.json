@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "16a323207ed90656819fff496a789bfdbc833f1a87c64f529081846e68c2b648",
-      "size": 62
+      "sha256": "303175bbdc1339afef75d0449b24e995e2174ed94ec5cadde3f1ed095a0881bc",
+      "size": 441
     },
     {
       "path": "app/__init__.py",
@@ -12,8 +12,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "3f44d161f76bc9a9e0e37e6633e8547b9c3ae170c12b0a116b23a6b4da718425",
-      "size": 326
+      "sha256": "685f2f55272b113e3871d51a657699349de13ef3d0e918f85f468d9a69b91a3f",
+      "size": 1053
     },
     {
       "path": "app/game_log.py",
@@ -26,9 +26,14 @@
       "size": 2822
     },
     {
+      "path": "app/log_uploader.py",
+      "sha256": "e79580c4fba4c26da4d75dcc06096fb9e4300bfec70d82f75c3eb7c604605e7f",
+      "size": 5813
+    },
+    {
       "path": "app/main.py",
-      "sha256": "df368ad3f9a98578da172b169e836e86bf8294c51d072c615614f576f60660cb",
-      "size": 8943
+      "sha256": "21af36843db06fed8ba38911310e0a029d43d33c5f63a59145c2d0743cf2cd1c",
+      "size": 9934
     },
     {
       "path": "docs/figma-selection.md",
@@ -92,8 +97,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "e990dc9d45ee04208c7844d1ab44e47bab7fb2ec1ed95c8d686e6327cb851c6f",
-      "size": 740
+      "sha256": "a23932700b3dfefef2acc0d53004de713c3a2d7fd7cc21f3fc5d1cac5637d3a6",
+      "size": 1151
     },
     {
       "path": "install/Install-PipDeps.ps1",
@@ -117,8 +122,8 @@
     },
     {
       "path": "install/Update-EnvDefaults.ps1",
-      "sha256": "f66e7ea0e61ac5c6c40f7eabeee2fd16f0bff8361a32984c00182eb747d449ed",
-      "size": 2538
+      "sha256": "90391eee364e3aae413383959f30be4dd844294fe422c342eb390db655f2d323",
+      "size": 3641
     },
     {
       "path": "install/update-from-github.ps1",
@@ -132,8 +137,8 @@
     },
     {
       "path": "requirements.txt",
-      "sha256": "f6ffbd4a6ce45c821006ee29a59c393ccb65cc265b12d709c52e9d2fb94e2cfc",
-      "size": 89
+      "sha256": "fac2990472e716fe2788e53f06c2df5b5c1da864b38944ecbb397410f7dacc36",
+      "size": 103
     },
     {
       "path": "run-kiosk.ps1",

@@ -1,4 +1,5 @@
 from datetime import date
+import logging
 from pathlib import Path
 from typing import Any, Literal
 
@@ -10,6 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from app.config import settings
 from app.game_log import append_event, stats_for_day, summary
 from app.install_routes import register_install_routes
+from app.log_uploader import start_log_upload_worker
 
 ROOT = Path(__file__).resolve().parent.parent
 STATIC_DIR = ROOT / "static"
@@ -18,6 +20,7 @@ IMG_DIR = ROOT / "img"
 Role = Literal["screen", "control"]
 
 app = FastAPI(title="Insure Chill", version="0.1.0")
+logger = logging.getLogger(__name__)
 
 if STATIC_DIR.exists():
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
@@ -28,6 +31,33 @@ if IMG_DIR.exists():
 register_install_routes(app, ROOT, "Insure Chill")
 
 _NO_CACHE = {"Cache-Control": "no-store, no-cache, must-revalidate"}
+
+
+def _configure_file_logging() -> None:
+    log_path = ROOT / "server.log"
+    root_logger = logging.getLogger()
+    for handler in root_logger.handlers:
+        if getattr(handler, "_insure_chill_file_handler", False):
+            return
+
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler._insure_chill_file_handler = True
+    handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
+    root_logger.addHandler(handler)
+    if root_logger.level > logging.INFO:
+        root_logger.setLevel(logging.INFO)
+    logger.info("file logging enabled: %s", log_path)
+
+
+@app.on_event("startup")
+def startup() -> None:
+    _configure_file_logging()
+    logger.info(
+        "startup log_upload_enabled=%s log_upload_url=%s",
+        settings.log_upload_enabled,
+        settings.log_upload_url or "",
+    )
+    start_log_upload_worker()
 
 
 class ConnectionHub:
