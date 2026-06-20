@@ -1897,8 +1897,8 @@
     },
     {
       "path": "static/control.html",
-      "sha256": "f881f65db439303bb376600efff20576c867d503fe37776d583b0cf9b36c8d0a",
-      "size": 10265
+      "sha256": "76ced2ed116135e44cd35ecfa36b924db91c1505a8bc590b0514b30f2cfb8f9a",
+      "size": 10267
     },
     {
       "path": "static/css/control.css",
@@ -1987,18 +1987,18 @@
     },
     {
       "path": "static/index.html",
-      "sha256": "5dd2c9ea17164a2b77ec3fec126d71e0b38a0983583edd1f0acb2b79ce7c488e",
-      "size": 11695
+      "sha256": "6d2d161ed34366100689370f84a67ac381ff52a2363ba968181f679dcd9ca76f",
+      "size": 11700
     },
     {
       "path": "static/js/control.js",
-      "sha256": "d7f89b23e23b4a28e40fea7b3f5e9812fa11c600716e8097bb41b5dad4bd3622",
-      "size": 10746
+      "sha256": "25a2e5fca7c30a2f817c3b200e80264198187c4ccd460503fb103f0341e0813a",
+      "size": 10748
     },
     {
       "path": "static/js/game.js",
-      "sha256": "b9d426f30a06e3afed2fd4b69ffef959c64f88dfa3460bd4f8321d83dcc05743",
-      "size": 23827
+      "sha256": "0f1719bcc1efe2501bfb07595b1cf7eb713846a90eb17e4d3d7641b007d3377c",
+      "size": 23831
     },
     {
       "path": "static/js/kiosk-install-mode.js",
