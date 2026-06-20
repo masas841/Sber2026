@@ -965,9 +965,9 @@ class GameScene extends Phaser.Scene {
 
 function classifyStarsResultScreen(score) {
   const n = Number(score) || 0;
-  if (n < 500) return "result_stars_0";
-  if (n <= 700) return "result_stars_1";
-  if (n <= 1100) return "result_stars_2";
+  if (n < 733) return "result_stars_0";
+  if (n < 1467) return "result_stars_1";
+  if (n < 2200) return "result_stars_2";
   return "result_stars_3";
 }
 

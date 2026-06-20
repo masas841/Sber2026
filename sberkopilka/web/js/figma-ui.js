@@ -10,7 +10,7 @@
   const DESIGN = 672;
   const SCREENS_BASE = "/static/assets/figma/screens/";
   const HTML_BASE = "/static/figma-screens/";
-  const SCORE_STAR_THRESHOLDS = [500, 701, 1101];
+  const SCORE_STAR_THRESHOLDS = [733, 1467, 2200];
 
   const DYNAMIC = {
     result_score: {
