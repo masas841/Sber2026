@@ -1897,8 +1897,8 @@
     },
     {
       "path": "static/control.html",
-      "sha256": "1184d3adac6cbda3e568202a2c71d833c113a132b6ddb467d2cf09f4616aa22c",
-      "size": 10266
+      "sha256": "f881f65db439303bb376600efff20576c867d503fe37776d583b0cf9b36c8d0a",
+      "size": 10265
     },
     {
       "path": "static/css/control.css",
@@ -1992,8 +1992,8 @@
     },
     {
       "path": "static/js/control.js",
-      "sha256": "2f8b121c9058668b383021c6deb324dd020ebf62af33596762ec7a8f89e3c3db",
-      "size": 11057
+      "sha256": "d7f89b23e23b4a28e40fea7b3f5e9812fa11c600716e8097bb41b5dad4bd3622",
+      "size": 10746
     },
     {
       "path": "static/js/game.js",
