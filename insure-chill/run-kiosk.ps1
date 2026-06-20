@@ -45,9 +45,18 @@ if (-not $SkipUpdate -and ($UpdateFromGitHub -or $autoUpdate)) {
     }
 }
 
+$LocalKiosk = Join-Path $PSScriptRoot "install"
 $Monorepo = Split-Path $PSScriptRoot -Parent
-. (Join-Path $Monorepo "scripts\kiosk\Resolve-Python.ps1")
-. (Join-Path $Monorepo "scripts\kiosk\Install-PipDeps.ps1")
+$MonorepoKiosk = Join-Path $Monorepo "scripts\kiosk"
+$Kiosk = $MonorepoKiosk
+if (
+    (Test-Path (Join-Path $LocalKiosk "Resolve-Python.ps1")) -and
+    (Test-Path (Join-Path $LocalKiosk "Install-PipDeps.ps1"))
+) {
+    $Kiosk = $LocalKiosk
+}
+. (Join-Path $Kiosk "Resolve-Python.ps1")
+. (Join-Path $Kiosk "Install-PipDeps.ps1")
 
 $venvPy = Join-Path $PSScriptRoot ".venv\Scripts\python.exe"
 if (-not (Test-Path $venvPy)) {

@@ -1,12 +1,13 @@
 # Build kiosk zip package into dist/.
 param(
-    [switch]$IncludePython,
+    [switch]$WithoutPython,
     [switch]$Offline
 )
 
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent
 $Monorepo = Split-Path $Root -Parent
+$includePython = -not $WithoutPython
 
 & (Join-Path $Monorepo "scripts\kiosk\build_install_package.ps1") `
     -ProjectRoot $Root `
@@ -17,5 +18,5 @@ $Monorepo = Split-Path $Root -Parent
         "static/assets/figma/threats/_context",
         "static/assets/figma/control/_context"
     ) `
-    -IncludePython:$IncludePython `
+    -IncludePython:$includePython `
     -Offline:$Offline

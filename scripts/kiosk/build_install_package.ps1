@@ -68,7 +68,7 @@ $zipPath = Join-Path $distDir $zipName
 $baseExcludeDirs = @(
     ".venv", ".git", "dist", "backups", "__pycache__"
 ) + $ExcludeDirs
-$baseExcludeFiles = @(".env", "*.pyc", "*.pyo", "*.whl", "*.log") + $ExcludeFiles
+$baseExcludeFiles = @(".env", "*.pyc", "*.pyo", "*.log") + $ExcludeFiles
 
 $items = Get-ChildItem -Path $Root -Force | Where-Object {
     $name = $_.Name

@@ -92,8 +92,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "9135345151b79d3d503421507d948d6660fdda7419770f4d280088191eddb574",
-      "size": 752
+      "sha256": "e990dc9d45ee04208c7844d1ab44e47bab7fb2ec1ed95c8d686e6327cb851c6f",
+      "size": 740
     },
     {
       "path": "install/Install-PipDeps.ps1",
@@ -102,18 +102,18 @@
     },
     {
       "path": "install/install.ps1",
-      "sha256": "867a1f08ccb147cae711d1de78082af6592b520468f669c339bdf8db9594cca8",
-      "size": 2358
+      "sha256": "2e4f4caa104d6fc9e2dcc942c2d5bef0bb84703e18cd0c84bd470a0cb6f7790d",
+      "size": 2441
     },
     {
       "path": "install/README-INSTALL.md",
-      "sha256": "f95826729b4a0090ba117d3a4f9f7c972b207ae49eec9f1f152df7250430846b",
-      "size": 1071
+      "sha256": "3e073056d45aa3c1698f046df6e04bf84ad277ffc7da7ef38801a5443ec557cb",
+      "size": 1507
     },
     {
       "path": "install/Resolve-Python.ps1",
-      "sha256": "4b7479ccb5b3ffca70515f601a80c77404d73c32f42cc8316e57115e367836d0",
-      "size": 2052
+      "sha256": "4c557cb0e29ebb5c2298c85c9994726f9bb49a0fbc194c64fee2bdcded183742",
+      "size": 3485
     },
     {
       "path": "install/start-insure-chill.cmd",
@@ -127,8 +127,13 @@
     },
     {
       "path": "install/update-from-github.ps1",
-      "sha256": "f568d714fe3a54faf4ecd3dda096c7fc388f28c4aff4bc3667153dba8e2abde2",
-      "size": 526
+      "sha256": "1f12df2bfa766d61ec121104b7da131b39e39129ccbf3eb31c860d98f87a19f5",
+      "size": 706
+    },
+    {
+      "path": "install/Update-FromGitHub.ps1",
+      "sha256": "e84ff7099b0b23de11c536909fb17240d09c6830799405f9b256c46880adec47",
+      "size": 13826
     },
     {
       "path": "install/update-insure-chill.cmd",
@@ -142,8 +147,8 @@
     },
     {
       "path": "run-kiosk.ps1",
-      "sha256": "3edda4d100429b45e05d14508d01e34c81c15c0b0ff4b533b3e97b74c4f4eb51",
-      "size": 2730
+      "sha256": "2f0a3de004c33c925bec003d74a365b11853aa05ccacc39c65778730cba7c28b",
+      "size": 2985
     },
     {
       "path": "run.ps1",
@@ -157,8 +162,8 @@
     },
     {
       "path": "scripts/build_install_package.ps1",
-      "sha256": "1ec24d002c15875a0d24c64df3c9acebe9e49b825f911239f5dd3c2fc8fae719",
-      "size": 585
+      "sha256": "42c01710891e6f7d0de54ea51fd107df1ab2f638c93efe0fd0789812b9f56ddf",
+      "size": 622
     },
     {
       "path": "scripts/download_figma_assets.ps1",

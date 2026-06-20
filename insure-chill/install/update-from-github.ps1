@@ -7,8 +7,14 @@ param(
 $ErrorActionPreference = "Stop"
 $Root = Split-Path $PSScriptRoot -Parent
 $Monorepo = Split-Path $Root -Parent
+$LocalUpdater = Join-Path $PSScriptRoot "Update-FromGitHub.ps1"
+$MonorepoUpdater = Join-Path $Monorepo "scripts\kiosk\Update-FromGitHub.ps1"
+$Updater = $MonorepoUpdater
+if (Test-Path $LocalUpdater) {
+    $Updater = $LocalUpdater
+}
 
-. (Join-Path $Monorepo "scripts\kiosk\Update-FromGitHub.ps1")
+. $Updater
 . (Join-Path $PSScriptRoot "Update-EnvDefaults.ps1")
 
 Invoke-KioskGitHubUpdate -AppLabel "InsureChill" -Root $Root -Subdir "insure-chill" `

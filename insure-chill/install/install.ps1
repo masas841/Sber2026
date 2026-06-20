@@ -26,6 +26,9 @@ Write-Host "Root: $Root"
 
 $basePy = Get-KioskPython -Root $Root
 $ver = & $basePy -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')"
+if (-not $ver) {
+    throw "Python executable did not return a version: $basePy"
+}
 $major, $minor = $ver.Split(".")
 if ([int]$major -lt 3 -or ([int]$major -eq 3 -and [int]$minor -lt 10)) {
     throw "Python 3.10+ is required, found $ver ($basePy)"

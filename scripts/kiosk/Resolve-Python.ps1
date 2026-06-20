@@ -4,6 +4,33 @@ function Get-KioskPython {
         [string]$Root
     )
 
+    function Resolve-KioskPythonCandidate {
+        param([string]$Candidate)
+
+        if (-not $Candidate) {
+            return $null
+        }
+
+        $source = $Candidate
+        if ($source -like "*\WindowsApps\python*.exe") {
+            return $null
+        }
+
+        $oldErrorActionPreference = $ErrorActionPreference
+        $ErrorActionPreference = "Continue"
+        try {
+            $resolved = & $source -c "import sys; print(sys.executable)" 2>$null
+            $code = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $oldErrorActionPreference
+        }
+
+        if ($code -eq 0 -and $resolved) {
+            return ([string]$resolved).Trim()
+        }
+        return $null
+    }
+
     $bundled = Join-Path $Root "runtime\python\python.exe"
     if (Test-Path $bundled) {
         return (Resolve-Path $bundled).Path
@@ -11,13 +38,33 @@ function Get-KioskPython {
 
     $cmd = Get-Command python -ErrorAction SilentlyContinue
     if ($cmd) {
-        return $cmd.Source
+        $python = Resolve-KioskPythonCandidate -Candidate $cmd.Source
+        if ($python) {
+            return $python
+        }
+    }
+
+    $py = Get-Command py -ErrorAction SilentlyContinue
+    if ($py) {
+        $oldErrorActionPreference = $ErrorActionPreference
+        $ErrorActionPreference = "Continue"
+        try {
+            $python = & $py.Source -3 -c "import sys; print(sys.executable)" 2>$null
+            $code = $LASTEXITCODE
+        } finally {
+            $ErrorActionPreference = $oldErrorActionPreference
+        }
+
+        if ($code -eq 0 -and $python) {
+            return ([string]$python).Trim()
+        }
     }
 
     throw @"
 Python was not found.
   Option 1: build the package with -IncludePython (bundles runtime\python)
   Option 2: install Python 3.10+ from python.org (Add to PATH)
+  Note: Microsoft Store "python.exe" app execution alias is ignored because it is not a real Python runtime.
 "@
 }
 

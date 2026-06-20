@@ -5,15 +5,17 @@
 ## Требования
 
 - Windows 10/11
-- Python 3.10+ (`runtime\python` в пакете или системный)
+- Python в пакете (`runtime\python`). Системный Python 3.10+ тоже поддерживается, но для киосков рекомендуется bundled-пакет.
 
 ## Сборка пакета
 
 ```powershell
 .\scripts\build_install_package.ps1
-.\scripts\build_install_package.ps1 -IncludePython
+.\scripts\build_install_package.ps1 -WithoutPython
 .\scripts\build_install_package.ps1 -Offline
 ```
+
+Обычная сборка включает portable Python, чтобы пакет ставился на чистый киоск без системного Python. Флаг `-WithoutPython` нужен только для облегчённой сборки на машине, где Python уже установлен.
 
 ## Установка
 
