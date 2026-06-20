@@ -6,6 +6,7 @@ const INITIAL_COUNTER_FLASH_GUARD_MS = 700;
 const RATING_STAR_THRESHOLDS = [5, 8, 14];
 const AIM_SEND_INTERVAL_MS = 33;
 const AIM_HIT_DISTANCE_PX = 30;
+const AIM_DRAG_DISTANCE_PX = 14;
 const AIM_INITIAL_X = 352;
 const AIM_INITIAL_Y = 413;
 
@@ -43,6 +44,8 @@ let resultResetSent = false;
 let activePointerId = null;
 let lastAimSentAt = 0;
 let lastTapPosition = null;
+let pointerStartPosition = null;
+let pointerHasDragged = false;
 let hitPointerId = null;
 let hitAnimationTimerId = 0;
 
@@ -249,6 +252,8 @@ function updateUi() {
   if (phase !== "playing" && lastPhase === "playing") {
     activePointerId = null;
     lastTapPosition = null;
+    pointerStartPosition = null;
+    pointerHasDragged = false;
     hitPointerId = null;
   }
   lastPhase = phase;
@@ -321,6 +326,8 @@ aimSurface.addEventListener("pointerdown", (event) => {
     // Synthetic pointer events in browser checks may not be capturable.
   }
   const position = getAimPositionFromEvent(event);
+  pointerStartPosition = position;
+  pointerHasDragged = false;
   const shouldHit =
     lastTapPosition && distanceBetween(lastTapPosition, position) <= AIM_HIT_DISTANCE_PX;
 
@@ -329,7 +336,6 @@ aimSurface.addEventListener("pointerdown", (event) => {
     sendHit(position);
   } else {
     hitPointerId = null;
-    setAimPosition(position, true);
   }
 });
 aimSurface.addEventListener("pointermove", (event) => {
@@ -337,7 +343,17 @@ aimSurface.addEventListener("pointermove", (event) => {
     return;
   }
   event.preventDefault();
-  setAimPosition(getAimPositionFromEvent(event));
+  if (hitPointerId === event.pointerId) {
+    return;
+  }
+  const position = getAimPositionFromEvent(event);
+  if (!pointerHasDragged) {
+    if (!pointerStartPosition || distanceBetween(pointerStartPosition, position) < AIM_DRAG_DISTANCE_PX) {
+      return;
+    }
+    pointerHasDragged = true;
+  }
+  setAimPosition(position);
 });
 aimSurface.addEventListener("pointerup", (event) => {
   if (activePointerId !== event.pointerId) {
@@ -347,10 +363,14 @@ aimSurface.addEventListener("pointerup", (event) => {
   if (hitPointerId === event.pointerId) {
     hitPointerId = null;
     activePointerId = null;
+    pointerStartPosition = null;
+    pointerHasDragged = false;
     return;
   }
-  lastTapPosition = state.aim;
+  lastTapPosition = pointerHasDragged ? state.aim : pointerStartPosition;
   activePointerId = null;
+  pointerStartPosition = null;
+  pointerHasDragged = false;
 });
 aimSurface.addEventListener("pointercancel", (event) => {
   if (activePointerId === event.pointerId) {
@@ -359,6 +379,8 @@ aimSurface.addEventListener("pointercancel", (event) => {
   if (hitPointerId === event.pointerId) {
     hitPointerId = null;
   }
+  pointerStartPosition = null;
+  pointerHasDragged = false;
 });
 aimSurface.addEventListener("keydown", (event) => {
   if (state.phase !== "playing") {
