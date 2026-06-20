@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "303175bbdc1339afef75d0449b24e995e2174ed94ec5cadde3f1ed095a0881bc",
-      "size": 441
+      "sha256": "cf5254b148d2f8552b0e1e45b19c0434fedea06eb91143de448da24da8e631de",
+      "size": 458
     },
     {
       "path": "app/__init__.py",
@@ -12,8 +12,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "a7333dd18bd5655159fda73510d6cd2ab996e2f1ced3330d3fa1d1f600af0bbb",
-      "size": 1136
+      "sha256": "c9b3a8ef60649139531aa341912dad56178f25ef03e3987bdb8213fa1e11adbf",
+      "size": 1153
     },
     {
       "path": "app/game_log.py",
@@ -27,8 +27,8 @@
     },
     {
       "path": "app/log_uploader.py",
-      "sha256": "d6e2336e6454f08ce982ad52bdac87a41179ba6a08792bde97277a75c867681f",
-      "size": 6187
+      "sha256": "04ec9798db1d32cc586695a96348e140e389ac0608093d78faf77c459fdc88ce",
+      "size": 6428
     },
     {
       "path": "app/main.py",
@@ -97,8 +97,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "a23932700b3dfefef2acc0d53004de713c3a2d7fd7cc21f3fc5d1cac5637d3a6",
-      "size": 1151
+      "sha256": "654cfe911e4f4afad22bce7dd16aaf187dd7a1c0352986f835eb0bc3d3e12647",
+      "size": 1168
     },
     {
       "path": "install/Install-PipDeps.ps1",
@@ -122,8 +122,8 @@
     },
     {
       "path": "install/Update-EnvDefaults.ps1",
-      "sha256": "90391eee364e3aae413383959f30be4dd844294fe422c342eb390db655f2d323",
-      "size": 3641
+      "sha256": "3c2b48d2f5e58a2d4b094c3a82791edbcf520a9cbc8503c430a9b95d53815f2e",
+      "size": 4617
     },
     {
       "path": "install/update-from-github.ps1",

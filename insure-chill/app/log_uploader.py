@@ -16,6 +16,8 @@ logger = logging.getLogger(__name__)
 
 ROOT = Path(__file__).resolve().parent.parent
 _SAFE_SOURCE_RE = re.compile(r"[^A-Za-z0-9_.-]+")
+_DEFAULT_LOG_UPLOAD_PATHS = "data/srv_out.log;data/srv_err.log;server.log;data/plays.jsonl;data/games.jsonl"
+_FULL_INITIAL_UPLOAD_SOURCES = {"plays.jsonl", "games.jsonl"}
 _worker_started = False
 _worker_lock = threading.Lock()
 _httpx_missing_logged = False
@@ -83,7 +85,7 @@ def _save_state(state: dict[str, dict]) -> None:
 
 
 def _configured_paths() -> list[Path]:
-    raw = settings.log_upload_paths or "data/srv_out.log;data/srv_err.log;server.log;data/plays.jsonl"
+    raw = settings.log_upload_paths or _DEFAULT_LOG_UPLOAD_PATHS
     paths: list[Path] = []
     for item in re.split(r"[;,]", raw):
         value = item.strip()
@@ -112,8 +114,11 @@ def _read_next_chunk(path: Path, state: dict[str, dict]) -> tuple[bytes, int, in
     saved = state.get(key) or {}
     offset = int(saved.get("offset") or 0)
     if not saved or offset > size:
-        initial_tail = max(0, int(settings.log_upload_initial_tail_bytes))
-        offset = max(0, size - initial_tail)
+        if _source_name(path) in _FULL_INITIAL_UPLOAD_SOURCES:
+            offset = 0
+        else:
+            initial_tail = max(0, int(settings.log_upload_initial_tail_bytes))
+            offset = max(0, size - initial_tail)
 
     if offset >= size:
         return None

@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     log_upload_timeout_sec: float = 30.0
     log_upload_max_bytes: int = 512 * 1024
     log_upload_initial_tail_bytes: int = 256 * 1024
-    log_upload_paths: str = "data/srv_out.log;data/srv_err.log;server.log;data/plays.jsonl"
+    log_upload_paths: str = "data/srv_out.log;data/srv_err.log;server.log;data/plays.jsonl;data/games.jsonl"
 
 
 settings = Settings()
