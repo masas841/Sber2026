@@ -10,8 +10,6 @@ import threading
 import time
 from pathlib import Path
 
-import httpx
-
 from app.config import settings
 
 logger = logging.getLogger(__name__)
@@ -20,6 +18,20 @@ ROOT = Path(__file__).resolve().parent.parent
 _SAFE_SOURCE_RE = re.compile(r"[^A-Za-z0-9_.-]+")
 _worker_started = False
 _worker_lock = threading.Lock()
+_httpx_missing_logged = False
+
+
+def _load_httpx():
+    global _httpx_missing_logged
+
+    try:
+        import httpx
+    except ModuleNotFoundError:
+        if not _httpx_missing_logged:
+            logger.warning("log_upload disabled: httpx is not installed")
+            _httpx_missing_logged = True
+        return None
+    return httpx
 
 
 def _base_url() -> str | None:
@@ -116,7 +128,7 @@ def _read_next_chunk(path: Path, state: dict[str, dict]) -> tuple[bytes, int, in
     return data, offset, size
 
 
-def _upload_chunk(client: httpx.Client, url: str, path: Path, data: bytes, offset: int, total_size: int) -> None:
+def _upload_chunk(client, url: str, path: Path, data: bytes, offset: int, total_size: int) -> None:
     files = {
         "log_file": (
             _source_name(path),
@@ -138,6 +150,9 @@ def _upload_chunk(client: httpx.Client, url: str, path: Path, data: bytes, offse
 def process_log_upload_once() -> int:
     base = _base_url()
     if not base:
+        return 0
+    httpx = _load_httpx()
+    if httpx is None:
         return 0
 
     url = f"{base}/api/kiosk-logs"

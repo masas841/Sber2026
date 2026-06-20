@@ -65,8 +65,27 @@ if (-not (Test-Path $venvPy)) {
     New-KioskVenv -Root $PSScriptRoot -BasePython $basePy
     & .\.venv\Scripts\Activate.ps1
     Install-KioskPipDeps -Root $PSScriptRoot
+    $reqPath = Join-Path $PSScriptRoot "requirements.txt"
+    if (Test-Path $reqPath) {
+        $reqHash = (Get-FileHash -Algorithm SHA256 -Path $reqPath).Hash
+        Set-Content -Path (Join-Path $PSScriptRoot ".venv\requirements.sha256") -Value $reqHash -Encoding ASCII
+    }
 } else {
     & .\.venv\Scripts\Activate.ps1
+    $reqPath = Join-Path $PSScriptRoot "requirements.txt"
+    $reqStampPath = Join-Path $PSScriptRoot ".venv\requirements.sha256"
+    if (Test-Path $reqPath) {
+        $reqHash = (Get-FileHash -Algorithm SHA256 -Path $reqPath).Hash
+        $savedReqHash = ""
+        if (Test-Path $reqStampPath) {
+            $savedReqHash = (Get-Content -Path $reqStampPath -Raw).Trim()
+        }
+        if ($reqHash -ne $savedReqHash) {
+            Write-Host "[InsureChill] Installing updated Python dependencies ..." -ForegroundColor Cyan
+            Install-KioskPipDeps -Root $PSScriptRoot
+            Set-Content -Path $reqStampPath -Value $reqHash -Encoding ASCII
+        }
+    }
 }
 
 if (-not (Test-Path ".env")) {

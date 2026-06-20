@@ -27,8 +27,8 @@
     },
     {
       "path": "app/log_uploader.py",
-      "sha256": "e79580c4fba4c26da4d75dcc06096fb9e4300bfec70d82f75c3eb7c604605e7f",
-      "size": 5813
+      "sha256": "d6e2336e6454f08ce982ad52bdac87a41179ba6a08792bde97277a75c867681f",
+      "size": 6187
     },
     {
       "path": "app/main.py",
@@ -142,8 +142,8 @@
     },
     {
       "path": "run-kiosk.ps1",
-      "sha256": "2f0a3de004c33c925bec003d74a365b11853aa05ccacc39c65778730cba7c28b",
-      "size": 2985
+      "sha256": "cb53e6b86d77b00daf184b98e8d3511fc532fae289f14603ac76870d8204b1f6",
+      "size": 3936
     },
     {
       "path": "run.ps1",
