@@ -116,11 +116,6 @@
       "size": 3485
     },
     {
-      "path": "install/start-insure-chill.cmd",
-      "sha256": "81372b8bdade21231c87ba127ed3c2fca98657d94d559577170228ad09c2d871",
-      "size": 101
-    },
-    {
       "path": "install/Update-EnvDefaults.ps1",
       "sha256": "f66e7ea0e61ac5c6c40f7eabeee2fd16f0bff8361a32984c00182eb747d449ed",
       "size": 2538
@@ -132,13 +127,8 @@
     },
     {
       "path": "install/Update-FromGitHub.ps1",
-      "sha256": "e84ff7099b0b23de11c536909fb17240d09c6830799405f9b256c46880adec47",
-      "size": 13826
-    },
-    {
-      "path": "install/update-insure-chill.cmd",
-      "sha256": "7591921868213c63328c0af6ec2a12a5d98586482a67bcb3583c2216a419b79b",
-      "size": 114
+      "sha256": "e5b28a563859840f6f2b62177230715e8adb90721e87b4db07ded3aba568da67",
+      "size": 13890
     },
     {
       "path": "requirements.txt",

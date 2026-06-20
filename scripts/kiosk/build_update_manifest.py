@@ -25,6 +25,8 @@ DEFAULT_EXCLUDE_PARTS = {
     ("install", "wheels"),
 }
 DEFAULT_EXCLUDE_SUFFIXES = {
+    ".bat",
+    ".cmd",
     ".pyc",
     ".pyo",
     ".whl",

@@ -134,6 +134,7 @@ function Invoke-KioskGitHubUpdate {
         param([string]$Path)
         $normalized = $Path.Replace("\", "/").TrimStart("/")
         if ($normalized -eq ".env") { return $true }
+        if ($normalized -match "\.(cmd|bat)$") { return $true }
         $protectedPrefixes = @(
             ".venv/",
             ".venv-liveportrait/",
