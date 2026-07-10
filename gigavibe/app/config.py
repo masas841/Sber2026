@@ -239,7 +239,7 @@ class Settings(BaseSettings):
     aitunnel_max_attempts: int = 2
     quatarly_api_key: str | None = None
     quatarly_api_base_url: str = "https://api.quatarly.cloud/v1"
-    nanobanana_model: str = "gemini-3.1-flash-image-preview"
+    nanobanana_model: str = "gemini-3.1-flash-image"
     nanobanana_api_key: str | None = None
     nanobanana_api_base_url: str = "https://api.nanobananaapi.ai"
     # v2 = /generate-2 (рекомендуется) | v1 = /generate (IMAGETOIAMGE)

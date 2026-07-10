@@ -12,8 +12,8 @@
     },
     {
       "path": "app/aitunnel_image_client.py",
-      "sha256": "117343b7ed64dd6604a1ba38a2138e66e2b749b585c7f22740c82a7f5c10f0b6",
-      "size": 9017
+      "sha256": "ab275cf93df468e1ffc2f006495ed238e17f8602fedb080df36eab3140e309ea",
+      "size": 9012
     },
     {
       "path": "app/compositor.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "e1119ddeb7849d7b7dce0b0765113a3dd0cae1e3ee19cc03f770d7b5e76e49aa",
-      "size": 21802
+      "sha256": "9a0c1f648796bbf346040a018178903c3b14e7a919671813dd7952951d465b25",
+      "size": 21794
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -97,8 +97,8 @@
     },
     {
       "path": "app/generators/festival_nanobanana.py",
-      "sha256": "67260620a3367efc12c8ffca3b100c9f5b9c9982a4676d1397a5b6947b5db44a",
-      "size": 10440
+      "sha256": "263f1c76095accc08a93546e093df90a815454933aba971207eb75f81ddb32e7",
+      "size": 10432
     },
     {
       "path": "app/generators/festival_portrait.py",
@@ -492,8 +492,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "3dea9ea5c2ccaecd65624a809165c2a1485f6237109d24d4a767835d11b56674",
-      "size": 2046
+      "sha256": "84d21c58c440d2b19872bce884622361a310675c87205f992cc4f05fc79e89c1",
+      "size": 2038
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -532,8 +532,8 @@
     },
     {
       "path": "install/Update-EnvDefaults.ps1",
-      "sha256": "0e30f74c0c6e2adae393aed913d75c86166a27268c2bad7cd7c5b3c8c1c0fb45",
-      "size": 3447
+      "sha256": "19671421c2fdd4b69315131009a0231ebb13961b278b77c14f35caaa7576dff3",
+      "size": 4500
     },
     {
       "path": "install/update-from-github.ps1",

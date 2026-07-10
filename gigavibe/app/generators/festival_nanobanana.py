@@ -2,7 +2,7 @@
 Festival portrait через внешний API (Nano Banana / nana-banana).
 
 Бэкенды:
-  aitunnel — AITunnel /v1/images/edits (gemini-3.1-flash-image-preview, ~15–40с, без VPN)
+  aitunnel — AITunnel /v1/images/edits (gemini-3.1-flash-image, ~15–40с, без VPN)
   quatarly — Quatarly OpenAI-compat
   gemini   — Google Gemini API напрямую
   proxy    — nanobananaapi.ai (async poll, ~100с)

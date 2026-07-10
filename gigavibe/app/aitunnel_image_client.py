@@ -20,7 +20,7 @@ DEFAULT_BASE_URL = "https://api.aitunnel.ru/v1"
 DEFAULT_USER_AGENT = "GIGAvibe/1.0"
 
 _MODEL_ALIASES = {
-    "gemini-3.1-flash-image": "gemini-3.1-flash-image-preview",
+    "gemini-3.1-flash-image-preview": "gemini-3.1-flash-image",
     "gemini-3-pro-image": "gemini-3-pro-image-preview",
     "gemini-2.5-flash-image": "gemini-2.5-flash-image",
 }
@@ -38,7 +38,7 @@ _RETRYABLE_ERROR_CODES = frozenset(
 
 def _resolve_model(model: str) -> str:
     m = (model or "").strip()
-    return _MODEL_ALIASES.get(m, m) or "gemini-3.1-flash-image-preview"
+    return _MODEL_ALIASES.get(m, m) or "gemini-3.1-flash-image"
 
 
 def _job_label(path: Path) -> str:
@@ -189,7 +189,7 @@ def generate_festival_portrait(
     resolved = _resolve_model(model)
     jpeg = _prepare_selfie_jpeg(source_image)
     logger.info(
-        "aitunnel model=%s aspect=%s size=%s selfie=%s bytes prompt=%s…",
+        "aitunnel model=%s aspect=%s size=%s selfie=%s bytes=%s prompt=%s…",
         resolved,
         aspect_ratio,
         image_size,

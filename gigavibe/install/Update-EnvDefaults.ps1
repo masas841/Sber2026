@@ -32,6 +32,37 @@ function Add-GigaEnvDefault {
     return $true
 }
 
+function Set-GigaEnvValueIfEquals {
+    param(
+        [string]$Path,
+        [string]$Name,
+        [string]$OldValue,
+        [string]$NewValue
+    )
+
+    if (-not (Test-Path $Path)) { return $false }
+    $pattern = "^\s*$([regex]::Escape($Name))\s*=\s*(.*)\s*$"
+    $changed = $false
+    $lines = Get-Content -Path $Path
+    $updated = foreach ($line in $lines) {
+        if (($line -notmatch "^\s*#") -and ($line -match $pattern)) {
+            $current = $matches[1].Trim().Trim('"').Trim("'")
+            if ($current -eq $OldValue) {
+                $changed = $true
+                "$Name=$NewValue"
+            } else {
+                $line
+            }
+        } else {
+            $line
+        }
+    }
+    if ($changed) {
+        Set-Content -Path $Path -Value $updated -Encoding UTF8
+    }
+    return $changed
+}
+
 function Ensure-GigaMediaPipeVendor {
     param([string]$Root)
 
@@ -62,6 +93,8 @@ function Update-GigaEnvDefaults {
     }
 
     $added = 0
+    $updated = 0
+    $updated += [int](Set-GigaEnvValueIfEquals -Path $envFile -Name "NANOBANANA_MODEL" -OldValue "gemini-3.1-flash-image-preview" -NewValue "gemini-3.1-flash-image")
     $added += [int](Add-GigaEnvDefault -Path $envFile -Name "LOG_UPLOAD_ENABLED" -Value "true" -Comment "# Realtime diagnostics: send kiosk logs to photo_receiver.")
     $added += [int](Add-GigaEnvDefault -Path $envFile -Name "LOG_UPLOAD_URL" -Value "" -Comment "# Diagnostics: upload kiosk logs to photo_receiver. Empty URL reuses OUTPUT_UPLOAD_URL.")
     $added += [int](Add-GigaEnvDefault -Path $envFile -Name "LOG_UPLOAD_API_KEY" -Value "")
@@ -73,8 +106,8 @@ function Update-GigaEnvDefaults {
     $added += [int](Add-GigaEnvDefault -Path $envFile -Name "LOG_UPLOAD_INITIAL_TAIL_BYTES" -Value "262144")
     $added += [int](Add-GigaEnvDefault -Path $envFile -Name "OUTPUT_DISPATCH_FAIL_OPEN" -Value "true" -Comment "# Do not stop kiosk session if upload or print fails.")
 
-    if ($added -gt 0) {
-        Write-Host "[GIGAvibe] .env migration: added $added setting(s)." -ForegroundColor Green
+    if (($added + $updated) -gt 0) {
+        Write-Host "[GIGAvibe] .env migration: added $added setting(s), updated $updated setting(s)." -ForegroundColor Green
     } else {
         Write-Host "[GIGAvibe] .env migration: no changes."
     }
