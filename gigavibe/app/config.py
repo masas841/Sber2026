@@ -297,6 +297,8 @@ class Settings(BaseSettings):
     kiosk_face_hold_ms: int = 700
     kiosk_face_release_ms: int = 1600
     kiosk_face_detect_stride: int = 25
+    # Сдвиг зоны детекции вниз по кадру (0 = центр; 0.15 ≈ лица низких гостей при камере сверху).
+    kiosk_detection_focus_y: float = 0.15
     kiosk_jpeg_quality: float = 0.96
     # true — на экране результата показывать время генерации (для стенда/отладки)
     kiosk_test_mode: bool = False

@@ -488,6 +488,7 @@ def kiosk_config() -> dict:
         "kiosk_face_hold_ms": settings.kiosk_face_hold_ms,
         "kiosk_face_release_ms": settings.kiosk_face_release_ms,
         "kiosk_face_detect_stride": settings.kiosk_face_detect_stride,
+        "kiosk_detection_focus_y": settings.kiosk_detection_focus_y,
         "kiosk_jpeg_quality": settings.kiosk_jpeg_quality,
         "kiosk_test_mode": settings.kiosk_test_mode,
         "output_upload_enabled": settings.output_upload_enabled,

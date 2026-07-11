@@ -91,6 +91,7 @@ let kioskCfg = {
   kiosk_face_hold_ms: 700,
   kiosk_face_release_ms: 1600,
   kiosk_face_detect_stride: 25,
+  kiosk_detection_focus_y: 0.15,
   print_enabled: false,
   output_upload_enabled: false,
 };
@@ -172,7 +173,7 @@ function drawVideoFit(
   video,
   destW,
   destH,
-  { mirror = true, fill = "#111", zoom = 1 } = {},
+  { mirror = true, fill = "#111", zoom = 1, focusY = 0 } = {},
 ) {
   const vw = video.videoWidth;
   const vh = video.videoHeight;
@@ -194,9 +195,10 @@ function drawVideoFit(
   const scale = Math.max(destW / fitW, destH / fitH) * Math.max(1, zoom);
   const dw = fitW * scale;
   const dh = fitH * scale;
+  const offsetY = Math.max(-dh * 0.35, Math.min(dh * 0.35, focusY * dh));
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = "high";
-  ctx.drawImage(video, -dw / 2, -dh / 2, dw, dh);
+  ctx.drawImage(video, -dw / 2, -dh / 2 - offsetY, dw, dh);
   ctx.restore();
 }
 
@@ -215,7 +217,10 @@ function prepareDetectionFrame() {
     preview,
     DETECTION_FRAME_W,
     DETECTION_FRAME_H,
-    { zoom: CAMERA_ZOOM },
+    {
+      zoom: CAMERA_ZOOM,
+      focusY: kioskCfg.kiosk_detection_focus_y ?? 0,
+    },
   );
   return detectionCanvas;
 }
