@@ -297,6 +297,8 @@ class Settings(BaseSettings):
     kiosk_face_hold_ms: int = 350
     kiosk_face_release_ms: int = 2500
     kiosk_face_detect_stride: int = 10
+    # Уверенность MediaPipe (0.01–0.99) для лиц в сложном верхнем ракурсе.
+    kiosk_face_detection_confidence: float = 0.04
     # Сдвиг зоны детекции (камера сверху): + вниз по кадру, − вверх. Для низких гостей ≈ 0.20–0.25.
     kiosk_detection_focus_y: float = 0.22
     # Зум только для MediaPipe (не влияет на картинку на экране): меньше = шире кадр, лицо мельче.

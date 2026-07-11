@@ -18,6 +18,7 @@ export async function createFacePresenceWatcher(videoEl, options = {}) {
     releaseMs = null,
     /** Проверять лицо раз в N кадров видеопотока (снижает нагрузку на GPU/CPU) */
     detectStride = 25,
+    detectionConfidence = 0.04,
     /** Только следить за уходом гостя (экран камеры), без onReady */
     keepOnly = false,
     onReady,
@@ -29,7 +30,7 @@ export async function createFacePresenceWatcher(videoEl, options = {}) {
 
   let landmarker;
   try {
-    landmarker = await createFaceLandmarker();
+    landmarker = await createFaceLandmarker({ confidence: detectionConfidence });
   } catch (err) {
     onError?.(err);
     throw err;

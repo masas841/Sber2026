@@ -18,6 +18,7 @@ export async function createSmileWatcher(videoEl, options = {}) {
     minFaceSize = 0.17,
     releaseMs = 1600,
     detectStride = 6,
+    detectionConfidence = 0.04,
     onSmile,
     onLost,
     onStatus,
@@ -27,7 +28,7 @@ export async function createSmileWatcher(videoEl, options = {}) {
 
   let landmarker;
   try {
-    landmarker = await createFaceLandmarker();
+    landmarker = await createFaceLandmarker({ confidence: detectionConfidence });
   } catch (err) {
     onError?.(err);
     throw new Error(

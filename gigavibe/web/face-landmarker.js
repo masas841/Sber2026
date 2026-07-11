@@ -42,7 +42,7 @@ async function resolveMediaPipeAssets() {
   };
 }
 
-export async function createFaceLandmarker() {
+export async function createFaceLandmarker({ confidence = 0.04 } = {}) {
   assetsPromise ||= resolveMediaPipeAssets();
   modelUrlPromise ||= resolveModelUrl();
   tasksVisionPromise ||= assetsPromise.then(({ importUrl }) => import(importUrl));
@@ -55,13 +55,14 @@ export async function createFaceLandmarker() {
 
   visionPromise ||= FilesetResolver.forVisionTasks(wasmDir);
   const vision = await visionPromise;
+  const normalizedConfidence = Math.max(0.01, Math.min(0.99, Number(confidence) || 0.04));
   const baseOpts = {
     baseOptions: { modelAssetPath: modelUrl },
     runningMode: "VIDEO",
     numFaces: 1,
-    minFaceDetectionConfidence: 0.05,
-    minFacePresenceConfidence: 0.05,
-    minTrackingConfidence: 0.05,
+    minFaceDetectionConfidence: normalizedConfidence,
+    minFacePresenceConfidence: normalizedConfidence,
+    minTrackingConfidence: normalizedConfidence,
     outputFaceBlendshapes: true,
   };
 

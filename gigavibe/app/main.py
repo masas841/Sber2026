@@ -488,6 +488,7 @@ def kiosk_config() -> dict:
         "kiosk_face_hold_ms": settings.kiosk_face_hold_ms,
         "kiosk_face_release_ms": settings.kiosk_face_release_ms,
         "kiosk_face_detect_stride": settings.kiosk_face_detect_stride,
+        "kiosk_face_detection_confidence": settings.kiosk_face_detection_confidence,
         "kiosk_detection_focus_y": settings.kiosk_detection_focus_y,
         "kiosk_detection_zoom": settings.kiosk_detection_zoom,
         "kiosk_jpeg_quality": settings.kiosk_jpeg_quality,

@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "dbf02aba50b841c7602dd78bd70595d17590fbad59f1c57f8d0a1fefce25170e",
-      "size": 5972
+      "sha256": "7b4797af22f96b3137197c396d69cf1f50a9063bff8f9885038d99f35771f3eb",
+      "size": 6189
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "c86c098748599c1b7182a4965874672f02541557a70fd41337ec3d8a1b9420d3",
-      "size": 22202
+      "sha256": "ddcbcb11db1ccdc9018eb060bfb015837e40a25be66f062611cd5cb36ef65c1e",
+      "size": 22368
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -172,8 +172,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "f48f0572e3975a684075072b3327e268ad0819f252d7287879ce1afde08702ff",
-      "size": 25792
+      "sha256": "2df5bb962ddc4dd23368aa832dbb0e3b235bf6645db3e0aa768f61d172e73bb0",
+      "size": 25877
     },
     {
       "path": "app/nanobanana_client.py",
@@ -492,8 +492,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "9d6a345c4b7c57a6b717a52d07abde8ebb92d648c7f6c1906d4bd3424dd8cf4c",
-      "size": 2171
+      "sha256": "a324c4c0ef8281b1d630081ac527309d1b10e9777cec667d09d2061f24955d2f",
+      "size": 2208
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -942,8 +942,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "832bdecba7543c8cea967a18aab496df86bb82a177cc0eade5c0a0073f052093",
-      "size": 31431
+      "sha256": "a9df15041015d7392765d090631e8719603a8e982c9c5ec834dccd34ddde4940",
+      "size": 31610
     },
     {
       "path": "web/assets/figma/giga-full.svg",
@@ -1422,13 +1422,13 @@
     },
     {
       "path": "web/face-landmarker.js",
-      "sha256": "ca975f6ef91986e2ed44000b133bd44d3c13c4281e00a5ca158cda96fcc7d02c",
-      "size": 2786
+      "sha256": "8e6f5c662cf82758c35ad3ff98af9f9ee5fae7289af82e7f8db3d6d61bfb377f",
+      "size": 2951
     },
     {
       "path": "web/face-presence.js",
-      "sha256": "ab695818c18ee10c90db2f2946400fc7aa0e0a879134292e32215006a4831b01",
-      "size": 4845
+      "sha256": "9355be66425eb7bc4c598ff4e3887c8c5716837b232f3c1b00098f219de6d3db",
+      "size": 4912
     },
     {
       "path": "web/fonts/SBSansDisplay-Bold.woff",
@@ -1522,8 +1522,8 @@
     },
     {
       "path": "web/smile-capture.js",
-      "sha256": "e3a61f01ad10b3321522f163ddd058c711634d066a15589e87ce92322682ad68",
-      "size": 3808
+      "sha256": "cd96f37388276ca4e345f06d49b3cd04f01e0aa599e47eda9d3d87017a1bb75a",
+      "size": 3875
     },
     {
       "path": "web/style.css",
