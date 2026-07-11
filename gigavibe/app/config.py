@@ -291,14 +291,16 @@ class Settings(BaseSettings):
     kiosk_smile_hold_ms: int = 650
     kiosk_smile_detect_stride: int = 6
     kiosk_smile_cooldown_ms: int = 8000
-    kiosk_face_min_size: float = 0.12
+    kiosk_face_min_size: float = 0.06
     kiosk_face_hold_frames: int = 12
     kiosk_face_release_frames: int = 20
-    kiosk_face_hold_ms: int = 700
-    kiosk_face_release_ms: int = 1600
-    kiosk_face_detect_stride: int = 25
-    # Сдвиг зоны детекции вниз по кадру (0 = центр; 0.15 ≈ лица низких гостей при камере сверху).
-    kiosk_detection_focus_y: float = 0.15
+    kiosk_face_hold_ms: int = 350
+    kiosk_face_release_ms: int = 2500
+    kiosk_face_detect_stride: int = 10
+    # Сдвиг зоны детекции (камера сверху): + вниз по кадру, − вверх. Для низких гостей ≈ 0.20–0.25.
+    kiosk_detection_focus_y: float = 0.22
+    # Зум только для MediaPipe (не влияет на картинку на экране): меньше = шире кадр, лицо мельче.
+    kiosk_detection_zoom: float = 1.65
     kiosk_jpeg_quality: float = 0.96
     # true — на экране результата показывать время генерации (для стенда/отладки)
     kiosk_test_mode: bool = False
