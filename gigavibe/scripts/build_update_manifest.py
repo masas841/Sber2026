@@ -45,6 +45,7 @@ EXCLUDE_SUFFIXES = {
 }
 EXCLUDE_NAMES = {
     ".env",
+    "plan.svg",
     "site-packages.zip",
     "update-manifest.json",
     "update-manifest.local.json",

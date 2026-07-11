@@ -2,8 +2,8 @@
   "files": [
     {
       "path": ".env.example",
-      "sha256": "4a4ebe87dd4b445db44d3eaa0eee42b274fce7a39a87362e77d51ea0a1a080dd",
-      "size": 5571
+      "sha256": "ad845ad5a4c7770e6d0b9cfc2def9fb439e72ce5030b3dfc5b3b1b73f174612f",
+      "size": 5729
     },
     {
       "path": "app/__init__.py",
@@ -22,8 +22,8 @@
     },
     {
       "path": "app/config.py",
-      "sha256": "9a0c1f648796bbf346040a018178903c3b14e7a919671813dd7952951d465b25",
-      "size": 21794
+      "sha256": "981b083affde2df98a070f098aabf4ffd947b854485a4ec27cb53cef2dee6535",
+      "size": 22000
     },
     {
       "path": "app/cuda_bootstrap.py",
@@ -172,8 +172,8 @@
     },
     {
       "path": "app/main.py",
-      "sha256": "f4c68fe0f89f74bf10cf17aaeb942c49bf9b632ff69baae3135b83bbf4d37e2d",
-      "size": 25660
+      "sha256": "9076c328c74a2d8f0132d028676390dc402b687dee1a10f7f8eced031cd30fe2",
+      "size": 25729
     },
     {
       "path": "app/nanobanana_client.py",
@@ -492,8 +492,8 @@
     },
     {
       "path": "install/.env.kiosk.example",
-      "sha256": "84d21c58c440d2b19872bce884622361a310675c87205f992cc4f05fc79e89c1",
-      "size": 2038
+      "sha256": "92af8ceff807e39ad07d20748814502861653325db6d36a250fd81d454e7ea75",
+      "size": 2067
     },
     {
       "path": "install/Install-Deps.ps1",
@@ -697,8 +697,8 @@
     },
     {
       "path": "scripts/build_update_manifest.py",
-      "sha256": "6128e743751e8e894bf9267d8c8480c6bf4823f561f2d6e13fd7d3e35858747f",
-      "size": 2853
+      "sha256": "dcbb12cd36b6fd8edae5c31898e0baa7f9f9eb2083fecb76985a52cc99f8dc58",
+      "size": 2869
     },
     {
       "path": "scripts/check_onnx_cuda.py",
@@ -942,8 +942,8 @@
     },
     {
       "path": "web/app.js",
-      "sha256": "ffe9baa73776e5e9b57baff5d083a4d1af94d28ef214447378525f05c3348b5a",
-      "size": 31182
+      "sha256": "0639173724f04bdfc4a6eea8a34e4b88f25b6b7011038d17673065dfd14b3c12",
+      "size": 31375
     },
     {
       "path": "web/assets/figma/giga-full.svg",
@@ -1422,8 +1422,8 @@
     },
     {
       "path": "web/face-landmarker.js",
-      "sha256": "a12962f74827b51d99937361f33026b5c3873b3419684df0f578f612f3855039",
-      "size": 2678
+      "sha256": "ca975f6ef91986e2ed44000b133bd44d3c13c4281e00a5ca158cda96fcc7d02c",
+      "size": 2786
     },
     {
       "path": "web/face-presence.js",
